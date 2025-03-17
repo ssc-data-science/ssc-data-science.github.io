@@ -1,4 +1,4 @@
-/* App.css - Styles for Quiz Application */
+/* App.css - Enhanced Styles for Quiz Application */
 
 * {
   box-sizing: border-box;
@@ -6,16 +6,21 @@
   padding: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 body {
-  background-color: #f5f7fa;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
   color: #333;
+  min-height: 100vh;
 }
 
 .app-container {
   min-height: 100vh;
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,18 +30,27 @@ body {
 /* Registration Styles */
 .registration-container {
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 30px;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+  border: 1px solid rgba(79, 70, 229, 0.1);
 }
 
-.registration-container h1 {
+.form-header {
   text-align: center;
   margin-bottom: 24px;
+}
+
+.form-header h1 {
   color: #4f46e5;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: #6b7280;
 }
 
 .form-group {
@@ -52,34 +66,42 @@ body {
 
 .form-group input {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #d1d5db;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 16px;
-  transition: border-color 0.2s;
+  transition: all 0.2s ease;
+  background-color: #f9fafb;
 }
 
 .form-group input:focus {
   outline: none;
   border-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  background-color: white;
 }
 
 .register-button {
   width: 100%;
-  padding: 12px;
-  background-color: #4f46e5;
+  padding: 14px;
+  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.15);
 }
 
 .register-button:hover {
-  background-color: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.2);
+}
+
+.register-button:active {
+  transform: translateY(0);
 }
 
 /* Loading Styles */
@@ -93,18 +115,19 @@ body {
 
 .loading-card {
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 30px;
   width: 100%;
   max-width: 500px;
   text-align: center;
+  border: 1px solid rgba(79, 70, 229, 0.1);
 }
 
 .spinner {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 20px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 24px;
   border: 4px solid rgba(79, 70, 229, 0.1);
   border-radius: 50%;
   border-top-color: #4f46e5;
@@ -128,7 +151,7 @@ body {
 }
 
 .progress-text {
-  font-weight: 500;
+  font-weight: 600;
   color: #4f46e5;
 }
 
@@ -140,15 +163,16 @@ body {
 }
 
 .user-info {
-  background-color: #f3f4f6;
-  padding: 12px;
-  border-radius: 6px;
+  background: linear-gradient(to right, #4f46e5, #8b5cf6);
+  padding: 14px;
+  border-radius: 12px;
   margin-bottom: 20px;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
 }
 
 .user-info p {
-  color: #4b5563;
+  color: white;
   font-weight: 500;
 }
 
@@ -163,21 +187,24 @@ body {
 .question-header h2 {
   margin-bottom: 12px;
   color: #1f2937;
+  font-weight: 600;
 }
 
 .question-card {
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   padding: 24px;
   margin-bottom: 20px;
+  border: 1px solid rgba(79, 70, 229, 0.1);
 }
 
 .question-card h3 {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: #1f2937;
   font-size: 18px;
   line-height: 1.5;
+  font-weight: 600;
 }
 
 .options-container {
@@ -185,57 +212,93 @@ body {
 }
 
 .option {
-  padding: 14px;
+  display: flex;
+  align-items: center;
+  padding: 16px;
   border: 1px solid #d1d5db;
-  border-radius: 6px;
+  border-radius: 12px;
   margin-bottom: 12px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  background-color: #f9fafb;
 }
 
 .option:hover {
-  background-color: #f9fafb;
+  background-color: #f3f4f6;
   border-color: #9ca3af;
+  transform: translateY(-2px);
 }
 
 .option.selected {
   background-color: #ede9fe;
   border-color: #4f46e5;
   color: #4f46e5;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15);
+}
+
+.option-marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.option.selected .option-marker {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.option-text {
+  flex: 1;
 }
 
 .navigation-buttons {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .nav-button {
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   border: 1px solid #d1d5db;
   background-color: white;
+  font-size: 16px;
+  flex: 1;
 }
 
 .nav-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
 }
 
 .nav-button.primary {
-  background-color: #4f46e5;
+  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
   color: white;
-  border-color: #4f46e5;
+  border: none;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.15);
 }
 
 .nav-button.primary:hover:not(:disabled) {
-  background-color: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.2);
 }
 
 .nav-button:not(.primary):hover:not(:disabled) {
   background-color: #f3f4f6;
+  border-color: #9ca3af;
 }
 
 /* Results Styles */
@@ -247,34 +310,68 @@ body {
 
 .results-card {
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(79, 70, 229, 0.1);
+}
+
+.results-header {
+  text-align: center;
   margin-bottom: 30px;
 }
 
-.results-card h1 {
-  text-align: center;
-  margin-bottom: 24px;
+.results-header h1 {
   color: #4f46e5;
+  margin-bottom: 24px;
+}
+
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 8px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.score-circle span {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.score-display h2 {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .results-summary {
   background-color: #f9fafb;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 12px;
+  padding: 24px;
   margin-bottom: 30px;
 }
 
 .results-summary h2 {
   margin-bottom: 16px;
   color: #1f2937;
+  font-weight: 600;
 }
 
 .result-item {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -288,14 +385,18 @@ body {
 }
 
 .result-item span:last-child {
-  font-weight: 500;
+  font-weight: 600;
+  color: #1f2937;
 }
 
 .save-message {
   text-align: center;
   color: #10b981;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 30px;
+  padding: 10px;
+  background-color: #d1fae5;
+  border-radius: 8px;
 }
 
 .review-instructions {
@@ -305,6 +406,7 @@ body {
 .review-instructions h3 {
   margin-bottom: 8px;
   color: #1f2937;
+  font-weight: 600;
 }
 
 .review-instructions p {
@@ -314,6 +416,9 @@ body {
 .answers-review {
   max-height: 400px;
   overflow-y: auto;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  padding: 16px;
 }
 
 .review-item {
@@ -324,49 +429,152 @@ body {
 
 .review-item:last-child {
   border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .review-item h4 {
   margin-bottom: 8px;
   color: #4b5563;
+  font-weight: 600;
 }
 
 .review-item p {
   margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .review-answer {
-  padding: 12px;
-  border-radius: 6px;
+  padding: 14px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  font-weight: 500;
 }
 
 .review-answer.correct {
   background-color: #d1fae5;
   color: #065f46;
+  border: 1px solid #10b981;
 }
 
 .review-answer.incorrect {
   background-color: #fee2e2;
   color: #b91c1c;
+  border: 1px solid #ef4444;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+
   .registration-container,
   .loading-card,
   .results-card {
     padding: 20px;
+    border-radius: 14px;
   }
-  
+
+  .question-card {
+    padding: 16px;
+  }
+
+  .option {
+    padding: 12px;
+  }
+
+  .score-circle {
+    width: 100px;
+    height: 100px;
+    border-width: 6px;
+  }
+
+  .score-circle span {
+    font-size: 28px;
+  }
+
+  .score-display h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 10px;
+  }
+
   .navigation-buttons {
     flex-direction: column;
-    gap: 10px;
   }
-  
+
   .nav-button {
     width: 100%;
+    margin-bottom: 8px;
   }
+
+  .user-info p {
+    font-size: 14px;
+  }
+
+  .question-card h3 {
+    font-size: 16px;
+  }
+
+  .option-marker {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+
+  .results-summary {
+    padding: 16px;
+  }
+
+  .review-answer {
+    padding: 10px;
+  }
+
+  .score-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .score-circle span {
+    font-size: 22px;
+  }
+
+  .form-group input,
+  .register-button {
+    padding: 12px;
+  }
+}
+
+/* Prevent image dragging */
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5b4fc;
 }
