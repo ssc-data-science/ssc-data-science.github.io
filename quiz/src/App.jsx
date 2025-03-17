@@ -17,7 +17,10 @@ const firebaseConfig = {
 };
 
 const GOOGLE_API_KEYS = [
-  'AIzaSyAu9swfNci4KFg63TjnxoV9zCfwXz9wuuA'
+  'AIzaSyAu9swfNci4KFg63TjnxoV9zCfwXz9wuuA',
+  'AIzaSyBpxFwmq8_b9snWnAaRnyeUmmy3FzT-7rM',
+  'AIzaSyBXWd7izFrKHY0eeEHCB79OkzUd6TnYgGE',
+  'AIzaSyAjyofndMStYX6AT_C8CIBj-GZZeObA0PQ'
 ];
 
 // Initialize Firebase
@@ -111,7 +114,7 @@ function App() {
       setProcessingProgress(0.1);
 
       // Fetch the content from URL
-      const response = await axios.get('https://ihjas-ahammed.github.io/cs2/mod4.md', {
+      const response = await axios.get('https://ssc-data-science.github.io/quiz/src/assets/Unit4%20.md', {
         responseType: 'text',
         transformResponse: [data => data] // Prevent automatic parsing
       });
