@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-I Characteristics of Diodes - Interactive Study Guide</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --dark-color: #1e40af;
+            --light-color: #eff6ff;
+            --danger-color: #ef4444;
+            --success-color: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .formula {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-left: 4px solid var(--primary-color);
+            margin: 1rem 0;
+            font-family: "Courier New", monospace;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-color);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #0d9488;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #e5e7eb;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f3f4f6;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .text-primary {
+            color: var(--primary-color);
+        }
+
+        .text-success {
+            color: var(--success-color);
+        }
+
+        .text-danger {
+            color: var(--danger-color);
+        }
+
+        .bg-light {
+            background-color: var(--light-color);
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded {
+            border-radius: 0.25rem;
+        }
+
+        .border {
+            border: 1px solid #e5e7eb;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .quiz-container {
+            margin: 2rem 0;
+        }
+
+        .quiz-question {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-options {
+            margin: 1rem 0;
+        }
+
+        .quiz-option {
+            display: block;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        .quiz-option:hover {
+            background-color: #f9fafb;
+        }
+
+        .quiz-result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        .correct {
+            background-color: #d1fae5;
+            border: 1px solid #10b981;
+        }
+
+        .incorrect {
+            background-color: #fee2e2;
+            border: 1px solid #ef4444;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #e5e7eb;
+            border-radius: 0.25rem;
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            height: 0.5rem;
+            background-color: var(--primary-color);
+            border-radius: 0.25rem;
+            transition: width 0.3s ease;
+        }
+
+        .canvas-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            margin: 1.5rem 0;
+        }
+
+        /* Interactive components */
+        .slider-container {
+            margin: 1.5rem 0;
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            padding: 0.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.25rem;
+        }
+
+        .interactive-circuit {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .circuit-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .flex {
+                flex-direction: column;
+            }
+
+            .canvas-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="text-center">V-I Characteristics of Diodes</h1>
+            <p class="text-center">Interactive Study Guide for Exam Preparation</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation and Progress Tracking -->
+        <div class="card">
+            <h3>Your Learning Progress</h3>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+            </div>
+            <div class="flex justify-between text-sm">
+                <span>0%</span>
+                <span>100%</span>
+            </div>
+
+            <div class="flex justify-between mt-4">
+                <button id="prev-section" class="btn" disabled>Previous Section</button>
+                <span id="progress-text">Section 0 of 6</span>
+                <button id="next-section" class="btn">Next Section</button>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="card">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#introduction" class="toc-link">Introduction to Diodes</a></li>
+                <li><a href="#theory" class="toc-link">Diode Theory and Principles</a></li>
+                <li><a href="#forward-bias" class="toc-link">Forward Bias Characteristics</a></li>
+                <li><a href="#reverse-bias" class="toc-link">Reverse Bias Characteristics</a></li>
+                <li><a href="#experiment" class="toc-link">Experimental Setup and Procedure</a></li>
+                <li><a href="#calculations" class="toc-link">Calculations and Analysis</a></li>
+                <li><a href="#quiz" class="toc-link">Practice Quiz</a></li>
+            </ol>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <section id="introduction" class="section">
+            <div class="card">
+                <h2>Introduction to Diodes</h2>
+                <p>Diodes are semiconductor devices that allow current to flow in one direction while blocking it in the
+                    other direction. This behavior makes diodes fundamental components in electronic circuits, serving
+                    functions like rectification, signal demodulation, and voltage regulation.</p>
+
+                <h3>Types of Diodes</h3>
+                <p>In this study, we focus on two common types of diodes:</p>
+                <ul>
+                    <li><strong>Silicon (Si) Diodes</strong>: Represented by IN 4007 in our experiment</li>
+                    <li><strong>Germanium (Ge) Diodes</strong>: Represented by OA 79 in our experiment</li>
+                </ul>
+
+                <h3>Key Characteristics</h3>
+                <p>The main characteristics that differentiate these diodes include:</p>
+                <ul>
+                    <li><strong>Knee/Threshold Voltage</strong>: The voltage at which the diode starts conducting
+                        significantly (typically 0.7V for Si and 0.3V for Ge)</li>
+                    <li><strong>Forward Resistance</strong>: The resistance when conducting in forward bias</li>
+                    <li><strong>Reverse Saturation Current</strong>: The small current that flows when the diode is
+                        reverse biased</li>
+                    <li><strong>Ideality Factor</strong>: Indicates how closely the diode follows the ideal diode
+                        equation</li>
+                </ul>
+
+                <div class="interactive-circuit">
+                    <img src="/physics-practicals/1a/circuit.png" alt="Diode symbol and basic circuit" />
+                    <p class="text-sm">A basic diode circuit with forward bias configuration</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Diode Theory -->
+        <section id="theory" class="section hidden">
+            <div class="card">
+                <h2>Diode Theory and Principles</h2>
+                <p>The behavior of diodes is governed by the Shockley equation, which relates the current through a
+                    diode to the voltage across it:</p>
+
+                <div class="formula">
+                    I = I<sub>s</sub>(e<sup>qV/nkT</sup> - 1) = I<sub>s</sub>(e<sup>V/nV<sub>T</sub></sup> - 1)
+                </div>
+
+                <p>Where:</p>
+                <ul>
+                    <li>I = Diode current</li>
+                    <li>I<sub>s</sub> = Reverse saturation current</li>
+                    <li>q = Charge of an electron (1.6 × 10<sup>-19</sup> C)</li>
+                    <li>V = Voltage across the diode</li>
+                    <li>n = Ideality factor</li>
+                    <li>k = Boltzmann's constant (1.38 × 10<sup>-23</sup> J/K)</li>
+                    <li>T = Temperature in Kelvin</li>
+                    <li>V<sub>T</sub> = Thermal voltage (kT/q ≈ 26 mV at room temperature)</li>
+                </ul>
+
+                <h3>Ideality Factor (n)</h3>
+                <p>The ideality factor is a measure of how closely a diode follows the ideal diode equation:</p>
+
+                <div class="formula">
+                    n = (q/kT) × Slope = (1/V<sub>T</sub>) × Slope
+                </div>
+
+                <p>where Slope is the slope of the ln(I) vs V graph.</p>
+
+                <h3>Comparing Silicon and Germanium Diodes</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Characteristic</th>
+                                <th>Silicon Diode</th>
+                                <th>Germanium Diode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Forward Threshold Voltage</td>
+                                <td>≈ 0.7 V</td>
+                                <td>≈ 0.3 V</td>
+                            </tr>
+                            <tr>
+                                <td>Reverse Saturation Current</td>
+                                <td>Very low (nA range)</td>
+                                <td>Higher (µA range)</td>
+                            </tr>
+                            <tr>
+                                <td>Temperature Stability</td>
+                                <td>More stable</td>
+                                <td>Less stable</td>
+                            </tr>
+                            <tr>
+                                <td>Typical Applications</td>
+                                <td>General purpose, power applications</td>
+                                <td>Low-voltage applications, signal detection</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="diode-equation-chart"></canvas>
+                </div>
+
+                <div class="slider-container">
+                    <label for="ideality-slider">Adjust Ideality Factor (n): <span
+                            id="ideality-value">1.0</span></label>
+                    <input type="range" id="ideality-slider" class="slider" min="1" max="2" step="0.1" value="1">
+
+                    <label for="is-slider">Adjust Reverse Saturation Current (I<sub>s</sub>): <span
+                            id="is-value">1</span> nA</label>
+                    <input type="range" id="is-slider" class="slider" min="0.1" max="100" step="0.1" value="1">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Forward Bias -->
+        <section id="forward-bias" class="section hidden">
+            <div class="card">
+                <h2>Forward Bias Characteristics</h2>
+                <p>When a diode is forward biased, the positive terminal of the power supply is connected to the anode
+                    and the negative terminal to the cathode. In this configuration, current can flow through the diode
+                    once the applied voltage exceeds the threshold voltage.</p>
+
+                <div class="interactive-circuit">
+                    <img src="/physics-practicals/1a/circuit.png" alt="Forward bias circuit diagram" />
+                    <p class="text-sm">Forward bias configuration for measuring diode characteristics</p>
+                </div>
+
+                <h3>Experimental Procedure</h3>
+                <ol>
+                    <li>Assemble the circuit as shown in the diagram</li>
+                    <li>Connect the circuit to a 0-30V DC power supply</li>
+                    <li>Start with 0V and slowly increase the voltage in steps of 0.1V</li>
+                    <li>Record the diode current for each voltage step</li>
+                    <li>Once the current increases rapidly, use smaller voltage steps (0.05V)</li>
+                    <li>Continue until you have sufficient data points to plot the curve</li>
+                </ol>
+
+                <h3>Forward Characteristics Comparison</h3>
+                <div class="canvas-container">
+                    <canvas id="forward-bias-chart"></canvas>
+                </div>
+
+                <div class="slider-container">
+                    <label for="forward-voltage-slider">Adjust Forward Voltage: <span
+                            id="forward-voltage-value">0.5</span>V</label>
+                    <input type="range" id="forward-voltage-slider" class="slider" min="0" max="1.5" step="0.05"
+                        value="0.5">
+                </div>
+
+                <div class="flex gap-4 mt-4">
+                    <div class="w-full p-4 border rounded">
+                        <h4 class="text-primary">Silicon Diode (IN 4007)</h4>
+                        <p>Voltage: <span id="si-voltage">0.5</span>V</p>
+                        <p>Current: <span id="si-current">0.001</span>mA</p>
+                        <p>Conducting: <span id="si-conducting">No</span></p>
+                    </div>
+                    <div class="w-full p-4 border rounded">
+                        <h4 class="text-primary">Germanium Diode (OA 79)</h4>
+                        <p>Voltage: <span id="ge-voltage">0.5</span>V</p>
+                        <p>Current: <span id="ge-current">0.01</span>mA</p>
+                        <p>Conducting: <span id="ge-conducting">Yes</span></p>
+                    </div>
+                </div>
+
+                <h3>Determining Threshold Voltage</h3>
+                <p>The threshold (knee) voltage is the voltage at which the diode starts conducting significantly. On a
+                    V-I curve, it's where the curve begins to rise steeply.</p>
+
+                <h3>Forward Resistance</h3>
+                <p>The forward resistance of a diode can be calculated using:</p>
+                <div class="formula">
+                    r<sub>f</sub> = ΔV/ΔI
+                </div>
+                <p>This is the slope of the V-I curve in the conducting region, and it's typically a very small value.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Reverse Bias -->
+        <section id="reverse-bias" class="section hidden">
+            <div class="card">
+                <h2>Reverse Bias Characteristics</h2>
+                <p>When a diode is reverse biased, the negative terminal of the power supply is connected to the anode
+                    and the positive terminal to the cathode. In this configuration, only a very small current (the
+                    reverse saturation current) flows through the diode until the breakdown voltage is reached.</p>
+
+                <div class="interactive-circuit">
+                    <img src="/api/placeholder/400/200" alt="Reverse bias circuit diagram" />
+                    <p class="text-sm">Reverse bias configuration for measuring diode characteristics</p>
+                </div>
+
+                <h3>Experimental Procedure</h3>
+                <ol>
+                    <li>Reverse the polarity of the diode</li>
+                    <li>Connect to the power supply</li>
+                    <li>Increase the voltage in steps of 0.5V</li>
+                    <li>Record the (very small) diode current</li>
+                    <li>Choose the appropriate current range on your measuring instrument</li>
+                    <li>Switch off the supply after taking sufficient readings</li>
+                </ol>
+
+                <div class="canvas-container">
+                    <canvas id="reverse-bias-chart"></canvas>
+                </div>
+
+                <div class="slider-container">
+                    <label for="reverse-voltage-slider">Adjust Reverse Voltage: <span
+                            id="reverse-voltage-value">1</span>V</label>
+                    <input type="range" id="reverse-voltage-slider" class="slider" min="0" max="10" step="0.5"
+                        value="1">
+                </div>
+
+                <div class="p-4 border rounded mt-4">
+                    <h4 class="text-primary">Germanium Diode (OA 79) Reverse Characteristics</h4>
+                    <p>Voltage: <span id="ge-reverse-voltage">1</span>V</p>
+                    <p>Current: <span id="ge-reverse-current">0.1</span>µA</p>
+                    <p>Reverse Saturation Current: Typically 0.1-0.5 µA</p>
+                </div>
+
+                <h3>Reverse Saturation Current</h3>
+                <p>The reverse saturation current (I<sub>s</sub>) is the small current that flows when the diode is
+                    reverse biased. It's an important parameter in the diode equation and is temperature dependent:</p>
+                <ul>
+                    <li>For silicon diodes: typically in the nA (nano-ampere) range</li>
+                    <li>For germanium diodes: typically in the µA (micro-ampere) range</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 5: Experimental Setup -->
+        <section id="experiment" class="section hidden">
+            <div class="card">
+                <h2>Experimental Setup and Procedure</h2>
+                <p>To accurately measure and analyze the V-I characteristics of diodes, a proper experimental setup is
+                    essential.</p>
+
+                <h3>Required Apparatus</h3>
+                <ul>
+                    <li>Battery or DC power supply (0-30V)</li>
+                    <li>Rheostat (variable resistor)</li>
+                    <li>Voltmeter</li>
+                    <li>Milliammeter (for forward bias measurements)</li>
+                    <li>Microammeter (for reverse bias measurements)</li>
+                    <li>Resistance box</li>
+                    <li>Keys/switches</li>
+                    <li>Silicon diode (IN 4007)</li>
+                    <li>Germanium diode (OA 79)</li>
+                    <li>Connecting wires</li>
+                </ul>
+
+                <h3>Circuit Diagram</h3>
+                <div class="interactive-circuit">
+                    <img src="/api/placeholder/400/250" alt="Experimental circuit diagram" />
+                    <p class="text-sm">Circuit diagram for diode characteristics measurement</p>
+                </div>
+
+                <h3>Data Collection</h3>
+                <div class="table-container">
+                    <table id="data-collection-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Forward Characteristics using Si Diode</th>
+                                <th colspan="2">Forward Characteristics using Ge Diode</th>
+                                <th colspan="2">Reverse Characteristics using Ge Diode</th>
+                            </tr>
+                            <tr>
+                                <th>Diode Voltage (V)</th>
+                                <th>Diode Current (mA)</th>
+                                <th>Diode Voltage (V)</th>
+                                <th>Diode Current (mA)</th>
+                                <th>Diode Voltage (V)</th>
+                                <th>Diode Current (µA)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="number" placeholder="0.1" step="0.1" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.01" step="0.01" min="0" class="sample-input">
+                                </td>
+                                <td><input type="number" placeholder="0.1" step="0.1" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.05" step="0.01" min="0" class="sample-input">
+                                </td>
+                                <td><input type="number" placeholder="0.5" step="0.5" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.1" step="0.1" min="0" class="sample-input"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="number" placeholder="0.2" step="0.1" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.02" step="0.01" min="0" class="sample-input">
+                                </td>
+                                <td><input type="number" placeholder="0.2" step="0.1" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.15" step="0.01" min="0" class="sample-input">
+                                </td>
+                                <td><input type="number" placeholder="1.0" step="0.5" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.12" step="0.01" min="0" class="sample-input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="number" placeholder="0.3" step="0.1" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.03" step="0.01" min="0" class="sample-input">
+                                </td>
+                                <td><input type="number" placeholder="0.3" step="0.1" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.9" step="0.1" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="1.5" step="0.5" min="0" class="sample-input"></td>
+                                <td><input type="number" placeholder="0.13" step="0.01" min="0" class="sample-input">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="flex justify-between mt-4">
+                    <button id="add-row-btn" class="btn">Add Row</button>
+                    <button id="calculate-btn" class="btn btn-secondary">Calculate Parameters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Calculations -->
+        <section id="calculations" class="section hidden">
+            <div class="card">
+                <h2>Calculations and Analysis</h2>
+                <p>Based on the experimental data collected, various diode parameters can be calculated and analyzed.
+                </p>
+
+                <h3>Knee Voltage Determination</h3>
+                <p>The knee or threshold voltage is determined from the V-I graph as the voltage at which the current
+                    begins to increase significantly.</p>
+
+                <h3>Forward Resistance Calculation</h3>
+                <p>Select two points in the conducting region of the diode and calculate:</p>
+                <div class="formula">
+                    r<sub>f</sub> = ΔV/ΔI
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="w-full p-4 border rounded">
+                        <h4>For Silicon Diode:</h4>
+                        <p>Point 1: V<sub>1</sub> = <input type="number" id="si-v1" placeholder="0.7" step="0.05"
+                                min="0"> V, I<sub>1</sub> = <input type="number" id="si-i1" placeholder="1" step="0.1"
+                                min="0"> mA</p>
+                        <p>Point 2: V<sub>2</sub> = <input type="number" id="si-v2" placeholder="0.8" step="0.05"
+                                min="0"> V, I<sub>2</sub> = <input type="number" id="si-i2" placeholder="10" step="0.1"
+                                min="0"> mA</p>
+                        <p>ΔV = <span id="si-delta-v">0.1</span> V</p>
+                        <p>ΔI = <span id="si-delta-i">9</span> mA</p>
+                        <p>Forward Resistance = <span id="si-resistance">11.11</span> Ω</p>
+                    </div>
+                    <div class="w-full p-4 border rounded">
+                        <h4>For Germanium Diode:</h4>
+                        <p>Point 1: V<sub>1</sub> = <input type="number" id="ge-v1" placeholder="0.3" step="0.05"
+                                min="0"> V, I<sub>1</sub> = <input type="number" id="ge-i1" placeholder="1" step="0.1"
+                                min="0"> mA</p>
+                        <p>Point 2: V<sub>2</sub> = <input type="number" id="ge-v2" placeholder="0.4" step="0.05"
+                                min="0"> V, I<sub>2</sub> = <input type="number" id="ge-i2" placeholder="10" step="0.1"
+                                min="0"> mA</p>
+                        <p>ΔV = <span id="ge-delta-v">0.1</span> V</p>
+                        <p>ΔI = <span id="ge-delta-i">9</span> mA</p>
+                        <p>Forward Resistance = <span id="ge-resistance">11.11</span> Ω</p>
+                    </div>
+                </div>
+
+                <h3>Ideality Factor Calculation</h3>
+                <p>For calculating the ideality factor, we need to plot ln(I) vs V and find the slope:</p>
+                <div class="formula">
+                    n = (1/V<sub>T</sub>) × Slope<sup>-1</sup>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="lnI-v-chart"></canvas>
+                </div>
+
+                <div class="p-4 border rounded mt-4">
+                    <h4>Ideality Factor Calculation:</h4>
+                    <p>From the ln(I) vs V graph:</p>
+                    <p>Slope = <span id="lnI-slope">38.5</span> V<sup>-1</sup></p>
+                    <p>V<sub>T</sub> = 26 mV (at room temperature)</p>
+                    <p>Ideality Factor (n) = <span id="ideality-factor">1.0</span></p>
+                    <button id="calculate-ideality" class="btn">Calculate from Graph</button>
+                </div>
+
+                <h3>Reverse Saturation Current</h3>
+                <p>For Germanium diode in reverse bias, the reverse saturation current can be directly measured as the
+                    nearly constant current flowing when the diode is reverse biased.</p>
+
+                <div class="p-4 border rounded mt-4">
+                    <h4>Reverse Saturation Current Measurement:</h4>
+                    <p>Average reverse current = <span id="reverse-current-avg">0.12</span> µA</p>
+                    <p>This value can be used as I<sub>s</sub> in the diode equation.</p>
+                </div>
+
+                <h3>Summary of Results</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Silicon Diode</th>
+                                <th>Germanium Diode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Knee Voltage</td>
+                                <td><span id="summary-si-knee">0.7</span> V</td>
+                                <td><span id="summary-ge-knee">0.3</span> V</td>
+                            </tr>
+                            <tr>
+                                <td>Forward Resistance</td>
+                                <td><span id="summary-si-resistance">11.11</span> Ω</td>
+                                <td><span id="summary-ge-resistance">11.11</span> Ω</td>
+                            </tr>
+                            <tr>
+                                <td>Ideality Factor</td>
+                                <td><span id="summary-si-ideality">1.0</span></td>
+                                <td><span id="summary-ge-ideality">1.0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Reverse Saturation Current</td>
+                                <td>Very small (nA range)</td>
+                                <td><span id="summary-ge-is">0.12</span> µA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Quiz -->
+        <section id="quiz" class="section hidden">
+            <div class="card">
+                <h2>Practice Quiz</h2>
+                <p>Test your understanding of diode characteristics with this quiz. Try to answer without looking at the
+                    material!</p>
+
+                <div class="quiz-container">
+                    <div id="question-container"></div>
+                    <div class="flex justify-between mt-4">
+                        <span id="quiz-progress">Question 1 of 10</span>
+                        <button id="next-question" class="btn" disabled>Next Question</button>
+                    </div>
+                    <div class="progress-container">
+                        <div id="quiz-progress-bar" class="progress-bar" style="width: 10%"></div>
+                    </div>
+                    <div id="quiz-results" class="hidden">
+                        <h3>Quiz Results</h3>
+                        <p>You scored <span id="quiz-score">0</span> out of 10!</p>
+                        <p id="quiz-feedback"></p>
+                        <button id="restart-quiz" class="btn">Restart Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Main JavaScript for the interactive study guide
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navigation and progress tracking
+            const sections = document.querySelectorAll('.section');
+            const sectionLinks = document.querySelectorAll('.toc-link');
+            const prevButton = document.getElementById('prev-section');
+            const nextButton = document.getElementById('next-section');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            let currentSection = 0;
+            const totalSections = sections.length;
+
+            function updateProgress() {
+                const progress = (currentSection / (totalSections - 1)) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Section ${currentSection + 1} of ${totalSections}`;
+
+                prevButton.disabled = currentSection === 0;
+                nextButton.disabled = currentSection === totalSections - 1;
+            }
+
+            function showSection(index) {
+                sections.forEach((section, i) => {
+                    section.classList.toggle('hidden', i !== index);
+                });
+                currentSection = index;
+                updateProgress();
+            }
+
+            prevButton.addEventListener('click', () => {
+                if (currentSection > 0) {
+                    showSection(currentSection - 1);
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentSection < totalSections - 1) {
+                    showSection(currentSection + 1);
+                }
+            });
+
+            sectionLinks.forEach((link, index) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showSection(index);
+                });
+            });
+
+            // Initialize the first section
+            showSection(0);
+
+            // Diode equation chart
+            const diodeEqCtx = document.getElementById('diode-equation-chart').getContext('2d');
+            const diodeEqChart = new Chart(diodeEqCtx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({ length: 21 }, (_, i) => (i * 0.05).toFixed(2)),
+                    datasets: [
+                        {
+                            label: 'Silicon Diode (n=1.0)',
+                            data: Array.from({ length: 21 }, (_, i) => {
+                                const v = i * 0.05;
+                                return v < 0.7 ? 0.001 : 0.001 * (Math.exp((v - 0.7) / 0.026) - 1);
+                            }),
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Germanium Diode (n=1.0)',
+                            data: Array.from({ length: 21 }, (_, i) => {
+                                const v = i * 0.05;
+                                return v < 0.3 ? 0.001 : 0.001 * (Math.exp((v - 0.3) / 0.026) - 1);
+                            }),
+                            borderColor: 'rgb(255, 99, 132)',
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Voltage (V)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Current (mA)'
+                            },
+                            type: 'logarithmic'
+                        }
+                    }
+                }
+            });
+
+            // Forward bias chart
+            const forwardBiasCtx = document.getElementById('forward-bias-chart').getContext('2d');
+            const forwardBiasChart = new Chart(forwardBiasCtx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({ length: 16 }, (_, i) => (i * 0.1).toFixed(1)),
+                    datasets: [
+                        {
+                            label: 'Silicon Diode (IN 4007)',
+                            data: Array.from({ length: 16 }, (_, i) => {
+                                const v = i * 0.1;
+                                return v < 0.7 ? 0.01 : Math.min(20, 0.01 * Math.exp((v - 0.7) * 38.5));
+                            }),
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Germanium Diode (OA 79)',
+                            data: Array.from({ length: 16 }, (_, i) => {
+                                const v = i * 0.1;
+                                return v < 0.3 ? 0.01 : Math.min(20, 0.01 * Math.exp((v - 0.3) * 38.5));
+                            }),
+                            borderColor: 'rgb(255, 99, 132)',
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Voltage (V)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Current (mA)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Reverse bias chart
+            const reverseBiasCtx = document.getElementById('reverse-bias-chart').getContext('2d');
+            const reverseBiasChart = new Chart(reverseBiasCtx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({ length: 21 }, (_, i) => i * 0.5),
+                    datasets: [
+                        {
+                            label: 'Germanium Diode (OA 79)',
+                            data: Array.from({ length: 21 }, (_, i) => {
+                                const v = i * 0.5;
+                                return 0.1 + v * 0.01; // Slight increase with voltage
+                            }),
+                            borderColor: 'rgb(255, 99, 132)',
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Reverse Voltage (V)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Reverse Current (µA)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // ln(I) vs V chart
+            const lnIVCtx = document.getElementById('lnI-v-chart').getContext('2d');
+            const lnIVChart = new Chart(lnIVCtx, {
+                type: 'scatter',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Silicon Diode',
+                            data: Array.from({ length: 6 }, (_, i) => {
+                                const v = 0.7 + i * 0.05;
+                                const current = 0.01 * Math.exp((v - 0.7) * 38.5);
+                                return { x: v, y: Math.log(current) };
+                            }),
+                            backgroundColor: 'rgb(75, 192, 192)',
+                        },
+                        {
+                            label: 'Germanium Diode',
+                            data: Array.from({ length: 6 }, (_, i) => {
+                                const v = 0.3 + i * 0.05;
+                                const current = 0.01 * Math.exp((v - 0.3) * 38.5);
+                                return { x: v, y: Math.log(current) };
+                            }),
+                            backgroundColor: 'rgb(255, 99, 132)',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Voltage (V)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'ln(I)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Forward voltage slider
+            const forwardVoltageSlider = document.getElementById('forward-voltage-slider');
+            const forwardVoltageValue = document.getElementById('forward-voltage-value');
+            const siVoltage = document.getElementById('si-voltage');
+            const siCurrent = document.getElementById('si-current');
+            const siConducting = document.getElementById('si-conducting');
+            const geVoltage = document.getElementById('ge-voltage');
+            const geCurrent = document.getElementById('ge-current');
+            const geConducting = document.getElementById('ge-conducting');
+
+            forwardVoltageSlider.addEventListener('input', function () {
+                const v = parseFloat(this.value);
+                forwardVoltageValue.textContent = v.toFixed(2);
+                siVoltage.textContent = v.toFixed(2);
+                geVoltage.textContent = v.toFixed(2);
+
+                // Calculate currents
+                let siCurrentValue = v < 0.7 ? 0.001 : 0.001 * Math.exp((v - 0.7) * 38.5);
+                let geCurrentValue = v < 0.3 ? 0.001 : 0.001 * Math.exp((v - 0.3) * 38.5);
+
+                siCurrent.textContent = siCurrentValue.toFixed(3);
+                geCurrent.textContent = geCurrentValue.toFixed(3);
+
+                // Update conducting status
+                siConducting.textContent = v >= 0.7 ? 'Yes' : 'No';
+                siConducting.className = v >= 0.7 ? 'text-success' : 'text-danger';
+                geConducting.textContent = v >= 0.3 ? 'Yes' : 'No';
+                geConducting.className = v >= 0.3 ? 'text-success' : 'text-danger';
+            });
+
+            // Reverse voltage slider
+            const reverseVoltageSlider = document.getElementById('reverse-voltage-slider');
+            const reverseVoltageValue = document.getElementById('reverse-voltage-value');
+            const geReverseVoltage = document.getElementById('ge-reverse-voltage');
+            const geReverseCurrent = document.getElementById('ge-reverse-current');
+
+            reverseVoltageSlider.addEventListener('input', function () {
+                const v = parseFloat(this.value);
+                reverseVoltageValue.textContent = v.toFixed(1);
+                geReverseVoltage.textContent = v.toFixed(1);
+
+                // Calculate reverse current (small increase with voltage)
+                const reverseCurrent = 0.1 + v * 0.01;
+                geReverseCurrent.textContent = reverseCurrent.toFixed(2);
+            });
+
+            // Ideality factor and saturation current sliders
+            const idealitySlider = document.getElementById('ideality-slider');
+            const idealityValue = document.getElementById('ideality-value');
+            const isSlider = document.getElementById('is-slider');
+            const isValue = document.getElementById('is-value');
+
+            idealitySlider.addEventListener('input', function () {
+                const n = parseFloat(this.value);
+                idealityValue.textContent = n.toFixed(1);
+
+                // Update the chart with new ideality factor
+                updateDiodeEquationChart(n, parseFloat(isSlider.value));
+            });
+
+            isSlider.addEventListener('input', function () {
+                const is = parseFloat(this.value);
+                isValue.textContent = is.toFixed(1);
+
+                // Update the chart with new saturation current
+                updateDiodeEquationChart(parseFloat(idealitySlider.value), is);
+            });
+
+            function updateDiodeEquationChart(n, is) {
+                // Update Si diode curve
+                diodeEqChart.data.datasets[0].data = Array.from({ length: 21 }, (_, i) => {
+                    const v = i * 0.05;
+                    return v < 0.7 ? 0.001 : (is / 1000) * (Math.exp((v - 0.7) / (0.026 * n)) - 1);
+                });
+
+                // Update Ge diode curve
+                diodeEqChart.data.datasets[1].data = Array.from({ length: 21 }, (_, i) => {
+                    const v = i * 0.05;
+                    return v < 0.3 ? 0.001 : (is / 1000) * (Math.exp((v - 0.3) / (0.026 * n)) - 1);
+                });
+
+                diodeEqChart.update();
+            }
+
+            // Forward resistance calculations
+            document.getElementById('si-v1').addEventListener('input', updateSiResistance);
+            document.getElementById('si-i1').addEventListener('input', updateSiResistance);
+            document.getElementById('si-v2').addEventListener('input', updateSiResistance);
+            document.getElementById('si-i2').addEventListener('input', updateSiResistance);
+
+            function updateSiResistance() {
+                const v1 = parseFloat(document.getElementById('si-v1').value) || 0;
+                const i1 = parseFloat(document.getElementById('si-i1').value) || 0;
+                const v2 = parseFloat(document.getElementById('si-v2').value) || 0;
+                const i2 = parseFloat(document.getElementById('si-i2').value) || 0;
+
+                const deltaV = Math.abs(v2 - v1);
+                const deltaI = Math.abs(i2 - i1);
+
+                document.getElementById('si-delta-v').textContent = deltaV.toFixed(2);
+                document.getElementById('si-delta-i').textContent = deltaI.toFixed(2);
+
+                const resistance = deltaV / (deltaI / 1000); // Convert mA to A
+                document.getElementById('si-resistance').textContent = isNaN(resistance) ? "N/A" : resistance.toFixed(2);
+                document.getElementById('summary-si-resistance').textContent = isNaN(resistance) ? "N/A" : resistance.toFixed(2);
+            }
+
+            document.getElementById('ge-v1').addEventListener('input', updateGeResistance);
+            document.getElementById('ge-i1').addEventListener('input', updateGeResistance);
+            document.getElementById('ge-v2').addEventListener('input', updateGeResistance);
+            document.getElementById('ge-i2').addEventListener('input', updateGeResistance);
+
+            function updateGeResistance() {
+                const v1 = parseFloat(document.getElementById('ge-v1').value) || 0;
+                const i1 = parseFloat(document.getElementById('ge-i1').value) || 0;
+                const v2 = parseFloat(document.getElementById('ge-v2').value) || 0;
+                const i2 = parseFloat(document.getElementById('ge-i2').value) || 0;
+
+                const deltaV = Math.abs(v2 - v1);
+                const deltaI = Math.abs(i2 - i1);
+
+                document.getElementById('ge-delta-v').textContent = deltaV.toFixed(2);
+                document.getElementById('ge-delta-i').textContent = deltaI.toFixed(2);
+
+                const resistance = deltaV / (deltaI / 1000); // Convert mA to A
+                document.getElementById('ge-resistance').textContent = isNaN(resistance) ? "N/A" : resistance.toFixed(2);
+                document.getElementById('summary-ge-resistance').textContent = isNaN(resistance) ? "N/A" : resistance.toFixed(2);
+            }
+
+            // Ideality factor calculation
+            document.getElementById('calculate-ideality').addEventListener('click', function () {
+                const slope = 38.5; // Theoretical slope
+                const vt = 0.026; // Thermal voltage at room temperature
+                const n = 1 / (slope * vt);
+
+                document.getElementById('ideality-factor').textContent = n.toFixed(2);
+                document.getElementById('summary-si-ideality').textContent = n.toFixed(2);
+                document.getElementById('summary-ge-ideality').textContent = n.toFixed(2);
+            });
+
+            // Add row to data table
+            document.getElementById('add-row-btn').addEventListener('click', function () {
+                const tbody = document.getElementById('data-collection-table').getElementsByTagName('tbody')[0];
+                const newRow = document.createElement('tr');
+
+                for (let i = 0; i < 6; i++) {
+                    const cell = document.createElement('td');
+                    const input = document.createElement('input');
+                    input.type = 'number';
+                    input.className = 'sample-input';
+                    input.placeholder = '0';
+                    input.step = i % 2 === 0 ? '0.1' : '0.01';
+                    input.min = '0';
+                    cell.appendChild(input);
+                    newRow.appendChild(cell);
+                }
+
+                tbody.appendChild(newRow);
+            });
+
+            // Quiz functionality
+            const questions = [
+                {
+                    question: "What is the typical threshold (knee) voltage for a silicon diode?",
+                    options: ["0.2 V", "0.3 V", "0.5 V", "0.7 V"],
+                    correctAnswer: 3
+                },
+                {
+                    question: "What is the typical threshold (knee) voltage for a germanium diode?",
+                    options: ["0.2 V", "0.3 V", "0.5 V", "0.7 V"],
+                    correctAnswer: 1
+                },
+                {
+                    question: "In the diode equation, what does the parameter 'n' represent?",
+                    options: ["Knee voltage", "Current gain", "Ideality factor", "Reverse resistance"],
+                    correctAnswer: 2
+                },
+                {
+                    question: "The thermal voltage (V_T) at room temperature is approximately:",
+                    options: ["10 mV", "26 mV", "52 mV", "100 mV"],
+                    correctAnswer: 1
+                },
+                {
+                    question: "Which diode typically has a higher reverse saturation current?",
+                    options: ["Silicon diode", "Germanium diode", "Both have the same", "Depends on the size"],
+                    correctAnswer: 1
+                },
+                {
+                    question: "Forward resistance of a diode is calculated using:",
+                    options: ["R = V/I", "R = ΔV/ΔI", "R = I/V", "R = ΔI/ΔV"],
+                    correctAnswer: 1
+                },
+                {
+                    question: "To determine the ideality factor, which graph should be plotted?",
+                    options: ["V vs I", "I vs V", "ln(I) vs V", "V vs ln(I)"],
+                    correctAnswer: 2
+                },
+                {
+                    question: "When a diode is forward biased, the anode is connected to:",
+                    options: ["Negative terminal", "Positive terminal", "Either terminal", "Ground"],
+                    correctAnswer: 1
+                },
+                {
+                    question: "The reverse saturation current is measured when the diode is:",
+                    options: ["Forward biased", "Reverse biased", "Unbiased", "At breakdown voltage"],
+                    correctAnswer: 1
+                },
+                {
+                    question: "Which instrument is most appropriate for measuring reverse bias current?",
+                    options: ["Voltmeter", "Ammeter", "Milliammeter", "Microammeter"],
+                    correctAnswer: 3
+                }
+            ];
+
+            let currentQuestion = 0;
+            let score = 0;
+            const questionContainer = document.getElementById('question-container');
+            const nextQuestionBtn = document.getElementById('next-question');
+            const quizProgress = document.getElementById('quiz-progress');
+            const quizProgressBar = document.getElementById('quiz-progress-bar');
+            const quizResults = document.getElementById('quiz-results');
+            const quizScore = document.getElementById('quiz-score');
+            const quizFeedback = document.getElementById('quiz-feedback');
+            const restartQuizBtn = document.getElementById('restart-quiz');
+
+            function displayQuestion(index) {
+                const question = questions[index];
+                let html = `
+            <div class="quiz-question">
+              <h3>Question ${index + 1}:</h3>
+              <p>${question.question}</p>
+            </div>
+            <div class="quiz-options">
+          `;
+
+                question.options.forEach((option, i) => {
+                    html += `
+              <label class="quiz-option">
+                <input type="radio" name="quiz-answer" value="${i}"> ${option}
+              </label>
+            `;
+                });
+
+                html += `</div><div id="answer-feedback"></div>`;
+                questionContainer.innerHTML = html;
+
+                const radioButtons = document.querySelectorAll('input[name="quiz-answer"]');
+                radioButtons.forEach(radio => {
+                    radio.addEventListener('change', function () {
+                        const selectedOption = parseInt(this.value);
+                        const correctOption = question.correctAnswer;
+
+                        const feedbackDiv = document.getElementById('answer-feedback');
+                        if (selectedOption === correctOption) {
+                            feedbackDiv.className = 'quiz-result correct';
+                            feedbackDiv.textContent = 'Correct!';
+                            score++;
+                        } else {
+                            feedbackDiv.className = 'quiz-result incorrect';
+                            feedbackDiv.textContent = `Incorrect. The correct answer is: ${question.options[correctOption]}`;
+                        }
+
+                        nextQuestionBtn.disabled = false;
+                    });
+                });
+
+                quizProgress.textContent = `Question ${index + 1} of ${questions.length}`;
+                quizProgressBar.style.width = `${((index + 1) / questions.length) * 100}%`;
+            }
+
+            nextQuestionBtn.addEventListener('click', function () {
+                currentQuestion++;
+
+                if (currentQuestion < questions.length) {
+                    displayQuestion(currentQuestion);
+                    nextQuestionBtn.disabled = true;
+                } else {
+                    questionContainer.innerHTML = '';
+                    quizResults.classList.remove('hidden');
+                    quizScore.textContent = score;
+
+                    let feedback = '';
+                    if (score >= 8) {
+                        feedback = 'Excellent! You have a solid understanding of diode characteristics.';
+                    } else if (score >= 5) {
+                        feedback = 'Good job! Review the sections where you missed questions to improve your understanding.';
+                    } else {
+                        feedback = 'You might need to review the material again to strengthen your understanding of diodes.';
+                    }
+
+                    quizFeedback.textContent = feedback;
+                }
+            });
+
+            restartQuizBtn.addEventListener('click', function () {
+                currentQuestion = 0;
+                score = 0;
+                quizResults.classList.add('hidden');
+                displayQuestion(currentQuestion);
+                nextQuestionBtn.disabled = true;
+            });
+
+            // Initialize first question when user reaches quiz section
+            document.querySelector('.toc-link[href="#quiz"]').addEventListener('click', function () {
+                currentQuestion = 0;
+                score = 0;
+                quizResults.classList.add('hidden');
+                displayQuestion(currentQuestion);
+                nextQuestionBtn.disabled = true;
+            });
+        });
+    </script>
+</body>
+
+</html>
