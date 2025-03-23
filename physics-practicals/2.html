@@ -1,0 +1,1046 @@
+<!-- 
+Images needed:
+1. circuit-diagram.png - 
+2. waveform-no-filter.png - 
+3. waveform-with-filter.png - 
+4. ripple-explanation.png - 
+5. experimental-setup.png - Photo/diagram of actual experimental setup with CRO
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half Wave Rectifier Interactive Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <h1 class="text-3xl font-bold text-center mb-8 bg-blue-700 text-white py-4 rounded-lg shadow-lg">Half Wave
+            Rectifier: Interactive Study Guide</h1>
+
+        <!-- Table of Contents -->
+        <div class="mb-8 bg-white p-4 rounded-lg shadow">
+            <h2 class="text-xl font-semibold mb-3">Table of Contents</h2>
+            <ul class="space-y-1">
+                <li><a href="#objectives" class="text-blue-600 hover:underline">1. Objectives</a></li>
+                <li><a href="#theory" class="text-blue-600 hover:underline">2. Theoretical Background</a></li>
+                <li><a href="#circuit" class="text-blue-600 hover:underline">3. Circuit and Components</a></li>
+                <li><a href="#operation" class="text-blue-600 hover:underline">4. Operation Principles</a></li>
+                <li><a href="#waveforms" class="text-blue-600 hover:underline">5. Waveform Analysis</a></li>
+                <li><a href="#ripple" class="text-blue-600 hover:underline">6. Ripple Factor Calculation</a></li>
+                <li><a href="#experiment" class="text-blue-600 hover:underline">7. Experimental Setup</a></li>
+                <li><a href="#quiz" class="text-blue-600 hover:underline">8. Self-Assessment Quiz</a></li>
+                <li><a href="#calculator" class="text-blue-600 hover:underline">9. Ripple Factor Calculator</a></li>
+            </ul>
+        </div>
+
+        <!-- Objectives Section -->
+        <section id="objectives" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">1. Objectives</h2>
+            <ul class="list-disc pl-6 space-y-2">
+                <li>Construct a half wave rectifier circuit</li>
+                <li>Observe and compare waveforms with and without filter capacitors</li>
+                <li>Measure output voltages and calculate ripple factor</li>
+                <li>Analyze how different filter capacitor values affect ripple factor</li>
+                <li>Understand the relationship between load resistance and ripple factor</li>
+            </ul>
+        </section>
+
+        <!-- Theoretical Background -->
+        <section id="theory" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">2. Theoretical Background</h2>
+
+            <p class="mb-4">A <strong>half wave rectifier</strong> is a circuit that converts alternating current (AC)
+                to direct current (DC) by eliminating one half of the input waveform. The resulting DC output contains
+                significant ripple without filtering.</p>
+
+            <div class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Key Concepts:</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Rectification:</strong> Process of converting AC to DC</li>
+                    <li><strong>Ripple:</strong> Unwanted AC component in DC output</li>
+                    <li><strong>Ripple Factor (γ):</strong> Ratio of RMS value of AC component to DC value</li>
+                    <li><strong>Filter Capacitor:</strong> Reduces ripple by storing charge during peak voltage</li>
+                </ul>
+            </div>
+
+            <div class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Important Formulas:</h3>
+                <div class="bg-gray-100 p-3 rounded">
+                    <p>Theoretical ripple factor for half wave rectifier without filter: γ = 1.21</p>
+                    <p>With capacitor filter, ripple factor is approximately:</p>
+                    <p>γ ≈ 1/(2√3fCRL) where f is frequency, C is capacitance, RL is load resistance</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Circuit and Components -->
+        <section id="circuit" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">3. Circuit and Components</h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-medium mb-2">Circuit Diagram:</h3>
+                <div class="flex justify-center mb-4">
+                    <img src="2b/circuit-diagram.png" alt="Half Wave Rectifier Circuit"
+                        class="border border-gray-300 rounded max-w-full h-auto" />
+                </div>
+                <p class="text-sm text-center italic">Half Wave Rectifier with Filter Capacitor</p>
+            </div>
+
+            <div class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Components Required:</h3>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li><strong>Transformer:</strong> Step-down transformer (230V to 6V)</li>
+                    <li><strong>Diode:</strong> 1N4007 silicon diode</li>
+                    <li><strong>Filter Capacitors:</strong> 4.7μF, 10μF, 47μF, 100μF</li>
+                    <li><strong>Load Resistors:</strong> Decade Resistance Box (100Ω to 2000Ω)</li>
+                    <li><strong>Measuring Instruments:</strong> CRO, AC & DC Voltmeters, Digital Multimeter</li>
+                </ul>
+            </div>
+
+            <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-sm"><strong>Safety Note:</strong> Always ensure proper grounding when working with AC
+                    circuits. Never touch components when the circuit is powered.</p>
+            </div>
+        </section>
+
+        <!-- Operation Principles -->
+        <section id="operation" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">4. Operation Principles</h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-medium mb-2">Basic Operation:</h3>
+                <ol class="list-decimal pl-6 space-y-3">
+                    <li>
+                        <strong>Positive Half Cycle:</strong>
+                        <p>When the input AC voltage is positive, the diode is forward biased and conducts current. The
+                            voltage appears across the load resistance.</p>
+                    </li>
+                    <li>
+                        <strong>Negative Half Cycle:</strong>
+                        <p>When the input AC voltage is negative, the diode is reverse biased and blocks current. No
+                            voltage appears across the load resistance.</p>
+                    </li>
+                    <li>
+                        <strong>Without Filter:</strong>
+                        <p>Output is a pulsating DC with large ripple, at the same frequency as the input AC.</p>
+                    </li>
+                    <li>
+                        <strong>With Filter Capacitor:</strong>
+                        <p>During positive half-cycle, capacitor charges to peak voltage. During negative half-cycle,
+                            capacitor discharges slowly through load resistance, reducing ripple.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Filter Action Explained:</h3>
+                <p class="mb-3">The filter capacitor acts as a temporary energy storage device:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>During peak voltage, the capacitor charges rapidly</li>
+                    <li>When voltage drops, capacitor discharges slowly through load resistor</li>
+                    <li>Larger capacitor = slower discharge = less ripple</li>
+                    <li>Higher load resistance = slower discharge = less ripple</li>
+                </ul>
+            </div>
+
+            <div class="mt-4 p-3 bg-blue-50 rounded">
+                <p><strong>Key Insight:</strong> The time constant τ = R×C determines how quickly the capacitor
+                    discharges, directly affecting ripple.</p>
+            </div>
+        </section>
+
+        <!-- Waveform Analysis -->
+        <section id="waveforms" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">5. Waveform Analysis</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <h3 class="text-lg font-medium mb-2">Without Filter:</h3>
+                    <img src="2b/waveform-no-filter.png" alt="Waveform without filter"
+                        class="border border-gray-300 rounded max-w-full h-auto" />
+                    <p class="text-sm italic mt-1">Input (top) and Output (bottom) without filter</p>
+                    <ul class="list-disc pl-6 mt-3 text-sm">
+                        <li>Output follows input during positive half cycle</li>
+                        <li>Output is zero during negative half cycle</li>
+                        <li>High ripple content (theoretical γ = 1.21)</li>
+                        <li>Average output voltage ≈ 0.318 × peak voltage</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium mb-2">With Filter:</h3>
+                    <img src="2b/waveform-with-filter.png" alt="Waveform with filter"
+                        class="border border-gray-300 rounded max-w-full h-auto" />
+                    <p class="text-sm italic mt-1">Input (top) and Output (bottom) with filter</p>
+                    <ul class="list-disc pl-6 mt-3 text-sm">
+                        <li>Capacitor charges to peak during positive half cycle</li>
+                        <li>Slow discharge during negative half cycle</li>
+                        <li>Reduced ripple (γ depends on C and RL values)</li>
+                        <li>Average output voltage approaches peak voltage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-4 bg-gray-100 rounded">
+                <h3 class="text-lg font-medium mb-2">CRO Measurements:</h3>
+                <p>When observing waveforms on CRO, record:</p>
+                <ul class="list-disc pl-6 space-y-1 text-sm">
+                    <li>Volts/division setting</li>
+                    <li>Time/division setting</li>
+                    <li>Peak voltage value</li>
+                    <li>Frequency of waveform (should be 50Hz for mains AC)</li>
+                    <li>For filtered output, measure both peak (Vdc) and ripple voltage (Vr)</li>
+                </ul>
+            </div>
+
+            <div class="mt-6">
+                <button id="toggleAnimation" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Show
+                    Interactive Waveform</button>
+                <div id="animationContainer" class="mt-4 hidden">
+                    <canvas id="waveformCanvas" width="600" height="300"
+                        class="border border-gray-300 rounded bg-white"></canvas>
+                    <div class="flex justify-center mt-2">
+                        <div class="mr-4">
+                            <label for="capacitanceSlider" class="block text-sm font-medium">Filter Capacitance:</label>
+                            <input type="range" id="capacitanceSlider" min="0" max="100" value="0" class="w-full">
+                            <span id="capacitanceValue" class="text-sm">0 μF</span>
+                        </div>
+                        <div>
+                            <label for="loadSlider" class="block text-sm font-medium">Load Resistance:</label>
+                            <input type="range" id="loadSlider" min="100" max="2000" value="500" step="100"
+                                class="w-full">
+                            <span id="loadValue" class="text-sm">500 Ω</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ripple Factor Calculation -->
+        <section id="ripple" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">6. Ripple Factor Calculation</h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-medium mb-2">Definition:</h3>
+                <p>The ripple factor (γ) is defined as the ratio of the RMS value of the AC component to the DC value in
+                    the output:</p>
+                <div class="bg-gray-100 p-3 my-2 rounded text-center">
+                    <p>γ = V<sub>r</sub> / V<sub>dc</sub></p>
+                </div>
+                <p>Where V<sub>r</sub> is the RMS value of the ripple voltage and V<sub>dc</sub> is the DC component.
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-medium mb-2">How to Measure:</h3>
+                <img src="2b/ripple-explanation.png" alt="Ripple Measurement"
+                    class="border border-gray-300 rounded max-w-full h-auto mb-3" />
+                <ol class="list-decimal pl-6 space-y-2 text-sm">
+                    <li>Measure the peak-to-peak ripple voltage (V<sub>pp</sub>) using CRO</li>
+                    <li>Calculate RMS ripple voltage: V<sub>r</sub> = V<sub>pp</sub> / 2√2</li>
+                    <li>Measure DC output voltage (V<sub>dc</sub>) using DC voltmeter</li>
+                    <li>Calculate ripple factor: γ = V<sub>r</sub> / V<sub>dc</sub></li>
+                </ol>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-medium mb-2">Expected Results:</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Without filter:</strong> γ ≈ 1.21 (theoretical value)</li>
+                    <li><strong>With filter:</strong> γ decreases as capacitance increases</li>
+                    <li><strong>Load effect:</strong> γ increases as load resistance decreases (more current drawn)</li>
+                </ul>
+            </div>
+
+            <div class="p-4 bg-blue-50 rounded">
+                <h3 class="text-lg font-medium mb-2">Data Collection Tables:</h3>
+                <p class="mb-2">Use these tables to record your experimental results:</p>
+
+                <div class="overflow-x-auto mb-4">
+                    <table class="min-w-full border border-gray-300">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border border-gray-300 px-4 py-2">R<sub>L</sub> (Ω)</th>
+                                <th class="border border-gray-300 px-4 py-2">V<sub>dc</sub> (V)</th>
+                                <th class="border border-gray-300 px-4 py-2">V<sub>r</sub> (V)</th>
+                                <th class="border border-gray-300 px-4 py-2">Ripple Factor (γ)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">100</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">500</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">1000</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">1500</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">2000</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="mb-2">With fixed load (R<sub>L</sub> = 100Ω) and varying capacitance:</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-300">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border border-gray-300 px-4 py-2">Capacitance (μF)</th>
+                                <th class="border border-gray-300 px-4 py-2">V<sub>dc</sub> (V)</th>
+                                <th class="border border-gray-300 px-4 py-2">V<sub>r</sub> (V)</th>
+                                <th class="border border-gray-300 px-4 py-2">Ripple Factor (γ)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">4.7</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">10</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">47</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">100</td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                                <td class="border border-gray-300 px-4 py-2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experimental Setup -->
+        <section id="experiment" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">7. Experimental Setup</h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-medium mb-2">Setup Diagram:</h3>
+                <img src="2b/experimental-setup.png" alt="Experimental Setup"
+                    class="border border-gray-300 rounded max-w-full h-auto mb-2" />
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-medium mb-2">Procedure:</h3>
+                <ol class="list-decimal pl-6 space-y-3">
+                    <li>Connect the circuit as shown in the diagram above</li>
+                    <li>Initially, set up the circuit without filter capacitor</li>
+                    <li>Power on the circuit and observe input and output waveforms on CRO</li>
+                    <li>Measure and record input voltage, output voltage, and frequency</li>
+                    <li>Vary load resistance (100Ω to 2000Ω) and observe changes in output</li>
+                    <li>Add filter capacitor (4.7μF) and repeat measurements</li>
+                    <li>Increase capacitor values (10μF, 47μF, 100μF) and observe effects</li>
+                    <li>Calculate ripple factor for each configuration</li>
+                    <li>Plot graph of ripple factor vs. capacitance and ripple factor vs. load resistance</li>
+                </ol>
+            </div>
+
+            <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400">
+                <h3 class="text-lg font-medium mb-2">Common Errors & Troubleshooting:</h3>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>Ensure diode is connected in correct polarity (cathode toward load)</li>
+                    <li>Verify electrolytic capacitors are connected with correct polarity</li>
+                    <li>Check transformer connections and voltage rating</li>
+                    <li>If no output, verify connections and check for open circuits</li>
+                    <li>Ensure proper grounding of CRO and circuit</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Self Assessment Quiz -->
+        <section id="quiz" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">8. Self-Assessment Quiz</h2>
+
+            <div id="quiz-container">
+                <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                    <p class="font-medium mb-2">1. What is the theoretical ripple factor for a half wave rectifier
+                        without filter?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>0.707</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>1.21</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>0.5</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>0.318</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                    <p class="font-medium mb-2">2. The ripple factor in a capacitor filtered half wave rectifier will
+                        decrease when:</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>Load resistance decreases</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>Capacitance decreases</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>Capacitance increases</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>Frequency decreases</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                    <p class="font-medium mb-2">3. What is the purpose of the filter capacitor in a rectifier circuit?
+                    </p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>To increase the output voltage</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>To protect the diode from voltage spikes</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>To reduce the ripple by storing energy</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>To increase the current through the load</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                    <p class="font-medium mb-2">4. In a half wave rectifier, the diode conducts during:</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>Both positive and negative half cycles</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>Positive half cycle only</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>Negative half cycle only</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>Neither positive nor negative half cycles</span>
+                        </label>
+                    </div>
+                </div>
+                <section id="quiz" class="mb-8 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">8. Self-Assessment Quiz</h2>
+
+                    <div id="quiz-container">
+                        <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                            <p class="font-medium mb-2">5. The average output voltage of a half wave rectifier without
+                                filter is approximately:</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="q5" value="a" class="mr-2">
+                                    <span>0.636 × peak voltage</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q5" value="b" class="mr-2">
+                                    <span>0.5 × peak voltage</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q5" value="c" class="mr-2">
+                                    <span>0.318 × peak voltage</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q5" value="d" class="mr-2">
+                                    <span>0.707 × peak voltage</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                            <p class="font-medium mb-2">6. In a half wave rectifier with capacitor filter, if the load
+                                resistance is doubled, the ripple factor will:</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="q6" value="a" class="mr-2">
+                                    <span>Approximately double</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q6" value="b" class="mr-2">
+                                    <span>Approximately halve</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q6" value="c" class="mr-2">
+                                    <span>Remain unchanged</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q6" value="d" class="mr-2">
+                                    <span>Become zero</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                            <p class="font-medium mb-2">7. Which of the following statements is TRUE about a half wave
+                                rectifier?</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="q7" value="a" class="mr-2">
+                                    <span>It produces higher output voltage than a full wave rectifier</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q7" value="b" class="mr-2">
+                                    <span>It requires fewer components than a full wave rectifier</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q7" value="c" class="mr-2">
+                                    <span>It has lower ripple than a full wave rectifier</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q7" value="d" class="mr-2">
+                                    <span>It has higher efficiency than a full wave rectifier</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                            <p class="font-medium mb-2">8. If the peak AC input voltage to a half wave rectifier is 10V,
+                                what would be the approximate DC output voltage without filter?</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="q8" value="a" class="mr-2">
+                                    <span>10V</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q8" value="b" class="mr-2">
+                                    <span>7.07V</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q8" value="c" class="mr-2">
+                                    <span>5V</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q8" value="d" class="mr-2">
+                                    <span>3.18V</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                            <p class="font-medium mb-2">9. Which of the following increases the ripple in a half wave
+                                rectifier with filter?</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="q9" value="a" class="mr-2">
+                                    <span>Increasing capacitance</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q9" value="b" class="mr-2">
+                                    <span>Decreasing load current</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q9" value="c" class="mr-2">
+                                    <span>Increasing load resistance</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q9" value="d" class="mr-2">
+                                    <span>Decreasing load resistance</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question mb-6 p-4 bg-gray-50 rounded">
+                            <p class="font-medium mb-2">10. The formula for calculating ripple factor in a half wave
+                                rectifier with capacitor filter is approximately:</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="q10" value="a" class="mr-2">
+                                    <span>γ ≈ 1/(2√3fCRL)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q10" value="b" class="mr-2">
+                                    <span>γ ≈ 1/(fCRL)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q10" value="c" class="mr-2">
+                                    <span>γ ≈ 2√3fCRL</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="q10" value="d" class="mr-2">
+                                    <span>γ ≈ 1.21</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button id="checkQuiz" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Check
+                            Answers</button>
+
+                        <div id="quizResults" class="mt-4 p-4 rounded hidden"></div>
+                    </div>
+                </section>
+
+                <!-- Ripple Factor Calculator -->
+                <section id="calculator" class="mb-8 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">9. Ripple Factor Calculator
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-medium mb-4">Without Filter</h3>
+                            <div class="mb-4">
+                                <label for="peakVoltage" class="block text-sm font-medium mb-1">Peak Input Voltage
+                                    (V):</label>
+                                <input type="number" id="peakVoltage" class="w-full p-2 border border-gray-300 rounded"
+                                    value="10">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="loadResistance1" class="block text-sm font-medium mb-1">Load Resistance
+                                    (Ω):</label>
+                                <input type="number" id="loadResistance1"
+                                    class="w-full p-2 border border-gray-300 rounded" value="1000">
+                            </div>
+
+                            <button id="calculateNoFilter"
+                                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Calculate</button>
+
+                            <div id="resultNoFilter" class="mt-4 p-3 bg-gray-100 rounded">
+                                <p>Average DC: <span id="avgDC">--</span> V</p>
+                                <p>RMS Ripple: <span id="rmsRipple">--</span> V</p>
+                                <p>Ripple Factor: <span id="rippleFactor1">--</span></p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-medium mb-4">With Filter</h3>
+                            <div class="mb-4">
+                                <label for="peakVoltage2" class="block text-sm font-medium mb-1">Peak Input Voltage
+                                    (V):</label>
+                                <input type="number" id="peakVoltage2" class="w-full p-2 border border-gray-300 rounded"
+                                    value="10">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="loadResistance2" class="block text-sm font-medium mb-1">Load Resistance
+                                    (Ω):</label>
+                                <input type="number" id="loadResistance2"
+                                    class="w-full p-2 border border-gray-300 rounded" value="1000">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="capacitance" class="block text-sm font-medium mb-1">Filter Capacitance
+                                    (μF):</label>
+                                <input type="number" id="capacitance" class="w-full p-2 border border-gray-300 rounded"
+                                    value="10">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="frequency" class="block text-sm font-medium mb-1">Frequency (Hz):</label>
+                                <input type="number" id="frequency" class="w-full p-2 border border-gray-300 rounded"
+                                    value="50">
+                            </div>
+
+                            <button id="calculateWithFilter"
+                                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Calculate</button>
+
+                            <div id="resultWithFilter" class="mt-4 p-3 bg-gray-100 rounded">
+                                <p>DC Output (approx): <span id="dcOutput">--</span> V</p>
+                                <p>Ripple Voltage (approx): <span id="rippleVoltage">--</span> V</p>
+                                <p>Ripple Factor: <span id="rippleFactor2">--</span></p>
+                                <p>Time Constant (τ): <span id="timeConstant">--</span> ms</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h3 class="text-lg font-medium mb-4">Ripple Factor vs. Capacitance Graph</h3>
+                        <canvas id="rippleGraph" width="600" height="300"
+                            class="border border-gray-300 rounded bg-white"></canvas>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion" class="mb-8 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">Key Takeaways</h2>
+
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>A half wave rectifier converts AC to DC by allowing current flow during only the positive
+                            half of the AC cycle</li>
+                        <li>Without filtering, a half wave rectifier produces a pulsating DC with high ripple (γ = 1.21)
+                        </li>
+                        <li>Adding a filter capacitor significantly reduces ripple by maintaining voltage during the
+                            non-conducting cycle</li>
+                        <li>The ripple factor is inversely proportional to filter capacitance value and load resistance
+                        </li>
+                        <li>Larger capacitors and higher load resistances result in smaller ripple</li>
+                        <li>The time constant (RC) of the circuit determines the discharge rate and affects the ripple
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 p-4 bg-blue-50 rounded">
+                        <h3 class="text-lg font-medium mb-2">Further Studies:</h3>
+                        <p>To expand your knowledge, consider exploring:</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Full wave rectifiers (center-tapped and bridge configurations)</li>
+                            <li>Advanced filtering techniques (LC filters, π-filters)</li>
+                            <li>Voltage regulation circuits to maintain stable DC output</li>
+                            <li>Effect of diode characteristics on rectifier performance</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- JavaScript for functionality -->
+            <script>
+                // Toggle animation visibility
+                document.getElementById('toggleAnimation').addEventListener('click', function () {
+                    const container = document.getElementById('animationContainer');
+                    if (container.classList.contains('hidden')) {
+                        container.classList.remove('hidden');
+                        this.textContent = 'Hide Interactive Waveform';
+                        initWaveformAnimation();
+                    } else {
+                        container.classList.add('hidden');
+                        this.textContent = 'Show Interactive Waveform';
+                    }
+                });
+
+                // Waveform animation
+                function initWaveformAnimation() {
+                    const canvas = document.getElementById('waveformCanvas');
+                    const ctx = canvas.getContext('2d');
+                    const capacitanceSlider = document.getElementById('capacitanceSlider');
+                    const capacitanceValue = document.getElementById('capacitanceValue');
+                    const loadSlider = document.getElementById('loadSlider');
+                    const loadValue = document.getElementById('loadValue');
+
+                    let capacitance = parseInt(capacitanceSlider.value);
+                    let loadResistance = parseInt(loadSlider.value);
+                    let animationId;
+
+                    capacitanceSlider.addEventListener('input', function () {
+                        capacitance = parseInt(this.value);
+                        capacitanceValue.textContent = capacitance + ' μF';
+                    });
+
+                    loadSlider.addEventListener('input', function () {
+                        loadResistance = parseInt(this.value);
+                        loadValue.textContent = loadResistance + ' Ω';
+                    });
+
+                    function drawWaveforms() {
+                        // Clear canvas
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                        const time = Date.now() / 1000;
+                        const frequency = 1; // Hz for visualization
+
+                        // Draw grid
+                        ctx.strokeStyle = '#ddd';
+                        ctx.lineWidth = 0.5;
+                        for (let i = 0; i <= canvas.width; i += 50) {
+                            ctx.beginPath();
+                            ctx.moveTo(i, 0);
+                            ctx.lineTo(i, canvas.height);
+                            ctx.stroke();
+                        }
+                        for (let i = 0; i <= canvas.height; i += 50) {
+                            ctx.beginPath();
+                            ctx.moveTo(0, i);
+                            ctx.lineTo(canvas.width, i);
+                            ctx.stroke();
+                        }
+
+                        // Draw axis labels
+                        ctx.fillStyle = '#000';
+                        ctx.font = '12px Arial';
+                        ctx.fillText('Time', canvas.width - 30, canvas.height - 5);
+                        ctx.fillText('Voltage', 5, 15);
+
+                        // Draw input wave (sine wave)
+                        ctx.strokeStyle = 'red';
+                        ctx.lineWidth = 2;
+                        ctx.beginPath();
+
+                        const centerY = canvas.height / 4;
+                        const amplitude = canvas.height / 5;
+
+                        for (let x = 0; x < canvas.width; x++) {
+                            const t = x / canvas.width * 4 * Math.PI + time * 2 * Math.PI * frequency;
+                            const y = centerY - Math.sin(t) * amplitude;
+                            if (x === 0) {
+                                ctx.moveTo(x, y);
+                            } else {
+                                ctx.lineTo(x, y);
+                            }
+                        }
+                        ctx.stroke();
+
+                        // Draw output wave (half wave rectified with optional filter)
+                        ctx.strokeStyle = 'blue';
+                        ctx.beginPath();
+
+                        const outputCenterY = canvas.height * 3 / 4;
+                        let lastY = outputCenterY;
+
+                        // Calculate time constant for capacitor discharge (for animation)
+                        // This is a simplified visualization model
+                        const dischargeRate = 1 - Math.min(0.98, (capacitance / 100) * (loadResistance / 1000));
+
+                        for (let x = 0; x < canvas.width; x++) {
+                            const t = x / canvas.width * 4 * Math.PI + time * 2 * Math.PI * frequency;
+                            const inputVal = Math.sin(t);
+                            let y;
+
+                            if (inputVal > 0) {
+                                // During positive half-cycle, output follows input
+                                y = outputCenterY - inputVal * amplitude;
+                                lastY = y; // Remember the last peak
+                            } else {
+                                // During negative half-cycle
+                                if (capacitance > 0) {
+                                    // With capacitor, discharge exponentially
+                                    const discharge = Math.pow(dischargeRate, (Math.PI - t % Math.PI) / (Math.PI / 10));
+                                    const prevPeak = outputCenterY - amplitude;
+                                    y = outputCenterY - (outputCenterY - lastY) * discharge;
+
+                                    // Ensure we don't go below the center line (negative voltage)
+                                    y = Math.min(y, outputCenterY);
+                                } else {
+                                    // Without capacitor, output is zero
+                                    y = outputCenterY;
+                                }
+                            }
+
+                            if (x === 0) {
+                                ctx.moveTo(x, y);
+                            } else {
+                                ctx.lineTo(x, y);
+                            }
+                        }
+                        ctx.stroke();
+
+                        // Add labels
+                        ctx.fillStyle = '#000';
+                        ctx.fillText('Input AC', 10, centerY - amplitude - 10);
+                        ctx.fillText('Output DC', 10, outputCenterY - amplitude - 10);
+
+                        // Continue animation
+                        animationId = requestAnimationFrame(drawWaveforms);
+                    }
+
+                    // Start animation
+                    drawWaveforms();
+
+                    // Cleanup function to stop animation when hidden
+                    return function cleanup() {
+                        cancelAnimationFrame(animationId);
+                    };
+                }
+
+                // Quiz checking logic
+                document.getElementById('checkQuiz').addEventListener('click', function () {
+                    const answers = {
+                        q1: 'b', // 1.21
+                        q2: 'c', // Capacitance increases
+                        q3: 'c', // Reduce ripple by storing energy
+                        q4: 'b', // Positive half cycle only
+                        q5: 'c', // 0.318 × peak voltage
+                        q6: 'b', // Approximately halve
+                        q7: 'b', // Requires fewer components
+                        q8: 'd', // 3.18V
+                        q9: 'd', // Decreasing load resistance
+                        q10: 'a' // γ ≈ 1/(2√3fCRL)
+                    };
+
+                    let score = 0;
+                    let feedback = '';
+
+                    for (const question in answers) {
+                        const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+
+                        if (selectedAnswer) {
+                            if (selectedAnswer.value === answers[question]) {
+                                score++;
+                                feedback += `<p class="text-green-600">${question.toUpperCase()}: Correct!</p>`;
+                            } else {
+                                feedback += `<p class="text-red-600">${question.toUpperCase()}: Incorrect</p>`;
+                            }
+                        } else {
+                            feedback += `<p class="text-orange-600">${question.toUpperCase()}: Not answered</p>`;
+                        }
+                    }
+
+                    const percentage = (score / 10) * 100;
+                    const resultClass = percentage >= 70 ? 'bg-green-100' : 'bg-red-100';
+
+                    const resultsDiv = document.getElementById('quizResults');
+                    resultsDiv.className = `mt-4 p-4 rounded ${resultClass}`;
+                    resultsDiv.innerHTML = `
+                <h3 class="font-bold mb-2">Your Score: ${score}/10 (${percentage}%)</h3>
+                <div>${feedback}</div>
+            `;
+
+                    resultsDiv.classList.remove('hidden');
+                });
+
+                // Calculator logic
+                document.getElementById('calculateNoFilter').addEventListener('click', function () {
+                    const peakVoltage = parseFloat(document.getElementById('peakVoltage').value);
+
+                    if (isNaN(peakVoltage)) {
+                        alert('Please enter valid numbers.');
+                        return;
+                    }
+
+                    // For half wave rectifier without filter:
+                    // Average DC voltage = Vm/π = 0.318 × Vm
+                    // RMS ripple voltage ≈ 0.385 × Vm 
+                    // Ripple factor = 1.21 (theoretical)
+
+                    const avgDC = (peakVoltage / Math.PI).toFixed(2);
+                    const rmsRipple = (0.385 * peakVoltage).toFixed(2);
+                    const rippleFactor = 1.21.toFixed(2);
+
+                    document.getElementById('avgDC').textContent = avgDC;
+                    document.getElementById('rmsRipple').textContent = rmsRipple;
+                    document.getElementById('rippleFactor1').textContent = rippleFactor;
+                });
+
+                document.getElementById('calculateWithFilter').addEventListener('click', function () {
+                    const peakVoltage = parseFloat(document.getElementById('peakVoltage2').value);
+                    const loadResistance = parseFloat(document.getElementById('loadResistance2').value);
+                    const capacitance = parseFloat(document.getElementById('capacitance').value) / 1000000; // Convert μF to F
+                    const frequency = parseFloat(document.getElementById('frequency').value);
+
+                    if (isNaN(peakVoltage) || isNaN(loadResistance) || isNaN(capacitance) || isNaN(frequency)) {
+                        alert('Please enter valid numbers.');
+                        return;
+                    }
+
+                    // Approximate DC output with capacitor (less voltage drop)
+                    const dcOutput = (peakVoltage - 0.7).toFixed(2); // Accounting for diode drop
+
+                    // Ripple calculation for half wave with capacitor filter
+                    // Ripple Vpp ≈ Vm / (f × C × RL)
+                    // Ripple factor = Vr(rms) / Vdc ≈ 1/(2√3 × f × C × RL)
+
+                    const rippleVpp = (peakVoltage / (frequency * capacitance * loadResistance)).toFixed(3);
+                    const rippleVrms = (rippleVpp / (2 * Math.sqrt(2))).toFixed(3);
+                    const rippleFactor = (1 / (2 * Math.sqrt(3) * frequency * capacitance * loadResistance)).toFixed(3);
+
+                    // Calculate time constant (RC)
+                    const timeConstant = (loadResistance * capacitance * 1000).toFixed(2); // in ms
+
+                    document.getElementById('dcOutput').textContent = dcOutput;
+                    document.getElementById('rippleVoltage').textContent = rippleVrms;
+                    document.getElementById('rippleFactor2').textContent = rippleFactor;
+                    document.getElementById('timeConstant').textContent = timeConstant;
+                });
+
+                // Ripple vs Capacitance Graph
+                function initRippleGraph() {
+                    const ctx = document.getElementById('rippleGraph').getContext('2d');
+
+                    // Generate data for graph
+                    const capacitances = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+                    const loadResistance = 1000;
+                    const frequency = 50;
+
+                    const rippleFactors = capacitances.map(c =>
+                        1 / (2 * Math.sqrt(3) * frequency * (c / 1000000) * loadResistance)
+                    );
+
+                    const chart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: capacitances.map(c => c + ' μF'),
+                            datasets: [{
+                                label: 'Ripple Factor',
+                                data: rippleFactors,
+                                borderColor: 'blue',
+                                backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                                tension: 0.3
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Capacitance (μF)'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Ripple Factor'
+                                    },
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Initialize graph when page loads
+                window.addEventListener('load', function () {
+                    initRippleGraph();
+                });
+            </script>
+</body>
+
+</html>
