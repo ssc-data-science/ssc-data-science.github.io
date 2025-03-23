@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photodiode Characteristics - Interactive Study Guide</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3b82f6;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            margin: 25px 0 15px 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #2563eb;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .definition-box {
+            background-color: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .experiment-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .formula-box {
+            background-color: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .interactive-section {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .interactive-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e2e8f0;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .data-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #cbd5e1;
+            background-color: #f8fafc;
+        }
+
+        button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+        }
+
+        .circuit-diagram {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            background-color: #f1f5f9;
+            margin-right: 5px;
+        }
+
+        .tab.active {
+            background-color: white;
+            border-color: #e2e8f0;
+            border-bottom-color: white;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            background-color: white;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .quiz-container {
+            margin: 20px 0;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .quiz-options {
+            margin-top: 10px;
+        }
+
+        .quiz-option {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f1f5f9;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .quiz-option:hover {
+            background-color: #e2e8f0;
+        }
+
+        .quiz-option.correct {
+            background-color: #d1fae5;
+            border-left: 4px solid #10b981;
+        }
+
+        .quiz-option.incorrect {
+            background-color: #fee2e2;
+            border-left: 4px solid #ef4444;
+        }
+
+        .chart-container {
+            position: relative;
+            margin: 20px auto;
+            height: 400px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #e2e8f0;
+            height: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #3b82f6;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+
+        #completionBadge {
+            display: none;
+            background-color: #10b981;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Photodiode Characteristics</h1>
+        <p>An Interactive Study Guide</p>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress" id="progressBar"></div>
+    </div>
+
+    <section>
+        <h2>Introduction to Photodiodes</h2>
+        <p>A photodiode is a semiconductor device that converts light into an electrical current. It operates in reverse
+            bias and is designed to be sensitive to light.</p>
+
+        <div class="definition-box">
+            <h3>Key Concepts</h3>
+            <p><strong>Photodiode:</strong> A semiconductor device that generates current when exposed to light</p>
+            <p><strong>Photocurrent (I<sub>PD</sub>):</strong> The current generated by a photodiode when illuminated
+            </p>
+            <p><strong>Reverse Bias:</strong> Operating a diode with negative voltage at the anode relative to the
+                cathode</p>
+            <p><strong>Power Responsivity:</strong> The ratio of change in photocurrent to change in incident light
+                power</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Experimental Setup</h2>
+        <p>The experiment aims to study the I-V characteristics of a photodiode and determine its power responsivity.
+        </p>
+
+        <h3>Objectives</h3>
+        <ol>
+            <li>To study I-V characteristics of photodiode</li>
+            <li>To determine the power responsivity by the variation of photocurrent as a function of reverse voltage
+                and intensity</li>
+        </ol>
+
+        <h3>Circuit Diagram</h3>
+        <svg class="circuit-diagram" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Battery -->
+            <line x1="50" y1="50" x2="50" y2="150" stroke="black" stroke-width="2" />
+            <line x1="40" y1="70" x2="60" y2="70" stroke="black" stroke-width="2" />
+            <line x1="35" y1="90" x2="65" y2="90" stroke="black" stroke-width="2" />
+
+            <!-- Ground -->
+            <line x1="50" y1="150" x2="100" y2="150" stroke="black" stroke-width="2" />
+            <line x1="85" y1="150" x2="85" y2="170" stroke="black" stroke-width="2" />
+            <line x1="75" y1="170" x2="95" y2="170" stroke="black" stroke-width="2" />
+            <line x1="80" y1="175" x2="90" y2="175" stroke="black" stroke-width="2" />
+            <line x1="83" y1="180" x2="87" y2="180" stroke="black" stroke-width="2" />
+
+            <!-- Resistor 1 (Variable) -->
+            <line x1="100" y1="100" x2="100" y2="150" stroke="black" stroke-width="2" />
+            <path d="M100,100 L90,95 L110,85 L90,75 L110,65 L90,55 L110,45 L100,40" stroke="black" stroke-width="2"
+                fill="none" />
+
+            <!-- Resistor 2 (Fixed) -->
+            <line x1="100" y1="40" x2="100" y2="50" stroke="black" stroke-width="2" />
+            <line x1="50" y1="40" x2="100" y2="40" stroke="black" stroke-width="2" />
+            <path d="M100,55 L90,60 L110,70 L90,80 L110,90 L90,100 L110,100" stroke="black" stroke-width="2"
+                fill="none" />
+
+            <!-- Horizontal lines -->
+            <line x1="100" y1="100" x2="150" y2="100" stroke="black" stroke-width="2" />
+            <line x1="190" y1="100" x2="250" y2="100" stroke="black" stroke-width="2" />
+            <line x1="290" y1="100" x2="350" y2="100" stroke="black" stroke-width="2" />
+            <line x1="350" y1="40" x2="350" y2="100" stroke="black" stroke-width="2" />
+            <line x1="50" y1="40" x2="350" y2="40" stroke="black" stroke-width="2" />
+
+            <!-- Voltmeter -->
+            <circle cx="220" cy="100" r="20" stroke="black" stroke-width="2" fill="white" />
+            <text x="220" y="105" font-family="Arial" font-size="14" text-anchor="middle">V</text>
+
+            <!-- Ammeter -->
+            <circle cx="320" cy="100" r="20" stroke="black" stroke-width="2" fill="white" />
+            <text x="320" y="105" font-family="Arial" font-size="14" text-anchor="middle">μA</text>
+
+            <!-- Photodiode -->
+            <line x1="350" y1="100" x2="350" y2="150" stroke="black" stroke-width="2" />
+            <polygon points="335,120 365,120 350,150" stroke="black" stroke-width="2" fill="white" />
+            <line x1="335" y1="120" x2="365" y2="120" stroke="black" stroke-width="2" />
+            <line x1="335" y1="110" x2="350" y2="125" stroke="black" stroke-width="1" />
+            <line x1="350" y1="110" x2="365" y2="125" stroke="black" stroke-width="1" />
+            <line x1="328" y1="107" x2="340" y2="119" stroke="black" stroke-width="1" />
+            <line x1="343" y1="107" x2="355" y2="119" stroke="black" stroke-width="1" />
+            <line x1="350" y1="150" x2="100" y2="150" stroke="black" stroke-width="2" />
+        </svg>
+
+        <div class="experiment-box">
+            <h3>Experimental Procedure</h3>
+            <ol>
+                <li>Make connections as shown in the circuit diagram</li>
+                <li>Vary voltage in volts as 0.1, 0.2, 0.3... and note the corresponding ammeter readings (in μA)</li>
+                <li>Plot the I-V characteristics</li>
+                <li>Keep Voltmeter reading constant at 1 V. Vary Power of LED light (in mW) as 10, 11, 12... and note
+                    the corresponding ammeter readings (in μA)</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2>Understanding I-V Characteristics</h2>
+        <p>The I-V characteristics of a photodiode show how the photocurrent (I<sub>PD</sub>) varies with the applied
+            reverse voltage (V<sub>PD</sub>).</p>
+
+        <div class="formula-box">
+            <h3>Key Relationships</h3>
+            <p>For a photodiode in reverse bias:</p>
+            <p>I<sub>PD</sub> = I<sub>dark</sub> + I<sub>photo</sub></p>
+            <p>Where:</p>
+            <p>I<sub>dark</sub> = Dark current (current without illumination)</p>
+            <p>I<sub>photo</sub> = Photocurrent (current due to light)</p>
+        </div>
+
+        <div class="interactive-section">
+            <h3>Interactive I-V Characteristics</h3>
+            <p>Observe how the I-V curve changes with different light intensities.</p>
+
+            <div class="interactive-controls">
+                <div>
+                    <label for="ledPower">LED Power (mW):</label>
+                    <select id="ledPower" class="data-input">
+                        <option value="10">10 mW</option>
+                        <option value="21">21 mW</option>
+                        <option value="30">30 mW</option>
+                    </select>
+                </div>
+                <button id="plotIV">Plot I-V Curve</button>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="ivChart"></canvas>
+            </div>
+
+            <p>Notes:</p>
+            <ul>
+                <li>The photocurrent (I<sub>PD</sub>) increases as the reverse voltage (negative V<sub>PD</sub>)
+                    increases until it saturates</li>
+                <li>Higher light intensities (LED power) result in higher photocurrent values</li>
+                <li>The slope of the I-V curve is steeper at low reverse voltages</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Power Responsivity</h2>
+        <p>Power responsivity is a key parameter that measures how efficiently a photodiode converts light into
+            electrical current.</p>
+
+        <div class="formula-box">
+            <h3>Power Responsivity Calculation</h3>
+            <p>Power Responsivity = ΔI<sub>PD</sub> / ΔP<sub>LED</sub></p>
+            <p>Where:</p>
+            <p>ΔI<sub>PD</sub> = Change in photocurrent (in μA or A)</p>
+            <p>ΔP<sub>LED</sub> = Change in incident light power (in mW or W)</p>
+            <p>Units: A/W (Amperes per Watt)</p>
+        </div>
+
+        <div class="interactive-section">
+            <h3>Interactive Power Responsivity Calculation</h3>
+            <p>Observe how photocurrent changes with light intensity at a fixed reverse voltage.</p>
+
+            <div class="interactive-controls">
+                <div>
+                    <label for="reverseVoltage">Reverse Voltage (V):</label>
+                    <select id="reverseVoltage" class="data-input">
+                        <option value="2">-2 V</option>
+                        <option value="1">-1 V</option>
+                        <option value="0.5">-0.5 V</option>
+                    </select>
+                </div>
+                <button id="plotResponsivity">Plot Power Responsivity</button>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="responsivityChart"></canvas>
+            </div>
+
+            <div id="responsivityCalculation" style="margin-top: 20px;">
+                <h4>Calculate Power Responsivity</h4>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <div style="flex: 1;">
+                        <label for="power1">LED Power 1 (mW):</label>
+                        <input type="number" id="power1" class="data-input" value="10">
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="current1">Current 1 (μA):</label>
+                        <input type="number" id="current1" class="data-input" value="150">
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <div style="flex: 1;">
+                        <label for="power2">LED Power 2 (mW):</label>
+                        <input type="number" id="power2" class="data-input" value="30">
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="current2">Current 2 (μA):</label>
+                        <input type="number" id="current2" class="data-input" value="450">
+                    </div>
+                </div>
+                <button id="calculateResponsivity">Calculate Responsivity</button>
+                <div id="responsivityResult" class="definition-box" style="margin-top: 15px;">
+                    <p>Enter values and click calculate to determine power responsivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Data Collection and Analysis</h2>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="iv-data">I-V Characteristics Data</div>
+            <div class="tab" data-tab="responsivity-data">Power Responsivity Data</div>
+        </div>
+
+        <div class="tab-content active" id="iv-data">
+            <h3>I-V Characteristics Data Collection</h3>
+            <p>Record your experimental data in the table below:</p>
+
+            <table id="ivDataTable">
+                <thead>
+                    <tr>
+                        <th>V<sub>PD</sub> (in Volts)</th>
+                        <th>I<sub>PD</sub> at P<sub>LED</sub> = 10 mW (in μA)</th>
+                        <th>I<sub>PD</sub> at P<sub>LED</sub> = 21 mW (in μA)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>-0.1</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>-0.2</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>-0.3</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>-0.5</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>-1.0</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>-2.0</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="plotDataButton">Plot Your Data</button>
+            <div class="chart-container">
+                <canvas id="userIvChart"></canvas>
+            </div>
+        </div>
+
+        <div class="tab-content" id="responsivity-data">
+            <h3>Power Responsivity Data Collection</h3>
+            <p>Record data for fixed reverse voltage of -2V:</p>
+
+            <table id="responsivityDataTable">
+                <thead>
+                    <tr>
+                        <th>P<sub>LED</sub> in mW</th>
+                        <th>I<sub>PD</sub> (in μA)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td><input type="number" class="data-input" placeholder="Enter value"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="plotResponsivityDataButton">Plot Your Data</button>
+            <div class="chart-container">
+                <canvas id="userResponsivityChart"></canvas>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <h4>Calculate Overall Power Responsivity</h4>
+                <button id="calculateOverallResponsivity">Calculate from Your Data</button>
+                <div id="overallResponsivityResult" class="definition-box" style="margin-top: 15px;">
+                    <p>Fill in the table and click calculate to determine overall power responsivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Self-Assessment</h2>
+        <div id="quiz-container" class="quiz-container">
+            <div class="quiz-question">
+                <p><strong>Question 1:</strong> What is the unit of Power Responsivity?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">W/A (Watts per Ampere)</div>
+                    <div class="quiz-option" data-correct="true">A/W (Amperes per Watt)</div>
+                    <div class="quiz-option" data-correct="false">V/W (Volts per Watt)</div>
+                    <div class="quiz-option" data-correct="false">W/V (Watts per Volt)</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>Power Responsivity is measured in A/W (Amperes per Watt). It represents the amount of
+                        photocurrent generated per unit of incident optical power.</p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 2:</strong> Which of the following statements is TRUE about the I-V characteristics
+                    of a photodiode?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Photocurrent decreases as reverse voltage increases
+                    </div>
+                    <div class="quiz-option" data-correct="false">Photocurrent is independent of incident light
+                        intensity</div>
+                    <div class="quiz-option" data-correct="true">Higher light intensities result in higher photocurrent
+                        values</div>
+                    <div class="quiz-option" data-correct="false">Photodiodes operate best in forward bias</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>Higher light intensities result in higher photocurrent values. This is because more photons
+                        create more electron-hole pairs, leading to increased current flow.</p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 3:</strong> In the formula for Power Responsivity
+                    (ΔI<sub>PD</sub>/ΔP<sub>LED</sub>), what does ΔP<sub>LED</sub> represent?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Change in photodiode voltage</div>
+                    <div class="quiz-option" data-correct="true">Change in incident light power</div>
+                    <div class="quiz-option" data-correct="false">Change in temperature</div>
+                    <div class="quiz-option" data-correct="false">Change in photodiode resistance</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>ΔP<sub>LED</sub> represents the change in incident light power. In the experiment, this is
+                        measured by varying the LED power in milliwatts (mW).</p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 4:</strong> What is the expected shape of the I-V curve for a photodiode under
+                    constant illumination?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Linear with positive slope</div>
+                    <div class="quiz-option" data-correct="false">Exponential growth</div>
+                    <div class="quiz-option" data-correct="true">Initially steep, then gradually saturating</div>
+                    <div class="quiz-option" data-correct="false">Sinusoidal</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>The I-V curve for a photodiode under constant illumination is initially steep and then gradually
+                        saturates as the reverse voltage increases. This occurs because at higher reverse voltages, all
+                        photogenerated carriers are collected efficiently, and further voltage increases have
+                        diminishing effects on the photocurrent.</p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 5:</strong> Why are photodiodes typically operated under reverse bias conditions?
+                </p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">To minimize power consumption</div>
+                    <div class="quiz-option" data-correct="false">To increase the forward current</div>
+                    <div class="quiz-option" data-correct="true">To increase the width of the depletion region and
+                        improve photon collection</div>
+                    <div class="quiz-option" data-correct="false">To reduce the operating temperature</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>Photodiodes are typically operated under reverse bias conditions to increase the width of the
+                        depletion region. A wider depletion region improves the collection of photogenerated
+                        electron-hole pairs, leading to higher sensitivity and faster response times.</p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 6:</strong> How does the photocurrent in a photodiode vary with the intensity of
+                    incident light?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">It increases linearly with light intensity</div>
+                    <div class="quiz-option" data-correct="false">It increases exponentially with light intensity</div>
+                    <div class="quiz-option" data-correct="false">It decreases with increasing light intensity</div>
+                    <div class="quiz-option" data-correct="false">It is independent of light intensity</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>The photocurrent in a photodiode increases linearly with the intensity of incident light. This is
+                        because each photon with sufficient energy can generate one electron-hole pair, and the number
+                        of photons is proportional to light intensity.</p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 7:</strong> What happens to the power responsivity of a photodiode if the wavelength
+                    of the incident light is changed?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">It remains constant regardless of wavelength</div>
+                    <div class="quiz-option" data-correct="true">It varies with wavelength due to the semiconductor
+                        material's bandgap</div>
+                    <div class="quiz-option" data-correct="false">It always increases with increasing wavelength</div>
+                    <div class="quiz-option" data-correct="false">It always decreases with increasing wavelength</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>The power responsivity of a photodiode varies with the wavelength of incident light. This is due
+                        to the semiconductor material's bandgap energy. Each material has an optimal wavelength range
+                        where its responsivity is highest, typically corresponding to photon energies slightly above the
+                        bandgap energy.</p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 8:</strong> In the experimental setup, what is the purpose of keeping the voltmeter
+                    reading constant at 1V while varying the LED power?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">To measure the dark current</div>
+                    <div class="quiz-option" data-correct="false">To prevent damage to the photodiode</div>
+                    <div class="quiz-option" data-correct="true">To isolate the effect of light intensity on
+                        photocurrent</div>
+                    <div class="quiz-option" data-correct="false">To measure the forward bias characteristics</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>Keeping the voltmeter reading constant at 1V while varying the LED power isolates the effect of
+                        light intensity on the photocurrent. This allows us to determine how the photocurrent changes
+                        with light intensity alone, without the confounding effect of varying reverse voltage.</p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 9:</strong> Which of the following applications would NOT typically use a
+                    photodiode?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Light meters in cameras</div>
+                    <div class="quiz-option" data-correct="false">Optical communication receivers</div>
+                    <div class="quiz-option" data-correct="false">Medical pulse oximeters</div>
+                    <div class="quiz-option" data-correct="true">Light emission in displays</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>Light emission in displays would NOT typically use a photodiode. Photodiodes convert light to
+                        electrical signals, while displays require components that convert electrical signals to light
+                        (such as LEDs, OLEDs, or LCDs). Photodiodes are used for light detection, not light emission.
+                    </p>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p><strong>Question 10:</strong> What is the total current in a photodiode equal to?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Dark current + Photocurrent</div>
+                    <div class="quiz-option" data-correct="false">Dark current - Photocurrent</div>
+                    <div class="quiz-option" data-correct="false">Dark current × Photocurrent</div>
+                    <div class="quiz-option" data-correct="false">Dark current ÷ Photocurrent</div>
+                </div>
+                <div class="explanation"
+                    style="display: none; margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+                    <p>The total current in a photodiode is equal to the sum of the dark current and the photocurrent.
+                        The dark current is the leakage current that flows through the photodiode even when no light is
+                        present, while the photocurrent is generated in response to incident light.</p>
+                </div>
+            </div>
+
+            <button id="checkAnswers">Check Answers</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Summary and Key Concepts</h2>
+        <div class="definition-box">
+            <h3>Key Points to Remember</h3>
+            <ul>
+                <li>A photodiode converts light energy into electrical current when operated in reverse bias</li>
+                <li>I-V characteristics show how photocurrent varies with applied voltage</li>
+                <li>Higher light intensities result in higher photocurrent values</li>
+                <li>Power responsivity is defined as the ratio ΔI<sub>PD</sub>/ΔP<sub>LED</sub> and is measured in A/W
+                </li>
+                <li>Photocurrent increases linearly with light intensity, which makes photodiodes suitable for light
+                    measurement applications</li>
+                <li>The depletion region width increases with reverse bias, improving the photodiode's efficiency</li>
+            </ul>
+        </div>
+
+        <div class="experiment-box">
+            <h3>Experimental Findings</h3>
+            <p>From the experiment, we observe that:</p>
+            <ul>
+                <li>The I-V curve shows an initial steep rise followed by saturation</li>
+                <li>At a fixed reverse voltage, the photocurrent increases linearly with light intensity</li>
+                <li>Power responsivity is a constant value for a given photodiode (assuming constant wavelength)</li>
+                <li>The photodiode operates most efficiently in the saturation region</li>
+            </ul>
+        </div>
+    </section>
+
+    <div id="completionBadge">
+        <h3>Congratulations! You've completed the Photodiode Characteristics study material.</h3>
+        <p>You should now have a solid understanding of photodiode operation, I-V characteristics, and power
+            responsivity.</p>
+    </div>
+
+    <script>
+        // Track progress
+        let progress = {
+            sections: 0,
+            quiz: 0,
+            interactive: 0,
+            total: 6 // Total number of sections to complete
+        };
+
+        function updateProgress() {
+            const percentage = Math.min(((progress.sections + progress.quiz + progress.interactive) / progress.total) * 100, 100);
+            document.getElementById('progressBar').style.width = percentage + '%';
+
+            if (percentage >= 100) {
+                document.getElementById('completionBadge').style.display = 'block';
+            }
+        }
+
+        // Tab functionality
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                // Add active class to current tab and content
+                tab.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+
+                // Update progress
+                if (!progress.sections) {
+                    progress.sections = 1;
+                    updateProgress();
+                }
+            });
+        });
+
+        // I-V Characteristics Chart
+        let ivChart;
+        document.getElementById('plotIV').addEventListener('click', () => {
+            const ledPower = parseInt(document.getElementById('ledPower').value);
+            const ctx = document.getElementById('ivChart').getContext('2d');
+
+            // Generate data
+            const voltages = [];
+            const currents = [];
+            let maxCurrent;
+
+            switch (ledPower) {
+                case 10:
+                    maxCurrent = 180;
+                    break;
+                case 21:
+                    maxCurrent = 380;
+                    break;
+                case 30:
+                    maxCurrent = 550;
+                    break;
+                default:
+                    maxCurrent = 180;
+            }
+
+            for (let v = 0; v >= -3; v -= 0.1) {
+                voltages.push(v);
+                // Simulate exponential saturation curve
+                const current = maxCurrent * (1 - Math.exp(v / 0.5));
+                currents.push(current);
+            }
+
+            // Destroy previous chart if exists
+            if (ivChart) {
+                ivChart.destroy();
+            }
+
+            // Create new chart
+            ivChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: voltages,
+                    datasets: [{
+                        label: `Photocurrent at ${ledPower} mW LED Power`,
+                        data: currents,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2,
+                        pointRadius: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Voltage (V)'
+                            },
+                            reverse: true
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Current (μA)'
+                            },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Update progress
+            if (!progress.interactive) {
+                progress.interactive = 1;
+                updateProgress();
+            }
+        });
+
+        // Power Responsivity Chart
+        let responsivityChart;
+        document.getElementById('plotResponsivity').addEventListener('click', () => {
+            const reverseVoltage = parseFloat(document.getElementById('reverseVoltage').value);
+            const ctx = document.getElementById('responsivityChart').getContext('2d');
+
+            // Generate data
+            const powers = [10, 12, 15, 18, 21, 24, 27, 30];
+            const currents = [];
+
+            // Linear relationship with some noise
+            const slope = 15 * reverseVoltage; // Different slope based on voltage
+            powers.forEach(power => {
+                currents.push(power * slope + Math.random() * 5);
+            });
+
+            // Destroy previous chart if exists
+            if (responsivityChart) {
+                responsivityChart.destroy();
+            }
+
+            // Create new chart
+            responsivityChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: `Photocurrent vs LED Power at -${reverseVoltage}V`,
+                        data: powers.map((power, index) => ({
+                            x: power,
+                            y: currents[index]
+                        })),
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'LED Power (mW)'
+                            },
+                            beginAtZero: true
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Current (μA)'
+                            },
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return `Power: ${context.parsed.x} mW, Current: ${context.parsed.y.toFixed(2)} μA`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Update progress
+            if (progress.interactive < 2) {
+                progress.interactive = 2;
+                updateProgress();
+            }
+        });
+
+        // Power Responsivity Calculation
+        document.getElementById('calculateResponsivity').addEventListener('click', () => {
+            const power1 = parseFloat(document.getElementById('power1').value);
+            const current1 = parseFloat(document.getElementById('current1').value);
+            const power2 = parseFloat(document.getElementById('power2').value);
+            const current2 = parseFloat(document.getElementById('current2').value);
+
+            if (isNaN(power1) || isNaN(current1) || isNaN(power2) || isNaN(current2)) {
+                document.getElementById('responsivityResult').innerHTML = '<p>Please enter valid numbers for all fields</p>';
+                return;
+            }
+
+            // Calculate responsivity
+            const deltaPower = power2 - power1; // in mW
+            const deltaCurrent = current2 - current1; // in μA
+
+            // Convert to standard units (A/W)
+            const responsivity = (deltaCurrent / 1000000) / (deltaPower / 1000);
+
+            document.getElementById('responsivityResult').innerHTML = `
+                <h4>Power Responsivity Calculation</h4>
+                <p>ΔI<sub>PD</sub> = ${deltaCurrent} μA = ${(deltaCurrent / 1000000).toExponential(4)} A</p>
+                <p>ΔP<sub>LED</sub> = ${deltaPower} mW = ${deltaPower / 1000} W</p>
+                <p>Power Responsivity = ΔI<sub>PD</sub> / ΔP<sub>LED</sub> = ${responsivity.toExponential(4)} A/W</p>
+            `;
+
+            // Update progress
+            if (progress.interactive < 3) {
+                progress.interactive = 3;
+                updateProgress();
+            }
+        });
+
+        // User Data Charts
+        let userIvChart, userResponsivityChart;
+
+        document.getElementById('plotDataButton').addEventListener('click', () => {
+            const ctx = document.getElementById('userIvChart').getContext('2d');
+
+            // Get data from table
+            const voltages = [];
+            const currents10mW = [];
+            const currents21mW = [];
+
+            const rows = document.querySelectorAll('#ivDataTable tbody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const voltage = parseFloat(cells[0].textContent);
+                const current10mW = parseFloat(cells[1].querySelector('input').value);
+                const current21mW = parseFloat(cells[2].querySelector('input').value);
+
+                if (!isNaN(voltage) && !isNaN(current10mW)) {
+                    voltages.push(voltage);
+                    currents10mW.push(current10mW);
+                }
+
+                if (!isNaN(voltage) && !isNaN(current21mW)) {
+                    if (currents21mW.length < voltages.length - 1) {
+                        // Add a placeholder for missing data
+                        currents21mW.push(null);
+                    }
+                    currents21mW.push(current21mW);
+                }
+            });
+
+            // Destroy previous chart if exists
+            if (userIvChart) {
+                userIvChart.destroy();
+            }
+
+            // Create new chart
+            userIvChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: voltages,
+                    datasets: [
+                        {
+                            label: 'Photocurrent at 10 mW',
+                            data: currents10mW,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 2,
+                            pointRadius: 4
+                        },
+                        {
+                            label: 'Photocurrent at 21 mW',
+                            data: currents21mW,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2,
+                            pointRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Voltage (V)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Current (μA)'
+                            },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+
+        document.getElementById('plotResponsivityDataButton').addEventListener('click', () => {
+            const ctx = document.getElementById('userResponsivityChart').getContext('2d');
+
+            // Get data from table
+            const powers = [];
+            const currents = [];
+
+            const rows = document.querySelectorAll('#responsivityDataTable tbody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const power = parseFloat(cells[0].textContent);
+                const current = parseFloat(cells[1].querySelector('input').value);
+
+                if (!isNaN(power) && !isNaN(current)) {
+                    powers.push(power);
+                    currents.push(current);
+                }
+            });
+
+            // Destroy previous chart if exists
+            if (userResponsivityChart) {
+                userResponsivityChart.destroy();
+            }
+
+            // Create new chart
+            userResponsivityChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Photocurrent vs LED Power at -2V',
+                        data: powers.map((power, index) => ({
+                            x: power,
+                            y: currents[index]
+                        })),
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'LED Power (mW)'
+                            },
+                            beginAtZero: true
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Current (μA)'
+                            },
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return `Power: ${context.parsed.x} mW, Current: ${context.parsed.y.toFixed(2)} μA`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Linear regression to find best-fit line
+            if (powers.length > 1 && currents.length > 1) {
+                // Using math.js for linear regression
+                const xValues = powers;
+                const yValues = currents;
+
+                try {
+                    // Perform linear regression
+                    const result = math.linearRegression(xValues, yValues);
+                    const slope = result.slope;
+                    const intercept = result.intercept;
+
+                    // Add best-fit line to chart
+                    const minX = Math.min(...xValues);
+                    const maxX = Math.max(...xValues);
+                    const lineData = [
+                        { x: minX, y: slope * minX + intercept },
+                        { x: maxX, y: slope * maxX + intercept }
+                    ];
+
+                    userResponsivityChart.data.datasets.push({
+                        label: 'Best-fit Line',
+                        data: lineData,
+                        type: 'line',
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        fill: false
+                    });
+
+                    userResponsivityChart.update();
+
+                    // Calculate and display R-squared
+                    document.getElementById('overallResponsivityResult').innerHTML = `
+                        <h4>Linear Regression Results</h4>
+                        <p>Slope: ${slope.toFixed(4)} μA/mW</p>
+                        <p>Power Responsivity: ${(slope / 1000000 * 1000).toExponential(4)} A/W</p>
+                        <p>Y-intercept: ${intercept.toFixed(2)} μA</p>
+                    `;
+                } catch (e) {
+                    console.error("Error performing linear regression:", e);
+                }
+            }
+        });
+
+        document.getElementById('calculateOverallResponsivity').addEventListener('click', () => {
+            // Get data from table
+            const powers = [];
+            const currents = [];
+
+            const rows = document.querySelectorAll('#responsivityDataTable tbody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const power = parseFloat(cells[0].textContent);
+                const current = parseFloat(cells[1].querySelector('input').value);
+
+                if (!isNaN(power) && !isNaN(current)) {
+                    powers.push(power);
+                    currents.push(current);
+                }
+            });
+
+            if (powers.length < 2) {
+                document.getElementById('overallResponsivityResult').innerHTML = '<p>Please enter at least two data points</p>';
+                return;
+            }
+
+            // Calculate average responsivity
+            let totalResponsivity = 0;
+            let count = 0;
+
+            for (let i = 1; i < powers.length; i++) {
+                const deltaPower = powers[i] - powers[i - 1]; // in mW
+                const deltaCurrent = currents[i] - currents[i - 1]; // in μA
+
+                if (deltaPower !== 0) {
+                    // Convert to standard units (A/W)
+                    const responsivity = (deltaCurrent / 1000000) / (deltaPower / 1000);
+                    totalResponsivity += responsivity;
+                    count++;
+                }
+            }
+
+            const averageResponsivity = count > 0 ? totalResponsivity / count : 0;
+
+            document.getElementById('overallResponsivityResult').innerHTML = `
+                <h4>Overall Power Responsivity</h4>
+                <p>Average Responsivity: ${averageResponsivity.toExponential(4)} A/W</p>
+                <p>This represents the average slope of the current vs. power curve.</p>
+            `;
+
+            // Update progress
+            if (!progress.sections) {
+                progress.sections = 2;
+                updateProgress();
+            }
+        });
+
+        // Quiz Functionality
+        document.getElementById('checkAnswers').addEventListener('click', () => {
+            const questions = document.querySelectorAll('.quiz-question');
+            let correctCount = 0;
+
+            questions.forEach(question => {
+                const options = question.querySelectorAll('.quiz-option');
+                let answered = false;
+
+                options.forEach(option => {
+                    const isCorrect = option.getAttribute('data-correct') === 'true';
+                    const isSelected = option.classList.contains('selected');
+
+                    // Reset classes
+                    option.classList.remove('correct', 'incorrect');
+
+                    if (isSelected) {
+                        answered = true;
+                        if (isCorrect) {
+                            option.classList.add('correct');
+                            correctCount++;
+                        } else {
+                            option.classList.add('incorrect');
+                        }
+                    } else if (isCorrect) {
+                        option.classList.add('correct');
+                    }
+                });
+
+                // Show explanation
+                const explanation = question.querySelector('.explanation');
+                if (explanation) {
+                    explanation.style.display = 'block';
+                }
+            });
+
+            // Update progress based on score
+            const quizPercentage = (correctCount / questions.length);
+            progress.quiz = Math.max(Math.floor(quizPercentage * 3), progress.quiz);
+            updateProgress();
+
+            // Show score
+            alert(`You scored ${correctCount} out of ${questions.length}!`);
+        });
+
+        // Initialize quiz option selection
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', () => {
+                // Deselect other options in the same question
+                const questionOptions = option.parentElement.querySelectorAll('.quiz-option');
+                questionOptions.forEach(opt => opt.classList.remove('selected'));
+
+                // Select clicked option
+                option.classList.add('selected');
+            });
+        });
+
+        // Initialize I-V chart with default values on page load
+        window.addEventListener('load', () => {
+            document.getElementById('plotIV').click();
+        });
+    </script>
+</body>
+
+</html>
