@@ -1,0 +1,605 @@
+<!--
+Images needed:
+1. bridge_circuit.png - The bridge rectifier circuit diagram with transformer, four diodes, filter capacitor and load resistor
+2. no_filter_waveform.png - Waveform showing output of bridge rectifier without filter
+3. with_filter_waveform.png - Waveform showing output of bridge rectifier with filter capacitor
+4. experimental_setup.png - Photo or diagram of the complete experimental setup
+5. ripple_comparison.png - Graph showing comparison of ripple factor with different capacitor values
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Rectifier Study Guide</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-blue-800 mb-2">Bridge Rectifier: Interactive Study Guide</h1>
+            <p class="text-gray-600">Complete preparation for Experiment No. 3</p>
+            <div class="mt-4 bg-yellow-100 border-l-4 border-yellow-500 p-4 text-yellow-700">
+                <p class="font-bold">Exam Tip:</p>
+                <p>Pay special attention to the relationship between capacitance and ripple factor!</p>
+            </div>
+        </header>
+
+        <nav class="mb-8 bg-white p-4 rounded-lg shadow">
+            <ul class="flex flex-wrap justify-center space-x-4">
+                <li><a href="#theory" class="text-blue-600 hover:text-blue-800 font-medium">Theory</a></li>
+                <li><a href="#circuit" class="text-blue-600 hover:text-blue-800 font-medium">Circuit Diagram</a></li>
+                <li><a href="#experiment" class="text-blue-600 hover:text-blue-800 font-medium">Experiment</a></li>
+                <li><a href="#calculator" class="text-blue-600 hover:text-blue-800 font-medium">Ripple Calculator</a>
+                </li>
+                <li><a href="#quiz" class="text-blue-600 hover:text-blue-800 font-medium">Self Quiz</a></li>
+            </ul>
+        </nav>
+
+        <section id="objectives" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Objectives</h2>
+            <ul class="list-disc pl-6 space-y-2">
+                <li>To construct a half wave rectifier</li>
+                <li>To observe the waveforms without filter and with filter capacitors using CRO</li>
+                <li>To measure the voltages and calculate the ripple factor</li>
+                <li>To observe the variation of the ripple factor when filters of different values are used, with a
+                    fixed low value of the load resistance</li>
+            </ul>
+        </section>
+
+        <section id="theory" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Theory</h2>
+            <div class="space-y-4">
+                <p>A <strong>bridge rectifier</strong> is a circuit that converts alternating current (AC) to direct
+                    current (DC) using four diodes arranged in a bridge configuration. Unlike a half-wave rectifier that
+                    only utilizes half of the input waveform, a bridge rectifier utilizes both halves of the input
+                    waveform.</p>
+
+                <h3 class="text-xl font-semibold text-blue-700 mt-4">Working Principle</h3>
+                <p>The bridge rectifier works on the principle of conducting in pairs:</p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>During the positive half-cycle of AC input, diodes D1 and D3 conduct while D2 and D4 remain off
+                    </li>
+                    <li>During the negative half-cycle, diodes D2 and D4 conduct while D1 and D3 remain off</li>
+                    <li>This arrangement ensures that current flows through the load in the same direction for both
+                        halves of the AC cycle</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-blue-700 mt-4">Ripple Factor</h3>
+                <p>The <strong>ripple factor</strong> (γ) is a measure of the effectiveness of a rectifier with filter.
+                    It is defined as:</p>
+                <div class="bg-gray-100 p-3 rounded text-center">
+                    <p>γ = V<sub>r</sub> / V<sub>dc</sub></p>
+                </div>
+                <p class="mt-2">Where:</p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>V<sub>r</sub> = RMS value of ripple voltage</li>
+                    <li>V<sub>dc</sub> = Average/DC value of output voltage</li>
+                </ul>
+
+                <p class="mt-4">For a bridge rectifier without filter, the theoretical ripple factor is 0.48.</p>
+
+                <h3 class="text-xl font-semibold text-blue-700 mt-4">Effect of Capacitor Filter</h3>
+                <p>Adding a capacitor filter to the output of a bridge rectifier:</p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>Charges during the peaks of the rectified waveform</li>
+                    <li>Discharges slowly through the load when the rectified voltage drops</li>
+                    <li>Reduces the ripple factor significantly</li>
+                    <li>Increases the average DC voltage level</li>
+                </ul>
+
+                <p class="mt-4">For a bridge rectifier with capacitor filter, the ripple factor can be approximately
+                    calculated as:</p>
+                <div class="bg-gray-100 p-3 rounded text-center">
+                    <p>γ ≈ 1 / (2√3 × f × R<sub>L</sub> × C)</p>
+                </div>
+                <p class="mt-2">Where f is the frequency of AC supply, R<sub>L</sub> is the load resistance, and C is
+                    the filter capacitance.</p>
+            </div>
+        </section>
+
+        <section id="circuit" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Circuit Diagram</h2>
+            <div class="flex justify-center">
+                <img src="img/bridge_circuit.png" alt="Bridge Rectifier Circuit Diagram"
+                    class="max-w-full h-auto border p-2">
+            </div>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700">Components Used</h3>
+                    <ul class="list-disc pl-6 space-y-1">
+                        <li>Transformer (6V-0-6V)</li>
+                        <li>Four Diodes - 1N4007</li>
+                        <li>Capacitors: 4.7μF, 10μF, 47μF, 100μF</li>
+                        <li>Decade Resistance Box</li>
+                        <li>AC & DC Voltmeters</li>
+                        <li>Digital Multimeter</li>
+                        <li>CRO (Cathode Ray Oscilloscope)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700">Key Points</h3>
+                    <ul class="list-disc pl-6 space-y-1">
+                        <li>The bridge consists of four diodes arranged in a bridge formation</li>
+                        <li>The transformer steps down the AC voltage to a suitable level</li>
+                        <li>The filter capacitor (C<sub>f</sub>) is connected in parallel with the load</li>
+                        <li>R<sub>L</sub> represents the load resistance</li>
+                        <li>O/P represents the output terminals</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiment" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Experiment Procedure</h2>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-semibold text-blue-700">Without Filter</h3>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Connect the circuit as shown in the diagram (without capacitor)</li>
+                    <li>Apply AC input from the transformer</li>
+                    <li>Connect CRO across the load resistance to observe the output waveform</li>
+                    <li>Set the load resistance (R<sub>L</sub>) to 100Ω using the decade box</li>
+                    <li>Measure and record the following using CRO:
+                        <ul class="list-disc pl-6 mt-1">
+                            <li>Volt per division</li>
+                            <li>Time per division</li>
+                            <li>Peak value of voltage</li>
+                            <li>Frequency of waveform</li>
+                        </ul>
+                    </li>
+                    <li>Measure the AC (RMS) and DC components of the output voltage</li>
+                    <li>Calculate the ripple factor as γ = V<sub>r</sub> / V<sub>dc</sub></li>
+                    <li>Repeat the measurements for different load resistances: 100Ω, 500Ω, 1000Ω, 1500Ω, and 2000Ω</li>
+                </ol>
+
+                <div class="flex justify-center mt-4">
+                    <img src="img/no_filter_waveform.png" alt="Output Waveform Without Filter"
+                        class="max-w-full h-auto border p-2">
+                </div>
+
+                <h3 class="text-xl font-semibold text-blue-700 mt-6">With Filter</h3>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Connect a filter capacitor (4.7μF) across the load resistance</li>
+                    <li>Keep the load resistance fixed at 100Ω</li>
+                    <li>Observe the waveform on CRO and note the changes</li>
+                    <li>Measure the AC (RMS) and DC components of the output voltage</li>
+                    <li>Calculate the ripple factor</li>
+                    <li>Repeat the measurements for different capacitor values: 4.7μF, 10μF, 47μF, and 100μF</li>
+                </ol>
+
+                <div class="flex justify-center mt-4">
+                    <img src="img/with_filter_waveform.png" alt="Output Waveform With Filter"
+                        class="max-w-full h-auto border p-2">
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Interactive Ripple Factor Calculator</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Calculate Ripple Factor</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-1">AC Component (V<sub>r</sub>) in Volts:</label>
+                            <input type="number" id="ac-voltage" class="w-full p-2 border rounded" step="0.01" min="0">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-1">DC Component (V<sub>dc</sub>) in Volts:</label>
+                            <input type="number" id="dc-voltage" class="w-full p-2 border rounded" step="0.01" min="0">
+                        </div>
+                        <button id="calculate-button"
+                            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Calculate</button>
+
+                        <div id="result" class="mt-4 p-3 bg-gray-100 rounded hidden">
+                            <p>Ripple Factor (γ): <span id="ripple-result" class="font-bold"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Theoretical Estimation</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-1">Frequency (Hz):</label>
+                            <input type="number" id="frequency" class="w-full p-2 border rounded" value="50" min="0">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-1">Load Resistance (Ω):</label>
+                            <input type="number" id="load-resistance" class="w-full p-2 border rounded" value="100"
+                                min="0">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-1">Capacitance (μF):</label>
+                            <input type="number" id="capacitance" class="w-full p-2 border rounded" value="10" min="0">
+                        </div>
+                        <button id="estimate-button"
+                            class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Estimate</button>
+
+                        <div id="estimate-result" class="mt-4 p-3 bg-gray-100 rounded hidden">
+                            <p>Theoretical Ripple Factor: <span id="theory-result" class="font-bold"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-3">Effect of Capacitance on Ripple Factor</h3>
+                <div class="bg-gray-100 p-4 rounded">
+                    <canvas id="ripple-chart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="observations" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Expected Observations</h2>
+
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700">Without Filter</h3>
+                    <ul class="list-disc pl-6 space-y-1">
+                        <li>The output waveform is a full-wave rectified sine wave</li>
+                        <li>The ripple factor is high (typically around 0.48)</li>
+                        <li>The output voltage contains significant AC component</li>
+                        <li>As load resistance increases, the output voltage also increases slightly</li>
+                    </ul>
+                </div>
+
+                <div class="overflow-x-auto mt-4">
+                    <table class="min-w-full bg-white border">
+                        <thead>
+                            <tr>
+                                <th class="border px-4 py-2">R<sub>L</sub> (Ω)</th>
+                                <th class="border px-4 py-2" colspan="2">Output Voltage (Volts)</th>
+                                <th class="border px-4 py-2" rowspan="2">Ripple Factor<br>γ =
+                                    V<sub>r</sub>/V<sub>dc</sub></th>
+                            </tr>
+                            <tr>
+                                <th class="border px-4 py-2"></th>
+                                <th class="border px-4 py-2">V<sub>dc</sub></th>
+                                <th class="border px-4 py-2">V<sub>r</sub></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border px-4 py-2">100</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">500</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">1000</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">1500</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">2000</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 text-right" colspan="3">Mean γ</td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="text-xl font-semibold text-blue-700">With Filter</h3>
+                    <ul class="list-disc pl-6 space-y-1">
+                        <li>The output waveform has much less ripple - closer to a straight line</li>
+                        <li>The ripple factor is significantly reduced</li>
+                        <li>The DC component of the output voltage increases</li>
+                        <li>As capacitance increases, the ripple factor decreases</li>
+                    </ul>
+                </div>
+
+                <div class="overflow-x-auto mt-4">
+                    <table class="min-w-full bg-white border">
+                        <thead>
+                            <tr>
+                                <th class="border px-4 py-2">Capacitance (μF)<br>Load resistance, R<sub>L</sub> = 100 Ω
+                                </th>
+                                <th class="border px-4 py-2" colspan="2">Output Voltage (Volts)</th>
+                                <th class="border px-4 py-2" rowspan="2">Ripple Factor<br>γ =
+                                    V<sub>r</sub>/V<sub>dc</sub></th>
+                            </tr>
+                            <tr>
+                                <th class="border px-4 py-2"></th>
+                                <th class="border px-4 py-2">V<sub>dc</sub></th>
+                                <th class="border px-4 py-2">V<sub>r</sub></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border px-4 py-2">4.7</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">10</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">47</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">100</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Self-Assessment Quiz</h2>
+
+            <div id="quiz-container" class="space-y-6">
+                <div class="quiz-question">
+                    <p class="font-semibold">1. What is the theoretical ripple factor for a bridge rectifier without a
+                        filter?</p>
+                    <div class="mt-2 space-y-1">
+                        <label class="block"><input type="radio" name="q1" value="a"> a) 0.28</label>
+                        <label class="block"><input type="radio" name="q1" value="b"> b) 0.48</label>
+                        <label class="block"><input type="radio" name="q1" value="c"> c) 1.21</label>
+                        <label class="block"><input type="radio" name="q1" value="d"> d) 0.12</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-semibold">2. In a bridge rectifier, how many diodes conduct during each half-cycle?
+                    </p>
+                    <div class="mt-2 space-y-1">
+                        <label class="block"><input type="radio" name="q2" value="a"> a) 1</label>
+                        <label class="block"><input type="radio" name="q2" value="b"> b) 2</label>
+                        <label class="block"><input type="radio" name="q2" value="c"> c) 3</label>
+                        <label class="block"><input type="radio" name="q2" value="d"> d) 4</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-semibold">3. What is the effect of increasing the filter capacitance on the ripple
+                        factor?</p>
+                    <div class="mt-2 space-y-1">
+                        <label class="block"><input type="radio" name="q3" value="a"> a) Ripple factor increases</label>
+                        <label class="block"><input type="radio" name="q3" value="b"> b) Ripple factor decreases</label>
+                        <label class="block"><input type="radio" name="q3" value="c"> c) Ripple factor remains
+                            unchanged</label>
+                        <label class="block"><input type="radio" name="q3" value="d"> d) Ripple factor becomes
+                            zero</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-semibold">4. What is the purpose of a filter capacitor in a bridge rectifier circuit?
+                    </p>
+                    <div class="mt-2 space-y-1">
+                        <label class="block"><input type="radio" name="q4" value="a"> a) To increase the current
+                            capacity</label>
+                        <label class="block"><input type="radio" name="q4" value="b"> b) To reduce ripples in the output
+                            voltage</label>
+                        <label class="block"><input type="radio" name="q4" value="c"> c) To protect against voltage
+                            surges</label>
+                        <label class="block"><input type="radio" name="q4" value="d"> d) To amplify the voltage</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-semibold">5. If the input AC voltage to a bridge rectifier is 12V RMS, what is the
+                        approximate peak output voltage without a filter?</p>
+                    <div class="mt-2 space-y-1">
+                        <label class="block"><input type="radio" name="q5" value="a"> a) 12V</label>
+                        <label class="block"><input type="radio" name="q5" value="b"> b) 16.97V</label>
+                        <label class="block"><input type="radio" name="q5" value="c"> c) 10.8V</label>
+                        <label class="block"><input type="radio" name="q5" value="d"> d) 24V</label>
+                    </div>
+                </div>
+
+                <button id="submit-quiz" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Check
+                    Answers</button>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded hidden">
+                    <p>Your score: <span id="quiz-score" class="font-bold"></span>/5</p>
+                    <div id="quiz-feedback" class="mt-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary" class="mb-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Key Points to Remember</h2>
+
+            <div class="space-y-3">
+                <p><strong>1. Bridge Rectifier Basics:</strong> Uses four diodes to convert AC to DC, utilizing both
+                    halves of the AC cycle.</p>
+                <p><strong>2. Ripple Factor:</strong> Defined as the ratio of RMS value of ripple voltage to the DC
+                    value of output voltage (γ = V<sub>r</sub>/V<sub>dc</sub>).</p>
+                <p><strong>3. Without Filter:</strong> Output contains significant ripple with a theoretical ripple
+                    factor of 0.48.</p>
+                <p><strong>4. With Filter:</strong> Adding a capacitor significantly reduces the ripple factor and
+                    smooths the output.</p>
+                <p><strong>5. Capacitor Value:</strong> Increasing the capacitance value leads to a lower ripple factor.
+                </p>
+                <p><strong>6. Load Resistance:</strong> Higher load resistance with the same capacitor value gives a
+                    lower ripple factor.</p>
+                <p><strong>7. Ripple Factor Formula:</strong> For a bridge rectifier with filter, γ ≈ 1/(2√3 × f ×
+                    R<sub>L</sub> × C).</p>
+            </div>
+
+            <div class="mt-6 bg-blue-100 p-4 rounded">
+                <h3 class="font-semibold text-blue-800">Quick Exam Checklist</h3>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                    <li>Know how to calculate ripple factor from voltage measurements</li>
+                    <li>Understand the relationship between capacitance and ripple factor</li>
+                    <li>Be able to sketch the expected waveforms with and without filter</li>
+                    <li>Remember the theoretical expected values for ripple factor</li>
+                    <li>Understand the working principle of bridge rectifier during both half-cycles</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 mt-8 py-4">
+            <p>Bridge Rectifier Study Guide - Experiment No. 3</p>
+        </footer>
+    </div>
+
+    <script>
+        // Ripple factor calculator
+        document.getElementById('calculate-button').addEventListener('click', function () {
+            const acVoltage = parseFloat(document.getElementById('ac-voltage').value);
+            const dcVoltage = parseFloat(document.getElementById('dc-voltage').value);
+
+            if (isNaN(acVoltage) || isNaN(dcVoltage) || dcVoltage === 0) {
+                alert('Please enter valid voltage values!');
+                return;
+            }
+
+            const rippleFactor = acVoltage / dcVoltage;
+            document.getElementById('ripple-result').textContent = rippleFactor.toFixed(4);
+            document.getElementById('result').classList.remove('hidden');
+        });
+
+        // Theoretical ripple factor estimator
+        document.getElementById('estimate-button').addEventListener('click', function () {
+            const frequency = parseFloat(document.getElementById('frequency').value);
+            const resistance = parseFloat(document.getElementById('load-resistance').value);
+            const capacitance = parseFloat(document.getElementById('capacitance').value) * 1e-6; // Convert to Farads
+
+            if (isNaN(frequency) || isNaN(resistance) || isNaN(capacitance) ||
+                frequency === 0 || resistance === 0 || capacitance === 0) {
+                alert('Please enter valid values!');
+                return;
+            }
+
+            // Theoretical ripple factor for bridge rectifier with capacitor filter
+            const rippleFactor = 1 / (2 * Math.sqrt(3) * frequency * resistance * capacitance);
+            document.getElementById('theory-result').textContent = rippleFactor.toFixed(4);
+            document.getElementById('estimate-result').classList.remove('hidden');
+        });
+
+        // Ripple Factor Chart
+        const ctx = document.getElementById('ripple-chart').getContext('2d');
+        const capacitanceValues = [4.7, 10, 47, 100];
+        const rippleFactors = [];
+
+        // Calculate theoretical ripple factors for the chart
+        capacitanceValues.forEach(cap => {
+            const capF = cap * 1e-6; // Convert to Farads
+            const ripple = 1 / (2 * Math.sqrt(3) * 50 * 100 * capF);
+            rippleFactors.push(ripple);
+        });
+
+        const rippleChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: capacitanceValues.map(cap => cap + ' μF'),
+                datasets: [{
+                    label: 'Ripple Factor vs Capacitance (R_L = 100Ω)',
+                    data: rippleFactors,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Ripple Factor'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Capacitance (μF)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Quiz functionality
+        document.getElementById('submit-quiz').addEventListener('click', function () {
+            const answers = {
+                q1: 'b', // 0.48
+                q2: 'b', // 2
+                q3: 'b', // Ripple factor decreases
+                q4: 'b', // To reduce ripples
+                q5: 'b'  // 16.97V (12 * √2)
+            };
+
+            let score = 0;
+            let feedback = '';
+
+            // Check answers
+            for (let i = 1; i <= 5; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    if (selected.value === answers[`q${i}`]) {
+                        score++;
+                        feedback += `<p>Question ${i}: Correct!</p>`;
+                    } else {
+                        feedback += `<p>Question ${i}: Incorrect. The correct answer was option ${answers[`q${i}`]}.</p>`;
+                    }
+                } else {
+                    feedback += `<p>Question ${i}: Not answered.</p>`;
+                }
+            }
+
+            // Display results
+            document.getElementById('quiz-score').textContent = score;
+            document.getElementById('quiz-feedback').innerHTML = feedback;
+            document.getElementById('quiz-results').classList.remove('hidden');
+        });
+
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
