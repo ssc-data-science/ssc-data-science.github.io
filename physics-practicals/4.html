@@ -1,0 +1,731 @@
+<!-- 
+Images required:
+1. 4/circuit.png - The experimental circuit diagram showing solar cell, voltmeter, ammeter, and resistor setup
+2. 4/iv-curve.png - Current vs. Voltage characteristic curve of a solar cell
+3. 4/power-curve.png - Power vs. Voltage curve showing maximum power point
+4. 4/fill-factor.png - Visual representation of fill factor concept showing areas on IV curve
+5. 4/real-setup.png - Photo of actual experimental setup (optional)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Cell Characteristics - Interactive Study Material</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+        <header class="mb-10">
+            <div class="bg-blue-700 text-white p-4 rounded-t-lg">
+                <h1 class="text-3xl font-bold">Experiment No. 4: Characteristics of Solar Cell</h1>
+                <p class="mt-2 text-lg">Interactive Study Material</p>
+            </div>
+            <div class="bg-white p-6 rounded-b-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-blue-800">Aim:</h2>
+                <p class="mt-2 text-lg">Study the V-I characteristics of a solar cell and find the open circuit voltage, short circuit current and maximum power point.</p>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-lg shadow-md col-span-2">
+                <h2 class="text-xl font-semibold text-blue-800 mb-4">Theory</h2>
+                <p class="mb-4">A solar cell is a device that converts light energy into electrical energy through the photovoltaic effect. When light falls on a solar cell, electron-hole pairs are generated, creating a potential difference that can drive current through a load.</p>
+                
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Key Parameters:</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Open Circuit Voltage (V<sub>OC</sub>):</strong> Maximum voltage available from a solar cell when no current is flowing (infinite load resistance).</li>
+                        <li><strong>Short Circuit Current (I<sub>SC</sub>):</strong> Maximum current when the terminals are shorted (zero load resistance).</li>
+                        <li><strong>Maximum Power Point (MPP):</strong> Operating point where the product of current and voltage (power) is maximum.</li>
+                        <li><strong>Fill Factor (FF):</strong> Ratio of maximum power to the product of V<sub>OC</sub> and I<sub>SC</sub>.</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Fill Factor Calculation:</h3>
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <p>FF = V<sub>m</sub> × I<sub>m</sub> / (V<sub>OC</sub> × I<sub>SC</sub>)</p>
+                        <p class="mt-2">Where:</p>
+                        <ul class="list-disc pl-6">
+                            <li>V<sub>m</sub> and I<sub>m</sub> are voltage and current at maximum power point</li>
+                            <li>V<sub>OC</sub> is the open circuit voltage</li>
+                            <li>I<sub>SC</sub> is the short circuit current</li>
+                        </ul>
+                        <p class="mt-2">Fill factor is a measure of quality of the solar cell. It represents how "square" the I-V curve is.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-blue-800 mb-4">Experimental Setup</h2>
+                <div class="mb-4">
+                    <img src="4/circuit.png" alt="Circuit Diagram" class="mx-auto mb-4 max-w-full h-auto" id="circuitDiagram">
+                    <p class="text-sm text-center">Fig 1: Experimental Circuit Diagram</p>
+                </div>
+                <div class="space-y-2 mt-4">
+                    <p><strong>Components:</strong></p>
+                    <ul class="list-disc pl-6">
+                        <li>Solar cell</li>
+                        <li>Voltmeter (V)</li>
+                        <li>Milliammeter (mA)</li>
+                        <li>Variable resistor (R)</li>
+                        <li>Switches (K<sub>1</sub>, K<sub>2</sub>)</li>
+                        <li>Light source</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive I-V Curve and Power Curve Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+            <h2 class="text-xl font-semibold text-blue-800 mb-4">Interactive I-V and Power Curves</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <canvas id="ivCurveChart" height="250"></canvas>
+                    <p class="text-sm text-center mt-2">Fig 2: Current-Voltage (I-V) Characteristic Curve</p>
+                </div>
+                <div>
+                    <canvas id="powerCurveChart" height="250"></canvas>
+                    <p class="text-sm text-center mt-2">Fig 3: Power-Voltage Curve showing MPP</p>
+                </div>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-4 bg-gray-100 rounded-lg">
+                    <p class="text-center font-semibold">Adjust Parameters</p>
+                    <div class="mt-2">
+                        <label for="isc-slider" class="text-sm">Short Circuit Current (I<sub>SC</sub>):</label>
+                        <div class="flex items-center">
+                            <input type="range" id="isc-slider" min="10" max="100" value="50" class="w-full mr-2">
+                            <span id="isc-value">50 mA</span>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label for="voc-slider" class="text-sm">Open Circuit Voltage (V<sub>OC</sub>):</label>
+                        <div class="flex items-center">
+                            <input type="range" id="voc-slider" min="5" max="24" value="12" class="w-full mr-2">
+                            <span id="voc-value">12 V</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-4 bg-blue-50 rounded-lg col-span-2">
+                    <p class="font-semibold text-center mb-2">Calculated Values</p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="bg-white p-2 rounded">
+                            <p class="text-sm">Maximum Power:</p>
+                            <p id="max-power" class="font-semibold">- W</p>
+                        </div>
+                        <div class="bg-white p-2 rounded">
+                            <p class="text-sm">Fill Factor:</p>
+                            <p id="fill-factor" class="font-semibold">-</p>
+                        </div>
+                        <div class="bg-white p-2 rounded">
+                            <p class="text-sm">Voltage at MPP:</p>
+                            <p id="v-mpp" class="font-semibold">- V</p>
+                        </div>
+                        <div class="bg-white p-2 rounded">
+                            <p class="text-sm">Current at MPP:</p>
+                            <p id="i-mpp" class="font-semibold">- mA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Experimental Procedure -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+            <h2 class="text-xl font-semibold text-blue-800 mb-4">Experimental Procedure</h2>
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <ol class="list-decimal pl-6 space-y-3">
+                    <li>Connect the circuit as shown in the diagram.</li>
+                    <li>Keep the switch K<sub>1</sub> open and K<sub>2</sub> closed.</li>
+                    <li>Expose the solar cell to a light source of constant intensity.</li>
+                    <li>Measure the open circuit voltage (V<sub>OC</sub>) using the voltmeter.</li>
+                    <li>Open K<sub>2</sub> and close K<sub>1</sub> to measure the short circuit current (I<sub>SC</sub>).</li>
+                    <li>Close both switches and adjust the resistor R to different values.</li>
+                    <li>For each resistance value, record the corresponding voltage (V) and current (I).</li>
+                    <li>Calculate the power (P = V × I) for each reading.</li>
+                    <li>Plot I vs V and P vs V graphs.</li>
+                    <li>Identify the maximum power point (MPP) from the P-V curve.</li>
+                    <li>Calculate the fill factor using the formula.</li>
+                </ol>
+            </div>
+            
+            <div class="p-4 bg-yellow-50 rounded-lg mt-6 border border-yellow-200">
+                <h3 class="text-lg font-semibold text-yellow-700 mb-2">Tips for Accurate Measurements:</h3>
+                <ul class="list-disc pl-6 space-y-2 text-yellow-800">
+                    <li>Ensure consistent lighting conditions throughout the experiment.</li>
+                    <li>Use calibrated meters and good quality components.</li>
+                    <li>Take multiple readings for better accuracy.</li>
+                    <li>The temperature affects solar cell performance - try to maintain a constant temperature.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Data Collection Table -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+            <h2 class="text-xl font-semibold text-blue-800 mb-4">Data Collection</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="border border-gray-300 px-4 py-2">S.No</th>
+                            <th class="border border-gray-300 px-4 py-2">Resistance R (Ω)</th>
+                            <th class="border border-gray-300 px-4 py-2">Voltage V (volts)</th>
+                            <th class="border border-gray-300 px-4 py-2">Current I (mA)</th>
+                            <th class="border border-gray-300 px-4 py-2">Power P = V × I (mW)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body">
+                        <!-- Table rows will be dynamically generated -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <p class="font-semibold mb-2">Record your measured values:</p>
+                    <div class="space-y-2">
+                        <div>
+                            <label class="block text-sm">Least count of voltmeter:</label>
+                            <input type="text" id="voltmeter-lc" class="border rounded px-2 py-1 w-full" placeholder="Enter value">
+                        </div>
+                        <div>
+                            <label class="block text-sm">Least count of milliammeter:</label>
+                            <input type="text" id="ammeter-lc" class="border rounded px-2 py-1 w-full" placeholder="Enter value">
+                        </div>
+                        <div>
+                            <label class="block text-sm">Open Circuit Voltage (V<sub>OC</sub>):</label>
+                            <input type="text" id="voc-measured" class="border rounded px-2 py-1 w-full" placeholder="Enter measured value">
+                        </div>
+                        <div>
+                            <label class="block text-sm">Short Circuit Current (I<sub>SC</sub>):</label>
+                            <input type="text" id="isc-measured" class="border rounded px-2 py-1 w-full" placeholder="Enter measured value">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-4 bg-green-50 rounded-lg">
+                    <p class="font-semibold mb-2">Add data point:</p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div>
+                            <label class="block text-sm">Resistance (Ω):</label>
+                            <input type="number" id="resistance-input" class="border rounded px-2 py-1 w-full" placeholder="R">
+                        </div>
+                        <div>
+                            <label class="block text-sm">Voltage (V):</label>
+                            <input type="number" id="voltage-input" class="border rounded px-2 py-1 w-full" placeholder="V">
+                        </div>
+                        <div>
+                            <label class="block text-sm">Current (mA):</label>
+                            <input type="number" id="current-input" class="border rounded px-2 py-1 w-full" placeholder="I">
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <button id="add-row-btn" class="bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700">Add Row</button>
+                        <button id="clear-table-btn" class="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700">Clear Table</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                <p class="font-semibold mb-2">Results:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm">Maximum Useful Power = V<sub>m</sub> × I<sub>m</sub>:</label>
+                        <input type="text" id="max-power-result" class="border rounded px-2 py-1 w-full" readonly>
+                    </div>
+                    <div>
+                        <label class="block text-sm">Fill Factor = (V<sub>m</sub> × I<sub>m</sub>) / (V<sub>OC</sub> × I<sub>SC</sub>):</label>
+                        <input type="text" id="fill-factor-result" class="border rounded px-2 py-1 w-full" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+            <h2 class="text-xl font-semibold text-blue-800 mb-4">Test Your Understanding</h2>
+            
+            <div id="quiz-container" class="space-y-6">
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <p class="font-semibold mb-2">Question 1:</p>
+                    <p>What happens to the fill factor of a solar cell if the series resistance increases?</p>
+                    <div class="mt-2 space-y-2">
+                        <div>
+                            <input type="radio" name="q1" id="q1a" value="a">
+                            <label for="q1a">Fill factor increases</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q1" id="q1b" value="b">
+                            <label for="q1b">Fill factor decreases</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q1" id="q1c" value="c">
+                            <label for="q1c">Fill factor remains unchanged</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q1" id="q1d" value="d">
+                            <label for="q1d">Cannot be determined</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <p class="font-semibold mb-2">Question 2:</p>
+                    <p>The voltage at which maximum power is generated in a solar cell is typically:</p>
+                    <div class="mt-2 space-y-2">
+                        <div>
+                            <input type="radio" name="q2" id="q2a" value="a">
+                            <label for="q2a">Equal to V<sub>OC</sub></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q2" id="q2b" value="b">
+                            <label for="q2b">Equal to zero</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q2" id="q2c" value="c">
+                            <label for="q2c">Between 0 and V<sub>OC</sub></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q2" id="q2d" value="d">
+                            <label for="q2d">Greater than V<sub>OC</sub></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <p class="font-semibold mb-2">Question 3:</p>
+                    <p>A solar cell has V<sub>OC</sub> = 0.6V and I<sub>SC</sub> = 100mA. If the maximum power output is 45mW, what is the fill factor?</p>
+                    <div class="mt-2 space-y-2">
+                        <div>
+                            <input type="radio" name="q3" id="q3a" value="a">
+                            <label for="q3a">0.60</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q3" id="q3b" value="b">
+                            <label for="q3b">0.75</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q3" id="q3c" value="c">
+                            <label for="q3c">0.45</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="q3" id="q3d" value="d">
+                            <label for="q3d">0.90</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="check-answers-btn" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 mt-4">Check Answers</button>
+                
+                <div id="quiz-results" class="p-4 bg-blue-50 rounded-lg hidden">
+                    <p class="font-semibold mb-2">Quiz Results:</p>
+                    <p id="quiz-score"></p>
+                    <div id="quiz-feedback" class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Summary and Additional Information -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+            <h2 class="text-xl font-semibold text-blue-800 mb-4">Key Takeaways</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Important Parameters</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Open Circuit Voltage (V<sub>OC</sub>):</strong> The maximum voltage from a solar cell with no current flowing.</li>
+                        <li><strong>Short Circuit Current (I<sub>SC</sub>):</strong> The maximum current when terminals are shorted.</li>
+                        <li><strong>Maximum Power Point (MPP):</strong> The operating point that yields maximum power output.</li>
+                        <li><strong>Fill Factor (FF):</strong> A measure of the quality of the solar cell, indicating how close to ideal the cell performs.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Factors Affecting Solar Cell Performance</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Light Intensity:</strong> Higher intensity generally increases both V<sub>OC</sub> and I<sub>SC</sub>.</li>
+                        <li><strong>Temperature:</strong> Higher temperature decreases V<sub>OC</sub> but slightly increases I<sub>SC</sub>.</li>
+                        <li><strong>Series Resistance:</strong> Higher series resistance decreases fill factor.</li>
+                        <li><strong>Shunt Resistance:</strong> Lower shunt resistance decreases fill factor.</li>
+                        <li><strong>Material Quality:</strong> Affects recombination rate and overall efficiency.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                <h3 class="text-lg font-semibold text-blue-600 mb-2">Real-World Applications</h3>
+                <p class="mb-2">Understanding solar cell characteristics is crucial for:</p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>Designing efficient solar panels and arrays</li>
+                    <li>Implementing maximum power point tracking (MPPT) circuits</li>
+                    <li>Comparing different solar cell technologies</li>
+                    <li>Diagnosing issues in photovoltaic systems</li>
+                    <li>Optimizing solar cell performance in various environmental conditions</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer class="text-center text-gray-600 mt-10 mb-4">
+            <p>© 2025 Solar Cell Characteristics - Interactive Study Material</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize I-V Curve Chart
+        const ivCtx = document.getElementById('ivCurveChart').getContext('2d');
+        const ivChart = new Chart(ivCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'I-V Curve',
+                    data: [],
+                    borderColor: 'rgb(30, 64, 175)',
+                    backgroundColor: 'rgb(30, 64, 175)',
+                    showLine: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Voltage (V)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Current (mA)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Initialize Power Curve Chart
+        const powerCtx = document.getElementById('powerCurveChart').getContext('2d');
+        const powerChart = new Chart(powerCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'P-V Curve',
+                    data: [],
+                    borderColor: 'rgb(22, 163, 74)',
+                    backgroundColor: 'rgb(22, 163, 74)',
+                    showLine: true,
+                    tension: 0.4
+                }, {
+                    label: 'Maximum Power Point',
+                    data: [],
+                    borderColor: 'rgb(220, 38, 38)',
+                    backgroundColor: 'rgb(220, 38, 38)',
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Voltage (V)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Power (mW)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Function to generate I-V curve data
+        function generateIVCurveData(isc, voc) {
+            const data = [];
+            const points = 100;
+            
+            for (let i = 0; i <= points; i++) {
+                const v = (i / points) * voc;
+                // Using diode equation based model for solar cell
+                const i = isc * (1 - Math.exp((v - voc) / 0.7 + 0.1));
+                
+                if (i >= 0) {
+                    data.push({x: v, y: i});
+                }
+            }
+            
+            // Add exact points for V=0 and I=0
+            data.unshift({x: 0, y: isc});
+            data.push({x: voc, y: 0});
+            
+            return data;
+        }
+
+        // Function to generate power curve data
+        function generatePowerCurveData(ivData) {
+            return ivData.map(point => ({
+                x: point.x,
+                y: point.x * point.y
+            }));
+        }
+
+        // Function to find maximum power point
+        function findMaxPowerPoint(powerData) {
+            let maxPower = 0;
+            let maxPowerPoint = null;
+            
+            powerData.forEach(point => {
+                if (point.y > maxPower) {
+                    maxPower = point.y;
+                    maxPowerPoint = point;
+                }
+            });
+            
+            return maxPowerPoint;
+        }
+
+        // Function to update charts and calculations
+        function updateCharts() {
+            const isc = parseFloat(document.getElementById('isc-slider').value);
+            const voc = parseFloat(document.getElementById('voc-slider').value);
+            
+            document.getElementById('isc-value').textContent = `${isc} mA`;
+            document.getElementById('voc-value').textContent = `${voc} V`;
+            
+            const ivData = generateIVCurveData(isc, voc);
+            const powerData = generatePowerCurveData(ivData);
+            const mpp = findMaxPowerPoint(powerData);
+            
+            // Find corresponding current at MPP
+            const vmpp = mpp.x;
+            let impp = 0;
+            
+            for (const point of ivData) {
+                if (Math.abs(point.x - vmpp) < 0.01) {
+                    impp = point.y;
+                    break;
+                }
+            }
+            
+            // Calculate fill factor
+            const fillFactor = (vmpp * impp) / (voc * isc);
+            
+            // Update charts
+            ivChart.data.datasets[0].data = ivData;
+            powerChart.data.datasets[0].data = powerData;
+            powerChart.data.datasets[1].data = [mpp];
+            
+            ivChart.update();
+            powerChart.update();
+            
+            // Update displayed values
+            document.getElementById('max-power').textContent = `${(mpp.y).toFixed(2)} mW`;
+            document.getElementById('fill-factor').textContent = fillFactor.toFixed(3);
+            document.getElementById('v-mpp').textContent = `${vmpp.toFixed(2)} V`;
+            document.getElementById('i-mpp').textContent = `${impp.toFixed(2)} mA`;
+        }
+
+        // Event listeners for sliders
+        document.getElementById('isc-slider').addEventListener('input', updateCharts);
+        document.getElementById('voc-slider').addEventListener('input', updateCharts);
+
+        // Initialize table and data entry functionality
+        let tableData = [];
+        let rowCounter = 1;
+
+        function addTableRow(resistance, voltage, current) {
+            const power = voltage * current;
+            
+            const tbody = document.getElementById('data-table-body');
+            const row = document.createElement('tr');
+            
+            row.innerHTML = `
+                <td class="border border-gray-300 px-4 py-2 text-center">${rowCounter}</td>
+                <td class="border border-gray-300 px-4 py-2 text-center">${resistance}</td>
+                <td class="border border-gray-300 px-4 py-2 text-center">${voltage}</td>
+                <td class="border border-gray-300 px-4 py-2 text-center">${current}</td>
+                <td class="border border-gray-300 px-4 py-2 text-center">${power.toFixed(2)}</td>
+            `;
+            
+            tbody.appendChild(row);
+            
+            tableData.push({
+                sno: rowCounter,
+                resistance: parseFloat(resistance),
+                voltage: parseFloat(voltage),
+                current: parseFloat(current),
+                power: power
+            });
+            
+            rowCounter++;
+            updateResults();
+        }
+
+        function clearTable() {
+            document.getElementById('data-table-body').innerHTML = '';
+            tableData = [];
+            rowCounter = 1;
+            updateResults();
+        }
+
+        function updateResults() {
+            if (tableData.length === 0) {
+                document.getElementById('max-power-result').value = '';
+                document.getElementById('fill-factor-result').value = '';
+                return;
+            }
+            
+            // Find maximum power from the data
+            let maxPower = 0;
+            let maxPowerData = null;
+            
+            tableData.forEach(data => {
+                if (data.power > maxPower) {
+                    maxPower = data.power;
+                    maxPowerData = data;
+                }
+            });
+            
+            // Get VOC and ISC from input fields
+            const voc = parseFloat(document.getElementById('voc-measured').value) || 0;
+            const isc = parseFloat(document.getElementById('isc-measured').value) || 0;
+            
+            // Calculate fill factor
+            let fillFactor = 0;
+            if (voc > 0 && isc > 0) {
+                fillFactor = maxPower / (voc * isc);
+            }
+            
+            document.getElementById('max-power-result').value = `${maxPower.toFixed(2)} mW at V=${maxPowerData.voltage}V, I=${maxPowerData.current}mA`;
+            document.getElementById('fill-factor-result').value = fillFactor.toFixed(3);
+        }
+
+        // Add event listeners for data table buttons
+        document.getElementById('add-row-btn').addEventListener('click', function() {
+            const resistance = document.getElementById('resistance-input').value;
+            const voltage = document.getElementById('voltage-input').value;
+            const current = document.getElementById('current-input').value;
+            
+            if (resistance && voltage && current) {
+                addTableRow(resistance, voltage, current);
+                
+                // Clear input fields
+                document.getElementById('resistance-input').value = '';
+                document.getElementById('voltage-input').value = '';
+                document.getElementById('current-input').value = '';
+            } else {
+                alert('Please fill all the fields.');
+            }
+        });
+
+        document.getElementById('clear-table-btn').addEventListener('click', clearTable);
+
+        // Quiz functionality
+        document.getElementById('check-answers-btn').addEventListener('click', function() {
+            const answers = {
+                q1: 'b', // Fill factor decreases
+                q2: 'c', // Between 0 and VOC
+                q3: 'b'  // 0.75
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // Check Question 1
+            const q1Answer = document.querySelector('input[name="q1"]:checked');
+            if (q1Answer) {
+                if (q1Answer.value === answers.q1) {
+                    score++;
+                    feedback += '<p class="text-green-600">Question 1: Correct! When series resistance increases, fill factor decreases.</p>';
+                } else {
+                    feedback += '<p class="text-red-600">Question 1: Incorrect. The correct answer is (b). Increased series resistance reduces the fill factor by making the I-V curve less "square".</p>';
+                }
+            } else {
+                feedback += '<p class="text-orange-600">Question 1: Not answered.</p>';
+            }
+            
+            // Check Question 2
+            const q2Answer = document.querySelector('input[name="q2"]:checked');
+            if (q2Answer) {
+                if (q2Answer.value === answers.q2) {
+                    score++;
+                    feedback += '<p class="text-green-600">Question 2: Correct! The maximum power point voltage is typically between 0 and VOC.</p>';
+                } else {
+                    feedback += '<p class="text-red-600">Question 2: Incorrect. The correct answer is (c). Maximum power is generated at a voltage between 0 and VOC, typically around 70-80% of VOC.</p>';
+                }
+            } else {
+                feedback += '<p class="text-orange-600">Question 2: Not answered.</p>';
+            }
+            
+            // Check Question 3
+            const q3Answer = document.querySelector('input[name="q3"]:checked');
+            if (q3Answer) {
+                if (q3Answer.value === answers.q3) {
+                    score++;
+                    feedback += '<p class="text-green-600">Question 3: Correct! FF = 45mW / (0.6V × 100mA) = 0.75</p>';
+                } else {
+                    feedback += '<p class="text-red-600">Question 3: Incorrect. The correct answer is (b). FF = Pmax / (VOC × ISC) = 45mW / (0.6V × 100mA) = 45/60 = 0.75</p>';
+                }
+            } else {
+                feedback += '<p class="text-orange-600">Question 3: Not answered.</p>';
+            }
+            
+            // Display results
+            document.getElementById('quiz-score').textContent = `You scored ${score} out of 3 (${(score/3*100).toFixed(0)}%)`;
+            document.getElementById('quiz-feedback').innerHTML = feedback;
+            document.getElementById('quiz-results').classList.remove('hidden');
+        });
+
+        // Circuit diagram animation
+        function animateCircuit() {
+            const circuitDiagram = document.getElementById('circuitDiagram');
+            
+            if (!circuitDiagram) return;
+            
+            gsap.fromTo(circuitDiagram, 
+                { opacity: 0.7, scale: 0.95 }, 
+                { 
+                    opacity: 1, 
+                    scale: 1, 
+                    duration: 1.2, 
+                    ease: "power2.out" 
+                }
+            );
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize charts with default values
+            updateCharts();
+            
+            // Add sample data to table
+            addTableRow(10, 0.5, 45);
+            addTableRow(30, 2.1, 40);
+            addTableRow(50, 3.8, 35);
+            addTableRow(100, 6.2, 28);
+            addTableRow(200, 8.4, 19);
+            addTableRow(300, 9.6, 12);
+            addTableRow(500, 10.8, 7);
+            addTableRow(1000, 11.6, 3);
+            
+            // Animate circuit diagram
+            animateCircuit();
+        });
+    </script>
+</body>
+</html>
