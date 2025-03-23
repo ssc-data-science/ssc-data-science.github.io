@@ -113,7 +113,6 @@ function App() {
       setProcessStatus('Downloading content...');
       setProcessingProgress(0.1);
 
-      // Fetch the content from URL
       const response = await axios.get('https://ssc-data-science.github.io/quiz/src/assets/Unit4%20.md', {
         responseType: 'text',
         transformResponse: [data => data] // Prevent automatic parsing
@@ -148,7 +147,7 @@ function App() {
         const genAI = new GoogleGenerativeAI(GOOGLE_API_KEYS[i]);
         const model = genAI.getGenerativeModel({
           model: 'gemini-2.0-flash',
-          generationConfig: {}
+          generationConfig: {temperature:1}
         });
 
         const quizPrompt = `
