@@ -1,0 +1,364 @@
+<!--
+Image descriptions:
+1. positive-clipper.png - Circuit diagram of a positive clipper with input/output waveforms
+2. negative-clipper.png - Circuit diagram of a negative clipper with input/output waveforms
+3. biased-positive-clipper.png - Circuit diagram of a biased positive clipper with input/output waveforms
+4. biased-negative-clipper.png - Circuit diagram of a biased negative clipper with input/output waveforms
+5. combination-clipper.png - Circuit diagram of a combination clipper with input/output waveforms
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipping Circuits - Interactive Study Material</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .hidden { display: none; }
+        canvas { max-height: 200px; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="bg-blue-600 text-white p-4 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold text-center">Clipping Circuits</h1>
+            <p class="text-xl text-center">Interactive Study Material</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">Introduction</h2>
+            <p><strong>Aim:</strong> To design and construct various clipping circuits using diodes and resistors and verify their performance using a CRO.</p>
+            <p><strong>Principle:</strong> Clipping circuits shape waveforms by removing portions of the applied wave, widely used in radar, digital, and electronic systems.</p>
+            <div class="mt-4">
+                <h3 class="text-xl font-semibold">Quick Navigation</h3>
+                <ul class="list-disc ml-6">
+                    <li><a href="#positive-negative" class="text-blue-500 hover:underline">Positive & Negative Clippers</a></li>
+                    <li><a href="#biased" class="text-blue-500 hover:underline">Biased Clippers</a></li>
+                    <li><a href="#combination" class="text-blue-500 hover:underline">Combination Clipper</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Positive and Negative Clippers -->
+        <section id="positive-negative" class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">1. Positive and Negative Clippers</h2>
+
+            <!-- Positive Clipper -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-600 mb-2">Positive Clipper</h3>
+                <p>Removes positive half-cycles of the input voltage.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold">Circuit Diagram</h4>
+                        <img src="img/positive-clipper.png" alt="Positive Clipper Circuit" class="w-full h-auto">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Interactive Waveform</h4>
+                        <canvas id="positiveClipperChart"></canvas>
+                        <div class="mt-4">
+                            <label>Amplitude (V<sub>m</sub>): <input type="range" id="posAmp" min="1" max="10" value="5" class="w-full"></label>
+                            <span id="posAmpVal">5V</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="font-semibold">Operation</h4>
+                    <p>During positive half-cycle, diode conducts, output is 0V. During negative half-cycle, diode is reverse-biased, output follows input.</p>
+                    <button onclick="toggle('posAnalysis')" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Show Analysis</button>
+                    <div id="posAnalysis" class="hidden mt-2 p-4 bg-gray-100 rounded">
+                        <p>For \( v_{in} > 0 \): \( v_{out} = 0 \)</p>
+                        <p>For \( v_{in} < 0 \): \( v_{out} = v_{in} \)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Negative Clipper -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-600 mb-2">Negative Clipper</h3>
+                <p>Removes negative half-cycles of the input voltage.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold">Circuit Diagram</h4>
+                        <img src="img/negative-clipper.png" alt="Negative Clipper Circuit" class="w-full h-auto">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Interactive Waveform</h4>
+                        <canvas id="negativeClipperChart"></canvas>
+                        <div class="mt-4">
+                            <label>Amplitude (V<sub>m</sub>): <input type="range" id="negAmp" min="1" max="10" value="5" class="w-full"></label>
+                            <span id="negAmpVal">5V</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="font-semibold">Operation</h4>
+                    <p>During negative half-cycle, diode conducts, output is 0V. During positive half-cycle, diode is reverse-biased, output follows input.</p>
+                    <button onclick="toggle('negAnalysis')" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Show Analysis</button>
+                    <div id="negAnalysis" class="hidden mt-2 p-4 bg-gray-100 rounded">
+                        <p>For \( v_{in} < 0 \): \( v_{out} = 0 \)</p>
+                        <p>For \( v_{in} > 0 \): \( v_{out} = v_{in} \)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Observations Table -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4">Observations</h3>
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr>
+                            <th class="border border-gray-300 p-2">Clipper</th>
+                            <th class="border border-gray-300 p-2">Input +Peak (V)</th>
+                            <th class="border border-gray-300 p-2">Input -Peak (V)</th>
+                            <th class="border border-gray-300 p-2">Output +Peak (V)</th>
+                            <th class="border border-gray-300 p-2">Output -Peak (V)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Positive</td>
+                            <td><input type="number" id="posInPos" value="5" class="w-full p-1"></td>
+                            <td><input type="number" id="posInNeg" value="-5" class="w-full p-1"></td>
+                            <td><input type="number" id="posOutPos" value="0" class="w-full p-1"></td>
+                            <td><input type="number" id="posOutNeg" value="-5" class="w-full p-1"></td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Negative</td>
+                            <td><input type="number" id="negInPos" value="5" class="w-full p-1"></td>
+                            <td><input type="number" id="negInNeg" value="-5" class="w-full p-1"></td>
+                            <td><input type="number" id="negOutPos" value="5" class="w-full p-1"></td>
+                            <td><input type="number" id="negOutNeg" value="0" class="w-full p-1"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick="updateGraphs()" class="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">Update Graphs</button>
+            </div>
+        </section>
+
+        <!-- Biased Clippers -->
+        <section id="biased" class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">2. Biased Clippers</h2>
+
+            <!-- Biased Positive Clipper -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-600 mb-2">Biased Positive Clipper</h3>
+                <p>Clips positive half-cycle above bias voltage.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold">Circuit Diagram</h4>
+                        <img src="img/biased-positive-clipper.png" alt="Biased Positive Clipper Circuit" class="w-full h-auto">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Interactive Waveform</h4>
+                        <canvas id="biasedPosChart"></canvas>
+                        <div class="mt-4">
+                            <label>Amplitude (V<sub>m</sub>): <input type="range" id="bPosAmp" min="1" max="10" value="5" class="w-full"></label>
+                            <span id="bPosAmpVal">5V</span><br>
+                            <label>Bias (V<sub>b</sub>): <input type="range" id="bPosBias" min="0" max="5" value="2" step="0.1" class="w-full"></label>
+                            <span id="bPosBiasVal">2V</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="font-semibold">Operation</h4>
+                    <p>When \( v_{in} > V_b \), diode conducts, output is \( V_b \). Otherwise, output follows input.</p>
+                    <button onclick="toggle('bPosAnalysis')" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Show Analysis</button>
+                    <div id="bPosAnalysis" class="hidden mt-2 p-4 bg-gray-100 rounded">
+                        <p>For \( v_{in} > V_b \): \( v_{out} = V_b \)</p>
+                        <p>For \( v_{in} < V_b \): \( v_{out} = v_{in} \)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biased Negative Clipper -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-600 mb-2">Biased Negative Clipper</h3>
+                <p>Clips negative half-cycle below bias voltage.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold">Circuit Diagram</h4>
+                        <img src="img/biased-negative-clipper.png" alt="Biased Negative Clipper Circuit" class="w-full h-auto">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Interactive Waveform</h4>
+                        <canvas id="biasedNegChart"></canvas>
+                        <div class="mt-4">
+                            <label>Amplitude (V<sub>m</sub>): <input type="range" id="bNegAmp" min="1" max="10" value="5" class="w-full"></label>
+                            <span id="bNegAmpVal">5V</span><br>
+                            <label>Bias (V<sub>b</sub>): <input type="range" id="bNegBias" min="0" max="5" value="2" step="0.1" class="w-full"></label>
+                            <span id="bNegBiasVal">2V</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="font-semibold">Operation</h4>
+                    <p>When \( v_{in} < -V_b \), diode conducts, output is \( -V_b \). Otherwise, output follows input.</p>
+                    <button onclick="toggle('bNegAnalysis')" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Show Analysis</button>
+                    <div id="bNegAnalysis" class="hidden mt-2 p-4 bg-gray-100 rounded">
+                        <p>For \( v_{in} < -V_b \): \( v_{out} = -V_b \)</p>
+                        <p>For \( v_{in} > -V_b \): \( v_{out} = v_{in} \)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Combination Clipper -->
+        <section id="combination" class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">3. Combination Clipper</h2>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-600 mb-2">Combination Clipper</h3>
+                <p>Clips both positive and negative half-cycles based on bias voltages.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold">Circuit Diagram</h4>
+                        <img src="img/combination-clipper.png" alt="Combination Clipper Circuit" class="w-full h-auto">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">Interactive Waveform</h4>
+                        <canvas id="combinationChart"></canvas>
+                        <div class="mt-4">
+                            <label>Amplitude (V<sub>m</sub>): <input type="range" id="combAmp" min="1" max="10" value="5" class="w-full"></label>
+                            <span id="combAmpVal">5V</span><br>
+                            <label>Positive Bias (V<sub>b1</sub>): <input type="range" id="combBiasPos" min="0" max="5" value="2" step="0.1" class="w-full"></label>
+                            <span id="combBiasPosVal">2V</span><br>
+                            <label>Negative Bias (V<sub>b2</sub>): <input type="range" id="combBiasNeg" min="0" max="5" value="2" step="0.1" class="w-full"></label>
+                            <span id="combBiasNegVal">2V</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="font-semibold">Operation</h4>
+                    <p>Clips signal above \( V_{b1} \) and below \( -V_{b2} \).</p>
+                    <button onclick="toggle('combAnalysis')" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Show Analysis</button>
+                    <div id="combAnalysis" class="hidden mt-2 p-4 bg-gray-100 rounded">
+                        <p>For \( v_{in} > V_{b1} \): \( v_{out} = V_{b1} \)</p>
+                        <p>For \( v_{in} < -V_{b2} \): \( v_{out} = -V_{b2} \)</p>
+                        <p>For \( -V_{b2} < v_{in} < V_{b1} \): \( v_{out} = v_{in} \)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Self-Assessment Quiz -->
+        <section class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">Self-Assessment Quiz</h2>
+            <div>
+                <p>1. What does a positive clipper do?</p>
+                <label><input type="radio" name="q1" value="a"> Removes positive half-cycles</label><br>
+                <label><input type="radio" name="q1" value="b"> Removes negative half-cycles</label><br>
+                <label><input type="radio" name="q1" value="c"> Amplifies the signal</label><br>
+                <label><input type="radio" name="q1" value="d"> Inverts the signal</label>
+            </div>
+            <button onclick="checkQuiz()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Check Answers</button>
+            <div id="quizFeedback" class="mt-4"></div>
+        </section>
+
+        <!-- Summary -->
+        <section class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">Summary</h2>
+            <p>Clipping circuits shape waveforms and are vital in electronic applications like radar and digital systems.</p>
+        </section>
+    </div>
+
+    <script>
+        let charts = {};
+
+        function generateSineWave(amplitude, points = 100) {
+            const data = [];
+            for (let i = 0; i < points; i++) {
+                const x = (i / points) * 2 * Math.PI;
+                const y = amplitude * Math.sin(x);
+                data.push({x: i, y: y});
+            }
+            return data;
+        }
+
+        function clipPositive(data) { return data.map(p => ({x: p.x, y: p.y > 0 ? 0 : p.y})); }
+        function clipNegative(data) { return data.map(p => ({x: p.x, y: p.y < 0 ? 0 : p.y})); }
+        function clipBiasedPositive(data, bias) { return data.map(p => ({x: p.x, y: p.y > bias ? bias : p.y})); }
+        function clipBiasedNegative(data, bias) { return data.map(p => ({x: p.x, y: p.y < -bias ? -bias : p.y})); }
+        function clipCombination(data, biasPos, biasNeg) {
+            return data.map(p => {
+                if (p.y > biasPos) return {x: p.x, y: biasPos};
+                if (p.y < -biasNeg) return {x: p.x, y: -biasNeg};
+                return p;
+            });
+        }
+
+        function initChart(id, inputData, outputData) {
+            return new Chart(document.getElementById(id), {
+                type: 'line',
+                data: {
+                    datasets: [
+                        {label: 'Input', data: inputData, borderColor: 'blue'},
+                        {label: 'Output', data: outputData, borderColor: 'red'}
+                    ]
+                },
+                options: {responsive: true, scales: {x: {type: 'linear'}, y: {min: -10, max: 10}}}
+            });
+        }
+
+        function initCharts() {
+            const amp = 5, bias = 2;
+            charts.pos = initChart('positiveClipperChart', generateSineWave(amp), clipPositive(generateSineWave(amp)));
+            charts.neg = initChart('negativeClipperChart', generateSineWave(amp), clipNegative(generateSineWave(amp)));
+            charts.bPos = initChart('biasedPosChart', generateSineWave(amp), clipBiasedPositive(generateSineWave(amp), bias));
+            charts.bNeg = initChart('biasedNegChart', generateSineWave(amp), clipBiasedNegative(generateSineWave(amp), bias));
+            charts.comb = initChart('combinationChart', generateSineWave(amp), clipCombination(generateSineWave(amp), bias, bias));
+        }
+
+        initCharts();
+
+        function updateChart(chart, inputData, outputData, ampValId) {
+            chart.data.datasets[0].data = inputData;
+            chart.data.datasets[1].data = outputData;
+            chart.update();
+            document.getElementById(ampValId).textContent = `${inputData[0].y.toFixed(1)}V`;
+        }
+
+        ['posAmp', 'negAmp', 'bPosAmp', 'bNegAmp', 'combAmp'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function() {
+                const amp = +this.value;
+                document.getElementById(id + 'Val').textContent = `${amp}V`;
+                if (id === 'posAmp') updateChart(charts.pos, generateSineWave(amp), clipPositive(generateSineWave(amp)), 'posAmpVal');
+                if (id === 'negAmp') updateChart(charts.neg, generateSineWave(amp), clipNegative(generateSineWave(amp)), 'negAmpVal');
+                if (id === 'bPosAmp') updateChart(charts.bPos, generateSineWave(amp), clipBiasedPositive(generateSineWave(amp), +document.getElementById('bPosBias').value), 'bPosAmpVal');
+                if (id === 'bNegAmp') updateChart(charts.bNeg, generateSineWave(amp), clipBiasedNegative(generateSineWave(amp), +document.getElementById('bNegBias').value), 'bNegAmpVal');
+                if (id === 'combAmp') updateChart(charts.comb, generateSineWave(amp), clipCombination(generateSineWave(amp), +document.getElementById('combBiasPos').value, +document.getElementById('combBiasNeg').value), 'combAmpVal');
+            });
+        });
+
+        ['bPosBias', 'bNegBias', 'combBiasPos', 'combBiasNeg'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function() {
+                const bias = +this.value;
+                document.getElementById(id + 'Val').textContent = `${bias}V`;
+                if (id === 'bPosBias') updateChart(charts.bPos, generateSineWave(+document.getElementById('bPosAmp').value), clipBiasedPositive(generateSineWave(+document.getElementById('bPosAmp').value), bias), 'bPosAmpVal');
+                if (id === 'bNegBias') updateChart(charts.bNeg, generateSineWave(+document.getElementById('bNegAmp').value), clipBiasedNegative(generateSineWave(+document.getElementById('bNegAmp').value), bias), 'bNegAmpVal');
+                if (id === 'combBiasPos' || id === 'combBiasNeg') updateChart(charts.comb, generateSineWave(+document.getElementById('combAmp').value), clipCombination(generateSineWave(+document.getElementById('combAmp').value), +document.getElementById('combBiasPos').value, +document.getElementById('combBiasNeg').value), 'combAmpVal');
+            });
+        });
+
+        function updateGraphs() {
+            const posAmp = Math.max(+document.getElementById('posInPos').value, -+document.getElementById('posInNeg').value);
+            const negAmp = Math.max(+document.getElementById('negInPos').value, -+document.getElementById('negInNeg').value);
+            updateChart(charts.pos, generateSineWave(posAmp), clipPositive(generateSineWave(posAmp)), 'posAmpVal');
+            updateChart(charts.neg, generateSineWave(negAmp), clipNegative(generateSineWave(negAmp)), 'negAmpVal');
+            document.getElementById('posAmp').value = posAmp;
+            document.getElementById('negAmp').value = negAmp;
+        }
+
+        function toggle(id) { document.getElementById(id).classList.toggle('hidden'); }
+
+        function checkQuiz() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const feedback = document.getElementById('quizFeedback');
+            feedback.textContent = q1 && q1.value === 'a' ? 'Correct! A positive clipper removes positive half-cycles.' : 'Incorrect. The answer is: Removes positive half-cycles.';
+            feedback.className = 'mt-4 ' + (q1 && q1.value === 'a' ? 'text-green-500' : 'text-red-500');
+        }
+    </script>
+</body>
+</html>
