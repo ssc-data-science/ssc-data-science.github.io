@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- exp6A/circuit_diagram.png - The Zener diode test circuit
+exp6A/zener_diode_symbol.png - Symbol of a Zener diode
+exp6A/zener_structure.png - Physical structure of a Zener diode
+exp6A/zener_iv_curve.png - Theoretical I-V characteristic curve
+exp6A/voltage_regulator.png - Example voltage regulator circuit
+exp6A/overvoltage_protection.png - Example protection circuit -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6A: Zener Diode Reverse Characteristics</title>
+    
+    <!-- Import Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Import Chart.js for interactive graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <!-- Import MathJax for equations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    
+    <!-- Import Prism for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- 
+    Images needed:
+    1. exp6A/circuit_diagram.png - The circuit diagram for Zener diode testing
+    2. exp6A/zener_diode_symbol.png - Symbol of a Zener diode
+    3. exp6A/zener_structure.png - Physical structure of a Zener diode
+    4. exp6A/zener_iv_curve.png - Theoretical I-V characteristic curve
+    -->
+
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+        <header class="mb-8 text-center">
+            <div class="bg-black text-white inline-block px-4 py-2 mb-4">Experiment No: 6A</div>
+            <h1 class="text-3xl font-bold mb-4">Reverse Characteristics of a Zener Diode</h1>
+            <div class="border-b-2 border-gray-300 w-24 mx-auto mb-4"></div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8 mb-8">
+            <div class="lg:w-2/3">
+                <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h2 class="text-xl font-semibold mb-3">Aim</h2>
+                    <p class="mb-4">Study the V-I characteristics of Zener diode and determine the breakdown voltage.</p>
+                    
+                    <h2 class="text-xl font-semibold mb-3">Principle</h2>
+                    <p class="mb-4">
+                        Zener Diode is a heavily doped p-n junction diode specially made to operate in the breakdown
+                        region. A p-n junction diode normally does not conduct when it is reverse biased. But if reverse bias
+                        is increased at a particular voltage it starts conducting heavily. This voltage is called breakdown
+                        voltage. Zener Diode has sharp breakdown voltage and it conducts in the reverse direction at this
+                        voltage.
+                    </p>
+                    
+                    <div class="my-6">
+                        <h3 class="text-lg font-medium mb-2">Circuit Diagram</h3>
+                        <div class="border p-4 bg-gray-50 text-center">
+                            <img src="exp6A/circuit_diagram.png" alt="Zener Diode Test Circuit" class="mx-auto max-h-48">
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h2 class="text-xl font-semibold mb-4">Theory</h2>
+                    
+                    <div class="mb-4">
+                        <h3 class="text-lg font-medium mb-2">What is a Zener Diode?</h3>
+                        <p>
+                            A Zener diode is a special type of diode designed specifically to operate in the reverse breakdown region. 
+                            Unlike regular diodes which can be damaged by excessive reverse voltage, Zener diodes are designed to 
+                            allow current to flow in the reverse direction when the voltage reaches a specific value called the 
+                            "Zener voltage" or "breakdown voltage".
+                        </p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="text-lg font-medium mb-2">Breakdown Mechanisms</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-gray-50 p-4 rounded">
+                                <h4 class="font-medium mb-2">Zener Breakdown</h4>
+                                <p>Occurs in diodes with breakdown voltage less than 5V. Electric field in the depletion region becomes strong enough to pull electrons directly from their covalent bonds.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded">
+                                <h4 class="font-medium mb-2">Avalanche Breakdown</h4>
+                                <p>Occurs in diodes with breakdown voltage greater than 5V. Free electrons gain enough energy to knock other electrons loose, creating a chain reaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="text-lg font-medium mb-2">Mathematical Model</h3>
+                        <p class="mb-2">The reverse current in a Zener diode can be modeled as:</p>
+                        <div class="text-center mb-3">
+                            \[ I_Z = I_S \cdot \left( e^{\frac{qV}{kT}} - 1 \right) \text{ when } |V| < |V_Z| \]
+                            \[ I_Z = \frac{V - V_Z}{R_Z} \text{ when } |V| \geq |V_Z| \]
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-disc pl-6 mb-3">
+                            <li>\(I_Z\) = Zener current</li>
+                            <li>\(V_Z\) = Zener voltage (breakdown voltage)</li>
+                            <li>\(R_Z\) = Zener impedance (dynamic resistance)</li>
+                            <li>\(I_S\) = Reverse saturation current</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h2 class="text-xl font-semibold mb-4">Interactive Zener Diode Characteristics</h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-3">Adjust Parameters</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Zener Voltage (V):</label>
+                                <input type="range" id="zenerVoltage" min="2" max="15" value="5.6" step="0.1" class="w-full">
+                                <span id="zenerVoltageValue" class="text-sm">5.6V</span>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Temperature (°C):</label>
+                                <input type="range" id="temperature" min="0" max="100" value="25" step="5" class="w-full">
+                                <span id="temperatureValue" class="text-sm">25°C</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <canvas id="zenerChart" height="300"></canvas>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h3 class="text-lg font-medium mb-2">Key Points</h3>
+                            <ul class="list-disc pl-6">
+                                <li>Before breakdown, very small reverse current flows</li>
+                                <li>At breakdown voltage, current increases rapidly</li>
+                                <li>After breakdown, voltage remains nearly constant</li>
+                                <li>Temperature coefficient: positive for <5V, negative for >5V</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h3 class="text-lg font-medium mb-2">Dynamic Resistance</h3>
+                            <p class="mb-2">The dynamic resistance (Rz) of a Zener diode is given by:</p>
+                            <div class="text-center mb-2">
+                                \[ R_Z = \frac{\Delta V_Z}{\Delta I_Z} \]
+                            </div>
+                            <p>This is the slope of the I-V curve in the breakdown region.</p>
+                            <p id="dynamicResistance" class="font-medium mt-2">Dynamic Resistance: calculating...</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h2 class="text-xl font-semibold mb-4">Experimental Procedure</h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-2">Setup</h3>
+                        <ol class="list-decimal pl-6 mb-4">
+                            <li>Connect the circuit as shown in the circuit diagram.</li>
+                            <li>Ensure the power supply is set to zero before making connections.</li>
+                            <li>Set the current limiting resistor R to an appropriate value (typically 1kΩ).</li>
+                            <li>Connect the voltmeter across the Zener diode.</li>
+                            <li>Connect the ammeter in series with the Zener diode.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-2">Measurements</h3>
+                        <ol class="list-decimal pl-6 mb-4">
+                            <li>Gradually increase the reverse bias voltage from 0V in small steps.</li>
+                            <li>Record the diode voltage and corresponding current at each step.</li>
+                            <li>Continue increasing voltage until well past the breakdown point.</li>
+                            <li>Record at least 15-20 readings for a complete curve.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-2">Observation Table</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full border-collapse border border-gray-300">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="border border-gray-300 px-4 py-2">Diode Voltage (Volts)</th>
+                                        <th class="border border-gray-300 px-4 py-2">Diode Current (mA)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="observationTable">
+                                    <!-- Table will be populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-4">
+                            <button id="generateData" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Generate Sample Data
+                            </button>
+                            <button id="clearData" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 ml-2">
+                                Clear Data
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h2 class="text-xl font-semibold mb-4">Results Analysis</h2>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium mb-1">Plot your experimental data:</label>
+                        <canvas id="experimentalChart" height="300"></canvas>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-2">Determining Breakdown Voltage</h3>
+                        <p class="mb-4">
+                            The breakdown voltage can be determined from the graph by identifying the voltage at which 
+                            the current starts to increase rapidly. This is typically identified as the "knee point" 
+                            in the I-V curve.
+                        </p>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <div id="breakdownResult" class="font-medium">Upload or generate data to calculate breakdown voltage</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h2 class="text-xl font-semibold mb-4">Applications of Zener Diodes</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h3 class="text-lg font-medium mb-2">Voltage Regulation</h3>
+                            <p>Zener diodes are widely used as voltage regulators to provide a stable reference voltage.</p>
+                            <div class="mt-3 text-center">
+                                <img src="exp6A/voltage_regulator.png" alt="Zener Voltage Regulator" class="mx-auto max-h-36">
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h3 class="text-lg font-medium mb-2">Overvoltage Protection</h3>
+                            <p>Zener diodes protect sensitive components by clamping excessive voltages.</p>
+                            <div class="mt-3 text-center">
+                                <img src="exp6A/overvoltage_protection.png" alt="Overvoltage Protection Circuit" class="mx-auto max-h-36">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h3 class="text-lg font-medium mb-2">Waveform Clipping</h3>
+                            <p>Zener diodes can be used to clip or limit signal amplitudes.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h3 class="text-lg font-medium mb-2">Voltage Shifting</h3>
+                            <p>Zener diodes are used in level shifting circuits to translate voltage levels.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="lg:w-1/3">
+                <div class="sticky top-4">
+                    <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                        <h2 class="text-xl font-semibold mb-4">Quick Quiz</h2>
+                        <div id="quiz-container">
+                            <div id="question" class="mb-4 font-medium"></div>
+                            <div id="options" class="mb-4"></div>
+                            <div id="result" class="mb-3 hidden"></div>
+                            <button id="next-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Start Quiz
+                            </button>
+                        </div>
+                        <div class="mt-4 text-sm">
+                            <div>Score: <span id="score">0</span>/<span id="total">0</span></div>
+                        </div>
+                    </section>
+                    
+                    <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                        <h2 class="text-xl font-semibold mb-4">Key Formulas</h2>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-gray-50 rounded">
+                                <p class="font-medium">Zener Current</p>
+                                <div class="text-center my-2">
+                                    \[ I_Z = \frac{V - V_Z}{R_Z} \text{ when } |V| \geq |V_Z| \]
+                                </div>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded">
+                                <p class="font-medium">Dynamic Resistance</p>
+                                <div class="text-center my-2">
+                                    \[ R_Z = \frac{\Delta V_Z}{\Delta I_Z} \]
+                                </div>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded">
+                                <p class="font-medium">Power Dissipation</p>
+                                <div class="text-center my-2">
+                                    \[ P_Z = V_Z \times I_Z \]
+                                </div>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded">
+                                <p class="font-medium">Temperature Coefficient</p>
+                                <div class="text-center my-2">
+                                    \[ \alpha_Z = \frac{\Delta V_Z}{V_Z \times \Delta T} \times 100\% \]
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-xl font-semibold mb-4">Important Notes</h2>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                                <p class="font-medium">Temperature Effects</p>
+                                <p class="text-sm">Zener voltage increases with temperature for diodes with V<sub>Z</sub> > 5V and decreases for diodes with V<sub>Z</sub> < 5V.</p>
+                            </div>
+                            <div class="p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                                <p class="font-medium">Power Rating</p>
+                                <p class="text-sm">Never exceed the maximum power dissipation rating of a Zener diode. Power = V<sub>Z</sub> × I<sub>Z</sub>.</p>
+                            </div>
+                            <div class="p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                                <p class="font-medium">Knee Current</p>
+                                <p class="text-sm">Zener diodes require a minimum current (knee current) to maintain regulation.</p>
+                            </div>
+                            <div class="p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                                <p class="font-medium">Series Resistor</p>
+                                <p class="text-sm">Always use a current-limiting resistor in series with a Zener diode to prevent damage.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data
+        const quizData = [
+            {
+                question: "What is the main purpose of a Zener diode?",
+                options: [
+                    "To block current in both directions",
+                    "To conduct in forward bias only",
+                    "To operate in the reverse breakdown region",
+                    "To generate oscillations"
+                ],
+                correct: 2
+            },
+            {
+                question: "What happens to a Zener diode at its breakdown voltage?",
+                options: [
+                    "It gets permanently damaged",
+                    "It conducts heavily in the reverse direction",
+                    "It stops conducting completely",
+                    "Its forward voltage drops to zero"
+                ],
+                correct: 1
+            },
+            {
+                question: "Which breakdown mechanism occurs in Zener diodes with breakdown voltage less than 5V?",
+                options: [
+                    "Avalanche breakdown",
+                    "Zener breakdown",
+                    "Tunneling breakdown",
+                    "Thermal breakdown"
+                ],
+                correct: 1
+            },
+            {
+                question: "What is the dynamic resistance of a Zener diode?",
+                options: [
+                    "The DC resistance at breakdown",
+                    "The slope of the I-V curve in the breakdown region",
+                    "The resistance before breakdown occurs",
+                    "The maximum resistance the diode can withstand"
+                ],
+                correct: 1
+            },
+            {
+                question: "How does temperature affect Zener diodes with breakdown voltage greater than 5V?",
+                options: [
+                    "Breakdown voltage increases with temperature",
+                    "Breakdown voltage decreases with temperature",
+                    "Temperature has no effect on breakdown voltage",
+                    "The diode stops working at high temperatures"
+                ],
+                correct: 0
+            }
+        ];
+
+        // Initialize the quiz
+        let currentQuestion = 0;
+        let score = 0;
+
+        const questionEl = document.getElementById('question');
+        const optionsEl = document.getElementById('options');
+        const resultEl = document.getElementById('result');
+        const nextBtn = document.getElementById('next-btn');
+        const scoreEl = document.getElementById('score');
+        const totalEl = document.getElementById('total');
+
+        totalEl.textContent = quizData.length;
+
+        function loadQuestion() {
+            const current = quizData[currentQuestion];
+            questionEl.textContent = `${currentQuestion + 1}. ${current.question}`;
+            
+            optionsEl.innerHTML = '';
+            current.options.forEach((option, index) => {
+                const label = document.createElement('label');
+                label.className = 'block p-2 hover:bg-gray-100 rounded cursor-pointer mb-2';
+                
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = 'quiz';
+                radio.value = index;
+                radio.className = 'mr-2';
+                
+                label.appendChild(radio);
+                label.appendChild(document.createTextNode(option));
+                optionsEl.appendChild(label);
+            });
+            
+            resultEl.className = 'mb-3 hidden';
+            nextBtn.textContent = 'Submit Answer';
+        }
+
+        nextBtn.addEventListener('click', function() {
+            if (nextBtn.textContent === 'Start Quiz') {
+                loadQuestion();
+                return;
+            }
+            
+            if (nextBtn.textContent === 'Next Question' || nextBtn.textContent === 'See Results') {
+                if (currentQuestion < quizData.length - 1) {
+                    currentQuestion++;
+                    loadQuestion();
+                } else {
+                    questionEl.textContent = `Quiz completed!`;
+                    optionsEl.innerHTML = `You scored ${score} out of ${quizData.length} questions correctly.`;
+                    resultEl.className = 'mb-3 hidden';
+                    nextBtn.textContent = 'Restart Quiz';
+                    currentQuestion = -1;
+                    score = 0;
+                    scoreEl.textContent = score;
+                }
+                return;
+            }
+            
+            if (nextBtn.textContent === 'Restart Quiz') {
+                currentQuestion = 0;
+                score = 0;
+                scoreEl.textContent = score;
+                loadQuestion();
+                return;
+            }
+            
+            // Check answer
+            const selectedOption = document.querySelector('input[name="quiz"]:checked');
+            if (!selectedOption) {
+                alert('Please select an answer');
+                return;
+            }
+            
+            const answer = parseInt(selectedOption.value);
+            if (answer === quizData[currentQuestion].correct) {
+                resultEl.textContent = 'Correct! 🎉';
+                resultEl.className = 'mb-3 p-2 bg-green-100 text-green-800 rounded';
+                score++;
+                scoreEl.textContent = score;
+            } else {
+                resultEl.textContent = `Incorrect. The correct answer is: ${quizData[currentQuestion].options[quizData[currentQuestion].correct]}`;
+                resultEl.className = 'mb-3 p-2 bg-red-100 text-red-800 rounded';
+            }
+            
+            // Disable all options
+            document.querySelectorAll('input[name="quiz"]').forEach(input => {
+                input.disabled = true;
+            });
+            
+            nextBtn.textContent = currentQuestion < quizData.length - 1 ? 'Next Question' : 'See Results';
+        });
+
+        // Function to generate zener diode characteristics
+        function drawZenerCurve() {
+            const zenerVoltage = parseFloat(document.getElementById('zenerVoltage').value);
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            
+            // Temperature coefficient effect (simplified model)
+            let tempCoeff;
+            if (zenerVoltage < 5) {
+                tempCoeff = -0.001; // Negative temp coefficient for Vz < 5V
+            } else {
+                tempCoeff = 0.0005; // Positive temp coefficient for Vz > 5V
+            }
+            
+            // Adjust Zener voltage based on temperature (reference is 25°C)
+            const adjustedZenerVoltage = zenerVoltage * (1 + tempCoeff * (temperature - 25));
+            
+            // Generate data points
+            const voltages = [];
+            const currents = [];
+            
+            // Pre-breakdown region (very small current)
+            for (let v = 0; v < adjustedZenerVoltage * 0.9; v += adjustedZenerVoltage / 20) {
+                voltages.push(-v);
+                currents.push(-0.001 * Math.exp(v / adjustedZenerVoltage));
+            }
+            
+            // Knee region
+            for (let v = adjustedZenerVoltage * 0.9; v < adjustedZenerVoltage; v += adjustedZenerVoltage / 40) {
+                voltages.push(-v);
+                const factor = Math.pow((v / adjustedZenerVoltage), 8);
+                currents.push(-0.5 * factor);
+            }
+            
+            // Breakdown region
+            for (let i = 1; i <= 10; i++) {
+                voltages.push(-adjustedZenerVoltage * (1 + 0.01 * i));
+                currents.push(-i * 2);
+            }
+            
+            // Sort by voltage
+            const pairs = voltages.map((v, i) => ({ v, i: currents[i] }));
+            pairs.sort((a, b) => a.v - b.v);
+            
+            const sortedVoltages = pairs.map(p => p.v);
+            const sortedCurrents = pairs.map(p => p.i);
+            
+            // Create/update chart
+            if (window.zenerChart) {
+                window.zenerChart.data.labels = sortedVoltages;
+                window.zenerChart.data.datasets[0].data = sortedCurrents;
+                window.zenerChart.update();
+            } else {
+                const ctx = document.getElementById('zenerChart').getContext('2d');
+                window.zenerChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: sortedVoltages,
+                        datasets: [{
+                            label: 'Zener Diode I-V Characteristic',
+                            data: sortedCurrents,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Voltage (V)'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Current (mA)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Calculate and update dynamic resistance display
+            // Using two points in the breakdown region for calculation
+            const idx1 = sortedVoltages.length - 2;
+            const idx2 = sortedVoltages.length - 1;
+            const deltaV = Math.abs(sortedVoltages[idx2] - sortedVoltages[idx1]);
+            const deltaI = Math.abs(sortedCurrents[idx2] - sortedCurrents[idx1]);
+            const dynamicR = (deltaV / deltaI) * 1000; // in ohms
+            
+            document.getElementById('dynamicResistance').textContent = `Dynamic Resistance: ${dynamicR.toFixed(1)} Ω`;
+        }
+
+        // Initialize the experimental data chart
+        function initExperimentalChart() {
+            const ctx = document.getElementById('experimentalChart').getContext('2d');
+            window.experimentalChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Experimental Data',
+                        data: [],
+                        backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'Voltage (V)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Current (mA)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+       // Generate sample experimental data
+       function generateSampleData() {
+            const zenerVoltage = parseFloat(document.getElementById('zenerVoltage').value);
+            const table = document.getElementById('observationTable');
+            const data = [];
+            
+            // Clear existing data
+            table.innerHTML = '';
+            
+            // Generate data points
+            // Before breakdown (small current)
+            for (let v = 0; v < zenerVoltage * 0.8; v += zenerVoltage / 8) {
+                if (v === 0) continue; // Skip zero point
+                
+                const voltage = v.toFixed(1);
+                const current = (0.001 * Math.exp(v / zenerVoltage)).toFixed(3);
+                
+                addTableRow(voltage, current);
+                data.push({x: -parseFloat(voltage), y: -parseFloat(current)});
+            }
+            
+            // Near breakdown
+            for (let v = zenerVoltage * 0.8; v < zenerVoltage; v += zenerVoltage / 20) {
+                const voltage = v.toFixed(1);
+                const factor = Math.pow((v / zenerVoltage), 8);
+                const current = (0.5 * factor).toFixed(2);
+                
+                addTableRow(voltage, current);
+                data.push({x: -parseFloat(voltage), y: -parseFloat(current)});
+            }
+            
+            // After breakdown
+            for (let i = 1; i <= 10; i++) {
+                const voltage = (zenerVoltage * (1 + 0.01 * i)).toFixed(1);
+                const current = (i * 2).toFixed(1);
+                
+                addTableRow(voltage, current);
+                data.push({x: -parseFloat(voltage), y: -parseFloat(current)});
+            }
+            
+            // Update the experimental chart
+            updateExperimentalChart(data);
+            
+            // Calculate and display breakdown voltage
+            calculateBreakdown(data);
+        }
+        
+        // Add a row to the observation table
+        function addTableRow(voltage, current) {
+            const table = document.getElementById('observationTable');
+            const row = table.insertRow();
+            
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            
+            cell1.textContent = voltage;
+            cell2.textContent = current;
+            
+            cell1.className = "border border-gray-300 px-4 py-2";
+            cell2.className = "border border-gray-300 px-4 py-2";
+        }
+        
+        // Clear the data table
+        function clearData() {
+            document.getElementById('observationTable').innerHTML = '';
+            updateExperimentalChart([]);
+            document.getElementById('breakdownResult').textContent = 'Upload or generate data to calculate breakdown voltage';
+        }
+        
+        // Update the experimental chart with data
+        function updateExperimentalChart(data) {
+            window.experimentalChart.data.datasets[0].data = data;
+            window.experimentalChart.update();
+        }
+        
+        // Calculate breakdown voltage from experimental data
+        function calculateBreakdown(data) {
+            if (data.length < 5) {
+                document.getElementById('breakdownResult').textContent = 'Insufficient data to calculate breakdown voltage';
+                return;
+            }
+            
+            // Sort data by voltage magnitude
+            data.sort((a, b) => Math.abs(a.x) - Math.abs(b.x));
+            
+            // Calculate the rate of change of current with respect to voltage
+            const derivatives = [];
+            
+            for (let i = 1; i < data.length; i++) {
+                const deltaV = Math.abs(data[i].x) - Math.abs(data[i-1].x);
+                const deltaI = Math.abs(data[i].y) - Math.abs(data[i-1].y);
+                
+                if (deltaV !== 0) {
+                    derivatives.push({
+                        voltage: Math.abs(data[i].x),
+                        derivative: deltaI / deltaV
+                    });
+                }
+            }
+            
+            // Find the point where derivative significantly increases
+            // (Using a simple threshold approach)
+            let breakdownIndex = 0;
+            let maxDerivative = 0;
+            
+            for (let i = 0; i < derivatives.length; i++) {
+                if (derivatives[i].derivative > maxDerivative) {
+                    maxDerivative = derivatives[i].derivative;
+                    breakdownIndex = i;
+                }
+            }
+            
+            const breakdownVoltage = derivatives[breakdownIndex].voltage.toFixed(2);
+            
+            document.getElementById('breakdownResult').innerHTML = `
+                <p>Based on the data analysis:</p>
+                <p class="text-lg font-bold mt-2">Breakdown Voltage = ${breakdownVoltage} V</p>
+            `;
+        }
+        
+        // Initialize all components on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize charts
+            drawZenerCurve();
+            initExperimentalChart();
+            
+            // Add event listeners
+            document.getElementById('zenerVoltage').addEventListener('input', function() {
+                document.getElementById('zenerVoltageValue').textContent = this.value + 'V';
+                drawZenerCurve();
+            });
+            
+            document.getElementById('temperature').addEventListener('input', function() {
+                document.getElementById('temperatureValue').textContent = this.value + '°C';
+                drawZenerCurve();
+            });
+            
+            document.getElementById('generateData').addEventListener('click', generateSampleData);
+            document.getElementById('clearData').addEventListener('click', clearData);
+        });
+    </script>
+</body>
+</html>

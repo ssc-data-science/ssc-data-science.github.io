@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zener Diode Voltage Regulator - Interactive Study Material</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ChartJS for interactive graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <!-- MathJax for equations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+
+    <!-- Images needed:
+    - 6B/circuit_diagram.png (Zener diode circuit diagram)
+    - 6B/zener_characteristic.png (Zener diode I-V characteristic curve) 
+    - 6B/line_regulation.png (Line regulation graph)
+    - 6B/load_regulation.png (Load regulation graph)
+    -->
+</head>
+
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="mb-10 text-center">
+            <h1 class="text-3xl font-bold mb-2">Experiment No. 6B: Voltage Regulator using Zener Diode</h1>
+            <p class="text-lg text-gray-600 italic">Interactive Study Guide</p>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <!-- Aim Section -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Aim</h2>
+                <p class="text-lg">To construct a voltage regulator using a zener diode and determine the percentage of
+                    voltage regulation.</p>
+            </section>
+
+            <!-- Theory Section -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Principle and Theory</h2>
+
+                <div class="mb-6">
+                    <div class="flex flex-col md:flex-row items-center gap-6 mb-4">
+                        <div class="md:w-1/2">
+                            <p class="mb-3">A voltage regulator is a circuit that maintains a constant output voltage
+                                regardless of changes in input voltage or load current.</p>
+                            <p class="mb-3">The zener diode operates in the reverse breakdown voltage region, where the
+                                zener voltage (V<sub>Z</sub>) remains almost constant irrespective of the current
+                                through it.</p>
+                            <p>When connected in parallel with the load and in series with a resistor, it provides a
+                                stable reference voltage.</p>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center">
+                            <div class="border p-2 rounded bg-gray-50">
+                                <img id="circuit-diagram" src="${expNo}/circuit_diagram.png"
+                                    alt="Zener Diode Voltage Regulator Circuit" class="max-w-full h-auto">
+                                <p class="text-center text-sm mt-2">Fig 1: Circuit Diagram of Zener Diode Voltage
+                                    Regulator</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="text-xl font-medium mb-3">Working Principle</h3>
+                        <p class="mb-3">As shown in the circuit diagram, a simple voltage regulator consists of:</p>
+                        <ul class="list-disc ml-6 mb-4">
+                            <li>A series resistor R<sub>S</sub> (120Ω in this experiment)</li>
+                            <li>A zener diode connected in parallel with the load</li>
+                            <li>A voltmeter to measure the output voltage</li>
+                            <li>An ammeter to measure the current through the circuit</li>
+                        </ul>
+
+                        <p class="mb-4">The zener diode maintains a constant voltage across its terminals when operating
+                            in the reverse breakdown region. Any excess current is shunted through the zener diode,
+                            maintaining a stable output voltage.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="text-xl font-medium mb-3">Key Parameters</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-300">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 border-b">Symbol</th>
+                                    <th class="py-2 px-4 border-b">Description</th>
+                                    <th class="py-2 px-4 border-b">Equation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">V<sub>i</sub></td>
+                                    <td class="py-2 px-4 border-b">Input Voltage</td>
+                                    <td class="py-2 px-4 border-b">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">V<sub>Z</sub></td>
+                                    <td class="py-2 px-4 border-b">Zener Breakdown Voltage</td>
+                                    <td class="py-2 px-4 border-b">5.1V (in this experiment)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">I</td>
+                                    <td class="py-2 px-4 border-b">Series Current</td>
+                                    <td class="py-2 px-4 border-b">I = I<sub>Z</sub> + I<sub>L</sub></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">R<sub>S</sub></td>
+                                    <td class="py-2 px-4 border-b">Series Resistance</td>
+                                    <td class="py-2 px-4 border-b">\(R_S = \frac{V_i - V_Z}{I}\)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h3 class="text-xl font-medium mb-3">Series Resistance Calculation</h3>
+                    <p class="mb-3">The series resistor must be chosen carefully:</p>
+                    <ul class="list-disc ml-6 mb-4">
+                        <li>When V<sub>i</sub> is minimum and I<sub>L</sub> is maximum: R<sub>S</sub> must be small
+                            enough to supply current to keep the zener in breakdown region</li>
+                        <li>When V<sub>i</sub> is maximum and I<sub>L</sub> is minimum: R<sub>S</sub> must be high
+                            enough to keep the zener current below the maximum permitted value (~20 mA)</li>
+                    </ul>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded">
+                            <p>For minimum resistance:</p>
+                            <p class="text-center my-2">\( (R_S)_{min} = \frac{(V_i)_{min} - V_Z}{(I_L)_{max} +
+                                (I_Z)_{min}} = \frac{7 - 5.1}{20 \times 10^{-3}} = 95 \Omega \)</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded">
+                            <p>For maximum resistance:</p>
+                            <p class="text-center my-2">\( (R_S)_{max} = \frac{(V_i)_{max} - V_Z}{(I_L)_{min} +
+                                (I_Z)_{max}} = \frac{12 - 5.1}{20 \times 10^{-3}} = 345 \Omega \)</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 font-medium">Thus, we select R<sub>S</sub> as 220Ω for this experiment.</p>
+                </div>
+            </section>
+
+            <!-- Voltage Regulation Section -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Voltage Regulation</h2>
+
+                <div class="mb-6">
+                    <p class="mb-4">Voltage regulation is a measure of how well a voltage regulator maintains a constant
+                        output voltage despite changes in input voltage or load current.</p>
+
+                    <div class="bg-yellow-50 p-4 rounded mb-6">
+                        <p class="text-center font-medium">Voltage Regulation Formula:</p>
+                        <p class="text-center text-xl my-2">\( \text{Voltage Regulation} = \frac{V_{NL} -
+                            V_{FL}}{V_{NL}} \times 100\% \)</p>
+                        <p class="text-sm text-center">Where:</p>
+                        <p class="text-sm text-center">V<sub>NL</sub> = Output Voltage with no load</p>
+                        <p class="text-sm text-center">V<sub>FL</sub> = Output Voltage with full load</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-medium mb-3">Line Regulation</h3>
+                            <p>Line regulation measures the ability of the regulator to maintain a constant output
+                                voltage despite changes in input voltage, while the load remains constant.</p>
+                            <div class="mt-4">
+                                <canvas id="lineRegulationChart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium mb-3">Load Regulation</h3>
+                            <p>Load regulation measures the ability of the regulator to maintain a constant output
+                                voltage despite changes in load current, while the input voltage remains constant.</p>
+                            <div class="mt-4">
+                                <canvas id="loadRegulationChart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Data Entry Section -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Interactive Data Entry</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Line Regulation Data -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-3">Line Regulation Data</h3>
+                        <p class="mb-2">Load Current I<sub>L</sub> = 10 mA (constant)</p>
+
+                        <div class="border rounded overflow-hidden mb-4">
+                            <table class="min-w-full divide-y divide-gray-200" id="lineRegTable">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Input Voltage V<sub>i</sub> (Volts)</th>
+                                        <th class="px-4 py-2 text-left">Output Voltage V<sub>o</sub> (Volts)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 bg-white">
+                                    <tr>
+                                        <td class="px-4 py-2">7</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="0"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">7.5</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="1"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">8</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="2"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">8.5</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="3"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">9</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="4"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">9.5</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="5"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">10</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="6"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">10.5</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="7"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">11</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="8"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">11.5</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="9"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">12</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="lineRegInput border rounded px-2 py-1 w-20" data-row="10"
+                                                placeholder="V"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button id="updateLineChartBtn"
+                            class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded">
+                            Update Line Regulation Chart
+                        </button>
+                    </div>
+
+                    <!-- Load Regulation Data -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-3">Load Regulation Data</h3>
+                        <p class="mb-2">Input Voltage V<sub>i</sub> = 10 V (constant)</p>
+
+                        <div class="border rounded overflow-hidden mb-4">
+                            <table class="min-w-full divide-y divide-gray-200" id="loadRegTable">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Load Current I<sub>L</sub> (mA)</th>
+                                        <th class="px-4 py-2 text-left">Output Voltage V<sub>o</sub> (Volts)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 bg-white">
+                                    <tr>
+                                        <td class="px-4 py-2">0</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="0"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">2</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="1"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">5</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="2"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">8</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="3"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">10</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="4"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">12</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="5"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">15</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="6"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">18</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="7"
+                                                placeholder="V"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">20</td>
+                                        <td class="px-4 py-2"><input type="number" step="0.1"
+                                                class="loadRegInput border rounded px-2 py-1 w-20" data-row="8"
+                                                placeholder="V"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button id="updateLoadChartBtn"
+                            class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded">
+                            Update Load Regulation Chart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calculate Voltage Regulation -->
+                <div class="mt-8">
+                    <h3 class="text-lg font-medium mb-3">Calculate Voltage Regulation</h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                V<sub>NL</sub> (Output Voltage with No Load):
+                            </label>
+                            <input type="number" id="vnl" step="0.01" class="border rounded px-3 py-2 w-full"
+                                placeholder="Enter V_NL">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                V<sub>FL</sub> (Output Voltage with Full Load):
+                            </label>
+                            <input type="number" id="vfl" step="0.01" class="border rounded px-3 py-2 w-full"
+                                placeholder="Enter V_FL">
+                        </div>
+                    </div>
+
+                    <button id="calculateRegulationBtn"
+                        class="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded">
+                        Calculate Voltage Regulation
+                    </button>
+
+                    <div class="mt-4 p-4 bg-gray-100 rounded hidden" id="regulationResult">
+                        <p class="font-medium">Voltage Regulation Result:</p>
+                        <p id="regulationValue" class="text-xl"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Test Your Knowledge</h2>
+
+                <div id="quiz">
+                    <div class="mb-6">
+                        <p class="font-medium mb-2">1. What happens to the output voltage of a zener diode regulator
+                            when the input voltage increases?</p>
+                        <div class="ml-4">
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q1" id="q1a" value="a" class="mr-2">
+                                <label for="q1a">It increases proportionally</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q1" id="q1b" value="b" class="mr-2">
+                                <label for="q1b">It remains nearly constant</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q1" id="q1c" value="c" class="mr-2">
+                                <label for="q1c">It decreases</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" name="q1" id="q1d" value="d" class="mr-2">
+                                <label for="q1d">It becomes zero</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="font-medium mb-2">2. What is the purpose of the series resistor in a zener regulator
+                            circuit?</p>
+                        <div class="ml-4">
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q2" id="q2a" value="a" class="mr-2">
+                                <label for="q2a">To increase the output voltage</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q2" id="q2b" value="b" class="mr-2">
+                                <label for="q2b">To limit the current through the zener diode</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q2" id="q2c" value="c" class="mr-2">
+                                <label for="q2c">To decrease the output voltage</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" name="q2" id="q2d" value="d" class="mr-2">
+                                <label for="q2d">To increase the load current</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="font-medium mb-2">3. A zener diode with V<sub>Z</sub> = 5.1V is used in a regulator.
+                            What will be the output voltage?</p>
+                        <div class="ml-4">
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q3" id="q3a" value="a" class="mr-2">
+                                <label for="q3a">Exactly 5.1V</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q3" id="q3b" value="b" class="mr-2">
+                                <label for="q3b">Approximately 5.1V</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q3" id="q3c" value="c" class="mr-2">
+                                <label for="q3c">Less than 5.1V</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" name="q3" id="q3d" value="d" class="mr-2">
+                                <label for="q3d">More than 5.1V</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="font-medium mb-2">4. What happens to the zener current when the load current
+                            increases?</p>
+                        <div class="ml-4">
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q4" id="q4a" value="a" class="mr-2">
+                                <label for="q4a">It increases</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q4" id="q4b" value="b" class="mr-2">
+                                <label for="q4b">It decreases</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q4" id="q4c" value="c" class="mr-2">
+                                <label for="q4c">It remains constant</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" name="q4" id="q4d" value="d" class="mr-2">
+                                <label for="q4d">It becomes zero</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="font-medium mb-2">5. Which factor affects the voltage regulation percentage most
+                            significantly?</p>
+                        <div class="ml-4">
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q5" id="q5a" value="a" class="mr-2">
+                                <label for="q5a">The value of series resistor</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q5" id="q5b" value="b" class="mr-2">
+                                <label for="q5b">The zener breakdown voltage</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" name="q5" id="q5c" value="c" class="mr-2">
+                                <label for="q5c">The dynamic resistance of the zener diode</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" name="q5" id="q5d" value="d" class="mr-2">
+                                <label for="q5d">All of the above</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="checkAnswersBtn"
+                        class="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded">
+                        Check Answers
+                    </button>
+
+                    <div class="mt-4 p-4 bg-gray-100 rounded hidden" id="quizResults">
+                        <p class="font-medium">Quiz Results:</p>
+                        <p id="quizScore" class="text-xl"></p>
+                        <div id="quizFeedback" class="mt-2"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-12">
+            <p>© 2025 Interactive Electronics Lab Materials</p>
+        </footer>
+    </div>
+
+    <script>// Sample data for initial charts
+        const initialLineData = {
+            labels: ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12'],
+            datasets: [{
+                label: 'Output Voltage (V)',
+                data: [5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2,
+                tension: 0.1
+            }]
+        };
+
+        const initialLoadData = {
+            labels: ['0', '2', '5', '8', '10', '12', '15', '18', '20'],
+            datasets: [{
+                label: 'Output Voltage (V)',
+                data: [5.1, 5.1, 5.1, 5.1, 5.1, 5.08, 5.06, 5.03, 5.0],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+                tension: 0.1
+            }]
+        };
+
+        // Configure and initialize the charts
+        let lineRegulationChart, loadRegulationChart;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Line Regulation Chart
+            const lineCtx = document.getElementById('lineRegulationChart').getContext('2d');
+            lineRegulationChart = new Chart(lineCtx, {
+                type: 'line',
+                data: initialLineData,
+                options: {
+                    scales: {
+                        y: {
+                            min: 4.5,
+                            max: 5.5,
+                            title: {
+                                display: true,
+                                text: 'Output Voltage (V)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Input Voltage (V)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Line Regulation Characteristics'
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+
+            // Initialize Load Regulation Chart
+            const loadCtx = document.getElementById('loadRegulationChart').getContext('2d');
+            loadRegulationChart = new Chart(loadCtx, {
+                type: 'line',
+                data: initialLoadData,
+                options: {
+                    scales: {
+                        y: {
+                            min: 4.5,
+                            max: 5.5,
+                            title: {
+                                display: true,
+                                text: 'Output Voltage (V)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Load Current (mA)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Load Regulation Characteristics'
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+
+            // Update Line Regulation Chart Button
+            document.getElementById('updateLineChartBtn').addEventListener('click', function () {
+                updateLineRegulationChart();
+            });
+
+            // Update Load Regulation Chart Button
+            document.getElementById('updateLoadChartBtn').addEventListener('click', function () {
+                updateLoadRegulationChart();
+            });
+
+            // Calculate Voltage Regulation Button
+            document.getElementById('calculateRegulationBtn').addEventListener('click', function () {
+                calculateVoltageRegulation();
+            });
+
+            // Check Quiz Answers Button
+            document.getElementById('checkAnswersBtn').addEventListener('click', function () {
+                checkQuizAnswers();
+            });
+
+            // Fill the fields with sample data for testing
+            fillSampleData();
+        });
+
+        // Function to fill sample data
+        function fillSampleData() {
+            // Sample output values for line regulation
+            const sampleLineOutputs = [5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1];
+
+            // Sample output values for load regulation
+            const sampleLoadOutputs = [5.1, 5.1, 5.1, 5.1, 5.1, 5.08, 5.06, 5.03, 5.0];
+
+            // Fill line regulation inputs
+            document.querySelectorAll('.lineRegInput').forEach((input, index) => {
+                if (index < sampleLineOutputs.length) {
+                    input.value = sampleLineOutputs[index];
+                }
+            });
+
+            // Fill load regulation inputs
+            document.querySelectorAll('.loadRegInput').forEach((input, index) => {
+                if (index < sampleLoadOutputs.length) {
+                    input.value = sampleLoadOutputs[index];
+                }
+            });
+
+            // Fill VNL and VFL
+            document.getElementById('vnl').value = "5.1";
+            document.getElementById('vfl').value = "5.0";
+        }
+
+        // Function to update the Line Regulation Chart
+        function updateLineRegulationChart() {
+            const inputVoltages = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12'];
+            const outputVoltages = [];
+
+            document.querySelectorAll('.lineRegInput').forEach((input) => {
+                const value = parseFloat(input.value);
+                if (!isNaN(value)) {
+                    outputVoltages.push(value);
+                } else {
+                    outputVoltages.push(null);
+                }
+            });
+
+            lineRegulationChart.data.datasets[0].data = outputVoltages;
+            lineRegulationChart.update();
+        }
+
+        // Function to update the Load Regulation Chart
+        function updateLoadRegulationChart() {
+            const loadCurrents = ['0', '2', '5', '8', '10', '12', '15', '18', '20'];
+            const outputVoltages = [];
+
+            document.querySelectorAll('.loadRegInput').forEach((input) => {
+                const value = parseFloat(input.value);
+                if (!isNaN(value)) {
+                    outputVoltages.push(value);
+                } else {
+                    outputVoltages.push(null);
+                }
+            });
+
+            loadRegulationChart.data.datasets[0].data = outputVoltages;
+            loadRegulationChart.update();
+        }
+
+        // Function to calculate voltage regulation
+        function calculateVoltageRegulation() {
+            const vnl = parseFloat(document.getElementById('vnl').value);
+            const vfl = parseFloat(document.getElementById('vfl').value);
+
+            if (isNaN(vnl) || isNaN(vfl)) {
+                alert('Please enter valid values for VNL and VFL');
+                return;
+            }
+
+            const voltageRegulation = ((vnl - vfl) / vnl) * 100;
+
+            const resultDiv = document.getElementById('regulationResult');
+            resultDiv.classList.remove('hidden');
+
+            document.getElementById('regulationValue').textContent = `${voltageRegulation.toFixed(2)}%`;
+        }
+
+        // Quiz correct answers
+        const quizAnswers = {
+            q1: 'b',
+            q2: 'b',
+            q3: 'b',
+            q4: 'b',
+            q5: 'd'
+        };
+
+        // Function to check quiz answers
+        function checkQuizAnswers() {
+            let score = 0;
+            let feedback = '';
+
+            // Check each question
+            for (let i = 1; i <= 5; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+
+                if (selectedOption) {
+                    const userAnswer = selectedOption.value;
+                    const correctAnswer = quizAnswers[`q${i}`];
+
+                    if (userAnswer === correctAnswer) {
+                        score++;
+                        feedback += `<p class="text-green-600">Question ${i}: Correct!</p>`;
+                    } else {
+                        feedback += `<p class="text-red-600">Question ${i}: Incorrect. The correct answer is option ${correctAnswer.toUpperCase()}.</p>`;
+                    }
+                } else {
+                    feedback += `<p class="text-orange-600">Question ${i}: Not answered.</p>`;
+                }
+            }
+
+            // Display results
+            const resultsDiv = document.getElementById('quizResults');
+            resultsDiv.classList.remove('hidden');
+
+            document.getElementById('quizScore').textContent = `You scored ${score} out of 5`;
+            document.getElementById('quizFeedback').innerHTML = feedback;
+        }
+
+        // Function to simulate real zener diode behavior
+        function simulateZenerOutput(inputVoltage, loadCurrent) {
+            const zenerVoltage = 5.1;
+            const zenerResistance = 0.5; // Simplified dynamic resistance in ohms
+
+            // Calculate actual output voltage based on load current
+            // This is a simplified model: Vo = Vz - Iz * Rz
+            // Where Iz is derived from circuit analysis
+
+            if (inputVoltage < zenerVoltage) {
+                return inputVoltage; // Zener not in breakdown
+            } else {
+                // Simplified calculation for demonstration
+                const outputVoltage = zenerVoltage - (loadCurrent / 1000) * zenerResistance;
+                return Math.max(outputVoltage, 0); // Ensure voltage doesn't go negative
+            }
+        }
+    </script>
+</body>
+
+</html>
