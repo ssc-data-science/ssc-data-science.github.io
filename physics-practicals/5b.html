@@ -1,0 +1,845 @@
+<!--
+Required Images:
+1. positive-clamp-0v.png - Circuit diagram and waveform for positive clamping at 0V
+2. positive-clamp-plus2v.png - Circuit diagram and waveform for positive clamping at +2V 
+3. positive-clamp-minus2v.png - Circuit diagram and waveform for positive clamping at -2V
+4. diode-model.png - Simple diode model showing forward and reverse bias
+5. clamping-animation.gif - Animation showing how the capacitor charges and discharges in a clamping circuit
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clamping Circuits - Interactive Study Material</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .highlight {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .concept-card {
+            transition: transform 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-blue-700 text-white p-6 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold">Clamping Circuits</h1>
+            <span class="mt-2 md:mt-0 bg-blue-900 px-3 py-1 rounded-full text-sm">Experiment No: 5B</span>
+        </div>
+    </header>
+
+    <div class="container mx-auto p-6">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Aim</h2>
+            <p class="text-lg">To design and construct various clamping circuits using diodes, resistances and
+                capacitors and verify their performance using CRO.</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Principle</h2>
+            <p class="mb-4">Clamping means adding or subtracting a DC voltage to a given waveform without changing the
+                shape of the waveform. A capacitor which is charged to a voltage and subsequently prevented from
+                discharging is utilized in clampers.</p>
+            <p class="mb-4">Here the value of C and R<sub>L</sub> is such that the charging time (R<sub>S</sub>C) of the
+                capacitor is very small compared with discharging time (R<sub>L</sub>C).</p>
+
+            <div class="p-4 bg-blue-50 rounded-lg mt-6">
+                <h3 class="font-bold text-lg mb-2">Key Components in Clamping Circuits</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Diode:</strong> Controls when the capacitor can charge and prevents discharge</li>
+                    <li><strong>Capacitor:</strong> Stores the DC voltage for clamping</li>
+                    <li><strong>Resistor:</strong> Controls the time constant for charging/discharging</li>
+                    <li><strong>DC Source (Optional):</strong> Provides additional DC offset</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Interactive Tabs for Different Clamping Types -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6 text-blue-700">Types of Clamping Circuits</h2>
+
+            <div class="mb-4 border-b">
+                <ul class="flex flex-wrap -mb-px" id="clampingTabs" role="tablist">
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-blue-600 rounded-t-lg active"
+                            id="clamp-0v-tab" data-tabs-target="#clamp-0v" type="button" role="tab"
+                            aria-controls="clamp-0v" aria-selected="true">Positive Clamping at 0V</button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300"
+                            id="clamp-plus2v-tab" data-tabs-target="#clamp-plus2v" type="button" role="tab"
+                            aria-controls="clamp-plus2v" aria-selected="false">Positive Clamping at +2V</button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:border-gray-300"
+                            id="clamp-minus2v-tab" data-tabs-target="#clamp-minus2v" type="button" role="tab"
+                            aria-controls="clamp-minus2v" aria-selected="false">Positive Clamping at -2V</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="clampingTabContent">
+                <!-- Positive Clamping at 0V -->
+                <div class="tab-content active p-4 rounded-lg bg-gray-50" id="clamp-0v" role="tabpanel"
+                    aria-labelledby="clamp-0v-tab">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <h3 class="text-xl font-bold mb-4">Positive Clamping at 0V</h3>
+                            <p class="mb-3">In this circuit, the negative peaks of the input waveform are clamped to 0V.
+                            </p>
+                            <p class="mb-3">Let the applied voltage V<sub>in</sub> = V<sub>m</sub> sinωt</p>
+                            <p class="mb-3"><strong>Operation:</strong></p>
+                            <ul class="list-disc pl-6 mb-4 space-y-2">
+                                <li><span class="highlight">During negative half cycle</span> of input sine wave, the
+                                    diode conducts and capacitor charges to V<sub>0</sub>.</li>
+                                <li><span class="highlight">During positive half cycle</span> of input sine wave, the
+                                    capacitor cannot discharge since the diode does not conduct.</li>
+                                <li>The capacitor acts as a battery of V<sub>0</sub> volts connected in series with
+                                    input signal.</li>
+                            </ul>
+                            <p class="mt-4 text-lg font-semibold">Output Equation:</p>
+                            <p class="bg-blue-100 p-2 rounded">V<sub>out</sub> = V<sub>0</sub> + V<sub>m</sub> sinωt</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="border rounded-lg p-4 bg-white shadow-sm">
+                                <img src="img/positive-clamp-0v.png" alt="Positive Clamping at 0V Circuit and Waveform"
+                                    class="w-full mb-4">
+                                <canvas id="clamp0vChart" width="400" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positive Clamping at +2V -->
+                <div class="tab-content p-4 rounded-lg bg-gray-50" id="clamp-plus2v" role="tabpanel"
+                    aria-labelledby="clamp-plus2v-tab">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <h3 class="text-xl font-bold mb-4">Positive Clamping at +2V</h3>
+                            <p class="mb-3">In this circuit, the negative peaks of the input waveform are clamped to
+                                +2V.</p>
+                            <p class="mb-3">The operation is similar to the 0V clamping circuit, but with an additional
+                                DC voltage source.</p>
+                            <p class="mb-3"><strong>Operation:</strong></p>
+                            <ul class="list-disc pl-6 mb-4 space-y-2">
+                                <li>Here the charging of the capacitor is extended to (V<sub>0</sub> + 2) volts due to
+                                    the presence of the battery.</li>
+                                <li>This shifts the entire waveform upward by an additional 2V.</li>
+                            </ul>
+                            <p class="mt-4 text-lg font-semibold">Output Equation:</p>
+                            <p class="bg-blue-100 p-2 rounded">V<sub>out</sub> = V<sub>0</sub> + 2 + V<sub>m</sub> sinωt
+                            </p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="border rounded-lg p-4 bg-white shadow-sm">
+                                <img src="img/positive-clamp-plus2v.png"
+                                    alt="Positive Clamping at +2V Circuit and Waveform" class="w-full mb-4">
+                                <canvas id="clampPlus2vChart" width="400" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positive Clamping at -2V -->
+                <div class="tab-content p-4 rounded-lg bg-gray-50" id="clamp-minus2v" role="tabpanel"
+                    aria-labelledby="clamp-minus2v-tab">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <h3 class="text-xl font-bold mb-4">Positive Clamping at -2V</h3>
+                            <p class="mb-3">In this circuit, the negative peaks of the input waveform are clamped to
+                                -2V.</p>
+                            <p class="mb-3">The battery polarity is reversed compared to the +2V circuit.</p>
+                            <p class="mb-3"><strong>Operation:</strong></p>
+                            <ul class="list-disc pl-6 mb-4 space-y-2">
+                                <li>Here the charging of the capacitor is limited to (V<sub>0</sub> - 2) volts due to
+                                    the presence of the battery.</li>
+                                <li>This shifts the entire waveform downward by 2V.</li>
+                            </ul>
+                            <p class="mt-4 text-lg font-semibold">Output Equation:</p>
+                            <p class="bg-blue-100 p-2 rounded">V<sub>out</sub> = V<sub>0</sub> - 2 + V<sub>m</sub> sinωt
+                            </p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="border rounded-lg p-4 bg-white shadow-sm">
+                                <img src="img/positive-clamp-minus2v.png"
+                                    alt="Positive Clamping at -2V Circuit and Waveform" class="w-full mb-4">
+                                <canvas id="clampMinus2vChart" width="400" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Waveform Simulator -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Interactive Waveform Simulator</h2>
+            <p class="mb-4">Adjust the parameters below to see how they affect the clamping circuit output:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Input Amplitude (V<sub>m</sub>)</label>
+                    <input type="range" min="1" max="10" value="5" class="w-full" id="amplitudeSlider">
+                    <div class="text-sm text-center mt-1"><span id="amplitudeValue">5</span> V</div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">DC Shift Voltage</label>
+                    <input type="range" min="-5" max="5" value="0" class="w-full" id="dcShiftSlider">
+                    <div class="text-sm text-center mt-1"><span id="dcShiftValue">0</span> V</div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Clamping Type</label>
+                    <select id="clampingTypeSelect" class="w-full p-2 border rounded">
+                        <option value="0">Positive Clamping at 0V</option>
+                        <option value="2">Positive Clamping at +2V</option>
+                        <option value="-2">Positive Clamping at -2V</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="border rounded-lg p-4 bg-gray-50">
+                <canvas id="simulatorChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                <h3 class="font-bold mb-2">Observation:</h3>
+                <p id="simulatorObservation" class="text-sm">Adjust the parameters to see the effect on the output
+                    waveform.</p>
+            </div>
+        </div>
+
+        <!-- Experimental Setup and Procedure -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Experimental Setup and Procedure</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Components Required</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Diode (1N4007 or similar)</li>
+                        <li>Capacitor (1μF, 16V)</li>
+                        <li>Resistor (10kΩ)</li>
+                        <li>Function Generator</li>
+                        <li>Oscilloscope (CRO)</li>
+                        <li>DC Power Supply (for +2V and -2V clamping)</li>
+                        <li>Breadboard and connecting wires</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Procedure</h3>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li>Set up the circuit for positive clamping at 0V as shown in the diagram.</li>
+                        <li>Connect the function generator to provide a sine wave input.</li>
+                        <li>Connect the oscilloscope to observe both input and output waveforms.</li>
+                        <li>Record the peak values of input and output waveforms.</li>
+                        <li>Modify the circuit for +2V and -2V clamping by adding the DC source.</li>
+                        <li>Repeat the observations for each circuit.</li>
+                        <li>Compare the theoretical and practical results.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Observation Table -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8 overflow-x-auto">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Observation and Tabulation</h2>
+
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th colspan="2" class="border border-gray-300 p-2 text-center">+ve Clamping at 0V</th>
+                        <th colspan="2" class="border border-gray-300 p-2 text-center">+ve Clamping at +2V</th>
+                        <th colspan="2" class="border border-gray-300 p-2 text-center">+ve Clamping at -2V</th>
+                    </tr>
+                    <tr class="bg-gray-100">
+                        <th colspan="6" class="border border-gray-300 p-2 text-center">Peak Values of Voltage</th>
+                    </tr>
+                    <tr class="bg-gray-100">
+                        <th colspan="2" class="border border-gray-300 p-2 text-center">Input</th>
+                        <th colspan="2" class="border border-gray-300 p-2 text-center">Output</th>
+                        <th colspan="2" class="border border-gray-300 p-2 text-center">Input</th>
+                    </tr>
+                    <tr class="bg-gray-100">
+                        <th class="border border-gray-300 p-2 text-center">Positive side</th>
+                        <th class="border border-gray-300 p-2 text-center">Negative Side</th>
+                        <th class="border border-gray-300 p-2 text-center">Positive side</th>
+                        <th class="border border-gray-300 p-2 text-center">Negative Side</th>
+                        <th class="border border-gray-300 p-2 text-center">Positive side</th>
+                        <th class="border border-gray-300 p-2 text-center">Negative Side</th>
+                    </tr>
+                </thead>
+                <tbody id="observationTableBody">
+                    <!-- This will be populated by JavaScript -->
+                </tbody>
+            </table>
+
+            <div class="mt-4">
+                <button id="generateObservationsBtn"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Generate Sample
+                    Observations</button>
+            </div>
+        </div>
+
+        <!-- Key Concepts -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6 text-blue-700">Key Concepts</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="concept-card border rounded-lg p-4 bg-blue-50 shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Difference Between Clamping and Clipping</h3>
+                    <p>Clamping adds or subtracts DC voltage without changing the shape of the waveform, while clipping
+                        removes or "clips" portions of the waveform above or below certain voltage levels.</p>
+                </div>
+
+                <div class="concept-card border rounded-lg p-4 bg-yellow-50 shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Time Constant Requirements</h3>
+                    <p>For effective clamping, the charging time constant (R<sub>S</sub>C) should be much smaller than
+                        the discharging time constant (R<sub>L</sub>C). Typically, R<sub>L</sub> >> R<sub>S</sub>.</p>
+                </div>
+
+                <div class="concept-card border rounded-lg p-4 bg-green-50 shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Applications of Clamping</h3>
+                    <p>Clamping circuits are used in TV receivers to maintain DC reference, in power supplies for
+                        voltage regulation, and in signal processing to shift signal levels.</p>
+                </div>
+
+                <div class="concept-card border rounded-lg p-4 bg-red-50 shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Limitations</h3>
+                    <p>Real clamping circuits are affected by diode forward voltage drop, capacitor leakage, and
+                        non-ideal components leading to slight waveform distortion.</p>
+                </div>
+
+                <div class="concept-card border rounded-lg p-4 bg-purple-50 shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Negative Clamping</h3>
+                    <p>By reversing the diode direction, negative clamping can be achieved. In negative clamping, the
+                        positive peaks of the waveform are clamped.</p>
+                </div>
+
+                <div class="concept-card border rounded-lg p-4 bg-indigo-50 shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Effect of Frequency</h3>
+                    <p>The effectiveness of clamping decreases at high frequencies as the R<sub>L</sub>C time constant
+                        becomes comparable to the signal period.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Self Assessment -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Self Assessment</h2>
+            <p class="mb-6">Test your understanding of clamping circuits with these questions:</p>
+
+            <div id="quizContainer" class="space-y-8">
+                <!-- Question 1 -->
+                <div class="p-4 border rounded-lg">
+                    <p class="font-semibold mb-2">1. What is the primary purpose of a clamping circuit?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-start">
+                            <input type="radio" name="q1" value="a" class="mt-1 mr-2">
+                            <span>A) To clip portions of the waveform</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q1" value="b" class="mt-1 mr-2">
+                            <span>B) To add or subtract a DC component without changing the waveform shape</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q1" value="c" class="mt-1 mr-2">
+                            <span>C) To amplify the signal</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q1" value="d" class="mt-1 mr-2">
+                            <span>D) To filter high-frequency components</span>
+                        </label>
+                    </div>
+                    <div class="mt-3 hidden" id="answer1">
+                        <p class="font-semibold text-green-600">Correct Answer: B</p>
+                        <p>Clamping circuits add or subtract a DC component without changing the shape of the waveform.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="p-4 border rounded-lg">
+                    <p class="font-semibold mb-2">2. In a positive clamping circuit at 0V, what voltage are the negative
+                        peaks clamped to?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-start">
+                            <input type="radio" name="q2" value="a" class="mt-1 mr-2">
+                            <span>A) +Vm</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q2" value="b" class="mt-1 mr-2">
+                            <span>B) -Vm</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q2" value="c" class="mt-1 mr-2">
+                            <span>C) 0V</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q2" value="d" class="mt-1 mr-2">
+                            <span>D) 2V</span>
+                        </label>
+                    </div>
+                    <div class="mt-3 hidden" id="answer2">
+                        <p class="font-semibold text-green-600">Correct Answer: C</p>
+                        <p>In a positive clamping circuit at 0V, the negative peaks of the input waveform are clamped to
+                            0V.</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="p-4 border rounded-lg">
+                    <p class="font-semibold mb-2">3. If the input to a positive clamping circuit at +2V is a sine wave
+                        with amplitude 5V, what is the peak-to-peak voltage of the output?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-start">
+                            <input type="radio" name="q3" value="a" class="mt-1 mr-2">
+                            <span>A) 5V</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q3" value="b" class="mt-1 mr-2">
+                            <span>B) 7V</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q3" value="c" class="mt-1 mr-2">
+                            <span>C) 10V</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q3" value="d" class="mt-1 mr-2">
+                            <span>D) 12V</span>
+                        </label>
+                    </div>
+                    <div class="mt-3 hidden" id="answer3">
+                        <p class="font-semibold text-green-600">Correct Answer: C</p>
+                        <p>The peak-to-peak voltage remains the same (10V), but the waveform is shifted up by 2V.</p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="p-4 border rounded-lg">
+                    <p class="font-semibold mb-2">4. For effective clamping, what relationship should exist between
+                        charging time (RsC) and discharging time (RlC)?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-start">
+                            <input type="radio" name="q4" value="a" class="mt-1 mr-2">
+                            <span>A) RsC >> RlC</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q4" value="b" class="mt-1 mr-2">
+                            <span>B) RsC << RlC</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q4" value="c" class="mt-1 mr-2">
+                            <span>C) RsC = RlC</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="radio" name="q4" value="d" class="mt-1 mr-2">
+                            <span>D) RsC and RlC are unrelated</span>
+                        </label>
+                    </div>
+                    <div class="mt-3 hidden" id="answer4">
+                        <p class="font-semibold text-green-600">Correct Answer: B</p>
+                        <p>The charging time constant (RsC) should be much smaller than the discharging time constant
+                            (RlC) for effective clamping.</p>
+                    </div>
+                </div>
+
+                <button id="checkAnswersBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Check
+                    Answers</button>
+            </div>
+        </div>
+
+        <!-- Summary and Conclusion -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Summary and Conclusion</h2>
+            <div class="space-y-3">
+                <p>Clamping circuits are used to add or subtract a DC voltage to a given waveform without changing its
+                    shape. Three main types of positive clamping circuits were studied:</p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>Positive Clamping at 0V: Negative peaks clamped to 0V</li>
+                    <li>Positive Clamping at +2V: Negative peaks clamped to +2V</li>
+                    <li>Positive Clamping at -2V: Negative peaks clamped to -2V</li>
+                </ul>
+                <p>Key components in a clamping circuit include a diode, capacitor, and load resistor. The capacitor
+                    charging time must be much shorter than the discharging time for effective clamping.</p>
+                <p>The output equation for a clamping circuit is given by:</p>
+                <p class="bg-blue-100 p-2 rounded my-2">V<sub>out</sub> = V<sub>0</sub> + V<sub>dc</sub> + V<sub>m</sub>
+                    sinωt</p>
+                <p>Where V<sub>0</sub> is the initial capacitor voltage, V<sub>dc</sub> is the DC shift (0, +2V, or
+                    -2V), and V<sub>m</sub> sinωt is the input signal.</p>
+                <p>The experimental results confirm the theoretical predictions, demonstrating that clamping circuits
+                    effectively shift the DC level of a waveform while preserving its shape.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white p-6 mt-8">
+        <div class="container mx-auto text-center">
+            <p>Experiment No: 5B - Clamping Circuits</p>
+            <p class="mt-2 text-sm text-gray-400">© 2025 Electronics Laboratory</p>
+        </div>
+    </footer>
+
+    <script>
+        // Data structure for clamping circuit configurations
+        const clampingConfigs = {
+            "0v": {
+                title: "Positive Clamping at 0V",
+                equation: "Vout = V0 + Vm sinωt",
+                dcShift: 0
+            },
+            "plus2v": {
+                title: "Positive Clamping at +2V",
+                equation: "Vout = V0 + 2 + Vm sinωt",
+                dcShift: 2
+            },
+            "minus2v": {
+                title: "Positive Clamping at -2V",
+                equation: "Vout = V0 - 2 + Vm sinωt",
+                dcShift: -2
+            }
+        };
+
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabButtons = document.querySelectorAll('[data-tabs-target]');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const target = document.querySelector(button.dataset.tabsTarget);
+
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('border-blue-600');
+                        btn.classList.add('border-transparent');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    button.classList.add('border-blue-600');
+                    button.classList.remove('border-transparent');
+                    button.setAttribute('aria-selected', 'true');
+
+                    target.classList.add('active');
+
+                    // Redraw charts when switching tabs
+                    if (button.id === 'clamp-0v-tab') {
+                        drawChart('clamp0vChart', 0);
+                    } else if (button.id === 'clamp-plus2v-tab') {
+                        drawChart('clampPlus2vChart', 2);
+                    } else if (button.id === 'clamp-minus2v-tab') {
+                        drawChart('clampMinus2vChart', -2);
+                    }
+                });
+            });
+
+            // Initialize charts
+            drawChart('clamp0vChart', 0);
+            drawChart('clampPlus2vChart', 2);
+            drawChart('clampMinus2vChart', -2);
+
+            // Initialize simulator
+            initSimulator();
+
+            // Quiz functionality
+            document.getElementById('checkAnswersBtn').addEventListener('click', checkAnswers);
+
+            // Observation table generator
+            document.getElementById('generateObservationsBtn').addEventListener('click', generateObservations);
+        });
+
+        // Function to draw input and output waveforms for clamping circuits
+        function drawChart(canvasId, dcShift) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+
+            const amplitude = 5; // Default amplitude
+            const points = 100;
+            const inputData = [];
+            const outputData = [];
+
+            for (let i = 0; i < points; i++) {
+                const x = (i / points) * 2 * Math.PI;
+                const inputY = amplitude * Math.sin(x);
+                const outputY = inputY + dcShift;
+
+                inputData.push({ x: i, y: inputY });
+                outputData.push({ x: i, y: outputY });
+            }
+
+            // Destroy existing chart if it exists
+            if (window[canvasId + 'Instance']) {
+                window[canvasId + 'Instance'].destroy();
+            }
+
+            // Create new chart
+            window[canvasId + 'Instance'] = new Chart(canvas, {
+                type: 'line',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Input Signal',
+                            data: inputData,
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 2,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Output Signal',
+                            data: outputData,
+                            borderColor: 'rgb(54, 162, 235)',
+                            borderWidth: 2,
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            title: {
+                                display: true,
+                                text: 'Time'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Voltage (V)'
+                            },
+                            min: -amplitude - 2,
+                            max: amplitude + 2
+                        }
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            });
+        }
+
+        // Function to initialize the interactive simulator
+        function initSimulator() {
+            const canvas = document.getElementById('simulatorChart');
+            const amplitudeSlider = document.getElementById('amplitudeSlider');
+            const dcShiftSlider = document.getElementById('dcShiftSlider');
+            const clampingTypeSelect = document.getElementById('clampingTypeSelect');
+            const amplitudeValue = document.getElementById('amplitudeValue');
+            const dcShiftValue = document.getElementById('dcShiftValue');
+            const observationText = document.getElementById('simulatorObservation');
+
+            // Initial values
+            let amplitude = parseInt(amplitudeSlider.value);
+            let dcShift = parseInt(dcShiftSlider.value);
+            let clampingType = parseInt(clampingTypeSelect.value);
+
+            // Update display values
+            amplitudeValue.textContent = amplitude;
+            dcShiftValue.textContent = dcShift;
+
+            // Function to update the simulator
+            function updateSimulator() {
+                const points = 100;
+                const inputData = [];
+                const outputData = [];
+
+                for (let i = 0; i < points; i++) {
+                    const x = (i / points) * 2 * Math.PI;
+                    const inputY = amplitude * Math.sin(x);
+                    const outputY = inputY + clampingType;
+
+                    inputData.push({ x: i, y: inputY });
+                    outputData.push({ x: i, y: outputY + dcShift });
+                }
+
+                // Destroy existing chart if it exists
+                if (window.simulatorChartInstance) {
+                    window.simulatorChartInstance.destroy();
+                }
+
+                // Create new chart
+                window.simulatorChartInstance = new Chart(canvas, {
+                    type: 'line',
+                    data: {
+                        datasets: [
+                            {
+                                label: 'Input Signal',
+                                data: inputData,
+                                borderColor: 'rgb(255, 99, 132)',
+                                borderWidth: 2,
+                                tension: 0.4
+                            },
+                            {
+                                label: 'Output Signal',
+                                data: outputData,
+                                borderColor: 'rgb(54, 162, 235)',
+                                borderWidth: 2,
+                                tension: 0.4
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+                                type: 'linear',
+                                title: {
+                                    display: true,
+                                    text: 'Time'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Voltage (V)'
+                                },
+                                min: -amplitude - Math.abs(clampingType) - Math.abs(dcShift) - 2,
+                                max: amplitude + Math.abs(clampingType) + Math.abs(dcShift) + 2
+                            }
+                        },
+                        animation: {
+                            duration: 0
+                        }
+                    }
+                });
+
+                // Update observation text
+                updateObservation();
+            }
+
+            // Function to update the observation text
+            function updateObservation() {
+                const outputPeak = amplitude + clampingType + dcShift;
+                const outputMin = -amplitude + clampingType + dcShift;
+
+                observationText.innerHTML = `
+                    Input signal: Peak = ${amplitude}V, Min = ${-amplitude}V<br>
+                    Output signal: Peak = ${outputPeak.toFixed(1)}V, Min = ${outputMin.toFixed(1)}V<br>
+                    The waveform has been shifted by ${(clampingType + dcShift).toFixed(1)}V.
+                `;
+            }
+
+            // Event listeners for controls
+            amplitudeSlider.addEventListener('input', function () {
+                amplitude = parseInt(this.value);
+                amplitudeValue.textContent = amplitude;
+                updateSimulator();
+            });
+
+            dcShiftSlider.addEventListener('input', function () {
+                dcShift = parseInt(this.value);
+                dcShiftValue.textContent = dcShift;
+                updateSimulator();
+            });
+
+            clampingTypeSelect.addEventListener('change', function () {
+                clampingType = parseInt(this.value);
+                updateSimulator();
+            });
+
+            // Initialize simulator
+            updateSimulator();
+        }
+
+        // Function to check quiz answers
+        function checkAnswers() {
+            const correctAnswers = {
+                'q1': 'b',
+                'q2': 'c',
+                'q3': 'c',
+                'q4': 'b'
+            };
+
+            let score = 0;
+
+            for (let i = 1; i <= 4; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                const answerDiv = document.getElementById(`answer${i}`);
+
+                answerDiv.classList.remove('hidden');
+
+                if (selectedOption && selectedOption.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            alert(`You scored ${score} out of 4!`);
+        }
+
+        // Function to generate observation table
+        function generateObservations() {
+            const tableBody = document.getElementById('observationTableBody');
+
+            // Sample data
+            const data = [
+                // +ve Clamping at 0V
+                {
+                    inputPos: 5.0,
+                    inputNeg: -5.0,
+                    outputPos: 5.0,
+                    outputNeg: 0.0
+                },
+                // +ve Clamping at +2V
+                {
+                    inputPos: 5.0,
+                    inputNeg: -5.0,
+                    outputPos: 7.0,
+                    outputNeg: 2.0
+                },
+                // +ve Clamping at -2V
+                {
+                    inputPos: 5.0,
+                    inputNeg: -5.0,
+                    outputPos: 3.0,
+                    outputNeg: -2.0
+                }
+            ];
+
+            // Clear existing rows
+            tableBody.innerHTML = '';
+
+            // Create row
+            const row = document.createElement('tr');
+
+            // Add cells
+            row.innerHTML = `
+                <td class="border border-gray-300 p-2 text-center">${data[0].inputPos.toFixed(1)}</td>
+                <td class="border border-gray-300 p-2 text-center">${data[0].inputNeg.toFixed(1)}</td>
+                <td class="border border-gray-300 p-2 text-center">${data[0].outputPos.toFixed(1)}</td>
+                <td class="border border-gray-300 p-2 text-center">${data[0].outputNeg.toFixed(1)}</td>
+                <td class="border border-gray-300 p-2 text-center">${data[1].outputPos.toFixed(1)}</td>
+                <td class="border border-gray-300 p-2 text-center">${data[1].outputNeg.toFixed(1)}</td>
+            `;
+
+            tableBody.appendChild(row);
+        }
+    </script>
+</body>
+
+</html>
