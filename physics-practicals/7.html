@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltage Doubler and Tripler Study Material</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js for interactive graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <!-- Math.js for calculations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+
+    <!-- Images needed:
+    - experiment7/voltage_doubler_circuit.png (First voltage doubler circuit)
+    - experiment7/alternate_doubler_circuit.png (Alternate voltage doubler circuit)
+    - experiment7/voltage_tripler_circuit.png (Voltage tripler circuit)
+    - experiment7/waveform_doubler.png (Voltage doubler waveforms)
+    - experiment7/waveform_tripler.png (Voltage tripler waveforms)
+    -->
+
+    <style>
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 w-full h-2 bg-gray-200 z-50">
+        <div id="progress-bar" class="h-full bg-blue-500" style="width: 0%"></div>
+    </div>
+
+    <header class="bg-blue-600 text-white p-6 shadow-md">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold">Experiment No. 7</h1>
+            <h2 class="text-2xl mt-2">Construction of Voltage Doubler and Voltage Tripler</h2>
+            <div class="mt-4 flex items-center">
+                <div class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold mr-2">
+                    XP: <span id="xp">0</span>/100
+                </div>
+                <div class="bg-green-400 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    Level: <span id="level">1</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <nav class="mb-8">
+            <ul class="flex flex-wrap space-x-2 space-y-2 md:space-y-0">
+                <li class="nav-item">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded active"
+                        data-section="introduction">Introduction</button>
+                </li>
+                <li class="nav-item">
+                    <button class="bg-gray-300 hover:bg-blue-600 hover:text-white px-4 py-2 rounded"
+                        data-section="voltage-doubler">Voltage Doubler</button>
+                </li>
+                <li class="nav-item">
+                    <button class="bg-gray-300 hover:bg-blue-600 hover:text-white px-4 py-2 rounded"
+                        data-section="alternate-doubler">Alternate Doubler</button>
+                </li>
+                <li class="nav-item">
+                    <button class="bg-gray-300 hover:bg-blue-600 hover:text-white px-4 py-2 rounded"
+                        data-section="voltage-tripler">Voltage Tripler</button>
+                </li>
+                <li class="nav-item">
+                    <button class="bg-gray-300 hover:bg-blue-600 hover:text-white px-4 py-2 rounded"
+                        data-section="simulation">Interactive Simulation</button>
+                </li>
+                <li class="nav-item">
+                    <button class="bg-gray-300 hover:bg-blue-600 hover:text-white px-4 py-2 rounded"
+                        data-section="quiz">Quiz</button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="section bg-white p-6 rounded shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4">Aim of the Experiment</h2>
+            <p class="mb-4">To construct the voltage doubler and tripler using diodes and capacitors and to compare the
+                observed output with corresponding theoretical values.</p>
+
+            <h3 class="text-xl font-bold mt-6 mb-2">Learning Objectives</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Understand the working principle of voltage multiplier circuits</li>
+                <li>Learn how capacitors and diodes work together to multiply voltage</li>
+                <li>Analyze the behavior of voltage doublers and triplers</li>
+                <li>Compare theoretical and practical values in real circuits</li>
+            </ul>
+
+            <div class="mt-6 text-center">
+                <button id="start-journey"
+                    class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold animate-pulse">
+                    Start Your Learning Journey
+                </button>
+            </div>
+
+            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                <h4 class="font-bold">Did You Know?</h4>
+                <p>Voltage multipliers are used in many high-voltage applications such as cathode ray tubes, X-ray
+                    systems, and particle accelerators.</p>
+            </div>
+        </section>
+
+        <!-- Voltage Doubler Section -->
+        <section id="voltage-doubler" class="section hidden bg-white p-6 rounded shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4">Voltage Doubler</h2>
+
+            <div class="mb-6">
+                <div class="bg-gray-100 p-4 rounded mb-4">
+                    <p class="text-center italic">Image: Voltage Doubler Circuit</p>
+                    <p class="text-center text-sm text-gray-500">experiment7/voltage_doubler_circuit.png</p>
+                </div>
+
+                <h3 class="text-xl font-bold mb-2">Working Principle</h3>
+                <div class="mb-4">
+                    <p>A voltage doubler circuit produces an output voltage that is approximately twice the peak input
+                        voltage. The operation can be explained in two half-cycles:</p>
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded shadow">
+                            <h4 class="font-bold">Positive Half-Cycle</h4>
+                            <p>During the positive half-cycle of the input signal:</p>
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>Diode D₁ conducts (D₂ is cut-off)</li>
+                                <li>Capacitor C₁ charges to the peak rectified voltage V<sub>in</sub></li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded shadow">
+                            <h4 class="font-bold">Negative Half-Cycle</h4>
+                            <p>During the negative half-cycle:</p>
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>Diode D₂ conducts (D₁ is cut-off)</li>
+                                <li>Capacitor C₂ charges</li>
+                                <li>The input voltage presented to C₂ is 2V<sub>in</sub></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-4">As a result, C₂ is charged to a voltage of 2V<sub>in</sub> during its negative
+                    half-cycle. On the next positive half-cycle, D₂ is nonconducting and the voltage will discharge
+                    through the load.</p>
+
+                <div class="mt-6">
+                    <h3 class="text-xl font-bold mb-2">Waveform Analysis</h3>
+                    <div class="w-full h-80 bg-white border border-gray-300 rounded-lg">
+                        <canvas id="doublerWaveformChart"></canvas>
+                    </div>
+                    <div class="mt-4 flex justify-center">
+                        <button id="play-doubler-animation"
+                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                            Animate Waveform
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-green-50 border-l-4 border-green-400 rounded">
+                    <h4 class="font-bold">Mathematical Analysis</h4>
+                    <p>For an ideal voltage doubler:</p>
+                    <p class="mt-2 text-center font-bold">V<sub>out</sub> = 2 × V<sub>in(peak)</sub></p>
+                    <p class="mt-2">In practice, the output voltage is slightly less than twice the input peak voltage
+                        due to voltage drops across the diodes and other circuit losses.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-between">
+                <button class="prev-section bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
+                    data-prev="introduction">Previous</button>
+                <button class="next-section bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+                    data-next="alternate-doubler">Next: Alternate Doubler</button>
+            </div>
+        </section>
+
+        <!-- Alternate Voltage Doubler Section -->
+        <section id="alternate-doubler" class="section hidden bg-white p-6 rounded shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4">Alternate Circuit for Voltage Doubler</h2>
+
+            <div class="mb-6">
+                <div class="bg-gray-100 p-4 rounded mb-4">
+                    <p class="text-center italic">Image: Alternate Voltage Doubler Circuit</p>
+                    <p class="text-center text-sm text-gray-500">experiment7/alternate_doubler_circuit.png</p>
+                </div>
+
+                <h3 class="text-xl font-bold mb-2">Circuit Design</h3>
+                <p>This alternate configuration also produces a doubled output voltage, but with a different arrangement
+                    of components:</p>
+
+                <div class="mt-4 p-4 bg-yellow-50 border rounded">
+                    <ul class="list-disc pl-6">
+                        <li>Two diodes (D₁ and D₂) are connected in series with opposite polarities</li>
+                        <li>Two capacitors (C₁ and C₂) are used for charge storage</li>
+                        <li>The output is taken as the voltage across both capacitors: V<sub>out</sub> ≈ 2V<sub>in</sub>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="text-xl font-bold mb-2">Comparison with Standard Doubler</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-300 rounded-md">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="py-2 px-4 border-b">Feature</th>
+                                    <th class="py-2 px-4 border-b">Standard Doubler</th>
+                                    <th class="py-2 px-4 border-b">Alternate Doubler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">Configuration</td>
+                                    <td class="py-2 px-4 border-b">Half-wave voltage doubler</td>
+                                    <td class="py-2 px-4 border-b">Full-wave voltage doubler</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">Ripple</td>
+                                    <td class="py-2 px-4 border-b">Higher</td>
+                                    <td class="py-2 px-4 border-b">Lower</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">Capacitor Voltage Rating</td>
+                                    <td class="py-2 px-4 border-b">One capacitor needs higher rating</td>
+                                    <td class="py-2 px-4 border-b">Both capacitors can have same rating</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">Regulation</td>
+                                    <td class="py-2 px-4 border-b">Poorer</td>
+                                    <td class="py-2 px-4 border-b">Better</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="text-xl font-bold mb-2">Interactive Component</h3>
+                    <div class="p-4 bg-gray-100 rounded">
+                        <p class="mb-2">Click on circuit elements to see their function:</p>
+                        <div class="circuit-interactive flex justify-center my-4">
+                            <div class="circuit-elements grid grid-cols-2 gap-4">
+                                <div class="circuit-element cursor-pointer p-3 border border-gray-300 rounded bg-white hover:bg-blue-50"
+                                    data-element="d1">
+                                    <p class="font-bold">Diode D₁</p>
+                                    <p class="element-description hidden">Conducts during positive half-cycle, charges
+                                        C₁</p>
+                                </div>
+                                <div class="circuit-element cursor-pointer p-3 border border-gray-300 rounded bg-white hover:bg-blue-50"
+                                    data-element="d2">
+                                    <p class="font-bold">Diode D₂</p>
+                                    <p class="element-description hidden">Conducts during negative half-cycle, charges
+                                        C₂</p>
+                                </div>
+                                <div class="circuit-element cursor-pointer p-3 border border-gray-300 rounded bg-white hover:bg-blue-50"
+                                    data-element="c1">
+                                    <p class="font-bold">Capacitor C₁</p>
+                                    <p class="element-description hidden">Stores charge during positive half-cycle</p>
+                                </div>
+                                <div class="circuit-element cursor-pointer p-3 border border-gray-300 rounded bg-white hover:bg-blue-50"
+                                    data-element="c2">
+                                    <p class="font-bold">Capacitor C₂</p>
+                                    <p class="element-description hidden">Stores charge equivalent to 2Vin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-between">
+                <button class="prev-section bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
+                    data-prev="voltage-doubler">Previous</button>
+                <button class="next-section bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+                    data-next="voltage-tripler">Next: Voltage Tripler</button>
+            </div>
+        </section>
+
+        <!-- Voltage Tripler Section -->
+        <section id="voltage-tripler" class="section hidden bg-white p-6 rounded shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4">Voltage Tripler</h2>
+
+            <div class="mb-6">
+                <div class="bg-gray-100 p-4 rounded mb-4">
+                    <p class="text-center italic">Image: Voltage Tripler Circuit</p>
+                    <p class="text-center text-sm text-gray-500">experiment7/voltage_tripler_circuit.png</p>
+                </div>
+
+                <h3 class="text-xl font-bold mb-2">Working Principle</h3>
+                <p>A voltage tripler is an extension of the voltage doubler concept that produces an output voltage
+                    approximately three times the peak input voltage.</p>
+
+                <div class="mt-4 grid grid-cols-1 gap-4">
+                    <div class="bg-blue-50 p-4 rounded shadow">
+                        <h4 class="font-bold">First Positive Half-Cycle</h4>
+                        <p>During the first positive half-cycle of the input:</p>
+                        <ul class="list-disc pl-6 mt-2">
+                            <li>Capacitor C₁ is charged through D₁ to a voltage V<sub>in</sub></li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded shadow">
+                        <h4 class="font-bold">First Negative Half-Cycle</h4>
+                        <p>During the first negative half-cycle:</p>
+                        <ul class="list-disc pl-6 mt-2">
+                            <li>C₂ is charged through D₂ to voltage 2V<sub>in</sub> (developed by the sum of the
+                                voltages across C₁ and input signal)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded shadow">
+                        <h4 class="font-bold">Second Positive Half-Cycle</h4>
+                        <p>During the second positive half-cycle of the input:</p>
+                        <ul class="list-disc pl-6 mt-2">
+                            <li>Diode D3 conducts</li>
+                            <li>Voltage across capacitor C₂ charges capacitor C₃ to the same voltage 2V<sub>in</sub>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-purple-50 border-l-4 border-purple-400 rounded">
+                    <h4 class="font-bold">Output Voltage Calculation</h4>
+                    <p>The total output voltage is the sum of the voltages across capacitors:</p>
+                    <ul class="list-disc pl-6 mt-2">
+                        <li>Output voltage = Voltage across C₁ (V<sub>in</sub>) + Voltage across C₃ (2V<sub>in</sub>)
+                        </li>
+                        <li>∴ V<sub>out</sub> = 3V<sub>in</sub></li>
+                    </ul>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="text-xl font-bold mb-2">Waveform Analysis</h3>
+                    <div class="w-full h-80 bg-white border border-gray-300 rounded-lg">
+                        <canvas id="triplerWaveformChart"></canvas>
+                    </div>
+                    <div class="mt-4 flex justify-center">
+                        <button id="play-tripler-animation"
+                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                            Animate Waveform
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="text-xl font-bold mb-2">Practical Considerations</h3>
+                    <div class="p-4 bg-yellow-50 border rounded">
+                        <ul class="list-disc pl-6">
+                            <li>The capacitors must have appropriate voltage ratings (at least 3V<sub>in</sub> for
+                                safety)</li>
+                            <li>Diodes should have suitable PIV (Peak Inverse Voltage) ratings</li>
+                            <li>The output voltage under load will be less than the theoretical 3V<sub>in</sub> due to:
+                                <ul class="list-disc pl-6 mt-1">
+                                    <li>Diode voltage drops</li>
+                                    <li>Capacitor ESR (Equivalent Series Resistance)</li>
+                                    <li>Loading effects</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-between">
+                <button class="prev-section bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
+                    data-prev="alternate-doubler">Previous</button>
+                <button class="next-section bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+                    data-next="simulation">Next: Interactive Simulation</button>
+            </div>
+        </section>
+
+        <!-- Interactive Simulation Section -->
+        <section id="simulation" class="section hidden bg-white p-6 rounded shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4">Interactive Simulation</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Voltage Multiplier Simulator</h3>
+                    <div class="p-4 bg-gray-100 rounded">
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Circuit Type</label>
+                            <select id="circuit-type"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="doubler">Voltage Doubler</option>
+                                <option value="alt-doubler">Alternate Doubler</option>
+                                <option value="tripler">Voltage Tripler</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Input Voltage (V<sub>in</sub>)
+                                Peak</label>
+                            <input type="range" id="input-voltage" min="1" max="20" value="5" class="w-full">
+                            <div class="flex justify-between text-sm">
+                                <span>1V</span>
+                                <span id="voltage-value">5V</span>
+                                <span>20V</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Load Resistance (kΩ)</label>
+                            <input type="range" id="load-resistance" min="1" max="100" value="10" class="w-full">
+                            <div class="flex justify-between text-sm">
+                                <span>1kΩ</span>
+                                <span id="resistance-value">10kΩ</span>
+                                <span>100kΩ</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Capacitance (μF)</label>
+                            <input type="range" id="capacitance" min="1" max="100" value="10" class="w-full">
+                            <div class="flex justify-between text-sm">
+                                <span>1μF</span>
+                                <span id="capacitance-value">10μF</span>
+                                <span>100μF</span>
+                            </div>
+                        </div>
+
+                        <button id="run-simulation"
+                            class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+                            Run Simulation
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Simulation Results</h3>
+                    <div class="p-4 bg-gray-100 rounded h-80 flex flex-col">
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Theoretical Output:</span>
+                            <span id="theoretical-output">10.00V</span>
+                        </div>
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Simulated Output:</span>
+                            <span id="simulated-output">9.40V</span>
+                        </div>
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Efficiency:</span>
+                            <span id="efficiency">94.0%</span>
+                        </div>
+
+                        <div class="mt-4 flex-grow">
+                            <canvas id="simulationOutputChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-blue-50 rounded">
+                        <h4 class="font-bold">Analysis</h4>
+                        <p id="simulation-analysis">Adjust the parameters and run the simulation to see the analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-bold mb-2">Data Recording</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-300 rounded-md">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="py-2 px-4 border-b">Input (Volts)</th>
+                                <th class="py-2 px-4 border-b">Circuit Type</th>
+                                <th class="py-2 px-4 border-b">Theoretical (Volts)</th>
+                                <th class="py-2 px-4 border-b">Simulated (Volts)</th>
+                                <th class="py-2 px-4 border-b">Difference (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-table">
+                            <!-- Results will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 flex justify-end">
+                    <button id="clear-results" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+                        Clear Results
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-between">
+                <button class="prev-section bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
+                    data-prev="voltage-tripler">Previous</button>
+                <button class="next-section bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+                    data-next="quiz">Next: Quiz</button>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section hidden bg-white p-6 rounded shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4">Test Your Knowledge</h2>
+
+            <div class="mb-6">
+                <div class="p-4 bg-blue-50 rounded">
+                    <p class="font-bold">Instructions:</p>
+                    <p>Answer the following questions to test your understanding of voltage multiplier circuits. Each
+                        correct answer earns you XP points!</p>
+                </div>
+
+                <div id="quiz-container" class="mt-6">
+                    <div id="question-1" class="quiz-question mb-6 p-4 border border-gray-200 rounded">
+                        <p class="font-bold mb-2">Question 1: What is the theoretical output of a voltage doubler when
+                            the input peak voltage is 10V?</p>
+                        <div class="mt-3 space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-a" name="q1" value="a" class="mr-2">
+                                <label for="q1-a">10V</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-b" name="q1" value="b" class="mr-2">
+                                <label for="q1-b">14.14V</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-c" name="q1" value="c" class="mr-2">
+                                <label for="q1-c">20V</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-d" name="q1" value="d" class="mr-2">
+                                <label for="q1-d">15V</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="radio" id="q2-a" name="q2" value="a" class="mr-2">
+                        <label for="q2-a">Positive half-cycle</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q2-b" name="q2" value="b" class="mr-2">
+                        <label for="q2-b">Negative half-cycle</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q2-c" name="q2" value="c" class="mr-2">
+                        <label for="q2-c">Both half-cycles</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q2-d" name="q2" value="d" class="mr-2">
+                        <label for="q2-d">Neither, it's always off</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="question-3" class="quiz-question mb-6 p-4 border border-gray-200 rounded">
+                <p class="font-bold mb-2">Question 3: What is the theoretical output of a voltage tripler when the input
+                    peak voltage is 12V?</p>
+                <div class="mt-3 space-y-2">
+                    <div class="flex items-center">
+                        <input type="radio" id="q3-a" name="q3" value="a" class="mr-2">
+                        <label for="q3-a">24V</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q3-b" name="q3" value="b" class="mr-2">
+                        <label for="q3-b">36V</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q3-c" name="q3" value="c" class="mr-2">
+                        <label for="q3-c">16.97V</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q3-d" name="q3" value="d" class="mr-2">
+                        <label for="q3-d">48V</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="question-4" class="quiz-question mb-6 p-4 border border-gray-200 rounded">
+                <p class="font-bold mb-2">Question 4: Which component is primarily responsible for storing energy in
+                    voltage multiplier circuits?</p>
+                <div class="mt-3 space-y-2">
+                    <div class="flex items-center">
+                        <input type="radio" id="q4-a" name="q4" value="a" class="mr-2">
+                        <label for="q4-a">Resistors</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q4-b" name="q4" value="b" class="mr-2">
+                        <label for="q4-b">Diodes</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q4-c" name="q4" value="c" class="mr-2">
+                        <label for="q4-c">Capacitors</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q4-d" name="q4" value="d" class="mr-2">
+                        <label for="q4-d">Transformers</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="question-5" class="quiz-question mb-6 p-4 border border-gray-200 rounded">
+                <p class="font-bold mb-2">Question 5: Why is the practical output of a voltage tripler less than the
+                    theoretical 3×Vin?</p>
+                <div class="mt-3 space-y-2">
+                    <div class="flex items-center">
+                        <input type="radio" id="q5-a" name="q5" value="a" class="mr-2">
+                        <label for="q5-a">Diode voltage drops</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q5-b" name="q5" value="b" class="mr-2">
+                        <label for="q5-b">Capacitor losses</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q5-c" name="q5" value="c" class="mr-2">
+                        <label for="q5-c">Loading effects</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="q5-d" name="q5" value="d" class="mr-2">
+                        <label for="q5-d">All of the above</label>
+                    </div>
+                </div>
+            </div>
+
+            <button id="submit-quiz" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold">
+                Submit Answers
+            </button>
+            </div>
+
+            <div id="quiz-results" class="mt-6 hidden">
+                <div class="p-6 bg-green-50 border-2 border-green-500 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">Quiz Results</h3>
+                    <p class="text-lg mb-4">You scored <span id="quiz-score">0</span> out of 5!</p>
+                    <div id="xp-earned" class="text-lg font-bold">+0 XP</div>
+                    <button id="retry-quiz" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                        Try Again
+                    </button>
+                </div>
+            </div>
+            </div>
+
+            <div class="mt-6 flex justify-between">
+                <button class="prev-section bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
+                    data-prev="simulation">Previous</button>
+                <button id="complete-study"
+                    class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded">Complete Study</button>
+            </div>
+        </section>
+
+        <!-- Completion Certificate Section -->
+        <section id="completion" class="section hidden bg-white p-6 rounded shadow-md mb-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-4">Congratulations!</h2>
+                <p class="text-lg mb-6">You've completed the study material for Voltage Doublers and Triplers.</p>
+
+                <div class="certificate p-8 border-4 border-blue-600 rounded-lg mx-auto max-w-lg bg-blue-50">
+                    <div class="certificate-header text-center mb-6">
+                        <h3 class="text-2xl font-bold text-blue-800">Certificate of Completion</h3>
+                    </div>
+
+                    <div class="certificate-body text-center mb-6">
+                        <p class="mb-2">This certifies that</p>
+                        <p class="text-xl font-bold mb-2">Electronics Student</p>
+                        <p class="mb-2">has successfully completed the study of</p>
+                        <p class="text-xl font-bold mb-2">Voltage Doubler and Voltage Tripler Circuits</p>
+                        <p class="mb-2">with a score of</p>
+                        <p class="text-xl font-bold" id="final-score">95%</p>
+                    </div>
+
+                    <div class="certificate-footer text-center">
+                        <p class="text-sm">Date: <span id="completion-date"></span></p>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <button id="restart-study"
+                        class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-bold">
+                        Restart Study
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6">
+        <div class="container mx-auto text-center">
+            <p>© 2025 Electronics Lab - Experiment No. 7</p>
+            <p class="mt-2 text-sm text-gray-400">Construction of Voltage Doubler and Voltage Tripler</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize state
+            let currentSection = 'introduction';
+            let userXP = 0;
+            let userLevel = 1;
+            let completedSections = {};
+            let simulationResults = [];
+
+            const xpThresholds = [0, 20, 50, 100];
+
+            // Set current date for certificate
+            const today = new Date();
+            document.getElementById('completion-date').textContent = today.toLocaleDateString();
+
+            // Quiz answers
+            const correctAnswers = {
+                'q1': 'c', // 20V
+                'q2': 'a', // Positive half-cycle
+                'q3': 'b', // 36V
+                'q4': 'c', // Capacitors
+                'q5': 'd'  // All of the above
+            };
+
+            // Show the active section and hide others
+            function showSection(sectionId) {
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                document.getElementById(sectionId).classList.remove('hidden');
+
+                document.querySelectorAll('.nav-item button').forEach(button => {
+                    button.classList.remove('bg-blue-500', 'text-white');
+                    button.classList.add('bg-gray-300');
+                });
+
+                const activeNavButton = document.querySelector(`.nav-item button[data-section="${sectionId}"]`);
+                if (activeNavButton) {
+                    activeNavButton.classList.remove('bg-gray-300');
+                    activeNavButton.classList.add('bg-blue-500', 'text-white');
+                }
+
+                // If not already completed, mark as visited and award XP
+                if (!completedSections[sectionId] && sectionId !== 'completion') {
+                    completedSections[sectionId] = true;
+                    addXP(10);
+                    updateProgressBar();
+                }
+
+                currentSection = sectionId;
+            }
+
+            // Update progress bar
+            function updateProgressBar() {
+                const totalSections = 5; // introduction, doubler, alternate, tripler, simulation, quiz
+                const completedCount = Object.keys(completedSections).length;
+                const progressPercentage = Math.min(100, Math.round((completedCount / totalSections) * 100));
+                document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
+            }
+
+            // Add XP and check level up
+            function addXP(amount) {
+                userXP += amount;
+                document.getElementById('xp').textContent = userXP;
+
+                // Check for level up
+                while (userXP >= xpThresholds[userLevel] && userLevel < xpThresholds.length - 1) {
+                    userLevel++;
+                    document.getElementById('level').textContent = userLevel;
+
+                    // Show level up notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed top-20 right-4 bg-yellow-400 text-gray-900 p-4 rounded-lg shadow-lg z-50';
+                    notification.innerHTML = `<p class="font-bold">Level Up!</p><p>You reached level ${userLevel}!</p>`;
+                    document.body.appendChild(notification);
+
+                    setTimeout(() => {
+                        notification.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                        setTimeout(() => notification.remove(), 500);
+                    }, 3000);
+                }
+            }
+
+            // Initialize waveform charts
+            function initCharts() {
+                // Doubler Waveform Chart
+                const doublerCtx = document.getElementById('doublerWaveformChart').getContext('2d');
+                const doublerChart = new Chart(doublerCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({ length: 50 }, (_, i) => i * 10),
+                        datasets: [{
+                            label: 'Input Voltage',
+                            data: Array.from({ length: 50 }, (_, i) => 5 * Math.sin(i / 5)),
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                            fill: false
+                        }, {
+                            label: 'Output Voltage',
+                            data: Array.from({ length: 50 }, (_, i) => {
+                                const sinVal = 5 * Math.sin(i / 5);
+                                return sinVal > 0 ? 10 : 10;
+                            }),
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Voltage (V)'
+                                },
+                                min: -6,
+                                max: 12
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Time'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Tripler Waveform Chart
+                const triplerCtx = document.getElementById('triplerWaveformChart').getContext('2d');
+                const triplerChart = new Chart(triplerCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({ length: 50 }, (_, i) => i * 10),
+                        datasets: [{
+                            label: 'Input Voltage',
+                            data: Array.from({ length: 50 }, (_, i) => 5 * Math.sin(i / 5)),
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                            fill: false
+                        }, {
+                            label: 'Output Voltage',
+                            data: Array.from({ length: 50 }, (_, i) => {
+                                const sinVal = 5 * Math.sin(i / 5);
+                                return sinVal > 0 ? 15 : 15;
+                            }),
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Voltage (V)'
+                                },
+                                min: -6,
+                                max: 18
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Time'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Simulation output chart
+                const simCtx = document.getElementById('simulationOutputChart').getContext('2d');
+                const simChart = new Chart(simCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Array.from({ length: 100 }, (_, i) => i),
+                        datasets: [{
+                            label: 'Theoretical Output',
+                            data: Array.from({ length: 100 }, () => 10),
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            fill: false
+                        }, {
+                            label: 'Simulated Output',
+                            data: Array.from({ length: 100 }, (_, i) => {
+                                return 9.4 + (Math.random() * 0.4 - 0.2);
+                            }),
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Voltage (V)'
+                                },
+                                min: 8,
+                                max: 12
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Time'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                return { doublerChart, triplerChart, simChart };
+            }
+
+            // Initialize charts
+            const { doublerChart, triplerChart, simChart } = initCharts();
+
+            // Button event listeners for navigation
+            document.querySelectorAll('.nav-item button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const sectionId = this.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
+
+            // Prev/Next buttons
+            document.querySelectorAll('.prev-section, .next-section').forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetSection = this.classList.contains('prev-section')
+                        ? this.getAttribute('data-prev')
+                        : this.getAttribute('data-next');
+                    showSection(targetSection);
+                });
+            });
+
+            // Start journey button
+            document.getElementById('start-journey').addEventListener('click', function () {
+                showSection('voltage-doubler');
+            });
+
+            // Animated waveforms
+            document.getElementById('play-doubler-animation').addEventListener('click', function () {
+                let frame = 0;
+                const frames = 100;
+                const animationInterval = setInterval(() => {
+                    const timePoints = Array.from({ length: 50 }, (_, i) => i * 10);
+                    const inputData = Array.from({ length: 50 }, (_, i) => 5 * Math.sin((i + frame * 0.2) / 5));
+
+                    const outputData = Array.from({ length: 50 }, (_, i) => {
+                        const pos = (i + frame * 0.2) % 50;
+                        const sinVal = 5 * Math.sin(pos / 5);
+                        return Math.max(9.4, sinVal > 0 ? 9.4 + (Math.random() * 0.6) : 9.4 + (Math.random() * 0.6));
+                    });
+
+                    doublerChart.data.datasets[0].data = inputData;
+                    doublerChart.data.datasets[1].data = outputData;
+                    doublerChart.update();
+
+                    frame++;
+                    if (frame >= frames) {
+                        clearInterval(animationInterval);
+                    }
+                }, 50);
+            });
+
+            document.getElementById('play-tripler-animation').addEventListener('click', function () {
+                let frame = 0;
+                const frames = 100;
+                const animationInterval = setInterval(() => {
+                    const inputData = Array.from({ length: 50 }, (_, i) => 5 * Math.sin((i + frame * 0.2) / 5));
+
+                    const outputData = Array.from({ length: 50 }, (_, i) => {
+                        const pos = (i + frame * 0.2) % 50;
+                        const sinVal = 5 * Math.sin(pos / 5);
+                        return Math.max(14.2, sinVal > 0 ? 14.2 + (Math.random() * 0.8) : 14.2 + (Math.random() * 0.8));
+                    });
+
+                    triplerChart.data.datasets[0].data = inputData;
+                    triplerChart.data.datasets[1].data = outputData;
+                    triplerChart.update();
+
+                    frame++;
+                    if (frame >= frames) {
+                        clearInterval(animationInterval);
+                    }
+                }, 50);
+            });
+
+            // Circuit element interaction
+            document.querySelectorAll('.circuit-element').forEach(element => {
+                element.addEventListener('click', function () {
+                    const description = this.querySelector('.element-description');
+                    description.classList.toggle('hidden');
+                });
+            });
+
+            // Simulation controls
+            document.getElementById('input-voltage').addEventListener('input', function () {
+                document.getElementById('voltage-value').textContent = `${this.value}V`;
+            });
+
+            document.getElementById('load-resistance').addEventListener('input', function () {
+                document.getElementById('resistance-value').textContent = `${this.value}kΩ`;
+            });
+
+            document.getElementById('capacitance').addEventListener('input', function () {
+                document.getElementById('capacitance-value').textContent = `${this.value}μF`;
+            });
+
+            document.getElementById('run-simulation').addEventListener('click', function () {
+                const circuitType = document.getElementById('circuit-type').value;
+                const inputVoltage = parseFloat(document.getElementById('input-voltage').value);
+                const loadResistance = parseFloat(document.getElementById('load-resistance').value);
+                const capacitance = parseFloat(document.getElementById('capacitance').value);
+
+                // Calculate theoretical output
+                let theoreticalOutput = inputVoltage;
+                if (circuitType === 'doubler' || circuitType === 'alt-doubler') {
+                    theoreticalOutput = 2 * inputVoltage;
+                } else if (circuitType === 'tripler') {
+                    theoreticalOutput = 3 * inputVoltage;
+                }
+
+                // Calculate simulated output (with some realistic losses)
+                const diodeDropPerStage = 0.7; // Diode voltage drop
+                const capacitorEfficiency = 0.9 + (0.1 * (capacitance / 100)); // Better with higher capacitance
+                const loadEffect = 0.7 + (0.3 * (loadResistance / 100)); // Better with higher resistance
+
+                let stages = 1;
+                if (circuitType === 'doubler' || circuitType === 'alt-doubler') {
+                    stages = 2;
+                } else if (circuitType === 'tripler') {
+                    stages = 3;
+                }
+
+                const simulatedOutput = (theoreticalOutput - (diodeDropPerStage * stages)) * capacitorEfficiency * loadEffect;
+                const efficiency = (simulatedOutput / theoreticalOutput) * 100;
+
+                // Update the UI
+                document.getElementById('theoretical-output').textContent = `${theoreticalOutput.toFixed(2)}V`;
+                document.getElementById('simulated-output').textContent = `${simulatedOutput.toFixed(2)}V`;
+                document.getElementById('efficiency').textContent = `${efficiency.toFixed(1)}%`;
+
+                // Update the chart
+                simChart.data.datasets[0].data = Array.from({ length: 100 }, () => theoreticalOutput);
+                simChart.data.datasets[1].data = Array.from({ length: 100 }, () => {
+                    return simulatedOutput + (Math.random() * 0.4 - 0.2);
+                });
+                simChart.options.scales.y.min = Math.floor(simulatedOutput * 0.8);
+                simChart.options.scales.y.max = Math.ceil(theoreticalOutput * 1.1);
+                simChart.update();
+
+                // Analysis text
+                let analysisText = "";
+                if (efficiency > 90) {
+                    analysisText = "The circuit is performing efficiently. The losses are minimal.";
+                } else if (efficiency > 80) {
+                    analysisText = "The circuit has moderate losses. Consider using higher value capacitors or increasing load resistance.";
+                } else {
+                    analysisText = "The circuit has significant losses. Check component values and circuit design.";
+                }
+                document.getElementById('simulation-analysis').textContent = analysisText;
+
+                // Add to results table
+                const resultsTable = document.getElementById('results-table');
+                const newRow = document.createElement('tr');
+
+                const circuitTypeNames = {
+                    'doubler': 'Voltage Doubler',
+                    'alt-doubler': 'Alt. Doubler',
+                    'tripler': 'Voltage Tripler'
+                };
+
+                newRow.innerHTML = `
+            <td class="p-2 border">${inputVoltage}</td>
+            <td class="p-2 border">${circuitTypeNames[circuitType]}</td>
+            <td class="p-2 border">${theoreticalOutput.toFixed(2)}</td>
+            <td class="p-2 border">${simulatedOutput.toFixed(2)}</td>
+            <td class="p-2 border">${(100 - efficiency).toFixed(1)}%</td>
+        `;
+                resultsTable.appendChild(newRow);
+
+                // Save the result
+                simulationResults.push({
+                    inputVoltage,
+                    circuitType: circuitTypeNames[circuitType],
+                    theoreticalOutput,
+                    simulatedOutput,
+                    efficiency
+                });
+
+                // Award XP for running a simulation
+                addXP(5);
+            });
+
+            document.getElementById('clear-results').addEventListener('click', function () {
+                document.getElementById('results-table').innerHTML = '';
+                simulationResults = [];
+            });
+
+            // Quiz handling
+            document.getElementById('submit-quiz').addEventListener('click', function () {
+                let score = 0;
+
+                for (const [question, answer] of Object.entries(correctAnswers)) {
+                    const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                    if (selectedOption && selectedOption.value === answer) {
+                        score++;
+                    }
+                }
+
+                // Show results
+                document.getElementById('quiz-container').classList.add('hidden');
+                document.getElementById('quiz-results').classList.remove('hidden');
+                document.getElementById('quiz-score').textContent = score;
+
+                // Award XP based on score
+                const xpEarned = score * 10;
+                document.getElementById('xp-earned').textContent = `+${xpEarned} XP`;
+                addXP(xpEarned);
+
+                // Update final score on certificate
+                const percentage = Math.round((score / 5) * 100);
+                document.getElementById('final-score').textContent = `${percentage}%`;
+            });
+
+            document.getElementById('retry-quiz').addEventListener('click', function () {
+                document.getElementById('quiz-container').classList.remove('hidden');
+                document.getElementById('quiz-results').classList.add('hidden');
+
+                // Clear all selected answers
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.checked = false;
+                });
+            });
+
+            // Complete study
+            document.getElementById('complete-study').addEventListener('click', function () {
+                showSection('completion');
+                addXP(20); // Bonus for completing
+            });
+
+            // Restart study
+            document.getElementById('restart-study').addEventListener('click', function () {
+                showSection('introduction');
+            });
+
+            // Show initial section
+            showSection(currentSection);
+        });
+    </script>
+</body>
+
+</html>
