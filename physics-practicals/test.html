@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Circuit Diagram</title>
+<style>
+  body { margin: 20px; background-color: #f8f8f8; }
+  canvas { border: 1px solid #ccc; background-color: #fff; }
+</style>
+</head>
+<body>
+
+<h1>Circuit Diagram using Canvas</h1>
+<canvas id="circuitCanvas" width="650" height="300"></canvas>
+
+<script>
+  const canvas = document.getElementById('circuitCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const gridSpacing = 20;
+  const canvasWidth = canvas.width;
+  const canvasHeight = canvas.height;
+
+  // --- Helper Functions ---
+
+  function drawGrid() {
+    ctx.beginPath();
+    ctx.strokeStyle = '#e0e0e0'; // Light gray grid
+    ctx.lineWidth = 0.5;
+
+    for (let x = 0; x <= canvasWidth; x += gridSpacing) {
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, canvasHeight);
+    }
+
+    for (let y = 0; y <= canvasHeight; y += gridSpacing) {
+      ctx.moveTo(0, y);
+      ctx.lineTo(canvasWidth, y);
+    }
+    ctx.stroke();
+
+    // Reset to default drawing style
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 1.5;
+  }
+
+  function drawResistor(x, y, width, height) {
+    const zigZagWidth = width / 6;
+    const startX = x - width / 2;
+    const startY = y;
+
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(startX + zigZagWidth / 2, startY);
+    for (let i = 0; i < 6; i++) {
+      ctx.lineTo(startX + zigZagWidth / 2 + i * zigZagWidth, startY + (i % 2 === 0 ? -height / 2 : height / 2));
+    }
+    ctx.lineTo(startX + width - zigZagWidth / 2, startY);
+    ctx.lineTo(startX + width, startY);
+    ctx.stroke();
+  }
+
+    function drawPotentiometer(x, y, width, height, label) {
+    const resY = y + height * 0.8; // Position resistor part lower
+    drawResistor(x, resY, width, height * 0.6); // Draw resistor part
+
+    // Arrow
+    const arrowStartX = x;
+    const arrowStartY = y;
+    const arrowEndX = x;
+    const arrowEndY = resY;
+    const arrowHeadSize = 6;
+
+    ctx.beginPath();
+    ctx.moveTo(arrowStartX, arrowStartY);
+    ctx.lineTo(arrowEndX, arrowEndY);
+    // Arrowhead
+    ctx.lineTo(arrowEndX - arrowHeadSize / 2, arrowEndY - arrowHeadSize);
+    ctx.moveTo(arrowEndX, arrowEndY);
+    ctx.lineTo(arrowEndX + arrowHeadSize / 2, arrowEndY - arrowHeadSize);
+    ctx.stroke();
+
+    // Label
+    ctx.font = '12px sans-serif';
+    ctx.fillStyle = 'black';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(label, x - width/2 - 5, resY);
+  }
+
+
+  function drawCapacitor(x, y, width, height, polarized, label) {
+    const plateDist = 5;
+    const plateWidth = width;
+
+    ctx.beginPath();
+    // Left plate (straight)
+    ctx.moveTo(x - plateDist / 2, y - height / 2);
+    ctx.lineTo(x - plateDist / 2, y + height / 2);
+
+    // Right plate (straight)
+    ctx.moveTo(x + plateDist / 2, y - height / 2);
+    ctx.lineTo(x + plateDist / 2, y + height / 2);
+    ctx.stroke();
+
+    if (polarized) {
+        // '+' sign
+        ctx.font = 'bold 14px sans-serif';
+        ctx.fillStyle = 'black';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText('+', x - plateDist/2 - 7 , y - height/2 + 3); // Adjusted position closer to plate
+
+        // Label
+        ctx.font = '12px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText(label, x, y - height / 2 - 5);
+    }
+  }
+
+   function drawVariableCapacitor(x, y, width, height) {
+       const plateDist = 5;
+       ctx.beginPath();
+       // Plates
+       ctx.moveTo(x - plateDist / 2, y - height / 2);
+       ctx.lineTo(x - plateDist / 2, y + height / 2);
+       ctx.moveTo(x + plateDist / 2, y - height / 2);
+       ctx.lineTo(x + plateDist / 2, y + height / 2);
+       ctx.stroke();
+
+       // Arrow
+       const arrowLength = height * 1.5;
+       const arrowAngle = -Math.PI / 4; // 45 degrees down-right
+       const arrowStartX = x - (arrowLength / 2) * Math.cos(arrowAngle);
+       const arrowStartY = y - (arrowLength / 2) * Math.sin(arrowAngle);
+       const arrowEndX = x + (arrowLength / 2) * Math.cos(arrowAngle);
+       const arrowEndY = y + (arrowLength / 2) * Math.sin(arrowAngle);
+       const arrowHeadSize = 8;
+
+       ctx.beginPath();
+       ctx.moveTo(arrowStartX, arrowStartY);
+       ctx.lineTo(arrowEndX, arrowEndY);
+       // Arrowhead
+       ctx.lineTo(arrowEndX - arrowHeadSize * Math.cos(arrowAngle - Math.PI / 6), arrowEndY - arrowHeadSize * Math.sin(arrowAngle - Math.PI / 6));
+       ctx.moveTo(arrowEndX, arrowEndY);
+       ctx.lineTo(arrowEndX - arrowHeadSize * Math.cos(arrowAngle + Math.PI / 6), arrowEndY - arrowHeadSize * Math.sin(arrowAngle + Math.PI / 6));
+       ctx.stroke();
+   }
+
+  function drawInductor(x, y, width, height, loops, core, variable) {
+    const loopWidth = width / loops;
+    const radius = height / 2;
+    const startX = x - width / 2;
+
+    ctx.beginPath();
+    // Coils
+    ctx.moveTo(startX, y);
+    for (let i = 0; i < loops; i++) {
+      ctx.arc(startX + loopWidth * (i + 0.5), y, radius, Math.PI, 0, false);
+    }
+    ctx.lineTo(startX + width, y); // Ensure line connects at the end
+    ctx.stroke();
+
+    if (core) {
+        ctx.beginPath();
+        ctx.moveTo(startX - loopWidth/2, y - radius - 3);
+        ctx.lineTo(startX + width + loopWidth/2, y - radius - 3);
+        ctx.moveTo(startX - loopWidth/2, y + radius + 3);
+        ctx.lineTo(startX + width + loopWidth/2, y + radius + 3);
+        ctx.stroke();
+    }
+
+     if (variable) {
+         // Arrow through inductor
+         const arrowLength = width * 1.4;
+         const arrowAngle = -Math.PI / 4; // 45 degrees down-right
+         const arrowStartX = x - (arrowLength / 2) * Math.cos(arrowAngle);
+         const arrowStartY = y - (arrowLength / 2) * Math.sin(arrowAngle);
+         const arrowEndX = x + (arrowLength / 2) * Math.cos(arrowAngle);
+         const arrowEndY = y + (arrowLength / 2) * Math.sin(arrowAngle);
+         const arrowHeadSize = 8;
+
+         ctx.beginPath();
+         ctx.moveTo(arrowStartX, arrowStartY);
+         ctx.lineTo(arrowEndX, arrowEndY);
+         // Arrowhead
+         ctx.lineTo(arrowEndX - arrowHeadSize * Math.cos(arrowAngle - Math.PI / 6), arrowEndY - arrowHeadSize * Math.sin(arrowAngle - Math.PI / 6));
+         ctx.moveTo(arrowEndX, arrowEndY);
+         ctx.lineTo(arrowEndX - arrowHeadSize * Math.cos(arrowAngle + Math.PI / 6), arrowEndY - arrowHeadSize * Math.sin(arrowAngle + Math.PI / 6));
+         ctx.stroke();
+     }
+  }
+
+  function drawDiode(x, y, size, upsideDown) {
+    const triHeight = size * 0.8;
+    const triBase = size;
+    const barOffset = 2; // Distance between triangle tip and bar
+
+    ctx.beginPath();
+    if (!upsideDown) {
+        // Triangle pointing down
+        ctx.moveTo(x - triBase / 2, y - triHeight / 2);
+        ctx.lineTo(x + triBase / 2, y - triHeight / 2);
+        ctx.lineTo(x, y + triHeight / 2);
+        ctx.closePath();
+        // Bar
+        ctx.moveTo(x - triBase / 2, y + triHeight / 2 + barOffset);
+        ctx.lineTo(x + triBase / 2, y + triHeight / 2 + barOffset);
+    } else {
+        // Triangle pointing up
+        ctx.moveTo(x - triBase / 2, y + triHeight / 2);
+        ctx.lineTo(x + triBase / 2, y + triHeight / 2);
+        ctx.lineTo(x, y - triHeight / 2);
+        ctx.closePath();
+        // Bar
+        ctx.moveTo(x - triBase / 2, y - triHeight / 2 - barOffset);
+        ctx.lineTo(x + triBase / 2, y - triHeight / 2 - barOffset);
+    }
+    ctx.stroke();
+    ctx.fill(); // Fill the triangle
+  }
+
+  function drawJunction(x, y) {
+    ctx.beginPath();
+    ctx.fillStyle = 'blue';
+    ctx.arc(x, y, 4, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.fillStyle = 'black'; // Reset fill style
+  }
+
+  // --- Main Drawing Logic ---
+
+  // Clear canvas and draw grid
+  ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+  drawGrid();
+
+  // Component positions (approximate, based on grid)
+  const indX = 80;
+  const indY = 150;
+  const potX = 170;
+  const potY = 110; // Top of potentiometer arrow stem
+  const potBottomY = 230;
+
+  const cap1X = 280; const cap1Y = 90;
+  const cap2X = 480; const cap2Y = 90;
+  const cap3X = 380; const cap3Y = 210;
+
+  const resX = 430; const resY = 50;
+
+  const dio1X = 380; const dio1Y = 150;
+  const dio2X = 480; const dio2Y = 150;
+  const dio3X = 580; const dio3Y = 150;
+
+  const junctionTopY = potY + 20;
+  const junctionBottomY = potBottomY - 20;
+  const wireMidY = 150;
+  const wireTopY = 50;
+  const wireBottomY = 250;
+
+  const wireStartX = 210;
+  const wireEndX = 610;
+
+
+  // Styles
+  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'black';
+  ctx.fillStyle = 'black'; // For diode fill
+
+  // Left side components
+  drawInductor(indX, indY, 60, 20, 4, true, true);
+  drawVariableCapacitor(indX, indY, 20, 30); // Placed in parallel visually
+  drawPotentiometer(potX, potY, 30, 60, '4.7 kΩ');
+
+  // Connections on left side
+  ctx.beginPath();
+  // Top connection
+  ctx.moveTo(indX + 30, indY - 20); // Approx. top of inductor/cap parallel combo
+  ctx.lineTo(potX - 15, indY - 20); // To top of resistor symbol approx
+  ctx.lineTo(potX - 15, junctionTopY);
+  ctx.lineTo(wireStartX, junctionTopY);
+  // Bottom connection
+  ctx.moveTo(indX + 30, indY + 20); // Approx. bottom of inductor/cap parallel combo
+  ctx.lineTo(potX - 15, indY + 20);
+  ctx.lineTo(potX - 15, junctionBottomY);
+  ctx.lineTo(wireStartX, junctionBottomY);
+  // Potentiometer wiper connection
+  ctx.moveTo(potX, potY); // From arrow start
+  ctx.lineTo(wireStartX, potY);
+  ctx.stroke();
+
+
+  // Right side components & wires
+  // Top wire rail
+  ctx.beginPath();
+  ctx.moveTo(wireStartX, wireTopY);
+  ctx.lineTo(resX - 30, wireTopY); // To resistor start
+  ctx.moveTo(resX + 30, wireTopY); // From resistor end
+  ctx.lineTo(wireEndX, wireTopY);
+  ctx.lineTo(wireEndX, wireMidY - 20); // Down to diode 3 level
+  ctx.stroke();
+  drawResistor(resX, wireTopY, 60, 15);
+
+
+  // Middle wire rail (main path)
+  ctx.beginPath();
+  ctx.moveTo(wireStartX, potY); // From wiper connection
+  ctx.lineTo(cap1X - 15, potY); // To cap1 left wire
+  ctx.moveTo(cap1X + 15, potY); // From cap1 right wire
+  ctx.lineTo(dio1X, potY); // Connect to top of diode 1
+  ctx.lineTo(cap3X - 15, potY); // To cap3 left wire (also diode 1 top)
+  ctx.moveTo(cap3X + 15, potY); // From cap3 right wire
+  ctx.lineTo(dio2X, potY); // Connect to top of diode 2
+  ctx.lineTo(cap2X - 15, potY); // To cap2 left wire (also diode 2 top)
+  ctx.moveTo(cap2X + 15, potY); // From cap2 right wire
+  ctx.lineTo(dio3X, potY); // Connect to top of diode 3
+  ctx.lineTo(dio3X, wireMidY - 20); // Connect diode 3 top upwards
+  ctx.stroke();
+
+  // Bottom wire rail
+  ctx.beginPath();
+  ctx.moveTo(wireStartX, junctionBottomY);
+  ctx.lineTo(wireStartX, wireBottomY); // Straight down first
+  ctx.lineTo(wireEndX, wireBottomY);
+  ctx.lineTo(wireEndX, wireMidY + 20); // Up to diode 3 level
+  ctx.stroke();
+
+
+  // Components on right side
+  drawCapacitor(cap1X, potY, 20, 30, true, '100 \u00B5F'); // \u00B5 is micro symbol
+  drawCapacitor(cap2X, potY, 20, 30, true, '100 \u00B5F');
+  drawCapacitor(cap3X, wireMidY + 60, 20, 30, true, '100 \u00B5F'); // Positioned between rails
+
+
+  drawDiode(dio1X, wireMidY, 25, false); // Pointing down
+  drawDiode(dio2X, wireMidY, 25, false); // Pointing down
+  drawDiode(dio3X, wireMidY, 25, false); // Pointing down
+
+  // Vertical connections for diodes and bottom cap
+  ctx.beginPath();
+  // Diode 1
+  ctx.moveTo(dio1X, potY); // Top connection already drawn
+  ctx.lineTo(dio1X, wireMidY - 25/2*0.8); // To diode top triangle
+  ctx.moveTo(dio1X, wireMidY + 25/2*0.8 + 2); // From diode bottom bar
+  ctx.lineTo(dio1X, wireBottomY); // To bottom rail
+
+  // Diode 2
+  ctx.moveTo(dio2X, potY); // Top connection already drawn
+  ctx.lineTo(dio2X, wireMidY - 25/2*0.8); // To diode top triangle
+  ctx.moveTo(dio2X, wireMidY + 25/2*0.8 + 2); // From diode bottom bar
+  ctx.lineTo(dio2X, wireBottomY); // To bottom rail
+
+   // Diode 3
+  ctx.moveTo(dio3X, wireMidY - 20); // From top wire connection
+  ctx.lineTo(dio3X, wireMidY - 25/2*0.8); // To diode top triangle
+  ctx.moveTo(dio3X, wireMidY + 25/2*0.8 + 2); // From diode bottom bar
+  ctx.lineTo(dio3X, wireMidY + 20); // Connect downwards
+  ctx.lineTo(wireEndX, wireMidY + 20); // Connect to end point on bottom wire connection
+
+
+  // Bottom Capacitor Connections
+  ctx.moveTo(cap3X, potY); // Connect top of cap3 to middle rail
+  ctx.lineTo(cap3X, wireMidY + 60 - 15); // To cap top plate connection wire
+  ctx.moveTo(cap3X, wireMidY + 60 + 15); // From cap bottom plate connection wire
+  ctx.lineTo(cap3X, wireBottomY); // To bottom rail
+
+  ctx.stroke();
+
+
+  // Junction points (Blue dots)
+  drawJunction(wireStartX, junctionTopY);
+  drawJunction(wireStartX, junctionBottomY);
+
+</script>
+
+</body>
+</html>

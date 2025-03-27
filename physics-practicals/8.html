@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED and LDR Characteristics Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Circuit Image Reference -->
+    <!-- Images will be located at 8/led_circuit.png, 8/ldr_circuit.png -->
+
+    <div id="root" class="container mx-auto p-4">
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h1 class="text-3xl font-bold text-center mb-6">🔬 LED and LDR Characteristics Study Guide</h1>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-4">📡 LED Characteristics</h2>
+                    <div id="ledChart" class="h-64"></div>
+                    <div class="mt-4">
+                        <h3 class="font-bold">Key Learning Points:</h3>
+                        <ul class="list-disc pl-5">
+                            <li>Turn-ON Voltage varies by LED color</li>
+                            <li>Different colors have different threshold voltages</li>
+                            <li>Current changes non-linearly with voltage</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-4">🌞 LDR Characteristics</h2>
+                    <div id="ldrChart" class="h-64"></div>
+                    <div class="mt-4">
+                        <h3 class="font-bold">Key Insights:</h3>
+                        <ul class="list-disc pl-5">
+                            <li>Resistance depends on light intensity</li>
+                            <li>More light = Lower resistance</li>
+                            <li>Dark conditions = High resistance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-yellow-50 p-4 rounded-lg">
+                <h2 class="text-2xl font-semibold mb-4">🎮 Interactive Quiz</h2>
+                <div id="quiz" class="space-y-4">
+                    <!-- Quiz questions will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // LED Characteristics Data
+        const ledData = {
+            blue: { turnOnVoltage: 2.8, maxCurrent: 20 },
+            green: { turnOnVoltage: 2.1, maxCurrent: 25 },
+            red: { turnOnVoltage: 1.8, maxCurrent: 30 },
+            yellow: { turnOnVoltage: 2.0, maxCurrent: 22 }
+        };
+
+        // LDR Data Simulation
+        const ldrData = {
+            distances: [1, 3, 5, 7, 10],
+            lightIntensities: [100, 75, 50, 25, 10]
+        };
+
+        // Charts Initialization
+        function initLEDChart() {
+            const ctx = document.getElementById('ledChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(ledData),
+                    datasets: [{
+                        label: 'Turn-ON Voltage',
+                        data: Object.values(ledData).map(led => led.turnOnVoltage),
+                        backgroundColor: ['blue', 'green', 'red', 'yellow']
+                    }]
+                }
+            });
+        }
+
+        function initLDRChart() {
+            const ctx = document.getElementById('ldrChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ldrData.distances,
+                    datasets: [{
+                        label: 'Light Intensity',
+                        data: ldrData.lightIntensities,
+                        borderColor: 'green'
+                    }]
+                }
+            });
+        }
+
+        // Quiz Generation
+        function generateQuiz() {
+            const quizQuestions = [
+                {
+                    question: "What is the turn-on voltage for a blue LED?",
+                    options: ['1.8V', '2.1V', '2.8V', '3.0V'],
+                    answer: '2.8V'
+                },
+                {
+                    question: "How does LDR resistance change with light?",
+                    options: ['Increases', 'Decreases', 'Stays Same', 'Fluctuates'],
+                    answer: 'Decreases'
+                }
+            ];
+
+            const quizContainer = document.getElementById('quiz');
+            quizQuestions.forEach((q, index) => {
+                const quizElement = document.createElement('div');
+                quizElement.innerHTML = `
+                    <h4 class="font-bold">${index + 1}. ${q.question}</h4>
+                    <div class="space-x-2">
+                        ${q.options.map(opt => `
+                            <button class="quiz-btn bg-blue-200 p-2 rounded hover:bg-blue-300">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(quizElement);
+            });
+        }
+
+        // Initialize Everything
+        document.addEventListener('DOMContentLoaded', () => {
+            initLEDChart();
+            initLDRChart();
+            generateQuiz();
+        });
+    </script>
+</body>
+</html>
