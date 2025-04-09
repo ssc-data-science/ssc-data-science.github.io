@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: Father and Son Summary & Quiz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <!-- Google Fonts: Noto Sans Arabic (for Arabic) and Inter (for English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply custom fonts */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        .font-arabic {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            line-height: 1.8; /* Improve readability with harakat */
+        }
+        /* Ensure RTL direction is respected */
+        [dir="rtl"] {
+            direction: rtl;
+        }
+        /* Style for quiz word */
+        #quiz-word {
+             font-size: 1.75rem; /* Larger Arabic text for clarity */
+             font-weight: 700;
+        }
+        /* Style for headings */
+        .section-heading-ar {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700;
+            margin-bottom: 0.25rem; /* mb-1 */
+        }
+        .section-heading-en {
+            font-size: 1.125rem; /* text-lg */
+            color: #4b5563; /* text-gray-600 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .vocab-term {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600;
+        }
+         .vocab-def {
+            color: #374151; /* text-gray-700 */
+         }
+         /* Add some subtle animation for feedback */
+         #quiz-feedback {
+            transition: all 0.3s ease-in-out;
+         }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="container mx-auto max-w-4xl p-6 md:p-8">
+
+        <header class="text-center mb-10">
+            <h1 class="font-arabic text-3xl md:text-4xl font-bold mb-2 dir-rtl">الوحدة ٣: ملخص قصة الأَبُ وَابْنُهُ</h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-indigo-700">Unit 3: Summary of the Story of the Father and His Son</h2>
+        </header>
+
+        <!-- Section Headings -->
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="text-2xl font-bold mb-6 text-indigo-800 border-b pb-2">Section Headings</h3>
+            <div class="space-y-6">
+                <div>
+                    <p class="font-arabic section-heading-ar dir-rtl">الأَبُ يَسْمَعُ صَوْتًا وَيَسْأَلُ ابْنَهُ المَشْغُول.</p>
+                    <p class="section-heading-en">1. The father hears a sound and asks his busy son.</p>
+                </div>
+                 <div>
+                    <p class="font-arabic section-heading-ar dir-rtl">الأبُ يُكَرِّرُ السُّؤَالَ وَالابْنُ يُجِيبُ بِضَجَرٍ.</p>
+                    <p class="section-heading-en">2. The father repeats the question, and the son answers with annoyance.</p>
+                 </div>
+                 <div>
+                     <p class="font-arabic section-heading-ar dir-rtl">الأَبُ الحَزِينُ يَطْلُبُ مُفَكِّرَتَهُ القَدِيمَة.</p>
+                     <p class="section-heading-en">3. The sad father asks for his old diary.</p>
+                 </div>
+                 <div>
+                    <p class="font-arabic section-heading-ar dir-rtl">الابْنُ يَقْرَأُ مِنَ الْمُفَكِّرَةِ عَنْ صَبْرِ أَبِيهِ فِي المَاضِي.</p>
+                    <p class="section-heading-en">4. The son reads from the diary about his father's past patience.</p>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Vocabulary Quiz -->
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="text-2xl font-bold mb-6 text-indigo-800 border-b pb-2">Vocabulary Quiz</h3>
+            <div id="quiz-area" class="text-center">
+                <div class="mb-4 p-4 bg-indigo-50 rounded">
+                    <p class="mb-2 text-gray-600">What is the meaning of:</p>
+                    <p id="quiz-word" class="font-arabic dir-rtl text-indigo-900">...</p>
+                </div>
+
+                <input type="text" id="quiz-input" placeholder="Type English meaning here" class="w-full md:w-3/4 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-3">
+
+                <div class="flex flex-col sm:flex-row justify-center gap-3 mb-4">
+                    <button id="submit-answer" class="px-5 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-150 ease-in-out">Submit Answer</button>
+                    <button id="show-answer" class="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-150 ease-in-out">Show Answer</button>
+                    <button id="next-word" class="px-5 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition duration-150 ease-in-out" disabled>Next Word</button>
+                </div>
+
+                <div id="quiz-feedback" class="mt-4 h-6 text-lg font-semibold"></div>
+                 <div id="correct-answer" class="mt-2 h-6 text-gray-700"></div>
+                 <div id="quiz-progress" class="mt-4 text-sm text-gray-500"></div>
+            </div>
+             <div id="quiz-complete" class="hidden text-center text-xl font-semibold text-green-700 mt-6">
+                Quiz Complete! Well done! Refresh the page to try again.
+             </div>
+        </section>
+
+        <!-- Key Lesson / Moral -->
+        <section class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 class="text-2xl font-bold mb-6 text-indigo-800 border-b pb-2">Key Lesson / Moral</h3>
+            <div>
+                <p class="font-arabic text-xl font-semibold mb-2 dir-rtl text-center">الدرس المستفاد: الصبر واللطف مع الوالدين، وتذكر صبرهم علينا في الصغر.</p>
+                <p class="text-lg text-gray-700 text-center">Moral: Be patient and kind to parents, remembering their patience with us when we were young.</p>
+            </div>
+        </section>
+
+        <footer class="text-center mt-10 text-gray-500 text-sm">
+            Memorization Tool based on Unit 3 Summary
+        </footer>
+    </div>
+
+    <script>
+        const vocabulary = [
+            // Section 1
+            { ar: 'العَجُوزُ', en: 'The old man' },
+            { ar: 'بِجوَارِ', en: 'Beside / Next to' },
+            { ar: 'النَّافِذَةِ', en: 'The window' },
+            { ar: 'سَمِعَ', en: 'He heard' },
+            { ar: 'صَوْتَ بَلْبَلٍ', en: 'Sound of a nightingale' },
+            { ar: 'مُحْدِقًا', en: 'Staring intently / Engrossed' },
+            { ar: 'شَاشَةِ', en: 'Screen' },
+            { ar: 'الحَاسُوبِ المَحْمُولِ', en: 'Laptop' },
+            { ar: 'دُونَ أَنْ يَرْفَعَ رَأْسَهُ', en: 'Without raising his head' },
+            // Section 2
+            { ar: 'فَتْرَةٍ قَصِيرَةٍ', en: 'Short period' },
+            { ar: 'ثَانِيَةً', en: 'Again / A second time' },
+            { ar: 'كَرَّرَ', en: 'He repeated' },
+            { ar: 'الخَارِجِ', en: 'Outside' }, // Note: OCR has ?, but context implies the noun
+            { ar: 'رَدَّ', en: 'He replied / Retorted' },
+            { ar: 'مُمْتَعِضًا', en: 'Annoyed / Displeased' },
+            { ar: 'أَلَمْ أَقُلْ لَكَ', en: "Didn't I tell you" },
+            { ar: 'مِنْ قَبْلُ', en: 'Before' },
+             // Section 3 (from page 2 vocab)
+            { ar: 'صَمَتَ', en: 'He became silent' },
+            { ar: 'مُدَّةٍ قَلِيلَةٍ', en: 'Short period / Little while' },
+            { ar: 'حَزِينًا', en: 'Sadly' },
+            { ar: 'أَحْضِرْ لِي', en: 'Bring me' },
+            { ar: 'مُفَكِّرَتِي', en: 'My diary / My notebook' },
+            { ar: 'القَدِيمَةَ', en: 'The old' },
+            { ar: 'الغُرْفَةِ', en: 'The room' },
+            { ar: 'لَوْ سَمَحْتَ', en: 'Please / If you would' },
+            // Section 4
+            { ar: 'أَحْضَرَ', en: 'He brought' },
+            { ar: 'فَتَحَهَا', en: 'He opened it' },
+            { ar: 'صَفْحَةٍ', en: 'A page' },
+            { ar: 'قِرَاءَتَهَا', en: 'To read it' },
+            { ar: 'أَتَمَّ', en: 'He completed' },
+            { ar: 'ثَلَاثَةَ أَعْوَامٍ', en: 'Three years' },
+            { ar: 'أَخَذْتُهُ', en: 'I took him' },
+            { ar: 'الحَدِيقَةِ', en: 'The park / garden' },
+            { ar: 'رَأَى', en: 'He saw' },
+            { ar: 'الطَّائِرُ', en: 'The bird' },
+            { ar: 'أَجَبْتُهُ', en: 'I answered him' },
+            { ar: 'ظَلَّ يُكَرِّرُ السُّؤَالَ نَفْسَهُ', en: 'He kept repeating the same question' },
+            { ar: 'دُونَ مَلَلٍ', en: 'Without boredom / Tirelessly' },
+            { ar: 'مَا يُقَارِبُ', en: 'Approximately' },
+            { ar: 'عِشْرِينَ مَرَّةً', en: 'Twenty times' },
+            { ar: 'ظَلَلْنَا', en: 'We kept / continued' },
+            { ar: 'نَضْحَكُ', en: 'We laugh' },
+            { ar: 'نَمْرَحُ', en: 'We have fun' },
+            { ar: 'نَلْعَبُ سَوِيًّا', en: 'We play together' },
+            { ar: 'أَنْهَكَهُ التَّعَبُ', en: 'Exhaustion overtook him / Tiredness wore him out' },
+            { ar: 'عُدْنَا', en: 'We returned' },
+            { ar: 'المَنْزِلِ', en: 'The home' }
+        ];
+
+        let currentWordIndex = 0;
+        let shuffledVocab = [];
+
+        // DOM Elements
+        const quizWordEl = document.getElementById('quiz-word');
+        const quizInputEl = document.getElementById('quiz-input');
+        const submitAnswerBtn = document.getElementById('submit-answer');
+        const showAnswerBtn = document.getElementById('show-answer');
+        const nextWordBtn = document.getElementById('next-word');
+        const quizFeedbackEl = document.getElementById('quiz-feedback');
+        const correctAnswerEl = document.getElementById('correct-answer');
+        const quizProgressEl = document.getElementById('quiz-progress');
+        const quizAreaEl = document.getElementById('quiz-area');
+        const quizCompleteEl = document.getElementById('quiz-complete');
+
+
+        // Fisher-Yates Shuffle Algorithm
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+            return array;
+        }
+
+        function loadWord() {
+            if (currentWordIndex < shuffledVocab.length) {
+                const currentWord = shuffledVocab[currentWordIndex];
+                quizWordEl.textContent = currentWord.ar;
+                quizInputEl.value = '';
+                quizFeedbackEl.textContent = '';
+                 correctAnswerEl.textContent = '';
+                quizInputEl.disabled = false;
+                quizInputEl.focus();
+                submitAnswerBtn.disabled = false;
+                showAnswerBtn.disabled = false;
+                nextWordBtn.disabled = true;
+                quizProgressEl.textContent = `Word ${currentWordIndex + 1} of ${shuffledVocab.length}`;
+            } else {
+                // Quiz finished
+                 quizAreaEl.classList.add('hidden');
+                 quizCompleteEl.classList.remove('hidden');
+            }
+        }
+
+        function checkAnswer() {
+            if (currentWordIndex >= shuffledVocab.length) return; // Prevent checking after quiz ends
+
+            const userAnswer = quizInputEl.value.trim().toLowerCase();
+            // Allow for multiple correct answers separated by ' / '
+            const correctAnswers = shuffledVocab[currentWordIndex].en.toLowerCase().split(' / ').map(s => s.trim());
+
+            if (correctAnswers.includes(userAnswer)) {
+                quizFeedbackEl.textContent = 'Correct!';
+                quizFeedbackEl.className = 'mt-4 h-6 text-lg font-semibold text-green-600';
+            } else {
+                quizFeedbackEl.textContent = 'Incorrect.';
+                quizFeedbackEl.className = 'mt-4 h-6 text-lg font-semibold text-red-600';
+                correctAnswerEl.textContent = `Correct answer: ${shuffledVocab[currentWordIndex].en}`;
+            }
+
+            // Disable input and submit/show buttons, enable next
+            quizInputEl.disabled = true;
+            submitAnswerBtn.disabled = true;
+            showAnswerBtn.disabled = true;
+            nextWordBtn.disabled = false;
+            nextWordBtn.focus(); // Move focus to the next button
+        }
+
+        function revealAnswer() {
+             if (currentWordIndex >= shuffledVocab.length) return;
+
+             correctAnswerEl.textContent = `Answer: ${shuffledVocab[currentWordIndex].en}`;
+             quizFeedbackEl.textContent = ''; // Clear feedback if showing answer directly
+             quizInputEl.disabled = true;
+             submitAnswerBtn.disabled = true;
+             showAnswerBtn.disabled = true;
+             nextWordBtn.disabled = false;
+             nextWordBtn.focus();
+        }
+
+
+        // Event Listeners
+        submitAnswerBtn.addEventListener('click', checkAnswer);
+        // Allow pressing Enter in the input field to submit
+        quizInputEl.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && !quizInputEl.disabled) {
+                event.preventDefault(); // Prevent default form submission if it were in a form
+                checkAnswer();
+            }
+        });
+
+        showAnswerBtn.addEventListener('click', revealAnswer);
+
+        nextWordBtn.addEventListener('click', () => {
+            currentWordIndex++;
+            loadWord();
+        });
+
+        // Initialize Quiz
+        shuffledVocab = shuffleArray([...vocabulary]); // Shuffle a copy of the array
+        loadWord();
+
+    </script>
+
+</body>
+</html>
