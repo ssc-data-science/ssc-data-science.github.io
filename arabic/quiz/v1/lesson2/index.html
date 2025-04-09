@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorization Tool: Shawqi Poem Summary</title>
+    <!-- Link Amiri Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Use Amiri font specifically for Arabic text */
+        .arabic-text, .arabic-heading, .arabic-vocab {
+            font-family: 'Amiri', serif;
+            font-size: 1.5em; /* Larger size for readability */
+            direction: rtl;   /* Right-to-left direction */
+            text-align: right;
+            margin-bottom: 0.5em;
+            color: #1a202c; /* Darker text */
+        }
+
+        .arabic-heading {
+            font-weight: bold;
+            color: #2d3748; /* Slightly lighter heading color */
+        }
+
+        .english-text, .english-meaning {
+            font-size: 1.1em;
+            color: #4a5568; /* Grayish text */
+            margin-bottom: 1em;
+            /* Initially hidden */
+            display: none;
+            background-color: #edf2f7;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 3px solid #4299e1; /* Blue accent */
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c5282; /* Dark blue */
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .subsection-heading {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #3182ce; /* Blue */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .memorization-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .memorization-card:hover {
+             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .toggle-button {
+            background-color: #4299e1; /* Blue */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease;
+            display: block; /* Make button take full width within its container if needed */
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .toggle-button:hover {
+            background-color: #2b6cb0; /* Darker blue */
+        }
+
+        .instructions {
+            background-color: #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            border-left: 4px solid #4a5568;
+        }
+
+        .instructions ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* Style for vocabulary section */
+        .vocab-section {
+            margin-top: 40px;
+        }
+
+        .vocab-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+         .vocab-card:hover {
+             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .vocab-left {
+            flex-basis: 45%;
+        }
+         .vocab-right {
+            flex-basis: 45%;
+            text-align: left;
+        }
+
+        .vocab-toggle {
+            flex-basis: 10%;
+            text-align: center;
+        }
+         .vocab-toggle .toggle-button {
+            padding: 5px 10px;
+             font-size: 0.8em;
+             margin: 0 auto; /* Center button if needed */
+         }
+        .arabic-vocab {
+            font-size: 1.4em; /* Slightly smaller than main text */
+            margin-bottom: 0;
+        }
+         .english-meaning {
+            font-size: 1em;
+            margin-bottom: 0;
+         }
+
+        /* Class to show the hidden element */
+        .visible {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="section-heading">أداة الحفظ: ملخص قصيدة أحمد شوقي</h1>
+        <p class="instructions">
+            <strong>How to use this tool:</strong>
+            <ul>
+                <li>Read the Arabic point or word.</li>
+                <li>Try to recall the English translation or meaning.</li>
+                <li>Click the "Show/Hide" button to check your answer.</li>
+                <li>Repeat until memorized!</li>
+            </ul>
+        </p>
+
+        <!-- Section: About the Poem -->
+        <section>
+            <h2 class="subsection-heading arabic-heading">عَنِ القَصِيدَةِ (نِقَاطٌ مُوجَزَةٌ)</h2>
+
+            <div class="memorization-card">
+                <p class="arabic-text">يَدْعُو الشَّاعِرُ إِلَى التَّوَقُّفِ وَالتَّأَمُّلِ فِي جَمَالِ الطَّبِيعَةِ.</p>
+                <p class="english-text">The poet calls for stopping and contemplating the beauty of nature.</p>
+                <button class="toggle-button">إظهار/إخفاء الترجمة</button>
+            </div>
+
+            <div class="memorization-card">
+                <p class="arabic-text">الطَّبِيعَةُ دَلِيلٌ وَاضِحٌ عَلَى قُدْرَةِ الخَالِقِ وَعَظَمَتِهِ.</p>
+                <p class="english-text">Nature is a clear proof of the Creator's power and greatness.</p>
+                <button class="toggle-button">إظهار/إخفاء الترجمة</button>
+            </div>
+
+            <div class="memorization-card">
+                <p class="arabic-text">يُصَوِّرُ الشَّاعِرُ تَنَوُّعَ الطَّبِيعَةِ وَجَمَالَهَا بِاسْتِخْدَامِ التَّشْخِيصِ (كَالْمَرْأَةِ الضَّاحِكَةِ أَوِ البَاكِيَةِ).</p>
+                <p class="english-text">The poet depicts the diversity and beauty of nature using personification (like a laughing or crying woman).</p>
+                <button class="toggle-button">إظهار/إخفاء الترجمة</button>
+            </div>
+
+            <div class="memorization-card">
+                <p class="arabic-text">التَّفَكُّرُ فِي صُنْعِ اللهِ فِي الطَّبِيعَةِ يُزِيلُ الشَّكَّ وَاليَقِينَ يُثْبِتُ.</p>
+                <p class="english-text">Reflecting on God's creation in nature removes doubt and establishes certainty.</p>
+                <button class="toggle-button">إظهار/إخفاء الترجمة</button>
+            </div>
+        </section>
+
+        <!-- Section: About the Poet -->
+        <section>
+            <h2 class="subsection-heading arabic-heading">عَنِ الشَّاعِرِ (نِقَاطٌ مُوجَزَةٌ)</h2>
+
+             <div class="memorization-card">
+                <p class="arabic-text">هُوَ أَحْمَد شَوْقِي، المُلَقَّبُ بِـ "أَمِيرِ الشُّعَرَاءِ".</p>
+                <p class="english-text">He is Ahmed Shawqi, nicknamed "Prince of Poets".</p>
+                <button class="toggle-button">إظهار/إخفاء الترجمة</button>
+            </div>
+
+             <div class="memorization-card">
+                <p class="arabic-text">شَاعِرٌ وَكَاتِبٌ مَسْرَحِيٌّ مِصْرِيٌّ مِنْ أَعْظَمِ شُعَرَاءِ العَرَبِيَّةِ الحَدِيثَةِ.</p>
+                <p class="english-text">An Egyptian poet and playwright, one of the greatest poets of modern Arabic.</p>
+                <button class="toggle-button">إظهار/إخفاء الترجمة</button>
+            </div>
+
+             <div class="memorization-card">
+                <p class="arabic-text">رَائِدُ التَّجْدِيدِ فِي الشِّعْرِ الوَطَنِيِّ وَالدِّينِيِّ وَالمَسْرَحِ الشِّعْرِيِّ العَرَبِيِّ.</p>
+                <p class="english-text">A pioneer of renewal in national, religious, and Arabic poetic theater.</p>
+                <button class="toggle-button">إظهار/إخفاء الترجمة</button>
+            </div>
+
+             <div class="memorization-card">
+                <p class="arabic-text">مِنْ أَشْهَرِ أَعْمَالِهِ دِيوَانُ "الشَّوْقِيَّاتِ" وَمَسْرَحِيَّاتٌ مِثْلُ "مَجْنُون لَيْلَى" وَ "مَصْرَع كِلِيُوبَاتْرَا".</p>
+                <p class="english-text">Among his most famous works are the "Shawqiyat" collection and plays like "Majnoon Layla" and "The Death of Cleopatra".</p>
+                <button class="toggle-button">إظهار/إخفاء الترجمة</button>
+            </div>
+        </section>
+
+        <!-- Section: Vocabulary -->
+        <section class="vocab-section">
+             <h2 class="subsection-heading arabic-heading">مُفْرَدَاتٌ هَامَّةٌ (Key Vocabulary)</h2>
+
+             <div class="vocab-card">
+                 <div class="vocab-left">
+                     <p class="arabic-vocab">الشَّاعِرُ</p>
+                 </div>
+                  <div class="vocab-right">
+                     <p class="english-meaning">The Poet</p>
+                 </div>
+                 <div class="vocab-toggle">
+                    <button class="toggle-button">إظهار/إخفاء</button>
+                 </div>
+             </div>
+
+             <div class="vocab-card">
+                 <div class="vocab-left">
+                     <p class="arabic-vocab">الطَّبِيعَة</p>
+                 </div>
+                  <div class="vocab-right">
+                     <p class="english-meaning">Nature</p>
+                 </div>
+                  <div class="vocab-toggle">
+                     <button class="toggle-button">إظهار/إخفاء</button>
+                 </div>
+            </div>
+
+             <div class="vocab-card">
+                 <div class="vocab-left">
+                     <p class="arabic-vocab">التَّأَمُّل</p>
+                 </div>
+                  <div class="vocab-right">
+                     <p class="english-meaning">Contemplation / Reflection</p>
+                 </div>
+                  <div class="vocab-toggle">
+                     <button class="toggle-button">إظهار/إخفاء</button>
+                 </div>
+            </div>
+
+             <div class="vocab-card">
+                 <div class="vocab-left">
+                     <p class="arabic-vocab">الخَالِق</p>
+                 </div>
+                  <div class="vocab-right">
+                     <p class="english-meaning">The Creator</p>
+                 </div>
+                  <div class="vocab-toggle">
+                     <button class="toggle-button">إظهار/إخفاء</button>
+                 </div>
+            </div>
+
+             <div class="vocab-card">
+                 <div class="vocab-left">
+                     <p class="arabic-vocab">التَّشْخِيص</p>
+                 </div>
+                  <div class="vocab-right">
+                     <p class="english-meaning">Personification</p>
+                 </div>
+                  <div class="vocab-toggle">
+                     <button class="toggle-button">إظهار/إخفاء</button>
+                 </div>
+            </div>
+
+             <div class="vocab-card">
+                 <div class="vocab-left">
+                     <p class="arabic-vocab">اليَقِين</p>
+                 </div>
+                  <div class="vocab-right">
+                     <p class="english-meaning">Certainty</p>
+                 </div>
+                  <div class="vocab-toggle">
+                     <button class="toggle-button">إظهار/إخفاء</button>
+                 </div>
+            </div>
+
+              <div class="vocab-card">
+                 <div class="vocab-left">
+                     <p class="arabic-vocab">أَمِير الشُّعَرَاء</p>
+                 </div>
+                  <div class="vocab-right">
+                     <p class="english-meaning">Prince of Poets</p>
+                 </div>
+                  <div class="vocab-toggle">
+                     <button class="toggle-button">إظهار/إخفاء</button>
+                 </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all toggle buttons for the main points
+            const toggleButtons = document.querySelectorAll('.memorization-card .toggle-button');
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Find the preceding sibling element which is the English text
+                    const englishText = button.previousElementSibling;
+                    if (englishText && englishText.classList.contains('english-text')) {
+                         // Toggle the 'visible' class
+                         englishText.classList.toggle('visible');
+                         // Optional: Change button text
+                         if (englishText.classList.contains('visible')) {
+                             button.textContent = 'إخفاء الترجمة'; // Hide Translation
+                         } else {
+                             button.textContent = 'إظهار الترجمة'; // Show Translation
+                         }
+                    }
+                });
+            });
+
+             // Get all toggle buttons for the vocabulary section
+             const vocabToggleButtons = document.querySelectorAll('.vocab-card .toggle-button');
+
+             vocabToggleButtons.forEach(button => {
+                 button.addEventListener('click', () => {
+                    // Find the parent '.vocab-card', then the '.vocab-right' div within it, then the '.english-meaning' p
+                    const card = button.closest('.vocab-card');
+                    if (card) {
+                         const meaningElement = card.querySelector('.english-meaning');
+                         if (meaningElement) {
+                            // Toggle the 'visible' class
+                            meaningElement.classList.toggle('visible');
+                             // Optional: Change button text
+                            if (meaningElement.classList.contains('visible')) {
+                                button.textContent = 'إخفاء'; // Hide
+                             } else {
+                                button.textContent = 'إظهار'; // Show
+                             }
+                         }
+                     }
+                 });
+             });
+        });
+    </script>
+
+</body>
+</html>
