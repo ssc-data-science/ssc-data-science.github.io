@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorization Tool: Shawqi Poem Summary</title>
+    <title>Memorization Tool & Quiz: Shawqi Poem Summary</title>
     <!-- Link Amiri Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
         }
 
         /* Use Amiri font specifically for Arabic text */
-        .arabic-text, .arabic-heading, .arabic-vocab {
+        .arabic-text, .arabic-heading, .arabic-vocab, .arabic-quiz-option, .arabic-question {
             font-family: 'Amiri', serif;
             font-size: 1.5em; /* Larger size for readability */
             direction: rtl;   /* Right-to-left direction */
@@ -37,6 +37,16 @@
             margin-bottom: 0.5em;
             color: #1a202c; /* Darker text */
         }
+         .arabic-question {
+            margin-bottom: 1em;
+            font-weight: bold;
+         }
+         .arabic-quiz-option {
+             font-size: 1.2em; /* Slightly smaller for options */
+             margin-bottom: 0.2em;
+             display: inline; /* Display label inline with radio */
+             margin-right: 8px; /* Space between radio and text */
+         }
 
         .arabic-heading {
             font-weight: bold;
@@ -173,19 +183,117 @@
             display: block;
         }
 
+         /* --- Quiz Styles --- */
+        .quiz-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .quiz-question {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2d3748;
+        }
+         /* Ensure Arabic questions are styled correctly */
+         .quiz-question .arabic-question {
+             font-size: 1.5em; /* Match other Arabic text */
+             font-weight: bold;
+             margin-bottom: 15px;
+             color: #2d3748;
+         }
+
+
+        .quiz-options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            direction: rtl; /* Ensure options align right */
+            text-align: right; /* Align text right */
+        }
+
+        .quiz-options input[type="radio"] {
+            margin-left: 10px; /* Space between radio and text (in RTL) */
+             transform: scale(1.1); /* Make radio button slightly larger */
+             vertical-align: middle;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+             text-align: right; /* Align feedback right */
+             direction: rtl;
+        }
+
+        .feedback.correct {
+            background-color: #c6f6d5; /* Light green */
+            color: #2f855a; /* Dark green */
+            border-left: 3px solid #38a169;
+             border-right: none; /* Remove default left border in RTL */
+             border-left: none;
+             border-right: 3px solid #38a169;
+        }
+
+        .feedback.incorrect {
+            background-color: #fed7d7; /* Light red */
+            color: #c53030; /* Dark red */
+            border-left: 3px solid #e53e3e;
+             border-right: none; /* Remove default left border in RTL */
+            border-left: none;
+             border-right: 3px solid #e53e3e;
+        }
+
+        #check-quiz-button {
+            background-color: #38a169; /* Green */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.2s ease;
+            display: block;
+            margin: 30px auto 10px auto; /* Center button */
+            width: fit-content;
+        }
+
+        #check-quiz-button:hover {
+            background-color: #2f855a; /* Darker green */
+        }
+
+        #quiz-score {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 20px;
+             color: #2c5282;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1 class="section-heading">أداة الحفظ: ملخص قصيدة أحمد شوقي</h1>
+        <h1 class="section-heading">أداة الحفظ والاختبار: ملخص قصيدة أحمد شوقي</h1>
         <p class="instructions">
             <strong>How to use this tool:</strong>
             <ul>
-                <li>Read the Arabic point or word.</li>
-                <li>Try to recall the English translation or meaning.</li>
-                <li>Click the "Show/Hide" button to check your answer.</li>
-                <li>Repeat until memorized!</li>
+                <li>Use the top sections like flashcards: Read the Arabic, recall the English, then click "Show/Hide".</li>
+                <li>Use the vocabulary section similarly for word meanings.</li>
+                <li>Complete the Quiz at the bottom to test your understanding.</li>
             </ul>
         </p>
 
@@ -325,7 +433,7 @@
 
               <div class="vocab-card">
                  <div class="vocab-left">
-                     <p class="arabic-vocab">أَمِير الشُّعَرَاء</p>
+                     <p class="arabic-vocab">أَمِير الشُّعَرَاءِ</p>
                  </div>
                   <div class="vocab-right">
                      <p class="english-meaning">Prince of Poets</p>
@@ -334,55 +442,228 @@
                      <button class="toggle-button">إظهار/إخفاء</button>
                  </div>
             </div>
-
         </section>
+
+         <!-- Section: Quiz -->
+         <section class="quiz-section">
+            <h2 class="subsection-heading arabic-heading" style="justify-content: center;">اِخْتِبَارٌ قَصِيرٌ (Quiz)</h2>
+
+            <form id="quiz-form">
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <p class="arabic-question">مَا هُوَ اللَّقَبُ الأَشْهَرُ لِلشَّاعِرِ أَحْمَد شَوْقِي؟</p>
+                    <div class="quiz-options">
+                        <label>
+                            <input type="radio" name="q1" value="a" id="q1-a">
+                            <span class="arabic-quiz-option">شَاعِرُ النِّيلِ</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="b" id="q1-b">
+                            <span class="arabic-quiz-option">أَمِيرُ الشُّعَرَاءِ</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="c" id="q1-c">
+                           <span class="arabic-quiz-option"> شَاعِرُ القُطْرَيْنِ</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="d" id="q1-d">
+                            <span class="arabic-quiz-option">عَمِيدُ الأَدَبِ العَرَبِيِّ</span>
+                        </label>
+                    </div>
+                    <p class="feedback" id="feedback-q1"></p>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <p class="question-text">According to the summary, what does contemplating nature remove?</p>
+                     <div class="quiz-options">
+                         <label>
+                             <input type="radio" name="q2" value="a" id="q2-a"> Certainty (اليَقِين)
+                         </label>
+                         <label>
+                             <input type="radio" name="q2" value="b" id="q2-b"> Beauty (الجَمَال)
+                         </label>
+                         <label>
+                             <input type="radio" name="q2" value="c" id="q2-c"> Doubt (الشَّكَّ)
+                         </label>
+                         <label>
+                             <input type="radio" name="q2" value="d" id="q2-d"> Power (القُدْرَة)
+                         </label>
+                     </div>
+                     <p class="feedback" id="feedback-q2"></p>
+                </div>
+
+                 <!-- Question 3 -->
+                <div class="quiz-question">
+                    <p class="arabic-question">إِلَى مَاذَا يَدْعُو الشَّاعِرُ فِي بِدَايَةِ النَّصِّ؟</p>
+                     <div class="quiz-options">
+                         <label>
+                             <input type="radio" name="q3" value="a" id="q3-a">
+                             <span class="arabic-quiz-option">إِلَى السَّفَرِ وَالاكْتِشَافِ</span>
+                         </label>
+                         <label>
+                             <input type="radio" name="q3" value="b" id="q3-b">
+                             <span class="arabic-quiz-option">إِلَى التَّوَقُّفِ وَالتَّأَمُّلِ فِي الطَّبِيعَةِ</span>
+                         </label>
+                         <label>
+                            <input type="radio" name="q3" value="c" id="q3-c">
+                             <span class="arabic-quiz-option">إِلَى كِتَابَةِ الشِّعْرِ الوَطَنِيِّ</span>
+                         </label>
+                         <label>
+                            <input type="radio" name="q3" value="d" id="q3-d">
+                             <span class="arabic-quiz-option">إِلَى البُكَاءِ عَلَى الأَطْلاَلِ</span>
+                         </label>
+                     </div>
+                     <p class="feedback" id="feedback-q3"></p>
+                </div>
+
+                 <!-- Question 4 -->
+                 <div class="quiz-question">
+                    <p class="question-text">What is the meaning of the word "التَّشْخِيص"?</p>
+                     <div class="quiz-options">
+                         <label>
+                             <input type="radio" name="q4" value="a" id="q4-a"> Certainty
+                         </label>
+                         <label>
+                             <input type="radio" name="q4" value="b" id="q4-b"> Contemplation
+                         </label>
+                         <label>
+                             <input type="radio" name="q4" value="c" id="q4-c"> Nature
+                         </label>
+                         <label>
+                             <input type="radio" name="q4" value="d" id="q4-d"> Personification
+                         </label>
+                     </div>
+                     <p class="feedback" id="feedback-q4"></p>
+                </div>
+
+                 <!-- Question 5 -->
+                 <div class="quiz-question">
+                    <p class="arabic-question">مَاذَا تُعْتَبَرُ الطَّبِيعَةُ كَمَا ذُكِرَ فِي المُلَخَّصِ؟</p>
+                     <div class="quiz-options">
+                         <label>
+                             <input type="radio" name="q5" value="a" id="q5-a">
+                             <span class="arabic-quiz-option">مَصْدَرَ قَلَقٍ وَشَكٍّ</span>
+                         </label>
+                         <label>
+                             <input type="radio" name="q5" value="b" id="q5-b">
+                             <span class="arabic-quiz-option">مُجَرَّدَ مَنْظَرٍ جَمِيلٍ</span>
+                         </label>
+                         <label>
+                            <input type="radio" name="q5" value="c" id="q5-c">
+                             <span class="arabic-quiz-option">دَلِيلٌ عَلَى قُدْرَةِ الخَالِقِ</span>
+                         </label>
+                         <label>
+                            <input type="radio" name="q5" value="d" id="q5-d">
+                             <span class="arabic-quiz-option">مَكَانٌ لِلَّهْوِ فَقَطْ</span>
+                         </label>
+                     </div>
+                     <p class="feedback" id="feedback-q5"></p>
+                </div>
+
+                <button type="button" id="check-quiz-button">تحقق من الإجابات</button>
+                <p id="quiz-score"></p>
+            </form>
+         </section>
 
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Get all toggle buttons for the main points
+            // --- Memorization Tool Logic ---
             const toggleButtons = document.querySelectorAll('.memorization-card .toggle-button');
-
             toggleButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Find the preceding sibling element which is the English text
                     const englishText = button.previousElementSibling;
                     if (englishText && englishText.classList.contains('english-text')) {
-                         // Toggle the 'visible' class
                          englishText.classList.toggle('visible');
-                         // Optional: Change button text
-                         if (englishText.classList.contains('visible')) {
-                             button.textContent = 'إخفاء الترجمة'; // Hide Translation
-                         } else {
-                             button.textContent = 'إظهار الترجمة'; // Show Translation
-                         }
+                         button.textContent = englishText.classList.contains('visible') ? 'إخفاء الترجمة' : 'إظهار الترجمة';
                     }
                 });
             });
 
-             // Get all toggle buttons for the vocabulary section
-             const vocabToggleButtons = document.querySelectorAll('.vocab-card .toggle-button');
-
-             vocabToggleButtons.forEach(button => {
+            const vocabToggleButtons = document.querySelectorAll('.vocab-card .toggle-button');
+            vocabToggleButtons.forEach(button => {
                  button.addEventListener('click', () => {
-                    // Find the parent '.vocab-card', then the '.vocab-right' div within it, then the '.english-meaning' p
                     const card = button.closest('.vocab-card');
                     if (card) {
                          const meaningElement = card.querySelector('.english-meaning');
                          if (meaningElement) {
-                            // Toggle the 'visible' class
                             meaningElement.classList.toggle('visible');
-                             // Optional: Change button text
-                            if (meaningElement.classList.contains('visible')) {
-                                button.textContent = 'إخفاء'; // Hide
-                             } else {
-                                button.textContent = 'إظهار'; // Show
-                             }
+                            button.textContent = meaningElement.classList.contains('visible') ? 'إخفاء' : 'إظهار';
                          }
                      }
                  });
              });
+
+            // --- Quiz Logic ---
+            const quizForm = document.getElementById('quiz-form');
+            const checkQuizButton = document.getElementById('check-quiz-button');
+            const quizScoreDisplay = document.getElementById('quiz-score');
+
+            // Define correct answers (using the 'value' of the radio buttons)
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'b',
+                q4: 'd',
+                q5: 'c'
+            };
+
+            // Arabic feedback text
+            const feedbackCorrectText = "إجابة صحيحة!";
+            const feedbackIncorrectTextStart = "إجابة خاطئة. الصحيح: ";
+
+             // Correct answer text (for feedback) - Mix of Arabic/English as needed
+             const answerDetails = {
+                 q1: 'أَمِيرُ الشُّعَرَاءِ',
+                 q2: 'Doubt (الشَّكَّ)',
+                 q3: 'إِلَى التَّوَقُّفِ وَالتَّأَمُّلِ فِي الطَّبِيعَةِ',
+                 q4: 'Personification',
+                 q5: 'دَلِيلٌ عَلَى قُدْرَةِ الخَالِقِ'
+             };
+
+
+            checkQuizButton.addEventListener('click', () => {
+                let score = 0;
+                const totalQuestions = Object.keys(correctAnswers).length;
+
+                // Loop through each question
+                for (const questionName in correctAnswers) {
+                    const correctAnswer = correctAnswers[questionName];
+                    const feedbackElement = document.getElementById(`feedback-${questionName}`);
+                    const selectedOption = quizForm.querySelector(`input[name="${questionName}"]:checked`);
+
+                    // Hide previous feedback and remove classes
+                     feedbackElement.style.display = 'none';
+                     feedbackElement.classList.remove('correct', 'incorrect');
+                     feedbackElement.textContent = ''; // Clear previous text
+
+                    if (selectedOption) {
+                        const userAnswer = selectedOption.value;
+                        if (userAnswer === correctAnswer) {
+                            score++;
+                            feedbackElement.textContent = feedbackCorrectText;
+                            feedbackElement.classList.add('correct');
+                        } else {
+                            // Find the label text of the correct option for feedback
+                            const correctOptionLabel = document.querySelector(`label[for="${questionName}-${correctAnswer}"]`).textContent.trim();
+                            // Use pre-defined detailed answer if available
+                            const detail = answerDetails[questionName] || correctOptionLabel;
+                            feedbackElement.textContent = `${feedbackIncorrectTextStart} ${detail}`;
+                            feedbackElement.classList.add('incorrect');
+                        }
+                    } else {
+                        // Handle unanswered question
+                        feedbackElement.textContent = "لم تتم الإجابة على هذا السؤال.";
+                        feedbackElement.classList.add('incorrect'); // Or a different style for unanswered
+                    }
+                     feedbackElement.style.display = 'block'; // Show feedback
+                }
+
+                // Display final score
+                quizScoreDisplay.textContent = `نتيجتك: ${score} من ${totalQuestions}`;
+            });
         });
     </script>
 
