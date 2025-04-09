@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A & Quiz: Taha Hussein - "To My Daughter"</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Naskh Arabic (for Harakat) and Inter (for English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-arabic { font-family: 'Noto Naskh Arabic', serif; }
+        body { font-family: 'Inter', sans-serif; }
+        .qa-item { transition: background-color 0.3s ease; }
+        .section-heading {
+            font-family: 'Noto Naskh Arabic', serif; /* Ensure Arabic font for section headings */
+        }
+        /* Quiz Styles */
+        .quiz-option {
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+        .quiz-option.correct {
+            background-color: #d1fae5; /* Tailwind green-100 */
+            border-color: #10b981; /* Tailwind green-500 */
+            color: #065f46; /* Tailwind green-800 */
+        }
+        .quiz-option.incorrect {
+            background-color: #fee2e2; /* Tailwind red-100 */
+            border-color: #ef4444; /* Tailwind red-500 */
+            color: #991b1b; /* Tailwind red-800 */
+        }
+        .quiz-option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        /* Ensure options respect text direction */
+        .quiz-option p[dir="rtl"] { text-align: right; }
+        .quiz-option p[dir="ltr"] { text-align: left; }
+
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto max-w-3xl p-6 md:p-8 my-10">
+
+        <div id="review-section">
+            <h1 class="text-3xl font-bold mb-8 text-center text-indigo-800 section-heading">
+                مراجعة: "إلى ابنتي" - المفردات والنقاط الرئيسية
+            </h1>
+            <p class="text-center text-gray-600 mb-10 text-lg" dir="ltr">
+                (Review: "To My Daughter" - Vocabulary & Key Points)
+            </p>
+
+            <!-- Vocabulary Section -->
+            <h2 class="text-2xl font-bold mt-10 mb-5 text-indigo-700 section-heading border-b-2 border-indigo-200 pb-2">
+                قسم المفردات (Vocabulary Section)
+            </h2>
+            <div class="space-y-4 mb-10">
+
+                <!-- Word 1 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="vocab">
+                    <div class="question mb-3">
+                        <p class="font-arabic text-2xl font-semibold text-indigo-700" dir="rtl">سَاذِجَة</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What is the meaning/translation?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                        <p dir="ltr"><strong class="text-indigo-600">English:</strong> Naive</p>
+                        <p dir="ltr"><strong class="text-indigo-600">Meaning:</strong> Simple, innocent, lacking worldly experience</p>
+                    </div>
+                    <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                <!-- Word 2 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="vocab">
+                    <div class="question mb-3">
+                         <p class="font-arabic text-2xl font-semibold text-indigo-700" dir="rtl">سَلِيمَة الْقَلْب</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What is the meaning/translation?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                        <p dir="ltr"><strong class="text-indigo-600">English:</strong> Pure-hearted</p>
+                        <p dir="ltr"><strong class="text-indigo-600">Meaning:</strong> Having a good and innocent heart, free from malice</p>
+                    </div>
+                     <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                <!-- Word 3 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="vocab">
+                    <div class="question mb-3">
+                         <p class="font-arabic text-2xl font-semibold text-indigo-700" dir="rtl">طَيِّبَة النَّفْس</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What is the meaning/translation?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                        <p dir="ltr"><strong class="text-indigo-600">English:</strong> Kind-souled / Good-natured</p>
+                        <p dir="ltr"><strong class="text-indigo-600">Meaning:</strong> Having a kind disposition and gentle spirit</p>
+                    </div>
+                     <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                 <!-- Word 4 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="vocab">
+                    <div class="question mb-3">
+                         <p class="font-arabic text-2xl font-semibold text-indigo-700" dir="rtl">مَثَلاً أَعْلَى</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What is the meaning/translation?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                        <p dir="ltr"><strong class="text-indigo-600">English:</strong> Highest example / Ideal role model</p>
+                        <p dir="ltr"><strong class="text-indigo-600">Meaning:</strong> A perfect standard or model to be imitated</p>
+                    </div>
+                     <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                 <!-- Word 13 (Example - add others if needed) -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="vocab">
+                    <div class="question mb-3">
+                         <p class="font-arabic text-2xl font-semibold text-indigo-700" dir="rtl">تَأْجِيل</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What is the meaning/translation?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                        <p dir="ltr"><strong class="text-indigo-600">English:</strong> Postponement / Delay</p>
+                        <p dir="ltr"><strong class="text-indigo-600">Meaning:</strong> The action of putting something off to a later time</p>
+                    </div>
+                     <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+            </div><!-- End Vocabulary Section -->
+
+
+            <!-- Key Points Section -->
+            <h2 class="text-2xl font-bold mt-10 mb-5 text-indigo-700 section-heading border-b-2 border-indigo-200 pb-2">
+                قسم النقاط الرئيسية (Key Points Section)
+            </h2>
+             <div class="space-y-4">
+
+                <!-- Point 1 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="keypoint">
+                    <div class="question mb-3">
+                        <p class="text-lg font-semibold text-indigo-700" dir="ltr">1. About the Daughter</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What are her main characteristics mentioned?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                        <p class="font-arabic text-lg mb-1 text-gray-800" dir="rtl">
+                            هِيَ طِفْلَةٌ فِي التَّاسِعَةِ مِنْ عُمْرِهَا، تَتَّصِفُ بِالسَّذَاجَةِ وَطِيبَةِ الْقَلْبِ وَنَقَاءِ النَّفْسِ.
+                        </p>
+                        <p class="text-gray-700 text-sm" dir="ltr">
+                            <strong class="text-indigo-600">English:</strong> She is a nine-year-old child, characterized by naivety, kindness of heart, and purity of soul.
+                        </p>
+                    </div>
+                    <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                 <!-- Point 2 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="keypoint">
+                    <div class="question mb-3">
+                        <p class="text-lg font-semibold text-indigo-700" dir="ltr">2. Daughter's View of Father</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">How does she perceive her father?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                         <p class="font-arabic text-lg mb-1 text-gray-800" dir="rtl">
+                             تَرَى أَبَاهَا مَثَلاً أَعْلَى وَتَعْتَقِدُ أَنَّهُ كَانَ دَائِمًا مِثَالِيًّا، حَتَّى فِي طُفُولَتِهِ.
+                        </p>
+                        <p class="text-gray-700 text-sm" dir="ltr">
+                            <strong class="text-indigo-600">English:</strong> She sees her father as a perfect role model and believes he was always ideal, even in his childhood.
+                        </p>
+                    </div>
+                    <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                 <!-- Point 3 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="keypoint">
+                    <div class="question mb-3">
+                        <p class="text-lg font-semibold text-indigo-700" dir="ltr">3. About the Author (Taha Hussein)</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What is his title and key biographical fact mentioned?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                         <p class="font-arabic text-lg mb-1 text-gray-800" dir="rtl">
+                            هُوَ "عَمِيدُ الْأَدَبِ الْعَرَبِيِّ"، أَدِيبٌ وَنَاقِدٌ مِصْرِيٌّ كَبِيرٌ فَقَدَ بَصَرَهُ صَغِيرًا وَحَقَّقَ نَجَاحًا عَالَمِيًّا.
+                        </p>
+                        <p class="text-gray-700 text-sm" dir="ltr">
+                            <strong class="text-indigo-600">English:</strong> He is the "Dean of Arabic Literature," a great Egyptian writer and critic who lost his sight as a child and achieved worldwide success.
+                        </p>
+                    </div>
+                    <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                 <!-- Point 4 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="keypoint">
+                    <div class="question mb-3">
+                        <p class="text-lg font-semibold text-indigo-700" dir="ltr">4. Author's Efforts</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What is the author trying to do for his daughter regarding his past?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                         <p class="font-arabic text-lg mb-1 text-gray-800" dir="rtl">
+                            يَبْذُلُ الْأَبُ (طَهَ حُسَيْن) جُهْدًا كَبِيرًا لِيُجَنِّبَ ابْنَتَهُ صُعُوبَاتِ طُفُولَتِهِ الْقَاسِيَةِ الَّتِي عَاشَهَا.
+                        </p>
+                        <p class="text-gray-700 text-sm" dir="ltr">
+                            <strong class="text-indigo-600">English:</strong> The father (Taha Hussein) makes great efforts to spare his daughter the hardships of the harsh childhood he lived through.
+                        </p>
+                    </div>
+                    <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                <!-- Point 5 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="keypoint">
+                    <div class="question mb-3">
+                        <p class="text-lg font-semibold text-indigo-700" dir="ltr">5. Theme of the Letter</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What is the main message or feeling conveyed in the letter?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                         <p class="font-arabic text-lg mb-1 text-gray-800" dir="rtl">
+                            الرِّسَالَةُ تُعَبِّرُ عَنْ حُبِّ الْأَبِ الْعَمِيقِ لابْنَتِهِ، وَرَغْبَتِهِ فِي حِمَايَتِهَا مِنْ مَعْرِفَةِ وَاقِعِ طُفُولَتِهِ الصَّعْبِ حِفَاظًا عَلَى سَعَادَتِهَا.
+                        </p>
+                        <p class="text-gray-700 text-sm" dir="ltr">
+                            <strong class="text-indigo-600">English:</strong> The letter expresses the father's deep love for his daughter and his desire to protect her from knowing the reality of his difficult childhood to preserve her happiness.
+                        </p>
+                    </div>
+                    <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+                 <!-- Point 6 -->
+                <div class="qa-item bg-white p-4 rounded shadow border border-gray-200" data-type="keypoint">
+                    <div class="question mb-3">
+                        <p class="text-lg font-semibold text-indigo-700" dir="ltr">6. Postponement</p>
+                        <p class="text-gray-600 mt-1" dir="ltr">What decision does the author make about sharing his childhood story?</p>
+                    </div>
+                    <div class="answer hidden border-t pt-3 mt-3 border-gray-200">
+                         <p class="font-arabic text-lg mb-1 text-gray-800" dir="rtl">
+                            يُقَرِّرُ الْأَبُ تَأْجِيلَ الْحَدِيثِ عَنْ طُفُولَتِهِ حَتَّى تَكْبُرَ ابْنَتُهُ وَتَصِيرَ قَادِرَةً عَلَى الْفَهْمِ وَالتَّقْدِيرِ.
+                        </p>
+                        <p class="text-gray-700 text-sm" dir="ltr">
+                            <strong class="text-indigo-600">English:</strong> The father decides to postpone talking about his childhood until his daughter grows older and becomes capable of understanding and appreciating it.
+                        </p>
+                    </div>
+                    <button class="toggle-answer mt-2 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Show Answer / إظهار الإجابة
+                    </button>
+                </div>
+
+            </div> <!-- End Key Points Section -->
+
+             <!-- Start Quiz Button -->
+            <div class="text-center mt-12">
+                <button id="start-quiz-btn" class="px-6 py-3 bg-green-600 text-white text-lg font-semibold rounded-lg shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition duration-300 ease-in-out">
+                    بدء الاختبار / Start Quiz
+                </button>
+            </div>
+
+        </div> <!-- End Review Section -->
+
+
+        <!-- Quiz Section (Initially Hidden) -->
+        <div id="quiz-section" class="hidden mt-10">
+            <h2 class="text-2xl font-bold mb-6 text-center text-indigo-700 section-heading">
+                الاختبار (Quiz)
+            </h2>
+            <div id="quiz-container" class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                <div id="quiz-progress" class="text-sm text-gray-500 mb-4 text-center" dir="ltr">Question 1 / X</div>
+                <div id="quiz-score" class="text-sm text-indigo-600 font-semibold mb-4 text-center" dir="ltr">Score: 0</div>
+
+                <div id="quiz-question-container" class="mb-6">
+                    <!-- Question will be loaded here -->
+                </div>
+
+                <div id="quiz-options-container" class="space-y-3">
+                    <!-- Options will be loaded here -->
+                </div>
+
+                <div id="quiz-feedback" class="mt-5 text-center font-semibold h-6">
+                    <!-- Feedback will appear here -->
+                </div>
+            </div>
+
+            <!-- Quiz Results (Initially Hidden) -->
+            <div id="quiz-results" class="hidden mt-8 bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                <h3 class="text-xl font-bold mb-4 text-indigo-700 section-heading">النتائج (Results)</h3>
+                <p id="final-score" class="text-2xl font-semibold text-gray-800 mb-5"></p>
+                <button id="restart-quiz-btn" class="px-5 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                    إعادة الاختبار / Restart Quiz
+                </button>
+                <button id="back-to-review-btn" class="px-5 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 mr-3">
+                    العودة للمراجعة / Back to Review
+                </button>
+
+            </div>
+        </div>
+
+
+    </div><!-- End Container -->
+
+    <!-- JavaScript -->
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Part 1: Q&A Toggle Logic ---
+            const toggleButtons = document.querySelectorAll('.toggle-answer');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const qaItem = button.closest('.qa-item');
+                    if (!qaItem) return;
+                    const answer = qaItem.querySelector('.answer');
+                    if (!answer) return;
+                    answer.classList.toggle('hidden');
+                    if (answer.classList.contains('hidden')) {
+                        button.textContent = 'Show Answer / إظهار الإجابة';
+                    } else {
+                        button.textContent = 'Hide Answer / إخفاء الإجابة';
+                    }
+                });
+            });
+
+            // --- Part 2: Quiz Logic ---
+            const startQuizBtn = document.getElementById('start-quiz-btn');
+            const restartQuizBtn = document.getElementById('restart-quiz-btn');
+            const backToReviewBtn = document.getElementById('back-to-review-btn');
+            const reviewSection = document.getElementById('review-section');
+            const quizSection = document.getElementById('quiz-section');
+            const quizContainer = document.getElementById('quiz-container');
+            const quizResults = document.getElementById('quiz-results');
+            const quizProgressEl = document.getElementById('quiz-progress');
+            const quizScoreEl = document.getElementById('quiz-score');
+            const quizQuestionContainer = document.getElementById('quiz-question-container');
+            const quizOptionsContainer = document.getElementById('quiz-options-container');
+            const quizFeedbackEl = document.getElementById('quiz-feedback');
+            const finalScoreEl = document.getElementById('final-score');
+
+            let quizData = [];
+            let shuffledQuestions = [];
+            let currentQuestionIndex = 0;
+            let score = 0;
+            let allAnswers = []; // Store all possible answers for generating distractors
+
+            // --- Helper Functions ---
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+                }
+                return array;
+            }
+
+           function extractQuizData() {
+                quizData = []; // Reset data
+                allAnswers = []; // Reset all answers
+                const qaItems = document.querySelectorAll('.qa-item');
+                qaItems.forEach(item => {
+                    const type = item.dataset.type; // 'vocab' or 'keypoint'
+                    let questionText = '';
+                    let answerText = '';
+                    let questionDir = 'ltr';
+                    let answerDir = 'ltr';
+
+                    const questionEl = item.querySelector('.question');
+                    const answerEl = item.querySelector('.answer');
+
+                    if (!questionEl || !answerEl) return; // Skip if essential parts missing
+
+                    if (type === 'vocab') {
+                        const arabicWordEl = questionEl.querySelector('p.font-arabic');
+                        if (arabicWordEl) {
+                             questionText = `<p class="font-arabic text-2xl font-semibold text-indigo-700 mb-2" dir="rtl">${arabicWordEl.textContent.trim()}</p><p class="text-gray-600 text-base" dir="ltr">What is the meaning/translation?</p>`;
+                             questionDir = 'rtl'; // Primarily Arabic
+                        }
+                        // Get first line of answer (English translation)
+                        const englishAnswerEl = answerEl.querySelector('p[dir="ltr"] strong');
+                        if (englishAnswerEl && englishAnswerEl.nextSibling) {
+                           answerText = englishAnswerEl.nextSibling.textContent.trim();
+                        } else { // Fallback if structure varies slightly
+                            const pAnswer = answerEl.querySelector('p[dir="ltr"]');
+                            if (pAnswer) answerText = pAnswer.textContent.replace(/English:|Meaning:/gi, '').split('\n')[0].trim();
+                        }
+                        answerDir = 'ltr';
+
+                    } else if (type === 'keypoint') {
+                        const keypointTitleEl = questionEl.querySelector('p[dir="ltr"].font-semibold');
+                        const keypointDescEl = questionEl.querySelector('p.text-gray-600[dir="ltr"]');
+                        if (keypointTitleEl && keypointDescEl) {
+                             questionText = `<p class="text-lg font-semibold text-indigo-700 mb-1" dir="ltr">${keypointTitleEl.textContent.trim()}</p><p class="text-gray-600 mt-1" dir="ltr">${keypointDescEl.textContent.trim()}</p>`;
+                             questionDir = 'ltr';
+                        }
+                        // Get the Arabic answer text
+                        const arabicAnswerEl = answerEl.querySelector('p.font-arabic');
+                         if (arabicAnswerEl) {
+                             answerText = arabicAnswerEl.textContent.trim();
+                         }
+                         answerDir = 'rtl';
+                    }
+
+                    if (questionText && answerText) {
+                        quizData.push({
+                            question: questionText,
+                            answer: answerText,
+                            questionDir: questionDir,
+                            answerDir: answerDir, // Store answer direction
+                            type: type // Store type for potential smarter distractor logic later
+                        });
+                        allAnswers.push(answerText);
+                    }
+                });
+                 // Ensure unique answers for distractor pool
+                allAnswers = [...new Set(allAnswers)];
+           }
+
+            function generateOptions(correctAnswer, correctAnswerDir) {
+                let options = [{ text: correctAnswer, correct: true, dir: correctAnswerDir }];
+                let distractors = [];
+
+                // Filter out the correct answer from the pool of all answers
+                const possibleDistractors = allAnswers.filter(ans => ans !== correctAnswer);
+                shuffleArray(possibleDistractors); // Shuffle potential distractors
+
+                // Add 3 unique distractors
+                for (let i = 0; i < possibleDistractors.length && distractors.length < 3; i++) {
+                    // Basic check: try to match directionality roughly if possible (simple heuristic)
+                    const distractorDir = possibleDistractors[i].match(/[\u0600-\u06FF]/) ? 'rtl' : 'ltr'; // Simple Arabic check
+                     distractors.push({ text: possibleDistractors[i], correct: false, dir: distractorDir});
+                }
+                // If we didn't get enough distractors (e.g., very few items), add placeholders or repeat (less ideal)
+                while (distractors.length < 3) {
+                     distractors.push({ text: `Option ${distractors.length + 2}`, correct: false, dir: 'ltr' }); // Placeholder
+                }
+
+
+                options = options.concat(distractors);
+                return shuffleArray(options); // Shuffle the final 4 options
+            }
+
+
+           function displayQuestion() {
+                if (currentQuestionIndex >= shuffledQuestions.length) {
+                    showResults();
+                    return;
+                }
+
+                const currentQuestion = shuffledQuestions[currentQuestionIndex];
+                quizProgressEl.textContent = `Question ${currentQuestionIndex + 1} / ${shuffledQuestions.length}`;
+                quizScoreEl.textContent = `Score: ${score}`;
+                quizFeedbackEl.textContent = ''; // Clear previous feedback
+
+                // Set question text and direction
+                quizQuestionContainer.innerHTML = currentQuestion.question; // Use innerHTML as question includes HTML tags
+                quizQuestionContainer.dir = currentQuestion.questionDir; // Set container direction
+
+                // Generate and display options
+                quizOptionsContainer.innerHTML = ''; // Clear previous options
+                const options = generateOptions(currentQuestion.answer, currentQuestion.answerDir);
+
+                options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.classList.add('quiz-option', 'block', 'w-full', 'p-3', 'border', 'border-gray-300', 'rounded', 'hover:bg-gray-200', 'text-gray-700', 'focus:outline-none', 'focus:ring-2', 'focus:ring-indigo-300');
+                    // Create a paragraph inside for better text control and directionality
+                    const textP = document.createElement('p');
+                    textP.textContent = option.text;
+                    textP.dir = option.dir; // Set direction for the text paragraph
+                    button.appendChild(textP);
+
+                    button.dataset.correct = option.correct; // Store correctness in data attribute
+                    button.addEventListener('click', handleAnswerSelection);
+                    quizOptionsContainer.appendChild(button);
+                });
+            }
+
+            function handleAnswerSelection(event) {
+                const selectedButton = event.currentTarget;
+                const isCorrect = selectedButton.dataset.correct === 'true';
+
+                 // Disable all buttons after selection
+                const allOptionButtons = quizOptionsContainer.querySelectorAll('.quiz-option');
+                allOptionButtons.forEach(btn => {
+                    btn.disabled = true;
+                    btn.classList.add('disabled'); // Add visual indication
+                     // Reveal correct answer
+                    if (btn.dataset.correct === 'true') {
+                        btn.classList.add('correct');
+                        btn.classList.remove('hover:bg-gray-200');
+                    }
+                 });
+
+
+                if (isCorrect) {
+                    score++;
+                    selectedButton.classList.add('correct'); // Already handled above, but safe to keep
+                     quizFeedbackEl.textContent = 'Correct! / صحيح!';
+                     quizFeedbackEl.classList.add('text-green-600');
+                     quizFeedbackEl.classList.remove('text-red-600');
+                } else {
+                    selectedButton.classList.add('incorrect');
+                    selectedButton.classList.remove('hover:bg-gray-200');
+                    quizFeedbackEl.textContent = 'Incorrect / خطأ';
+                    quizFeedbackEl.classList.add('text-red-600');
+                     quizFeedbackEl.classList.remove('text-green-600');
+                }
+
+                 quizScoreEl.textContent = `Score: ${score}`; // Update score display immediately
+
+                // Move to the next question after a short delay
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    displayQuestion();
+                }, 1500); // 1.5 second delay
+            }
+
+            function showResults() {
+                quizContainer.classList.add('hidden');
+                quizResults.classList.remove('hidden');
+                const percentage = shuffledQuestions.length > 0 ? Math.round((score / shuffledQuestions.length) * 100) : 0;
+                finalScoreEl.textContent = `Your Score: ${score} / ${shuffledQuestions.length} (${percentage}%)`;
+                finalScoreEl.dir = 'ltr'; // Ensure score display is LTR
+            }
+
+            function startQuiz() {
+                extractQuizData(); // Make sure data is current
+                if (quizData.length === 0) {
+                    alert("No questions found to start the quiz.");
+                    return;
+                }
+
+                shuffledQuestions = shuffleArray([...quizData]); // Shuffle a copy
+                currentQuestionIndex = 0;
+                score = 0;
+
+                reviewSection.classList.add('hidden'); // Hide Q&A
+                quizResults.classList.add('hidden'); // Hide previous results
+                quizSection.classList.remove('hidden'); // Show quiz area
+                quizContainer.classList.remove('hidden'); // Show quiz questions container
+
+                displayQuestion(); // Display the first question
+            }
+
+            function goBackToReview() {
+                quizSection.classList.add('hidden');
+                reviewSection.classList.remove('hidden');
+            }
+
+
+            // --- Event Listeners ---
+            startQuizBtn.addEventListener('click', startQuiz);
+            restartQuizBtn.addEventListener('click', startQuiz); // Restart uses the same logic
+            backToReviewBtn.addEventListener('click', goBackToReview);
+
+            // Initial data extraction on load
+            extractQuizData();
+
+        });
+    </script>
+
+</body>
+</html>
