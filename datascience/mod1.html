@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Problem Solving - Intel Briefing</title>
+    <style>
+        /* Valorant-inspired Color Palette */
+        :root {
+            --bg-dark: #0F1923; /* Deep Blue/Black */
+            --primary-accent: #FF4655; /* Bright Red */
+            --secondary-accent: #1EC09C; /* Teal/Cyan */
+            --text-light: #ECE8E1; /* Off-White */
+            --text-medium: #AAA; /* Light Gray */
+            --card-bg: rgba(255, 255, 255, 0.05); /* Slightly transparent white */
+            --card-border: rgba(255, 255, 255, 0.1);
+            --highlight-bg: rgba(255, 70, 85, 0.2); /* Reddish highlight */
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+            --disabled-color: #555;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Navigation Sidebar (Agent Select Style) */
+        #sidebar {
+            width: 250px;
+            background-color: rgba(0,0,0,0.5);
+            border-right: 1px solid var(--card-border);
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        #sidebar h2 {
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-accent);
+            text-align: center;
+        }
+
+        .nav-button {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-light);
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+            font-size: 0.95em;
+            transition: background-color 0.3s ease, border-left 0.3s ease;
+            border-left: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-button.active {
+            background-color: var(--highlight-bg);
+            border-left: 3px solid var(--primary-accent);
+            color: var(--primary-accent);
+            font-weight: bold;
+        }
+
+        .nav-button .status-indicator {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--text-medium); /* Default: Not started */
+        }
+
+        .nav-button.completed .status-indicator {
+            background-color: var(--success-color); /* Green: Completed */
+        }
+         .nav-button.active .status-indicator {
+             /* Keep default or change if needed */
+         }
+
+
+        /* Main Content Area (Mission Details Style) */
+        #main-content {
+            flex-grow: 1;
+            padding: 30px 40px;
+            overflow-y: auto;
+            height: 100vh; /* Ensure it takes full height for scrolling */
+        }
+
+        .unit-content {
+            display: none; /* Hidden by default */
+            border: 1px solid var(--card-border);
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .unit-content.active {
+            display: block; /* Shown when active */
+        }
+
+        .unit-content h3 {
+            color: var(--secondary-accent);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 1px solid var(--secondary-accent);
+            padding-bottom: 10px;
+        }
+
+         .unit-content h4 {
+            color: var(--text-light);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-left: 3px solid var(--primary-accent);
+            padding-left: 10px;
+         }
+
+        .unit-content p, .unit-content ul, .unit-content ol {
+            margin-bottom: 15px;
+            color: var(--text-medium);
+        }
+
+        .unit-content ul, .unit-content ol {
+            margin-left: 20px;
+        }
+
+        .unit-content strong {
+            color: var(--text-light);
+            font-weight: bold;
+        }
+
+        .unit-content code {
+            background-color: rgba(0,0,0,0.3);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            color: var(--secondary-accent);
+        }
+
+        /* Interactive Elements */
+        .quiz-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px dashed var(--secondary-accent);
+            background-color: rgba(30, 192, 156, 0.05);
+            border-radius: 4px;
+        }
+
+        .quiz-section h4 {
+            color: var(--secondary-accent);
+            margin-top: 0;
+            margin-bottom: 15px;
+             border-left: none;
+             padding-left: 0;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .question p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+        }
+
+        .options label:hover {
+             background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .options input[type="radio"] {
+           margin-right: 10px;
+           accent-color: var(--primary-accent); /* Style radio button */
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 3px;
+            display: none; /* Hidden initially */
+        }
+
+        .feedback.correct {
+            color: var(--success-color);
+            background-color: rgba(76, 175, 80, 0.1);
+            display: block;
+        }
+
+        .feedback.incorrect {
+            color: var(--error-color);
+            background-color: rgba(244, 67, 54, 0.1);
+            display: block;
+        }
+
+        .submit-quiz-btn, .mark-complete-btn {
+            background-color: var(--primary-accent);
+            color: var(--text-light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 1em;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        .submit-quiz-btn:hover, .mark-complete-btn:hover {
+            background-color: #d73c4b; /* Darker red */
+        }
+
+         .mark-complete-btn {
+             background-color: var(--secondary-accent);
+             margin-left: 10px;
+         }
+          .mark-complete-btn:hover {
+             background-color: #18a082; /* Darker teal */
+         }
+
+         .mark-complete-btn.completed {
+             background-color: var(--disabled-color);
+             cursor: default;
+         }
+
+        .concept-demo {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--card-border);
+            border-radius: 4px;
+        }
+        .concept-demo h5 {
+             color: var(--secondary-accent);
+             margin-bottom: 10px;
+        }
+
+        /* Simple BFS/DFS Demo Style */
+        .search-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 30px);
+            gap: 5px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+        .grid-cell {
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--text-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            background-color: var(--card-bg);
+        }
+        .grid-cell.start { background-color: #4CAF50; }
+        .grid-cell.goal { background-color: var(--primary-accent); }
+        .grid-cell.visited { background-color: var(--secondary-accent); animation: pulse 0.5s ease-in-out; }
+        .grid-cell.path { background-color: yellow; color: black; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        .demo-controls button {
+             background-color: var(--secondary-accent);
+             color: var(--text-light);
+             border: none;
+             padding: 5px 10px;
+             margin: 0 5px;
+             cursor: pointer;
+             border-radius: 3px;
+        }
+         .demo-controls button:hover {
+              background-color: #18a082;
+         }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <h2>AI INTEL MODULE I</h2>
+            <!-- Navigation buttons will be dynamically added here -->
+            <button class="nav-button active" data-unit="unit1">
+                Unit 1: Intro & Evolution
+                <span class="status-indicator"></span>
+            </button>
+            <button class="nav-button" data-unit="unit2">
+                Unit 2: AI Domains
+                <span class="status-indicator"></span>
+            </button>
+            <button class="nav-button" data-unit="unit3">
+                Unit 3: Search & KR&R
+                <span class="status-indicator"></span>
+            </button>
+             <button class="nav-button" data-unit="unit4">
+                Unit 4: CSPs & Games
+                <span class="status-indicator"></span>
+            </button>
+             <button class="nav-button" data-unit="unit5">
+                Unit 5: ML & Annealing
+                <span class="status-indicator"></span>
+            </button>
+             <button class="nav-button" data-unit="summary">
+                Module Summary
+                <span class="status-indicator"></span>
+            </button>
+        </nav>
+
+        <main id="main-content">
+            <!-- Unit content will be loaded here -->
+
+            <!-- Unit 1: Introduction to AI -->
+            <div id="unit1" class="unit-content active">
+                <h3>Unit 1: Introduction to AI – Evolution, Problems, Techniques, Applications</h3>
+                <p><strong>Mission Briefing:</strong> Understand the core identity of Artificial Intelligence, its origins, the challenges it tackles, the tools in its arsenal, and where it's deployed in the modern world.</p>
+
+                <h4>What Is Artificial Intelligence?</h4>
+                <p>AI is about building systems that think or act intelligently, performing tasks that typically require human intelligence. Think learning, problem-solving, perception, language, and decision-making. The goal is often to create machines that can adapt and learn like we do.</p>
+                <blockquote>"Artificial Intelligence (AI) is the study of how to make computers do things at which, at the moment, people are better." - Rich (1983)</blockquote>
+
+                <h4>Evolution of AI</h4>
+                <p>AI isn't new tech; it's been evolving for decades:</p>
+                <ul>
+                    <li><strong>1950s-60s (Genesis):</strong> Birth at Dartmouth Workshop (1956). Early programs like Logic Theorist tried symbolic reasoning. First neural network ideas (perceptrons).</li>
+                    <li><strong>1970s-80s (Knowledge is Power):</strong> Rise of Expert Systems (e.g., MYCIN). Focus on encoding human expert knowledge into rules.</li>
+                    <li><strong>1980s-90s (Learning Machines):</strong> Neural networks make a comeback (backpropagation). Machine learning algorithms (like decision trees) gain traction.</li>
+                    <li><strong>2000s-Present (Data Deluge & Deep Dive):</strong> Big Data + powerful computers = Deep Learning explosion. Major breakthroughs in vision, NLP, games (AlphaGo). Statistical methods dominate.</li>
+                </ul>
+                <p>It hasn't been a smooth ride: periods of hype (<strong>"AI Springs"</strong>) were often followed by skepticism and funding cuts (<strong>"AI Winters"</strong>).</p>
+
+                <h4>AI Problems</h4>
+                <p>AI tackles diverse challenges:</p>
+                <ol>
+                    <li><strong>Problem Solving & Search:</strong> Finding paths to goals (games, navigation).</li>
+                    <li><strong>Knowledge Representation & Reasoning:</strong> Storing and using world knowledge.</li>
+                    <li><strong>Learning:</strong> Improving performance from experience (Machine Learning).</li>
+                    <li><strong>Perception:</strong> Interpreting sensors (vision, speech).</li>
+                    <li><strong>Natural Language Processing (NLP):</strong> Understanding/generating human language.</li>
+                    <li><strong>Planning:</strong> Creating action sequences for complex goals.</li>
+                    <li><strong>Robotics:</strong> Building intelligent physical agents.</li>
+                </ol>
+
+                <h4>AI Techniques</h4>
+                <p>Common methods used to solve AI problems:</p>
+                <ul>
+                    <li><strong>Search Algorithms:</strong> Exploring possibilities (BFS, DFS, A*).</li>
+                    <li><strong>Logic-Based Methods:</strong> Formal reasoning (propositional/predicate logic).</li>
+                    <li><strong>Probabilistic Reasoning:</strong> Handling uncertainty (Bayesian networks).</li>
+                    <li><strong>Machine Learning:</strong> Learning from data (Neural Nets, Decision Trees).</li>
+                    <li><strong>Optimization:</strong> Finding the best solutions (Gradient Descent).</li>
+                </ul>
+
+                 <h4>AI Applications</h4>
+                 <p>AI is everywhere:</p>
+                 <ul>
+                     <li><strong>Healthcare:</strong> Diagnosis, drug discovery.</li>
+                     <li><strong>Finance:</strong> Fraud detection, trading bots.</li>
+                     <li><strong>Transport:</strong> Self-driving cars, route planning.</li>
+                     <li><strong>Entertainment:</strong> Game AI (like in Valorant!), recommendation engines.</li>
+                     <li><strong>E-commerce:</strong> Personalization, chatbots.</li>
+                     <li>...and many more!</li>
+                 </ul>
+
+                <!-- Unit 1 Quiz -->
+                <div class="quiz-section" data-unit="unit1">
+                    <h4>Unit 1 Knowledge Check</h4>
+                    <div class="question" data-qid="q1_1">
+                        <p>1. What is a primary goal of Artificial Intelligence?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1_1" value="a"> To create faster computer processors.</label>
+                            <label><input type="radio" name="q1_1" value="b"> To build systems exhibiting intelligent behavior like learning and problem-solving.</label>
+                            <label><input type="radio" name="q1_1" value="c"> To replace all human jobs with robots immediately.</label>
+                        </div>
+                        <div class="feedback" data-answer="b"></div>
+                    </div>
+                    <div class="question" data-qid="q1_2">
+                        <p>2. The period in the 1970s-80s focusing on systems like MYCIN is known for the rise of:</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1_2" value="a"> Deep Learning</label>
+                            <label><input type="radio" name="q1_2" value="b"> Expert Systems</label>
+                            <label><input type="radio" name="q1_2" value="c"> General Problem Solvers</label>
+                        </div>
+                        <div class="feedback" data-answer="b"></div>
+                    </div>
+                     <div class="question" data-qid="q1_3">
+                        <p>3. Finding the best route on a map is an example of which core AI problem?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1_3" value="a"> Natural Language Processing</label>
+                            <label><input type="radio" name="q1_3" value="b"> Perception</label>
+                            <label><input type="radio" name="q1_3" value="c"> Problem Solving & Search</label>
+                        </div>
+                        <div class="feedback" data-answer="c"></div>
+                    </div>
+                    <button class="submit-quiz-btn" onclick="submitQuiz('unit1')">Check Answers</button>
+                    <button class="mark-complete-btn" onclick="markUnitComplete('unit1', this)">Mark Unit 1 Complete</button>
+                </div>
+            </div>
+
+            <!-- Unit 2: Various AI Domains -->
+            <div id="unit2" class="unit-content">
+                <h3>Unit 2: Various AI Domains (Introduction)</h3>
+                <p><strong>Mission Briefing:</strong> Identify the key specializations within the broad field of AI. Think of these as different agent classes, each with unique skills.</p>
+
+                <p>AI isn't one single thing; it's a collection of specialized fields:</p>
+                <ul>
+                    <li><strong>Machine Learning (ML):</strong> The 'Learner'. Systems that improve from data/experience without explicit programming. (Core to modern AI).</li>
+                    <li><strong>Natural Language Processing (NLP):</strong> The 'Communicator'. Enables computers to understand and generate human language (text/speech). Powers chatbots, translation.</li>
+                    <li><strong>Computer Vision:</strong> The 'Observer'. Allows machines to "see" and interpret images/videos. Used in facial recognition, object detection.</li>
+                    <li><strong>Robotics:</strong> The 'Agent in the World'. Integrates AI (perception, planning) with physical hardware to act in the real world.</li>
+                    <li><strong>Expert Systems:</strong> The 'Specialist'. Emulates human expert decision-making in narrow domains using rules and knowledge bases. (Early AI success).</li>
+                    <li><strong>Planning and Scheduling:</strong> The 'Strategist'. Devises action sequences (plans) or allocates resources over time to achieve goals under constraints.</li>
+                    <li><strong>Knowledge Representation & Reasoning (KR&R):</strong> The 'Thinker'. Focuses on how to store knowledge formally and use it to derive new information.</li>
+                </ul>
+
+                 <!-- Unit 2 Quiz -->
+                 <div class="quiz-section" data-unit="unit2">
+                     <h4>Unit 2 Knowledge Check</h4>
+                     <div class="question" data-qid="q2_1">
+                         <p>1. Which AI domain focuses on enabling computers to "see" and interpret images?</p>
+                         <div class="options">
+                             <label><input type="radio" name="q2_1" value="a"> Natural Language Processing</label>
+                             <label><input type="radio" name="q2_1" value="b"> Robotics</label>
+                             <label><input type="radio" name="q2_1" value="c"> Computer Vision</label>
+                         </div>
+                         <div class="feedback" data-answer="c"></div>
+                     </div>
+                     <div class="question" data-qid="q2_2">
+                         <p>2. A system that learns to play chess better over time by analyzing past games primarily uses techniques from which domain?</p>
+                         <div class="options">
+                             <label><input type="radio" name="q2_2" value="a"> Machine Learning</label>
+                             <label><input type="radio" name="q2_2" value="b"> Expert Systems</label>
+                             <label><input type="radio" name="q2_2" value="c"> Planning and Scheduling</label>
+                         </div>
+                         <div class="feedback" data-answer="a"></div>
+                     </div>
+                      <div class="question" data-qid="q2_3">
+                         <p>3. Building a chatbot that understands user queries falls under:</p>
+                         <div class="options">
+                             <label><input type="radio" name="q2_3" value="a"> Computer Vision</label>
+                             <label><input type="radio" name="q2_3" value="b"> Natural Language Processing</label>
+                             <label><input type="radio" name="q2_3" value="c"> Knowledge Representation</label>
+                         </div>
+                         <div class="feedback" data-answer="b"></div>
+                     </div>
+                     <button class="submit-quiz-btn" onclick="submitQuiz('unit2')">Check Answers</button>
+                     <button class="mark-complete-btn" onclick="markUnitComplete('unit2', this)">Mark Unit 2 Complete</button>
+                 </div>
+            </div>
+
+            <!-- Unit 3: Problem Solving Techniques - Search & KR&R -->
+            <div id="unit3" class="unit-content">
+                <h3>Unit 3: Problem Solving Techniques - Search Algorithms, Knowledge Representation & Reasoning</h3>
+                <p><strong>Mission Briefing:</strong> Explore fundamental AI strategies: systematically searching for solutions and representing knowledge for reasoning.</p>
+
+                <h4>Problem Solving as Search</h4>
+                <p>Many AI tasks are like navigating a maze. We define:</p>
+                <ul>
+                    <li><strong>State Space:</strong> All possible configurations (e.g., all possible chess board layouts).</li>
+                    <li><strong>Initial State:</strong> Where you start.</li>
+                    <li><strong>Goal State(s):</strong> Where you want to end up.</li>
+                    <li><strong>Operators/Actions:</strong> Moves that change the state (legal chess moves).</li>
+                    <li><strong>Solution:</strong> A sequence of actions (path) from start to goal.</li>
+                </ul>
+                <p>AI uses search algorithms to explore this state space efficiently.</p>
+
+                <h4>Common Search Strategies (Concepts)</h4>
+                <ul>
+                    <li><strong>Uninformed Search (Blind Search):</strong> Explores systematically without hints.
+                        <ul>
+                            <li><code>Breadth-First Search (BFS):</code> Explores level by level. Finds the shortest path (in steps) but needs lots of memory. Like checking all adjacent rooms before going deeper.</li>
+                            <li><code>Depth-First Search (DFS):</code> Goes deep down one path first, then backtracks. Memory efficient, but might not find the shortest path and can get lost in long paths. Like following one corridor to the end.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Informed Search (Heuristic Search):</strong> Uses 'hints' (heuristics) to guess which paths are better.
+                        <ul>
+                            <li><code>Best-First Search:</code> Expands the node that *looks* closest to the goal based on a heuristic function.</li>
+                            <li><code>A* Search:</code> Smartly combines the cost already traveled (<code>g</code>) with the estimated cost remaining (<code>h</code>). Often finds the shortest path efficiently if the heuristic is good (doesn't overestimate). Formula: <code>f = g + h</code>.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Simple BFS/DFS Demo -->
+                 <div class="concept-demo">
+                     <h5>Concept Demo: BFS vs DFS (Simplified)</h5>
+                     <p>Imagine searching a simple grid (S=Start, G=Goal). Watch how different strategies explore.</p>
+                     <div class="search-grid" id="search-grid-demo">
+                         <!-- Grid cells will be generated by JS -->
+                     </div>
+                     <div class="demo-controls" style="text-align: center;">
+                         <button onclick="runSearchDemo('bfs')">Run BFS</button>
+                         <button onclick="runSearchDemo('dfs')">Run DFS</button>
+                         <button onclick="resetSearchDemo()">Reset</button>
+                     </div>
+                     <p id="demo-status" style="text-align: center; margin-top: 10px; font-size: 0.9em; color: var(--text-medium);"></p>
+                 </div>
+
+
+                <h4>Knowledge Representation and Reasoning (KR&R)</h4>
+                <p>How do AI systems 'know' things and 'think'?</p>
+                <ul>
+                    <li><strong>Knowledge Representation (KR):</strong> Formalizing knowledge. Common ways:
+                        <ul>
+                            <li><code>Logic (Propositional/Predicate):</code> Using formal rules (IF P THEN Q).</li>
+                            <li><code>Semantic Networks:</code> Nodes (concepts) linked by relations (IS-A, HAS-A). Like a mind map.</li>
+                            <li><code>Frames:</code> Templates for typical situations (e.g., a 'restaurant' frame with slots for 'cuisine', 'location').</li>
+                            <li><code>Production Rules:</code> IF-THEN rules often used in expert systems.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Reasoning:</strong> Using represented knowledge to deduce new facts or make decisions.</li>
+                </ul>
+
+
+                <!-- Unit 3 Quiz -->
+                 <div class="quiz-section" data-unit="unit3">
+                     <h4>Unit 3 Knowledge Check</h4>
+                     <div class="question" data-qid="q3_1">
+                         <p>1. Which search algorithm explores level by level and guarantees finding the shortest path in terms of steps?</p>
+                         <div class="options">
+                             <label><input type="radio" name="q3_1" value="a"> Depth-First Search (DFS)</label>
+                             <label><input type="radio" name="q3_1" value="b"> Breadth-First Search (BFS)</label>
+                             <label><input type="radio" name="q3_1" value="c"> A* Search</label>
+                         </div>
+                         <div class="feedback" data-answer="b"></div>
+                     </div>
+                     <div class="question" data-qid="q3_2">
+                         <p>2. A* search uses a heuristic function (h). What should a good heuristic ideally do?</p>
+                         <div class="options">
+                             <label><input type="radio" name="q3_2" value="a"> Exactly calculate the remaining cost.</label>
+                             <label><input type="radio" name="q3_2" value="b"> Estimate the remaining cost without overestimating (be admissible).</label>
+                             <label><input type="radio" name="q3_2" value="c"> Always overestimate the remaining cost.</label>
+                         </div>
+                         <div class="feedback" data-answer="b"></div>
+                     </div>
+                     <div class="question" data-qid="q3_3">
+                         <p>3. Representing knowledge using nodes for concepts and links for relationships (like IS-A, PART-OF) is characteristic of:</p>
+                         <div class="options">
+                             <label><input type="radio" name="q3_3" value="a"> Predicate Logic</label>
+                             <label><input type="radio" name="q3_3" value="b"> Production Rules</label>
+                             <label><input type="radio" name="q3_3" value="c"> Semantic Networks</label>
+                         </div>
+                         <div class="feedback" data-answer="c"></div>
+                     </div>
+                     <button class="submit-quiz-btn" onclick="submitQuiz('unit3')">Check Answers</button>
+                     <button class="mark-complete-btn" onclick="markUnitComplete('unit3', this)">Mark Unit 3 Complete</button>
+                 </div>
+            </div>
+
+             <!-- Unit 4: CSPs & Game Playing -->
+             <div id="unit4" class="unit-content">
+                <h3>Unit 4: Problem Solving Techniques - Constraint Satisfaction Problems, Game Playing</h3>
+                <p><strong>Mission Briefing:</strong> Learn techniques for problems with strict rules (constraints) and for adversarial situations (games).</p>
+
+                <h4>Constraint Satisfaction Problems (CSPs)</h4>
+                <p>These problems involve finding a solution that satisfies a set of conditions or rules (constraints).</p>
+                <ul>
+                    <li><strong>Components:</strong>
+                        <ul>
+                            <li><code>Variables:</code> Things you need to decide values for.</li>
+                            <li><code>Domains:</code> Possible values for each variable.</li>
+                            <li><code>Constraints:</code> Rules limiting which values variables can take together.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Examples:</strong> Map coloring (neighboring regions different colors), Sudoku, scheduling tasks.</li>
+                    <li><strong>Solving (Concepts):</strong> Usually involves smart search (like backtracking) combined with <strong>Constraint Propagation</strong> (using constraints to eliminate impossible values early on).</li>
+                </ul>
+
+                 <!-- Simple CSP Demo Concept -->
+                 <div class="concept-demo">
+                     <h5>Concept Demo: Simple Map Coloring (CSP)</h5>
+                     <p>Imagine coloring 3 regions (A, B, C) with Red or Blue. Constraint: A≠B, B≠C. Find a valid coloring.</p>
+                     <div id="csp-demo">
+                         Region A: <select id="csp-a"><option>Red</option><option>Blue</option></select><br>
+                         Region B: <select id="csp-b"><option>Red</option><option>Blue</option></select><br>
+                         Region C: <select id="csp-c"><option>Red</option><option>Blue</option></select><br>
+                         <button onclick="checkCSP()" style="background-color: var(--secondary-accent); color: var(--text-light); border: none; padding: 5px 10px; margin-top: 5px; cursor: pointer;">Check Constraints</button>
+                         <p id="csp-result" style="margin-top: 5px;"></p>
+                     </div>
+                 </div>
+
+                <h4>Game Playing</h4>
+                <p>AI in games (like Chess, Go, or even tactical shooters) often involves searching through possible future moves.</p>
+                <ul>
+                    <li><strong>Game Tree:</strong> Represents all possible move sequences.</li>
+                    <li><strong>Minimax Algorithm:</strong> Assumes your opponent plays optimally to minimize your score. You choose the move that maximizes your minimum possible score. (Think worst-case scenario planning).</li>
+                    <li><strong>Alpha-Beta Pruning:</strong> A crucial optimization for Minimax. It smartly cuts off branches of the game tree that won't affect the final decision, saving huge amounts of computation.</li>
+                    <li><strong>Evaluation Function:</strong> When the game tree is too big (like Chess), AI uses a function to estimate how good a particular board state is, without searching all the way to the end.</li>
+                </ul>
+
+
+                 <!-- Unit 4 Quiz -->
+                 <div class="quiz-section" data-unit="unit4">
+                     <h4>Unit 4 Knowledge Check</h4>
+                     <div class="question" data-qid="q4_1">
+                         <p>1. Sudoku is a classic example of what type of problem?</p>
+                         <div class="options">
+                             <label><input type="radio" name="q4_1" value="a"> Uninformed Search Problem</label>
+                             <label><input type="radio" name="q4_1" value="b"> Constraint Satisfaction Problem (CSP)</label>
+                             <label><input type="radio" name="q4_1" value="c"> Game Playing Problem</label>
+                         </div>
+                         <div class="feedback" data-answer="b"></div>
+                     </div>
+                     <div class="question" data-qid="q4_2">
+                         <p>2. The Minimax algorithm is used in game playing AI primarily to:</p>
+                         <div class="options">
+                             <label><input type="radio" name="q4_2" value="a"> Make random moves to confuse the opponent.</label>
+                             <label><input type="radio" name="q4_2" value="b"> Find the move that maximizes the player's score assuming the opponent plays optimally to minimize it.</label>
+                             <label><input type="radio" name="q4_2" value="c"> Estimate the value of a game state without searching.</label>
+                         </div>
+                         <div class="feedback" data-answer="b"></div>
+                     </div>
+                      <div class="question" data-qid="q4_3">
+                         <p>3. What technique significantly speeds up Minimax by ignoring parts of the game tree?</p>
+                         <div class="options">
+                             <label><input type="radio" name="q4_3" value="a"> Heuristic Evaluation</label>
+                             <label><input type="radio" name="q4_3" value="b"> Breadth-First Search</label>
+                             <label><input type="radio" name="q4_3" value="c"> Alpha-Beta Pruning</label>
+                         </div>
+                         <div class="feedback" data-answer="c"></div>
+                     </div>
+                     <button class="submit-quiz-btn" onclick="submitQuiz('unit4')">Check Answers</button>
+                     <button class="mark-complete-btn" onclick="markUnitComplete('unit4', this)">Mark Unit 4 Complete</button>
+                 </div>
+             </div>
+
+             <!-- Unit 5: ML & Simulated Annealing -->
+             <div id="unit5" class="unit-content">
+                <h3>Unit 5: Problem Solving Techniques - Machine Learning, Simulated Annealing</h3>
+                <p><strong>Mission Briefing:</strong> Introduce advanced techniques where systems learn solutions or use probabilistic methods to find good solutions in complex spaces.</p>
+
+                <h4>Machine Learning in Problem Solving</h4>
+                <p>Instead of explicitly programming a solution, Machine Learning (ML) lets the system learn it from data or experience.</p>
+                <ul>
+                    <li>ML can be used to:
+                        <ul>
+                            <li>Learn evaluation functions for games (how good is this board state?).</li>
+                            <li>Learn which search strategies work best in certain situations (search control).</li>
+                            <li>Learn optimal policies (sequences of actions) through trial and error (Reinforcement Learning - covered later).</li>
+                        </ul>
+                    </li>
+                    <li>ML excels when the problem is too complex to define exact rules or when the environment changes.</li>
+                </ul>
+
+                <h4>Simulated Annealing (Concept)</h4>
+                <p>A powerful optimization technique for finding a very good (often globally optimal) solution in a huge, complex search space, especially one with many "local optima" (sub-optimal peaks).</p>
+                <ul>
+                    <li><strong>Analogy:</strong> Like slowly cooling molten metal (annealing). High "temperature" allows random jumps, even to worse states, to escape local traps. As "temperature" drops, it settles towards a minimum energy (optimal) state.</li>
+                    <li><strong>How it Works:</strong> Starts randomly. Iteratively considers a neighbor state. Always accepts better states. Sometimes accepts *worse* states with a probability that decreases over time (based on "temperature").</li>
+                    <li><strong>Use in AI:</strong> Useful for complex optimization tasks in planning, scheduling, or even tuning ML models where standard methods get stuck.</li>
+                </ul>
+
+                 <!-- Unit 5 Quiz -->
+                  <div class="quiz-section" data-unit="unit5">
+                     <h4>Unit 5 Knowledge Check</h4>
+                     <div class="question" data-qid="q5_1">
+                         <p>1. A key advantage of using Machine Learning for problem-solving is its ability to:</p>
+                         <div class="options">
+                             <label><input type="radio" name="q5_1" value="a"> Guarantee finding the absolute best solution instantly.</label>
+                             <label><input type="radio" name="q5_1" value="b"> Solve problems without needing any data.</label>
+                             <label><input type="radio" name="q5_1" value="c"> Learn and adapt solutions from experience or data, especially in complex domains.</label>
+                         </div>
+                         <div class="feedback" data-answer="c"></div>
+                     </div>
+                     <div class="question" data-qid="q5_2">
+                         <p>2. Simulated Annealing is particularly useful for optimization problems where:</p>
+                         <div class="options">
+                             <label><input type="radio" name="q5_2" value="a"> The search space is small and simple.</label>
+                             <label><input type="radio" name="q5_2" value="b"> There's a high risk of getting stuck in local optima.</label>
+                             <label><input type="radio" name="q5_2" value="c"> A solution needs to be found very quickly, regardless of quality.</label>
+                         </div>
+                         <div class="feedback" data-answer="b"></div>
+                     </div>
+                      <div class="question" data-qid="q5_3">
+                         <p>3. The "temperature" parameter in Simulated Annealing controls:</p>
+                         <div class="options">
+                             <label><input type="radio" name="q5_3" value="a"> The speed of the computer processor.</label>
+                             <label><input type="radio" name="q5_3" value="b"> The probability of accepting worse solutions early on.</label>
+                             <label><input type="radio" name="q5_3" value="c"> The number of variables in the problem.</label>
+                         </div>
+                         <div class="feedback" data-answer="b"></div>
+                     </div>
+                     <button class="submit-quiz-btn" onclick="submitQuiz('unit5')">Check Answers</button>
+                     <button class="mark-complete-btn" onclick="markUnitComplete('unit5', this)">Mark Unit 5 Complete</button>
+                 </div>
+            </div>
+
+            <!-- Summary -->
+             <div id="summary" class="unit-content">
+                 <h3>Module I Summary - Debriefing</h3>
+                 <p><strong>Mission Accomplished (Module I):</strong> You've acquired foundational intelligence on Artificial Intelligence.</p>
+
+                 <h4>Key Takeaways:</h4>
+                 <ul>
+                    <li>AI aims to create machines capable of intelligent behavior (learning, problem-solving, etc.).</li>
+                    <li>AI has evolved through stages: early symbolic logic, expert systems, ML dominance, and the current Deep Learning era.</li>
+                    <li>Core AI problems include search, knowledge representation, learning, perception, NLP, planning, and robotics.</li>
+                    <li>Key techniques involve Search Algorithms (BFS, DFS, A*), KR&R (Logic, Semantic Nets), CSP methods, Game Playing strategies (Minimax, Alpha-Beta), Machine Learning, and Optimization (like Simulated Annealing).</li>
+                    <li>AI applications span nearly every industry today.</li>
+                 </ul>
+
+                 <h4>Next Steps:</h4>
+                 <p>This module laid the groundwork. Subsequent modules will likely dive deeper into specific areas, especially Machine Learning. Ensure you've understood these core concepts before proceeding.</p>
+
+                 <p><strong>Module Progress:</strong> Check the sidebar for completed units. Ensure all knowledge checks are reviewed.</p>
+
+                 <div class="quiz-section" data-unit="summary">
+                     <h4>Final Check</h4>
+                     <p>You have reviewed the core concepts of AI Introduction and Problem Solving. Ready for the next phase?</p>
+                     <button class="mark-complete-btn" onclick="markUnitComplete('summary', this)">Mark Module I Reviewed</button>
+                 </div>
+             </div>
+
+        </main>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+        const navButtons = sidebar.querySelectorAll('.nav-button');
+        const unitContents = mainContent.querySelectorAll('.unit-content');
+        const unitStates = {}; // To track quiz scores and completion
+
+        // Initialize unit states
+        navButtons.forEach(button => {
+            const unitId = button.getAttribute('data-unit');
+            if (unitId) {
+                unitStates[unitId] = { score: 0, totalQuestions: 0, completed: false, quizSubmitted: false };
+                const quizSection = document.querySelector(`#${unitId} .quiz-section`);
+                 if (quizSection) {
+                     const questions = quizSection.querySelectorAll('.question');
+                     unitStates[unitId].totalQuestions = questions.length;
+                 } else {
+                     // For summary or units without quizzes
+                      unitStates[unitId].totalQuestions = 0;
+                 }
+            }
+        });
+
+        // Navigation Logic
+        sidebar.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-button')) {
+                const targetUnit = e.target.getAttribute('data-unit');
+
+                // Update active button
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+
+                // Update active content
+                unitContents.forEach(content => {
+                    if (content.id === targetUnit) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+                 mainContent.scrollTop = 0; // Scroll to top of content area
+            }
+        });
+
+        // Quiz Submission Logic
+        function submitQuiz(unitId) {
+            const quizSection = document.querySelector(`#${unitId} .quiz-section`);
+            if (!quizSection) return;
+
+            const questions = quizSection.querySelectorAll('.question');
+            let score = 0;
+            unitStates[unitId].quizSubmitted = true; // Mark quiz as submitted
+
+            questions.forEach(question => {
+                const qid = question.getAttribute('data-qid');
+                const feedbackEl = question.querySelector('.feedback');
+                const correctAnswer = feedbackEl.getAttribute('data-answer');
+                const selectedOption = question.querySelector(`input[name="${qid}"]:checked`);
+
+                feedbackEl.style.display = 'block'; // Show feedback area
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswer) {
+                        feedbackEl.textContent = 'Correct!';
+                        feedbackEl.className = 'feedback correct';
+                        score++;
+                    } else {
+                        feedbackEl.textContent = `Incorrect. The correct answer was option ${correctAnswer.toUpperCase()}.`;
+                        feedbackEl.className = 'feedback incorrect';
+                    }
+                } else {
+                    feedbackEl.textContent = 'No answer selected.';
+                    feedbackEl.className = 'feedback incorrect'; // Or a different style for unanswered
+                }
+            });
+
+            unitStates[unitId].score = score;
+            // Optional: Display overall score for the quiz
+             const scoreDisplay = quizSection.querySelector('.quiz-score-display'); // Add an element if needed
+             if (scoreDisplay) {
+                 scoreDisplay.textContent = `Your score: ${score}/${unitStates[unitId].totalQuestions}`;
+             }
+
+            // Update completion status potentially based on score, or just enable the complete button
+             const completeButton = quizSection.querySelector('.mark-complete-btn');
+             if (completeButton && !unitStates[unitId].completed) {
+                 // Optionally enable only if score is sufficient, or just always enable after submission
+                 // completeButton.disabled = false;
+             }
+        }
+
+        // Mark Unit Complete Logic
+        function markUnitComplete(unitId, button) {
+            if (unitStates[unitId].completed) return; // Already completed
+
+            // Optional check: require quiz submission before marking complete
+             // if (unitStates[unitId].totalQuestions > 0 && !unitStates[unitId].quizSubmitted) {
+             //     alert('Please submit the quiz before marking the unit complete.');
+             //     return;
+             // }
+
+            unitStates[unitId].completed = true;
+            const navButton = sidebar.querySelector(`.nav-button[data-unit="${unitId}"]`);
+            if (navButton) {
+                navButton.classList.add('completed');
+            }
+             button.textContent = 'Completed';
+             button.classList.add('completed');
+             button.disabled = true; // Disable after marking
+
+            // Optional: Automatically navigate to the next unit
+            // findNextUnitAndNavigate(unitId);
+        }
+
+        // --- Simple Concept Demo Functions ---
+
+        // Map Coloring CSP Check
+        function checkCSP() {
+            const a = document.getElementById('csp-a').value;
+            const b = document.getElementById('csp-b').value;
+            const c = document.getElementById('csp-c').value;
+            const resultEl = document.getElementById('csp-result');
+
+            let valid = true;
+            let message = "Constraints: A≠B, B≠C. Result: ";
+
+            if (a === b) {
+                valid = false;
+                message += "Constraint A≠B FAILED. ";
+            }
+            if (b === c) {
+                valid = false;
+                 message += "Constraint B≠C FAILED.";
+            }
+
+            if (valid) {
+                resultEl.textContent = message + "VALID Coloring!";
+                resultEl.style.color = 'var(--success-color)';
+            } else {
+                resultEl.textContent = message;
+                resultEl.style.color = 'var(--error-color)';
+            }
+        }
+
+         // BFS/DFS Grid Demo
+         const gridContainer = document.getElementById('search-grid-demo');
+         const demoStatus = document.getElementById('demo-status');
+         const gridWidth = 5;
+         const gridHeight = 4;
+         const startNode = { r: 1, c: 0 };
+         const goalNode = { r: 2, c: 4 };
+         let gridCells = {}; // Store cell elements
+         let searchRunning = false;
+
+         function createGrid() {
+             gridContainer.innerHTML = '';
+             gridCells = {};
+             gridContainer.style.gridTemplateColumns = `repeat(${gridWidth}, 30px)`;
+             for (let r = 0; r < gridHeight; r++) {
+                 for (let c = 0; c < gridWidth; c++) {
+                     const cell = document.createElement('div');
+                     cell.classList.add('grid-cell');
+                     cell.dataset.r = r;
+                     cell.dataset.c = c;
+                     const key = `${r}-${c}`;
+                     gridCells[key] = cell;
+
+                     if (r === startNode.r && c === startNode.c) {
+                         cell.classList.add('start');
+                         cell.textContent = 'S';
+                     }
+                     if (r === goalNode.r && c === goalNode.c) {
+                         cell.classList.add('goal');
+                         cell.textContent = 'G';
+                     }
+                     gridContainer.appendChild(cell);
+                 }
+             }
+         }
+
+        function resetSearchDemo() {
+             if (searchRunning) return; // Prevent reset during animation
+            createGrid();
+             demoStatus.textContent = "Grid Reset. Choose BFS or DFS.";
+         }
+
+        async function runSearchDemo(type) {
+             if (searchRunning) return;
+             searchRunning = true;
+             resetSearchDemo(); // Reset grid visually
+             demoStatus.textContent = `Running ${type.toUpperCase()}...`;
+
+             const queue = []; // Use as queue (BFS) or stack (DFS)
+             const visited = new Set();
+             const parent = {}; // To reconstruct path
+
+             const startKey = `${startNode.r}-${startNode.c}`;
+             queue.push(startKey);
+             visited.add(startKey);
+
+             let found = false;
+
+            while (queue.length > 0) {
+                 let currentKey;
+                 if (type === 'bfs') {
+                     currentKey = queue.shift(); // FIFO for BFS
+                 } else {
+                     currentKey = queue.pop(); // LIFO for DFS
+                 }
+
+                 const [r, c] = currentKey.split('-').map(Number);
+
+                 // Animate visited
+                 const cellEl = gridCells[currentKey];
+                 if (!(r === startNode.r && c === startNode.c) && !(r === goalNode.r && c === goalNode.c)) {
+                    cellEl.classList.add('visited');
+                 }
+                 await new Promise(resolve => setTimeout(resolve, 150)); // Delay for visualization
+
+                if (r === goalNode.r && c === goalNode.c) {
+                     found = true;
+                     break; // Goal found
+                 }
+
+                 // Explore neighbors (Up, Down, Left, Right)
+                 const neighbors = [
+                     { nr: r - 1, nc: c }, { nr: r + 1, nc: c },
+                     { nr: r, nc: c - 1 }, { nr: r, nc: c + 1 }
+                 ];
+
+                 for (const { nr, nc } of neighbors) {
+                     const neighborKey = `${nr}-${nc}`;
+                     if (nr >= 0 && nr < gridHeight && nc >= 0 && nc < gridWidth && !visited.has(neighborKey)) {
+                         visited.add(neighborKey);
+                         parent[neighborKey] = currentKey; // Store parent for path reconstruction
+                         queue.push(neighborKey);
+                     }
+                 }
+             }
+
+             if (found) {
+                 demoStatus.textContent = `${type.toUpperCase()} Found Goal! Reconstructing path...`;
+                 // Reconstruct and highlight path (optional, simple highlight shown)
+                 let pathKey = `${goalNode.r}-${goalNode.c}`;
+                 while (pathKey && pathKey !== startKey) {
+                      const cellEl = gridCells[pathKey];
+                       if (!(pathKey === `${goalNode.r}-${goalNode.c}`)) { // Don't style goal cell as path
+                           cellEl.classList.remove('visited'); // Remove visited if needed
+                           cellEl.classList.add('path');
+                           await new Promise(resolve => setTimeout(resolve, 100));
+                       }
+                      pathKey = parent[pathKey];
+                 }
+                 demoStatus.textContent = `${type.toUpperCase()} Path Found!`;
+
+             } else {
+                 demoStatus.textContent = `${type.toUpperCase()} Could not find Goal.`;
+             }
+              searchRunning = false;
+         }
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            createGrid(); // Create the demo grid on load
+            // Set initial active state (optional, default is Unit 1)
+             const initialUnit = document.querySelector('.unit-content.active');
+             if (initialUnit) {
+                 const initialButton = sidebar.querySelector(`.nav-button[data-unit="${initialUnit.id}"]`);
+                 if (initialButton) {
+                     initialButton.classList.add('active');
+                 }
+             }
+        });
+
+    </script>
+</body>
+</html>
