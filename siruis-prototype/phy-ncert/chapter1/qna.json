@@ -1,0 +1,254 @@
+[
+    {
+      "question": "What phenomenon is responsible for seeing a spark when taking off a synthetic sweater in dry weather?",
+      "options": ["Magnetism", "Chemical Reaction", "Static Electricity Discharge", "Gravity"],
+      "answer": "Static Electricity Discharge",
+      "type": "mcq"
+    },
+    {
+      "question": "Electrostatics deals with the study of:",
+      "options": ["Moving charges (currents)", "Stationary charges", "Magnetic fields", "Light waves"],
+      "answer": "Stationary charges",
+      "type": "mcq"
+    },
+    {
+      "question": "Historically, the observation that rubbed amber attracts light objects is credited to:",
+      "options": ["Benjamin Franklin", "Thales of Miletus", "Charles Coulomb", "Michael Faraday"],
+      "answer": "Thales of Miletus",
+      "type": "mcq"
+    },
+    {
+      "question": "The word 'electricity' is derived from the Greek word for:",
+      "options": ["Lightning", "Spark", "Amber", "Force"],
+      "answer": "Amber",
+      "type": "mcq"
+    },
+    {
+      "question": "How do two glass rods rubbed with silk behave when brought near each other?",
+      "options": ["They attract", "They repel", "No interaction", "They stick together"],
+      "answer": "They repel",
+      "type": "mcq"
+    },
+    {
+      "question": "By convention, the charge acquired by a glass rod rubbed with silk is considered:",
+      "options": ["Negative", "Positive", "Neutral", "Variable"],
+      "answer": "Positive",
+      "type": "mcq"
+    },
+    {
+      "question": "By convention, the charge acquired by a plastic rod rubbed with fur is considered:",
+      "options": ["Negative", "Positive", "Neutral", "Variable"],
+      "answer": "Negative",
+      "type": "mcq"
+    },
+    {
+      "question": "The property that distinguishes the two types of charges is called:",
+      "options": ["Magnitude", "Mass", "Polarity", "Density"],
+      "answer": "Polarity",
+      "type": "mcq"
+    },
+    {
+      "question": "What happens when an electrified object (e.g., charged glass rod) is brought into contact with the object it was rubbed with (e.g., silk)?",
+      "options": ["Repulsion increases", "Attraction increases", "They become neutral", "Nothing changes"],
+      "answer": "They become neutral",
+      "type": "mcq"
+    },
+    {
+      "question": "Which instrument is commonly used to detect charge on a body?",
+      "options": ["Ammeter", "Voltmeter", "Barometer", "Gold-leaf electroscope"],
+      "answer": "Gold-leaf electroscope",
+      "type": "mcq"
+    },
+    {
+      "question": "How does a body typically become positively charged?",
+      "options": ["By gaining protons", "By gaining electrons", "By losing protons", "By losing electrons"],
+      "answer": "By losing electrons",
+      "type": "mcq"
+    },
+    {
+      "question": "Materials that allow electric charge to pass through them easily are called:",
+      "options": ["Insulators", "Semiconductors", "Conductors", "Dielectrics"],
+      "answer": "Conductors",
+      "type": "mcq"
+    },
+    {
+      "question": "Which of these is typically an electrical insulator?",
+      "options": ["Copper", "Human body", "Silver", "Glass"],
+      "answer": "Glass",
+      "type": "mcq"
+    },
+    {
+      "question": "When charge is transferred to a conductor, it typically:",
+      "options": ["Stays in one place", "Distributes over the entire surface", "Concentrates at the center", "Disappears"],
+      "answer": "Distributes over the entire surface",
+      "type": "mcq"
+    },
+    {
+      "question": "The basic property that charges add up algebraically is known as:",
+      "options": ["Quantization", "Conservation", "Additivity", "Polarization"],
+      "answer": "Additivity",
+      "type": "mcq"
+    },
+    {
+      "question": "The total charge of an isolated system remains constant. This is the principle of:",
+      "options": ["Quantization of Charge", "Additivity of Charge", "Conservation of Charge", "Superposition"],
+      "answer": "Conservation of Charge",
+      "type": "mcq"
+    },
+    {
+      "question": "Electric charge is quantized, meaning it always exists as an integer multiple of a basic unit 'e'.",
+      "options": ["True", "False"],
+      "answer": "True",
+      "type": "truefalse"
+    },
+    {
+      "question": "What is the approximate value of the basic unit of charge, 'e'?",
+      "options": ["1.6 x 10^19 C", "9.1 x 10^-31 C", "1.6 x 10^-19 C", "6.0 x 10^23 C"],
+      "answer": "1.6 x 10^-19 C",
+      "type": "mcq"
+    },
+    {
+      "question": "The SI unit of electric charge is:",
+      "options": ["Ampere", "Volt", "Ohm", "Coulomb"],
+      "answer": "Coulomb",
+      "type": "mcq"
+    },
+    {
+      "question": "Coulomb's Law describes the force between two:",
+      "options": ["Parallel wires", "Magnetic poles", "Point charges", "Gravitational masses"],
+      "answer": "Point charges",
+      "type": "mcq"
+    },
+    {
+      "question": "The electrostatic force between two point charges is directly proportional to:",
+      "options": ["The distance between them", "The square of the distance", "The sum of the charges", "The product of the charges"],
+      "answer": "The product of the charges",
+      "type": "mcq"
+    },
+    {
+      "question": "The electrostatic force between two point charges follows an inverse square law with distance.",
+      "options": ["True", "False"],
+      "answer": "True",
+      "type": "truefalse"
+    },
+    {
+      "question": "What is the name of the constant 'k' in Coulomb's Law (F = k |q1*q2| / r^2)?",
+      "options": ["Permittivity of free space", "Boltzmann constant", "Coulomb's constant", "Planck's constant"],
+      "answer": "Coulomb's constant",
+      "type": "mcq"
+    },
+    {
+      "question": "The principle that the net force on a charge due to multiple other charges is the vector sum of individual forces is called:",
+      "options": ["Quantization", "Conservation", "Superposition", "Induction"],
+      "answer": "Superposition",
+      "type": "mcq"
+    },
+    {
+      "question": "The electric field (E) at a point is defined as the force per unit:",
+      "options": ["Negative test charge", "Positive source charge", "Positive test charge", "Unit distance"],
+      "answer": "Positive test charge",
+      "type": "mcq"
+    },
+    {
+      "question": "The SI unit for electric field is:",
+      "options": ["Coulomb (C)", "Volt (V)", "Newton per Coulomb (N/C)", "Tesla (T)"],
+      "answer": "Newton per Coulomb (N/C)",
+      "type": "mcq"
+    },
+    {
+      "question": "Electric field lines point radially inwards towards a negative point charge.",
+      "options": ["True", "False"],
+      "answer": "True",
+      "type": "truefalse"
+    },
+    {
+      "question": "The density (closeness) of electric field lines represents the:",
+      "options": ["Direction of the force", "Magnitude (strength) of the field", "Potential energy", "Type of charge"],
+      "answer": "Magnitude (strength) of the field",
+      "type": "mcq"
+    },
+    {
+      "question": "Can two electric field lines cross each other?",
+      "options": ["Yes, always", "Only if charges are opposite", "Only if charges are identical", "No, never"],
+      "answer": "No, never",
+      "type": "mcq"
+    },
+    {
+      "question": "Electrostatic field lines form closed loops.",
+      "options": ["True", "False"],
+      "answer": "False",
+      "type": "truefalse"
+    },
+    {
+      "question": "Electric flux (Φ) through a surface is a measure of:",
+      "options": ["The charge enclosed", "The number of field lines passing perpendicularly through it", "The potential difference across it", "The resistance of the surface"],
+      "answer": "The number of field lines passing perpendicularly through it",
+      "type": "mcq"
+    },
+    {
+      "question": "The unit of electric flux is:",
+      "options": ["N/C", "V", "N⋅m²/C", "C/m²"],
+      "answer": "N⋅m²/C",
+      "type": "mcq"
+    },
+    {
+      "question": "An electric dipole consists of:",
+      "options": ["Two positive charges", "Two negative charges", "A positive and a negative charge of equal magnitude", "Any two charges"],
+      "answer": "A positive and a negative charge of equal magnitude",
+      "type": "mcq"
+    },
+    {
+      "question": "The direction of the electric dipole moment vector (p) is from:",
+      "options": ["Positive to negative charge", "Negative to positive charge", "Center towards positive charge", "Center towards negative charge"],
+      "answer": "Negative to positive charge",
+      "type": "mcq"
+    },
+    {
+      "question": "In a uniform electric field, an electric dipole experiences a net force.",
+      "options": ["True", "False"],
+      "answer": "False",
+      "type": "truefalse"
+    },
+    {
+      "question": "In a uniform electric field, an electric dipole experiences a net torque that tends to align it with the field.",
+      "options": ["True", "False"],
+      "answer": "True",
+      "type": "truefalse"
+    },
+    {
+      "question": "Gauss's Law relates the total electric flux through a closed surface to the:",
+      "options": ["Electric field outside", "Total charge enclosed", "Surface area", "Volume enclosed"],
+      "answer": "Total charge enclosed",
+      "type": "mcq"
+    },
+    {
+      "question": "The imaginary closed surface used in applying Gauss's Law is called a:",
+      "options": ["Equipotential surface", "Conducting surface", "Gaussian surface", "Insulating surface"],
+      "answer": "Gaussian surface",
+      "type": "mcq"
+    },
+    {
+      "question": "Gauss's law is most useful for calculating electric fields in situations with:",
+      "options": ["Complex geometry", "Moving charges", "High symmetry", "Variable charge density"],
+      "answer": "High symmetry",
+      "type": "mcq"
+    },
+    {
+      "question": "According to Gauss's Law, the electric field inside a uniformly charged hollow spherical shell is:",
+      "options": ["Constant, non-zero", "Zero", "Proportional to distance from center", "Inversely proportional to distance"],
+      "answer": "Zero",
+      "type": "mcq"
+    },
+    {
+      "question": "The electric field due to an infinitely long straight charged wire is proportional to:",
+      "options": ["r (distance)", "1/r", "1/r^2", "Constant"],
+      "answer": "1/r",
+      "type": "mcq"
+    },
+    {
+      "question": "The electric field due to an infinite plane sheet of charge is independent of the distance from the sheet.",
+      "options": ["True", "False"],
+      "answer": "True",
+      "type": "truefalse"
+    }
+  ]

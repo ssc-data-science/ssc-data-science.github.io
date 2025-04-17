@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Electric Charges and Fields - Study Guide</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          /* Custom scrollbar */
+          ::-webkit-scrollbar { width: 8px; height: 8px; }
+          ::-webkit-scrollbar-track { background: #2f3136; }
+          ::-webkit-scrollbar-thumb { background: #202225; border-radius: 4px; }
+          ::-webkit-scrollbar-thumb:hover { background: #1a1c1e; }
+          /* Fade-in animation */
+          .fade-in { animation: fadeIn 0.5s ease-out forwards; }
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+           /* Ensure main content doesn't overlap fixed right panel */
+          main { padding-right: 16rem; /* Same width as right panel */ }
+          @media (max-width: 1024px) {
+            main { padding-right: 0; }
+          }
+        }
+        /* Custom CSS */
+        body {
+            font-family: 'Lato', sans-serif;
+            overflow: hidden; /* Prevent body scroll */
+        }
+        #right-panel {
+            transition: transform 0.3s ease-in-out;
+        }
+        /* MathJax display alignment */
+        mjx-container[jax="CHTML"][display="true"] {
+             margin: 1em 0;
+        }
+        /* Style for interactive choices */
+        .choice-button.selected { background-color: #4a5568; border-color: #718096; }
+        .choice-button.correct { background-color: rgba(87, 242, 135, 0.2); border-color: #57f287; color: #57f287; }
+        .choice-button.incorrect { background-color: rgba(237, 66, 69, 0.2); border-color: #ed4245; color: #ed4245; }
+        .feedback { padding: 0.5rem; margin-top: 0.5rem; border-radius: 4px; font-size: 0.875rem; /* text-sm */ }
+        .feedback.correct { background-color: rgba(87, 242, 135, 0.1); color: #57f287; border-left: 4px solid #57f287; }
+        .feedback.incorrect { background-color: rgba(237, 66, 69, 0.1); color: #ed4245; border-left: 4px solid #ed4245; }
+        .feedback.info { background-color: rgba(88, 101, 242, 0.1); color: #7289da; border-left: 4px solid #7289da; }
+        .practice-questions input[type=radio] { display: none; } /* Hide radio */
+        .practice-questions label { display: block; padding: 0.5rem; border: 1px solid #4f545c; border-radius: 4px; margin-bottom: 0.5rem; cursor: pointer; transition: background-color 0.2s; }
+        .practice-questions input[type=radio]:checked + label { background-color: #40444b; border-color: #7289da; }
+        .practice-questions input[type=number] { background-color: #202225; border: 1px solid #4f545c; padding: 0.5rem; border-radius: 4px; width: 100px; }
+        .save-term-btn { background: none; border: none; color: #7289da; cursor: pointer; margin-left: 5px; font-size: 0.8em; vertical-align: super; }
+        .save-term-btn:hover { color: #5865f2; }
+        .saved-term-item { background-color: #2f3136; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; }
+        .saved-term-item strong { color: #7289da; }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- MathJax -->
+    <script>
+        MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true }, svg: { fontCache: 'global' }, options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], ignoreHtmlClass: 'tex2jax_ignore', processHtmlClass: 'tex2jax_process' } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="bg-[#36393f] text-[#dcddde] flex h-dvh min-w-0">
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="flex-1 bg-[#36393f] flex flex-col overflow-hidden min-w-0">
+        <!-- Header Bar -->
+        <header class="flex items-center justify-between p-3 border-b border-[#2f3136] shadow-sm h-14 flex-shrink-0">
+            <div class="flex items-center min-w-0">
+                 <i class="fa-solid fa-hashtag text-[#8e9297] text-xl mr-2 flex-shrink-0"></i>
+                 <h1 class="text-white font-semibold text-base md:text-lg current-section-title truncate">Introduction</h1>
+            </div>
+             <!-- Progress Bar Container -->
+             <div class="w-1/3 mx-4">
+                <div id="progress-bar-container" class="w-full bg-[#202225] h-1.5 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-[#5865f2] h-full w-0 transition-all duration-500 ease-out"></div>
+                </div>
+                <p id="progress-text" class="text-xs text-center text-[#8e9297] mt-1">0% Complete</p>
+             </div>
+            <button id="panel-toggle-btn" class="lg:hidden text-[#b9bbbe] hover:text-white p-1 flex-shrink-0">
+                <i class="fas fa-bars text-xl"></i> <!-- Using bars icon for panel toggle -->
+            </button>
+        </header>
+
+        <!-- Scrollable Content -->
+        <div class="flex-1 overflow-y-auto p-4 md:p-6 space-y-8" id="content-scroll-area">
+
+            <!-- Introduction Section -->
+            <section id="introduction" class="content-section fade-in">
+                 <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.1 Introduction: The Spark of Electricity</h2>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> Ever felt a tiny shock zapping your finger? Or seen lightning? These are everyday examples of <strong class="text-[#7289da] font-semibold">static electricity</strong><button class="save-term-btn" data-term="Static Electricity" data-definition="Phenomena caused by the buildup of electric charge on the surface of objects."><i class="fas fa-bookmark"></i></button>. </p>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> This chapter explores <strong class="text-[#7289da] font-semibold">electrostatics</strong><button class="save-term-btn" data-term="Electrostatics" data-definition="The study of stationary electric charges or fields as opposed to electric currents."><i class="fas fa-bookmark"></i></button>: the study of stationary charges, their forces (<strong class="text-[#7289da] font-semibold">electric force</strong>), fields (<strong class="text-[#7289da] font-semibold">electric fields</strong>), and potential energy (<strong class="text-[#7289da] font-semibold">electric potential</strong>). </p>
+                 <div class="bg-[#2f3136] p-4 rounded-lg shadow-md my-6">
+                    <h3 class="text-base md:text-lg font-semibold text-white mb-3">Visualize: The Spark</h3>
+                    <p class="text-xs md:text-sm text-[#b9bbbe] mb-4">Click to see charge buildup and discharge.</p>
+                    <div id="spark-animation" class="relative w-40 h-16 md:w-48 md:h-20 bg-[#202225] rounded mx-auto flex items-center justify-around">
+                         <div id="obj1" class="w-6 h-6 md:w-8 md:h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">-</div>
+                         <div id="spark" class="absolute w-0 h-1 bg-yellow-300 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 opacity-0"></div>
+                         <div id="obj2" class="w-6 h-6 md:w-8 md:h-8 bg-red-500 rounded-full flex items-center justify-center text-white font-bold">+</div>
+                    </div>
+                    <button id="spark-button" class="mt-4 px-3 py-1.5 md:px-4 md:py-2 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] transition duration-200 mx-auto block text-xs md:text-sm"> Generate Spark! </button>
+                </div>
+                 <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="intro-1" data-correct-answer="c">
+                        <p class="question-text text-sm md:text-base mb-3">1. Electrostatics deals with:</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q1a" name="q1" value="a"><label for="q1a">a) Charges in motion (currents)</label></div>
+                            <div><input type="radio" id="q1b" name="q1" value="b"><label for="q1b">b) Magnetic fields</label></div>
+                            <div><input type="radio" id="q1c" name="q1" value="c"><label for="q1c">c) Stationary electric charges</label></div>
+                            <div><input type="radio" id="q1d" name="q1" value="d"><label for="q1d">d) Light waves</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="intro-2" data-correct-answer="a">
+                        <p class="question-text text-sm md:text-base mb-3">2. Which of the following is an example of static electricity?</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q2a" name="q2" value="a"><label for="q2a">a) A sock clinging to clothes from a dryer</label></div>
+                            <div><input type="radio" id="q2b" name="q2" value="b"><label for="q2b">b) A light bulb turning on</label></div>
+                            <div><input type="radio" id="q2c" name="q2" value="c"><label for="q2c">c) A motor spinning</label></div>
+                            <div><input type="radio" id="q2d" name="q2" value="d"><label for="q2d">d) A compass needle pointing north</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="intro-3" data-correct-answer="numerical">
+                        <p class="question-text text-sm md:text-base mb-3">3. Placeholder: Numerical questions will appear in later sections.</p>
+                         <div class="options-container space-y-2">
+                             <p class="text-xs text-gray-400">(This is just a placeholder for structure)</p>
+                         </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs" disabled>Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Electric Charge Section -->
+            <section id="electric-charge" class="content-section fade-in hidden">
+                <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.2 Electric Charge: The Basics</h2>
+                <p class="mb-4 text-sm md:text-base leading-relaxed"> Thales (~600 BC) noticed rubbed amber attracts objects due to <strong class="text-[#7289da] font-semibold">electric charge</strong><button class="save-term-btn" data-term="Electric Charge" data-definition="A fundamental property of matter that causes it to experience a force when placed in an electromagnetic field. Can be positive or negative."><i class="fas fa-bookmark"></i></button>. Benjamin Franklin named the two types <strong class="text-green-400 font-semibold">positive (+)</strong> and <strong class="text-red-400 font-semibold">negative (-)</strong>. </p>
+                <ul class="list-disc list-inside mb-4 space-y-1 text-sm md:text-base">
+                    <li><strong class="text-[#7289da]">Like charges repel</strong></li>
+                    <li><strong class="text-[#7289da]">Unlike charges attract</strong></li>
+                </ul>
+                <p class="mb-4 text-sm md:text-base leading-relaxed"> Protons (+e) and electrons (-e) carry charge. Rubbing transfers electrons, creating charged objects. </p>
+                <h3 class="text-base md:text-lg font-bold text-white mt-6 mb-3">Key Properties:</h3>
+                 <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-[#2f3136] p-3 md:p-4 rounded-lg shadow-md"> <h4 class="text-sm md:text-base font-semibold text-[#7289da] mb-1"><i class="fas fa-layer-group mr-1"></i>Additivity</h4> <p class="text-xs md:text-sm">Total charge is the algebraic sum.<button class="save-term-btn" data-term="Additivity of Charge" data-definition="The total electric charge of a system is the algebraic sum of all individual charges in the system."><i class="fas fa-bookmark"></i></button></p> </div>
+                    <div class="bg-[#2f3136] p-3 md:p-4 rounded-lg shadow-md"> <h4 class="text-sm md:text-base font-semibold text-[#7289da] mb-1"><i class="fas fa-shield-alt mr-1"></i>Conservation</h4> <p class="text-xs md:text-sm">Net charge of an isolated system is constant.<button class="save-term-btn" data-term="Conservation of Charge" data-definition="The principle that the total electric charge in an isolated system never changes."><i class="fas fa-bookmark"></i></button></p> </div>
+                    <div class="bg-[#2f3136] p-3 md:p-4 rounded-lg shadow-md"> <h4 class="text-sm md:text-base font-semibold text-[#7289da] mb-1"><i class="fas fa-cubes mr-1"></i>Quantization</h4> <p class="text-xs md:text-sm">Charge exists in discrete units of \(e\), where \(e \approx 1.602 \times 10^{-19} \, \text{C}\).<button class="save-term-btn" data-term="Quantization of Charge" data-definition="The principle that electric charge comes in discrete units of the elementary charge, e."><i class="fas fa-bookmark"></i></button></p> </div>
+                 </div>
+                 <!-- Field Line Visualizations -->
+                 <div class="bg-[#2f3136] p-4 rounded-lg shadow-md my-6">
+                    <h3 class="text-base md:text-lg font-semibold text-white mb-3">Field Line Visualizations (Conceptual)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center items-center">
+                        <div>
+                            <p class="text-sm font-medium mb-2 text-yellow-300">Positive Point Charge</p>
+                            <canvas id="canvas-positive-charge" width="150" height="150" class="bg-[#202225] rounded mx-auto"></canvas>
+                            <p class="text-xs text-gray-400 mt-1">Lines radiate outwards</p>
+                        </div>
+                         <div>
+                            <p class="text-sm font-medium mb-2 text-yellow-300">Negative Point Charge</p>
+                            <canvas id="canvas-negative-charge" width="150" height="150" class="bg-[#202225] rounded mx-auto"></canvas>
+                            <p class="text-xs text-gray-400 mt-1">Lines terminate inwards</p>
+                        </div>
+                         <div>
+                            <p class="text-sm font-medium mb-2 text-yellow-300">Electric Dipole (+/-)</p>
+                            <canvas id="canvas-dipole" width="150" height="150" class="bg-[#202225] rounded mx-auto"></canvas>
+                            <p class="text-xs text-gray-400 mt-1">Lines from + to -</p>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="charge-1" data-correct-answer="b">
+                        <p class="question-text text-sm md:text-base mb-3">1. If you rub a balloon on your hair, the balloon becomes negatively charged. This means:</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q3a" name="q3" value="a"><label for="q3a">a) Protons moved from your hair to the balloon.</label></div>
+                            <div><input type="radio" id="q3b" name="q3" value="b"><label for="q3b">b) Electrons moved from your hair to the balloon.</label></div>
+                            <div><input type="radio" id="q3c" name="q3" value="c"><label for="q3c">c) Protons moved from the balloon to your hair.</label></div>
+                            <div><input type="radio" id="q3d" name="q3" value="d"><label for="q3d">d) Electrons moved from the balloon to your hair.</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="charge-2" data-correct-answer="d">
+                        <p class="question-text text-sm md:text-base mb-3">2. The principle of quantization of charge means:</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q4a" name="q4" value="a"><label for="q4a">a) Charge can be created or destroyed.</label></div>
+                            <div><input type="radio" id="q4b" name="q4" value="b"><label for="q4b">b) The total charge in the universe is zero.</label></div>
+                            <div><input type="radio" id="q4c" name="q4" value="c"><label for="q4c">c) Charge is a continuous quantity.</label></div>
+                            <div><input type="radio" id="q4d" name="q4" value="d"><label for="q4d">d) Any observable charge is an integer multiple of the elementary charge \(e\).</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="charge-3" data-correct-answer="-3.20"> <!-- Using a string for precise comparison -->
+                        <p class="question-text text-sm md:text-base mb-3">3. An object gains \(2.0 \times 10^{19}\) electrons. What is its net charge in Coulombs (C)? Use \(e \approx 1.60 \times 10^{-19} \, \text{C}\). (Enter to 2 decimal places)</p>
+                        <div class="options-container space-y-2">
+                            <input type="number" id="q5_num" name="q5_num" step="0.01" placeholder="-0.00" class="text-white"> C
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Conductors/Insulators Section -->
+            <section id="conductors-insulators" class="content-section fade-in hidden">
+                <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.3 Conductors, Insulators, and You</h2>
+                <p class="mb-4 text-sm md:text-base leading-relaxed"> Why can charge flow through metal but not plastic? It depends on the material type. </p>
+                 <div class="grid md:grid-cols-2 gap-4 mb-4">
+                     <div class="bg-[#2f3136] p-3 md:p-4 rounded-lg shadow-md border-l-4 border-green-500">
+                        <h4 class="text-sm md:text-base font-semibold text-green-400 mb-1"><i class="fas fa-running mr-1"></i>Conductors</h4>
+                        <p class="text-xs md:text-sm">Allow charge (electrons) to move freely. Ex: Metals, body, Earth. Charges spread out.<button class="save-term-btn" data-term="Conductor" data-definition="A material that allows electric charge (usually electrons) to flow easily through it."><i class="fas fa-bookmark"></i></button></p>
+                    </div>
+                     <div class="bg-[#2f3136] p-3 md:p-4 rounded-lg shadow-md border-l-4 border-red-500">
+                        <h4 class="text-sm md:text-base font-semibold text-red-400 mb-1"><i class="fas fa-hand-paper mr-1"></i>Insulators</h4>
+                        <p class="text-xs md:text-sm">Resist charge movement. Ex: Rubber, glass, plastic, wood. Charges stay put.<button class="save-term-btn" data-term="Insulator" data-definition="A material that strongly resists the flow of electric charge."><i class="fas fa-bookmark"></i></button></p>
+                    </div>
+                 </div>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> <strong class="text-[#f1c40f] font-semibold">Semiconductors</strong><button class="save-term-btn" data-term="Semiconductor" data-definition="A material with electrical conductivity between that of a conductor and an insulator (e.g., silicon, germanium)."><i class="fas fa-bookmark"></i></button> (like silicon) are in between, vital for electronics. </p>
+                 <p class="mt-6 text-sm md:text-base leading-relaxed bg-[#2f3136] p-4 rounded-lg shadow-inner border border-[#4f545c]">
+                    <strong class="text-[#7289da] font-semibold">Grounding (Earthing):</strong><button class="save-term-btn" data-term="Grounding (Earthing)" data-definition="Connecting a charged object to the Earth (a large conductor) to neutralize it by allowing charge transfer."><i class="fas fa-bookmark"></i></button> Connecting a charged object to the Earth (a vast conductor) allows excess charge to flow away (if negative) or electrons to flow in to neutralize (if positive), leaving the object neutral.
+                 </p>
+                  <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="cond-1" data-correct-answer="a">
+                        <p class="question-text text-sm md:text-base mb-3">1. Which material is the best electrical conductor?</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q6a" name="q6" value="a"><label for="q6a">a) Copper wire</label></div>
+                            <div><input type="radio" id="q6b" name="q6" value="b"><label for="q6b">b) Rubber band</label></div>
+                            <div><input type="radio" id="q6c" name="q6" value="c"><label for="q6c">c) Glass window</label></div>
+                            <div><input type="radio" id="q6d" name="q6" value="d"><label for="q6d">d) Plastic ruler</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="cond-2" data-correct-answer="c">
+                        <p class="question-text text-sm md:text-base mb-3">2. When a negatively charged rod touches a neutral metal sphere, what happens?</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q7a" name="q7" value="a"><label for="q7a">a) Protons flow from the sphere to the rod.</label></div>
+                            <div><input type="radio" id="q7b" name="q7" value="b"><label for="q7b">b) Electrons flow from the sphere to the rod.</label></div>
+                            <div><input type="radio" id="q7c" name="q7" value="c"><label for="q7c">c) Electrons flow from the rod to the sphere.</label></div>
+                            <div><input type="radio" id="q7d" name="q7" value="d"><label for="q7d">d) The sphere remains neutral.</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                     <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="cond-3" data-correct-answer="neutral">
+                        <p class="question-text text-sm md:text-base mb-3">3. What is the primary purpose of grounding an electrical appliance?</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q8a" name="q8" value="a"><label for="q8a">a) To increase its charge</label></div>
+                            <div><input type="radio" id="q8b" name="q8" value="b"><label for="q8b">b) To provide a path for current to flow *to* the appliance</label></div>
+                            <div><input type="radio" id="q8c" name="q8" value="c"><label for="q8c">c) To provide a safety path for excess charge *away* from the appliance</label></div>
+                            <div><input type="radio" id="q8d" name="q8" value="d"><label for="q8d">d) To insulate the appliance</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Coulomb's Law Section -->
+            <section id="coulombs-law" class="content-section fade-in hidden">
+                <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.5 Coulomb's Law</h2>
+                <p class="mb-4 text-sm md:text-base leading-relaxed"> Coulomb quantified the force between two <strong class="text-[#7289da]">point charges</strong><button class="save-term-btn" data-term="Point Charge" data-definition="An idealized charge located at a single point in space, having negligible size."><i class="fas fa-bookmark"></i></button> (\(q_1\) and \(q_2\)) separated by a distance \(r\): </p>
+                <div class="bg-[#202225] p-3 md:p-4 rounded-lg shadow-lg text-center my-4 overflow-x-auto">
+                    \[ F = k \frac{|q_1 q_2|}{r^2} \]
+                    <p class="text-xs md:text-sm text-[#b9bbbe] mt-2">Where \(k\) is Coulomb's constant, \(k \approx 8.99 \times 10^9 \, \text{N} \cdot \text{m}^2/\text{C}^2\).<button class="save-term-btn" data-term="Coulomb's Law" data-definition="The law describing the electrostatic force between two stationary point charges. F = k|q1q2|/r^2"><i class="fas fa-bookmark"></i></button></p>
+                </div>
+                <ul class="list-disc list-inside mb-4 space-y-1 text-sm md:text-base">
+                     <li>Proportional to the product of the charges (\(q_1 q_2\)).</li>
+                     <li>Inverse square law: proportional to \(1/r^2\).</li>
+                     <li>Acts along the line connecting the charges. Force is repulsive for like charges (\(q_1 q_2 > 0\)) and attractive for unlike charges (\(q_1 q_2 < 0\)).</li>
+                 </ul>
+                <h3 class="text-base md:text-lg font-bold text-white mt-4 mb-2">Superposition Principle:<button class="save-term-btn" data-term="Superposition Principle (Forces)" data-definition="The net electrostatic force on a charge due to multiple other charges is the vector sum of the individual forces exerted by each charge."><i class="fas fa-bookmark"></i></button></h3>
+                <p class="mb-4 text-sm md:text-base leading-relaxed"> The net force on a charge due to multiple other charges is the vector sum of the individual forces exerted by each charge. \(\vec{F}_{\text{net}} = \vec{F}_1 + \vec{F}_2 + \dots \)</p>
+                 <div class="bg-[#2f3136] p-4 rounded-lg shadow-md my-6">
+                     <h3 class="text-base md:text-lg font-semibold text-white mb-3">Example</h3>
+                     <p class="text-xs md:text-sm text-[#b9bbbe] mb-4">Calculating force between two microcoulomb charges.</p>
+                     <p class="text-sm md:text-base leading-relaxed">If \(q_1 = +2\,\mu\text{C}\), \(q_2 = -3\,\mu\text{C}\), and they are separated by \(r = 10\,\text{cm} = 0.1\,\text{m}\):</p>
+                     <div class="bg-[#202225] p-3 rounded mt-2 overflow-x-auto text-sm">
+                        \[ F = (8.99 \times 10^9) \frac{|(2 \times 10^{-6})(-3 \times 10^{-6})|}{(0.1)^2} \]
+                        \[ F = (8.99 \times 10^9) \frac{6 \times 10^{-12}}{0.01} = (8.99 \times 10^9) (6 \times 10^{-10}) \]
+                        \[ F \approx 5.39 \, \text{N} \]
+                        <p class="text-xs text-[#b9bbbe] mt-2">Since the charges are unlike (\(q_1 q_2 < 0\)), the force is <strong class="text-green-400">attractive</strong>.</p>
+                     </div>
+                 </div>
+                 <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="coulomb-1" data-correct-answer="d">
+                        <p class="question-text text-sm md:text-base mb-3">1. According to Coulomb's Law, if the distance between two point charges is doubled, the electrostatic force between them becomes:</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q9a" name="q9" value="a"><label for="q9a">a) Double the original force</label></div>
+                            <div><input type="radio" id="q9b" name="q9" value="b"><label for="q9b">b) Half the original force</label></div>
+                            <div><input type="radio" id="q9c" name="q9" value="c"><label for="q9c">c) Four times the original force</label></div>
+                            <div><input type="radio" id="q9d" name="q9" value="d"><label for="q9d">d) One-fourth the original force</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="coulomb-2" data-correct-answer="a">
+                        <p class="question-text text-sm md:text-base mb-3">2. Two positive charges, \(q_1\) and \(q_2\), are placed near each other. The force between them is:</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q10a" name="q10" value="a"><label for="q10a">a) Repulsive</label></div>
+                            <div><input type="radio" id="q10b" name="q10" value="b"><label for="q10b">b) Attractive</label></div>
+                            <div><input type="radio" id="q10c" name="q10" value="c"><label for="q10c">c) Zero</label></div>
+                            <div><input type="radio" id="q10d" name="q10" value="d"><label for="q10d">d) Dependent on the distance only</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                     <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="coulomb-3" data-correct-answer="2.25">
+                        <p class="question-text text-sm md:text-base mb-3">3. Calculate the magnitude of the electrostatic force (in Newtons) between two point charges, \(q_1 = +1.0 \times 10^{-6} \, \text{C}\) and \(q_2 = +4.0 \times 10^{-6} \, \text{C}\), separated by a distance of \(0.40 \, \text{m}\). Use \(k = 9.0 \times 10^9 \, \text{N} \cdot \text{m}^2/\text{C}^2\). (Enter to 2 decimal places)</p>
+                         <div class="options-container space-y-2">
+                             <input type="number" id="q11_num" name="q11_num" step="0.01" placeholder="0.00" class="text-white"> N
+                         </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Electric Field Section -->
+            <section id="electric-field" class="content-section fade-in hidden">
+                 <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.7 Electric Field</h2>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> How do charges interact without touching? Via the <strong class="text-[#7289da] font-semibold">electric field (\(\vec{E}\))</strong><button class="save-term-btn" data-term="Electric Field (E)" data-definition="A vector field surrounding an electric charge that exerts a force on other charges placed within it. Defined as force per unit charge (E = F/q0). Unit: N/C."><i class="fas fa-bookmark"></i></button> – a vector field created in the space around a source charge. Another charge placed in this field experiences an electric force. </p>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> The electric field at a point is defined as the force (\(\vec{F}\)) exerted on a small, positive <strong class="text-[#f1c40f]">test charge</strong><button class="save-term-btn" data-term="Test Charge (q0)" data-definition="An imaginary, small, positive charge used to probe the electric field at a point without significantly disturbing the field itself."><i class="fas fa-bookmark"></i></button> (\(q_0\)) placed at that point, divided by the test charge itself: </p>
+                 <div class="bg-[#202225] p-3 md:p-4 rounded-lg shadow-lg text-center my-4">
+                    \[ \vec{E} = \frac{\vec{F}}{q_0} \]
+                    <p class="text-xs md:text-sm text-[#b9bbbe] mt-1">Unit: Newtons per Coulomb (N/C)</p>
+                 </div>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> For a single point source charge \(Q\), the magnitude of the electric field at a distance \(r\) is \( E = k \frac{|Q|}{r^2} \). The direction is radially outward from a positive charge \(+Q\) and radially inward toward a negative charge \(-Q\). </p>
+                 <p class="mt-4 text-sm md:text-base leading-relaxed"> Like forces, the electric field due to multiple source charges follows the <strong class="text-[#7289da]">superposition principle</strong><button class="save-term-btn" data-term="Superposition Principle (Fields)" data-definition="The net electric field at a point due to multiple source charges is the vector sum of the electric fields produced by each individual source charge."><i class="fas fa-bookmark"></i></button>: the net electric field at a point is the vector sum of the fields produced by each individual source charge. \(\vec{E}_{\text{net}} = \vec{E}_1 + \vec{E}_2 + \dots \)</p>
+                 <div class="bg-[#2f3136] p-4 rounded-lg shadow-md my-6">
+                     <h3 class="text-base md:text-lg font-semibold text-white mb-3">Concept: Test Charge</h3>
+                     <p class="text-xs md:text-sm text-[#b9bbbe] mb-2">Why a *small, positive* test charge?</p>
+                     <ul class="list-disc list-inside text-sm space-y-1">
+                        <li><strong class="text-yellow-300">Small:</strong> So it doesn't significantly disturb the original electric field we are trying to measure.</li>
+                        <li><strong class="text-yellow-300">Positive:</strong> By convention, so the direction of \(\vec{E}\) is the same as the direction of the force \(\vec{F}\) on the test charge.</li>
+                     </ul>
+                 </div>
+                  <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="efield-1" data-correct-answer="b">
+                        <p class="question-text text-sm md:text-base mb-3">1. The electric field lines around a positive point charge:</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q12a" name="q12" value="a"><label for="q12a">a) Point radially inward towards the charge.</label></div>
+                            <div><input type="radio" id="q12b" name="q12" value="b"><label for="q12b">b) Point radially outward away from the charge.</label></div>
+                            <div><input type="radio" id="q12c" name="q12" value="c"><label for="q12c">c) Form closed loops around the charge.</label></div>
+                            <div><input type="radio" id="q12d" name="q12" value="d"><label for="q12d">d) Are parallel to each other.</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="efield-2" data-correct-answer="c">
+                        <p class="question-text text-sm md:text-base mb-3">2. If a positive test charge \(q_0\) is placed in an electric field \(\vec{E}\), the force experienced by the test charge is:</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q13a" name="q13" value="a"><label for="q13a">a) In the opposite direction to \(\vec{E}\).</label></div>
+                            <div><input type="radio" id="q13b" name="q13" value="b"><label for="q13b">b) Perpendicular to \(\vec{E}\).</label></div>
+                            <div><input type="radio" id="q13c" name="q13" value="c"><label for="q13c">c) In the same direction as \(\vec{E}\).</label></div>
+                            <div><input type="radio" id="q13d" name="q13" value="d"><label for="q13d">d) Zero.</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                     <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="efield-3" data-correct-answer="2.00">
+                        <p class="question-text text-sm md:text-base mb-3">3. An electric field exerts a force of \(4.0 \times 10^{-6} \, \text{N}\) on a test charge of \(+2.0 \times 10^{-6} \, \text{C}\). What is the magnitude of the electric field strength (in N/C)? (Enter to 2 decimal places)</p>
+                         <div class="options-container space-y-2">
+                             <input type="number" id="q14_num" name="q14_num" step="0.01" placeholder="0.00" class="text-white"> N/C
+                         </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Field Lines Section -->
+             <section id="field-lines" class="content-section fade-in hidden">
+                 <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.8 Electric Field Lines</h2>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> We visualize electric fields using <strong class="text-[#7289da] font-semibold">electric field lines</strong><button class="save-term-btn" data-term="Electric Field Lines" data-definition="Imaginary lines used to visualize electric fields. Tangent gives E direction, density gives E magnitude. Originate on +, terminate on -."><i class="fas fa-bookmark"></i></button>, which follow these rules: </p>
+                 <ul class="list-disc list-inside mb-4 space-y-1 text-sm md:text-base">
+                    <li>Originate on positive charges (or infinity) and terminate on negative charges (or infinity).</li>
+                    <li>The tangent to a field line at any point gives the direction of the electric field \(\vec{E}\) at that point.</li>
+                    <li>The density of lines (number of lines per unit area perpendicular to the lines) is proportional to the magnitude of the electric field \(|\vec{E}|\). Closer lines mean a stronger field.</li>
+                    <li>Field lines never cross each other.</li>
+                 </ul>
+                  <div class="bg-[#2f3136] p-4 rounded-lg shadow-md my-6">
+                      <h3 class="text-base md:text-lg font-semibold text-white mb-3">Field Patterns (Conceptual Reminder)</h3>
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                          <div>
+                              <p class="text-sm font-medium mb-1 text-yellow-300">Positive Point Charge</p>
+                              <i class="fas fa-sun text-4xl text-red-500"></i>
+                              <p class="text-xs text-gray-400 mt-1">Lines radiate outwards</p>
+                          </div>
+                           <div>
+                              <p class="text-sm font-medium mb-1 text-yellow-300">Negative Point Charge</p>
+                              <i class="fas fa-dot-circle text-4xl text-blue-500"></i>
+                              <p class="text-xs text-gray-400 mt-1">Lines terminate inwards</p>
+                          </div>
+                           <div>
+                              <p class="text-sm font-medium mb-1 text-yellow-300">Electric Dipole</p>
+                              <i class="fas fa-magnet text-4xl text-gray-400"></i>
+                              <p class="text-xs text-gray-400 mt-1">Lines from + to -</p>
+                          </div>
+                      </div>
+                  </div>
+                   <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="lines-1" data-correct-answer="c">
+                        <p class="question-text text-sm md:text-base mb-3">1. Where are electric field lines closest together?</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q15a" name="q15" value="a"><label for="q15a">a) Where the electric field is weakest.</label></div>
+                            <div><input type="radio" id="q15b" name="q15" value="b"><label for="q15b">b) Where the electric potential is lowest.</label></div>
+                            <div><input type="radio" id="q15c" name="q15" value="c"><label for="q15c">c) Where the electric field is strongest.</label></div>
+                            <div><input type="radio" id="q15d" name="q15" value="d"><label for="q15d">d) Equally spaced everywhere.</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="lines-2" data-correct-answer="a">
+                        <p class="question-text text-sm md:text-base mb-3">2. Can electric field lines cross each other?</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q16a" name="q16" value="a"><label for="q16a">a) No, because the field has a unique direction at any point.</label></div>
+                            <div><input type="radio" id="q16b" name="q16" value="b"><label for="q16b">b) Yes, where the field is very strong.</label></div>
+                            <div><input type="radio" id="q16c" name="q16" value="c"><label for="q16c">c) Yes, at points where the net charge is zero.</label></div>
+                            <div><input type="radio" id="q16d" name="q16" value="d"><label for="q16d">d) Only for fields created by multiple charges.</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="lines-3" data-correct-answer="negative"> <!-- Placeholder - No numerical here -->
+                        <p class="question-text text-sm md:text-base mb-3">3. If electric field lines are drawn terminating on a charge, what is the sign of that charge?</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q17a" name="q17" value="positive"><label for="q17a">a) Positive</label></div>
+                            <div><input type="radio" id="q17b" name="q17" value="negative"><label for="q17b">b) Negative</label></div>
+                            <div><input type="radio" id="q17c" name="q17" value="neutral"><label for="q17c">c) Neutral</label></div>
+                            <div><input type="radio" id="q17d" name="q17" value="cannot_determine"><label for="q17d">d) Cannot be determined</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+             </section>
+
+            <!-- Electric Flux Section -->
+            <section id="electric-flux" class="content-section fade-in hidden">
+                 <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.9 Electric Flux (\(\Phi_E\))</h2>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> Analogous to fluid flow through an area, <strong class="text-[#7289da] font-semibold">Electric Flux</strong><button class="save-term-btn" data-term="Electric Flux (ΦE)" data-definition="A measure of the number of electric field lines passing perpendicularly through a given surface area. ΦE = ∫ E ⋅ dS. Unit: N⋅m²/C."><i class="fas fa-bookmark"></i></button> (\(\Phi_E\)) is a measure of the number of electric field lines passing perpendicularly through a given surface area. </p>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> For a small, flat surface element with area vector \(\Delta\vec{S}\) (magnitude \(\Delta S\), direction normal to the surface) in a uniform electric field \(\vec{E}\), the electric flux is the scalar product: </p>
+                 <div class="bg-[#202225] p-3 md:p-4 rounded-lg shadow-lg text-center my-4">
+                    \[ \Delta\Phi_E = \vec{E} \cdot \Delta\vec{S} = E \Delta S \cos\theta \]
+                    <p class="text-xs md:text-sm text-[#b9bbbe] mt-1">Where \(\theta\) is the angle between the electric field vector \(\vec{E}\) and the area vector \(\Delta\vec{S}\).</p>
+                 </div>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> The total flux through a larger, possibly curved, surface is found by integrating the flux over all infinitesimal area elements: \(\Phi_E = \int_S \vec{E} \cdot d\vec{S}\). Unit: Newton meter squared per Coulomb (N⋅m²/C). </p>
+                  <div class="bg-[#2f3136] p-4 rounded-lg shadow-md my-6">
+                      <h3 class="text-base md:text-lg font-semibold text-white mb-2">Flux Concepts</h3>
+                       <ul class="list-disc list-inside text-sm space-y-1">
+                           <li><strong class="text-yellow-300">Maximum Flux:</strong> Occurs when the surface is perpendicular to the field lines (\(\theta = 0^\circ\), \(\cos\theta = 1\)). \(\Phi_E = E \Delta S\).</li>
+                           <li><strong class="text-yellow-300">Zero Flux:</strong> Occurs when the surface is parallel to the field lines (\(\theta = 90^\circ\), \(\cos\theta = 0\)). No lines pass *through*.</li>
+                           <li><strong class="text-yellow-300">Flux Direction:</strong> Flux is positive if \(\vec{E}\) has a component *outward* through the surface (relative to the \(\Delta\vec{S}\) direction), negative if *inward*. For a closed surface, outward flux is typically positive.</li>
+                       </ul>
+                  </div>
+                  <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="flux-1" data-correct-answer="a">
+                        <p class="question-text text-sm md:text-base mb-3">1. Electric flux is maximized when the angle between the electric field \(\vec{E}\) and the area vector \(\Delta\vec{S}\) is:</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q18a" name="q18" value="a"><label for="q18a">a) 0°</label></div>
+                            <div><input type="radio" id="q18b" name="q18" value="b"><label for="q18b">b) 45°</label></div>
+                            <div><input type="radio" id="q18c" name="q18" value="c"><label for="q18c">c) 90°</label></div>
+                            <div><input type="radio" id="q18d" name="q18" value="d"><label for="q18d">d) 180°</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="flux-2" data-correct-answer="b">
+                        <p class="question-text text-sm md:text-base mb-3">2. Consider a closed spherical surface enclosing a positive point charge +Q at its center. The net electric flux through the surface is:</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q19a" name="q19" value="a"><label for="q19a">a) Zero</label></div>
+                            <div><input type="radio" id="q19b" name="q19" value="b"><label for="q19b">b) Positive</label></div>
+                            <div><input type="radio" id="q19c" name="q19" value="c"><label for="q19c">c) Negative</label></div>
+                            <div><input type="radio" id="q19d" name="q19" value="d"><label for="q19d">d) Dependent on the radius of the sphere</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                     <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="flux-3" data-correct-answer="50.00">
+                        <p class="question-text text-sm md:text-base mb-3">3. A uniform electric field of magnitude \(E = 100 \, \text{N/C}\) passes through a flat square surface of area \(A = 0.5 \, \text{m}^2\). The field is directed perpendicular to the surface. Calculate the electric flux \(\Phi_E\) (in N⋅m²/C). (Enter to 2 decimal places)</p>
+                         <div class="options-container space-y-2">
+                             <input type="number" id="q20_num" name="q20_num" step="0.01" placeholder="0.00" class="text-white"> N⋅m²/C
+                         </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Electric Dipole Section -->
+             <section id="electric-dipole" class="content-section fade-in hidden">
+                 <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.10 & 1.11 Electric Dipole</h2>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> An <strong class="text-[#7289da] font-semibold">electric dipole</strong><button class="save-term-btn" data-term="Electric Dipole" data-definition="A pair of equal and opposite point charges (+q and -q) separated by a small distance d."><i class="fas fa-bookmark"></i></button> consists of a pair of equal and opposite point charges, \(+q\) and \(-q\), separated by a small vector distance \(\vec{d}\) (often represented as \(2\vec{a}\), pointing from \(-q\) to \(+q\)). </p>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> The key quantity describing a dipole is the <strong class="text-[#7289da] font-semibold">electric dipole moment vector (\(\vec{p}\))</strong><button class="save-term-btn" data-term="Electric Dipole Moment (p)" data-definition="A vector quantity describing an electric dipole. p = qd, pointing from -q to +q. Unit: C⋅m."><i class="fas fa-bookmark"></i></button>: </p>
+                 <ul class="list-disc list-inside mb-4 space-y-1 text-sm md:text-base">
+                    <li>Definition: \(\vec{p} = q\vec{d}\) (or \(\vec{p} = q(2\vec{a})\))</li>
+                    <li>Magnitude: \( p = qd \) (or \(p = q(2a)\))</li>
+                    <li>Direction: From the negative charge (\(-q\)) towards the positive charge (\(+q\)).</li>
+                 </ul>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> The electric field produced by a dipole falls off more rapidly with distance (like \(1/r^3\) for large \(r\)) compared to a single point charge (\(1/r^2\)). Many molecules, like water (H₂O), possess permanent dipole moments (polar molecules). </p>
+                  <p class="mb-4 text-sm md:text-base leading-relaxed"> When an electric dipole is placed in a uniform external electric field \(\vec{E}\): </p>
+                   <ul class="list-disc list-inside mb-4 space-y-1 text-sm md:text-base">
+                      <li>It experiences <strong class="text-[#7289da]">zero net force</strong> because the forces on \(+q\) and \(-q\) are equal and opposite (\(\vec{F}_{net} = q\vec{E} + (-q)\vec{E} = 0\)).</li>
+                      <li>It experiences a net <strong class="text-[#7289da] font-semibold">torque (\(\vec{\tau}\))</strong><button class="save-term-btn" data-term="Torque on Dipole (τ)" data-definition="The rotational force experienced by an electric dipole in an external electric field. τ = p x E. Tends to align p with E."><i class="fas fa-bookmark"></i></button> that tends to align the dipole moment \(\vec{p}\) with the external field \(\vec{E}\).</li>
+                   </ul>
+                   <div class="bg-[#202225] p-3 md:p-4 rounded-lg shadow-lg text-center my-4">
+                      \[ \vec{\tau} = \vec{p} \times \vec{E} \]
+                      <p class="text-xs md:text-sm text-[#b9bbbe] mt-1">The magnitude of the torque is \( \tau = pE \sin\theta \), where \(\theta\) is the angle between \(\vec{p}\) and \(\vec{E}\).</p>
+                   </div>
+                  <div class="bg-[#2f3136] p-4 rounded-lg shadow-md my-6">
+                       <h3 class="text-base md:text-lg font-semibold text-white mb-2">Torque on Dipole</h3>
+                       <ul class="list-disc list-inside text-sm space-y-1">
+                           <li><strong class="text-yellow-300">Zero Torque (Stable):</strong> When \(\vec{p}\) is aligned with \(\vec{E}\) (\(\theta = 0^\circ\)).</li>
+                           <li><strong class="text-yellow-300">Zero Torque (Unstable):</strong> When \(\vec{p}\) is anti-aligned with \(\vec{E}\) (\(\theta = 180^\circ\)).</li>
+                           <li><strong class="text-yellow-300">Maximum Torque:</strong> When \(\vec{p}\) is perpendicular to \(\vec{E}\) (\(\theta = 90^\circ\)). \(\tau_{max} = pE\).</li>
+                       </ul>
+                  </div>
+                  <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="dipole-1" data-correct-answer="a">
+                        <p class="question-text text-sm md:text-base mb-3">1. The net electric force on an electric dipole placed in a uniform electric field is:</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q21a" name="q21" value="a"><label for="q21a">a) Always zero</label></div>
+                            <div><input type="radio" id="q21b" name="q21" value="b"><label for="q21b">b) Always non-zero</label></div>
+                            <div><input type="radio" id="q21c" name="q21" value="c"><label for="q21c">c) Zero only if the dipole is aligned with the field</label></div>
+                            <div><input type="radio" id="q21d" name="q21" value="d"><label for="q21d">d) Dependent on the dipole moment</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="dipole-2" data-correct-answer="c">
+                        <p class="question-text text-sm md:text-base mb-3">2. An electric dipole experiences the maximum torque in a uniform electric field when the angle between the dipole moment \(\vec{p}\) and the electric field \(\vec{E}\) is:</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q22a" name="q22" value="a"><label for="q22a">a) 0°</label></div>
+                            <div><input type="radio" id="q22b" name="q22" value="b"><label for="q22b">b) 45°</label></div>
+                            <div><input type="radio" id="q22c" name="q22" value="c"><label for="q22c">c) 90°</label></div>
+                            <div><input type="radio" id="q22d" name="q22" value="d"><label for="q22d">d) 180°</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                     <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="dipole-3" data-correct-answer="0.50">
+                        <p class="question-text text-sm md:text-base mb-3">3. An electric dipole has charges \(+2.0 \times 10^{-9} \, \text{C}\) and \(-2.0 \times 10^{-9} \, \text{C}\) separated by \(0.01 \, \text{m}\). It is placed in a uniform electric field of \(E = 2.5 \times 10^7 \, \text{N/C}\) perpendicular to the dipole moment. Calculate the magnitude of the torque (in N⋅m). (Enter to 2 decimal places)</p>
+                        <p class="text-xs text-gray-400 mb-2">(Hint: First find dipole moment \(p = qd\), then use \(\tau = pE\sin\theta\))</p>
+                         <div class="options-container space-y-2">
+                             <input type="number" id="q23_num" name="q23_num" step="0.01" placeholder="0.00" class="text-white"> N⋅m
+                         </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Gauss's Law Section -->
+             <section id="gauss-law" class="content-section fade-in hidden">
+                 <h2 class="text-xl md:text-2xl font-bold text-white mb-4 border-b border-[#4f545c] pb-2">1.13 & 1.14 Gauss's Law & Applications</h2>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> <strong class="text-[#7289da] font-semibold">Gauss's Law</strong><button class="save-term-btn" data-term="Gauss's Law" data-definition="Relates the total electric flux through a closed surface to the net charge enclosed within it. ΦE = ∮ E ⋅ dS = q_enclosed / ε0."><i class="fas fa-bookmark"></i></button> offers a powerful relationship between electric charge and electric field. It states that the total electric flux (\(\Phi_E\)) through any closed surface (an imaginary surface called a <strong class="text-[#f1c40f]">Gaussian surface</strong><button class="save-term-btn" data-term="Gaussian Surface" data-definition="An imaginary closed surface used in conjunction with Gauss's Law to calculate electric fields, often chosen to exploit symmetry."><i class="fas fa-bookmark"></i></button>) is directly proportional to the net electric charge (\(q_{\text{enclosed}}\)) enclosed within that surface. </p>
+                 <div class="bg-[#202225] p-3 md:p-4 rounded-lg shadow-lg text-center my-4">
+                    \[ \Phi_{E, \text{total}} = \oint_S \vec{E} \cdot d\vec{S} = \frac{q_{\text{enclosed}}}{\varepsilon_0} \]
+                    <p class="text-xs md:text-sm text-[#b9bbbe] mt-1">Where \(\varepsilon_0\) is the permittivity of free space (\(\approx 8.85 \times 10^{-12} \, \text{C}^2/(\text{N} \cdot \text{m}^2)\)).</p>
+                 </div>
+                 <p class="mb-4 text-sm md:text-base leading-relaxed"> Gauss's Law is particularly useful for calculating the electric field in situations with high symmetry (spherical, cylindrical, planar) by choosing a Gaussian surface where the flux integral becomes easy to evaluate. </p>
+
+                 <!-- Gauss Law Interactive Derivation -->
+                 <div class="bg-[#2f3136] p-4 rounded-lg shadow-md my-6">
+                     <h3 class="text-base md:text-lg font-semibold text-white mb-3">Interactive Derivation: E-Fields with Gauss's Law</h3>
+
+                     <!-- Scenario Selection -->
+                     <div id="gauss-scenario-selection" class="mb-4">
+                         <p class="text-sm font-medium mb-2">Select a scenario to derive the E-field for:</p>
+                         <div class="flex flex-wrap gap-2">
+                             <button data-scenario="line" class="gauss-scenario-btn px-3 py-1.5 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] transition duration-200 text-xs md:text-sm">Infinite Line Charge (\(\lambda\))</button>
+                             <button data-scenario="plane" class="gauss-scenario-btn px-3 py-1.5 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] transition duration-200 text-xs md:text-sm">Infinite Plane Sheet (\(\sigma\))</button>
+                             <button data-scenario="shell" class="gauss-scenario-btn px-3 py-1.5 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] transition duration-200 text-xs md:text-sm">Spherical Shell (\(Q\))</button>
+                         </div>
+                     </div>
+
+                     <!-- Derivation Steps Container -->
+                     <div id="gauss-interactive-container" class="mt-4 space-y-4 hidden">
+                         <div class="flex flex-col md:flex-row gap-4">
+                             <!-- Text/Question Area -->
+                             <div class="flex-1 space-y-3">
+                                 <div id="gauss-step-text" class="text-sm md:text-base p-3 bg-[#202225] rounded min-h-[50px]">Select a scenario above.</div>
+                                 <div id="gauss-options" class="flex flex-wrap gap-2"></div>
+                                 <div id="gauss-feedback" class="feedback hidden"></div>
+                             </div>
+                             <!-- Canvas Area -->
+                             <div class="w-full md:w-1/3 flex-shrink-0">
+                                <canvas id="gauss-canvas" width="250" height="250" class="bg-[#202225] rounded mx-auto md:mx-0"></canvas>
+                                <p class="text-xs text-center text-gray-400 mt-1">Visualization Area</p>
+                             </div>
+                         </div>
+                          <button id="gauss-next-step-btn" class="hidden mt-3 px-3 py-1 bg-[#4f545c] text-white rounded hover:bg-[#5a5f66] text-xs">Next Step</button>
+                          <button id="gauss-reset-btn" class="hidden mt-3 px-3 py-1 bg-[#ed4245] text-white rounded hover:bg-[#c43436] text-xs ml-2">Choose Different Scenario</button>
+                     </div>
+                 </div>
+                 <!-- End Gauss Law Interactive Derivation -->
+
+                 <h3 class="text-base md:text-lg font-bold text-white mt-6 mb-2">Key Results (from Gauss's Law):</h3>
+                 <ul class="list-disc list-inside mb-4 space-y-1 text-sm md:text-base">
+                     <li>Field of an infinitely long straight charged wire (\(\lambda\)): \( E = \frac{\lambda}{2\pi\varepsilon_0 r} \)</li>
+                     <li>Field of an infinite plane sheet of charge (\(\sigma\)): \( E = \frac{\sigma}{2\varepsilon_0} \)</li>
+                     <li>Field outside a uniformly charged spherical shell (\(Q\), radius \(R\), \(r > R\)): \( E = \frac{Q}{4\pi\varepsilon_0 r^2} \)</li>
+                     <li>Field inside a uniformly charged spherical shell (\(r < R\)): \( E = 0 \)</li>
+                     <li>Field inside a conductor in electrostatic equilibrium: \( E = 0 \)</li>
+                 </ul>
+                  <!-- Practice Questions -->
+                 <div class="practice-questions mt-8 border-t border-[#4f545c] pt-4 space-y-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Check Your Understanding</h3>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="gauss-1" data-correct-answer="c">
+                        <p class="question-text text-sm md:text-base mb-3">1. Gauss's Law relates the electric flux through a closed surface to:</p>
+                        <div class="options-container space-y-2">
+                            <div><input type="radio" id="q24a" name="q24" value="a"><label for="q24a">a) The total charge outside the surface.</label></div>
+                            <div><input type="radio" id="q24b" name="q24" value="b"><label for="q24b">b) The shape of the Gaussian surface.</label></div>
+                            <div><input type="radio" id="q24c" name="q24" value="c"><label for="q24c">c) The net charge enclosed within the surface.</label></div>
+                            <div><input type="radio" id="q24d" name="q24" value="d"><label for="q24d">d) The electric potential on the surface.</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                    <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="gauss-2" data-correct-answer="a">
+                        <p class="question-text text-sm md:text-base mb-3">2. What is the electric field inside a charged solid conducting sphere in electrostatic equilibrium?</p>
+                         <div class="options-container space-y-2">
+                            <div><input type="radio" id="q25a" name="q25" value="a"><label for="q25a">a) Zero</label></div>
+                            <div><input type="radio" id="q25b" name="q25" value="b"><label for="q25b">b) Constant and non-zero</label></div>
+                            <div><input type="radio" id="q25c" name="q25" value="c"><label for="q25c">c) Varies linearly with distance from the center</label></div>
+                            <div><input type="radio" id="q25d" name="q25" value="d"><label for="q25d">d) Varies inversely with the square of the distance from the center</label></div>
+                        </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                     <div class="question-block bg-[#2f3136] p-4 rounded-lg" data-question-id="gauss-3" data-correct-answer="1.13">
+                        <p class="question-text text-sm md:text-base mb-3">3. Calculate the net electric flux (in N⋅m²/C \(\times 10^6\)) through a closed surface that encloses a net charge of \(+10.0 \, \mu\text{C}\). Use \(\varepsilon_0 = 8.85 \times 10^{-12} \, \text{C}^2/(\text{N} \cdot \text{m}^2)\). (Enter the value to multiply by \(10^6\), to 2 decimal places)</p>
+                        <p class="text-xs text-gray-400 mb-2">(Hint: \(\Phi_E = q_{\text{enclosed}} / \varepsilon_0\). Remember \(1 \mu\text{C} = 10^{-6} \text{C}\))</p>
+                         <div class="options-container space-y-2">
+                             <input type="number" id="q26_num" name="q26_num" step="0.01" placeholder="0.00" class="text-white"> \(\times 10^6\) N⋅m²/C
+                         </div>
+                        <button class="check-answer-btn mt-3 px-3 py-1 bg-[#5865f2] text-white rounded hover:bg-[#4752c4] text-xs">Check</button>
+                        <div class="feedback mt-2 text-xs"></div>
+                    </div>
+                 </div>
+            </section>
+
+
+        </div>
+    </main>
+
+    <!-- Right Panel (Navigation, Saved Terms, Tools) -->
+    <aside id="right-panel" class="fixed z-30 top-0 right-0 h-full w-64 bg-[#2f3136] p-3 flex flex-col space-y-4 transform translate-x-0 lg:translate-x-0 overflow-y-auto flex-shrink-0 border-l border-[#202225]">
+        <!-- Mobile Header -->
+        <div class="flex justify-between items-center lg:hidden mb-2">
+             <h2 class="text-sm font-bold uppercase text-[#8e9297] px-2">Menu & Tools</h2>
+             <button id="panel-close-btn" class="text-[#b9bbbe] hover:text-white p-1">
+                <i class="fas fa-times text-xl"></i>
+             </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation-section">
+            <h3 class="text-xs font-bold uppercase text-[#8e9297] px-2 mb-2">Chapter 1 Topics</h3>
+            <nav class="flex flex-col space-y-1">
+                <a href="#introduction" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-book-open w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Introduction </a>
+                <a href="#electric-charge" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-atom w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Electric Charge </a>
+                <a href="#conductors-insulators" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-plug w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Conductors/Insulators </a>
+                <a href="#coulombs-law" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-magnet w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Coulomb's Law </a>
+                <a href="#electric-field" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-chart-line w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Electric Field </a>
+                <a href="#field-lines" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-wave-square w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Field Lines </a>
+                <a href="#electric-flux" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-water w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Electric Flux </a>
+                <a href="#electric-dipole" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-arrows-left-right w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Electric Dipole </a>
+                <a href="#gauss-law" class="nav-link group flex items-center px-2 py-1.5 text-sm font-medium rounded-md"> <i class="fa-solid fa-circle-nodes w-5 h-5 mr-2 text-[#8e9297] group-hover:text-white"></i> Gauss's Law </a>
+            </nav>
+        </div>
+
+        <!-- Saved Terms -->
+        <div class="saved-terms-section border-t border-[#4f545c] pt-4 flex-1 overflow-hidden flex flex-col">
+             <div class="flex justify-between items-center mb-2 px-2">
+                <h3 class="text-xs font-bold uppercase text-[#8e9297]">Saved Terms</h3>
+                <button id="clear-terms-btn" class="text-xs text-red-400 hover:text-red-300">Clear All</button>
+             </div>
+             <div id="saved-terms-list" class="space-y-2 overflow-y-auto flex-1 px-2 text-xs">
+                <!-- Saved terms will be dynamically added here -->
+                <p class="text-gray-400 text-center italic">No terms saved yet.</p>
+             </div>
+        </div>
+
+         <!-- Tools Section -->
+         <div class="tools-section border-t border-[#4f545c] pt-4 px-2">
+            <h3 class="text-xs font-bold uppercase text-[#8e9297] mb-2">Tools</h3>
+            <button id="reset-progress-btn" class="w-full px-3 py-1.5 bg-red-600 text-white rounded hover:bg-red-700 transition duration-200 text-xs md:text-sm">
+                Reset Progress
+            </button>
+         </div>
+    </aside>
+
+    <!-- Mobile Panel Overlay -->
+    <div id="panel-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden lg:hidden" aria-hidden="true"></div>
+
+    <script>
+        // --- Global Variables ---
+        let activeSectionId = 'introduction';
+        let completedSections = new Set();
+        let savedTerms = {};
+        const totalSections = 9; // Update if sections change
+        let gaussCurrentScenario = null;
+        let gaussCurrentStepIndex = 0;
+        let gaussScenarioSteps = {}; // Holds step data for the active scenario
+
+        // --- DOM Element References ---
+        const panelToggleBtn = document.getElementById('panel-toggle-btn');
+        const panelCloseBtn = document.getElementById('panel-close-btn');
+        const rightPanel = document.getElementById('right-panel');
+        const panelOverlay = document.getElementById('panel-overlay');
+        const mainContentArea = document.getElementById('content-scroll-area');
+        const sectionTitle = document.querySelector('.current-section-title');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const contentSections = document.querySelectorAll('.content-section');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const resetProgressBtn = document.getElementById('reset-progress-btn');
+        const savedTermsList = document.getElementById('saved-terms-list');
+        const clearTermsBtn = document.getElementById('clear-terms-btn');
+        const sparkButton = document.getElementById('spark-button');
+        const sparkElement = document.getElementById('spark');
+        const obj1 = document.getElementById('obj1');
+        const obj2 = document.getElementById('obj2');
+        const checkAnswerBtns = document.querySelectorAll('.check-answer-btn');
+        const saveTermBtns = document.querySelectorAll('.save-term-btn');
+
+        // Gauss Law Elements
+        const gaussScenarioSelection = document.getElementById('gauss-scenario-selection');
+        const gaussScenarioButtons = document.querySelectorAll('.gauss-scenario-btn');
+        const gaussInteractiveContainer = document.getElementById('gauss-interactive-container');
+        const gaussStepText = document.getElementById('gauss-step-text');
+        const gaussOptions = document.getElementById('gauss-options');
+        const gaussFeedback = document.getElementById('gauss-feedback');
+        const gaussCanvas = document.getElementById('gauss-canvas');
+        const gaussCtx = gaussCanvas?.getContext('2d');
+        const gaussNextBtn = document.getElementById('gauss-next-step-btn');
+        const gaussResetBtn = document.getElementById('gauss-reset-btn');
+
+
+        // --- Utility Functions ---
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => { clearTimeout(timeout); func(...args); };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        function updateProgress() {
+            const percentage = Math.round((completedSections.size / totalSections) * 100);
+            if (progressBar) progressBar.style.width = `${percentage}%`;
+            if (progressText) progressText.textContent = `${percentage}% Complete`;
+            localStorage.setItem('completedSections', JSON.stringify(Array.from(completedSections)));
+        }
+
+        function loadProgress() {
+            const storedSections = localStorage.getItem('completedSections');
+            if (storedSections) {
+                try {
+                    completedSections = new Set(JSON.parse(storedSections));
+                } catch (e) {
+                    console.error("Error parsing completed sections from localStorage:", e);
+                    completedSections = new Set(); // Reset if corrupted
+                }
+            }
+            updateProgress();
+        }
+
+        function loadSavedTerms() {
+             const storedTerms = localStorage.getItem('savedTerms');
+             if (storedTerms) {
+                 try {
+                     savedTerms = JSON.parse(storedTerms);
+                 } catch (e) {
+                     console.error("Error parsing saved terms from localStorage:", e);
+                     savedTerms = {}; // Reset if corrupted
+                 }
+             }
+             renderSavedTerms();
+        }
+
+        function renderSavedTerms() {
+            if (!savedTermsList) return;
+            savedTermsList.innerHTML = ''; // Clear current list
+            const terms = Object.entries(savedTerms);
+            if (terms.length === 0) {
+                savedTermsList.innerHTML = '<p class="text-gray-400 text-center italic text-xs">No terms saved yet. Click <i class="fas fa-bookmark text-[#7289da]"></i> next to a term to save it.</p>';
+                return;
+            }
+            terms.forEach(([term, definition]) => {
+                const item = document.createElement('div');
+                item.classList.add('saved-term-item', 'text-xs');
+                item.innerHTML = `<strong class="block">${term}</strong><span>${definition}</span>`;
+                savedTermsList.appendChild(item);
+            });
+        }
+
+        function saveTerm(term, definition) {
+            if (!term || !definition) return;
+            savedTerms[term] = definition;
+            localStorage.setItem('savedTerms', JSON.stringify(savedTerms));
+            renderSavedTerms();
+             // Optional: Show quick confirmation
+             showTemporaryFeedback(term + ' saved!', 'info');
+        }
+
+         function showTemporaryFeedback(message, type = 'info') {
+            const feedbackArea = document.getElementById('temp-feedback-area'); // You might need to add this element, e.g., fixed at the bottom
+            if (!feedbackArea) { // Fallback to console if element doesn't exist
+                console.log(`Feedback (${type}): ${message}`);
+                return;
+            }
+             feedbackArea.textContent = message;
+             feedbackArea.className = `fixed bottom-4 right-4 p-3 rounded shadow-lg text-sm z-50 feedback ${type}`; // Reuse feedback styles
+             feedbackArea.classList.remove('hidden');
+             setTimeout(() => { feedbackArea.classList.add('hidden'); }, 2500);
+         }
+
+        // --- Right Panel Mobile ---
+        function openPanel() {
+            if (!rightPanel || !panelOverlay) return;
+            gsap.to(rightPanel, { x: 0, duration: 0.3, ease: 'power2.out' });
+            panelOverlay.classList.remove('hidden');
+            gsap.to(panelOverlay, { opacity: 1, duration: 0.3 });
+        }
+        function closePanel() {
+            if (!rightPanel || !panelOverlay) return;
+            gsap.to(rightPanel, { x: '100%', duration: 0.3, ease: 'power2.in' });
+            gsap.to(panelOverlay, { opacity: 0, duration: 0.3, onComplete: () => panelOverlay.classList.add('hidden') });
+        }
+
+        panelToggleBtn?.addEventListener('click', openPanel);
+        panelCloseBtn?.addEventListener('click', closePanel);
+        panelOverlay?.addEventListener('click', closePanel);
+
+        // --- Navigation & Section Display ---
+        const activeLinkClass = 'bg-[#40444b]';
+        const activeLinkTextColor = 'text-white';
+        const inactiveLinkTextColor = 'text-[#dcddde]';
+        const inactiveLinkHoverBg = 'hover:bg-[#3a3c43]';
+        const inactiveLinkHoverText = 'hover:text-white';
+
+        function updateActiveLink(targetId) {
+            navLinks.forEach(link => {
+                link.classList.remove(activeLinkClass, activeLinkTextColor);
+                link.classList.add(inactiveLinkTextColor, inactiveLinkHoverBg, inactiveLinkHoverText);
+                if (link.getAttribute('href') === `#${targetId}`) {
+                    link.classList.add(activeLinkClass, activeLinkTextColor);
+                    link.classList.remove(inactiveLinkHoverBg, inactiveLinkHoverText);
+                }
+            });
+        }
+
+        function showSection(id, options = { updateHistory: true }) {
+            const targetSection = document.getElementById(id);
+            if (!id || !targetSection) {
+                console.warn(`Section with id "${id}" not found.`);
+                id = 'introduction'; // Fallback
+                targetSection = document.getElementById(id);
+                if (!targetSection) return; // Serious error if intro missing
+            }
+
+            if (id === activeSectionId && targetSection && !targetSection.classList.contains('hidden')) {
+                 // Already viewing this section, maybe just scroll to top
+                 if (mainContentArea) mainContentArea.scrollTop = 0;
+                 return;
+             }
+
+            activeSectionId = id;
+
+            contentSections.forEach(section => {
+                if (section.id === id) {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(10px)';
+                    section.classList.remove('hidden');
+                    gsap.to(section, {
+                        opacity: 1, y: 0, duration: 0.4, ease: 'power1.out', onComplete: () => {
+                            // Ensure MathJax typesets AFTER the animation is complete and section is visible
+                            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                                MathJax.typesetPromise([section]).catch(err => console.error("MathJax typesetting error:", err));
+                            }
+                            // Redraw canvas elements if needed
+                            drawCanvasVisuals(section.id);
+                        }
+                    });
+
+                    const h2 = section.querySelector('h2');
+                    let titleText = 'Study Guide';
+                    if (h2 && sectionTitle) {
+                        const match = h2.innerText.match(/(\d+\.\d+([ &.\d]+)?)\s*(.*)/);
+                        titleText = match?.[3] || h2.innerText;
+                        sectionTitle.textContent = titleText.trim();
+                    }
+                    // Update progress
+                    if (!completedSections.has(id)) {
+                        completedSections.add(id);
+                        updateProgress();
+                    }
+                } else {
+                    section.classList.add('hidden');
+                    section.style.opacity = '0';
+                }
+            });
+
+            if (mainContentArea) mainContentArea.scrollTop = 0;
+            updateActiveLink(id);
+
+             // Update URL hash without causing page jump IF supported and desired
+            if (options.updateHistory && window.history && window.history.pushState) {
+                // Only push state if it's different to avoid duplicate entries
+                if (window.location.hash !== `#${id}`) {
+                    window.history.pushState({ section: id }, "", `#${id}`);
+                }
+            } else if (options.updateHistory) {
+                 // Fallback for older browsers or if pushState isn't desired for some reason
+                 // window.location.hash = id; // This causes a jump
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href')?.substring(1);
+                if (targetId) {
+                    showSection(targetId, { updateHistory: true });
+                    if (window.innerWidth < 1024) { closePanel(); }
+                }
+            });
+        });
+
+        // Handle back/forward navigation
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.section) {
+                 showSection(event.state.section, { updateHistory: false }); // Don't push history again
+            } else {
+                 // Maybe go to default section or handle based on hash
+                 const hash = window.location.hash.substring(1);
+                 showSection(hash || 'introduction', { updateHistory: false });
+            }
+         });
+
+
+        // --- Spark Animation ---
+        sparkButton?.addEventListener('click', () => {
+            if (!sparkElement || !obj1 || !obj2 || gsap.isTweening(sparkElement)) return;
+            gsap.set(sparkElement, { opacity: 0, width: 0, x: "-50%"});
+            gsap.set([obj1, obj2], { x: 0 });
+            const tl = gsap.timeline();
+            tl.to(obj1, {x: 10, duration: 0.3, ease: "power1.inOut"})
+              .to(obj2, {x: -10, duration: 0.3, ease: "power1.inOut"}, "<")
+              .to(sparkElement, { opacity: 1, width: "30%", duration: 0.08, ease: "steps(3)", onComplete: () => {
+                  gsap.to(sparkElement, { opacity: 0, duration: 0.1, delay: 0.05 });
+              }})
+              .to([obj1, obj2], { x: 0, duration: 0.3, delay: 0.1 });
+        });
+
+        // --- Canvas Field Line Drawing ---
+        function drawCanvasVisuals(sectionId) {
+            if (sectionId === 'electric-charge') {
+                drawPointChargeField('canvas-positive-charge', true);
+                drawPointChargeField('canvas-negative-charge', false);
+                drawDipoleField('canvas-dipole');
+            }
+            // Add other sections if they get canvas elements
+        }
+
+        function drawArrow(ctx, x1, y1, x2, y2, arrowSize = 5) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+
+            // Arrowhead
+            const angle = Math.atan2(y2 - y1, x2 - x1);
+            ctx.beginPath();
+            ctx.moveTo(x2, y2);
+            ctx.lineTo(x2 - arrowSize * Math.cos(angle - Math.PI / 6), y2 - arrowSize * Math.sin(angle - Math.PI / 6));
+            ctx.lineTo(x2 - arrowSize * Math.cos(angle + Math.PI / 6), y2 - arrowSize * Math.sin(angle + Math.PI / 6));
+            ctx.closePath();
+            ctx.fillStyle = ctx.strokeStyle; // Use stroke color for fill
+            ctx.fill();
+        }
+
+        function drawPointChargeField(canvasId, isPositive) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            const cx = w / 2;
+            const cy = h / 2;
+            const chargeRadius = 8;
+            const numLines = 12;
+            const lineLength = w * 0.4;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw charge
+            ctx.beginPath();
+            ctx.arc(cx, cy, chargeRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = isPositive ? 'rgb(239, 68, 68)' : 'rgb(59, 130, 246)'; // red-500 or blue-500
+            ctx.fill();
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 10px Lato';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(isPositive ? '+' : '-', cx, cy + 1);
+
+
+            // Draw field lines
+            ctx.strokeStyle = '#b9bbbe'; // gray-400
+            ctx.lineWidth = 1;
+            for (let i = 0; i < numLines; i++) {
+                const angle = (i / numLines) * 2 * Math.PI;
+                const startX = cx + chargeRadius * Math.cos(angle);
+                const startY = cy + chargeRadius * Math.sin(angle);
+                const endX = cx + (chargeRadius + lineLength) * Math.cos(angle);
+                const endY = cy + (chargeRadius + lineLength) * Math.sin(angle);
+
+                if (isPositive) {
+                    drawArrow(ctx, startX, startY, endX, endY, 4);
+                } else {
+                    drawArrow(ctx, endX, endY, startX, startY, 4);
+                }
+            }
+        }
+
+        function drawDipoleField(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            const cx = w / 2;
+            const cy = h / 2;
+            const chargeRadius = 6;
+            const separation = w * 0.3;
+            const qPosX = cx + separation / 2;
+            const qNegX = cx - separation / 2;
+            const qPosY = cy;
+            const qNegY = cy;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw charges
+            ctx.beginPath();
+            ctx.arc(qPosX, qPosY, chargeRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgb(239, 68, 68)'; ctx.fill();
+            ctx.fillStyle = 'white'; ctx.font = 'bold 8px Lato'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('+', qPosX, qPosY + 1);
+
+            ctx.beginPath();
+            ctx.arc(qNegX, qNegY, chargeRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgb(59, 130, 246)'; ctx.fill();
+            ctx.fillStyle = 'white'; ctx.font = 'bold 8px Lato'; ctx.fillText('-', qNegX, qNegY + 1);
+
+
+            // Draw field lines (simplified)
+            ctx.strokeStyle = '#b9bbbe';
+            ctx.lineWidth = 1;
+
+            const numLines = 5; // Lines starting on +q
+            for (let i = 0; i < numLines; i++) {
+                const startAngle = -Math.PI / 2 + (Math.PI / (numLines + 1)) * (i + 1); // Spread angles
+                const endAngle = Math.PI - startAngle;
+
+                const startX = qPosX + chargeRadius * Math.cos(startAngle);
+                const startY = qPosY + chargeRadius * Math.sin(startAngle);
+
+                // Estimate control points for bezier curve
+                const midX = cx;
+                const midYTop = cy - h * 0.4 * (1 - Math.abs(Math.cos(startAngle)) * 0.8); // Bend more in middle
+                const midYBottom = cy + h * 0.4 * (1 - Math.abs(Math.cos(startAngle)) * 0.8);
+
+                const endX = qNegX + chargeRadius * Math.cos(endAngle);
+                const endY = qNegY + chargeRadius * Math.sin(endAngle);
+
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                if (startY < cy) { // Upper curves
+                     ctx.bezierCurveTo(startX + separation * 0.2, startY - separation*0.3, endX - separation*0.2 , endY - separation*0.3, endX, endY);
+                } else { // Lower curves
+                     ctx.bezierCurveTo(startX + separation * 0.2, startY + separation*0.3, endX - separation*0.2, endY + separation*0.3, endX, endY);
+                }
+                ctx.stroke();
+
+                 // Add arrow near the negative charge (approx midpoint of curve)
+                 const t = 0.7; // Parameter along Bezier curve (adjust for arrow position)
+                 let bx, by;
+                 if (startY < cy) {
+                    bx = Math.pow(1 - t, 3) * startX + 3 * Math.pow(1 - t, 2) * t * (startX + separation * 0.2) + 3 * (1 - t) * Math.pow(t, 2) * (endX - separation*0.2) + Math.pow(t, 3) * endX;
+                    by = Math.pow(1 - t, 3) * startY + 3 * Math.pow(1 - t, 2) * t * (startY - separation*0.3) + 3 * (1 - t) * Math.pow(t, 2) * (endY - separation*0.3) + Math.pow(t, 3) * endY;
+                 } else {
+                     bx = Math.pow(1 - t, 3) * startX + 3 * Math.pow(1 - t, 2) * t * (startX + separation * 0.2) + 3 * (1 - t) * Math.pow(t, 2) * (endX - separation*0.2) + Math.pow(t, 3) * endX;
+                    by = Math.pow(1 - t, 3) * startY + 3 * Math.pow(1 - t, 2) * t * (startY + separation*0.3) + 3 * (1 - t) * Math.pow(t, 2) * (endY + separation*0.3) + Math.pow(t, 3) * endY;
+                 }
+                 const prev_t = t - 0.05; // Point slightly before
+                 let prev_bx, prev_by;
+                  if (startY < cy) {
+                    prev_bx = Math.pow(1 - prev_t, 3) * startX + 3 * Math.pow(1 - prev_t, 2) * prev_t * (startX + separation * 0.2) + 3 * (1 - prev_t) * Math.pow(prev_t, 2) * (endX - separation*0.2) + Math.pow(prev_t, 3) * endX;
+                    prev_by = Math.pow(1 - prev_t, 3) * startY + 3 * Math.pow(1 - prev_t, 2) * prev_t * (startY - separation*0.3) + 3 * (1 - prev_t) * Math.pow(prev_t, 2) * (endY - separation*0.3) + Math.pow(prev_t, 3) * endY;
+                 } else {
+                     prev_bx = Math.pow(1 - prev_t, 3) * startX + 3 * Math.pow(1 - prev_t, 2) * prev_t * (startX + separation * 0.2) + 3 * (1 - prev_t) * Math.pow(prev_t, 2) * (endX - separation*0.2) + Math.pow(prev_t, 3) * endX;
+                    prev_by = Math.pow(1 - prev_t, 3) * startY + 3 * Math.pow(1 - prev_t, 2) * prev_t * (startY + separation*0.3) + 3 * (1 - prev_t) * Math.pow(prev_t, 2) * (endY + separation*0.3) + Math.pow(prev_t, 3) * endY;
+                 }
+                 drawArrow(ctx, prev_bx, prev_by, bx, by, 3);
+
+            }
+            // Line directly between charges
+            drawArrow(ctx, qPosX - chargeRadius, cy, qNegX + chargeRadius, cy, 3);
+        }
+
+
+        // --- Practice Questions Logic ---
+        checkAnswerBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                const questionBlock = button.closest('.question-block');
+                if (!questionBlock || button.disabled) return;
+
+                const questionId = questionBlock.dataset.questionId;
+                const correctAnswer = questionBlock.dataset.correctAnswer;
+                const feedbackDiv = questionBlock.querySelector('.feedback');
+                const optionsContainer = questionBlock.querySelector('.options-container');
+                let userAnswer = null;
+                let isCorrect = false;
+
+                // Find selected radio button or input value
+                const radioInput = optionsContainer.querySelector('input[type=radio]:checked');
+                const numberInput = optionsContainer.querySelector('input[type=number]');
+
+                if (radioInput) {
+                    userAnswer = radioInput.value;
+                    isCorrect = (userAnswer === correctAnswer);
+                } else if (numberInput) {
+                    userAnswer = parseFloat(numberInput.value).toFixed(2); // Force 2 decimal places for comparison
+                    const correctNum = parseFloat(correctAnswer).toFixed(2);
+                     // Allow small tolerance for floating point issues if needed, but precise string compare is better here
+                    isCorrect = (userAnswer === correctNum);
+                }
+
+                feedbackDiv.classList.remove('hidden', 'correct', 'incorrect', 'info'); // Clear previous styles
+                if (isCorrect) {
+                    feedbackDiv.classList.add('correct');
+                    feedbackDiv.innerHTML = '<i class="fas fa-check-circle mr-1"></i>Correct!';
+                } else {
+                    feedbackDiv.classList.add('incorrect');
+                    let explanation = 'Incorrect.';
+                    if (numberInput) {
+                         explanation += ` The correct answer is ${correctAnswer}.`;
+                    }
+                    feedbackDiv.innerHTML = `<i class="fas fa-times-circle mr-1"></i>${explanation}`;
+                }
+
+                 // Disable options after answering
+                 optionsContainer.querySelectorAll('input').forEach(input => input.disabled = true);
+                 button.disabled = true;
+                 button.classList.add('opacity-50', 'cursor-not-allowed');
+
+                  // Maybe add to progress if a certain number correct? (More complex logic)
+            });
+        });
+
+        // --- Save Term Logic ---
+        saveTermBtns.forEach(button => {
+             button.addEventListener('click', () => {
+                const term = button.dataset.term;
+                const definition = button.dataset.definition;
+                saveTerm(term, definition);
+             });
+         });
+
+        clearTermsBtn?.addEventListener('click', () => {
+            if (confirm('Are you sure you want to clear all saved terms?')) {
+                savedTerms = {};
+                localStorage.removeItem('savedTerms');
+                renderSavedTerms();
+            }
+        });
+
+        // --- Reset Progress Logic ---
+        resetProgressBtn?.addEventListener('click', () => {
+            if (confirm('Are you sure you want to reset your progress?')) {
+                completedSections.clear();
+                updateProgress(); // This also updates localStorage
+                // Optionally: reload or reset question states
+                 // Reload the page to reset question states simply
+                 window.location.reload();
+            }
+        });
+
+
+        // --- Gauss's Law Interactive Logic ---
+
+        // Define steps and drawing functions
+        const gaussDrawFunctions = {
+            clear: (ctx, w, h) => { ctx.clearRect(0, 0, w, h); },
+            lineCharge: (ctx, w, h, showSurface = false, radius = 50, length = 100, showVectors=false) => {
+                const cx = w / 2; const cy = h / 2;
+                ctx.clearRect(0, 0, w, h);
+                 // Draw Line Charge (simplistic representation)
+                 ctx.fillStyle = '#7289da'; // Purple-ish
+                 ctx.fillRect(cx - length/2, cy - 1, length, 3);
+                 ctx.fillStyle = '#dcddde'; ctx.font = '10px Lato'; ctx.textAlign = 'center'; ctx.fillText('\\(\\lambda\\)', cx, cy - 10);
+
+                 if (showSurface) {
+                     // Draw Gaussian Cylinder (perspective attempt)
+                     ctx.strokeStyle = '#f1c40f'; // Yellow
+                     ctx.lineWidth = 1;
+                     // Curved surface sides
+                     ctx.beginPath(); ctx.moveTo(cx - length/2, cy - radius); ctx.lineTo(cx + length/2, cy - radius); ctx.stroke();
+                     ctx.beginPath(); ctx.moveTo(cx - length/2, cy + radius); ctx.lineTo(cx + length/2, cy + radius); ctx.stroke();
+                     // End caps (ellipses)
+                     ctx.beginPath(); ctx.ellipse(cx - length/2, cy, 5, radius, Math.PI/2, 0, 2 * Math.PI); ctx.stroke();
+                     ctx.beginPath(); ctx.ellipse(cx + length/2, cy, 5, radius, Math.PI/2, 0, 2 * Math.PI); ctx.stroke();
+                     ctx.setLineDash([2, 2]); // Dashed line for back parts
+                     ctx.beginPath(); ctx.arc(cx - length/2, cy, radius, Math.PI/2, 3*Math.PI/2, true); ctx.stroke(); // Back half of left cap
+                     ctx.beginPath(); ctx.arc(cx + length/2, cy, radius, Math.PI/2, 3*Math.PI/2, true); ctx.stroke(); // Back half of right cap
+                     ctx.setLineDash([]); // Reset line dash
+
+                     if(showVectors){
+                         // Example E vector (radial) and dS on curved surface
+                         const vecY = cy - radius;
+                         const vecX = cx + length/4;
+                         ctx.strokeStyle = 'red'; // E field
+                         drawArrow(ctx, vecX, cy, vecX, vecY - 15, 5); // E outward
+                         ctx.fillText('E', vecX + 5, vecY - 15);
+                         ctx.strokeStyle = 'lime'; // dS vector
+                         drawArrow(ctx, vecX, vecY, vecX, vecY - 15, 5); // dS outward normal
+                         ctx.fillText('dS', vecX - 15, vecY - 15);
+                         ctx.fillText('\\(\\theta=0°\\)', vecX, vecY + 10);
+
+                         // Example dS on end cap
+                         const capX = cx + length/2;
+                         const capY = cy - radius/2;
+                         ctx.strokeStyle = 'lime';
+                         drawArrow(ctx, capX, capY, capX + 15, capY, 5); // dS outward normal
+                          ctx.fillText('dS', capX + 20, capY + 5);
+                         ctx.strokeStyle = 'red';
+                          drawArrow(ctx, capX-5, capY, capX-5, capY-15, 5); // E radial (up)
+                         ctx.fillText('E', capX - 10, capY-15);
+                         ctx.fillText('\\(\\theta=90°\\)', capX-5, capY + 10);
+
+
+                     }
+                 }
+            },
+            planeCharge: (ctx, w, h, showSurface = false, surfWidth=120, surfHeight=80, showVectors=false) => {
+                const cx = w / 2; const cy = h / 2;
+                ctx.clearRect(0, 0, w, h);
+                 // Draw Plane Sheet (perspective edge)
+                 ctx.fillStyle = '#7289da';
+                 ctx.beginPath();
+                 ctx.moveTo(cx - surfWidth/2, cy - 5);
+                 ctx.lineTo(cx + surfWidth/2, cy - 5);
+                 ctx.lineTo(cx + surfWidth/2, cy + 5);
+                 ctx.lineTo(cx - surfWidth/2, cy + 5);
+                 ctx.closePath();
+                 ctx.fill();
+                  ctx.fillStyle = '#dcddde'; ctx.font = '10px Lato'; ctx.textAlign = 'center'; ctx.fillText('\\(\\sigma\\)', cx + surfWidth/2 + 10, cy);
+
+                 if (showSurface) {
+                     // Draw Gaussian Pillbox
+                     const pWidth = 30; const pHeight = 60;
+                     ctx.strokeStyle = '#f1c40f'; // Yellow
+                     ctx.lineWidth = 1;
+                     // Front Cap
+                     ctx.beginPath(); ctx.ellipse(cx, cy - pHeight/2, pWidth/2, 5, 0, 0, 2*Math.PI); ctx.stroke();
+                     // Back Cap
+                     ctx.beginPath(); ctx.ellipse(cx, cy + pHeight/2, pWidth/2, 5, 0, 0, 2*Math.PI); ctx.stroke();
+                     // Sides
+                     ctx.beginPath(); ctx.moveTo(cx - pWidth/2, cy - pHeight/2); ctx.lineTo(cx - pWidth/2, cy + pHeight/2); ctx.stroke();
+                     ctx.beginPath(); ctx.moveTo(cx + pWidth/2, cy - pHeight/2); ctx.lineTo(cx + pWidth/2, cy + pHeight/2); ctx.stroke();
+
+                     if (showVectors) {
+                         // E and dS on Top Cap
+                         const topCapY = cy - pHeight/2;
+                         ctx.strokeStyle = 'red'; // E field
+                         drawArrow(ctx, cx, topCapY, cx, topCapY - 20, 5); // E outward
+                         ctx.fillText('E', cx + 5, topCapY - 15);
+                         ctx.strokeStyle = 'lime'; // dS vector
+                         drawArrow(ctx, cx, topCapY, cx, topCapY - 20, 5); // dS outward normal
+                         ctx.fillText('dS', cx - 15, topCapY - 15);
+                         ctx.fillText('\\(\\theta=0°\\)', cx, topCapY + 10);
+
+                         // E and dS on Curved Side
+                         const sideX = cx + pWidth / 2;
+                         const sideY = cy - pHeight/4;
+                          ctx.strokeStyle = 'red';
+                          drawArrow(ctx, sideX, sideY, sideX, sideY-20, 5); // E outward (up)
+                         ctx.fillText('E', sideX + 5, sideY - 15);
+                         ctx.strokeStyle = 'lime';
+                         drawArrow(ctx, sideX, sideY, sideX + 20, sideY, 5); // dS outward normal (right)
+                         ctx.fillText('dS', sideX + 10, sideY + 10);
+                         ctx.fillText('\\(\\theta=90°\\)', sideX-15, sideY+10);
+                     }
+                 }
+            },
+             shellCharge: (ctx, w, h, showSurface = 'outside', R=50, r_gauss=70, showVectors=false) => {
+                 const cx = w / 2; const cy = h / 2;
+                 ctx.clearRect(0, 0, w, h);
+                 // Draw Spherical Shell
+                 ctx.strokeStyle = '#7289da';
+                 ctx.lineWidth = 2;
+                 ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2 * Math.PI); ctx.stroke();
+                 ctx.fillStyle = '#dcddde'; ctx.font = '10px Lato'; ctx.textAlign = 'center'; ctx.fillText('Q', cx + R + 5, cy);
+
+                 if (showSurface !== 'none') {
+                     // Draw Gaussian Sphere
+                     ctx.strokeStyle = '#f1c40f'; // Yellow
+                     ctx.lineWidth = 1;
+                     ctx.setLineDash([3, 3]);
+                     ctx.beginPath(); ctx.arc(cx, cy, r_gauss, 0, 2 * Math.PI); ctx.stroke();
+                     ctx.setLineDash([]);
+                      ctx.fillStyle = '#f1c40f'; ctx.fillText('r', cx + r_gauss + 5, cy);
+
+                     if (showVectors) {
+                         // Example E and dS
+                         const angle = -Math.PI / 4;
+                         const pX = cx + r_gauss * Math.cos(angle);
+                         const pY = cy + r_gauss * Math.sin(angle);
+                         const vecLen = 20;
+
+                         if (showSurface === 'outside') {
+                             ctx.strokeStyle = 'red'; // E field
+                             drawArrow(ctx, pX, pY, pX + vecLen * Math.cos(angle), pY + vecLen * Math.sin(angle), 5);
+                             ctx.fillText('E', pX + (vecLen+5) * Math.cos(angle), pY + (vecLen+5) * Math.sin(angle));
+                             ctx.strokeStyle = 'lime'; // dS vector
+                             drawArrow(ctx, pX, pY, pX + vecLen * Math.cos(angle), pY + vecLen * Math.sin(angle), 5);
+                             ctx.fillText('dS', pX + (vecLen+5) * Math.cos(angle) + 10, pY + (vecLen+5) * Math.sin(angle));
+                             ctx.fillStyle = '#dcddde'; ctx.fillText('\\(\\theta=0°\\)', pX - 10, pY + 15);
+                         } else if (showSurface === 'inside') {
+                             // E = 0 inside, maybe just show dS?
+                             ctx.strokeStyle = 'lime'; // dS vector
+                             drawArrow(ctx, pX, pY, pX + vecLen * Math.cos(angle), pY + vecLen * Math.sin(angle), 5);
+                              ctx.fillText('dS', pX + (vecLen+5) * Math.cos(angle), pY + (vecLen+5) * Math.sin(angle));
+                             ctx.fillStyle = '#dcddde'; ctx.fillText('E = 0 inside', cx, cy - r_gauss - 10);
+                         }
+                     }
+                 }
+             }
+        };
+
+        const gaussDerivations = {
+            line: [
+                { type: 'info', text: 'Goal: Find E-field at distance \\(r\\) from an infinite line charge with linear density \\(\\lambda\\).', draw: 'lineCharge', requiresNext: true },
+                { type: 'question', text: 'Step 1: Choose Gaussian Surface. What shape best matches the symmetry?', options: ['Sphere', 'Cylinder', 'Box'], correct: 'Cylinder', draw: 'lineCharge', nextDraw: { func: 'lineCharge', args: [true] }, feedback: 'Correct! A cylinder coaxial with the line has matching symmetry.' },
+                { type: 'info', text: 'Step 2: Apply Gauss\'s Law: \\(\\oint \\vec{E} \\cdot d\\vec{S} = q_{\\text{enclosed}} / \\varepsilon_0\\). The integral is over the entire closed cylinder surface (caps + curved side).', draw: { func: 'lineCharge', args: [true] }, requiresNext: true },
+                { type: 'question', text: 'Step 3: Flux through End Caps. What is the angle between \\(\\vec{E}\\) (radial) and \\(d\\vec{S}\\) (axial) on the flat end caps?', options: ['0°', '90°', '180°'], correct: '90°', draw: { func: 'lineCharge', args: [true, 50, 100, true] }, feedback: 'Correct! \\(\\vec{E}\\) is perpendicular to \\(d\\vec{S}\\) on the caps, so \\(\\vec{E} \\cdot d\\vec{S} = E dS \\cos(90°) = 0\\). Flux through caps = 0.' },
+                { type: 'question', text: 'Step 4: Flux through Curved Surface. What is the angle between \\(\\vec{E}\\) (radial) and \\(d\\vec{S}\\) (radial) on the curved surface?', options: ['0°', '90°', '180°'], correct: '0°', draw: { func: 'lineCharge', args: [true, 50, 100, true] }, feedback: 'Correct! \\(\\vec{E}\\) is parallel to \\(d\\vec{S}\\) on the curved surface, so \\(\\vec{E} \\cdot d\\vec{S} = E dS \\cos(0°) = E dS\\).' },
+                 { type: 'info', text: 'Step 5: Simplify Flux Integral. By symmetry, \\(E\\) is constant at distance \\(r\\). So, \\(\\oint_{\\text{curved}} E dS = E \\int_{\\text{curved}} dS = E \\times (\\text{Area}_{\\text{curved}})\\). What is the area of the curved surface of length L?', requiresNext: true, draw: { func: 'lineCharge', args: [true, 50, 100, false] } },
+                 { type: 'question', text: 'Area of curved surface = ?', options: ['\\(\\pi r^2 L\\)', '\\(2\\pi r L\\)', '\\(2\\pi r^2\\)'], correct: '\\(2\\pi r L\\)', feedback: 'Correct! Area = circumference × length.', draw: { func: 'lineCharge', args: [true, 50, 100, false] } },
+                 { type: 'info', text: 'Step 6: Total Flux. \\(\\Phi_E = \\Phi_{\\text{caps}} + \\Phi_{\\text{curved}} = 0 + E(2\\pi r L) = E(2\\pi r L)\\).', requiresNext: true, draw: { func: 'lineCharge', args: [true, 50, 100, false] } },
+                 { type: 'question', text: 'Step 7: Charge Enclosed. What is \\(q_{\\text{enclosed}}\\) inside the cylinder of length L?', options: ['\\(\\lambda / L\\)', '\\(\\lambda L\\)', '\\(\\lambda / (2\\pi r)\\)'], correct: '\\(\\lambda L\\)', feedback: 'Correct! Charge = density × length.', draw: { func: 'lineCharge', args: [true, 50, 100, false] } },
+                 { type: 'info', text: 'Step 8: Equate and Solve. Gauss\'s Law: \\( E(2\\pi r L) = \\frac{\\lambda L}{\\varepsilon_0} \\).', requiresNext: true, draw: { func: 'lineCharge', args: [true, 50, 100, false] } },
+                { type: 'final', text: 'Final Result: Solving for E gives \\( E = \\frac{\\lambda L}{2\\pi r L \\varepsilon_0} \\Rightarrow \\boxed{E = \\frac{\\lambda}{2\\pi \\varepsilon_0 r}} \\). Field decreases as \\(1/r\\).', draw: 'lineCharge' }
+            ],
+             plane: [
+                 { type: 'info', text: 'Goal: Find E-field near an infinite plane sheet with surface charge density \\(\\sigma\\).', draw: 'planeCharge', requiresNext: true },
+                 { type: 'question', text: 'Step 1: Choose Gaussian Surface. What shape best matches the symmetry?', options: ['Sphere', 'Cylinder/Pillbox', 'Large Box'], correct: 'Cylinder/Pillbox', draw: 'planeCharge', nextDraw: { func: 'planeCharge', args: [true] }, feedback: 'Correct! A pillbox piercing the sheet works well.' },
+                 { type: 'info', text: 'Step 2: Apply Gauss\'s Law: \\(\\oint \\vec{E} \\cdot d\\vec{S} = q_{\\text{enclosed}} / \\varepsilon_0\\). Integral over pillbox (2 caps + curved side). By symmetry, \\(\\vec{E}\\) is perpendicular to the sheet.', draw: { func: 'planeCharge', args: [true] }, requiresNext: true },
+                 { type: 'question', text: 'Step 3: Flux through Curved Side. What is the angle between \\(\\vec{E}\\) (perpendicular to sheet) and \\(d\\vec{S}\\) (parallel to sheet) on the curved side?', options: ['0°', '90°', '180°'], correct: '90°', draw: { func: 'planeCharge', args: [true, 120, 80, true] }, feedback: 'Correct! \\(\\vec{E} \\cdot d\\vec{S} = E dS \\cos(90°) = 0\\). Flux through curved side = 0.' },
+                 { type: 'question', text: 'Step 4: Flux through End Caps. What is the angle between \\(\\vec{E}\\) and \\(d\\vec{S}\\) (both perpendicular to sheet) on the flat end caps?', options: ['0°', '90°', '180°'], correct: '0°', draw: { func: 'planeCharge', args: [true, 120, 80, true] }, feedback: 'Correct! \\(\\vec{E}\\) is parallel to \\(d\\vec{S}\\) on caps, \\(\\vec{E} \\cdot d\\vec{S} = E dS \\cos(0°) = E dS\\).' },
+                 { type: 'info', text: 'Step 5: Simplify Flux Integral. \\(E\\) is constant over each cap (area A). Flux through *each* cap = \\(EA\\). Total flux from *both* caps = \\(EA + EA = 2EA\\).', requiresNext: true, draw: { func: 'planeCharge', args: [true, 120, 80, false] } },
+                 { type: 'info', text: 'Step 6: Total Flux. \\(\\Phi_E = \\Phi_{\\text{caps}} + \\Phi_{\\text{curved}} = 2EA + 0 = 2EA\\).', requiresNext: true, draw: { func: 'planeCharge', args: [true, 120, 80, false] } },
+                 { type: 'question', text: 'Step 7: Charge Enclosed. What is \\(q_{\\text{enclosed}}\\) within the pillbox if it encloses area A of the sheet?', options: ['\\(\\sigma / A\\)', '\\(\\sigma A\\)', '\\(\\sigma (2A)\\)'], correct: '\\(\\sigma A\\)', feedback: 'Correct! Charge = density × area.', draw: { func: 'planeCharge', args: [true, 120, 80, false] } },
+                 { type: 'info', text: 'Step 8: Equate and Solve. Gauss\'s Law: \\( 2EA = \\frac{\\sigma A}{\\varepsilon_0} \\).', requiresNext: true, draw: { func: 'planeCharge', args: [true, 120, 80, false] } },
+                 { type: 'final', text: 'Final Result: Solving for E gives \\( E = \\frac{\\sigma A}{2 A \\varepsilon_0} \\Rightarrow \\boxed{E = \\frac{\\sigma}{2 \\varepsilon_0}} \\). Field is constant, independent of distance!', draw: 'planeCharge' }
+             ],
+             shell: [
+                  { type: 'info', text: 'Goal: Find E-field due to a spherical shell (radius R, charge Q). Case 1: Outside (\\(r > R\\)).', draw: { func: 'shellCharge', args: ['none'] }, requiresNext: true },
+                  { type: 'question', text: 'Step 1 (Outside): Choose Gaussian Surface for \\(r > R\\). What shape?', options: ['Sphere', 'Cylinder', 'Box'], correct: 'Sphere', draw: { func: 'shellCharge', args: ['none'] }, nextDraw: { func: 'shellCharge', args: ['outside', 50, 70] }, feedback: 'Correct! A concentric sphere of radius \\(r > R\\) matches the symmetry.' },
+                  { type: 'info', text: 'Step 2 (Outside): Apply Gauss\'s Law: \\(\\oint \\vec{E} \\cdot d\\vec{S} = q_{\\text{enclosed}} / \\varepsilon_0\\). By symmetry, \\(\\vec{E}\\) is radial and constant magnitude E on the Gaussian surface.', draw: { func: 'shellCharge', args: ['outside', 50, 70] }, requiresNext: true },
+                  { type: 'question', text: 'Step 3 (Outside): Flux Integral. Angle between radial \\(\\vec{E}\\) and radial \\(d\\vec{S}\\)?', options: ['0°', '90°', '180°'], correct: '0°', draw: { func: 'shellCharge', args: ['outside', 50, 70, true] }, feedback: 'Correct! \\(\\vec{E} \\cdot d\\vec{S} = E dS\\). Flux \\(\\Phi_E = \\oint E dS = E \\oint dS = E \\times (\\text{Area})\\).' },
+                  { type: 'question', text: 'Step 4 (Outside): Area of Gaussian sphere (radius r)?', options: ['\\(4\\pi R^2\\)', '\\(4\\pi r^2\\)', '\\(\\pi r^2\\)'], correct: '\\(4\\pi r^2\\)', feedback: 'Correct! Area = \\(4\\pi r^2\\). So \\(\\Phi_E = E(4\\pi r^2)\\).', draw: { func: 'shellCharge', args: ['outside', 50, 70, false] } },
+                  { type: 'question', text: 'Step 5 (Outside): Charge Enclosed. What is \\(q_{\\text{enclosed}}\\) for Gaussian surface with \\(r > R\\)?', options: ['0', '\\(Q\\)', '\\(Q(R/r)^2\\)'], correct: '\\(Q\\)', feedback: 'Correct! The entire shell charge Q is inside.', draw: { func: 'shellCharge', args: ['outside', 50, 70, false] } },
+                  { type: 'info', text: 'Step 6 (Outside): Equate and Solve. \\( E(4\\pi r^2) = \\frac{Q}{\\varepsilon_0} \\).', requiresNext: true, draw: { func: 'shellCharge', args: ['outside', 50, 70, false] } },
+                  { type: 'info', text: 'Result (Outside): \\( \\boxed{E = \\frac{Q}{4\\pi \\varepsilon_0 r^2}} \\) for \\(r > R\\). Same as point charge Q at center!', draw: { func: 'shellCharge', args: ['outside', 50, 70] }, requiresNext: true },
+
+                  { type: 'info', text: 'Case 2: Inside (\\(r < R\\)). Choose Gaussian sphere radius \\(r < R\\).', draw: { func: 'shellCharge', args: ['inside', 50, 30] }, requiresNext: true },
+                  { type: 'question', text: 'Step 7 (Inside): Charge Enclosed. What is \\(q_{\\text{enclosed}}\\) for Gaussian surface with \\(r < R\\)?', options: ['0', '\\(Q\\)', '\\(Q(r/R)^2\\)'], correct: '0', feedback: 'Correct! No charge is inside the shell.', draw: { func: 'shellCharge', args: ['inside', 50, 30] } },
+                   { type: 'info', text: 'Step 8 (Inside): Apply Gauss\'s Law. \\(\\oint \\vec{E} \\cdot d\\vec{S} = E(4\\pi r^2) = \\frac{q_{\\text{enclosed}}}{\\varepsilon_0} = \\frac{0}{\\varepsilon_0} = 0\\).', requiresNext: true, draw: { func: 'shellCharge', args: ['inside', 50, 30, true] } },
+                  { type: 'final', text: 'Final Result (Inside): Since \\(E(4\\pi r^2) = 0\\) and \\(r \neq 0\\), we must have \\( \\boxed{E = 0} \\) for \\(r < R\\).', draw: { func: 'shellCharge', args: ['inside', 50, 30] } }
+             ]
+         };
+
+        function startGaussDerivation(scenario) {
+             if (!gaussDerivations[scenario]) return;
+             gaussCurrentScenario = scenario;
+             gaussCurrentStepIndex = 0;
+             gaussScenarioSteps = gaussDerivations[scenario];
+
+             gaussScenarioSelection.classList.add('hidden');
+             gaussInteractiveContainer.classList.remove('hidden');
+             gaussResetBtn.classList.remove('hidden');
+             gaussNextBtn.classList.add('hidden'); // Hide initially
+
+             displayGaussStep();
+         }
+
+        function displayGaussStep() {
+            if (!gaussCurrentScenario || gaussCurrentStepIndex >= gaussScenarioSteps.length) {
+                resetGaussInteractive(); // Or show completion message
+                return;
+            }
+
+            const step = gaussScenarioSteps[gaussCurrentStepIndex];
+            gaussStepText.innerHTML = step.text; // Use innerHTML for MathJax
+            gaussOptions.innerHTML = ''; // Clear previous options
+            gaussFeedback.classList.add('hidden');
+            gaussFeedback.textContent = '';
+            gaussNextBtn.classList.add('hidden');
+
+             // Draw canvas
+             if (gaussCtx) {
+                 const w = gaussCanvas.width;
+                 const h = gaussCanvas.height;
+                 if (step.draw) {
+                     if (typeof step.draw === 'string' && gaussDrawFunctions[step.draw]) {
+                         gaussDrawFunctions[step.draw](gaussCtx, w, h);
+                     } else if (typeof step.draw === 'object' && gaussDrawFunctions[step.draw.func]) {
+                         gaussDrawFunctions[step.draw.func](gaussCtx, w, h, ...(step.draw.args || []));
+                     }
+                 } else {
+                      // Keep previous drawing or clear? Let's keep it for now.
+                      // gaussDrawFunctions.clear(gaussCtx, w, h);
+                 }
+             }
+
+
+            if (step.type === 'question') {
+                step.options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.classList.add('choice-button', 'px-3', 'py-1', 'border', 'border-[#4f545c]', 'rounded', 'hover:bg-[#3a3c43]', 'transition', 'duration-150', 'text-xs', 'md:text-sm');
+                    button.innerHTML = option; // Use innerHTML for MathJax
+                    button.onclick = () => handleGaussAnswer(button, option, step.correct, step.feedback, step.nextDraw);
+                    gaussOptions.appendChild(button);
+                });
+            } else if (step.type === 'info' && step.requiresNext) {
+                // Show 'Next' button for info steps that need explicit progression
+                 gaussNextBtn.classList.remove('hidden');
+            } else if (step.type === 'info' || step.type === 'final') {
+                 // Auto-advance simple info/final steps after delay (optional)
+                 // Or require 'Next' button click for all non-questions
+                 gaussNextBtn.classList.remove('hidden'); // Let's require 'Next' click for now
+            }
+
+             // Typeset MathJax for the new text and options
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                 MathJax.typesetPromise([gaussStepText, gaussOptions]).catch(err => console.error("MathJax typesetting error in Gauss step:", err));
+            }
+        }
+
+        function handleGaussAnswer(button, selectedAnswer, correctAnswer, feedbackText, nextDrawData) {
+            const optionButtons = gaussOptions.querySelectorAll('.choice-button');
+            optionButtons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.remove('hover:bg-[#3a3c43]');
+            });
+
+             // More robust check needed if answers contain complex MathJax
+            const isCorrect = (selectedAnswer === correctAnswer);
+
+            gaussFeedback.innerHTML = feedbackText; // innerHTML for MathJax
+            gaussFeedback.classList.remove('hidden', 'correct', 'incorrect', 'info');
+
+            if (isCorrect) {
+                button.classList.add('correct');
+                gaussFeedback.classList.add('feedback', 'correct');
+                gaussNextBtn.classList.remove('hidden'); // Show next button on correct answer
+                gaussNextBtn.focus(); // Focus for keyboard nav
+
+                 // Optionally update canvas based on correct answer
+                 if (nextDrawData && gaussCtx) {
+                     const w = gaussCanvas.width;
+                     const h = gaussCanvas.height;
+                      if (typeof nextDrawData === 'string' && gaussDrawFunctions[nextDrawData]) {
+                         gaussDrawFunctions[nextDrawData](gaussCtx, w, h);
+                     } else if (typeof nextDrawData === 'object' && gaussDrawFunctions[nextDrawData.func]) {
+                         gaussDrawFunctions[nextDrawData.func](gaussCtx, w, h, ...(nextDrawData.args || []));
+                     }
+                 }
+
+            } else {
+                button.classList.add('incorrect');
+                gaussFeedback.classList.add('feedback', 'incorrect');
+                // Highlight correct answer
+                optionButtons.forEach(btn => {
+                    if (btn.innerHTML === correctAnswer) { // Simple comparison, may need improvement
+                        btn.classList.add('correct');
+                    }
+                });
+                 gaussNextBtn.classList.add('hidden'); // Hide next button on incorrect
+            }
+             if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise([gaussFeedback]).catch(err => console.error("MathJax typesetting error in Gauss feedback:", err));
+             }
+        }
+
+        gaussNextBtn?.addEventListener('click', () => {
+            gaussCurrentStepIndex++;
+            displayGaussStep();
+        });
+
+        gaussResetBtn?.addEventListener('click', resetGaussInteractive);
+
+        function resetGaussInteractive() {
+             gaussCurrentScenario = null;
+             gaussCurrentStepIndex = 0;
+             gaussScenarioSteps = {};
+             gaussInteractiveContainer.classList.add('hidden');
+             gaussScenarioSelection.classList.remove('hidden');
+             gaussResetBtn.classList.add('hidden');
+             gaussStepText.innerHTML = 'Select a scenario above.';
+             gaussOptions.innerHTML = '';
+             gaussFeedback.classList.add('hidden');
+              if(gaussCtx) gaussDrawFunctions.clear(gaussCtx, gaussCanvas.width, gaussCanvas.height);
+         }
+
+
+        // Add listeners for Gauss Scenario buttons
+        gaussScenarioButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const scenario = button.getAttribute('data-scenario');
+                startGaussDerivation(scenario);
+            });
+        });
+
+
+        // --- Initial Setup & Resize ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            loadSavedTerms();
+
+             const initialHash = window.location.hash.substring(1);
+             const sectionToLoad = document.getElementById(initialHash) ? initialHash : 'introduction';
+             showSection(sectionToLoad, { updateHistory: false }); // Load initial section without adding to history
+
+             // Set initial panel state based on screen size
+             if (window.innerWidth < 1024) {
+                 gsap.set(rightPanel, { x: '100%' });
+                 panelOverlay?.classList.add('hidden');
+                 gsap.set(panelOverlay, { opacity: 0 });
+             } else {
+                 gsap.set(rightPanel, { x: 0 });
+                 panelOverlay?.classList.add('hidden');
+                 gsap.set(panelOverlay, { opacity: 0 });
+             }
+
+             // Initial canvas drawings for the visible section
+             drawCanvasVisuals(activeSectionId);
+
+             // Add temporary feedback area if you want to use showTemporaryFeedback
+             const tempFeedbackDiv = document.createElement('div');
+             tempFeedbackDiv.id = 'temp-feedback-area';
+             tempFeedbackDiv.classList.add('hidden'); // Start hidden
+             document.body.appendChild(tempFeedbackDiv);
+         });
+
+        // Debounced resize handler
+        const handleResize = debounce(() => {
+            // Adjust panel visibility
+            if (window.innerWidth >= 1024) {
+                gsap.set(rightPanel, { x: 0 }); // Ensure visible
+                panelOverlay?.classList.add('hidden');
+                gsap.set(panelOverlay, { opacity: 0 });
+            } else {
+                // Only hide if it wasn't manually opened (check overlay state)
+                if (panelOverlay?.classList.contains('hidden')) {
+                    gsap.set(rightPanel, { x: '100%' });
+                }
+            }
+        }, 250);
+
+        window.addEventListener('resize', handleResize);
+
+    </script>
+
+</body>
+</html>

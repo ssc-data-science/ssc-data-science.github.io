@@ -1,0 +1,20 @@
+You are given a full chapter from a physics textbook and must create a single, mobile-responsive HTML file that serves as an interactive study guide.
+
+Use modern and advanced JavaScript and CSS libraries (e.g. GSAP, Three.js, Tailwind, Anime.js, Chart.js, etc.) to create a visually appealing, dynamic interface.
+
+Match the entire color scheme and design language of the provided UI screenshot, including typography and layout.
+
+Use a clear, intuitive, and student-friendly writing style, similar to the most engaging and well-loved physics textbooks.
+
+Break the chapter into interactive sections. For each topic:
+
+Explain with diagrams, animations, and simulations where relevant.
+
+Include a mini-game or creative activity that helps reinforce the key concept in a fun way (drag-drop, matching, simulation, etc.).
+
+At the end, add a final interactive test (MCQs, sorting, matching, true/false) to assess user understanding and provide feedback.
+
+Ensure the experience is mobile-first, loads fast, and works offline if possible.
+
+Think of it like a self-learning physics app in one HTML file—engaging, visual, responsive, and deeply educational.
+
