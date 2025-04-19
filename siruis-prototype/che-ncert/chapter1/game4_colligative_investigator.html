@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colligative Investigator - Data Entry Mode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Valorant Theme Colors */
+            --valorant-red: #FA4454;
+            --valorant-dark: #0F1923;
+            --valorant-grey: #36424D;
+            --valorant-light-grey: #74808A;
+            --valorant-white: #ECE8E1;
+            --valorant-blue: #5389E5;
+            --valorant-teal: #37E4AE;
+            --valorant-gold: #FFD700;
+
+            /* Game Specific */
+            --background-color: var(--valorant-dark);
+            --text-color: var(--valorant-white);
+            --primary-accent: var(--valorant-blue);
+            --secondary-accent: var(--valorant-teal);
+            --container-bg: #1a242d;
+            --input-bg: var(--valorant-grey);
+            --input-border: var(--valorant-light-grey);
+            --input-focus-border: var(--primary-accent);
+            --input-error-border: var(--valorant-red);
+            --input-disabled-bg: #2a343c;
+            --button-bg: var(--primary-accent);
+            --button-hover-bg: #6fa0f0;
+            --success-color: var(--valorant-gold);
+            --error-color: var(--valorant-red);
+            --info-color: var(--secondary-accent);
+            --font-family: 'Poppins', sans-serif;
+            --disabled-opacity: 0.6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 15px;
+            background: linear-gradient(rgba(15, 25, 35, 0.95), rgba(15, 25, 35, 0.95)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40" width="80" height="40"><path fill="%231a242d" fill-opacity="0.4" d="M0 40 L40 0 H80 L40 40 Z"></path></svg>');
+        }
+
+        #game-container {
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 900px;
+            border: 1px solid var(--valorant-grey);
+            transition: all 0.3s ease-out;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--valorant-grey);
+            padding-bottom: 15px;
+        }
+
+        header h1 {
+            color: var(--primary-accent);
+            font-weight: 700;
+            font-size: clamp(1.5em, 4vw, 2em);
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: var(--valorant-white);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+            background-color: var(--valorant-grey);
+            color: var(--text-color);
+            outline: none;
+            border-color: var(--primary-accent);
+        }
+
+        #level-indicator {
+            font-weight: 600;
+            color: var(--secondary-accent);
+            background-color: rgba(55, 228, 174, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .game-section {
+            background-color: rgba(15, 25, 35, 0.6);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--valorant-grey);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-out;
+        }
+
+        .game-section h2 {
+            color: var(--secondary-accent);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--valorant-light-grey);
+            padding-bottom: 8px;
+            font-size: 1.3em;
+        }
+        .game-section h3 {
+            color: var(--valorant-white);
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        #case-brief p {
+            margin-bottom: 10px;
+        }
+         #case-brief strong { /* Highlight key data points in brief */
+             color: var(--info-color);
+             font-weight: 700;
+             background-color: rgba(55, 228, 174, 0.1);
+             padding: 1px 4px;
+             border-radius: 3px;
+         }
+
+         #suspect-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #suspect-list li {
+             background-color: var(--valorant-grey);
+             margin-bottom: 8px;
+             padding: 10px 15px;
+             border-radius: 4px;
+             font-size: 0.95em;
+             border-left: 4px solid var(--valorant-light-grey);
+             transition: background-color 0.2s ease, border-left-color 0.2s ease;
+             cursor: default;
+         }
+         #suspect-list li:hover {
+             background-color: var(--valorant-light-grey);
+             border-left-color: var(--primary-accent);
+         }
+
+        .input-group {
+            margin-bottom: 18px; /* Increased margin */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 15px;
+            align-items: center;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 3px;
+            font-weight: 600;
+            color: var(--valorant-light-grey);
+            flex: 1 1 150px;
+            min-width: 120px;
+        }
+
+        .input-group input[type="number"],
+        .input-group input[type="text"], /* Keep text type just in case */
+        .input-group select {
+            padding: 10px 12px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            color: var(--text-color);
+            font-family: var(--font-family);
+            font-size: 1em;
+            flex: 2 1 200px;
+            min-width: 150px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        /* Style for disabled SELECTS */
+        .input-group select:disabled {
+            opacity: var(--disabled-opacity);
+            cursor: not-allowed;
+            background-color: var(--input-disabled-bg);
+            border-color: var(--valorant-grey);
+        }
+        /* Style for ENABLED inputs (user data entry) */
+        .input-group input:not(:disabled) {
+             background-color: var(--input-bg); /* Ensure background is correct */
+        }
+
+        .input-group input:focus:not(:disabled),
+        .input-group select:focus:not(:disabled) {
+            outline: none;
+            border-color: var(--input-focus-border);
+            box-shadow: 0 0 0 3px rgba(83, 137, 229, 0.3);
+        }
+
+        .input-group span {
+            font-weight: normal;
+            color: var(--valorant-light-grey);
+            margin-left: 5px;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        #solvent-constants {
+             font-size: 0.85em;
+             color: var(--valorant-light-grey);
+             width: 100%;
+             padding-left: 10px;
+             margin-top: -5px;
+             min-height: 1.2em; /* Prevent layout shift */
+        }
+
+        /* Input Error Styling */
+         .input-error {
+             border-color: var(--input-error-border) !important;
+             box-shadow: 0 0 0 3px rgba(250, 68, 84, 0.3) !important;
+         }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: var(--valorant-white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+            flex-grow: 1;
+            min-width: 150px;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: var(--button-hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active:not(:disabled) {
+            transform: translateY(0px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        button#next-case-button {
+            background-color: var(--secondary-accent);
+            color: var(--valorant-dark);
+        }
+        button#next-case-button:hover:not(:disabled) {
+             background-color: #4cfbd6;
+             box-shadow: 0 4px 8px rgba(55, 228, 174, 0.3);
+        }
+
+        button:disabled {
+            background-color: var(--valorant-grey);
+            opacity: var(--disabled-opacity);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        #calculation-results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--input-bg);
+            border-radius: 5px;
+            border: 1px solid var(--input-border);
+            text-align: center;
+        }
+
+        #calculation-results p {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        #calculation-results span {
+            color: var(--primary-accent);
+            font-weight: 700;
+            font-size: 1.3em;
+            display: inline-block;
+            margin-left: 10px;
+            min-width: 80px;
+        }
+
+        #feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            border-width: 2px;
+            border-style: solid;
+            transition: all 0.3s ease-in-out;
+            min-height: 50px;
+        }
+
+        #feedback.success {
+            background-color: rgba(255, 215, 0, 0.15);
+            border-color: var(--success-color);
+            color: var(--success-color);
+        }
+
+        #feedback.error {
+            background-color: rgba(250, 68, 84, 0.15);
+            border-color: var(--error-color);
+            color: var(--error-color);
+        }
+        #feedback.info {
+            background-color: rgba(55, 228, 174, 0.15);
+            border-color: var(--info-color);
+            color: var(--info-color);
+        }
+         #feedback p { margin-bottom: 5px; }
+         #feedback p:last-child { margin-bottom: 0; }
+         #feedback strong { font-weight: 700; }
+
+        #vanthoff-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--valorant-light-grey);
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+            overflow: hidden;
+            opacity: 1;
+            max-height: 300px;
+        }
+
+        #vanthoff-section.hidden {
+             opacity: 0;
+             max-height: 0;
+             margin-top: 0;
+             padding-top: 0;
+             border-top: none;
+             visibility: hidden; /* Ensure it's not focusable */
+        }
+
+        #notes {
+             margin-top: 20px;
+             padding: 15px;
+             background-color: rgba(116, 128, 138, 0.1);
+             border: 1px dashed var(--valorant-light-grey);
+             border-radius: 5px;
+             font-size: 0.9em;
+             color: var(--valorant-light-grey);
+        }
+         #notes ul { padding-left: 20px; margin-top: 10px;}
+         #notes li { margin-bottom: 8px;}
+         #notes code {
+             background-color: rgba(0,0,0,0.3);
+             padding: 2px 5px;
+             border-radius: 3px;
+             font-family: monospace;
+             color: var(--secondary-accent);
+         }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 768px) {
+            html { font-size: 15px; }
+            #game-container { padding: 15px; }
+            .game-section { padding: 15px; }
+            header h1 { font-size: clamp(1.4em, 5vw, 1.8em); }
+
+             .input-group {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+             }
+             .input-group label {
+                 flex-basis: auto;
+                 min-width: unset;
+                 margin-bottom: 2px;
+             }
+             .input-group input[type="number"],
+             .input-group select {
+                 flex-basis: auto;
+                 min-width: unset;
+                 width: 100%;
+             }
+             #vanthoff-section .input-group {
+                 flex-direction: row; /* Keep i input side-by-side */
+                 align-items: center;
+             }
+             #vanthoff-i { width: 80px; flex-grow: 0; }
+
+            .button-group {
+                 flex-direction: column;
+            }
+             button { width: 100%; min-width: unset; }
+        }
+
+         @media (max-width: 480px) {
+            html { font-size: 14px; }
+             body { padding: 10px;}
+             #game-container { padding: 10px; }
+             header { justify-content: center; text-align: center; }
+             .nav-links { justify-content: center; width: 100%; }
+             .game-section { padding: 10px; }
+             .game-section h2 { font-size: 1.2em; }
+             .game-section h3 { font-size: 1.0em; }
+             #suspect-list li { padding: 8px 10px; font-size: 0.9em;}
+             #calculation-results p { font-size: 1.0em; }
+             #calculation-results span { font-size: 1.2em; }
+        }
+
+        /* Utility class for hidden elements */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <header>
+            <h1>Colligative Investigator</h1>
+            <div class="nav-links">
+                 <span id="level-indicator">Level: 1</span>
+                <a href="index.html" aria-label="Back to main hub">Back to Hub</a>
+            </div>
+        </header>
+
+        <main>
+            <section id="case-file" class="game-section">
+                <h2>Case File <span id="case-number">#1</span></h2>
+                <div id="case-brief">
+                    <p>Loading case details... Read the description below carefully and enter the values into the data input section.</p>
+                </div>
+            </section>
+
+            <section id="data-input" class="game-section">
+                <h2>Data Input & Analysis</h2>
+                <p style="font-size: 0.9em; color: var(--valorant-light-grey); margin-bottom: 15px;">Enter the experimental data described in the Case File above.</p>
+                <div class="input-group">
+                    <label for="property-selector">Colligative Property:</label>
+                    <select id="property-selector" disabled aria-label="Colligative property determined by the case">
+                        <option value="fp">Freezing Point Depression (ΔTf)</option>
+                        <option value="bp">Boiling Point Elevation (ΔTb)</option>
+                        <option value="vp">Vapor Pressure Lowering (ΔP)</option>
+                        <option value="op">Osmotic Pressure (Π)</option>
+                    </select>
+                </div>
+                 <div class="input-group">
+                    <label for="solvent-selector">Solvent:</label>
+                    <select id="solvent-selector" disabled aria-label="Solvent determined by the case">
+                        <option value="water">Water</option>
+                        <option value="benzene">Benzene</option>
+                    </select>
+                    <span id="solvent-constants">(Constants will appear here)</span>
+                </div>
+                 <div class="input-group">
+                    <label for="solute-mass">Mass of Solute (w₂):</label>
+                    <input type="number" id="solute-mass" placeholder="Enter mass in grams (e.g., 10.0)" step="any" required aria-required="true">
+                    <span> g</span>
+                </div>
+                <!-- Solvent Mass/Volume groups toggle based on property -->
+                <div class="input-group hidden" id="solvent-mass-group">
+                    <label for="solvent-mass">Mass of Solvent (w₁):</label>
+                    <input type="number" id="solvent-mass" placeholder="Enter mass in grams (e.g., 100.0)" step="any" required aria-required="true">
+                     <span> g</span>
+                </div>
+                 <div class="input-group hidden" id="solvent-volume-group">
+                    <label for="solvent-volume">Volume of Solution (V):</label>
+                    <input type="number" id="solvent-volume" placeholder="Enter volume in Liters (e.g., 0.5)" step="any" required aria-required="true">
+                     <span> L</span>
+                </div>
+                 <div class="input-group">
+                    <label for="measured-change">Measured Change (<span id="change-symbol">ΔTf</span>):</label>
+                    <input type="number" id="measured-change" placeholder="Enter observed change (e.g., 1.86)" step="any" required aria-required="true">
+                     <span id="change-unit"> °C</span>
+                </div>
+                <!-- Temperature group only for Osmotic Pressure -->
+                 <div class="input-group hidden" id="temperature-group">
+                    <label for="temperature">Temperature (T):</label>
+                    <input type="number" id="temperature" placeholder="Enter temperature in Kelvin (e.g., 298)" step="any" required aria-required="true">
+                    <span> K</span>
+                </div>
+
+                <!-- Van't Hoff Factor Section - Conditionally Shown & Enabled -->
+                <div id="vanthoff-section" class="hidden">
+                    <h3>Electrolyte Consideration</h3>
+                     <div class="input-group">
+                        <label for="vanthoff-i">Van't Hoff Factor (i):</label>
+                        <input type="number" id="vanthoff-i" value="1" step="0.01" min="0.1" placeholder="Enter i (e.g., 1, 2, 0.5)" required aria-required="true">
+                        <span class="hint">(Default 1. Adjust if needed.)</span>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="calculate-button" aria-label="Calculate molar mass based on your entered data">Calculate Molar Mass</button>
+                </div>
+            </section>
+
+            <section id="results-analysis" class="game-section">
+                <h2>Results & Identification</h2>
+                 <div id="calculation-results">
+                    <p>Calculated Molar Mass (M₂): <span id="calculated-molar-mass">---</span> g/mol</p>
+                </div>
+                 <div id="feedback" class="info" aria-live="polite"><p>Enter the data from the Case File and click Calculate.</p></div>
+
+                <div id="suspect-list-section">
+                    <h2>Suspect List</h2>
+                    <ul id="suspect-list">
+                        <li>Suspects appear after calculation...</li>
+                    </ul>
+                </div>
+                 <div class="button-group">
+                    <button id="next-case-button" disabled aria-label="Proceed to the next case">Next Case</button>
+                 </div>
+            </section>
+
+            <section id="notes" class="game-section">
+                <h3>Investigator's Notes & Hints</h3>
+                <p>Carefully extract data from the Case File. If results seem wrong, check:</p>
+                <ul>
+                     <li><strong>Data Entry:</strong> Did you enter all numbers from the Case Brief correctly?</li>
+                     <li><strong>Units:</strong> Ensure you use correct units for calculations (kg solvent, L solution, K temperature). The calculation uses your gram/Liter input appropriately.</li>
+                     <li><strong>Van't Hoff Factor (i):</strong> Crucial for electrolytes/association.
+                        <ul>
+                            <li><code>i = 1</code> for non-electrolytes.</li>
+                            <li><code>i ≈ number of ions</code> for strong electrolytes (e.g., NaCl ≈ 2, MgCl₂ ≈ 3).</li>
+                            <li><code>1 < i < ideal</code> for weak electrolytes.</li>
+                            <li><code>i < 1</code> for association (e.g., dimerization ≈ 0.5).</li>
+                        </ul>
+                    </li>
+                     <li><strong>Formula Choice:</strong> Ensure you understand which formula applies to the property described in the Case File.</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // --- Constants ---
+        const R = 0.08206; // L*atm/(mol*K)
+        const progressKey = 'chemistryGameProgress';
+        const defaultProgress = { game1: 0, game2: 0, game3: 0, game4: 0, game5: 0 };
+
+        // --- Data Definitions (Solvents, Solutes) ---
+        const solvents = {
+            water: { name: "Water", Kf: 1.86, Kb: 0.512, M1: 18.02, P0: 23.8, density: 1.0, units: { Kf: "°C·kg/mol", Kb: "°C·kg/mol", P0: "torr @ 25°C", density: "g/mL"} },
+            benzene: { name: "Benzene", Kf: 5.12, Kb: 2.53, M1: 78.11, P0: 95.2, density: 0.874, units: { Kf: "°C·kg/mol", Kb: "°C·kg/mol", P0: "torr @ 25°C", density: "g/mL"} }
+        };
+         const solutes = [ // Same solute list as before
+            { name: "Glucose", formula: "C₆H₁₂O₆", molarMass: 180.16, type: 'non-electrolyte', i_ideal: 1, level: 1 },
+            { name: "Sucrose", formula: "C₁₂H₂₂O₁₁", molarMass: 342.30, type: 'non-electrolyte', i_ideal: 1, level: 1 },
+            { name: "Urea", formula: "CO(NH₂)₂", molarMass: 60.06, type: 'non-electrolyte', i_ideal: 1, level: 1 },
+            { name: "Ethylene Glycol", formula: "C₂H₆O₂", molarMass: 62.07, type: 'non-electrolyte', i_ideal: 1, level: 1 },
+            { name: "Glycerol", formula: "C₃H₈O₃", molarMass: 92.09, type: 'non-electrolyte', i_ideal: 1, level: 1 },
+            { name: "Sodium Chloride", formula: "NaCl", molarMass: 58.44, type: 'electrolyte', i_ideal: 2, level: 2 },
+            { name: "Potassium Nitrate", formula: "KNO₃", molarMass: 101.10, type: 'electrolyte', i_ideal: 2, level: 2 },
+            { name: "Magnesium Chloride", formula: "MgCl₂", molarMass: 95.21, type: 'electrolyte', i_ideal: 3, level: 2 },
+            { name: "Calcium Nitrate", formula: "Ca(NO₃)₂", molarMass: 164.09, type: 'electrolyte', i_ideal: 3, level: 2 },
+            { name: "Sodium Sulfate", formula: "Na₂SO₄", molarMass: 142.04, type: 'electrolyte', i_ideal: 3, level: 2 },
+            { name: "Acetic Acid (in Water)", formula: "CH₃COOH", molarMass: 60.05, type: 'weak-electrolyte', i_ideal: 1.05, level: 3 },
+            { name: "Acetic Acid (in Benzene)", formula: "CH₃COOH", molarMass: 60.05, type: 'association', i_ideal: 0.5, level: 3 },
+            { name: "Ammonium Chloride", formula: "NH₄Cl", molarMass: 53.49, type: 'electrolyte', i_ideal: 2, level: 3 },
+            { name: "Iron(III) Chloride", formula: "FeCl₃", molarMass: 162.20, type: 'electrolyte', i_ideal: 4, level: 3 }
+        ];
+
+        // --- DOM Elements ---
+        const levelIndicator = document.getElementById('level-indicator');
+        const caseNumberDisplay = document.getElementById('case-number');
+        const caseBrief = document.getElementById('case-brief');
+        const propertySelector = document.getElementById('property-selector');
+        const solventSelector = document.getElementById('solvent-selector');
+        const solventConstantsDisplay = document.getElementById('solvent-constants');
+        // User Input Fields
+        const soluteMassInput = document.getElementById('solute-mass');
+        const solventMassInput = document.getElementById('solvent-mass');
+        const solventMassGroup = document.getElementById('solvent-mass-group');
+        const solventVolumeInput = document.getElementById('solvent-volume');
+        const solventVolumeGroup = document.getElementById('solvent-volume-group');
+        const measuredChangeInput = document.getElementById('measured-change');
+        const changeSymbol = document.getElementById('change-symbol');
+        const changeUnit = document.getElementById('change-unit');
+        const temperatureInput = document.getElementById('temperature');
+        const temperatureGroup = document.getElementById('temperature-group');
+        const vanthoffInput = document.getElementById('vanthoff-i');
+        const vanthoffSection = document.getElementById('vanthoff-section');
+        // Buttons & Outputs
+        const calculateButton = document.getElementById('calculate-button');
+        const calculatedMolarMassDisplay = document.getElementById('calculated-molar-mass');
+        const feedbackDiv = document.getElementById('feedback');
+        const suspectList = document.getElementById('suspect-list');
+        const nextCaseButton = document.getElementById('next-case-button');
+        // Gather all relevant user number inputs for easy iteration
+        const userNumberInputs = [
+            soluteMassInput, solventMassInput, solventVolumeInput,
+            measuredChangeInput, temperatureInput, vanthoffInput
+        ];
+
+        // --- Game State ---
+        let currentLevel = 1;
+        let caseCounter = 0;
+        let currentCase = {}; // Will store the CORRECT data for the generated case
+        let totalCasesSolved = 0;
+
+
+        // --- Functions ---
+
+        function loadProgress() { /* ... (same as before) ... */
+             let savedProgress = { ...defaultProgress };
+             try {
+                 const stored = localStorage.getItem(progressKey);
+                 if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (typeof parsed === 'object' && parsed !== null && 'game4' in parsed) {
+                         savedProgress = { ...defaultProgress, ...parsed };
+                    } else { console.warn("Stored progress format invalid. Using default."); }
+                 }
+             } catch (e) { console.error("Error loading progress:", e); }
+             const progressPercent = savedProgress.game4 || 0;
+             if (progressPercent >= 75) currentLevel = 3;
+             else if (progressPercent >= 35) currentLevel = 2;
+             else currentLevel = 1;
+             totalCasesSolved = Math.floor((progressPercent / 100) * 15);
+             console.log("Loaded progress:", savedProgress, "Starting Level:", currentLevel);
+             updateLevelIndicator();
+             return savedProgress;
+        }
+
+        function saveProgress(solvedCorrectly) { /* ... (same as before) ... */
+            let progressData;
+            try {
+                const stored = localStorage.getItem(progressKey);
+                progressData = stored ? JSON.parse(stored) : { ...defaultProgress };
+                 if (typeof progressData !== 'object' || progressData === null) progressData = { ...defaultProgress };
+            } catch (e) { console.error("Error reading progress:", e); progressData = { ...defaultProgress }; }
+
+            if (solvedCorrectly) {
+                 totalCasesSolved++;
+                 const maxCasesForDemo = 15;
+                 let currentProgressPercent = Math.min(100, Math.round((totalCasesSolved / maxCasesForDemo) * 100));
+                 let newLevel = 1;
+                 if (currentProgressPercent >= 75) newLevel = 3;
+                 else if (currentProgressPercent >= 35) newLevel = 2;
+                 if (newLevel > currentLevel) {
+                     currentLevel = newLevel;
+                     updateLevelIndicator();
+                      setTimeout(() => { if(feedbackDiv.classList.contains('success')) feedbackDiv.innerHTML += `<p style="margin-top:10px; color: var(--valorant-gold);"><strong>Level Up! Reached Level ${currentLevel}.</strong></p>`; }, 100);
+                 }
+                 progressData['game4'] = currentProgressPercent;
+                 localStorage.setItem(progressKey, JSON.stringify(progressData));
+                 console.log(`Progress saved: ${JSON.stringify(progressData)}`);
+            }
+        }
+
+        function updateLevelIndicator() { /* ... (same as before, controls vanthoff section visibility) ... */
+             levelIndicator.textContent = `Level: ${currentLevel}`;
+            if (currentLevel >= 2) {
+                vanthoffSection.classList.remove('hidden');
+                vanthoffInput.disabled = false; // Enable editable 'i'
+            } else {
+                vanthoffSection.classList.add('hidden');
+                vanthoffInput.value = 1; // Reset i to 1
+                vanthoffInput.disabled = true; // Disable 'i' input for level 1
+            }
+        }
+
+        function getRandomNumber(min, max) { /* ... (same as before) ... */
+             return Math.random() * (max - min) + min;
+        }
+
+         function formatDataPoint(value, precision = 2) {
+            // Formats number for display in case brief
+            return `<strong>${value.toFixed(precision)}</strong>`;
+        }
+
+        function generateCase() {
+            caseCounter++;
+            caseNumberDisplay.textContent = `#${caseCounter}`;
+            calculatedMolarMassDisplay.textContent = "---";
+            calculatedMolarMassDisplay.style.color = 'var(--primary-accent)';
+            feedbackDiv.innerHTML = "<p>New Case: Read the brief below, enter the data, and calculate.</p>";
+            feedbackDiv.className = 'info';
+            suspectList.innerHTML = '<li>Suspects will appear after calculation.</li>'; // Clear suspects
+            nextCaseButton.disabled = true;
+            calculateButton.disabled = false;
+
+            // Clear and enable all user input fields, remove error states
+            userNumberInputs.forEach(input => {
+                input.value = '';
+                input.classList.remove('input-error');
+                // Enable relevant inputs later based on property
+                input.disabled = false;
+            });
+             vanthoffInput.value = 1; // Reset 'i' to default 1
+
+            // --- Generate Case Data (Hidden from User Inputs) ---
+            const availableSolutes = solutes.filter(s => s.level <= currentLevel);
+            const solute = availableSolutes[Math.floor(Math.random() * availableSolutes.length)];
+            const solventKey = Math.random() < 0.7 ? 'water' : 'benzene';
+            const solvent = solvents[solventKey];
+            const properties = ['fp', 'bp', 'op', 'vp'];
+            let property;
+            const propChoice = Math.random();
+                 if (propChoice < 0.4) property = 'fp';
+            else if (propChoice < 0.75) property = 'bp';
+            else if (propChoice < 0.9 && solventKey === 'water') property = 'op';
+            else property = (solventKey === 'water' || solventKey === 'benzene') ? 'vp' : 'fp';
+
+            // Generate reasonable *target* values
+            let target_w2 = parseFloat(getRandomNumber(5, 40).toFixed(1));
+            let target_w1 = parseFloat(getRandomNumber(80, 300).toFixed(1));
+            let target_V = parseFloat(getRandomNumber(0.25, 0.75).toFixed(2));
+            let target_T_K = parseFloat(getRandomNumber(293, 303).toFixed(0)); // ~20-30C
+            let target_measuredChange;
+            const target_i = solute.i_ideal; // The "true" i for this solute
+
+            let briefText = "";
+            let symbol = "";
+            let unit = "";
+
+            // Calculate the target measured change based on the hidden solute/solvent data
+             switch (property) {
+                case 'fp':
+                    symbol = 'ΔTf'; unit = '°C';
+                    const molality_fp = (target_w2 / solute.molarMass) / (target_w1 / 1000);
+                    target_measuredChange = target_i * solvent.Kf * molality_fp;
+                     // Add noise AFTER calculation for brief text
+                    target_measuredChange *= getRandomNumber(0.985, 1.015);
+                    briefText = `A chemist dissolved ${formatDataPoint(target_w2, 1)} g of an unknown substance in ${formatDataPoint(target_w1, 1)} g of ${solvent.name}. The freezing point of the pure solvent was observed to decrease by ${formatDataPoint(target_measuredChange, 2)} ${unit}.`;
+                    break;
+                case 'bp':
+                    symbol = 'ΔTb'; unit = '°C';
+                    const molality_bp = (target_w2 / solute.molarMass) / (target_w1 / 1000);
+                    target_measuredChange = target_i * solvent.Kb * molality_bp;
+                    target_measuredChange *= getRandomNumber(0.985, 1.015);
+                    briefText = `When ${formatDataPoint(target_w2, 1)} g of an unknown substance was added to ${formatDataPoint(target_w1, 1)} g of ${solvent.name}, the boiling point was observed to increase by ${formatDataPoint(target_measuredChange, 2)} ${unit} compared to the pure solvent.`;
+                    break;
+                case 'op':
+                    symbol = 'Π'; unit = 'atm';
+                    let molarity_op = (target_w2 / solute.molarMass) / target_V;
+                    target_measuredChange = target_i * molarity_op * R * target_T_K;
+                     while (target_measuredChange > 60 || target_measuredChange < 0.05) { // Adjust if needed
+                         target_V = parseFloat(getRandomNumber(0.2, 1.5).toFixed(2));
+                        molarity_op = (target_w2 / solute.molarMass) / target_V;
+                        target_measuredChange = target_i * molarity_op * R * target_T_K;
+                     }
+                    target_measuredChange *= getRandomNumber(0.985, 1.015);
+                    briefText = `A solution was prepared by dissolving ${formatDataPoint(target_w2, 1)} g of an unknown substance in ${solvent.name}, resulting in a final solution volume of ${formatDataPoint(target_V, 2)} L. The osmotic pressure was measured as ${formatDataPoint(target_measuredChange, 3)} ${unit} at a temperature of ${formatDataPoint(target_T_K, 0)} K.`;
+                    break;
+                case 'vp':
+                    symbol = 'ΔP'; unit = 'torr'; // Change in VP
+                    const n2_vp = target_w2 / solute.molarMass;
+                    const n1_vp = target_w1 / solvent.M1;
+                    const x2_vp = n2_vp / (n1_vp + n2_vp);
+                    target_measuredChange = target_i * x2_vp * solvent.P0; // ΔP = i * x2 * P0
+                    let P_solution = solvent.P0 - target_measuredChange;
+                     while (P_solution < 0 || target_measuredChange > solvent.P0 * 0.5) { // Adjust if needed
+                         target_w2 = parseFloat(getRandomNumber(1, 15).toFixed(1));
+                         const n2_new = target_w2 / solute.molarMass; const x2_new = n2_new / (n1_vp + n2_new);
+                         target_measuredChange = target_i * x2_new * solvent.P0; P_solution = solvent.P0 - target_measuredChange;
+                    }
+                    target_measuredChange *= getRandomNumber(0.985, 1.015);
+                    briefText = `An experiment was conducted by adding ${formatDataPoint(target_w2, 1)} g of an unknown substance to ${formatDataPoint(target_w1, 1)} g of ${solvent.name} (Pure Vapor Pressure = ${solvent.P0} ${solvent.units.P0}). The observed decrease in the solvent's vapor pressure (ΔP) was ${formatDataPoint(target_measuredChange, 2)} ${unit}.`;
+                    break;
+            }
+
+            // --- Update UI ---
+            caseBrief.innerHTML = `<p>${briefText}</p><p style='font-style: italic; color: var(--valorant-light-grey);'>Enter the highlighted values into the input fields below.</p>`;
+            propertySelector.value = property;
+            solventSelector.value = solventKey;
+            displaySolventConstants(solvent); // Show constants for chosen solvent/prop
+            changeSymbol.textContent = symbol;
+            changeUnit.textContent = unit;
+
+            // Store the CORRECT answers for checking later
+            currentCase = {
+                solute: solute,
+                solvent: solvent,
+                property: property,
+                target_w2: target_w2,
+                target_w1: target_w1, // Store target w1 in g
+                target_V: target_V,
+                target_T_K: target_T_K,
+                target_measuredChange: target_measuredChange, // The value user should ideally measure/enter
+                correctMolarMass: solute.molarMass,
+                correct_i: target_i
+            };
+
+            // Update input visibility and disable irrelevant ones
+            updateInputVisibilityAndState();
+             updateLevelIndicator(); // Update level display and Van't Hoff input state
+        }
+
+         function updateInputVisibilityAndState() {
+            const prop = propertySelector.value;
+
+             // Hide/show groups
+             solventMassGroup.classList.toggle('hidden', prop !== 'fp' && prop !== 'bp' && prop !== 'vp');
+             solventVolumeGroup.classList.toggle('hidden', prop !== 'op');
+             temperatureGroup.classList.toggle('hidden', prop !== 'op');
+
+             // Disable inputs not relevant to the current property
+             solventMassInput.disabled = (prop !== 'fp' && prop !== 'bp' && prop !== 'vp');
+             solventVolumeInput.disabled = (prop !== 'op');
+             temperatureInput.disabled = (prop !== 'op');
+
+              // Ensure Van't Hoff input state matches level
+             if (currentLevel < 2) {
+                 vanthoffInput.disabled = true;
+                 vanthoffInput.value = 1;
+             } else {
+                 vanthoffInput.disabled = false; // Keep enabled for L2/3
+             }
+
+              // Ensure the always relevant inputs are enabled
+             soluteMassInput.disabled = false;
+             measuredChangeInput.disabled = false;
+        }
+
+
+         function displaySolventConstants(solvent) { /* ... (same as before) ... */
+            let constantsText = "";
+             const prop = propertySelector.value;
+             if (prop === 'fp' || prop === 'bp' || prop === 'vp') {
+                 if (prop === 'fp' && solvent.Kf) constantsText += `Kf = ${solvent.Kf} ${solvent.units.Kf}`;
+                 if (prop === 'bp' && solvent.Kb) constantsText += `${constantsText ? ', ' : ''}Kb = ${solvent.Kb} ${solvent.units.Kb}`;
+             }
+             if (prop === 'vp') {
+                 if (solvent.M1) constantsText += `${constantsText ? ', ' : ''}M₁ = ${solvent.M1} g/mol`;
+                 if (solvent.P0) constantsText += `${constantsText ? ', ' : ''}P° = ${solvent.P0} ${solvent.units.P0}`;
+             }
+             if (prop === 'op') { constantsText = `R = ${R} L·atm/mol·K`; }
+             solventConstantsDisplay.textContent = `(${constantsText || 'N/A'})`;
+         }
+
+
+        function generateSuspectList(correctSolute) { /* ... (same as before) ... */
+            suspectList.innerHTML = '';
+            let suspects = [correctSolute];
+            let distractors = solutes.filter(s => s.name !== correctSolute.name && s.level <= currentLevel);
+            distractors.sort(() => 0.5 - Math.random());
+            const targetDistractors = Math.min(distractors.length, 3 + Math.floor(Math.random()*2));
+             for (let i = 0; i < targetDistractors && i < distractors.length; i++) {
+                 if (!suspects.some(s => s.name === distractors[i].name)) suspects.push(distractors[i]);
+             }
+            suspects.sort(() => 0.5 - Math.random());
+            suspects.forEach(s => {
+                const li = document.createElement('li');
+                li.textContent = `${s.name} (${s.formula}) - Molar Mass: ${s.molarMass.toFixed(2)} g/mol`;
+                li.setAttribute('aria-label', `Suspect: ${s.name}, Molar Mass ${s.molarMass.toFixed(2)}`);
+                suspectList.appendChild(li);
+            });
+        }
+
+         function validateInputs() {
+            let isValid = true;
+            let firstErrorField = null;
+
+            // Clear previous errors
+             userNumberInputs.forEach(input => input.classList.remove('input-error'));
+             feedbackDiv.innerHTML = ''; // Clear feedback initially
+             feedbackDiv.className = 'info';
+
+             function markError(input, message) {
+                 input.classList.add('input-error');
+                 if (!firstErrorField) firstErrorField = input; // Keep track of the first error field
+                 isValid = false;
+                 feedbackDiv.innerHTML += `<p>${message}</p>`; // Append error messages
+                 feedbackDiv.className = 'error';
+             }
+
+            // Get values from inputs
+             const w2_val = parseFloat(soluteMassInput.value);
+             const measured_val = parseFloat(measuredChangeInput.value);
+             const i_val = parseFloat(vanthoffInput.value); // Always validate 'i' input
+
+             // --- Validation Checks ---
+             if (isNaN(w2_val) || w2_val <= 0) markError(soluteMassInput, 'Invalid Solute Mass (must be > 0).');
+             if (isNaN(measured_val)) markError(measuredChangeInput, 'Invalid Measured Change value.');
+             // Measured change check: VP deltaP can be negative if Psol > P0, but here we calculate deltaP = P0-Psol, so it should be positive for lowering.
+             // Let's assume standard FP depression, BP elevation, OP, VP lowering require positive change.
+             if (measured_val <= 0 && currentCase.property !== 'vp_special_case') markError(measuredChangeInput, 'Measured Change must be positive (ΔTf, ΔTb, Π > 0, ΔP > 0 for lowering).');
+
+             // Validate 'i' (must be positive number)
+             if (isNaN(i_val) || i_val <= 0) markError(vanthoffInput, 'Invalid Van\'t Hoff Factor (must be > 0).');
+
+             // Validate context-dependent inputs
+             const prop = currentCase.property;
+             if (prop === 'fp' || prop === 'bp' || prop === 'vp') {
+                 const w1_val = parseFloat(solventMassInput.value);
+                 if (isNaN(w1_val) || w1_val <= 0) markError(solventMassInput, 'Invalid Solvent Mass (must be > 0).');
+             } else if (prop === 'op') {
+                 const V_val = parseFloat(solventVolumeInput.value);
+                 const T_val = parseFloat(temperatureInput.value);
+                 if (isNaN(V_val) || V_val <= 0) markError(solventVolumeInput, 'Invalid Solution Volume (must be > 0).');
+                 if (isNaN(T_val) || T_val <= 0) markError(temperatureInput, 'Invalid Temperature (must be > 0 K).');
+             }
+
+             if (!isValid && firstErrorField) {
+                firstErrorField.focus(); // Focus the first field with an error
+             }
+             return isValid;
+        }
+
+
+        function calculateMolarMass() {
+            if (!validateInputs()) {
+                 calculatedMolarMassDisplay.textContent = "Error";
+                 calculatedMolarMassDisplay.style.color = 'var(--error-color)';
+                 suspectList.innerHTML = '<li>Calculation blocked due to input errors.</li>';
+                 return;
+            }
+
+            // Get USER-ENTERED values
+            const i = parseFloat(vanthoffInput.value);
+            const property = currentCase.property;
+            const solvent = currentCase.solvent; // Get constants from the case's solvent
+            const w2 = parseFloat(soluteMassInput.value);
+            const measuredChange = parseFloat(measuredChangeInput.value);
+
+            let calculatedM2 = NaN;
+            let calculationPossible = true;
+
+            try {
+                switch (property) {
+                    case 'fp':
+                        const w1_fp = parseFloat(solventMassInput.value);
+                        if (w1_fp > 0 && solvent.Kf) calculatedM2 = (i * solvent.Kf * w2) / (measuredChange * (w1_fp / 1000)); // w1 in kg
+                        else calculationPossible = false;
+                        break;
+                    case 'bp':
+                        const w1_bp = parseFloat(solventMassInput.value);
+                        if (w1_bp > 0 && solvent.Kb) calculatedM2 = (i * solvent.Kb * w2) / (measuredChange * (w1_bp / 1000)); // w1 in kg
+                        else calculationPossible = false;
+                        break;
+                    case 'op':
+                        const V = parseFloat(solventVolumeInput.value);
+                        const T_K = parseFloat(temperatureInput.value);
+                        if (V > 0 && T_K > 0) calculatedM2 = (i * w2 * R * T_K) / (measuredChange * V);
+                        else calculationPossible = false;
+                        break;
+                    case 'vp': // Assumes measuredChange is ΔP = P° - P
+                        const w1_vp = parseFloat(solventMassInput.value); // w1 in g for this formula
+                        const deltaP = measuredChange;
+                        const P0 = solvent.P0;
+                        if (w1_vp > 0 && solvent.M1 && P0 && deltaP !== 0) {
+                            calculatedM2 = (i * w2 * solvent.M1 * P0) / (w1_vp * deltaP);
+                        } else calculationPossible = false;
+                        break;
+                }
+
+                if (!calculationPossible || isNaN(calculatedM2) || !isFinite(calculatedM2) || calculatedM2 <= 0.1) {
+                    calculatedMolarMassDisplay.textContent = "Error";
+                    calculatedMolarMassDisplay.style.color = 'var(--error-color)';
+                    feedbackDiv.innerHTML = "<p>Calculation Error. Possible division by zero or invalid intermediate result. Check inputs and constants.</p>";
+                    feedbackDiv.className = 'error';
+                    suspectList.innerHTML = '<li>Calculation failed.</li>';
+                } else {
+                    calculatedMolarMassDisplay.textContent = calculatedM2.toFixed(2);
+                    calculatedMolarMassDisplay.style.color = 'var(--primary-accent)';
+                    generateSuspectList(currentCase.solute); // Show suspects AFTER calculation
+                    checkAnswer(calculatedM2, i); // Check using the calculated M2 based on user input
+                }
+
+            } catch (error) {
+                 console.error("Calculation failed:", error);
+                 calculatedMolarMassDisplay.textContent = "Error";
+                 calculatedMolarMassDisplay.style.color = 'var(--error-color)';
+                 feedbackDiv.innerHTML = `<p>An unexpected error occurred: ${error.message}</p>`;
+                 feedbackDiv.className = 'error';
+                 suspectList.innerHTML = '<li>Calculation error occurred.</li>';
+            }
+        }
+
+        function checkAnswer(calculatedM2, used_i) {
+             // Compare calculatedM2 (from user inputs) with the hidden correctMolarMass
+             const correctM2 = currentCase.correctMolarMass;
+             const correct_i = currentCase.correct_i;
+             const tolerance = 0.10; // Wider tolerance (10%) to account for user input variation + initial noise
+             const i_tolerance = 0.15;
+
+             const lowerBound = correctM2 * (1 - tolerance);
+             const upperBound = correctM2 * (1 + tolerance);
+
+             let matchFound = false;
+             let feedbackHtml = "";
+
+             if (calculatedM2 >= lowerBound && calculatedM2 <= upperBound) {
+                 const soluteType = currentCase.solute.type;
+                 // Molar mass matches, now check 'i' consistency based on level
+                 if (currentLevel === 1) {
+                     if (Math.abs(used_i - 1) < 0.01) { // Level 1 expects i=1
+                         matchFound = true;
+                     } else {
+                         feedbackHtml = `<p>Molar mass matches <strong>${currentCase.solute.name}</strong>, but Level 1 cases are non-electrolytes (<strong>i=1</strong>). You used i=${used_i.toFixed(2)}.</p>`;
+                     }
+                 } else { // Level 2+
+                     if (Math.abs(used_i - correct_i) <= i_tolerance) {
+                         matchFound = true; // Both M and i consistent
+                     } else if (Math.abs(used_i - 1) < 0.01 && correct_i !== 1) {
+                         // Used i=1 when shouldn't have
+                         feedbackHtml = `<p>Molar mass matches <strong>${currentCase.solute.name}</strong>. However, you used <strong>i=1</strong>. This substance expects <strong>i ≈ ${correct_i.toFixed(2)}</strong>. Recalculate with the correct 'i' for confirmation!</p>`;
+                     } else {
+                         // Used significantly wrong 'i'
+                         feedbackHtml = `<p>Molar mass matches <strong>${currentCase.solute.name}</strong>. However, your Van't Hoff factor (<strong>i=${used_i.toFixed(2)}</strong>) seems inconsistent with the expected behavior (<strong>i ≈ ${correct_i.toFixed(2)}</strong>).</p>`;
+                     }
+                 }
+             }
+
+             // --- Feedback Generation ---
+             if (matchFound) {
+                feedbackHtml = `<p><strong>Correct!</strong> Calculated Molar Mass: <strong>${calculatedM2.toFixed(2)} g/mol</strong>. This closely matches <strong>${currentCase.solute.name}</strong> (Actual M: ${correctM2.toFixed(2)} g/mol).`;
+                if (currentLevel > 1 && correct_i !== 1) {
+                    feedbackHtml += ` Your Van't Hoff factor <strong>i = ${used_i.toFixed(2)}</strong> is consistent.`;
+                }
+                feedbackHtml += `</p>`;
+                feedbackDiv.className = 'success';
+                nextCaseButton.disabled = false;
+                calculateButton.disabled = true; // Lock calculation button
+                userNumberInputs.forEach(input => input.disabled = true); // Lock inputs after success
+                saveProgress(true);
+             } else {
+                 if (!feedbackHtml) { // If no specific 'i' issue was flagged
+                     feedbackHtml = `<p><strong>Incorrect.</strong> Calculated Molar Mass: <strong>${calculatedM2.toFixed(2)} g/mol</strong>. This does not closely match any suspect based on the expected values for this case.</p>`;
+                     feedbackDiv.className = 'error';
+                     // General hint for incorrect Molar Mass
+                     feedbackHtml += `<p><strong>Hint:</strong> Double-check your data entry from the Case File. Verify the Van't Hoff factor 'i' used. Review the relevant colligative property formula.</p>`;
+                 } else {
+                      // Use 'info' class if M was right but 'i' was wrong/questionable
+                      feedbackDiv.className = 'info';
+                 }
+             }
+             feedbackDiv.innerHTML = feedbackHtml;
+        }
+
+
+        // --- Event Listeners ---
+        calculateButton.addEventListener('click', calculateMolarMass);
+        nextCaseButton.addEventListener('click', generateCase);
+
+        // Add input event listeners for instant validation feedback (optional but helpful)
+         userNumberInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                // Simple check: if field is not empty and is a number, remove error.
+                 // More complex validation happens on Calculate click.
+                if (input.value.trim() !== '' && !isNaN(parseFloat(input.value))) {
+                     // Basic check for positivity on relevant fields
+                     const value = parseFloat(input.value);
+                     let isPositiveValid = true;
+                     if ([soluteMassInput, solventMassInput, solventVolumeInput, temperatureInput].includes(input) && value <= 0) {
+                         isPositiveValid = false;
+                     }
+                     // Measured change positivity check is complex, defer full check.
+                     if (input === vanthoffInput && value <= 0) {
+                         isPositiveValid = false;
+                     }
+
+                     if (isPositiveValid) {
+                         input.classList.remove('input-error');
+                     } // Don't add error here, only remove on valid input.
+                }
+            });
+         });
+
+
+        // --- Initial Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            generateCase();
+        });
+
+    </script>
+
+</body>
+</html>

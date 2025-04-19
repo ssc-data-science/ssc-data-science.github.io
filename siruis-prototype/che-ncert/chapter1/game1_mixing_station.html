@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixing Station - Chemistry Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Valorant Theme Variables */
+        :root {
+            --valorant-orange: #FF4655;
+            --valorant-blue: #7DF9FF;
+            --valorant-dark: #111111;
+            --valorant-grey: #333333;
+            --valorant-light-grey: #BDBDBD;
+            --valorant-white: #FFFFFF;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--valorant-dark);
+            color: var(--valorant-white);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .game-container {
+            background-color: var(--valorant-grey);
+            border: 1px solid var(--valorant-orange);
+            padding: 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 0 15px rgba(255, 70, 85, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--valorant-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            padding: 8px 15px;
+            background-color: var(--valorant-blue);
+            color: var(--valorant-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: var(--valorant-white);
+        }
+
+        #level-display {
+            font-size: 1.1em;
+            color: var(--valorant-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        #lab-order {
+            background-color: var(--valorant-dark);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--valorant-orange);
+            text-align: left;
+            font-size: 1.1em;
+            min-height: 80px; /* Ensure space for order text */
+        }
+
+        .lab-bench {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .lab-bench label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--valorant-light-grey);
+            font-weight: 600;
+        }
+
+        .lab-bench select,
+        .lab-bench input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--valorant-dark);
+            border: 1px solid var(--valorant-light-grey);
+            color: var(--valorant-white);
+            border-radius: 4px;
+            font-family: var(--font-family);
+            font-size: 1em;
+        }
+
+        .lab-bench input[type="number"] {
+           appearance: textfield; /* Firefox */
+           -moz-appearance: textfield; /* Firefox */
+        }
+        .lab-bench input[type="number"]::-webkit-inner-spin-button,
+        .lab-bench input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        .lab-bench select option {
+             background-color: var(--valorant-grey);
+             color: var(--valorant-white);
+        }
+
+        .control-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: var(--valorant-orange);
+            color: var(--valorant-white);
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-family);
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #e03543; /* Slightly darker orange */
+        }
+
+        button:active {
+             transform: scale(0.98);
+        }
+
+        button:disabled {
+            background-color: var(--valorant-light-grey);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        #next-order-button {
+            background-color: var(--valorant-blue);
+            color: var(--valorant-dark);
+        }
+         #next-order-button:hover:not(:disabled) {
+            background-color: var(--valorant-white);
+         }
+         #next-order-button:disabled {
+            background-color: var(--valorant-light-grey);
+            color: var(--valorant-grey);
+            opacity: 0.7;
+         }
+
+        #feedback {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            min-height: 50px; /* Ensure space even when empty */
+            text-align: left;
+            background-color: var(--valorant-dark);
+            border-left: 4px solid var(--valorant-light-grey);
+            word-wrap: break-word; /* Prevent long strings from overflowing */
+        }
+
+        #feedback.success {
+            background-color: rgba(125, 249, 255, 0.1); /* Light blue background */
+            color: var(--valorant-blue);
+            border-left-color: var(--valorant-blue);
+        }
+
+        #feedback.error {
+            background-color: rgba(255, 70, 85, 0.1); /* Light orange background */
+            color: var(--valorant-orange);
+            border-left-color: var(--valorant-orange);
+        }
+
+        /* Theory Section */
+        .theory-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.9); /* --valorant-dark with opacity */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+        }
+
+        .theory-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease, visibility 0s linear 0s;
+        }
+
+        #theory-section {
+            background-color: var(--valorant-grey);
+            padding: 30px 40px 30px 30px; /* More padding on right for scrollbar */
+            border: 1px solid var(--valorant-orange);
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            color: var(--valorant-light-grey);
+        }
+
+        #theory-section h2 {
+            color: var(--valorant-orange);
+            margin-bottom: 15px;
+        }
+         #theory-section h3 {
+            color: var(--valorant-blue);
+            margin-top: 15px;
+            margin-bottom: 5px;
+         }
+         #theory-section p, #theory-section ul {
+             margin-bottom: 10px;
+             text-align: left;
+         }
+         #theory-section ul {
+             list-style: disc;
+             margin-left: 20px;
+         }
+         #theory-section code {
+             background-color: var(--valorant-dark);
+             padding: 2px 5px;
+             border-radius: 3px;
+             font-family: monospace;
+             color: var(--valorant-blue);
+             word-wrap: break-word;
+         }
+
+        #close-theory-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--valorant-orange);
+            color: var(--valorant-white);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001; /* Above theory content */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .lab-bench {
+                grid-template-columns: 1fr; /* Stack elements on smaller screens */
+            }
+             h1 {
+                 font-size: 1.8em;
+             }
+             .game-container {
+                 padding: 20px;
+             }
+             button {
+                 padding: 10px 18px;
+                 font-size: 0.9em;
+             }
+             .lab-bench label, .lab-bench select, .lab-bench input {
+                 font-size: 0.95em;
+             }
+             #lab-order {
+                 font-size: 1em;
+             }
+              #theory-section {
+                 padding: 25px 35px 25px 25px;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Mixing Station</h1>
+        <a href="index.html" class="back-link">Back to Hub</a>
+
+        <div id="level-display">Level: 1/5 - Mass Percentage</div>
+
+        <div id="lab-order">
+            Loading lab order...
+        </div>
+
+        <div class="lab-bench">
+            <div>
+                <label for="solute-select">Select Solute:</label>
+                <select id="solute-select"></select>
+            </div>
+            <div>
+                <label for="solvent-select">Select Solvent:</label>
+                <select id="solvent-select"></select>
+            </div>
+            <div>
+                <label id="solute-amount-label" for="solute-amount">Solute Amount (g):</label>
+                <input type="number" id="solute-amount" step="any" placeholder="e.g., 15.5" min="0">
+            </div>
+            <div>
+                <label id="solvent-amount-label" for="solvent-amount">Solvent Amount (g):</label>
+                <input type="number" id="solvent-amount" step="any" placeholder="e.g., 84.5" min="0">
+            </div>
+        </div>
+
+        <div class="control-buttons">
+            <button id="mix-button">Mix Solution</button>
+            <button id="next-order-button" class="hidden" disabled>Next Order</button>
+        </div>
+
+        <div id="feedback">Mix your first solution!</div>
+
+    </div>
+
+    <!-- Theory Section Overlay -->
+    <div id="theory-overlay" class="theory-overlay">
+        <div id="theory-section">
+            <button id="close-theory-button">×</button>
+            <h2>Need some help?</h2>
+            <p>Here's a quick refresher on the concentration type for this level:</p>
+            <div id="theory-content">
+                <!-- Theory content will be loaded here by JS -->
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // --- Game Configuration ---
+        const progressKey = 'chemistryGameProgress'; // Shared key with main UI
+        const currentGameId = 'game1'; // Identifier for this game's progress
+        const MAX_LEVEL = 5;
+        const TOLERANCE = 0.015; // Allow 1.5% tolerance for answers
+
+        // --- Chemical Data ---
+        const chemicals = {
+            solutes: {
+                'NaCl': { name: 'Sodium Chloride', formula: 'NaCl', molarMass: 58.44, density: 2.16 },
+                'C6H12O6': { name: 'Glucose', formula: 'C6H12O6', molarMass: 180.16, density: 1.54 },
+                'C2H5OH': { name: 'Ethanol', formula: 'C2H5OH', molarMass: 46.07, density: 0.789 }
+            },
+            solvents: {
+                'H2O': { name: 'Water', formula: 'H2O', molarMass: 18.02, density: 1.00 },
+                'C6H6': { name: 'Benzene', formula: 'C6H6', molarMass: 78.11, density: 0.874 },
+                // Add more solvents if needed
+            }
+        };
+
+        // --- DOM Elements ---
+        const levelDisplay = document.getElementById('level-display');
+        const labOrderDisplay = document.getElementById('lab-order');
+        const soluteSelect = document.getElementById('solute-select');
+        const solventSelect = document.getElementById('solvent-select');
+        const soluteAmountInput = document.getElementById('solute-amount');
+        const solventAmountInput = document.getElementById('solvent-amount');
+        const soluteAmountLabel = document.getElementById('solute-amount-label');
+        const solventAmountLabel = document.getElementById('solvent-amount-label');
+        const mixButton = document.getElementById('mix-button');
+        const nextOrderButton = document.getElementById('next-order-button');
+        const feedbackDisplay = document.getElementById('feedback');
+        const theoryOverlay = document.getElementById('theory-overlay');
+        const theoryContent = document.getElementById('theory-content');
+        const closeTheoryButton = document.getElementById('close-theory-button');
+
+        // --- Game State ---
+        let currentLevel = 1;
+        let targetConcentration = 0;
+        let concentrationType = ''; // 'mass%', 'volume%', 'molarity', 'molality', 'mole_fraction'
+        let requiredUnits = { solute: '', solvent: '' };
+        let currentSoluteKey = '';
+        let currentSolventKey = '';
+        let currentOrderDetails = {};
+        let errorCount = 0;
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', initGame);
+
+        function initGame() {
+            loadProgress(); // Load progress first to set currentLevel
+            populateSelectors();
+            generateNewOrder(); // Generate order based on loaded level
+            addEventListeners();
+            updateLevelDisplay(); // Initial display update
+        }
+
+        function populateSelectors() {
+            soluteSelect.innerHTML = ''; // Clear previous options if any
+            solventSelect.innerHTML = '';
+            // Populate Solutes
+            for (const key in chemicals.solutes) {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = `${chemicals.solutes[key].name} (${key}) - MM: ${chemicals.solutes[key].molarMass.toFixed(2)} g/mol`;
+                soluteSelect.appendChild(option);
+            }
+            // Populate Solvents
+            for (const key in chemicals.solvents) {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = `${chemicals.solvents[key].name} (${key}) - MM: ${chemicals.solvents[key].molarMass.toFixed(2)} g/mol, Density: ${chemicals.solvents[key].density.toFixed(3)} g/mL`;
+                solventSelect.appendChild(option);
+            }
+        }
+
+        function addEventListeners() {
+            mixButton.addEventListener('click', checkSolution);
+            nextOrderButton.addEventListener('click', () => {
+                 generateNewOrder(); // Simply generate a new order for the current level
+            });
+            closeTheoryButton.addEventListener('click', hideTheory);
+            theoryOverlay.addEventListener('click', (event) => {
+                if (event.target === theoryOverlay) {
+                    hideTheory();
+                }
+            });
+             // Add listener to reset error count if user changes input values
+             soluteAmountInput.addEventListener('input', () => { errorCount = 0; hideTheory(); });
+             solventAmountInput.addEventListener('input', () => { errorCount = 0; hideTheory(); });
+             soluteSelect.addEventListener('change', () => { errorCount = 0; hideTheory(); });
+             solventSelect.addEventListener('change', () => { errorCount = 0; hideTheory(); });
+        }
+
+        // --- Game Logic ---
+
+        function getRandomInRange(min, max, decimals = 1) {
+            return parseFloat((Math.random() * (max - min) + min).toFixed(decimals));
+        }
+
+        function generateNewOrder() {
+            // Determine concentration type based on currentLevel
+            const levelTypes = ['mass%', 'volume%', 'molarity', 'molality', 'mole_fraction'];
+            concentrationType = levelTypes[currentLevel - 1];
+            if (!concentrationType) { // Handle potential level > MAX_LEVEL case gracefully
+                console.error("Invalid level, defaulting to max level type");
+                concentrationType = levelTypes[MAX_LEVEL - 1];
+                currentLevel = MAX_LEVEL;
+            }
+
+            // Reset UI and state for a new order
+            feedbackDisplay.textContent = 'New order received. Prepare the solution.';
+            feedbackDisplay.className = ''; // Reset feedback style
+            soluteAmountInput.value = '';
+            solventAmountInput.value = '';
+            mixButton.disabled = false;
+            nextOrderButton.classList.add('hidden');
+            nextOrderButton.disabled = true;
+            errorCount = 0; // Reset error count
+            hideTheory();
+
+            // Randomly select solute and solvent (can be done here or stay fixed per level)
+            const soluteKeys = Object.keys(chemicals.solutes);
+            const solventKeys = Object.keys(chemicals.solvents);
+            currentSoluteKey = soluteKeys[Math.floor(Math.random() * soluteKeys.length)];
+            currentSolventKey = solventKeys[Math.floor(Math.random() * solventKeys.length)];
+
+            // Ensure selected chemicals are displayed
+            soluteSelect.value = currentSoluteKey;
+            solventSelect.value = currentSolventKey;
+
+            let orderText = '';
+            currentOrderDetails = { soluteKey: currentSoluteKey, solventKey: currentSolventKey, type: concentrationType };
+
+            // Generate target values and update labels based on concentration type
+            switch (concentrationType) {
+                 case 'mass%':
+                    targetConcentration = getRandomInRange(5, 30, 1); // Target %
+                    const totalMass = getRandomInRange(50, 250, 0); // Target total mass in g
+                    orderText = `Prepare ${totalMass}g of a ${targetConcentration}% ${chemicals.solutes[currentSoluteKey].name} (${currentSoluteKey}) solution by mass using ${chemicals.solvents[currentSolventKey].name}.`;
+                    soluteAmountLabel.textContent = "Solute Mass (g):";
+                    solventAmountLabel.textContent = "Solvent Mass (g):";
+                    requiredUnits = { solute: 'g', solvent: 'g' };
+                    currentOrderDetails.targetValue = targetConcentration;
+                    currentOrderDetails.totalMass = totalMass;
+                    break;
+
+                case 'volume%':
+                    targetConcentration = getRandomInRange(10, 50, 1); // Target %
+                    const totalVolume = getRandomInRange(100, 500, 0); // Target total volume in mL
+                    // Ensure solute has density, default to Ethanol if not
+                     if (!chemicals.solutes[currentSoluteKey].density) {
+                         currentSoluteKey = 'C2H5OH';
+                         soluteSelect.value = currentSoluteKey;
+                         currentOrderDetails.soluteKey = currentSoluteKey;
+                         console.log("Defaulted to Ethanol for Volume %");
+                     }
+                    orderText = `Prepare ${totalVolume}mL of a ${targetConcentration}% ${chemicals.solutes[currentSoluteKey].name} (${currentSoluteKey}) solution by volume using ${chemicals.solvents[currentSolventKey].name}. (Assume volumes are additive).`;
+                    soluteAmountLabel.textContent = "Solute Volume (mL):";
+                    solventAmountLabel.textContent = "Solvent Volume (mL):";
+                    requiredUnits = { solute: 'mL', solvent: 'mL' };
+                    currentOrderDetails.targetValue = targetConcentration;
+                    currentOrderDetails.totalVolume = totalVolume;
+                    break;
+
+                case 'molarity': // M = moles solute / L solution
+                    targetConcentration = getRandomInRange(0.1, 2.0, 2); // Target Molarity (mol/L)
+                    const solutionVolumeL = getRandomInRange(0.1, 1.0, 2); // Target solution volume in L
+                    const solutionVolumeML = solutionVolumeL * 1000;
+                    orderText = `Prepare ${solutionVolumeML.toFixed(0)}mL of a ${targetConcentration.toFixed(3)} M ${chemicals.solutes[currentSoluteKey].name} (${currentSoluteKey}) solution using ${chemicals.solvents[currentSolventKey].name}.`;
+                    soluteAmountLabel.textContent = "Solute Mass (g):";
+                    solventAmountLabel.textContent = "Final Solution Volume (mL):"; // Input final volume
+                    requiredUnits = { solute: 'g', solvent: 'mL_solution' };
+                    currentOrderDetails.targetValue = targetConcentration;
+                    currentOrderDetails.solutionVolumeL = solutionVolumeL;
+                    break;
+
+                case 'molality': // m = moles solute / kg solvent
+                    targetConcentration = getRandomInRange(0.1, 2.5, 2); // Target Molality (mol/kg)
+                    const solventMassKg = getRandomInRange(0.05, 0.5, 3); // Target solvent mass in kg
+                    const solventMassG = solventMassKg * 1000;
+                    orderText = `Prepare a ${targetConcentration.toFixed(3)} m ${chemicals.solutes[currentSoluteKey].name} (${currentSoluteKey}) solution using ${solventMassG.toFixed(1)}g of ${chemicals.solvents[currentSolventKey].name}.`;
+                    soluteAmountLabel.textContent = "Solute Mass (g):";
+                    solventAmountLabel.textContent = "Solvent Mass (g):"; // Input is solvent mass
+                    requiredUnits = { solute: 'g', solvent: 'g' };
+                    currentOrderDetails.targetValue = targetConcentration;
+                    currentOrderDetails.solventMassKg = solventMassKg; // Store target solvent mass
+                    break;
+
+                case 'mole_fraction': // X_solute = moles solute / total moles
+                    targetConcentration = getRandomInRange(0.01, 0.25, 3); // Target Mole Fraction
+                    const totalMolesApprox = getRandomInRange(0.5, 5.0, 1); // For context only
+                    orderText = `Prepare a solution of ${chemicals.solutes[currentSoluteKey].name} (${currentSoluteKey}) in ${chemicals.solvents[currentSolventKey].name} with a solute mole fraction of ${targetConcentration.toFixed(4)}. (Approx total moles ~${totalMolesApprox})`;
+                    soluteAmountLabel.textContent = "Solute Mass (g):";
+                    solventAmountLabel.textContent = "Solvent Mass (g):";
+                    requiredUnits = { solute: 'g', solvent: 'g' };
+                    currentOrderDetails.targetValue = targetConcentration;
+                    break;
+                 default:
+                    console.error("Unhandled concentration type:", concentrationType);
+                    orderText = "Error: Unknown concentration type for this level.";
+            }
+
+            labOrderDisplay.textContent = orderText;
+            updateLevelDisplay();
+        }
+
+        function checkSolution() {
+            const soluteKey = soluteSelect.value;
+            const solventKey = solventSelect.value;
+            const soluteAmount = parseFloat(soluteAmountInput.value);
+            const solventAmount = parseFloat(solventAmountInput.value);
+
+            // Input Validation
+            if (isNaN(soluteAmount) || isNaN(solventAmount) || soluteAmount < 0 || solventAmount < 0) { // Allow 0 for edge cases, but calculation might fail. Check division by zero later.
+                showFeedback('Please enter valid numbers (0 or positive) for both amounts.', 'error');
+                return;
+            }
+             if (soluteAmount === 0 && solventAmount === 0) {
+                 showFeedback('Cannot mix nothing! Please enter amounts.', 'error');
+                 return;
+             }
+
+            // Chemical Selection Validation (Optional strictness - allow user to select?)
+            // For this version, let's assume the user *must* use the selected chemicals for the current order calculation.
+             if (soluteKey !== currentOrderDetails.soluteKey || solventKey !== currentOrderDetails.solventKey) {
+                  showFeedback(`Order requires ${currentOrderDetails.soluteKey} in ${currentOrderDetails.solventKey}. You selected ${soluteKey} in ${solventKey}. Please adjust selection or proceed with these chemicals (calculation will use selected).`, 'error');
+                  // Don't necessarily stop them, but warn. The calculation below uses selected values.
+                   errorCount++;
+                   if (errorCount >= 2) showTheory();
+                  // return; // Decide if this error should block mixing
+             }
+
+            const soluteData = chemicals.solutes[soluteKey];
+            const solventData = chemicals.solvents[solventKey];
+            let calculatedConcentration = 0;
+            let calculationDetails = '';
+
+            try {
+                // --- Calculation Logic (using selected chemicals and amounts) ---
+                switch (currentOrderDetails.type) {
+                    case 'mass%':
+                        const mass_solute_g_m = soluteAmount;
+                        const mass_solvent_g_m = solventAmount;
+                        const total_mass_g = mass_solute_g_m + mass_solvent_g_m;
+                        if (total_mass_g === 0) {calculatedConcentration = 0; calculationDetails="Total mass is zero.";}
+                        else calculatedConcentration = (mass_solute_g_m / total_mass_g) * 100;
+                        calculationDetails = `(${mass_solute_g_m.toFixed(2)}g Solute / ${total_mass_g.toFixed(2)}g Solution) * 100`;
+                        break;
+
+                    case 'volume%':
+                        const vol_solute_ml = soluteAmount;
+                        const vol_solvent_ml = solventAmount;
+                        const total_volume_ml = vol_solute_ml + vol_solvent_ml; // Assumed additivity
+                         if (total_volume_ml === 0) {calculatedConcentration = 0; calculationDetails="Total volume is zero.";}
+                         else calculatedConcentration = (vol_solute_ml / total_volume_ml) * 100;
+                        calculationDetails = `(${vol_solute_ml.toFixed(2)}mL Solute / ${total_volume_ml.toFixed(2)}mL Solution) * 100`;
+                        break;
+
+                    case 'molarity':
+                        const mass_solute_g_M = soluteAmount;
+                        const vol_solution_ml_M = solventAmount; // User inputs final solution volume here
+                        const vol_solution_L_M = vol_solution_ml_M / 1000;
+                        if (vol_solution_L_M === 0) {calculatedConcentration = 0; calculationDetails="Solution volume is zero.";}
+                        else {
+                            const moles_solute_M = mass_solute_g_M / soluteData.molarMass;
+                            calculatedConcentration = moles_solute_M / vol_solution_L_M;
+                            calculationDetails = `(${moles_solute_M.toFixed(4)} mol / ${vol_solution_L_M.toFixed(3)} L)`;
+                        }
+                        break;
+
+                    case 'molality':
+                        const mass_solute_g_l = soluteAmount;
+                        const mass_solvent_g_l = solventAmount;
+                        const mass_solvent_kg_l = mass_solvent_g_l / 1000;
+                         if (mass_solvent_kg_l === 0) {
+                             if (mass_solute_g_l > 0) {calculatedConcentration = Infinity; calculationDetails="Cannot divide by zero solvent mass.";}
+                              else {calculatedConcentration = 0; calculationDetails="Zero solute and solvent.";} // Or NaN? Let's use 0.
+                         }
+                        else {
+                            const moles_solute_l = mass_solute_g_l / soluteData.molarMass;
+                            calculatedConcentration = moles_solute_l / mass_solvent_kg_l;
+                            calculationDetails = `(${moles_solute_l.toFixed(4)} mol / ${mass_solvent_kg_l.toFixed(4)} kg)`;
+                        }
+                         // Secondary check: Did they use the specified solvent mass for *this* order?
+                         const targetSolventKg = currentOrderDetails.solventMassKg;
+                         const solventMassDifference = Math.abs(mass_solvent_kg_l - targetSolventKg);
+                         // Allow slightly larger tolerance for this secondary check
+                         if (solventMassDifference > targetSolventKg * TOLERANCE * 2.5 && targetSolventKg > 0) {
+                              showFeedback(`Concentration Calculated: ${isFinite(calculatedConcentration) ? calculatedConcentration.toFixed(3) : 'Infinity'} ${currentOrderDetails.type}. BUT, incorrect solvent amount. Order required ${targetSolventKg.toFixed(3)} kg (${(targetSolventKg*1000).toFixed(1)}g), you used ${mass_solvent_kg_l.toFixed(3)} kg (${mass_solvent_g_l.toFixed(1)}g). Check calculation AND solvent mass.`, 'error');
+                               errorCount++;
+                               if (errorCount >= 2) showTheory();
+                               return; // Stop further checks if solvent mass is significantly off
+                         }
+                        break;
+
+                    case 'mole_fraction':
+                        const mass_solute_g_X = soluteAmount;
+                        const mass_solvent_g_X = solventAmount;
+                        const moles_solute_X = mass_solute_g_X / soluteData.molarMass;
+                        const moles_solvent_X = mass_solvent_g_X / solventData.molarMass;
+                        const total_moles_X = moles_solute_X + moles_solvent_X;
+                        if (total_moles_X === 0) {calculatedConcentration = 0; calculationDetails="Total moles is zero.";}
+                        else calculatedConcentration = moles_solute_X / total_moles_X;
+                         calculationDetails = `${moles_solute_X.toFixed(4)} mol Solute / ${total_moles_X.toFixed(4)} mol Total`;
+                        break;
+
+                    default:
+                        throw new Error("Unknown concentration type.");
+                }
+
+                // --- Check against target ---
+                const target = currentOrderDetails.targetValue;
+                // Handle checking against Infinity carefully
+                if (!isFinite(calculatedConcentration) && !isFinite(target)) {
+                    // If both are Infinity (or -Infinity), consider it a match in edge cases? Or always error?
+                    // Let's treat division by zero / Infinity as an error condition needing correction.
+                    showFeedback(`Calculation resulted in ${calculatedConcentration}. Check inputs (e.g., zero solvent mass for molality). Calculation: ${calculationDetails}`, 'error');
+                    errorCount++;
+                    if (errorCount >= 2) showTheory();
+                    return;
+                }
+                if (!isFinite(calculatedConcentration)) { // Handle NaN or Infinity
+                     showFeedback(`Calculation resulted in an invalid number (${calculatedConcentration}). Check inputs. Calculation: ${calculationDetails}`, 'error');
+                     errorCount++;
+                     if (errorCount >= 2) showTheory();
+                     return;
+                }
+
+
+                const difference = Math.abs(calculatedConcentration - target);
+                // Use relative tolerance for non-zero targets, absolute for zero target.
+                const allowedDifference = target === 0 ? TOLERANCE : Math.abs(target * TOLERANCE);
+
+                console.log(`Target: ${target}, Calc: ${calculatedConcentration}, Diff: ${difference}, Allowed: ${allowedDifference}`);
+
+                if (difference <= allowedDifference) {
+                    // SUCCESS
+                    showFeedback(`Success! Target: ${target.toFixed(4)}, Your Mix: ${calculatedConcentration.toFixed(4)}. ${calculationDetails}`, 'success');
+                    mixButton.disabled = true;
+                    nextOrderButton.classList.remove('hidden');
+                    nextOrderButton.disabled = false;
+                    errorCount = 0; // Reset errors
+
+                    // Check if level is completed (i.e., current level was less than max)
+                    if (currentLevel < MAX_LEVEL) {
+                        const nextLevel = currentLevel + 1;
+                         saveProgress(nextLevel); // Save progress indicating completion of currentLevel, moving to nextLevel
+                        currentLevel = nextLevel; // Advance level state
+                        updateLevelDisplay(); // Update display for new level
+                        showFeedback(`Level ${currentLevel-1} complete! Moving to Level ${currentLevel}: ${getLevelName(currentLevel)}. Get ready for the next order.`, 'success');
+                         setTimeout(generateNewOrder, 2500); // Auto-generate next order after short delay
+                    } else {
+                         // Max level reached or re-completed
+                         saveProgress(MAX_LEVEL); // Ensure progress reflects 100% completion
+                         showFeedback(`Success! Target: ${target.toFixed(4)}, Your Mix: ${calculatedConcentration.toFixed(4)}. You've mastered all concentration types! Click 'Next Order' for more practice at Level ${MAX_LEVEL}.`, 'success');
+                         // Next Order button is already enabled
+                    }
+
+                } else {
+                    // FAILURE
+                    showFeedback(`Concentration incorrect. Target: ${target.toFixed(4)}, Your Mix: ${calculatedConcentration.toFixed(4)}. Calculation: ${calculationDetails}. Check your amounts/calculations.`, 'error');
+                    errorCount++;
+                    if (errorCount >= 2) {
+                        showTheory();
+                    }
+                }
+
+            } catch (error) {
+                console.error("Calculation Error:", error);
+                showFeedback(`Error during calculation: ${error.message}`, 'error');
+                 errorCount++;
+                 if (errorCount >= 2) showTheory();
+            }
+        }
+
+        function showFeedback(message, type) {
+            feedbackDisplay.textContent = message;
+            feedbackDisplay.className = type; // 'success' or 'error'
+        }
+
+        function getLevelName(level) {
+             const levelTypes = ['Mass Percentage', 'Volume Percentage', 'Molarity', 'Molality', 'Mole Fraction'];
+             return levelTypes[level - 1] || 'Practice';
+        }
+
+        function updateLevelDisplay() {
+            levelDisplay.textContent = `Level: ${currentLevel}/${MAX_LEVEL} - ${getLevelName(currentLevel)}`;
+        }
+
+        // --- Theory Section ---
+        function getTheoryText(type) {
+           // (Keep the existing getTheoryText function content as it was before - it's correct)
+           switch(type) {
+                case 'mass%':
+                    return `
+                        <h3>Mass Percentage (%)</h3>
+                        <p>Measures the concentration based on mass.</p>
+                        <p><strong>Formula:</strong> <code>Mass % = (Mass of Solute / (Mass of Solute + Mass of Solvent)) * 100</code></p>
+                        <p>Units must be consistent (e.g., grams for both).</p>
+                        <p><strong>Example:</strong> 10g NaCl in 90g H2O -> (10g / (10g + 90g)) * 100 = 10%.</p>
+                        <p><strong>Task:</strong> Input solute mass (g) and solvent mass (g).</p>`;
+                case 'volume%':
+                     return `
+                        <h3>Volume Percentage (%)</h3>
+                        <p>Measures concentration based on volume (for liquids).</p>
+                        <p><strong>Formula:</strong> <code>Volume % = (Volume of Solute / (Volume of Solute + Volume of Solvent)) * 100</code></p>
+                        <p><strong>Assumption:</strong> Volumes are additive (stated in order).</p>
+                        <p>Units must be consistent (e.g., mL for both).</p>
+                        <p><strong>Example:</strong> 20mL Ethanol in 80mL H2O -> (20mL / (20mL + 80mL)) * 100 = 20%.</p>
+                        <p><strong>Task:</strong> Input solute volume (mL) and solvent volume (mL).</p>`;
+                case 'molarity':
+                     return `
+                        <h3>Molarity (M)</h3>
+                        <p>Measures moles of solute per liter of the <em>total solution</em>.</p>
+                        <p><strong>Formula:</strong> <code>Molarity (M) = Moles of Solute / Liters of Solution</code></p>
+                        <p><strong>Steps:</strong></p>
+                        <ul>
+                            <li>Calculate Moles Solute: <code>Mass Solute (g) / Molar Mass (g/mol)</code></li>
+                            <li>Convert Solution Volume to Liters: <code>Volume (mL) / 1000</code></li>
+                            <li>Divide Moles Solute by Liters Solution.</li>
+                        </ul>
+                        <p><strong>Example:</strong> 29.22g NaCl (MM=58.44) dissolved to make 500mL (0.5L) solution.
+                           <br>Moles = 29.22 / 58.44 = 0.5 mol.
+                           <br>Molarity = 0.5 mol / 0.5 L = 1 M.
+                        </p>
+                         <p><strong>Task:</strong> Input solute mass (g) and the <strong>final total volume of the solution (mL)</strong>.</p>`;
+                case 'molality':
+                     return `
+                        <h3>Molality (m)</h3>
+                        <p>Measures moles of solute per kilogram of the <em>solvent</em>.</p>
+                        <p><strong>Formula:</strong> <code>Molality (m) = Moles of Solute / Kilograms of Solvent</code></p>
+                        <p><strong>Steps:</strong></p>
+                         <ul>
+                            <li>Calculate Moles Solute: <code>Mass Solute (g) / Molar Mass (g/mol)</code></li>
+                            <li>Convert Solvent Mass to Kilograms: <code>Mass (g) / 1000</code></li>
+                            <li>Divide Moles Solute by Kilograms Solvent.</li>
+                        </ul>
+                        <p><strong>Example:</strong> 5.84g NaCl (MM=58.44) dissolved in 200g (0.2kg) water.
+                           <br>Moles = 5.84 / 58.44 = 0.1 mol.
+                           <br>Molality = 0.1 mol / 0.2 kg = 0.5 m.
+                        </p>
+                         <p><strong>Task:</strong> Input solute mass (g) and solvent mass (g). Ensure solvent mass matches the order's requirement.</p>`;
+                case 'mole_fraction':
+                     return `
+                        <h3>Mole Fraction (X)</h3>
+                        <p>Ratio of moles of one component to the total moles (solute + solvent). Unitless.</p>
+                        <p><strong>Formula (Solute):</strong> <code>X_solute = Moles Solute / (Moles Solute + Moles Solvent)</code></p>
+                        <p><strong>Steps:</strong></p>
+                         <ul>
+                            <li>Calculate Moles Solute: <code>Mass Solute (g) / Molar Mass (g/mol)</code></li>
+                            <li>Calculate Moles Solvent: <code>Mass Solvent (g) / Molar Mass (g/mol)</code></li>
+                            <li>Calculate Total Moles.</li>
+                            <li>Divide Moles Solute by Total Moles.</li>
+                        </ul>
+                        <p><strong>Example:</strong> 18g Glucose (MM=180.16) in 90g Water (MM=18.02).
+                           <br>Moles Glucose ≈ 0.1 mol. Moles Water ≈ 5.0 mol. Total ≈ 5.1 mol.
+                           <br>X_glucose ≈ 0.1 / 5.1 ≈ 0.0196.
+                        </p>
+                         <p><strong>Task:</strong> Input solute mass (g) and solvent mass (g).</p>`;
+                default:
+                    return '<p>Review the definition for the current concentration type in the lab order.</p>';
+            }
+        }
+
+        function showTheory() {
+             if (!theoryOverlay.classList.contains('visible')) {
+                 theoryContent.innerHTML = getTheoryText(concentrationType);
+                 theoryOverlay.classList.add('visible');
+             }
+        }
+
+        function hideTheory() {
+             theoryOverlay.classList.remove('visible');
+        }
+
+        // --- Progress Saving/Loading (Updated) ---
+
+        /**
+         * Saves progress for this game (game1).
+         * @param {number} levelAchieved - The level the player has now reached (e.g., if they just finished level 1, this is 2).
+         */
+        function saveProgress(levelAchieved) {
+            let progressToSave;
+            try {
+                const stored = localStorage.getItem(progressKey);
+                // Initialize to empty object if nothing stored or parsing fails
+                progressToSave = stored ? JSON.parse(stored) : {};
+                 // Basic validation: ensure it's an object
+                 if (typeof progressToSave !== 'object' || progressToSave === null) {
+                    progressToSave = {};
+                 }
+            } catch (e) {
+                console.error("Error reading progress before saving:", e);
+                progressToSave = {}; // Reset to empty on read error
+            }
+
+            // Calculate percentage based on the level just completed
+            const completedLevel = levelAchieved - 1;
+            const newPercentage = Math.max(0, Math.min(100, Math.round((completedLevel / MAX_LEVEL) * 100)));
+
+            // Get current stored percentage, default to 0
+            const currentStoredPercent = progressToSave[currentGameId] || 0;
+
+            // Only update if the new percentage is higher
+            if (newPercentage > currentStoredPercent) {
+                progressToSave[currentGameId] = newPercentage; // Update percentage for game1
+                try {
+                     localStorage.setItem(progressKey, JSON.stringify(progressToSave));
+                     console.log(`Progress saved for ${currentGameId}: ${newPercentage}%`);
+                } catch (saveError) {
+                     console.error("Error saving progress to localStorage:", saveError);
+                     // Potentially alert user storage is full or failed
+                }
+            } else {
+                 console.log(`Progress for ${currentGameId} (${newPercentage}%) is not higher than stored (${currentStoredPercent}%). Not saving.`);
+            }
+        }
+
+        /**
+         * Loads progress and sets the starting level for this game.
+         */
+        function loadProgress() {
+            let loadedLevel = 1; // Default starting level
+            try {
+                const progressString = localStorage.getItem(progressKey);
+                if (progressString) {
+                    const progress = JSON.parse(progressString);
+                    // Check if progress is an object and has data for this game
+                    if (typeof progress === 'object' && progress !== null && progress[currentGameId] !== undefined) {
+                        const storedPercent = Number(progress[currentGameId]);
+
+                        if (!isNaN(storedPercent) && storedPercent >= 0 && storedPercent <= 100) {
+                            // Calculate level based on percentage
+                             if (storedPercent === 100) {
+                                 loadedLevel = MAX_LEVEL; // If 100%, start at max level for practice
+                             } else {
+                                 // Calculate completed levels based on 20% increments
+                                 const completedLevels = Math.floor(storedPercent / (100 / MAX_LEVEL));
+                                 loadedLevel = Math.min(MAX_LEVEL, completedLevels + 1); // Start the next level
+                             }
+                            console.log(`Progress Loaded for ${currentGameId}: ${storedPercent}%. Starting at Level: ${loadedLevel}`);
+                        } else {
+                             console.warn(`Invalid percentage stored for ${currentGameId}: ${progress[currentGameId]}. Starting at Level 1.`);
+                        }
+                    } else {
+                         console.log(`No progress found for ${currentGameId}. Starting at Level 1.`);
+                    }
+                } else {
+                     console.log('No progress key found in localStorage. Starting at Level 1.');
+                }
+            } catch (error) {
+                console.error("Failed to load or parse progress:", error);
+                // Keep default level 1 on error
+            }
+            currentLevel = loadedLevel; // Set the game's current level
+            // updateLevelDisplay() will be called in initGame after this
+        }
+
+    </script>
+
+</body>
+</html>

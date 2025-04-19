@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Scientist Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --valorant-orange: #FF4655; /* Valorant Red/Orange */
+            --valorant-blue: #7DF9FF;  /* Electric Blue/Teal */
+            --valorant-dark: #111111; /* Very Dark Grey */
+            --valorant-grey: #333333; /* Medium Grey */
+            --valorant-light-grey: #BDBDBD; /* Light Grey */
+            --valorant-white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--valorant-dark);
+            color: var(--valorant-light-grey);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--valorant-grey);
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            color: var(--valorant-white);
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        /* Add subtle angular lines like Valorant */
+        header h1::before,
+        header h1::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 2px;
+            background-color: var(--valorant-orange);
+            transform: translateY(-50%);
+        }
+        header h1::before { left: -40px; }
+        header h1::after { right: -40px; }
+
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .game-card {
+            background-color: var(--valorant-grey);
+            border: 1px solid #444; /* Slightly lighter border */
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden; /* Needed for pseudo-elements */
+            min-height: 300px; /* Ensure cards have a minimum height */
+        }
+
+        /* Angular corner effect */
+         .game-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 40px;
+            height: 40px;
+            border-top: 3px solid var(--valorant-orange);
+            border-left: 3px solid var(--valorant-orange);
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+         .game-card:hover::before {
+            width: 60px;
+            height: 60px;
+            opacity: 1;
+         }
+
+        .game-card h2 {
+            color: var(--valorant-white);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--valorant-blue);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .game-card p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Make description take available space */
+        }
+
+        .progress-section {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: var(--valorant-light-grey);
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: var(--valorant-dark);
+            height: 12px;
+            border: 1px solid #555;
+            position: relative; /* For potential pattern overlay */
+        }
+
+        .progress-bar {
+            background-color: var(--valorant-orange);
+            height: 100%;
+            width: 0%; /* Initial width, set by JS */
+            transition: width 0.5s ease-in-out;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        .launch-button {
+            display: inline-block;
+            background-color: var(--valorant-orange);
+            color: var(--valorant-white);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            align-self: flex-start; /* Align button to the start */
+            margin-top: auto; /* Push button to bottom */
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); /* Angled corners */
+        }
+
+        .launch-button:hover {
+            background-color: #e03543; /* Slightly darker orange */
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+             header h1::before,
+             header h1::after {
+                width: 20px;
+            }
+             header h1::before { left: -25px; }
+             header h1::after { right: -25px; }
+
+            .game-grid {
+                grid-template-columns: 1fr; /* Stack cards on smaller screens */
+                gap: 20px;
+            }
+             .game-card {
+                min-height: auto; /* Allow height to adjust */
+             }
+        }
+
+         @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 1.7rem;
+            }
+             header h1::before,
+             header h1::after {
+                 display: none; /* Hide lines on very small screens */
+             }
+             .game-card {
+                 padding: 20px;
+             }
+             .game-card h2 {
+                 font-size: 1.2rem;
+             }
+             .launch-button {
+                 padding: 8px 15px;
+                 font-size: 0.9rem;
+             }
+         }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Solution Scientist Lab</h1>
+        </header>
+
+        <main class="game-grid">
+            <!-- Game Card 1: Mixing Station -->
+            <div class="game-card" id="game1">
+                <h2>Mixing Station</h2>
+                <p>Master the art of solution preparation! Create solutions of specific concentrations using various units like Mass %, Volume %, Molarity, Molality, and Mole Fraction.</p>
+                <div class="progress-section">
+                    <div class="progress-label">
+                        <span>Progress:</span>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <a href="game1_mixing_station.html" class="launch-button">Enter Lab 1</a>
+            </div>
+
+            <!-- Game Card 2: Solubility Challenge -->
+            <div class="game-card" id="game2">
+                <h2>Solubility Challenge</h2>
+                <p>Unlock the secrets of dissolution! Use the 'Like Dissolves Like' principle and manipulate temperature and pressure to dissolve various solutes.</p>
+                <div class="progress-section">
+                    <div class="progress-label">
+                        <span>Progress:</span>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <a href="game2_solubility_challenge.html" class="launch-button">Enter Lab 2</a>
+            </div>
+
+            <!-- Game Card 3: Vapour Pressure Regulator -->
+            <div class="game-card" id="game3" style="display:none;">
+                <h2>Vapour Pressure Regulator</h2>
+                <p>Control the atmosphere! Explore Raoult's Law, predict vapour pressures of ideal and non-ideal solutions, and discover azeotropes.</p>
+                 <div class="progress-section">
+                    <div class="progress-label">
+                        <span>Progress:</span>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <a href="game3_vapour_pressure.html" class="launch-button">Enter Lab 3</a>
+            </div>
+
+            <!-- Game Card 4: Colligative Investigator -->
+            <div class="game-card" id="game4">
+                <h2>Colligative Investigator</h2>
+                <p>Become a chemical detective! Identify unknown solutes by measuring colligative properties like freezing point depression and boiling point elevation. Unravel the van't Hoff factor.</p>
+                <div class="progress-section">
+                    <div class="progress-label">
+                        <span>Progress:</span>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <a href="game4_colligative_investigator.html" class="launch-button">Enter Lab 4</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressKey = 'chemistryGameProgress';
+            const defaultProgress = {
+                game1: 0,
+                game2: 0,
+                game3: 0,
+                game4: 0
+            };
+
+            // Load progress from localStorage or set default
+            let currentProgress;
+            try {
+                const storedProgress = localStorage.getItem(progressKey);
+                currentProgress = storedProgress != null ? JSON.parse(storedProgress) : defaultProgress;
+                // Basic validation if needed
+                console.log(currentProgress)
+                if (typeof currentProgress !== 'object' || currentProgress === null) {
+                    currentProgress = defaultProgress;
+                }
+                // Ensure all keys exist
+                Object.keys(defaultProgress).forEach(key => {
+                    if (!(key in currentProgress) || typeof currentProgress[key] !== 'number') {
+                        currentProgress[key] = defaultProgress[key];
+                    }
+                });
+
+            } catch (e) {
+                console.error("Error loading progress from localStorage:", e);
+                currentProgress = defaultProgress;
+                // Optionally clear corrupted storage
+                // localStorage.removeItem(progressKey);
+            }
+
+
+            // Function to update UI for a specific game
+            function updateProgressUI(gameId, percentage) {
+                const gameElement = document.getElementById(gameId);
+                if (gameElement) {
+                    const progressBar = gameElement.querySelector('.progress-bar');
+                    const percentageText = gameElement.querySelector('.progress-percentage');
+
+                    if (progressBar && percentageText) {
+                        // Clamp percentage between 0 and 100
+                        const validPercentage = Math.max(0, Math.min(100, percentage));
+                        progressBar.style.width = `${validPercentage}%`;
+                        percentageText.textContent = `${Math.round(validPercentage)}%`;
+                    } else {
+                        console.warn(`Progress elements not found for ${gameId}`);
+                    }
+                } else {
+                     console.warn(`Game card element not found for ${gameId}`);
+                }
+            }
+
+            // Update UI for all games on load
+            Object.keys(currentProgress).forEach(gameId => {
+                updateProgressUI(gameId, currentProgress[gameId]);
+            });
+
+             // Example of how a game *might* update progress (This function wouldn't live here,
+             // but demonstrates the localStorage interaction the games should perform)
+             function saveProgressExample(gameId, newPercentage) {
+                 let progressToSave;
+                 try {
+                     const stored = localStorage.getItem(progressKey);
+                     progressToSave = stored ? JSON.parse(stored) : { ...defaultProgress }; // Use spread for a fresh copy
+                     if (typeof progressToSave !== 'object' || progressToSave === null) {
+                        progressToSave = { ...defaultProgress };
+                     }
+                 } catch (e) {
+                     console.error("Error reading progress before saving:", e);
+                     progressToSave = { ...defaultProgress };
+                 }
+
+                 progressToSave[gameId] = Math.max(0, Math.min(100, newPercentage)); // Update specific game
+                 localStorage.setItem(progressKey, JSON.stringify(progressToSave));
+                 console.log(`Progress saved for ${gameId}: ${progressToSave[gameId]}%`);
+                 // In a real scenario, the individual game page would do this saving,
+                 // and this main page would just load it next time.
+             }
+
+
+             // Example usage (REMOVE THIS IN FINAL VERSION - GAMES WILL DO THIS)
+             // saveProgressExample('game1', 25);
+             // saveProgressExample('game3', 50);
+             // setTimeout(() => updateProgressUI('game1', 25), 100); // Update UI after slight delay if needed
+             // setTimeout(() => updateProgressUI('game3', 50), 100);
+
+        });
+    </script>
+</body>
+</html>

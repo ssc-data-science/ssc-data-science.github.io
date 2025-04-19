@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solubility Challenge - Valorant Chem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --valorant-orange: #FF4655; /* Primary action, accents */
+            --valorant-blue: #00BCD4;   /* Secondary accent, info */
+            --valorant-dark: #111111;   /* Deep background */
+            --valorant-grey: #383E56;  /* UI elements, cards */
+            --valorant-light-grey: #7B8A8B; /* Less important text */
+            --valorant-white: #FFFFFF;  /* Primary text, highlights */
+            --valorant-success: #4CAF50; /* Success feedback */
+            --valorant-error: #F44336;   /* Error feedback */
+            --valorant-progress: #FFD700; /* Progress bar */
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--valorant-dark);
+            color: var(--valorant-white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.95)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23383E56" fill-opacity="0.05" d="M23 0 L100 77 L100 100 L77 100 L0 23 L0 0 Z M77 0 L100 23 L100 0 Z M0 100 L23 100 L0 77 Z"/></svg>'); /* Subtle background pattern */
+        }
+
+        .game-container {
+            background-color: rgba(56, 62, 86, 0.6); /* var(--valorant-grey) with opacity */
+            border: 1px solid var(--valorant-light-grey);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--valorant-light-grey);
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: var(--valorant-white);
+        }
+
+        h1 {
+            color: var(--valorant-orange);
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #level-display {
+            color: var(--valorant-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .game-area {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .crystal-display {
+            background-color: rgba(17, 17, 17, 0.7); /* Darker inner area */
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed var(--valorant-blue);
+            min-height: 120px; /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+        }
+
+        #crystal-visual {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: var(--valorant-progress); /* Gold-like color for crystal */
+            margin-bottom: 10px;
+             text-shadow: 0 0 5px var(--valorant-progress);
+        }
+
+        #crystal-properties {
+            font-size: 0.95em;
+            color: var(--valorant-light-grey);
+            line-height: 1.6;
+        }
+         #crystal-properties span {
+            color: var(--valorant-white);
+            font-weight: 600;
+            margin: 0 4px; /* Spacing around property values */
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+
+        .controls {
+            background-color: rgba(17, 17, 17, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .controls h3 {
+            color: var(--valorant-blue);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-align: left;
+        }
+
+        .solvent-controls .button-group,
+        .parameter-controls .slider-group {
+            display: flex;
+            justify-content: space-around; /* Evenly space buttons/sliders */
+            align-items: center; /* Align items vertically */
+            gap: 15px; /* Gap between elements */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .solvent-btn, .action-button {
+            background-color: var(--valorant-grey);
+            color: var(--valorant-white);
+            border: 1px solid var(--valorant-light-grey);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            font-family: var(--font-family);
+            font-size: 0.95em;
+            flex-grow: 1; /* Allow buttons to grow */
+            min-width: 120px; /* Prevent buttons from becoming too small */
+        }
+
+        .solvent-btn.selected, .solvent-btn:hover {
+            background-color: var(--valorant-blue);
+            border-color: var(--valorant-blue);
+        }
+         .solvent-btn.selected {
+            box-shadow: 0 0 8px var(--valorant-blue);
+         }
+
+        .solvent-btn:active, .action-button:active {
+             transform: scale(0.98);
+        }
+
+        #selected-solvent {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--valorant-light-grey);
+             width: 100%; /* Take full width for centering */
+            text-align: center;
+        }
+
+
+        .parameter-controls .slider-group {
+            justify-content: center; /* Center align slider items */
+            flex-direction: column; /* Stack sliders vertically */
+            align-items: stretch; /* Stretch items to fill width */
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%; /* Full width within the group */
+            margin-bottom: 10px; /* Space between sliders */
+        }
+
+        .slider-container label {
+            min-width: 70px; /* Consistent label width */
+            text-align: right;
+            color: var(--valorant-light-grey);
+        }
+
+        input[type="range"] {
+            flex-grow: 1;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            height: 8px;
+            background: var(--valorant-grey);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: var(--valorant-orange);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(255, 70, 85, 0.7);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: var(--valorant-orange);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none; /* Needed for Firefox */
+             box-shadow: 0 0 5px rgba(255, 70, 85, 0.7);
+        }
+
+        .slider-container span {
+            min-width: 50px; /* Space for value display */
+            text-align: left;
+            font-weight: 600;
+            color: var(--valorant-white);
+        }
+
+
+         #pressure-control-group {
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+             overflow: hidden;
+             opacity: 1;
+             max-height: 100px; /* Adjust as needed */
+        }
+
+        #pressure-control-group.hidden {
+            opacity: 0;
+            max-height: 0;
+            margin-bottom: 0; /* Remove margin when hidden */
+             padding: 0;
+             border: none;
+        }
+
+
+        .action-button {
+            background-color: var(--valorant-orange);
+            border-color: var(--valorant-orange);
+            font-weight: 600;
+            margin-top: 15px; /* Space above main action button */
+            width: 100%; /* Full width button */
+            max-width: 300px; /* Limit max width */
+             display: block; /* Center using margin auto */
+             margin-left: auto;
+             margin-right: auto;
+        }
+         .action-button:hover {
+            background-color: #e03a46; /* Slightly darker orange on hover */
+         }
+
+        .feedback-area {
+            margin-top: 20px;
+            min-height: 70px; /* Reserve space for feedback */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center progress bar and message */
+        }
+
+        .progress-bar-container {
+            width: 80%;
+            height: 15px;
+            background-color: var(--valorant-grey);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid var(--valorant-light-grey);
+             display: none; /* Hidden by default */
+        }
+
+        #dissolve-progress {
+            width: 0%;
+            height: 100%;
+            background-color: var(--valorant-progress);
+            border-radius: 8px 0 0 8px; /* Keep left radius */
+            transition: width 0.5s ease-in-out;
+             background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+             background-size: 40px 40px;
+             animation: progress-bar-stripes 1s linear infinite;
+        }
+
+        @keyframes progress-bar-stripes {
+            from { background-position: 40px 0; }
+            to { background-position: 0 0; }
+        }
+
+        #feedback-message {
+            font-weight: 600;
+            min-height: 1.5em; /* Reserve space for one line of text */
+            transition: color 0.3s ease;
+        }
+
+        #hint-area {
+            margin-top: 10px;
+            color: var(--valorant-blue);
+            font-style: italic;
+            min-height: 1.5em;
+        }
+
+        #next-button {
+            display: none; /* Hidden by default */
+            background-color: var(--valorant-success);
+            border-color: var(--valorant-success);
+             width: 100%; /* Full width button */
+            max-width: 300px; /* Limit max width */
+             display: block; /* Center using margin auto */
+             margin-left: auto;
+             margin-right: auto;
+             margin-top: 15px;
+        }
+         #next-button:hover {
+             background-color: #45a049;
+         }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .game-container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .solvent-controls .button-group {
+                flex-direction: column; /* Stack solvent buttons vertically */
+            }
+            .solvent-btn {
+                width: 100%; /* Full width buttons on small screens */
+            }
+        }
+
+         @media (max-width: 480px) {
+             .back-button {
+                 font-size: 0.9em;
+                 top: 10px;
+                 left: 10px;
+             }
+             h1 {
+                 font-size: 1.3em;
+             }
+              .game-container {
+                 padding: 15px;
+             }
+             #crystal-visual {
+                 font-size: 1.5em;
+             }
+             #crystal-properties {
+                 font-size: 0.9em;
+             }
+             .slider-container label {
+                 min-width: 60px;
+                 font-size: 0.9em;
+             }
+             .slider-container span {
+                  min-width: 40px;
+                  font-size: 0.9em;
+             }
+         }
+
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-button">< Back to Hub</a>
+
+    <div class="game-container">
+        <h1>Solubility Challenge</h1>
+        <div id="level-display">Level: 1</div>
+
+        <div class="game-area">
+            <div class="crystal-display">
+                <div id="crystal-visual">Crystal Key</div>
+                <div id="crystal-properties">
+                    Loading crystal properties...
+                </div>
+            </div>
+
+            <div class="controls solvent-controls">
+                <h3>Choose Solvent</h3>
+                <div class="button-group">
+                    <button class="solvent-btn" data-solvent="water">Water (Polar)</button>
+                    <button class="solvent-btn" data-solvent="hexane">Hexane (Non-polar)</button>
+                </div>
+                 <div id="selected-solvent">Selected: None</div>
+            </div>
+
+            <div class="controls parameter-controls">
+                <h3>Adjust Conditions</h3>
+                 <div class="slider-group">
+                    <div class="slider-container">
+                        <label for="temp-slider">Temp:</label>
+                        <input type="range" id="temp-slider" min="0" max="100" value="25">
+                        <span id="temp-value">25 °C</span>
+                    </div>
+                    <div class="slider-container hidden" id="pressure-control-group">
+                        <label for="pressure-slider">Pressure:</label>
+                        <input type="range" id="pressure-slider" min="1" max="10" value="1" step="0.5">
+                        <span id="pressure-value">1 atm</span>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <button id="dissolve-button" class="action-button">Try to Dissolve</button>
+
+        <div class="feedback-area">
+             <div class="progress-bar-container" id="progress-bar-container">
+                <div id="dissolve-progress" class="progress-bar"></div>
+            </div>
+            <div id="feedback-message">Select a solvent and adjust conditions to dissolve the crystal.</div>
+            <div id="hint-area"></div>
+        </div>
+
+        <button id="next-button" class="action-button">Next Crystal Key</button>
+    </div>
+
+    <script>
+        const progressKey = 'chemistryGameProgress';
+        const defaultProgress = { game1: 0, game2: 0, game3: 0 }; // Default structure
+
+        // DOM Elements
+        const levelDisplay = document.getElementById('level-display');
+        const crystalVisual = document.getElementById('crystal-visual');
+        const crystalPropertiesDisplay = document.getElementById('crystal-properties');
+        const solventButtons = document.querySelectorAll('.solvent-btn');
+        const selectedSolventDisplay = document.getElementById('selected-solvent');
+        const tempSlider = document.getElementById('temp-slider');
+        const tempValueDisplay = document.getElementById('temp-value');
+        const pressureSlider = document.getElementById('pressure-slider');
+        const pressureValueDisplay = document.getElementById('pressure-value');
+        const pressureControlGroup = document.getElementById('pressure-control-group');
+        const dissolveButton = document.getElementById('dissolve-button');
+        const progressBarContainer = document.getElementById('progress-bar-container');
+        const dissolveProgress = document.getElementById('dissolve-progress');
+        const feedbackMessage = document.getElementById('feedback-message');
+        const hintArea = document.getElementById('hint-area');
+        const nextButton = document.getElementById('next-button');
+
+        // Game State
+        let currentLevel = 1;
+        const maxLevel = 3; // Define maximum level
+        let crystalsDissolvedThisLevel = 0;
+        const totalCrystalsPerLevel = 3; // Crystals needed to level up
+        let currentCrystal = null;
+        let selectedSolvent = null; // 'water' or 'hexane'
+        let currentTemp = parseInt(tempSlider.value);
+        let currentPressure = parseFloat(pressureSlider.value);
+        let canDissolve = true; // Flag to prevent multiple clicks
+
+        // Crystal Definitions (Solute)
+        const crystalDatabase = [
+            // Level 1: Focus on Polarity
+            { name: "AquaShard", polarity: "polar", state: "solid", dissolution: "endothermic", idealTemp: 80, idealPressure: 1, levelReq: 1 },
+            { name: "OiloStone", polarity: "nonpolar", state: "solid", dissolution: "neutral", idealTemp: 25, idealPressure: 1, levelReq: 1 },
+            { name: "Saltine Gem", polarity: "polar", state: "solid", dissolution: "neutral", idealTemp: 25, idealPressure: 1, levelReq: 1 },
+             { name: "Waxine Crystal", polarity: "nonpolar", state: "solid", dissolution: "endothermic", idealTemp: 60, idealPressure: 1, levelReq: 1 },
+
+
+            // Level 2: Introduce Temperature Effects more strongly for Solids
+            { name: "ThermoBloom", polarity: "polar", state: "solid", dissolution: "endothermic", idealTemp: 90, idealPressure: 1, levelReq: 2 }, // Needs high temp
+            { name: "CryoFreeze", polarity: "polar", state: "solid", dissolution: "exothermic", idealTemp: 10, idealPressure: 1, levelReq: 2 }, // Needs low temp
+            { name: "HexaHeat", polarity: "nonpolar", state: "solid", dissolution: "endothermic", idealTemp: 70, idealPressure: 1, levelReq: 2 }, // Non-polar, needs heat
+             { name: "StableRock", polarity: "nonpolar", state: "solid", dissolution: "neutral", idealTemp: 40, idealPressure: 1, levelReq: 2 }, // Less temp sensitive
+
+
+            // Level 3: Introduce Gases and Pressure Effects
+            { name: "Pressurite Gas", polarity: "nonpolar", state: "gas", dissolution: "exothermic", idealTemp: 10, idealPressure: 8, levelReq: 3 }, // Gas, low T, high P
+            { name: "HydroFizz", polarity: "polar", state: "gas", dissolution: "exothermic", idealTemp: 5, idealPressure: 10, levelReq: 3 }, // Polar Gas, very low T, high P
+            { name: "AiryLite", polarity: "nonpolar", state: "gas", dissolution: "neutral", idealTemp: 20, idealPressure: 5, levelReq: 3 }, // Gas, less sensitive
+             { name: "HotRock Solid", polarity: "polar", state: "solid", dissolution: "endothermic", idealTemp: 95, idealPressure: 1, levelReq: 3 }, // Solid challenge for L3
+             { name: "ColdHex Solid", polarity: "nonpolar", state: "solid", dissolution: "exothermic", idealTemp: 15, idealPressure: 1, levelReq: 3 }, // Solid challenge for L3
+        ];
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            setupEventListeners();
+            generateCrystal();
+            updateUI(); // Initial UI state based on loaded level
+        });
+
+        function setupEventListeners() {
+            solventButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (!canDissolve) return; // Don't allow changes while processing/solved
+                    selectedSolvent = button.dataset.solvent;
+                    solventButtons.forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    selectedSolventDisplay.textContent = `Selected: ${button.textContent}`;
+                     feedbackMessage.textContent = "Conditions updated. Ready to dissolve?";
+                     feedbackMessage.style.color = 'var(--valorant-white)';
+                     hintArea.textContent = "";
+                });
+            });
+
+            tempSlider.addEventListener('input', () => {
+                currentTemp = parseInt(tempSlider.value);
+                tempValueDisplay.textContent = `${currentTemp} °C`;
+                if (!canDissolve) return;
+                 feedbackMessage.textContent = "Conditions updated. Ready to dissolve?";
+                 feedbackMessage.style.color = 'var(--valorant-white)';
+                 hintArea.textContent = "";
+            });
+
+            pressureSlider.addEventListener('input', () => {
+                currentPressure = parseFloat(pressureSlider.value);
+                pressureValueDisplay.textContent = `${currentPressure.toFixed(1)} atm`;
+                 if (!canDissolve) return;
+                 feedbackMessage.textContent = "Conditions updated. Ready to dissolve?";
+                 feedbackMessage.style.color = 'var(--valorant-white)';
+                 hintArea.textContent = "";
+            });
+
+            dissolveButton.addEventListener('click', () => {
+                if (canDissolve) {
+                    attemptDissolve();
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                crystalsDissolvedThisLevel++;
+                if (crystalsDissolvedThisLevel >= totalCrystalsPerLevel && currentLevel < maxLevel) {
+                    currentLevel++;
+                    crystalsDissolvedThisLevel = 0;
+                    feedbackMessage.textContent = `Level Up! Reached Level ${currentLevel}.`;
+                    feedbackMessage.style.color = 'var(--valorant-success)';
+                    saveProgress(); // Save progress on level up
+                } else {
+                    feedbackMessage.textContent = `Crystal ${crystalsDissolvedThisLevel}/${totalCrystalsPerLevel} dissolved for Level ${currentLevel}.`;
+                     feedbackMessage.style.color = 'var(--valorant-blue)';
+                }
+
+                 if (currentLevel === maxLevel && crystalsDissolvedThisLevel >= totalCrystalsPerLevel) {
+                    feedbackMessage.textContent = "Congratulations! You've mastered the Solubility Challenge!";
+                    feedbackMessage.style.color = 'var(--valorant-success)';
+                    saveProgress(); // Save final 100% progress
+                    // Optionally disable further play or show a final screen
+                     nextButton.style.display = 'none'; // Hide next button on max level completion
+                     dissolveButton.style.display = 'none';
+                     canDissolve = false; // Prevent further actions
+                     return; // Stop here
+                 }
+
+                generateCrystal();
+                updateUI();
+                resetFeedback();
+            });
+        }
+
+        // --- Game Logic ---
+
+        function generateCrystal() {
+            const availableCrystals = crystalDatabase.filter(c => c.levelReq <= currentLevel);
+             if (availableCrystals.length === 0) {
+                console.error("No crystals available for the current level!");
+                 feedbackMessage.textContent = "Error: No crystals found!";
+                 feedbackMessage.style.color = 'var(--valorant-error)';
+                return;
+            }
+            // Avoid selecting the *exact* same crystal twice in a row if possible
+            let nextCrystal;
+            do {
+                 const randomIndex = Math.floor(Math.random() * availableCrystals.length);
+                 nextCrystal = availableCrystals[randomIndex];
+            } while (availableCrystals.length > 1 && nextCrystal === currentCrystal); // Ensure it changes if possible
+
+            currentCrystal = nextCrystal;
+
+            // Update Display
+            crystalVisual.textContent = currentCrystal.name;
+            crystalPropertiesDisplay.innerHTML = `
+                Polarity: <span>${currentCrystal.polarity}</span> |
+                State: <span>${currentCrystal.state}</span> |
+                Dissolution: <span>${currentCrystal.dissolution}</span>
+            `;
+
+             // Reset controls and state for new crystal
+             selectedSolvent = null;
+             solventButtons.forEach(btn => btn.classList.remove('selected'));
+             selectedSolventDisplay.textContent = `Selected: None`;
+             // Optional: Reset sliders to defaults or keep previous values? Resetting is clearer.
+             tempSlider.value = 25;
+             currentTemp = 25;
+             tempValueDisplay.textContent = `25 °C`;
+             pressureSlider.value = 1;
+             currentPressure = 1;
+             pressureValueDisplay.textContent = `1.0 atm`;
+
+             resetFeedback();
+             canDissolve = true;
+             updateUI(); // Update visibility based on new crystal/level
+        }
+
+         function resetFeedback() {
+             feedbackMessage.textContent = "Select solvent and adjust conditions.";
+             feedbackMessage.style.color = 'var(--valorant-white)';
+             hintArea.textContent = "";
+             progressBarContainer.style.display = 'none';
+             dissolveProgress.style.width = '0%';
+             dissolveButton.style.display = 'block';
+             nextButton.style.display = 'none';
+         }
+
+
+        function updateUI() {
+            levelDisplay.textContent = `Level: ${currentLevel}`;
+
+            // Show/Hide Pressure Slider based on level and crystal state
+            if (currentLevel >= 3 && currentCrystal && currentCrystal.state === 'gas') {
+                pressureControlGroup.classList.remove('hidden');
+            } else {
+                 pressureControlGroup.classList.add('hidden');
+                 // If hidden, ensure pressure is reset to default (1 atm) for logic purposes
+                  if (currentPressure !== 1) {
+                     pressureSlider.value = 1;
+                     currentPressure = 1;
+                     pressureValueDisplay.textContent = '1.0 atm';
+                  }
+            }
+        }
+
+
+        function attemptDissolve() {
+            if (!currentCrystal || !selectedSolvent) {
+                feedbackMessage.textContent = "Please select a solvent first!";
+                feedbackMessage.style.color = 'var(--valorant-error)';
+                return;
+            }
+
+            canDissolve = false; // Prevent further clicks during processing
+            dissolveButton.style.display = 'none'; // Hide button during processing
+            progressBarContainer.style.display = 'block';
+            dissolveProgress.style.width = '0%'; // Reset progress bar
+            feedbackMessage.textContent = "Analyzing conditions...";
+            feedbackMessage.style.color = 'var(--valorant-blue)';
+            hintArea.textContent = "";
+
+
+            let score = 0;
+            let maxScore = 100;
+            let hints = [];
+
+            // 1. Polarity Match (Most important) - ~50% of score
+            const solventPolarity = selectedSolvent === 'water' ? 'polar' : 'nonpolar';
+            if (solventPolarity === currentCrystal.polarity) {
+                score += 50;
+            } else {
+                hints.push(`Hint: 'Like dissolves like'. This crystal is ${currentCrystal.polarity}.`);
+                 score += 5; // Small score even if polarity is wrong, maybe some minimal interaction
+                 maxScore -= 45; // Reduce max possible score if polarity is wrong
+            }
+
+            // 2. Temperature Effects - ~30% of score (if polarity matches)
+             if (solventPolarity === currentCrystal.polarity) {
+                let tempScore = 0;
+                const tempDiff = Math.abs(currentTemp - currentCrystal.idealTemp);
+                const maxTempDiff = 50; // Max difference considered for scoring range
+
+                 if (currentCrystal.state === 'solid') {
+                     if (currentCrystal.dissolution === 'endothermic') { // Higher temp better
+                         if (currentTemp >= currentCrystal.idealTemp) tempScore = 30; // Ideal or higher is good
+                         else tempScore = Math.max(0, 30 * (1 - tempDiff / (currentCrystal.idealTemp || maxTempDiff))); // Score based on proximity
+                         if (currentTemp < currentCrystal.idealTemp - 20) hints.push("Hint: Endothermic solids dissolve better at higher temperatures.");
+                     } else if (currentCrystal.dissolution === 'exothermic') { // Lower temp better
+                          if (currentTemp <= currentCrystal.idealTemp) tempScore = 30; // Ideal or lower is good
+                          else tempScore = Math.max(0, 30 * (1 - tempDiff / (100 - currentCrystal.idealTemp || maxTempDiff)));
+                         if (currentTemp > currentCrystal.idealTemp + 20) hints.push("Hint: Exothermic solids dissolve better at lower temperatures.");
+                     } else { // Neutral - Less sensitive
+                         tempScore = Math.max(15, 30 * (1 - tempDiff / maxTempDiff)); // Base score + proximity
+                         if (tempDiff > 30) hints.push("Hint: Temperature has some effect, try closer to moderate values (e.g., 20-50°C).");
+                     }
+                 } else if (currentCrystal.state === 'gas') { // Gases: Lower temp better
+                      if (currentTemp <= currentCrystal.idealTemp) tempScore = 30;
+                      else tempScore = Math.max(0, 30 * (1 - tempDiff / (100 - currentCrystal.idealTemp || maxTempDiff)));
+                     if (currentTemp > currentCrystal.idealTemp + 15) hints.push("Hint: Gases are generally less soluble at higher temperatures.");
+                 }
+                 score += tempScore;
+             } else {
+                  maxScore -= 30; // Remove temp score potential if polarity is wrong
+             }
+
+
+            // 3. Pressure Effects (Gases only, Level 3+) - ~20% of score (if polarity matches)
+             if (currentLevel >= 3 && currentCrystal.state === 'gas' && solventPolarity === currentCrystal.polarity) {
+                 let pressureScore = 0;
+                 const pressureDiff = Math.abs(currentPressure - currentCrystal.idealPressure);
+                 const maxPressureDiff = 5; // Max difference considered
+
+                 // Higher pressure is generally better for gases
+                 if (currentPressure >= currentCrystal.idealPressure) pressureScore = 20;
+                 else pressureScore = Math.max(0, 20 * (1 - pressureDiff / (currentCrystal.idealPressure || maxPressureDiff)));
+
+                  if (currentPressure < currentCrystal.idealPressure - 2 && currentCrystal.idealPressure > 1) hints.push("Hint: Higher pressure increases gas solubility (Henry's Law).");
+                  else if (currentPressure > currentCrystal.idealPressure + 3 && currentCrystal.idealPressure > 1) hints.push("Hint: Extremely high pressure isn't always necessary, but higher is generally better for gases.") // Optional hint
+
+                 score += pressureScore;
+            } else if (currentCrystal.state === 'gas') {
+                 maxScore -= 20; // Remove pressure score potential if polarity is wrong or not level 3
+            }
+
+
+            // Final check & feedback
+            const successThreshold = 75; // Need > 75% of the *possible* score for this attempt
+            const finalPercentage = maxScore > 0 ? (score / maxScore) * 100 : 0;
+
+             // Animate progress bar
+             setTimeout(() => { // Timeout to allow "Analyzing..." message to show
+                 dissolveProgress.style.width = `${Math.min(100, finalPercentage)}%`;
+
+                 setTimeout(() => { // Timeout after progress bar animation
+                     if (finalPercentage >= successThreshold) {
+                         feedbackMessage.textContent = "Success! Crystal Dissolved!";
+                         feedbackMessage.style.color = 'var(--valorant-success)';
+                         hintArea.textContent = "";
+                         nextButton.style.display = 'block';
+                         saveProgress(); // Save progress after each successful dissolution
+                     } else {
+                         feedbackMessage.textContent = "Failed to dissolve completely.";
+                         feedbackMessage.style.color = 'var(--valorant-error)';
+                         hintArea.innerHTML = hints.length > 0 ? hints.join("<br>") : "Hint: Check the basic solubility rules ('Like dissolves like').";
+                         dissolveButton.style.display = 'block'; // Show retry button
+                         canDissolve = true; // Allow another attempt
+                     }
+                      if (finalPercentage < 10) { // Very wrong
+                         progressBarContainer.style.borderColor = 'var(--valorant-error)';
+                     } else {
+                          progressBarContainer.style.borderColor = 'var(--valorant-light-grey)';
+                     }
+
+                 }, 600); // Duration matches CSS transition + small delay
+             }, 300);
+
+
+        }
+
+        // --- Progress Saving/Loading ---
+
+        function loadProgress() {
+            try {
+                const stored = localStorage.getItem(progressKey);
+                if (stored) {
+                    const progress = JSON.parse(stored);
+                     // Validate progress structure
+                     if (typeof progress === 'object' && progress !== null && defaultProgress.hasOwnProperty('game2')) {
+                         // Ensure all games exist in the loaded progress, add if missing
+                         let loadedProgress = { ...defaultProgress, ...progress };
+                         const gameProgressPercent = loadedProgress.game2 || 0;
+                         // Determine level based on percentage (approximate)
+                         currentLevel = Math.max(1, Math.min(maxLevel, Math.floor(gameProgressPercent / (100 / maxLevel)) + 1));
+                         // If 100%, ensure maxLevel
+                          if (gameProgressPercent >= 100) {
+                             currentLevel = maxLevel;
+                             // Check if they actually finished the last crystal of max level
+                             // For simplicity, we'll assume 100% means fully complete.
+                              crystalsDissolvedThisLevel = totalCrystalsPerLevel;
+                         } else {
+                             // Estimate crystals dissolved based on percentage within the current level range
+                             const levelStartPercent = (currentLevel - 1) * (100 / maxLevel);
+                             const percentIntoLevel = gameProgressPercent - levelStartPercent;
+                             const levelPercentSpan = (100 / maxLevel);
+                              crystalsDissolvedThisLevel = Math.max(0, Math.min(totalCrystalsPerLevel, Math.floor((percentIntoLevel / levelPercentSpan) * totalCrystalsPerLevel)));
+                         }
+
+                         console.log(`Loaded progress for Game 2: ${gameProgressPercent}%. Calculated Level: ${currentLevel}, Crystals: ${crystalsDissolvedThisLevel}`);
+
+                     } else {
+                          console.warn("Invalid progress structure found in localStorage. Resetting.");
+                          resetProgress(); // Uses default level 1
+                     }
+
+                } else {
+                    console.log("No progress found. Starting fresh.");
+                     // currentLevel is already 1 by default
+                }
+            } catch (e) {
+                console.error("Error loading progress:", e);
+                // Reset to default state if loading fails
+                 resetProgress();
+            }
+             updateUI(); // Ensure UI reflects loaded level
+        }
+
+        function saveProgress() {
+             let progressToSave;
+             try {
+                 const stored = localStorage.getItem(progressKey);
+                 progressToSave = stored ? JSON.parse(stored) : { ...defaultProgress };
+                 if (typeof progressToSave !== 'object' || progressToSave === null) {
+                     console.warn("Invalid data in localStorage, resetting object.");
+                    progressToSave = { ...defaultProgress };
+                 }
+                 // Ensure all default game keys exist
+                 progressToSave = { ...defaultProgress, ...progressToSave };
+
+             } catch (e) {
+                 console.error("Error reading progress before saving:", e);
+                 progressToSave = { ...defaultProgress };
+             }
+
+             // Calculate percentage completion for game 2
+             let percentage = 0;
+              if (currentLevel > maxLevel || (currentLevel === maxLevel && crystalsDissolvedThisLevel >= totalCrystalsPerLevel)) {
+                percentage = 100;
+             } else {
+                 const levelsCompleted = currentLevel - 1;
+                 const progressInCurrentLevel = crystalsDissolvedThisLevel / totalCrystalsPerLevel;
+                 percentage = ((levelsCompleted + progressInCurrentLevel) / maxLevel) * 100;
+             }
+
+              progressToSave.game2 = Math.max(0, Math.min(100, Math.round(percentage))); // Update game2 percentage
+
+             try {
+                localStorage.setItem(progressKey, JSON.stringify(progressToSave));
+                console.log(`Progress saved. Game 2: ${progressToSave.game2}%`, progressToSave);
+             } catch (e) {
+                 console.error("Error saving progress:", e);
+                 // Optionally notify the user that progress couldn't be saved
+                 feedbackMessage.textContent = "Error: Could not save progress.";
+                 feedbackMessage.style.color = 'var(--valorant-error)';
+             }
+        }
+
+         function resetProgress() {
+            currentLevel = 1;
+            crystalsDissolvedThisLevel = 0;
+            // Optionally clear the specific game progress in localStorage or reset the whole object
+             try {
+                 const stored = localStorage.getItem(progressKey);
+                 let progress = stored ? JSON.parse(stored) : { ...defaultProgress };
+                  if (typeof progress === 'object' && progress !== null) {
+                     progress.game2 = 0; // Reset only game 2
+                     localStorage.setItem(progressKey, JSON.stringify(progress));
+                     console.log("Game 2 progress reset in localStorage.");
+                  } else {
+                      localStorage.setItem(progressKey, JSON.stringify(defaultProgress)); // Reset all if invalid
+                      console.log("Full progress reset in localStorage due to invalid data.");
+                  }
+             } catch (e) {
+                 console.error("Error resetting progress in localStorage:", e);
+                 localStorage.setItem(progressKey, JSON.stringify(defaultProgress)); // Force reset on error
+             }
+
+        }
+
+    </script>
+</body>
+</html>

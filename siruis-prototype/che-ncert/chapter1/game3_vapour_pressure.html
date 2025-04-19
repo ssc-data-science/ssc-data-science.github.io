@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>ChemSim: Vapour Pressure Regulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --valorant-orange: #FF4655; /* Primary action/highlight */
+            --valorant-blue: #00BCD4; /* Lighter accent blue */
+            --valorant-dark: #111111; /* Very dark background */
+            --valorant-grey: #7E7E7E; /* Medium grey for text/borders */
+            --valorant-light-grey: #ECE8E1; /* Light background elements */
+            --valorant-dark-blue: #0F1923; /* Primary dark blue background */
+            --valorant-accent-teal: #00fff2; /* Bright teal accent */
+            --valorant-yellow: #ffc658; /* Yellow/Gold accent */
+
+            --text-color: var(--valorant-light-grey);
+            --background-color: var(--valorant-dark-blue);
+            --container-bg: rgba(17, 17, 17, 0.7); /* Semi-transparent dark */
+            --button-bg: var(--valorant-orange);
+            --button-text: var(--valorant-dark);
+            --input-bg: rgba(255, 255, 255, 0.1);
+            --border-color: var(--valorant-grey);
+            --highlight-color: var(--valorant-accent-teal);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+             scroll-behavior: smooth;
+         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align top for scrollable content */
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(15, 25, 35, 0.85), rgba(15, 25, 35, 0.95)), url('https://images.wallpapersden.com/image/download/valorant-jett-and-phoenix-art_bGZnZmuUmZqaraWkpJRmbmdlrWZlbWU.jpg'); /* Placeholder background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Prevent background scroll */
+            padding: 15px; /* Reduced padding for mobile */
+        }
+
+        .game-container {
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px; /* Adjusted padding */
+            width: 100%; /* Use full width up to max-width */
+            max-width: 850px; /* Slightly wider max-width */
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            position: relative;
+            margin-top: 15px; /* Ensure spacing from top */
+            margin-bottom: 15px; /* Ensure spacing from bottom */
+        }
+
+        .game-header {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px; /* Space between items if they wrap */
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .game-header h1 {
+            color: var(--valorant-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.6em; /* Slightly smaller */
+            width: 100%; /* Take full width initially */
+            text-align: center; /* Center title on mobile */
+        }
+
+        .header-controls { /* Group level and back button */
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%; /* Take full width on small screens */
+             margin-top: 10px; /* Add space below title */
+        }
+
+        .back-button {
+            background-color: var(--valorant-grey);
+            color: var(--text-color);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #999;
+        }
+
+        .level-indicator {
+            font-size: 1em;
+            color: var(--valorant-yellow);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .main-content {
+            display: grid;
+            /* Default to single column, will be overridden by media query */
+            grid-template-columns: 1fr;
+            gap: 20px; /* Reduced gap */
+        }
+
+        .controls, .display, .feedback, .challenge {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px; /* Reduced padding */
+            border-radius: 6px;
+            border: 1px solid rgba(126, 126, 126, 0.3);
+        }
+
+        .controls h2, .display h2, .feedback h2, .challenge h2 {
+            color: var(--highlight-color);
+            margin-bottom: 15px;
+            font-size: 1.1em; /* Slightly smaller */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--valorant-light-grey);
+            font-weight: 400;
+            font-size: 0.95em;
+        }
+
+        select, input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em; /* Ensure readable font size */
+        }
+
+        select option {
+            background-color: var(--valorant-dark);
+            color: var(--text-color);
+        }
+
+        input[type="range"] {
+            cursor: pointer;
+            padding: 0; /* Remove padding for range */
+            height: 8px;
+             -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            background: linear-gradient(to right, var(--valorant-orange), var(--valorant-blue));
+            border-radius: 5px;
+            outline: none;
+        }
+        /* Chrome, Edge, Safari */
+        input[type=range]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 22px; /* Slightly larger for touch */
+          height: 22px; /* Slightly larger for touch */
+          background: var(--valorant-accent-teal);
+          border-radius: 50%;
+          cursor: pointer;
+          border: 2px solid var(--valorant-dark-blue);
+        }
+        /* Firefox */
+        input[type=range]::-moz-range-thumb {
+          width: 20px; /* Slightly larger for touch */
+          height: 20px; /* Slightly larger for touch */
+          background: var(--valorant-accent-teal);
+          border-radius: 50%;
+          cursor: pointer;
+          border: 2px solid var(--valorant-dark-blue);
+        }
+
+        .mole-fraction-display {
+            font-size: 0.9em;
+            color: var(--valorant-grey);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+
+        .display-item {
+            margin-bottom: 10px;
+            font-size: 1em; /* Adjust if needed */
+            word-wrap: break-word; /* Prevent overflow */
+        }
+
+        .display-item span {
+            font-weight: 600;
+            color: var(--valorant-yellow);
+            margin-left: 8px;
+        }
+
+        .feedback p {
+            line-height: 1.6;
+            font-size: 0.9em; /* Adjust if needed */
+            margin-bottom: 10px;
+        }
+        .feedback strong {
+            color: var(--highlight-color);
+            font-weight: 600;
+        }
+
+        .challenge p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        .challenge button {
+            background-color: var(--valorant-blue);
+            color: var(--valorant-dark);
+            border: none;
+            padding: 10px 15px; /* Slightly larger padding for touch */
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            width: 100%; /* Make challenge buttons full width */
+            max-width: 200px; /* But not too wide */
+            display: block; /* Ensure they are block elements */
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.95em;
+        }
+         #challenge-interaction button + button { /* Add space between prediction buttons */
+             margin-top: 8px;
+         }
+
+        .challenge button:hover {
+            background-color: var(--highlight-color);
+        }
+         .challenge .result {
+            margin-top: 15px;
+            font-weight: bold;
+         }
+         .correct { color: lightgreen; }
+         .incorrect { color: var(--valorant-orange); }
+
+        .notes-section {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+        }
+         .notes-section h3 {
+            color: var(--valorant-yellow);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+         }
+        .notes-section ul {
+            list-style: disc;
+            margin-left: 20px;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+         .notes-section li { margin-bottom: 8px;}
+
+        #show-notes-btn {
+            background: none;
+            border: 1px solid var(--valorant-grey);
+            color: var(--valorant-grey);
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-top: 10px;
+            float: right;
+        }
+         #show-notes-btn:hover {
+            border-color: var(--valorant-light-grey);
+            color: var(--valorant-light-grey);
+         }
+
+        /* --- Responsive Adjustments --- */
+
+        /* Medium screens (tablets) */
+        @media (min-width: 600px) {
+            .game-header h1 {
+                width: auto; /* Allow title and controls side-by-side */
+                text-align: left;
+            }
+            .header-controls {
+                width: auto; /* Allow controls to sit beside title */
+                 margin-top: 0;
+            }
+            .main-content {
+                 /* Keep 1fr for slightly larger mobile / small tablets */
+                 /* 2 columns kick in later */
+            }
+            .challenge button {
+                width: auto; /* Revert button width */
+                max-width: none;
+                 display: inline-block; /* Allow side-by-side buttons */
+                 margin-left: 0;
+                 margin-right: 5px; /* Add space between buttons */
+            }
+             #challenge-interaction button + button {
+                 margin-top: 0; /* Remove top margin added for stacking */
+                 margin-left: 5px;
+             }
+        }
+
+        /* Larger screens (Desktops) */
+        @media (min-width: 768px) {
+             .game-container {
+                 padding: 30px; /* Restore larger padding */
+             }
+             .main-content {
+                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Use auto-fit grid */
+                 gap: 30px; /* Restore larger gap */
+             }
+             .controls, .display, .feedback, .challenge {
+                 padding: 20px; /* Restore larger padding */
+             }
+             .game-header h1 {
+                 font-size: 1.8em; /* Restore original font size */
+             }
+              .controls h2, .display h2, .feedback h2, .challenge h2 {
+                  font-size: 1.2em; /* Restore original font size */
+              }
+             label { font-size: 1em; }
+             .display-item { font-size: 1.1em; }
+             .feedback p { font-size: 0.95em; }
+             .challenge p { font-size: 1em; }
+             .challenge button { font-size: 1em; padding: 8px 15px;}
+             .notes-section ul { font-size: 0.9em;}
+             .notes-section h3 { font-size: 1.2em; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Vapour Pressure Regulator</h1>
+            <div class="header-controls">
+                <span class="level-indicator" id="level-display">Level: 1</span>
+                <a href="index.html" class="back-button">Back to Hub</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="controls">
+                <h2>Setup Mixture</h2>
+                <label for="liquid-pair">Select Liquid Pair:</label>
+                <select id="liquid-pair"></select>
+
+                 <div id="liquid-info" style="font-size: 0.85em; margin-bottom: 15px; color: var(--valorant-grey);">
+                    <p>P°(<span id="liquid1-name">Liquid 1</span>): <span id="p1-pure">0</span> torr</p>
+                    <p>P°(<span id="liquid2-name">Liquid 2</span>): <span id="p2-pure">0</span> torr</p>
+                    <p>Behavior: <span id="behavior-type">Ideal</span></p>
+                 </div>
+
+                <label for="mole-fraction-slider" id="slider-label">Mole Fraction of Liquid 1 (x₁):</label>
+                <input type="range" id="mole-fraction-slider" min="0" max="1" step="0.01" value="0.5">
+                <div class="mole-fraction-display">
+                    x₁ = <span id="x1-value">0.50</span>, x₂ = <span id="x2-value">0.50</span>
+                </div>
+            </div>
+
+            <div class="display">
+                <h2>Vapour Pressure Analysis</h2>
+                <div class="display-item">Partial Pressure (p₁): <span id="p1-partial">0</span> torr</div>
+                <div class="display-item">Partial Pressure (p₂): <span id="p2-partial">0</span> torr</div>
+                <hr style="border-color: var(--valorant-grey); margin: 10px 0;">
+                <div class="display-item" style="font-size: 1.2em;">Total Vapour Pressure (P<sub>Total</sub>): <span id="p-total">0</span> torr</div>
+                 <div class="display-item" style="font-size: 0.9em; color: var(--valorant-grey);" id="ideal-vs-actual">Ideal P<sub>Total</sub>: <span id="p-total-ideal">0</span> torr</div>
+            </div>
+
+            <div class="feedback">
+                <h2>System Behavior Explained</h2>
+                <p id="feedback-text">Select a liquid pair and adjust the mole fraction to observe the vapour pressure behavior based on Raoult's Law.</p>
+                 <button id="show-notes-btn">Show Learning Notes</button>
+            </div>
+            <div class="challenge">
+                <h2>Current Challenge</h2>
+                <p id="challenge-text">Reach Level 2 by exploring an ideal solution.</p>
+                <div id="challenge-interaction">
+                    {/* Challenge specific inputs/buttons will go here */}
+                </div>
+                 <div id="challenge-result" class="result"></div>
+            </div>
+
+        </div> 
+         <div class="notes-section" id="learning-notes">
+             <h3>Key Concepts & Learning Notes</h3>
+             <ul>
+                 <li><strong>Raoult's Law (Ideal Solutions):</strong> States that the partial vapour pressure of each component (pᵢ) in an ideal mixture is the vapour pressure of the pure component (pᵢ°) multiplied by its mole fraction (xᵢ) in the liquid mixture: pᵢ = xᵢ * pᵢ°. The total vapour pressure (P<sub>Total</sub>) is the sum of the partial pressures: P<sub>Total</sub> = p₁ + p₂.</li>
+                 <li><strong>Ideal Solutions:</strong> Form when intermolecular forces between unlike molecules (A-B) are very similar to those between like molecules (A-A and B-B). Example: Benzene & Toluene.</li>
+                 <li><strong>Non-Ideal Solutions: Positive Deviation:</strong> Occurs when A-B interactions are *weaker* than A-A and B-B interactions. Molecules find it easier to escape the liquid phase than predicted by Raoult's Law, leading to a higher total vapour pressure (P<sub>Total (Actual)</sub> > P<sub>Total (Ideal)</sub>). Example: Ethanol & Water (H-bonding disrupted).</li>
+                 <li><strong>Non-Ideal Solutions: Negative Deviation:</strong> Occurs when A-B interactions are *stronger* than A-A and B-B interactions. Molecules are held more tightly in the liquid phase, leading to a lower total vapour pressure (P<sub>Total (Actual)</sub> < P<sub>Total (Ideal)</sub>). Example: Chloroform & Acetone (H-bonding formed).</li>
+                 <li><strong>Azeotropes:</strong> Mixtures with a specific composition that boil at a constant temperature without changing composition.
+                     <ul>
+                         <li><em>Minimum-boiling azeotrope:</em> Occurs with large positive deviations. The vapour pressure vs. composition curve shows a maximum.</li>
+                         <li><em>Maximum-boiling azeotrope:</em> Occurs with large negative deviations. The vapour pressure vs. composition curve shows a minimum.</li>
+                     </ul>
+                 </li>
+                 <li><strong>Mole Fraction (xᵢ):</strong> The ratio of the number of moles of component i to the total number of moles of all components in the mixture (x₁ + x₂ = 1).</li>
+             </ul>
+         </div>
+
+    </div> 
+    <script>
+        const liquidPairSelect = document.getElementById('liquid-pair');
+        const moleFractionSlider = document.getElementById('mole-fraction-slider');
+        const x1ValueSpan = document.getElementById('x1-value');
+        const x2ValueSpan = document.getElementById('x2-value');
+        const p1PartialSpan = document.getElementById('p1-partial');
+        const p2PartialSpan = document.getElementById('p2-partial');
+        const pTotalSpan = document.getElementById('p-total');
+        const pTotalIdealSpan = document.getElementById('p-total-ideal');
+        const idealVsActualDiv = document.getElementById('ideal-vs-actual');
+        const feedbackText = document.getElementById('feedback-text');
+        const levelDisplay = document.getElementById('level-display');
+        const sliderLabel = document.getElementById('slider-label');
+
+        const liquid1NameSpan = document.getElementById('liquid1-name');
+        const liquid2NameSpan = document.getElementById('liquid2-name');
+        const p1PureSpan = document.getElementById('p1-pure');
+        const p2PureSpan = document.getElementById('p2-pure');
+        const behaviorTypeSpan = document.getElementById('behavior-type');
+
+        const challengeText = document.getElementById('challenge-text');
+        const challengeInteraction = document.getElementById('challenge-interaction');
+        const challengeResult = document.getElementById('challenge-result');
+
+        const learningNotes = document.getElementById('learning-notes');
+        const showNotesBtn = document.getElementById('show-notes-btn');
+
+        // --- Data ---
+        const liquidPairs = [
+            {
+                name: "Benzene / Toluene (Ideal)",
+                l1: "Benzene", p1_pure: 95.1, // torr at 25°C (approx)
+                l2: "Toluene", p2_pure: 28.4, // torr at 25°C (approx)
+                type: 'ideal', k: 0,
+                explanation: "Benzene and Toluene have similar structures and intermolecular forces (van der Waals). The A-A, B-B, and A-B interactions are nearly equal, leading to ideal behavior closely following Raoult's Law."
+            },
+            {
+                name: "Ethanol / Water (Positive Deviation)",
+                l1: "Ethanol", p1_pure: 59.0, // torr at 25°C (approx)
+                l2: "Water", p2_pure: 23.8, // torr at 25°C (approx)
+                type: 'positive', k: 0.8, // Example factor for deviation
+                explanation: "Pure ethanol and pure water have strong hydrogen bonding (A-A, B-B). When mixed, these hydrogen bond networks are disrupted. The resulting A-B interactions are weaker, allowing molecules to escape more easily. This causes a POSITIVE deviation (higher P_Total) from Raoult's Law. This system forms a minimum-boiling azeotrope."
+            },
+            {
+                name: "Chloroform / Acetone (Negative Deviation)",
+                l1: "Chloroform", p1_pure: 199.1, // torr at 25°C (approx)
+                l2: "Acetone", p2_pure: 229.5, // torr at 25°C (approx)
+                type: 'negative', k: -0.6, // Example factor for deviation
+                explanation: "When mixed, Chloroform (CHCl₃) and Acetone (CH₃COCH₃) can form weak hydrogen bonds between the H on Chloroform and the O on Acetone. These new A-B interactions are stronger than the original A-A and B-B interactions (dipole-dipole). Molecules are held more tightly in the mixture, making it harder for them to escape. This causes a NEGATIVE deviation (lower P_Total) from Raoult's Law. This system forms a maximum-boiling azeotrope."
+            }
+        ];
+
+        // --- Game State ---
+        let currentLevel = 1;
+        let selectedPairIndex = 0;
+        let x1 = 0.5;
+        let challengesCompleted = { level1: false, level2: false, level3: false };
+
+        // --- Progress Saving ---
+        const progressKey = 'chemistryGameProgress';
+        const defaultProgress = { game1: 0, game2: 0, game3: 0, game4: 0 }; // Default structure
+
+        function loadProgress() {
+             let loadedProgress = { ...defaultProgress }; // Start with default
+             try {
+                 const stored = localStorage.getItem(progressKey);
+                 if (stored) {
+                     const parsed = JSON.parse(stored);
+                     // Basic validation: ensure it's an object and has expected keys
+                     if (typeof parsed === 'object' && parsed !== null) {
+                         // Merge parsed data with default to ensure all keys exist
+                         loadedProgress = { ...defaultProgress, ...parsed };
+                     } else {
+                         console.warn("Invalid progress data found in localStorage. Resetting.");
+                     }
+                 }
+             } catch (e) {
+                 console.error("Error reading progress:", e);
+                 // Keep default progress on error
+             }
+
+             // Set initial game state based on loaded progress
+             const game3Progress = loadedProgress.game3 || 0;
+             if (game3Progress >= 75) currentLevel = 4;
+             else if (game3Progress >= 50) currentLevel = 3;
+             else if (game3Progress >= 25) currentLevel = 2;
+             else currentLevel = 1;
+
+             challengesCompleted.level1 = currentLevel > 1;
+             challengesCompleted.level2 = currentLevel > 2;
+             challengesCompleted.level3 = currentLevel > 3;
+
+             updateLevelDisplay();
+             console.log("Loaded progress:", loadedProgress);
+             return loadedProgress;
+        }
+
+
+        function saveProgress(levelAchieved) {
+             let progressToSave;
+             try {
+                 const stored = localStorage.getItem(progressKey);
+                 progressToSave = stored ? JSON.parse(stored) : { ...defaultProgress };
+                 if (typeof progressToSave !== 'object' || progressToSave === null) {
+                     progressToSave = { ...defaultProgress };
+                 }
+                 progressToSave = { ...defaultProgress, ...progressToSave };
+
+             } catch (e) {
+                 console.error("Error reading progress before saving:", e);
+                 progressToSave = { ...defaultProgress };
+             }
+
+             let newPercentage = 0;
+             if (levelAchieved === 2) newPercentage = 30;
+             else if (levelAchieved === 3) newPercentage = 60;
+             else if (levelAchieved >= 4) newPercentage = 100;
+
+             progressToSave.game3 = Math.max(progressToSave.game3 || 0, newPercentage);
+
+             localStorage.setItem(progressKey, JSON.stringify(progressToSave));
+             console.log(`Progress saved for game3 (Level ${levelAchieved}): ${progressToSave.game3}%`);
+        }
+
+
+        // --- Initialization ---
+        function initializeGame() {
+            loadProgress();
+
+            liquidPairs.forEach((pair, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = pair.name;
+                liquidPairSelect.appendChild(option);
+            });
+
+            liquidPairSelect.addEventListener('change', handlePairChange);
+            moleFractionSlider.addEventListener('input', handleSliderChange);
+            showNotesBtn.addEventListener('click', toggleNotes);
+
+            selectedPairIndex = 0;
+            liquidPairSelect.value = selectedPairIndex;
+            x1 = parseFloat(moleFractionSlider.value);
+
+            updateDisplay();
+            updateChallenge();
+        }
+
+        // --- Event Handlers ---
+        function handlePairChange() {
+            selectedPairIndex = parseInt(liquidPairSelect.value);
+            updateDisplay();
+            updateChallenge();
+        }
+
+        function handleSliderChange() {
+            x1 = parseFloat(moleFractionSlider.value);
+            updateDisplay();
+            if (currentChallengeDetails && currentChallengeDetails.type === 'adjust') {
+                 checkChallenge();
+            }
+        }
+
+        function toggleNotes() {
+            if (learningNotes.style.display === 'none' || learningNotes.style.display === '') {
+                learningNotes.style.display = 'block';
+                showNotesBtn.textContent = 'Hide Learning Notes';
+                learningNotes.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Scroll notes into view
+            } else {
+                learningNotes.style.display = 'none';
+                showNotesBtn.textContent = 'Show Learning Notes';
+            }
+        }
+
+
+        // --- Core Logic & Updates ---
+        function calculatePressures() {
+            const pair = liquidPairs[selectedPairIndex];
+            const x2 = 1 - x1;
+
+            const p1_ideal = x1 * pair.p1_pure;
+            const p2_ideal = x2 * pair.p2_pure;
+            const p_total_ideal = p1_ideal + p2_ideal;
+
+            let p1_actual = p1_ideal;
+            let p2_actual = p2_ideal;
+            let p_total_actual = p_total_ideal;
+
+            if (pair.type !== 'ideal') {
+                const deviationFactor = 1 + pair.k * 4 * x1 * x2; // Max deviation factor = 1+k at x1=0.5
+                p_total_actual = p_total_ideal * deviationFactor;
+
+                 if (p_total_ideal > 0) {
+                    // Apply overall deviation proportionally (simplification)
+                    const ratio = p_total_actual / p_total_ideal;
+                    p1_actual = p1_ideal * ratio;
+                    p2_actual = p2_ideal * ratio;
+                 } else {
+                     p1_actual = 0;
+                     p2_actual = 0;
+                 }
+
+                 p1_actual = Math.max(0, p1_actual);
+                 p2_actual = Math.max(0, p2_actual);
+                 p_total_actual = Math.max(0, p_total_actual);
+            }
+
+
+            return {
+                x1: x1, x2: x2,
+                p1: p1_actual, p2: p2_actual,
+                pTotal: p_total_actual, pTotalIdeal: p_total_ideal,
+                pair: pair
+            };
+        }
+
+        function updateDisplay() {
+            const results = calculatePressures();
+            const pair = results.pair;
+
+            x1ValueSpan.textContent = results.x1.toFixed(2);
+            x2ValueSpan.textContent = results.x2.toFixed(2);
+            p1PartialSpan.textContent = results.p1.toFixed(1);
+            p2PartialSpan.textContent = results.p2.toFixed(1);
+            pTotalSpan.textContent = results.pTotal.toFixed(1);
+
+            liquid1NameSpan.textContent = pair.l1;
+            liquid2NameSpan.textContent = pair.l2;
+            sliderLabel.textContent = `Mole Fraction of ${pair.l1} (x₁):`;
+            p1PureSpan.textContent = pair.p1_pure.toFixed(1);
+            p2PureSpan.textContent = pair.p2_pure.toFixed(1);
+            behaviorTypeSpan.textContent = pair.type.charAt(0).toUpperCase() + pair.type.slice(1);
+
+            feedbackText.innerHTML = pair.explanation;
+
+            if (pair.type === 'ideal') {
+                idealVsActualDiv.style.display = 'none';
+            } else {
+                idealVsActualDiv.style.display = 'block';
+                pTotalIdealSpan.textContent = results.pTotalIdeal.toFixed(1);
+            }
+            checkLevelUpConditions(pair.type);
+        }
+
+         function updateLevelDisplay() {
+             levelDisplay.textContent = `Level: ${currentLevel}`;
+         }
+
+        // --- Leveling & Challenges ---
+         let currentChallengeDetails = null;
+
+         function checkLevelUpConditions(exploredType) {
+            let levelAdvanced = false;
+            if (currentLevel === 1 && exploredType === 'ideal' && !challengesCompleted.level1) {
+                currentLevel = 2; challengesCompleted.level1 = true; levelAdvanced = true;
+                console.log("Advanced to Level 2 (Explored Ideal)");
+            } else if (currentLevel === 2 && exploredType === 'positive' && !challengesCompleted.level2) {
+                currentLevel = 3; challengesCompleted.level2 = true; levelAdvanced = true;
+                 console.log("Advanced to Level 3 (Explored Positive Deviation)");
+            } else if (currentLevel === 3 && exploredType === 'negative' && !challengesCompleted.level3) {
+                currentLevel = 4; challengesCompleted.level3 = true; levelAdvanced = true;
+                 console.log("Advanced to Level 4 (Explored Negative Deviation)");
+            }
+
+            if (levelAdvanced) {
+                saveProgress(currentLevel);
+                updateLevelDisplay();
+                updateChallenge();
+            }
+        }
+
+        function generateChallenge() {
+             challengeResult.textContent = '';
+             challengeInteraction.innerHTML = '';
+
+             const pair = liquidPairs[selectedPairIndex];
+
+             if (currentLevel === 1 && !challengesCompleted.level1) {
+                 challengeText.textContent = "Level 1: Select the 'Benzene / Toluene' pair (Ideal) and observe how P_Total changes as you move the slider. Understanding this unlocks Level 2.";
+                 currentChallengeDetails = null;
+             } else if (currentLevel === 2 && !challengesCompleted.level2) {
+                 challengeText.textContent = "Level 2: Select the 'Ethanol / Water' pair (Positive Deviation). Predict: Will the actual P_Total at x₁=0.5 be higher or lower than the ideal P_Total? Click your prediction.";
+                  challengeInteraction.innerHTML = `
+                     <button onclick="submitPrediction('higher')">Higher</button>
+                     <button onclick="submitPrediction('lower')">Lower</button>
+                 `;
+                 currentChallengeDetails = { type: 'predict', correct: 'higher', pairType: 'positive'};
+             } else if (currentLevel === 3 && !challengesCompleted.level3) {
+                 challengeText.textContent = "Level 3: Select the 'Chloroform / Acetone' pair (Negative Deviation). Predict: Will the actual P_Total at x₁=0.5 be higher or lower than the ideal P_Total? Click your prediction.";
+                  challengeInteraction.innerHTML = `
+                     <button onclick="submitPrediction('higher')">Higher</button>
+                     <button onclick="submitPrediction('lower')">Lower</button>
+                 `;
+                 currentChallengeDetails = { type: 'predict', correct: 'lower', pairType: 'negative'};
+             } else if (currentLevel >= 4) {
+                 const targetPressure = (pair.p1_pure + pair.p2_pure) * (0.4 + Math.random() * 0.3); // Random target between 40-70% of average pure P
+                 challengeText.textContent = `Level 4 Challenge: Adjust the mole fraction of ${pair.l1} to make the Total Vapour Pressure approximately ${targetPressure.toFixed(0)} torr.`;
+                  challengeInteraction.innerHTML = `<button onclick="checkChallenge()">Check Pressure</button>`;
+                 currentChallengeDetails = { type: 'adjust', target: targetPressure, tolerance: targetPressure * 0.05 }; // 5% tolerance
+             } else {
+                 challengeText.textContent = "Explore the different mixtures to advance levels.";
+                 currentChallengeDetails = null;
+             }
+         }
+
+        function updateChallenge() {
+             generateChallenge();
+         }
+
+         function submitPrediction(prediction) {
+             if (!currentChallengeDetails || currentChallengeDetails.type !== 'predict') return;
+             const correctPairSelected = liquidPairs[selectedPairIndex].type === currentChallengeDetails.pairType;
+
+             if (!correctPairSelected) {
+                 challengeResult.textContent = `Incorrect: Please select the ${currentChallengeDetails.pairType} deviation pair first.`;
+                 challengeResult.className = 'result incorrect';
+                 return;
+             }
+
+             if (prediction === currentChallengeDetails.correct) {
+                 challengeResult.textContent = 'Correct! Understanding this deviation unlocks the next level.';
+                 challengeResult.className = 'result correct';
+                 if (currentChallengeDetails.pairType === 'positive' && !challengesCompleted.level2) {
+                     currentLevel = 3; challengesCompleted.level2 = true; saveProgress(currentLevel); updateLevelDisplay();
+                     setTimeout(updateChallenge, 1500);
+                 } else if (currentChallengeDetails.pairType === 'negative' && !challengesCompleted.level3) {
+                     currentLevel = 4; challengesCompleted.level3 = true; saveProgress(currentLevel); updateLevelDisplay();
+                     setTimeout(updateChallenge, 1500);
+                 }
+             } else {
+                 challengeResult.textContent = `Incorrect. Remember, ${currentChallengeDetails.pairType} deviation means A-B interactions are ${currentChallengeDetails.pairType === 'positive' ? 'weaker' : 'stronger'} than A-A/B-B. Check the notes!`;
+                 challengeResult.className = 'result incorrect';
+                 if (learningNotes.style.display === 'none') { toggleNotes(); } // Show notes if hidden
+             }
+         }
+
+        function checkChallenge() {
+            if (!currentChallengeDetails || currentChallengeDetails.type !== 'adjust') return;
+
+            const currentTotalPressure = parseFloat(pTotalSpan.textContent);
+            const target = currentChallengeDetails.target;
+            const tolerance = currentChallengeDetails.tolerance;
+
+            if (Math.abs(currentTotalPressure - target) <= tolerance) {
+                 challengeResult.textContent = `Success! Pressure is within the target range (${(target - tolerance).toFixed(0)} - ${(target + tolerance).toFixed(0)} torr). Challenge complete! Generating new Level 4 challenge...`;
+                 challengeResult.className = 'result correct';
+                 setTimeout(updateChallenge, 2000); // Generate a new adjustment challenge after success
+            } else {
+                 challengeResult.textContent = `Keep adjusting. Current pressure: ${currentTotalPressure.toFixed(0)} torr. Target: ~${target.toFixed(0)} torr.`;
+                 challengeResult.className = 'result incorrect';
+            }
+        }
+
+        // --- Global Scope Functions for Buttons ---
+        window.submitPrediction = submitPrediction;
+        window.checkChallenge = checkChallenge;
+
+        // --- Start Game ---
+        document.addEventListener('DOMContentLoaded', initializeGame);
+    </script>
+
+</body>
+</html>
