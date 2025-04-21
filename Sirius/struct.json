@@ -1,0 +1,28 @@
+{
+    "classes": [
+        {
+            "id": "fyg-sem-3",
+            "name": "FYUG - Sem 3",
+            "departments": [
+                {
+                    "id": "phy",
+                    "name": "BSc. Physics",
+                    "subjects": [
+                        {
+                            "id": "phy",
+                            "name": "Mechanics"
+                        },
+                        {
+                            "id": "cs1",
+                            "name": "Artificial Intelligence"
+                        },
+                        {
+                            "id": "stat",
+                            "name": "Statistics with R"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
