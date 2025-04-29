@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vector Component Matcher</title>
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --container-bg: #ffffff;
+            --component-bg: #e0e8f0;
+            --component-border: #b0c4de;
+            --slot-bg: #ffffff;
+            --slot-border: #a0b4ce;
+            --correct-color: #4caf50;
+            --incorrect-color: #f44336;
+            --highlight-color: #add8e6;
+            --text-color: #333;
+            --button-bg: #4a90e2;
+            --button-text: #ffffff;
+            --font-family: 'Arial', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+        }
+
+        html, body {
+            height: 100%;
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overscroll-behavior: contain; /* Prevent pull-to-refresh */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            padding-top: 10px;
+            overflow-y: auto; /* Allow scrolling if content overflows */
+        }
+
+        #game-container {
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 95%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: var(--button-bg);
+        }
+
+        #instructions {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        #level-indicator {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        #target-vector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 20px 0;
+            gap: 5px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .vector-label {
+            margin-right: 5px;
+        }
+
+        .vector-brackets {
+            font-size: 2em;
+            line-height: 1;
+        }
+
+        .component-slot {
+            border: 2px dashed var(--slot-border);
+            min-width: 100px;
+            min-height: 50px;
+            padding: 10px;
+            margin: 0 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--slot-bg);
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+            font-size: 0.8em; /* Relative to parent */
+            font-family: monospace;
+            text-align: center;
+        }
+
+        .component-slot.drag-over {
+            background-color: var(--highlight-color);
+            border-color: var(--button-bg);
+        }
+
+        .component-slot.filled {
+            border-style: solid;
+            background-color: var(--component-bg);
+        }
+
+        .component-slot.correct {
+            border-color: var(--correct-color);
+            background-color: #e8f5e9;
+        }
+
+        .component-slot.incorrect {
+            border-color: var(--incorrect-color);
+             background-color: #ffebee;
+        }
+
+        #component-pool {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            min-height: 60px; /* Ensure it has some height even when empty */
+        }
+
+        .component-block {
+            background-color: var(--component-bg);
+            border: 1px solid var(--component-border);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: grab;
+            font-family: monospace;
+            font-size: 1.1em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .component-block:active {
+            cursor: grabbing;
+        }
+
+        .component-block.dragging {
+            opacity: 0.5;
+            transform: scale(1.05);
+        }
+
+        /* Style for the element being visually dragged during touch */
+        .touch-drag-element {
+            position: absolute;
+            z-index: 1000;
+            pointer-events: none; /* Prevent it from interfering with drop targets */
+            opacity: 0.75;
+        }
+
+
+        #canvas-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #curve-canvas {
+            border: 1px solid var(--component-border);
+            background-color: #ffffff;
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            aspect-ratio: 1 / 1; /* Make it square */
+            max-height: 300px; /* Limit height */
+        }
+
+        #feedback {
+            text-align: center;
+            font-weight: bold;
+            min-height: 1.5em; /* Reserve space */
+            margin-top: 10px;
+        }
+
+        #feedback.correct {
+            color: var(--correct-color);
+        }
+
+        #feedback.incorrect {
+            color: var(--incorrect-color);
+        }
+
+        #next-level-button {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            display: block;
+            margin: 15px auto 0 auto; /* Center button */
+        }
+
+        #next-level-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+         #next-level-button:not(:disabled):hover {
+            background-color: #3a7ac0;
+        }
+         #next-level-button:not(:disabled):active {
+             transform: scale(0.98);
+         }
+
+        /* Hide K component slot by default */
+        #k-component-slot-container {
+            display: none;
+            align-items: center;
+        }
+         #k-component-slot-container > .vector-label {
+             margin-left: 5px;
+         }
+
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            #game-container {
+                padding: 15px;
+            }
+            #target-vector {
+                font-size: 1.2em;
+                 flex-direction: column; /* Stack vertically */
+                 align-items: flex-start; /* Align left */
+                 gap: 10px;
+            }
+            .component-slot {
+                min-width: 80px;
+                min-height: 40px;
+                padding: 8px;
+                font-size: 0.75em;
+            }
+             .vector-label {
+                 margin-right: 0; /* Remove right margin */
+                 width: 15px; /* Give labels a fixed width */
+                 text-align: right;
+             }
+             .component-slot-container {
+                 display: flex;
+                 align-items: center;
+                 width: 100%;
+             }
+             .component-slot-container > .vector-label {
+                 margin-right: 5px;
+             }
+             .component-slot-container > .component-slot {
+                 flex-grow: 1; /* Make slot take remaining space */
+             }
+             #k-component-slot-container {
+                 width: 100%; /* Ensure K slot container also takes full width */
+             }
+
+            #component-pool {
+                padding: 10px;
+                gap: 8px;
+            }
+            .component-block {
+                font-size: 1em;
+                padding: 8px 12px;
+            }
+            #curve-canvas {
+                 max-height: 250px;
+            }
+            #next-level-button {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Vector Component Matcher</h1>
+        <div id="instructions">
+            Drag the component functions from the pool below into the correct <span style="font-weight:bold; font-family:monospace;">i</span>, <span style="font-weight:bold; font-family:monospace;">j</span>, and <span style="font-weight:bold; font-family:monospace;">k</span> slots of the vector <span style="font-weight:bold; font-family:monospace;">r(t)</span>. Match them based on the target curve shown (if available) or the function's structure. Plane curves use only <span style="font-weight:bold; font-family:monospace;">i</span> and <span style="font-weight:bold; font-family:monospace;">j</span>.
+        </div>
+
+        <div id="level-indicator">Level 1</div>
+
+        <div id="target-vector">
+            <span class="vector-label">r(t) =</span>
+            <span class="vector-brackets"><</span>
+            <div class="component-slot-container">
+                 <div id="i-component-slot" class="component-slot" data-component="i"></div>
+                 <span class="vector-label">i</span>
+            </div>
+            <span style="margin: 0 2px;">,</span>
+            <div class="component-slot-container">
+                 <div id="j-component-slot" class="component-slot" data-component="j"></div>
+                 <span class="vector-label">j</span>
+            </div>
+            <div id="k-component-slot-container">
+                 <span style="margin: 0 2px;">,</span>
+                 <div class="component-slot-container">
+                    <div id="k-component-slot" class="component-slot" data-component="k"></div>
+                     <span class="vector-label">k</span>
+                 </div>
+            </div>
+            <span class="vector-brackets">></span>
+        </div>
+
+        <div id="canvas-container">
+            <h2>Target Curve Preview</h2>
+            <canvas id="curve-canvas" width="300" height="300"></canvas>
+            <p id="curve-description" style="font-style: italic; margin-top: 5px;"></p>
+        </div>
+
+        <h2>Available Components</h2>
+        <div id="component-pool">
+            <!-- Draggable components will be added here by JS -->
+        </div>
+
+        <div id="feedback"></div>
+
+        <button id="next-level-button" disabled>Next Level</button>
+
+    </div>
+
+    <script>
+        // --- Game Configuration ---
+        const levels = [
+            {
+                level: 1,
+                dimension: 2,
+                targetVector: { f: { str: 't', func: t => t }, g: { str: 't^2', func: t => t*t }, h: null },
+                poolComponents: ['t', 't^2', 'sin(t)', '1'],
+                tRange: { min: -2, max: 2, step: 0.1 },
+                description: "A parabolic curve opening upwards."
+            },
+            {
+                level: 2,
+                dimension: 2,
+                targetVector: { f: { str: 'cos(t)', func: t => Math.cos(t) }, g: { str: 'sin(t)', func: t => Math.sin(t) }, h: null },
+                poolComponents: ['cos(t)', 'sin(t)', 't', '-sin(t)', '1'],
+                tRange: { min: 0, max: 2 * Math.PI, step: 0.1 },
+                description: "A circle centered at the origin."
+            },
+            {
+                level: 3,
+                dimension: 2,
+                targetVector: { f: { str: '2*cos(t)', func: t => 2 * Math.cos(t) }, g: { str: '3*sin(t)', func: t => 3 * Math.sin(t) }, h: null },
+                poolComponents: ['2*cos(t)', '3*sin(t)', 'cos(t)', 'sin(t)', 't^2'],
+                tRange: { min: 0, max: 2 * Math.PI, step: 0.1 },
+                description: "An ellipse wider along the x-axis."
+            },
+             {
+                level: 4,
+                dimension: 3,
+                targetVector: { f: { str: 't', func: t => t }, g: { str: 'cos(t)', func: t => Math.cos(t) }, h: { str: 'sin(t)', func: t => Math.sin(t) } },
+                poolComponents: ['t', 'cos(t)', 'sin(t)', 't^2', '1', '-sin(t)'],
+                tRange: null, // No 3D plot for now
+                description: "A curve oscillating along the y and z axes as it moves along x (Hint: resembles a helix along the x-axis)."
+            },
+            {
+                level: 5,
+                dimension: 3,
+                targetVector: { f: { str: '5', func: t => 5 }, g: { str: 't^2', func: t => t*t }, h: { str: 'ln(t)', func: t => Math.log(t) } },
+                poolComponents: ['5', 't^2', 'ln(t)', 't', '1/t', 'e^t'],
+                tRange: null, // No 3D plot for now
+                description: "A curve fixed at x=5, moving parabolically in y and logarithmically in z (for t > 0)."
+            },
+            // Add more levels here
+        ];
+
+        // --- DOM Elements ---
+        const levelIndicator = document.getElementById('level-indicator');
+        const iComponentSlot = document.getElementById('i-component-slot');
+        const jComponentSlot = document.getElementById('j-component-slot');
+        const kComponentSlot = document.getElementById('k-component-slot');
+        const kComponentSlotContainer = document.getElementById('k-component-slot-container');
+        const componentPool = document.getElementById('component-pool');
+        const feedbackDiv = document.getElementById('feedback');
+        const nextLevelButton = document.getElementById('next-level-button');
+        const canvas = document.getElementById('curve-canvas');
+        const ctx = canvas.getContext('2d');
+        const curveDescription = document.getElementById('curve-description');
+        const componentSlots = {
+            i: iComponentSlot,
+            j: jComponentSlot,
+            k: kComponentSlot
+        };
+
+        // --- Game State ---
+        let currentLevelIndex = 0;
+        let currentLevel;
+        let placedComponents = { i: null, j: null, k: null }; // Stores the string representation of the function
+        let dragSourceElement = null; // For HTML5 dnd
+        let touchDragElement = null; // Clone for touch drag visual
+        let touchStartX, touchStartY;
+        let touchCurrentX, touchCurrentY;
+
+
+        // --- Canvas Drawing ---
+        function drawAxes(scale, originX, originY) {
+            ctx.strokeStyle = '#cccccc';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            // X axis
+            ctx.moveTo(0, originY);
+            ctx.lineTo(canvas.width, originY);
+            // Y axis
+            ctx.moveTo(originX, 0);
+            ctx.lineTo(originX, canvas.height);
+            ctx.stroke();
+
+             // Labels
+            ctx.fillStyle = '#999999';
+            ctx.font = '10px Arial';
+            ctx.fillText('x', canvas.width - 10, originY - 5);
+            ctx.fillText('y', originX + 5, 15);
+        }
+
+        function drawCurve(level) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            curveDescription.textContent = level.description || '';
+            canvas.style.display = 'block'; // Show canvas
+
+            if (level.dimension === 3 || !level.tRange || !level.targetVector.f || !level.targetVector.g) {
+                 // Hide canvas or show placeholder for 3D or if data missing
+                 // ctx.fillStyle = '#f0f0f0';
+                 // ctx.fillRect(0, 0, canvas.width, canvas.height);
+                 ctx.fillStyle = '#666';
+                 ctx.font = '14px Arial';
+                 ctx.textAlign = 'center';
+                 ctx.fillText(level.dimension === 3 ? '(3D Preview Not Available)' : '(Preview Not Available)', canvas.width / 2, canvas.height / 2);
+                 ctx.textAlign = 'start'; // Reset alignment
+                return;
+            }
+
+            const { f, g } = level.targetVector;
+            const { min, max, step } = level.tRange;
+
+            let points = [];
+            let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+
+            for (let t = min; t <= max; t += step) {
+                try {
+                    const x = f.func(t);
+                    const y = g.func(t);
+                    if (!isNaN(x) && !isNaN(y) && isFinite(x) && isFinite(y)) {
+                        points.push({ x, y });
+                        minX = Math.min(minX, x);
+                        maxX = Math.max(maxX, x);
+                        minY = Math.min(minY, y);
+                        maxY = Math.max(maxY, y);
+                    }
+                } catch (e) {
+                    console.warn(`Error evaluating function at t=${t}:`, e);
+                }
+            }
+
+            if (points.length < 2) {
+                ctx.fillStyle = '#666';
+                ctx.font = '14px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('(Not enough points to draw)', canvas.width / 2, canvas.height / 2);
+                ctx.textAlign = 'start';
+                return;
+            }
+
+            // Auto-scaling logic
+            const rangeX = maxX - minX;
+            const rangeY = maxY - minY;
+            const padding = 20; // Pixel padding around the curve
+
+            // Avoid division by zero if range is zero (e.g., a single point)
+            const scaleX = rangeX === 0 ? 1 : (canvas.width - 2 * padding) / rangeX;
+            const scaleY = rangeY === 0 ? 1 : (canvas.height - 2 * padding) / rangeY;
+            const scale = Math.min(scaleX, scaleY) * 0.9; // Use 90% of available space
+
+            // Center the plot
+            const originX = padding + (canvas.width - 2 * padding - rangeX * scale) / 2 - minX * scale;
+            const originY = padding + (canvas.height - 2 * padding - rangeY * scale) / 2 + maxY * scale; // Y is inverted in canvas
+
+            drawAxes(scale, originX, originY);
+
+            ctx.strokeStyle = '#007bff';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+
+            points.forEach((p, index) => {
+                const canvasX = originX + p.x * scale;
+                const canvasY = originY - p.y * scale; // Invert Y for canvas coordinates
+                if (index === 0) {
+                    ctx.moveTo(canvasX, canvasY);
+                } else {
+                    ctx.lineTo(canvasX, canvasY);
+                }
+            });
+            ctx.stroke();
+
+             // Draw start/end points or arrow? (Optional)
+             if (points.length > 0) {
+                 const startX = originX + points[0].x * scale;
+                 const startY = originY - points[0].y * scale;
+                 ctx.fillStyle = 'green';
+                 ctx.beginPath();
+                 ctx.arc(startX, startY, 4, 0, 2 * Math.PI); // Start point
+                 ctx.fill();
+
+                 const endX = originX + points[points.length-1].x * scale;
+                 const endY = originY - points[points.length-1].y * scale;
+                 ctx.fillStyle = 'red';
+                 ctx.beginPath();
+                 ctx.arc(endX, endY, 4, 0, 2 * Math.PI); // End point
+                 ctx.fill();
+             }
+        }
+
+
+        // --- Drag and Drop Handlers (HTML5) ---
+        function handleDragStart(e) {
+            dragSourceElement = this;
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', this.dataset.function);
+            this.classList.add('dragging');
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault(); // Necessary to allow dropping
+            e.dataTransfer.dropEffect = 'move';
+            if (this.classList.contains('component-slot') && !this.querySelector('.component-block')) {
+                 this.classList.add('drag-over');
+            }
+            return false;
+        }
+
+        function handleDragEnter(e) {
+             if (this.classList.contains('component-slot') && !this.querySelector('.component-block')) {
+                this.classList.add('drag-over');
+             }
+        }
+
+        function handleDragLeave(e) {
+             if (this.classList.contains('component-slot')) {
+                this.classList.remove('drag-over');
+             }
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent bubbling up (e.g., to body)
+
+            if (this.classList.contains('component-slot') && !this.querySelector('.component-block')) {
+                this.classList.remove('drag-over');
+                const functionStr = e.dataTransfer.getData('text/plain');
+
+                // Check if the dragged element is still in the pool (not already placed)
+                if (dragSourceElement && dragSourceElement.parentNode === componentPool) {
+                     const componentBlock = dragSourceElement; // The actual element being dragged
+                     componentBlock.classList.remove('dragging');
+                     this.innerHTML = ''; // Clear placeholder text
+                     this.appendChild(componentBlock); // Move the block
+                     this.classList.add('filled');
+
+                     const componentType = this.dataset.component; // 'i', 'j', or 'k'
+                     placedComponents[componentType] = functionStr;
+
+                     // Return other blocks from the same slot back to pool if needed (optional feature)
+                     // ...
+
+                     checkAllSlotsFilled();
+                }
+            } else if (this === componentPool) {
+                 // Handle dropping back into the pool
+                 this.classList.remove('drag-over'); // Just in case
+                 if (dragSourceElement && dragSourceElement.parentNode !== componentPool) {
+                     const originalSlot = dragSourceElement.parentNode;
+                     const componentType = originalSlot.dataset.component;
+                     placedComponents[componentType] = null; // Clear state
+                     originalSlot.classList.remove('filled', 'correct', 'incorrect');
+                     originalSlot.innerHTML = ''; // Clear slot visually
+
+                     componentPool.appendChild(dragSourceElement); // Move back to pool
+                     dragSourceElement.classList.remove('dragging');
+                 }
+            }
+
+            dragSourceElement = null;
+            return false;
+        }
+
+        function handleDragEnd(e) {
+            this.classList.remove('dragging');
+            // Clear drag-over state from all slots
+             Object.values(componentSlots).forEach(slot => slot?.classList.remove('drag-over'));
+             componentPool.classList.remove('drag-over'); // Also for the pool
+        }
+
+
+        // --- Touch Event Handlers ---
+        function handleTouchStart(e) {
+            if (!e.target.classList.contains('component-block')) return;
+             // Prevent default scrolling behavior when dragging starts
+             // e.preventDefault(); // Careful: This can prevent clicks/taps if not managed well
+
+            dragSourceElement = e.target; // The element we touched
+            const touch = e.targetTouches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+
+            // Create a visual clone for dragging
+            touchDragElement = dragSourceElement.cloneNode(true);
+            touchDragElement.classList.add('touch-drag-element');
+            document.body.appendChild(touchDragElement);
+
+            // Position the clone
+            const rect = dragSourceElement.getBoundingClientRect();
+            touchDragElement.style.width = `${rect.width}px`;
+            touchDragElement.style.height = `${rect.height}px`;
+            touchDragElement.style.left = `${touchStartX - rect.width / 2}px`; // Center under finger
+            touchDragElement.style.top = `${touchStartY - rect.height / 2}px`;
+
+            // Hide original element slightly
+            dragSourceElement.style.opacity = '0.5';
+        }
+
+        function handleTouchMove(e) {
+            if (!touchDragElement || !dragSourceElement) return;
+             e.preventDefault(); // Prevent scrolling WHILE dragging
+
+            const touch = e.targetTouches[0];
+            touchCurrentX = touch.clientX;
+            touchCurrentY = touch.clientY;
+
+            // Move the visual clone
+            touchDragElement.style.left = `${touchCurrentX - touchDragElement.offsetWidth / 2}px`;
+            touchDragElement.style.top = `${touchCurrentY - touchDragElement.offsetHeight / 2}px`;
+
+            // Highlight potential drop target
+            // Hide the drag element temporarily to check what's underneath
+            touchDragElement.style.display = 'none';
+            const elementUnder = document.elementFromPoint(touchCurrentX, touchCurrentY);
+            touchDragElement.style.display = ''; // Show it again
+
+            // Clear previous highlights
+            Object.values(componentSlots).forEach(slot => slot?.classList.remove('drag-over'));
+            componentPool.classList.remove('drag-over');
+
+            if (elementUnder) {
+                const dropTarget = elementUnder.closest('.component-slot, #component-pool');
+                if (dropTarget && dropTarget.classList.contains('component-slot')) {
+                    // Only highlight if the slot is empty
+                    if (!dropTarget.querySelector('.component-block')) {
+                         dropTarget.classList.add('drag-over');
+                    }
+                } else if (dropTarget && dropTarget === componentPool) {
+                     // Highlight pool if dragging back
+                     if (dragSourceElement.parentNode !== componentPool) {
+                         componentPool.classList.add('drag-over');
+                     }
+                }
+            }
+        }
+
+        function handleTouchEnd(e) {
+            if (!touchDragElement || !dragSourceElement) return;
+
+            // Remove visual clone
+            document.body.removeChild(touchDragElement);
+            touchDragElement = null;
+            dragSourceElement.style.opacity = '1'; // Restore original element visibility
+
+            // Clear highlights
+            Object.values(componentSlots).forEach(slot => slot?.classList.remove('drag-over'));
+            componentPool.classList.remove('drag-over');
+
+            // Find drop target based on final touch position
+            const elementUnder = document.elementFromPoint(touchCurrentX, touchCurrentY);
+
+            if (elementUnder) {
+                 const dropTarget = elementUnder.closest('.component-slot, #component-pool');
+
+                 if (dropTarget && dropTarget.classList.contains('component-slot')) {
+                     // Dropped on a slot
+                     if (!dropTarget.querySelector('.component-block')) { // Check if empty
+                         const functionStr = dragSourceElement.dataset.function;
+                         dropTarget.innerHTML = ''; // Clear placeholder
+                         dropTarget.appendChild(dragSourceElement); // Move the element
+                         dropTarget.classList.add('filled');
+
+                         const componentType = dropTarget.dataset.component;
+                         placedComponents[componentType] = functionStr;
+
+                         checkAllSlotsFilled();
+                     }
+                 } else if (dropTarget && dropTarget === componentPool) {
+                     // Dropped back into the pool
+                     if (dragSourceElement.parentNode !== componentPool) {
+                         const originalSlot = dragSourceElement.parentNode;
+                         const componentType = originalSlot.dataset.component;
+                         placedComponents[componentType] = null;
+                         originalSlot.classList.remove('filled', 'correct', 'incorrect');
+                         originalSlot.innerHTML = '';
+
+                         componentPool.appendChild(dragSourceElement);
+                     }
+                 }
+            }
+
+            // Reset state variables
+            dragSourceElement = null;
+            touchStartX = null;
+            touchStartY = null;
+            touchCurrentX = null;
+            touchCurrentY = null;
+        }
+
+
+        // --- Game Logic ---
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function loadLevel(levelIndex) {
+            if (levelIndex >= levels.length) {
+                feedbackDiv.textContent = "Congratulations! You've completed all levels!";
+                feedbackDiv.className = 'correct';
+                nextLevelButton.disabled = true;
+                nextLevelButton.textContent = "All Done!";
+                componentPool.innerHTML = '';
+                Object.values(componentSlots).forEach(slot => {
+                    if (slot) {
+                        slot.innerHTML = '';
+                        slot.className = 'component-slot'; // Reset class
+                    }
+                });
+                 kComponentSlotContainer.style.display = 'none'; // Hide K slot
+                return;
+            }
+
+            currentLevel = levels[levelIndex];
+            levelIndicator.textContent = `Level ${currentLevel.level}`;
+            feedbackDiv.textContent = '';
+            feedbackDiv.className = '';
+            nextLevelButton.disabled = true;
+            nextLevelButton.textContent = 'Next Level';
+
+            // Reset placed components state
+            placedComponents = { i: null, j: null, k: null };
+
+            // Clear slots and pool
+            componentPool.innerHTML = '';
+            Object.values(componentSlots).forEach(slot => {
+                if (slot) {
+                    slot.innerHTML = ''; // Clear content
+                    slot.className = 'component-slot'; // Reset classes
+                    slot.removeEventListener('dragover', handleDragOver); // Remove old listeners
+                    slot.removeEventListener('dragenter', handleDragEnter);
+                    slot.removeEventListener('dragleave', handleDragLeave);
+                    slot.removeEventListener('drop', handleDrop);
+                    slot.addEventListener('dragover', handleDragOver); // Add new listeners
+                    slot.addEventListener('dragenter', handleDragEnter);
+                    slot.addEventListener('dragleave', handleDragLeave);
+                    slot.addEventListener('drop', handleDrop);
+                }
+            });
+             // Add listeners to the pool for dropping back
+             componentPool.removeEventListener('dragover', handleDragOver);
+             componentPool.removeEventListener('drop', handleDrop);
+             componentPool.addEventListener('dragover', handleDragOver);
+             componentPool.addEventListener('drop', handleDrop);
+
+
+            // Show/hide K component based on dimension
+            kComponentSlotContainer.style.display = currentLevel.dimension === 3 ? 'flex' : 'none';
+
+
+            // Create draggable components and add to pool
+            const componentsToDisplay = shuffleArray([...currentLevel.poolComponents]);
+            componentsToDisplay.forEach(funcStr => {
+                const block = document.createElement('div');
+                block.className = 'component-block';
+                block.textContent = funcStr;
+                block.draggable = true;
+                block.dataset.function = funcStr; // Store function string
+
+                // Add HTML5 dnd listeners
+                block.addEventListener('dragstart', handleDragStart);
+                block.addEventListener('dragend', handleDragEnd);
+
+                // Add Touch listeners
+                block.addEventListener('touchstart', handleTouchStart, { passive: false }); // Use passive:false if preventDefault is needed
+                // Add touchmove/touchend to the document to capture movement anywhere
+                // These listeners are added once in initGame
+
+                componentPool.appendChild(block);
+            });
+
+            // Draw the curve preview
+            drawCurve(currentLevel);
+        }
+
+        function checkAllSlotsFilled() {
+             const requiredSlots = currentLevel.dimension === 3 ? ['i', 'j', 'k'] : ['i', 'j'];
+             const allFilled = requiredSlots.every(slot => placedComponents[slot] !== null);
+
+             if (allFilled) {
+                 checkAnswer();
+             }
+        }
+
+        function checkAnswer() {
+            let isCorrect = true;
+            const target = currentLevel.targetVector;
+
+            // Check i component
+            if (placedComponents.i !== target.f.str) {
+                isCorrect = false;
+                iComponentSlot.classList.add('incorrect');
+                iComponentSlot.classList.remove('correct');
+            } else {
+                iComponentSlot.classList.add('correct');
+                iComponentSlot.classList.remove('incorrect');
+            }
+
+            // Check j component
+            if (placedComponents.j !== target.g.str) {
+                isCorrect = false;
+                jComponentSlot.classList.add('incorrect');
+                jComponentSlot.classList.remove('correct');
+            } else {
+                jComponentSlot.classList.add('correct');
+                jComponentSlot.classList.remove('incorrect');
+            }
+
+            // Check k component if it's a 3D vector
+            if (currentLevel.dimension === 3) {
+                if (placedComponents.k !== target.h.str) {
+                    isCorrect = false;
+                    kComponentSlot.classList.add('incorrect');
+                    kComponentSlot.classList.remove('correct');
+                } else {
+                    kComponentSlot.classList.add('correct');
+                    kComponentSlot.classList.remove('incorrect');
+                }
+            }
+
+            if (isCorrect) {
+                feedbackDiv.textContent = "Correct!";
+                feedbackDiv.className = 'correct';
+                nextLevelButton.disabled = false;
+                 // Make correct components non-draggable
+                 Object.values(componentSlots).forEach(slot => {
+                    if (slot && slot.firstChild) {
+                         slot.firstChild.draggable = false;
+                         // Could also remove touch listeners here if needed
+                    }
+                 });
+            } else {
+                feedbackDiv.textContent = "Not quite right. Check the highlighted components.";
+                feedbackDiv.className = 'incorrect';
+                nextLevelButton.disabled = true;
+            }
+        }
+
+        function goToNextLevel() {
+            currentLevelIndex++;
+            loadLevel(currentLevelIndex);
+        }
+
+        // --- Initialization ---
+        function initGame() {
+            console.log("Initializing Vector Component Matcher...");
+             // Add global touch listeners for move and end
+            document.addEventListener('touchmove', handleTouchMove, { passive: false }); // Use passive:false because we call preventDefault
+            document.addEventListener('touchend', handleTouchEnd);
+            document.addEventListener('touchcancel', handleTouchEnd); // Handle cancellation (e.g., system interruption)
+
+            nextLevelButton.addEventListener('click', goToNextLevel);
+            loadLevel(currentLevelIndex);
+        }
+
+        // Start the game when the DOM is ready
+        document.addEventListener('DOMContentLoaded', initGame);
+
+    </script>
+</body>
+</html>

@@ -7,6 +7,7 @@ import { changePassword, createUser, removeUser, signIn } from './api';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import Login from './pages/Login';
+import Home from './pages/Home';
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
@@ -30,6 +31,7 @@ function App() {
     <>
       <Routes>
         <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Home/>}/>
       </Routes>
     </>
   )
