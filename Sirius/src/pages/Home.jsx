@@ -29,6 +29,9 @@ import {
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EditIcon from '@mui/icons-material/Edit';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import { askGen2Lite, HelperAI } from '../api-ai';
+import { update } from 'firebase/database';
+import AIDash from '../assets/components/AIDash';
 
 const commonInputLabelSx = {
     color: 'rgba(0, 0, 0, 0.6)',
@@ -104,7 +107,16 @@ useEffect(() => {
             return;
         }
 
+       
         const parsedUserdata = JSON.parse(userCookie);
+
+        if(!Cookies.get('ai')){
+            Cookies.set('ai', true)
+            const helper = new HelperAI(app,parsedUserdata)
+            helper.log(`${parsedUserdata.name} logged in`)
+        }
+
+
         if (isMounted) {
             setUserdata(parsedUserdata);
             setEditedName(parsedUserdata.name || '');
@@ -371,16 +383,8 @@ return (
                 </IconButton>
             </div>
             <div className='p-4'>
-                <div className='border border-gray-300 rounded-lg p-4 text-center'>
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            color: 'gray',
-                            fontFamily: 'Roboto, sans-serif'
-                        }}
-                    >
-                        {"Nothing to do yet"}
-                    </Typography>
+                <div className='rounded-lg text-center'>
+                    {userdata.name != null && <AIDash app={app} userdata={userdata}/>}
                 </div>
             </div>
         </Card>

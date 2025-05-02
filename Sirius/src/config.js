@@ -8,3 +8,6 @@ export const firebaseConfig = {
   appId: "1:449848391400:web:ca03609112508649c6fb5d",
   measurementId: "G-2RFKPCLJVJ"
 };
+
+
+export const GENAPIS = ['AIzaSyAjyofndMStYX6AT_C8CIBj-GZZeObA0PQ','AIzaSyAu9swfNci4KFg63TjnxoV9zCfwXz9wuuA','AIzaSyB97ORZRyH0Ke154I8WjvhD5G-WUTIuDd4','AIzaSyB97ORZRyH0Ke154I8WjvhD5G-WUTIuDd4','AIzaSyB97ORZRyH0Ke154I8WjvhD5G-WUTIuDd4']

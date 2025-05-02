@@ -8,30 +8,17 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Test from './pages/Test';
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 function App() {
-  const [count, setCount] = useState(0)
-  useEffect(() => {
-    const test = async () => {
-      try {
-        
-      } catch (e) {
-        console.log(e)
-      } finally {
-  
-  
-      }
-    }
-
-    test()
-  }, [])
   return (
     <>
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Home/>}/>
+        <Route path='/test' element={<Test/>}/>
       </Routes>
     </>
   )
