@@ -26,7 +26,7 @@ const commonInputLabelSx = {
 
 const commonRootBaseSx = {
     borderRadius: '8px',
-    backgroundColor: 'rgba(30, 27, 75, 0.8)',
+    backgroundColor: 'rgba(30, 27, 75, 0.3)',
     '& .MuiFilledInput-root': {
         backgroundColor: 'transparent !important', 
         borderTopLeftRadius: '8px', 
@@ -175,7 +175,7 @@ function Login() {
                     backdropFilter: 'blur(10px)'
                 }}
             >
-                <img src="/src/assets/icon.png" alt="Logo" className='w-30'></img>
+                <img src="/src/assets/image.png" alt="Logo" className='w-20 md:w-25 p-1'></img>
                 <Typography
                     variant="h6"
                     component="h1"
