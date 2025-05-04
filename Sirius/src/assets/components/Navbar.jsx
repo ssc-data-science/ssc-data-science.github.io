@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Home, Layers, BookOpen, Settings } from 'lucide-react';
+import { useNavigate } from 'react-router';
 
 // ToolbarItem component with colored icons and hover effects
 const ToolbarItem = ({ icon, activeIcon, color, isActive, onClick }) => {
@@ -24,8 +25,8 @@ const ToolbarItem = ({ icon, activeIcon, color, isActive, onClick }) => {
 };
 
 // Main Toolbar component with backdrop blur
-const Navbar = () => {
-  const [activeItem, setActiveItem] = useState('home');
+const Navbar = ({current}) => {
+  const [activeItem, setActiveItem] = useState(current);
   
   const items = [
     { 
@@ -54,6 +55,7 @@ const Navbar = () => {
     }
   ];
   
+  const navigate = useNavigate();
   return (
     <div className="w-screen flex flex-row h-fit mt-auto items-center">
       {/* Semi-transparent background with backdrop blur */}
@@ -65,7 +67,13 @@ const Navbar = () => {
             activeIcon={item.activeIcon}
             color={item.color}
             isActive={activeItem === item.id}
-            onClick={() => setActiveItem(item.id)}
+            onClick={() => {
+              if(item.id == 'home'){
+                navigate('/')
+              }else{
+                navigate(`/${item.id}`)
+              }
+            }}
           />
         ))}
       </div>

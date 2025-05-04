@@ -24,7 +24,10 @@ import {
     Box,
     Divider,
     Alert
+
 } from '@mui/material';
+
+
 
 import Toolbar from '../assets/components/Toolbar';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -33,6 +36,7 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { askGen2Lite, HelperAI } from '../api-ai';
 import Navbar from '../assets/components/Navbar';
+import AppBar from '@mui/material/AppBar';
 import AIDash from '../assets/components/AIDash';
 
 const commonInputLabelSx = {
@@ -424,11 +428,12 @@ const Home = () => {
 
     return (
         <div className='bg-cover h-[100vh] flex bg-[url(/src/assets/background.jpg)]'>
-            <div className='flex h-full w-full md:flex-row'>
-                <div className='hidden h-full md:block'>
-                    <Toolbar />
+
+            <div className='flex h-full w-full flex-col'>
+                <div className='hidden md:block'>
+                    <Toolbar current={'home'} />
                 </div>
-                <div className='flex-grow h-full md:h-fit md:my-auto flex items-center justify-center w-full'>
+                <div className='h-full md:h-fit md:my-auto flex items-center justify-center w-full'>
                     <div className='mx-auto h-full w-full max-w-md md:rounded-xl md:backdrop-blur-md overflow-hidden shadow-lg bg-[#0005]'>
                         <div className='relative justify-center items-center p-4'>
                             <div className='w-24 h-24 flex-shrink-0 mr-auto ml-auto mb-4 mt-4 flex items-center justify-center'>
@@ -474,7 +479,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='md:hidden fixed bottom-0 left-0 w-full'>
-                    <Navbar />
+                    <Navbar current={'home'} />
                 </div>
             </div>
 
@@ -487,7 +492,7 @@ const Home = () => {
                 fullWidth
                 PaperProps={{
                     sx: {
-                        backgroundColor: 'rgba(0, 0, 0, 0.75)' ,
+                        backgroundColor: 'rgba(0, 0, 0, 0.75)',
                         backdropFilter: 'blur(10px)',
                         color: 'white',
                         borderRadius: '12px',
@@ -506,9 +511,9 @@ const Home = () => {
                             '& .MuiTab-root': {
                                 textTransform: 'none',
                                 fontWeight: '500',
-                                color:  'rgba(255, 255, 255, 0.7)' ,
+                                color: 'rgba(255, 255, 255, 0.7)',
                                 '&.Mui-selected': {
-                                    color: 'white' ,
+                                    color: 'white',
                                     fontWeight: '600',
                                 }
                             }
@@ -577,7 +582,7 @@ const Home = () => {
                                 variant="caption"
                                 sx={{
                                     mt: 1,
-                                    color: 'rgba(255, 255, 255, 0.7)' 
+                                    color: 'rgba(255, 255, 255, 0.7)'
                                 }}
                             >
                                 Tap the camera icon to change your profile picture
@@ -586,7 +591,7 @@ const Home = () => {
 
                         <Divider sx={{
                             my: 2,
-                            borderColor:  'rgba(255, 255, 255, 0.2)' 
+                            borderColor: 'rgba(255, 255, 255, 0.2)'
                         }} />
 
                         <TextField
@@ -600,16 +605,16 @@ const Home = () => {
                                 marginBottom: 2,
                                 ...commonRootBaseSx,
                                 '& .MuiOutlinedInput-root': {
-                                    color:  'white' ,
+                                    color: 'white',
                                     '& fieldset': {
-                                        borderColor:  'rgba(255, 255, 255, 0.3)' ,
+                                        borderColor: 'rgba(255, 255, 255, 0.3)',
                                     },
                                     '&:hover fieldset': {
-                                        borderColor:  'rgba(255, 255, 255, 0.5)',
+                                        borderColor: 'rgba(255, 255, 255, 0.5)',
                                     },
                                 },
                                 '& .MuiInputLabel-root': {
-                                    color: 'rgba(255, 255, 255, 0.7)' ,
+                                    color: 'rgba(255, 255, 255, 0.7)',
                                 }
                             }}
                         />
@@ -621,16 +626,16 @@ const Home = () => {
                             sx={{
                                 ...formControlRootSx,
                                 '& .MuiOutlinedInput-root': {
-                                    color:  'white',
+                                    color: 'white',
                                     '& fieldset': {
-                                        borderColor:  'rgba(255, 255, 255, 0.3)',
+                                        borderColor: 'rgba(255, 255, 255, 0.3)',
                                     },
                                     '&:hover fieldset': {
-                                        borderColor: 'rgba(255, 255, 255, 0.5)' ,
+                                        borderColor: 'rgba(255, 255, 255, 0.5)',
                                     },
                                 },
                                 '& .MuiInputLabel-root': {
-                                    color:  'rgba(255, 255, 255, 0.7)' ,
+                                    color: 'rgba(255, 255, 255, 0.7)',
                                 }
                             }}
                         >
@@ -677,7 +682,7 @@ const Home = () => {
                                 '& .MuiOutlinedInput-root': {
                                     color: 'white',
                                     '& fieldset': {
-                                        borderColor: 'rgba(255, 255, 255, 0.3)' ,
+                                        borderColor: 'rgba(255, 255, 255, 0.3)',
                                     },
                                     '&:hover fieldset': {
                                         borderColor: 'rgba(255, 255, 255, 0.5)',
@@ -727,7 +732,7 @@ const Home = () => {
                             variant="body2"
                             sx={{
                                 mb: 2,
-                                color: 'rgba(255, 255, 255, 0.7)' 
+                                color: 'rgba(255, 255, 255, 0.7)'
                             }}
                         >
                             Change your password by entering your current password and a new one.
@@ -745,16 +750,16 @@ const Home = () => {
                                 marginBottom: 2,
                                 ...commonRootBaseSx,
                                 '& .MuiOutlinedInput-root': {
-                                    color: 'white' ,
+                                    color: 'white',
                                     '& fieldset': {
-                                        borderColor:  'rgba(255, 255, 255, 0.3)',
+                                        borderColor: 'rgba(255, 255, 255, 0.3)',
                                     },
                                     '&:hover fieldset': {
-                                        borderColor:'rgba(255, 255, 255, 0.5)' ,
+                                        borderColor: 'rgba(255, 255, 255, 0.5)',
                                     },
                                 },
                                 '& .MuiInputLabel-root': {
-                                    color: 'rgba(255, 255, 255, 0.7)' ,
+                                    color: 'rgba(255, 255, 255, 0.7)',
                                 }
                             }}
                         />
@@ -771,21 +776,21 @@ const Home = () => {
                                 marginBottom: 2,
                                 ...commonRootBaseSx,
                                 '& .MuiOutlinedInput-root': {
-                                    color: 'white' ,
+                                    color: 'white',
                                     '& fieldset': {
-                                        borderColor:  'rgba(255, 255, 255, 0.3)' ,
+                                        borderColor: 'rgba(255, 255, 255, 0.3)',
                                     },
                                     '&:hover fieldset': {
-                                        borderColor: 'rgba(255, 255, 255, 0.5)' ,
+                                        borderColor: 'rgba(255, 255, 255, 0.5)',
                                     },
                                 },
                                 '& .MuiInputLabel-root': {
-                                    color: 'rgba(255, 255, 255, 0.7)' ,
+                                    color: 'rgba(255, 255, 255, 0.7)',
                                 }
                             }}
                             helperText="Password must be at least 6 characters"
                             FormHelperTextProps={{
-                                sx: { color: 'rgba(255, 255, 255, 0.6)'  }
+                                sx: { color: 'rgba(255, 255, 255, 0.6)' }
                             }}
                         />
 
@@ -801,16 +806,16 @@ const Home = () => {
                                 marginBottom: 2,
                                 ...commonRootBaseSx,
                                 '& .MuiOutlinedInput-root': {
-                                    color:  'white' ,
+                                    color: 'white',
                                     '& fieldset': {
-                                        borderColor: 'rgba(255, 255, 255, 0.3)' ,
+                                        borderColor: 'rgba(255, 255, 255, 0.3)',
                                     },
                                     '&:hover fieldset': {
-                                        borderColor:  'rgba(255, 255, 255, 0.5)' ,
+                                        borderColor: 'rgba(255, 255, 255, 0.5)',
                                     },
                                 },
                                 '& .MuiInputLabel-root': {
-                                    color:  'rgba(255, 255, 255, 0.7)',
+                                    color: 'rgba(255, 255, 255, 0.7)',
                                 }
                             }}
                         />
@@ -822,11 +827,11 @@ const Home = () => {
                         onClick={handleClose}
                         sx={{
                             borderRadius: '8px',
-                            color:'rgba(255, 255, 255, 0.7)',
+                            color: 'rgba(255, 255, 255, 0.7)',
                             fontWeight: '500',
                             '&:hover': {
-                                color:  'white' ,
-                                backgroundColor: 'rgba(255, 255, 255, 0.1)' ,
+                                color: 'white',
+                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
                             }
                         }}
                     >
@@ -862,9 +867,9 @@ const Home = () => {
                 aria-labelledby="logout-dialog"
                 PaperProps={{
                     sx: {
-                        backgroundColor:'rgba(0, 0, 0, 0.75)' ,
+                        backgroundColor: 'rgba(0, 0, 0, 0.75)',
                         backdropFilter: 'blur(10px)',
-                        color:  'white' ,
+                        color: 'white',
                         borderRadius: '12px',
                         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
                         maxWidth: '320px'
@@ -872,13 +877,13 @@ const Home = () => {
                 }}
             >
                 <DialogTitle sx={{
-                    color:  'white' ,
+                    color: 'white',
                     fontWeight: 'bold'
                 }}>
                     Logout
                 </DialogTitle>
                 <DialogContent>
-                    <Typography sx={{ color: 'rgba(255, 255, 255, 0.8)'  }}>
+                    <Typography sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
                         Are you sure you want to logout?
                     </Typography>
                 </DialogContent>
@@ -886,10 +891,10 @@ const Home = () => {
                     <Button
                         onClick={() => setLogoutConfirmOpen(false)}
                         sx={{
-                            color: 'rgba(255, 255, 255, 0.7)' ,
+                            color: 'rgba(255, 255, 255, 0.7)',
                             '&:hover': {
-                                color: 'white' ,
-                                backgroundColor:  'rgba(255, 255, 255, 0.1)' ,
+                                color: 'white',
+                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
                             },
                             borderRadius: '8px'
                         }}

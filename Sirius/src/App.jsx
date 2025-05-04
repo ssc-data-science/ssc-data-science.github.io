@@ -9,6 +9,9 @@ import { getAnalytics } from 'firebase/analytics';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Test from './pages/Test';
+import Notes from './pages/Notes';
+import Learn from './pages/Learn';
+import Settings from './pages/Settings';
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
@@ -19,6 +22,9 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Home/>}/>
         <Route path='/test' element={<Test/>}/>
+        <Route path='/notes' element={<Notes/>}/>
+        <Route path='/learn' element={<Learn/>}/>
+        <Route path='/settings' element={<Settings/>}/>
       </Routes>
     </>
   )
