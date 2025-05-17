@@ -1,28 +1,796 @@
 {
-    "classes": [
+    "lastLoginDate": "2025-05-07",
+    "coins": 355,
+    "xp": 2944,
+    "playerLevel": 30,
+    "mainTasks": [
         {
-            "id": "fyg-sem-3",
-            "name": "FYUG - Sem 3",
-            "departments": [
+            "id": "proj_ui_ai",
+            "name": "Project: UI, AI, Gamify",
+            "description": "Finish making the basic UI, apply AI tools, and gamify things.",
+            "streak": 2,
+            "dailyTimeSpent": 15,
+            "lastWorkedDate": "2025-05-07",
+            "subTasks": [
                 {
-                    "id": "phy",
-                    "name": "BSc. Physics",
-                    "subjects": [
-                        {
-                            "id": "phy",
-                            "name": "Mechanics"
-                        },
-                        {
-                            "id": "cs1",
-                            "name": "Artificial Intelligence"
-                        },
-                        {
-                            "id": "stat",
-                            "name": "Statistics with R"
-                        }
-                    ]
+                    "id": "sub_1746626871749_hpu6n",
+                    "name": "Create noteviewer file and test, learn about iframing in react native",
+                    "completed": true,
+                    "timeLoggedForCompletion": 10,
+                    "completedDate": "2025-05-07"
+                }
+            ]
+        },
+        {
+            "id": "research_pinn",
+            "name": "Research: Physics Informed NN",
+            "description": "Continue research on PINNs, make a new study plan.",
+            "streak": 2,
+            "dailyTimeSpent": 95,
+            "lastWorkedDate": "2025-05-07",
+            "subTasks": [
+                {
+                    "id": "sub_1746597667183_vc478",
+                    "name": "Learn from Hands on machine learning",
+                    "completed": true,
+                    "timeLoggedForCompletion": 95,
+                    "completedDate": "2025-05-07"
+                }
+            ]
+        },
+        {
+            "id": "study_next_sem",
+            "name": "Study: Next Semester Prep",
+            "description": "Create notes, textbooks, and games using AI for next semester.",
+            "streak": 2,
+            "dailyTimeSpent": 43,
+            "lastWorkedDate": "2025-05-07",
+            "subTasks": [
+                {
+                    "id": "sub_1746625669403_2kp70",
+                    "name": "Hypothesis Tests: An Introduction",
+                    "completed": true,
+                    "timeLoggedForCompletion": 43,
+                    "completedDate": "2025-05-07"
+                }
+            ]
+        },
+        {
+            "id": "learn_kungfu",
+            "name": "Lifestyle: Learn Kung Fu",
+            "description": "Learn basics of Kung Fu from Shaolin Workouts.",
+            "streak": 2,
+            "dailyTimeSpent": 20,
+            "lastWorkedDate": "2025-05-07",
+            "subTasks": [
+                {
+                    "id": "sub_1746584998200_786kf",
+                    "name": "Writs and Ankles: Read",
+                    "completed": true,
+                    "timeLoggedForCompletion": 5,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746585005283_mcqzk",
+                    "name": "Practice session1",
+                    "completed": true,
+                    "timeLoggedForCompletion": 15,
+                    "completedDate": "2025-05-07"
+                }
+            ]
+        },
+        {
+            "id": "build_routine",
+            "name": "Routine & Reflection",
+            "description": "Create tracking tools, read books, write journals, and do five prayers.",
+            "streak": 2,
+            "dailyTimeSpent": 155,
+            "lastWorkedDate": "2025-05-07",
+            "subTasks": [
+                {
+                    "id": "sub_1746584901651_kmvxr",
+                    "name": "Add tasks for the day",
+                    "completed": true,
+                    "timeLoggedForCompletion": 15,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746585085936_p3fig",
+                    "name": "Duolingo for Night",
+                    "completed": false,
+                    "timeLoggedForCompletion": 0,
+                    "completedDate": null
+                },
+                {
+                    "id": "sub_1746585101166_nbr4c",
+                    "name": "Journal",
+                    "completed": false,
+                    "timeLoggedForCompletion": 0,
+                    "completedDate": null
+                },
+                {
+                    "id": "sub_1746585109331_673lc",
+                    "name": "Duhur",
+                    "completed": true,
+                    "timeLoggedForCompletion": 10,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746585117698_9q51r",
+                    "name": "Asar",
+                    "completed": true,
+                    "timeLoggedForCompletion": 15,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746585122382_7k30d",
+                    "name": "Maghrib",
+                    "completed": true,
+                    "timeLoggedForCompletion": 10,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746585126016_2tatc",
+                    "name": "Isha",
+                    "completed": true,
+                    "timeLoggedForCompletion": 5,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746585142049_w3mky",
+                    "name": "Create plan for statistics module 2",
+                    "completed": true,
+                    "timeLoggedForCompletion": 15,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746585187883_m8w3q",
+                    "name": "Download books and create plan for PNN",
+                    "completed": true,
+                    "timeLoggedForCompletion": 30,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746586096505_n0bm1",
+                    "name": "Duolingo for Day",
+                    "completed": true,
+                    "timeLoggedForCompletion": 20,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746597773166_hazvf",
+                    "name": "Read atomic habits,chapter8",
+                    "completed": true,
+                    "timeLoggedForCompletion": 15,
+                    "completedDate": "2025-05-07"
+                },
+                {
+                    "id": "sub_1746607191959_thhrs",
+                    "name": "Read atomic habits, chapter 13",
+                    "completed": true,
+                    "timeLoggedForCompletion": 20,
+                    "completedDate": "2025-05-07"
                 }
             ]
         }
-    ]
+    ],
+    "completedByDay": {
+        "2025-05-06": {
+            "tasksMetGoal": [
+                "build_routine",
+                "learn_kungfu",
+                "study_next_sem",
+                "proj_ui_ai",
+                "research_pinn"
+            ],
+            "subtasksCompleted": [
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Create the Task Dominion",
+                    "timeSpent": 45
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Setup tasks",
+                    "timeSpent": 15
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Asar",
+                    "timeSpent": 15
+                },
+                {
+                    "parentTaskId": "learn_kungfu",
+                    "name": "Read first chapter",
+                    "timeSpent": 30
+                },
+                {
+                    "parentTaskId": "study_next_sem",
+                    "name": "Finish english reading",
+                    "timeSpent": 20
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Maghrib",
+                    "timeSpent": 10
+                },
+                {
+                    "parentTaskId": "proj_ui_ai",
+                    "name": "Work on the notes list",
+                    "timeSpent": 60
+                },
+                {
+                    "parentTaskId": "research_pinn",
+                    "name": "Create a new study plan",
+                    "timeSpent": 15
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Duloingo for night",
+                    "timeSpent": 15
+                }
+            ]
+        },
+        "2025-05-07": {
+            "tasksMetGoal": [
+                "build_routine",
+                "learn_kungfu",
+                "research_pinn",
+                "study_next_sem",
+                "proj_ui_ai"
+            ],
+            "subtasksCompleted": [
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Add tasks for the day",
+                    "timeSpent": 15
+                },
+                {
+                    "parentTaskId": "learn_kungfu",
+                    "name": "Writs and Ankles: Read",
+                    "timeSpent": 5
+                },
+                {
+                    "parentTaskId": "learn_kungfu",
+                    "name": "Practice session1",
+                    "timeSpent": 15
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Duolingo for Day",
+                    "timeSpent": 20
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Download books and create plan for PNN",
+                    "timeSpent": 30
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Read atomic habits,chapter8",
+                    "timeSpent": 15
+                },
+                {
+                    "parentTaskId": "research_pinn",
+                    "name": "Learn from Hands on machine learning",
+                    "timeSpent": 95
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Duhur",
+                    "timeSpent": 10
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Create plan for statistics module 2",
+                    "timeSpent": 15
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Read atomic habits, chapter 13",
+                    "timeSpent": 20
+                },
+                {
+                    "parentTaskId": "study_next_sem",
+                    "name": "Hypothesis Tests: An Introduction",
+                    "timeSpent": 43
+                },
+                {
+                    "parentTaskId": "proj_ui_ai",
+                    "name": "Create notes viewer page",
+                    "timeSpent": 5
+                },
+                {
+                    "parentTaskId": "proj_ui_ai",
+                    "name": "Create noteviewer file and test, learn about iframing in react native",
+                    "timeSpent": 10
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Asar",
+                    "timeSpent": 15
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Maghrib",
+                    "timeSpent": 10
+                },
+                {
+                    "parentTaskId": "build_routine",
+                    "name": "Isha",
+                    "timeSpent": 5
+                }
+            ]
+        }
+    },
+    "artifacts": [
+        {
+            "id": "art_wpn005",
+            "name": "Emberforged Spear",
+            "type": "weapon",
+            "description": "Forged in dragonfire, glows faintly in darkness.",
+            "baseAtt": 5,
+            "baseDef": 1,
+            "baseHealth": 0,
+            "cost": 160,
+            "icon": "🔥",
+            "att": 5,
+            "def": 1,
+            "health": 0,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": true,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_wpn006",
+            "name": "Stormcaller's Blade",
+            "type": "weapon",
+            "description": "Crackles with residual lightning. Slightly boosts cooldown recovery.",
+            "baseAtt": 4,
+            "baseDef": 0,
+            "baseCooldown": 3,
+            "cost": 190,
+            "icon": "⚡",
+            "att": 4,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 3,
+            "owned": true,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_wpn007",
+            "name": "Ghostfang Dagger",
+            "type": "weapon",
+            "description": "Phases through armor. Grants minor luck bonus.",
+            "baseAtt": 3,
+            "baseDef": 0,
+            "baseLuck": 2,
+            "cost": 140,
+            "icon": "👻",
+            "att": 3,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 2,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_arm004",
+            "name": "Iron Cuirass",
+            "type": "armor",
+            "description": "Solid iron plating. Offers significant defense.",
+            "baseAtt": 0,
+            "baseDef": 8,
+            "baseHealth": 5,
+            "cost": 350,
+            "icon": "🛡️",
+            "att": 0,
+            "def": 8,
+            "health": 5,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_arm005",
+            "name": "Leather Jerkin",
+            "type": "armor",
+            "description": "Light and flexible leather armor. Provides modest protection.",
+            "baseAtt": 1,
+            "baseDef": 2,
+            "baseHealth": 8,
+            "cost": 75,
+            "icon": "🧥",
+            "att": 1,
+            "def": 2,
+            "health": 8,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_arm006",
+            "name": "Ancient Warrior's Breastplate",
+            "type": "armor",
+            "description": "A relic of a bygone era. Well-preserved and offers good all-around protection.",
+            "baseAtt": 2,
+            "baseDef": 5,
+            "baseHealth": 18,
+            "cost": 300,
+            "icon": "⛓️",
+            "att": 2,
+            "def": 5,
+            "health": 18,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": true,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_tal004",
+            "name": "Amulet of Fury",
+            "type": "talisman",
+            "description": "An intricately carved amulet that increases attack power.",
+            "baseAtt": 3,
+            "baseDef": 0,
+            "baseHealth": 0,
+            "cost": 220,
+            "icon": "🔥",
+            "att": 3,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_tal005",
+            "name": "Talisman of Greater Vigor",
+            "type": "talisman",
+            "description": "Significantly increases vitality.",
+            "baseAtt": 0,
+            "baseDef": 0,
+            "baseHealth": 40,
+            "cost": 280,
+            "icon": "💖",
+            "att": 0,
+            "def": 0,
+            "health": 40,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": true,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_tal006",
+            "name": "Serpent's Eye Pendant",
+            "type": "talisman",
+            "description": "A smooth, green stone that enhances critical hit chance.",
+            "baseCritChance": 3,
+            "cost": 200,
+            "icon": "🐍",
+            "att": 0,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_tal007",
+            "name": "Stone of Swift Strikes",
+            "type": "talisman",
+            "description": "Reduces the time between attacks.",
+            "baseAttackSpeed": 4,
+            "cost": 260,
+            "icon": "💨",
+            "att": 0,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": true,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_wpn008",
+            "name": "Dragonheart Greatsword",
+            "type": "weapon",
+            "description": "Pulsating with immense power. Offers significant attack and a minor health boost.",
+            "baseAtt": 10,
+            "baseDef": 0,
+            "baseHealth": 15,
+            "cost": 600,
+            "icon": "⚔️",
+            "att": 10,
+            "def": 0,
+            "health": 15,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_wpn009",
+            "name": "Thunderfury",
+            "type": "weapon",
+            "description": "A legendary blade that channels the storms. High attack and significantly reduces cooldowns.",
+            "baseAtt": 8,
+            "baseDef": 0,
+            "baseCooldown": 8,
+            "cost": 750,
+            "icon": "⚡",
+            "att": 8,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 8,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_wpn010",
+            "name": "Soulreaper Scythe",
+            "type": "weapon",
+            "description": "Drains the life force of enemies. High attack and a notable luck bonus.",
+            "baseAtt": 9,
+            "baseDef": 0,
+            "baseLuck": 5,
+            "cost": 680,
+            "icon": "💀",
+            "att": 9,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 5,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_arm007",
+            "name": "Titanium Plating",
+            "type": "armor",
+            "description": "Forged from a rare, incredibly strong metal. Exceptional defense and a moderate health increase.",
+            "baseAtt": 0,
+            "baseDef": 15,
+            "baseHealth": 25,
+            "cost": 800,
+            "icon": "🛡️",
+            "att": 0,
+            "def": 15,
+            "health": 25,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_arm008",
+            "name": "Shadow Walker's Garb",
+            "type": "armor",
+            "description": "Whisper-thin yet incredibly resilient. Good defense and a significant boost to attack.",
+            "baseAtt": 7,
+            "baseDef": 10,
+            "baseHealth": 10,
+            "cost": 700,
+            "icon": "🧥",
+            "att": 7,
+            "def": 10,
+            "health": 10,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": true,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_arm009",
+            "name": "Dragon Scale Armor",
+            "type": "armor",
+            "description": "Crafted from the scales of an ancient dragon. Offers excellent balanced protection and a minor attack bonus.",
+            "baseAtt": 4,
+            "baseDef": 12,
+            "baseHealth": 30,
+            "cost": 900,
+            "icon": "⛓️",
+            "att": 4,
+            "def": 12,
+            "health": 30,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_tal008",
+            "name": "Eye of the Storm",
+            "type": "talisman",
+            "description": "Harnesses the fury of a tempest. Massive increase to attack power.",
+            "baseAtt": 10,
+            "baseDef": 0,
+            "baseHealth": 0,
+            "cost": 850,
+            "icon": "⛈️",
+            "att": 10,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_tal009",
+            "name": "Heart of the Ancient",
+            "type": "talisman",
+            "description": "Pulsating with ancient life force. Tremendous boost to vitality.",
+            "baseAtt": 0,
+            "baseDef": 0,
+            "baseHealth": 75,
+            "cost": 780,
+            "icon": "💖",
+            "att": 0,
+            "def": 0,
+            "health": 75,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_tal010",
+            "name": "Philosopher's Stone",
+            "type": "talisman",
+            "description": "Legendary stone said to grant incredible luck and hasten all forms of recovery.",
+            "baseLuck": 10,
+            "baseCooldown": 10,
+            "cost": 1200,
+            "icon": "💎",
+            "att": 0,
+            "def": 0,
+            "health": 0,
+            "runic": 0,
+            "luck": 10,
+            "cooldown": 10,
+            "owned": false,
+            "upgradeLevel": 0
+        },
+        {
+            "id": "art_tal011",
+            "name": "Amulet of the Berserker",
+            "type": "talisman",
+            "description": "Unleashes primal fury. Grants a massive attack speed increase at the cost of some defense.",
+            "baseAttackSpeed": 12,
+            "baseDef": -5,
+            "cost": 950,
+            "icon": "🩸",
+            "att": 0,
+            "def": -5,
+            "health": 0,
+            "runic": 0,
+            "luck": 0,
+            "cooldown": 0,
+            "owned": false,
+            "upgradeLevel": 0
+        }
+    ],
+    "playerGameStats": {
+        "strength": {
+            "name": "STRENGTH",
+            "value": 35,
+            "base": 10,
+            "description": "Increases physical damage dealt.",
+            "icon": "✊"
+        },
+        "runic": {
+            "name": "RUNIC",
+            "value": 5,
+            "base": 5,
+            "description": "Increases elemental and special attack damage.",
+            "icon": "🌀"
+        },
+        "defense": {
+            "name": "DEFENSE",
+            "value": 15,
+            "base": 5,
+            "description": "Reduces all damage taken.",
+            "icon": "🛡️"
+        },
+        "vitality": {
+            "name": "VITALITY",
+            "value": 150,
+            "base": 100,
+            "description": "Increases maximum Health.",
+            "icon": "❤️"
+        },
+        "luck": {
+            "name": "LUCK",
+            "value": 0,
+            "base": 0,
+            "description": "Increases Perk activation, XP, and Hacksilver gains.",
+            "icon": "🎲"
+        },
+        "cooldown": {
+            "name": "COOLDOWN",
+            "value": 3,
+            "base": 0,
+            "description": "Reduces recharge time of special abilities.",
+            "icon": "⏳"
+        }
+    },
+    "equippedItems": {
+        "weapon": "art_wpn006",
+        "armor": "art_arm008",
+        "talisman": "art_tal005"
+    },
+    "playerWeaponBonusLevel": 14,
+    "playerWeaponBonusXP": 1,
+    "defeatedEnemyIds": [
+        "enemy001",
+        "enemy002",
+        "enemy003",
+        "enemy004",
+        "enemy005",
+        "enemy006",
+        "enemy007",
+        "enemy009",
+        "enemy008",
+        "enemy010",
+        "enemy011",
+        "enemy013",
+        "enemy014",
+        "enemy012",
+        "enemy017",
+        "enemy016",
+        "enemy018",
+        "enemy015"
+    ],
+    "currentGame": {
+        "enemy": {
+            "id": "enemy019",
+            "name": "Void Wyrm",
+            "minPlayerLevel": 25,
+            "health": 350,
+            "attack": 45,
+            "defense": 15,
+            "coinReward": 400,
+            "xpReward": 350,
+            "description": "A serpentine horror from the abyssal plane. Its gaze can wither stone.",
+            "currentHealth": 350
+        },
+        "playerCurrentHp": 150,
+        "log": [
+            "You encounter a Void Wyrm! A serpentine horror from the abyssal plane. Its gaze can wither stone."
+        ]
+    },
+    "settings": {
+        "descriptionsVisible": true
+    },
+    "currentView": "task-details",
+    "selectedTaskId": "proj_ui_ai"
 }

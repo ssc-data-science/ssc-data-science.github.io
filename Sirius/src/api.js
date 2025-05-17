@@ -56,139 +56,139 @@ import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "fire
 */
 
 export const createUser = (app, username, password, userData) => {
-const auth = getAuth(app);
-const db = getDatabase(app);
-return createUserWithEmailAndPassword(auth, username, password)
-.then((userCredential) => {
-const user = userCredential.user;
-const userRef = ref(db, "users/" + user.uid);
-return set(userRef, {
-...userData,
-uid: user.uid,
-email: username, // Store email for reference
-createdAt: new Date().toISOString(),
-});
-})
-.catch((error) => {
-const errorCode = error.code;
-const errorMessage = error.message;
-console.log(errorCode, errorMessage);
-throw error;
-});
+  const auth = getAuth(app);
+  const db = getDatabase(app);
+  return createUserWithEmailAndPassword(auth, username, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const userRef = ref(db, "users/" + user.uid);
+      return set(userRef, {
+        ...userData,
+        uid: user.uid,
+        email: username, // Store email for reference
+        createdAt: new Date().toISOString(),
+      });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+      throw error;
+    });
 }
 
 export const getClasses = (app) => {
-const db = getDatabase(app);
-const classesRef = ref(db, "classes");
-return get(classesRef).then((snapshot) =>{
-if (snapshot.exists()) {
-return snapshot.val();
-} else {
-throw new Error("No data available");
-}
-})
+  const db = getDatabase(app);
+  const classesRef = ref(db, "classes");
+  return get(classesRef).then((snapshot) => {
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      throw new Error("No data available");
+    }
+  })
 }
 
 export const getUserDepartment = async (app, userdata) => {
-const db = getDatabase(app);
-const classes = await getClasses(app);
-const userClass = userdata['class']
-const userDepartmentId = userdata.department
-console.log("userInfo retrieved")
-const foundClass = classes.find(c => c.id === userClass);
-if (foundClass) {
-const foundDepartment = foundClass.departments.find(d => d.id === userDepartmentId);
-if (foundDepartment) {
-return foundDepartment;
-}
-}
-return null;
+  const db = getDatabase(app);
+  const classes = await getClasses(app);
+  const userClass = userdata['class']
+  const userDepartmentId = userdata.department
+  console.log("userInfo retrieved")
+  const foundClass = classes.find(c => c.id === userClass);
+  if (foundClass) {
+    const foundDepartment = foundClass.departments.find(d => d.id === userDepartmentId);
+    if (foundDepartment) {
+      return foundDepartment;
+    }
+  }
+  return null;
 }
 
 export const signIn = async (app, username, password) => {
-const auth = getAuth(app);
-const db = getDatabase(app);
-return signInWithEmailAndPassword(auth, username, password)
-.then((userCredential) => {
-const user = userCredential.user;
-const userRef = ref(db, "users/" + user.uid);
-return get(userRef)
-.then((snapshot) => {
-if (snapshot.exists()) {
-const userData = snapshot.val();
-// Ensure email is stored for password changes
-if (!userData.email) {
-  update(userRef, { email: username });
-  userData.email = username;
-}
-return userData;
-} else {
-throw new Error("No data available");
-}
-});
-})
-.catch((error) => {
-const errorCode = error.code;
-const errorMessage = error.message;
-console.log(errorCode, errorMessage);
-throw error;
-});
+  const auth = getAuth(app);
+  const db = getDatabase(app);
+  return signInWithEmailAndPassword(auth, username, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const userRef = ref(db, "users/" + user.uid);
+      return get(userRef)
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            const userData = snapshot.val();
+            // Ensure email is stored for password changes
+            if (!userData.email) {
+              update(userRef, { email: username });
+              userData.email = username;
+            }
+            return userData;
+          } else {
+            throw new Error("No data available");
+          }
+        });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+      throw error;
+    });
 }
 
 export const changePassword = async (app, username, oldPassword, newPassword) => {
-const auth = getAuth(app);
-try {
-const userCredential = await signInWithEmailAndPassword(auth, username, oldPassword);
-const user = userCredential.user;
+  const auth = getAuth(app);
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, username, oldPassword);
+    const user = userCredential.user;
 
-// Reauthenticate the user with their current credentials
-const credential = EmailAuthProvider.credential(username, oldPassword);
-await reauthenticateWithCredential(user, credential);
+    // Reauthenticate the user with their current credentials
+    const credential = EmailAuthProvider.credential(username, oldPassword);
+    await reauthenticateWithCredential(user, credential);
 
-// Update the password
-await updatePassword(user, newPassword)
-return true; // Indicate success
-} catch (error) {
-const errorCode = error.code;
-const errorMessage = error.message;
-console.log(errorCode, errorMessage);
-throw error;
-};
+    // Update the password
+    await updatePassword(user, newPassword)
+    return true; // Indicate success
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage);
+    throw error;
+  };
 }
 
 export const removeUser = (app, username, password) => {
-const auth = getAuth(app);
-const db = getDatabase(app);
-return signInWithEmailAndPassword(auth, username, password)
-.then((userCredential) => {
-const user = userCredential.user;
-const userRef = ref(db, "users/" + user.uid);
-return get(userRef)
-.then((snapshot) => {
-if (snapshot.exists()) {
-return snapshot.val();
-} else {
-throw new Error("No data available");
-}
-}).then(() => {
-return deleteUser(user)
-}).then(() => {
-return set(userRef, null)
-})
-})
-.catch((error) => {
-const errorCode = error.code;
-const errorMessage = error.message;
-console.log(errorCode, errorMessage);
-throw error;
-});
+  const auth = getAuth(app);
+  const db = getDatabase(app);
+  return signInWithEmailAndPassword(auth, username, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const userRef = ref(db, "users/" + user.uid);
+      return get(userRef)
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            return snapshot.val();
+          } else {
+            throw new Error("No data available");
+          }
+        }).then(() => {
+          return deleteUser(user)
+        }).then(() => {
+          return set(userRef, null)
+        })
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+      throw error;
+    });
 }
 
 // Function to update user profile data
 export const updateUserProfile = async (app, uid, userData) => {
   const db = getDatabase(app);
   const userRef = ref(db, `users/${uid}`);
-  
+
   // Create a new object with only the fields to update
   const updates = {
     name: userData.name,
@@ -196,29 +196,29 @@ export const updateUserProfile = async (app, uid, userData) => {
     department: userData.department,
     updatedAt: new Date().toISOString()
   };
-  
+
   // Add profile picture URL if it exists
   if (userData.profilePictureUrl) {
     updates.profilePictureUrl = userData.profilePictureUrl;
   }
-  
+
   return update(userRef, updates);
 }
 
 // Function to upload profile picture to Firebase Storage
 export const uploadProfilePicture = async (app, uid, file) => {
   const storage = getStorage(app);
-  
+
   // Create a unique file name using UID and timestamp
   const fileExtension = file.name.split('.').pop();
   const fileName = `profile_pictures/${uid}_${Date.now()}.${fileExtension}`;
-  
+
   const profilePicRef = storageRef(storage, fileName);
-  
+
   try {
     // Upload file to Firebase Storage
     await uploadBytes(profilePicRef, file);
-    
+
     // Get the download URL
     const downloadURL = await getDownloadURL(profilePicRef);
     return downloadURL;
@@ -228,7 +228,7 @@ export const uploadProfilePicture = async (app, uid, file) => {
   }
 }
 
-export const getData = async (app, uid, key) => {
+export const getData = async (app, uid, key, ifnull) => {
   const db = getDatabase(app);
   const dataRef = ref(db, `data/${uid}/${key}`);
   try {
@@ -236,7 +236,7 @@ export const getData = async (app, uid, key) => {
     if (snapshot.exists()) {
       return snapshot.val();
     } else {
-      return null;
+      return ifnull;
     }
   } catch (error) {
     console.error("Error getting data:", error);
@@ -255,3 +255,33 @@ export const setData = async (app, uid, key, value) => {
     throw error;
   }
 };
+
+
+/*
+
+Entire course data
+
+[
+   {
+            name: "Introduction to AI",
+            subjectPrefix: "CS"
+            class: "fyug-sem-3"
+            id:"cs1",
+            color:"bg-blue-600",
+            modules: ["AI & Problem Solving"]
+    }
+]
+
+*/ 
+
+export const getCourses = (app)=>{
+  const db = getDatabase(app);
+  const classesRef = ref(db, "courses");
+  return get(classesRef).then((snapshot) => {
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      throw new Error("No data available");
+    }
+  })
+}

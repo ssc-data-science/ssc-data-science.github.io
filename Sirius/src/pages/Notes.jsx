@@ -1,44 +1,93 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Toolbar from '../assets/components/Toolbar';
 import Navbar from '../assets/components/Navbar';
+import { useNavigate } from 'react-router';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../config';
+import Cookies from 'js-cookie';
+import { getClasses, getCourses } from '../api';
 
-const coursesData = [
-  {
-    name: "Introduction to AI",
-    subjectPrefix: "CS",
-    modules: ["Basics of AI", "Neural Networks", "Machine Learning", "Deep Learning"]
-  },
-  {
-    name: "Mechanics",
-    subjectPrefix: "PHY",
-    modules: ["Moments", "Forces", "Kinematics", "Dynamics"]
-  },
-  {
-    name: "Calculus",
-    subjectPrefix: "MATH",
-    modules: ["Limits", "Derivatives", "Integrals", "Applications"]
-  }
-];
 
-const generateColor = (prefix) => {
-  const colors = {
-    "CS": "bg-blue-600",
-    "PHY": "bg-green-600",
-    "MATH": "bg-purple-600",
-  };
-  
-  return colors[prefix] || "bg-gray-600"; 
-};
 
 const Notes = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [selectedModule, setSelectedModule] = useState(null);
+  const [selectedModule, setSelectedModule] = useState(0);
+  const [coursesData, setCoursesData] = useState([])
   
-  const handleModuleClick = (courseName, moduleName) => {
-    setSelectedCourse(courseName);
-    setSelectedModule(moduleName);
-    console.log(`Selected course: ${courseName}, module: ${moduleName}`);
-    // You can add additional logic here, like navigating to a specific page
+  
+      const [userdata, setUserdata] = useState({});
+      const navigate = useNavigate();
+      const app = initializeApp(firebaseConfig);
+      const [classesList, setClasses] = useState([]);
+      const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  
+      useEffect(() => {
+          const handleResize = () => {
+              setIsMobile(window.innerWidth < 768);
+          };
+  
+          window.addEventListener('resize', handleResize);
+          return () => window.removeEventListener('resize', handleResize);
+      }, []);
+  
+      useEffect(() => {
+          let isMounted = true;
+  
+          const loadData = async () => {
+              const userCookie = Cookies.get("user");
+              if (!userCookie) {
+                  navigate('/login');
+                  return;
+              }
+  
+  
+              const parsedUserdata = JSON.parse(userCookie);
+  
+              if (isMounted) {
+                  setUserdata(parsedUserdata);
+              }
+  
+              if (parsedUserdata && parsedUserdata.uid) {
+                  try {
+                      // const d = await getUserDepartment(app, parsedUserdata);
+                      // if (isMounted) {
+                      //     setDepartment(d);
+                      // }
+  
+                      // // Load available classes
+                       const clss = await getClasses(app);
+                       const crss = await getCourses(app);
+                       if (isMounted) {
+                           setCoursesData([...coursesData,...crss.filter(c=>c.grade === parsedUserdata.class)])
+                           setClasses(clss);
+
+                           console.log(coursesData)
+                       }
+  
+                  } catch (error) {
+                      console.error("Error fetching data:", error);
+                  }
+              } else if (isMounted) {
+                  console.warn("User data or UID missing, cannot fetch department.");
+              }
+          };
+  
+          if (!Cookies.get("user")) {
+              navigate('/login');
+          }
+          loadData()
+          return () => {
+              isMounted = false;
+          };
+      }, [userdata.uid, app]);
+  
+      
+  
+  const handleModuleClick = (course, moduleIndex) => {
+    setSelectedCourse(course);
+    setSelectedModule(moduleIndex);
+    const target = `/notes/${course.id}/${course.grade}/module${moduleIndex+1}.html`;
+    navigate(target);
   };
 
   return (
@@ -57,7 +106,7 @@ const Notes = () => {
                 <div key={index} className='p-5 text-white'>
                   <div className='flex justify-between items-center mb-3'>
                     <h2 className="font-bold text-xl">{course.name}</h2>
-                    <div className={`${generateColor(course.subjectPrefix)} text-white px-3 py-1 rounded-full text-sm font-medium`}>
+                    <div className={`${course.color} text-white px-3 py-1 rounded-full text-sm font-medium`}>
                       {course.subjectPrefix}
                     </div>
                   </div>
@@ -65,7 +114,7 @@ const Notes = () => {
                     {course.modules.map((module, moduleIndex) => (
                       <button
                         key={moduleIndex}
-                        onClick={() => handleModuleClick(course.name, module)}
+                        onClick={() => handleModuleClick(course, moduleIndex)}
                         className='w-full text-left p-3 rounded-lg backdrop-blur-sm bg-[#fff1] hover:bg-opacity-20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50'
                       >
                         <p>{module}</p>

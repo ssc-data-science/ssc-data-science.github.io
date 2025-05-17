@@ -11,3 +11,9 @@ export const firebaseConfig = {
 
 
 export const GENAPIS = ['AIzaSyAjyofndMStYX6AT_C8CIBj-GZZeObA0PQ','AIzaSyAu9swfNci4KFg63TjnxoV9zCfwXz9wuuA','AIzaSyB97ORZRyH0Ke154I8WjvhD5G-WUTIuDd4','AIzaSyB97ORZRyH0Ke154I8WjvhD5G-WUTIuDd4','AIzaSyB97ORZRyH0Ke154I8WjvhD5G-WUTIuDd4']
+export const GENMODALS = [{
+  name:"gemini-2.0-flash-lite",
+  usagePerDay:1500 
+}]
+
+export const GENMODALNAMES = ['gemini-2.0-flash-lite']

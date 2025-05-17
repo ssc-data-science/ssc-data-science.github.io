@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Cookies from 'js-cookie';
-import { getUserDepartment, updateUserProfile, uploadProfilePicture, getClasses, changePassword } from '../api';
+import { getUserDepartment, updateUserProfile, uploadProfilePicture, getClasses, changePassword, getData, getCourses } from '../api';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../config';
 import {
@@ -38,6 +38,7 @@ import { askGen2Lite, HelperAI } from '../api-ai';
 import Navbar from '../assets/components/Navbar';
 import AppBar from '@mui/material/AppBar';
 import AIDash from '../assets/components/AIDash';
+import LevelInfo from '../assets/components/LevelInfo';
 
 const commonInputLabelSx = {
     color: 'rgba(0, 0, 0, 0.6)',
@@ -150,6 +151,9 @@ const Home = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [xp, setXp] = useState({})
+    const [coursesData, setCourseData] = useState([])
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -196,7 +200,10 @@ const Home = () => {
 
                     // Load available classes
                     const clss = await getClasses(app);
+                    const crss = await getCourses(app);
                     if (isMounted) {
+                        setCourseData([...coursesData, ...crss.filter(c => c.grade === parsedUserdata.class)])
+                        
                         setClasses(clss);
                     }
 
@@ -225,6 +232,26 @@ const Home = () => {
             isMounted = false;
         };
     }, [userdata.uid, department, navigate, app]);
+
+    useEffect(() => {
+        const loadXP =async ()=>{
+            let oldXP =JSON.parse(await getData(app,userdata.uid,"xp",JSON.stringify({})))
+            oldXP['total'] = 0
+            const crss = await getCourses(app);
+            let coursesData = crss.filter(c => c.grade === userdata.class)
+            for(let course of coursesData){
+                let key = (course.id + '-' + course.grade).replaceAll('-','_')
+                let m = oldXP[key]
+                if(m != null){
+                    oldXP['total'] += m
+                }
+            }
+
+            setXp(oldXP)
+        }
+        
+        loadXP()
+    },[coursesData,userdata])
 
     // Update available departments when class changes
     useEffect(() => {
@@ -376,7 +403,6 @@ const Home = () => {
             setIsUploading(false);
         }
     };
-
     const handleChangePassword = async () => {
         // Reset messages
         setErrorMessage('');
@@ -473,7 +499,13 @@ const Home = () => {
                         </div>
                         <div className='p-4'>
                             <div className='rounded-lg text-center'>
-                                {userdata.name != null && <AIDash app={app} userdata={userdata} />}
+
+                                {userdata.name != null &&
+                                    <div className='flex flex-col items-center gap-2'>
+                                        <LevelInfo xp={xp != {}?xp['total']:0} />
+                                        <AIDash app={app} userdata={userdata} />
+                                    </div>}
+
                             </div>
                         </div>
                     </div>

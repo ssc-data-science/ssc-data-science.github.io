@@ -30,6 +30,8 @@ const AIDash = ({ app, userdata }) => {
     if (o.type === 'action') {
       let act = o.action;
       if (act.type === 'choice') setCurrentActions(act.acts);
+
+      if(act.type === 'call') act.act(o.message)
     }
     setFirst(false);
     setIsLoading(false);
