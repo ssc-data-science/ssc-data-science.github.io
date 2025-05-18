@@ -14,7 +14,6 @@ import Learn from './pages/Learn';
 import Settings from './pages/Settings';
 import NoteViewer from './pages/NoteViewer';
 import ManageAPI from './pages/ManageAPI';
-import Routine from './routine/pages/Riutine';
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
@@ -30,7 +29,6 @@ function App() {
         <Route path='/settings' element={<Settings/>}/>
         <Route path='/notes/*' element={<NoteViewer />} />
         <Route path='/settings/api' element={<ManageAPI/>}/>
-        <Route path='/routine' element={<Routine/>}/>
       </Routes>
     </>
   )
