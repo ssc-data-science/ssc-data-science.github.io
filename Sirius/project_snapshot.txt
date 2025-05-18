@@ -1,0 +1,1024 @@
+--- START OF FILE src/assets/components/UserAvatar.jsx ---
+import React from 'react';
+
+// Function to generate initial avatar color based on user's name
+export const getColorFromName = (name) => {
+    if (!name) return '#6366f1'; // Default indigo color
+
+    // Simple hash function to generate a hue value based on the name
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+
+    // Convert to a hue value (0-360)
+    const hue = hash % 360;
+    return `hsl(${hue}, 75%, 60%)`;
+};
+
+// Function to generate user avatar with creative styling
+const UserAvatar = ({ name, src, size = 96, fontSize = '3rem' }) => {
+    if (src) {
+        return (
+            <img 
+                src={src} 
+                alt={name || 'Profile'} 
+                style={{
+                    width: size,
+                    height: size,
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                }} 
+            />
+        );
+    }
+    
+    if (!name) return null;
+
+    // Get initials (up to 2 characters)
+    const initials = name.split(' ')
+        .map(part => part[0])
+        .join('')
+        .slice(0, 2)
+        .toUpperCase();
+
+    const bgColor = getColorFromName(name);
+
+    return (
+        <div style={{
+            width: size,
+            height: size,
+            borderRadius: '50%',
+            backgroundColor: bgColor,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            fontSize: fontSize,
+            fontWeight: 'bold'
+        }}>
+            {initials}
+        </div>
+    );
+};
+
+export default UserAvatar;
+--- END OF FILE src/assets/components/UserAvatar.jsx ---
+
+--- START OF FILE src/assets/components/UserProfileCard.jsx ---
+import React from 'react';
+import { Typography, IconButton } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import UserAvatar from './UserAvatar';
+import LevelInfo from './LevelInfo';
+import AIDash from './AIDash';
+
+const UserProfileCard = ({ userdata, xp, onEdit, onLogout, app }) => {
+    if (!userdata) {
+        return null; // Or a loading spinner
+    }
+
+    return (
+        <div className='mx-auto h-full w-full max-w-md md:rounded-xl md:backdrop-blur-md overflow-hidden shadow-lg bg-[#0005]'>
+            <div className='relative justify-center items-center p-4'>
+                <div className='w-24 h-24 flex-shrink-0 mr-auto ml-auto mb-4 mt-4 flex items-center justify-center'>
+                    <UserAvatar 
+                        name={userdata.name} 
+                        src={userdata.profilePictureUrl} 
+                        size={96} 
+                        fontSize="2.5rem" 
+                    />
+                </div>
+                <div className='text-center flex-grow'>
+                    <Typography variant="h5" sx={{ fontWeight: 'bold', color: 'white', fontFamily: 'Roboto, sans-serif' }}>
+                        Hi, {userdata.name || "Loading..."}
+                    </Typography>
+                </div>
+
+                {/* Edit and Logout buttons */}
+                <div className='absolute top-4 right-4 flex space-x-2'>
+                    <IconButton
+                        onClick={onEdit}
+                        aria-label="edit profile"
+                        sx={{ color: 'white' }}
+                    >
+                        <EditIcon />
+                    </IconButton>
+                    <IconButton
+                        onClick={onLogout}
+                        aria-label="logout"
+                        sx={{ color: 'white' }}
+                    >
+                        <LogoutIcon />
+                    </IconButton>
+                </div>
+            </div>
+            <div className='p-4'>
+                <div className='rounded-lg text-center'>
+                    {userdata.name != null && (
+                        <div className='flex flex-col items-center gap-2'>
+                            <LevelInfo xp={xp !== undefined ? xp : 0} />
+                            <AIDash app={app} userdata={userdata} />
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default UserProfileCard;
+--- END OF FILE src/assets/components/UserProfileCard.jsx ---
+
+--- START OF FILE src/assets/components/EditProfileDialog.jsx ---
+import React, { useState, useEffect, useRef } from 'react';
+import {
+    Dialog, DialogTitle, DialogContent, DialogActions,
+    TextField, Button, IconButton, Avatar, Tabs, Tab, Box,
+    FormControl, InputLabel, Select, MenuItem, CircularProgress, Alert, Divider, Typography
+} from '@mui/material';
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import { updateUserProfile, uploadProfilePicture, changePassword, getClasses } from '../../api';
+import UserAvatar, { getColorFromName } from './UserAvatar'; // Assuming UserAvatar and getColorFromName are here
+
+const commonInputLabelSx = {
+    color: 'rgba(255, 255, 255, 0.7)', // Adjusted for dark dialog
+    '&.MuiInputLabel-shrink': {
+        transform: 'translate(14px, -6px) scale(0.75)',
+    }
+};
+
+const commonRootBaseSx = {
+    borderRadius: '8px',
+    '& .MuiOutlinedInput-root': { // Changed from MuiFilledInput-root to MuiOutlinedInput-root
+        borderRadius: '8px',
+        color: 'white',
+        '& fieldset': {
+            borderColor: 'rgba(255, 255, 255, 0.3)',
+        },
+        '&:hover fieldset': {
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+        },
+        '&.Mui-focused fieldset': { // Ensure focused state also has correct border
+            borderColor: '#4f46e5', // Example focus color
+        },
+    },
+    '& .MuiInputLabel-root': { // Ensure label color
+        color: 'rgba(255, 255, 255, 0.7)',
+    }
+};
+
+
+const formControlRootSx = {
+    ...commonRootBaseSx,
+    marginBottom: 2,
+    '&.Mui-disabled': {
+        opacity: 0.7,
+    }
+};
+
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`profile-tabpanel-${index}`}
+            aria-labelledby={`profile-tab-${index}`}
+            {...other}
+        >
+            {value === index && <Box sx={{ py: 2 }}>{children}</Box>}
+        </div>
+    );
+}
+
+const EditProfileDialog = ({ open, onClose, userdata, app, onProfileUpdateSuccess }) => {
+    const [tabValue, setTabValue] = useState(0);
+    const [editedName, setEditedName] = useState('');
+    const [selectedFile, setSelectedFile] = useState(null);
+    const [previewUrl, setPreviewUrl] = useState('');
+    const [isUploading, setIsUploading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const fileInputRef = useRef(null);
+
+    const [classesList, setClassesList] = useState([]);
+    const [selectedClassId, setSelectedClassId] = useState('');
+    const [selectedDepartmentId, setSelectedDepartmentId] = useState('');
+    const [availableDepartments, setAvailableDepartments] = useState([]);
+
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    useEffect(() => {
+        if (open) {
+            setEditedName(userdata.name || '');
+            setSelectedFile(null);
+            setPreviewUrl('');
+            setErrorMessage('');
+            setSuccessMessage('');
+            setSelectedClassId(userdata.class || '');
+            setSelectedDepartmentId(userdata.department || '');
+            setCurrentPassword('');
+            setNewPassword('');
+            setConfirmPassword('');
+            setTabValue(0);
+
+            const loadClassesData = async () => {
+                try {
+                    const clss = await getClasses(app);
+                    setClassesList(clss);
+                } catch (error) {
+                    console.error("Error fetching classes:", error);
+                    setErrorMessage("Failed to load class data.");
+                }
+            };
+            loadClassesData();
+        }
+    }, [open, userdata, app]);
+
+    useEffect(() => {
+        if (selectedClassId && classesList.length > 0) {
+            const selectedClass = classesList.find(cls => cls.id === selectedClassId);
+            setAvailableDepartments(selectedClass ? selectedClass.departments : []);
+            if (selectedClass && !selectedClass.departments.some(dept => dept.id === selectedDepartmentId)) {
+                setSelectedDepartmentId('');
+            }
+        } else {
+            setAvailableDepartments([]);
+            if (selectedClassId === '') setSelectedDepartmentId('');
+        }
+    }, [selectedClassId, classesList, selectedDepartmentId]);
+
+
+    const handleTabChange = (event, newValue) => {
+        setTabValue(newValue);
+        setErrorMessage('');
+        setSuccessMessage('');
+    };
+
+    const handleFileSelect = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            if (file.size > 5000000) {
+                setErrorMessage('File size must be less than 5MB');
+                return;
+            }
+            if (!file.type.match('image.*')) {
+                setErrorMessage('Please select an image file');
+                return;
+            }
+            setSelectedFile(file);
+            setErrorMessage('');
+            const reader = new FileReader();
+            reader.onloadend = () => setPreviewUrl(reader.result);
+            reader.readAsDataURL(file);
+        }
+    };
+
+    const handleSelectImage = () => fileInputRef.current?.click();
+
+    const handleSaveProfile = async () => {
+        if (!editedName.trim()) return setErrorMessage('Name cannot be empty');
+        if (!selectedClassId) return setErrorMessage('Please select a class');
+        if (!selectedDepartmentId) return setErrorMessage('Please select a department');
+
+        setIsUploading(true);
+        setErrorMessage('');
+        try {
+            let profilePictureUrl = userdata.profilePictureUrl;
+            if (selectedFile) {
+                profilePictureUrl = await uploadProfilePicture(app, userdata.uid, selectedFile);
+            }
+            const updatedUserData = {
+                ...userdata,
+                name: editedName,
+                class: selectedClassId,
+                department: selectedDepartmentId,
+                profilePictureUrl
+            };
+            await updateUserProfile(app, userdata.uid, updatedUserData);
+            onProfileUpdateSuccess(updatedUserData);
+            setSuccessMessage('Profile updated successfully');
+            setTimeout(() => {
+                onClose();
+                setSuccessMessage('');
+            }, 1500);
+        } catch (error) {
+            console.error("Error updating profile:", error);
+            setErrorMessage('Failed to update profile. Please try again.');
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
+    const handleChangePassword = async () => {
+        setErrorMessage('');
+        setSuccessMessage('');
+        if (!currentPassword || !newPassword || newPassword !== confirmPassword || newPassword.length < 6) {
+            if (!currentPassword) setErrorMessage('Current password is required');
+            else if (!newPassword) setErrorMessage('New password is required');
+            else if (newPassword.length < 6) setErrorMessage('Password must be at least 6 characters');
+            else if (newPassword !== confirmPassword) setErrorMessage('New passwords do not match');
+            return;
+        }
+        setIsUploading(true);
+        try {
+            await changePassword(app, userdata.email || '', currentPassword, newPassword);
+            setSuccessMessage('Password changed successfully');
+            setCurrentPassword(''); setNewPassword(''); setConfirmPassword('');
+            setTimeout(() => {
+                setTabValue(0);
+                setSuccessMessage('');
+            }, 1500);
+        } catch (error) {
+            console.error("Error changing password:", error);
+            setErrorMessage('Failed to change password. Check current password.');
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
+    return (
+        <Dialog
+            open={open}
+            onClose={onClose}
+            aria-labelledby="edit-profile-dialog"
+            maxWidth="sm"
+            fullWidth
+            PaperProps={{
+                sx: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.75)', backdropFilter: 'blur(10px)',
+                    color: 'white', borderRadius: '12px', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+                }
+            }}
+        >
+            <DialogTitle sx={{ pb: 0, pt: 2 }}>
+                <Tabs value={tabValue} onChange={handleTabChange}
+                    sx={{
+                        '& .MuiTabs-indicator': { backgroundColor: '#4f46e5' },
+                        '& .MuiTab-root': {
+                            textTransform: 'none', fontWeight: '500', color: 'rgba(255, 255, 255, 0.7)',
+                            '&.Mui-selected': { color: 'white', fontWeight: '600' }
+                        }
+                    }}
+                >
+                    <Tab label="Profile" id="profile-tab-0" />
+                    <Tab label="Password" id="profile-tab-1" />
+                </Tabs>
+            </DialogTitle>
+            <DialogContent sx={{ pt: 0, px: 3 }}>
+                {successMessage && <Alert severity="success" sx={{ mt: 2, mb: 1 }}>{successMessage}</Alert>}
+                {errorMessage && <Alert severity="error" sx={{ mt: 2, mb: 1 }}>{errorMessage}</Alert>}
+
+                <TabPanel value={tabValue} index={0}>
+                    <div className='flex flex-col items-center mb-4'>
+                        <div className='relative'>
+                             <UserAvatar name={editedName} src={previewUrl || userdata.profilePictureUrl} size={96} fontSize="2.5rem" />
+                            <IconButton size="small"
+                                sx={{
+                                    position: 'absolute', bottom: 2, right: -6, backgroundColor: '#4f46e5', color: 'white',
+                                    '&:hover': { backgroundColor: '#4338ca' }
+                                }}
+                                onClick={handleSelectImage}
+                            >
+                                <PhotoCameraIcon fontSize="small" />
+                            </IconButton>
+                            <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFileSelect} ref={fileInputRef} />
+                        </div>
+                        <Typography variant="caption" sx={{ mt: 1, color: 'rgba(255, 255, 255, 0.7)' }}>
+                            Tap camera to change picture
+                        </Typography>
+                    </div>
+                    <Divider sx={{ my: 2, borderColor: 'rgba(255, 255, 255, 0.2)' }} />
+                    <TextField label="Name" variant="outlined" fullWidth value={editedName} onChange={(e) => setEditedName(e.target.value)} margin="normal" sx={{ marginBottom: 2, ...commonRootBaseSx }} />
+                    <FormControl variant="outlined" fullWidth required sx={formControlRootSx}>
+                        <InputLabel id="class-select-label" sx={commonInputLabelSx}>Class</InputLabel>
+                        <Select labelId="class-select-label" value={selectedClassId} onChange={(e) => setSelectedClassId(e.target.value)} label="Class" MenuProps={{ PaperProps: { sx: { maxHeight: 300, marginTop: '4px', borderRadius: '8px' } } }}>
+                            <MenuItem value="" disabled><em>Select a Class</em></MenuItem>
+                            {classesList.map((cls) => <MenuItem key={cls.id} value={cls.id}>{cls.name}</MenuItem>)}
+                        </Select>
+                    </FormControl>
+                    <FormControl variant="outlined" fullWidth required disabled={!selectedClassId || availableDepartments.length === 0} sx={formControlRootSx}>
+                        <InputLabel id="department-select-label" sx={commonInputLabelSx}>Department</InputLabel>
+                        <Select labelId="department-select-label" value={selectedDepartmentId} onChange={(e) => setSelectedDepartmentId(e.target.value)} label="Department" MenuProps={{ PaperProps: { sx: { maxHeight: 300, marginTop: '4px', borderRadius: '8px' } } }}>
+                            <MenuItem value="" disabled><em>{selectedClassId ? 'Select a Department' : 'Select Class First'}</em></MenuItem>
+                            {availableDepartments.map((dept) => <MenuItem key={dept.id} value={dept.id}>{dept.name}</MenuItem>)}
+                        </Select>
+                    </FormControl>
+                </TabPanel>
+                <TabPanel value={tabValue} index={1}>
+                    <Typography variant="body2" sx={{ mb: 2, color: 'rgba(255, 255, 255, 0.7)' }}>
+                        Change password by entering current and new one.
+                    </Typography>
+                    <TextField label="Current Password" type="password" variant="outlined" fullWidth value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} margin="normal" sx={{ marginBottom: 2, ...commonRootBaseSx }} />
+                    <TextField label="New Password" type="password" variant="outlined" fullWidth value={newPassword} onChange={(e) => setNewPassword(e.target.value)} margin="normal" sx={{ marginBottom: 2, ...commonRootBaseSx }} helperText="Min. 6 characters" FormHelperTextProps={{ sx: { color: 'rgba(255, 255, 255, 0.6)' } }} />
+                    <TextField label="Confirm New Password" type="password" variant="outlined" fullWidth value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} margin="normal" sx={{ marginBottom: 2, ...commonRootBaseSx }} />
+                </TabPanel>
+            </DialogContent>
+            <DialogActions sx={{ px: 3, pb: 3, justifyContent: 'space-between' }}>
+                <Button onClick={onClose} sx={{ borderRadius: '8px', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '500', '&:hover': { color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' } }}>Cancel</Button>
+                <Button onClick={tabValue === 0 ? handleSaveProfile : handleChangePassword} variant="contained" disabled={isUploading} sx={{ backgroundColor: '#4f46e5', '&:hover': { backgroundColor: '#4338ca' }, textTransform: 'none', fontWeight: '600', borderRadius: '8px' }}>
+                    {isUploading ? <CircularProgress size={24} color="inherit" /> : (tabValue === 0 ? 'Save Changes' : 'Change Password')}
+                </Button>
+            </DialogActions>
+        </Dialog>
+    );
+};
+
+export default EditProfileDialog;
+--- END OF FILE src/assets/components/EditProfileDialog.jsx ---
+
+--- START OF FILE src/assets/components/LogoutConfirmDialog.jsx ---
+import React from 'react';
+import {
+    Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography
+} from '@mui/material';
+
+const LogoutConfirmDialog = ({ open, onClose, onConfirm }) => {
+    return (
+        <Dialog
+            open={open}
+            onClose={onClose}
+            aria-labelledby="logout-dialog"
+            PaperProps={{
+                sx: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                    backdropFilter: 'blur(10px)',
+                    color: 'white',
+                    borderRadius: '12px',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                    maxWidth: '320px'
+                }
+            }}
+        >
+            <DialogTitle sx={{ color: 'white', fontWeight: 'bold' }}>
+                Logout
+            </DialogTitle>
+            <DialogContent>
+                <Typography sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                    Are you sure you want to logout?
+                </Typography>
+            </DialogContent>
+            <DialogActions sx={{ pb: 2, px: 3 }}>
+                <Button
+                    onClick={onClose}
+                    sx={{
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        '&:hover': {
+                            color: 'white',
+                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        },
+                        borderRadius: '8px'
+                    }}
+                >
+                    Cancel
+                </Button>
+                <Button
+                    onClick={onConfirm}
+                    variant="contained"
+                    color="error"
+                    sx={{
+                        borderRadius: '8px',
+                        textTransform: 'none',
+                        fontWeight: '600'
+                    }}
+                >
+                    Logout
+                </Button>
+            </DialogActions>
+        </Dialog>
+    );
+};
+
+export default LogoutConfirmDialog;
+--- END OF FILE src/assets/components/LogoutConfirmDialog.jsx ---
+
+--- START OF FILE src/pages/Home.jsx ---
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import Cookies from 'js-cookie';
+import { getUserDepartment, getData, getCourses } from '../api';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../config';
+
+import Toolbar from '../assets/components/Toolbar';
+import Navbar from '../assets/components/Navbar';
+import UserProfileCard from '../assets/components/UserProfileCard';
+import EditProfileDialog from '../assets/components/EditProfileDialog';
+import LogoutConfirmDialog from '../assets/components/LogoutConfirmDialog';
+import { HelperAI } from '../api-ai';
+
+
+const Home = () => {
+    const [userdata, setUserdata] = useState(null); // Initialize as null
+    const navigate = useNavigate();
+    const [department, setDepartment] = useState(null);
+    const app = initializeApp(firebaseConfig);
+    const [openEditDialog, setOpenEditDialog] = useState(false);
+    const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [xp, setXp] = useState(0); // Initialize xp state
+    const [coursesData, setCoursesData] = useState([]);
+
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        let isMounted = true;
+        const loadInitialData = async () => {
+            const userCookie = Cookies.get("user");
+            if (!userCookie) {
+                if (isMounted) navigate('/login');
+                return;
+            }
+
+            const parsedUserdata = JSON.parse(userCookie);
+            if (isMounted) setUserdata(parsedUserdata);
+
+            if (!Cookies.get('ai')) {
+                Cookies.set('ai', true);
+                if (parsedUserdata?.name) { // Ensure parsedUserdata and name exist
+                    const helper = new HelperAI(app, parsedUserdata);
+                    helper.log(`${parsedUserdata.name} logged in`);
+                }
+            }
+            
+            if (parsedUserdata && parsedUserdata.uid) {
+                try {
+                    const dept = await getUserDepartment(app, parsedUserdata);
+                    const crss = await getCourses(app); // Fetch courses
+                    
+                    if (isMounted) {
+                        setDepartment(dept);
+                        // Filter courses for the user's grade
+                        const userCourses = crss.filter(c => c.grade === parsedUserdata.class);
+                        setCoursesData(userCourses);
+
+                         // Load XP after userdata and coursesData are set
+                        let oldXPData = await getData(app, parsedUserdata.uid, "xp", "{}");
+                        let oldXP = JSON.parse(oldXPData);
+                        let totalXP = 0;
+                        userCourses.forEach(course => {
+                            const key = (course.id + '-' + course.grade).replace(/-/g, '_');
+                            totalXP += oldXP[key] || 0;
+                        });
+                        setXp(totalXP);
+                    }
+                } catch (error) {
+                    console.error("Error fetching initial data:", error);
+                    if (isMounted) setDepartment({ name: "Error loading department" });
+                }
+            }
+        };
+
+        loadInitialData();
+        return () => { isMounted = false; };
+    }, [navigate, app]); // Removed userdata from dependencies to avoid loop
+
+    const handleEdit = () => setOpenEditDialog(true);
+    const handleCloseEditDialog = () => setOpenEditDialog(false);
+
+    const handleProfileUpdateSuccess = (updatedUserData) => {
+        setUserdata(updatedUserData); // Update local state
+        Cookies.set("user", JSON.stringify(updatedUserData)); // Update cookie
+        setOpenEditDialog(false);
+    };
+
+    const handleLogout = () => setLogoutConfirmOpen(true);
+    const confirmLogout = () => {
+        Cookies.remove("user");
+        Cookies.remove("ai");
+        navigate('/login');
+    };
+
+
+    if (!userdata) {
+        // You might want to show a loading spinner here
+        return <div className='bg-cover h-[100vh] flex bg-[url(/src/assets/background.jpg)] items-center justify-center text-white'>Loading...</div>;
+    }
+
+    return (
+        <div className='bg-cover h-[100vh] flex bg-[url(/src/assets/background.jpg)]'>
+            <div className='flex h-full w-full flex-col'>
+                {!isMobile && <Toolbar current={'home'} />}
+                <div className='h-full md:h-fit md:my-auto flex items-center justify-center w-full'>
+                    <UserProfileCard
+                        userdata={userdata}
+                        xp={xp}
+                        onEdit={handleEdit}
+                        onLogout={handleLogout}
+                        app={app}
+                    />
+                </div>
+                {isMobile && (
+                    <div className='fixed bottom-0 left-0 w-full'>
+                        <Navbar current={'home'} />
+                    </div>
+                )}
+            </div>
+
+            {userdata && (
+              <EditProfileDialog
+                  open={openEditDialog}
+                  onClose={handleCloseEditDialog}
+                  userdata={userdata}
+                  app={app}
+                  onProfileUpdateSuccess={handleProfileUpdateSuccess}
+              />
+            )}
+
+            <LogoutConfirmDialog
+                open={logoutConfirmOpen}
+                onClose={() => setLogoutConfirmOpen(false)}
+                onConfirm={confirmLogout}
+            />
+        </div>
+    );
+};
+
+export default Home;
+--- END OF FILE src/pages/Home.jsx ---
+
+--- START OF FILE src/assets/components/SignUpFormFields.jsx ---
+import React from 'react';
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
+const commonInputLabelSx = {
+    color: 'rgba(255, 255, 255, 0.6)',
+    '&.MuiInputLabel-filled.MuiInputLabel-shrink': {
+        transform: 'translate(12px, 7px) scale(0.75)',
+    },
+    '&.MuiInputLabel-filled:not(.MuiInputLabel-shrink)': {
+        transform: 'translate(12px, 16px) scale(1)',
+    }
+};
+
+const commonRootBaseSx = {
+    borderRadius: '8px',
+    backgroundColor: 'rgba(30, 27, 75, 0.3)',
+    '& .MuiFilledInput-root': {
+        backgroundColor: 'transparent !important',
+        borderTopLeftRadius: '8px',
+        borderTopRightRadius: '8px',
+        borderBottomLeftRadius: '8px',
+        borderBottomRightRadius: '8px',
+        '&:hover': {
+            backgroundColor: 'transparent !important',
+        },
+        '&.Mui-focused': {
+            backgroundColor: 'transparent !important',
+        },
+        '& input': {
+            borderRadius: '8px',
+        }
+    },
+    '& .MuiFilledInput-underline:before': { borderBottom: 'none' },
+    '& .MuiFilledInput-underline:after': { borderBottom: 'none' },
+    '& .MuiFilledInput-underline:hover:not(.Mui-disabled):before': { borderBottom: 'none' },
+};
+
+const textFieldRootSx = {
+    ...commonRootBaseSx,
+    '& .MuiInputBase-input': { color: 'white' },
+};
+
+const formControlRootSx = { ...commonRootBaseSx };
+
+const commonSelectSx = {
+    color: 'white',
+    '& .MuiSelect-icon': { color: 'rgba(255, 255, 255, 0.6)' },
+    backgroundColor: 'transparent',
+    borderRadius: '8px',
+    '&:focus': { backgroundColor: 'transparent', borderRadius: '8px' },
+};
+
+const menuItemStyle = {
+    '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' },
+    '&.Mui-selected': {
+        backgroundColor: 'rgba(100, 100, 200, 0.3)',
+        '&:hover': { backgroundColor: 'rgba(100, 100, 200, 0.4)' }
+    }
+};
+
+
+const SignUpFormFields = ({
+    name, setName,
+    selectedClassId, handleClassChange, classesList,
+    selectedDepartmentId, handleDepartmentChange, availableDepartments
+}) => {
+    return (
+        <>
+            <TextField
+                label="Name"
+                variant="filled"
+                fullWidth
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="mb-6"
+                InputProps={{ disableUnderline: true, sx: { borderRadius: '8px' } }}
+                InputLabelProps={{ sx: commonInputLabelSx }}
+                sx={textFieldRootSx}
+            />
+
+            <FormControl variant="filled" fullWidth required className="mb-6" sx={formControlRootSx}>
+                <InputLabel id="class-select-label" sx={commonInputLabelSx}>Class</InputLabel>
+                <Select
+                    labelId="class-select-label"
+                    value={selectedClassId}
+                    onChange={handleClassChange}
+                    disableUnderline
+                    MenuProps={{
+                        PaperProps: {
+                            sx: {
+                                backgroundColor: 'rgba(30, 27, 75, 0.95)', color: 'white',
+                                marginTop: '4px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.1)'
+                            }
+                        }
+                    }}
+                    sx={commonSelectSx}
+                >
+                    <MenuItem value="" disabled sx={{ color: 'rgba(255,255,255,0.5)' }}>
+                        <em>Select a Class</em>
+                    </MenuItem>
+                    {classesList.map((classItem) => (
+                        <MenuItem key={classItem.id} value={classItem.id} sx={menuItemStyle}>
+                            {classItem.name}
+                        </MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+
+            <FormControl
+                variant="filled" fullWidth required className="mb-6"
+                disabled={!selectedClassId || availableDepartments.length === 0}
+                sx={{
+                    ...formControlRootSx,
+                    '&.Mui-disabled': {
+                        backgroundColor: 'rgba(30, 27, 75, 0.5) !important', opacity: 0.7, cursor: 'not-allowed'
+                    },
+                    '& .MuiFilledInput-root.Mui-disabled': { backgroundColor: 'transparent !important' }
+                }}
+            >
+                <InputLabel id="department-select-label" sx={commonInputLabelSx}>Department</InputLabel>
+                <Select
+                    labelId="department-select-label"
+                    value={selectedDepartmentId}
+                    onChange={handleDepartmentChange}
+                    disableUnderline
+                    MenuProps={{
+                        PaperProps: {
+                            sx: {
+                                backgroundColor: 'rgba(30, 27, 75, 0.95)', color: 'white',
+                                marginTop: '4px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.1)'
+                            }
+                        }
+                    }}
+                    sx={commonSelectSx}
+                >
+                    <MenuItem value="" disabled sx={{ color: 'rgba(255,255,255,0.5)' }}>
+                        <em>{selectedClassId ? 'Select a Department' : 'Select a Class First'}</em>
+                    </MenuItem>
+                    {availableDepartments.map((deptItem) => (
+                        <MenuItem key={deptItem.id} value={deptItem.id} sx={menuItemStyle}>
+                            {deptItem.name}
+                        </MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+        </>
+    );
+};
+
+export default SignUpFormFields;
+--- END OF FILE src/assets/components/SignUpFormFields.jsx ---
+
+--- START OF FILE src/pages/Login.jsx ---
+import React, { useEffect, useState } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { createUser, getClasses, signIn as apiSignIn } from '../api'; // Renamed signIn to apiSignIn
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../config';
+import { useNavigate } from 'react-router';
+import Cookies from 'js-cookie';
+import SignUpFormFields from '../assets/components/SignUpFormFields'; // Import the new component
+
+const commonInputLabelSx = {
+    color: 'rgba(255, 255, 255, 0.6)',
+    '&.MuiInputLabel-filled.MuiInputLabel-shrink': {
+        transform: 'translate(12px, 7px) scale(0.75)',
+    },
+    '&.MuiInputLabel-filled:not(.MuiInputLabel-shrink)': {
+        transform: 'translate(12px, 16px) scale(1)',
+    }
+};
+
+const commonRootBaseSx = {
+    borderRadius: '8px',
+    backgroundColor: 'rgba(30, 27, 75, 0.3)',
+    '& .MuiFilledInput-root': {
+        backgroundColor: 'transparent !important',
+        borderTopLeftRadius: '8px',
+        borderTopRightRadius: '8px',
+        borderBottomLeftRadius: '8px',
+        borderBottomRightRadius: '8px',
+        '&:hover': {
+            backgroundColor: 'transparent !important',
+        },
+        '&.Mui-focused': {
+            backgroundColor: 'transparent !important',
+        },
+        '& input': {
+            borderRadius: '8px',
+        }
+    },
+    '& .MuiFilledInput-underline:before': { borderBottom: 'none' },
+    '& .MuiFilledInput-underline:after': { borderBottom: 'none' },
+    '& .MuiFilledInput-underline:hover:not(.Mui-disabled):before': { borderBottom: 'none' },
+};
+
+const textFieldRootSx = {
+    ...commonRootBaseSx,
+    '& .MuiInputBase-input': { color: 'white' },
+};
+
+const commonInputPropsSx = {
+    disableUnderline: true,
+    sx: { borderRadius: '8px' }
+};
+
+
+function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('')
+    const [classesList, setClasses] = useState([])
+    const [selectedClassId, setSelectedClassId] = useState('');
+    const [selectedDepartmentId, setSelectedDepartmentId] = useState('');
+    const [availableDepartments, setAvailableDepartments] = useState([]);
+    const [isSignUp, setIsSignUp] = useState(false); // Changed from isSignIn to isSignUp for clarity
+    const [error, setError] = useState('');
+    const app = initializeApp(firebaseConfig);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const userCookie = Cookies.get("user");
+        if (userCookie) {
+            navigate('/'); // Redirect if already logged in
+        }
+        const loadClasses = async () => {
+            try {
+                const clss = await getClasses(app);
+                setClasses(clss);
+            } catch (err) {
+                console.error("Failed to load classes:", err);
+                setError("Could not load class information. Please try again later.");
+            }
+        };
+        loadClasses();
+    }, [app, navigate]);
+
+    useEffect(() => {
+        if (selectedClassId) {
+            const selectedClass = classesList.find(cls => cls.id === selectedClassId);
+            setAvailableDepartments(selectedClass ? selectedClass.departments : []);
+            if (selectedClass && !selectedClass.departments.some(dept => dept.id === selectedDepartmentId)) {
+                 setSelectedDepartmentId('');
+            }
+        } else {
+            setAvailableDepartments([]);
+            setSelectedDepartmentId('');
+        }
+    }, [selectedClassId, classesList, selectedDepartmentId]);
+
+    const handleClassChange = (event) => setSelectedClassId(event.target.value);
+    const handleDepartmentChange = (event) => setSelectedDepartmentId(event.target.value);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setError(''); 
+
+        try {
+            if (isSignUp) {
+                // Sign Up
+                if (!name || !selectedClassId || !selectedDepartmentId) {
+                    setError("All fields are required for sign up.");
+                    return;
+                }
+                await createUser(app, email, password, {
+                    name, class: selectedClassId, department: selectedDepartmentId, profilePictureUrl: null
+                });
+                // After successful creation, sign in the user
+                const udata = await apiSignIn(app, email, password);
+                Cookies.set("user", JSON.stringify(udata));
+                navigate('/');
+            } else {
+                // Sign In
+                const udata = await apiSignIn(app, email, password);
+                Cookies.set("user", JSON.stringify(udata));
+                navigate('/');
+            }
+        } catch (e) {
+            console.error("Authentication error:", e);
+            if (e.code === 'auth/user-not-found' && !isSignUp) {
+                setError('User not found. Would you like to sign up?');
+                setIsSignUp(true); // Prompt to sign up
+            } else if (e.code === 'auth/wrong-password') {
+                setError('Incorrect password. Please try again.');
+            } else if (e.code === 'auth/email-already-in-use' && isSignUp) {
+                 setError('This email is already in use. Try signing in.');
+                 setIsSignUp(false);
+            } else {
+                setError(e.message || 'An unexpected error occurred.');
+            }
+        }
+    };
+    
+    const toggleAuthMode = () => {
+        setIsSignUp(!isSignUp);
+        setError(''); // Clear errors when switching mode
+    };
+
+
+    return (
+        <div className="min-h-screen flex items-center justify-center p-4 bg-[url(/src/assets/background.jpg)] bg-cover">
+            <Box
+                component="form"
+                onSubmit={handleSubmit}
+                className="bg-[#0005] p-8 md:p-10 rounded-xl shadow-2xl w-full max-w-md flex flex-col items-center gap-3"
+                sx={{ backdropFilter: 'blur(10px)' }}
+            >
+                <img src="/src/assets/image.png" alt="Logo" className='w-20 md:w-25 p-1' />
+                <Typography variant="h6" component="h1" className="text-white font-bold mb-6 text-center">
+                    {isSignUp ? "Create Account" : "Welcome to Sirius"}
+                </Typography>
+
+                {error && <Typography color="error" sx={{ mb: 2, textAlign: 'center' }}>{error}</Typography>}
+
+                {isSignUp && (
+                    <SignUpFormFields
+                        name={name} setName={setName}
+                        selectedClassId={selectedClassId} handleClassChange={handleClassChange} classesList={classesList}
+                        selectedDepartmentId={selectedDepartmentId} handleDepartmentChange={handleDepartmentChange} availableDepartments={availableDepartments}
+                    />
+                )}
+
+                <TextField
+                    label="Email" type="email" variant="filled" fullWidth
+                    value={email} onChange={(e) => setEmail(e.target.value)}
+                    required className="mb-6"
+                    InputProps={commonInputPropsSx} InputLabelProps={{ sx: commonInputLabelSx }} sx={textFieldRootSx}
+                />
+                <TextField
+                    label="Password" type="password" variant="filled" fullWidth
+                    value={password} onChange={(e) => setPassword(e.target.value)}
+                    required className="mb-6"
+                    InputProps={commonInputPropsSx} InputLabelProps={{ sx: commonInputLabelSx }} sx={textFieldRootSx}
+                />
+                <Button
+                    type="submit" variant="contained" fullWidth size="large"
+                    sx={{
+                        backgroundColor: '#4f46e5', '&:hover': { backgroundColor: '#4338ca' },
+                        paddingY: '0.8rem', textTransform: 'none', fontSize: '1rem', fontWeight: '600', borderRadius: '8px',
+                    }}
+                >
+                    {isSignUp ? "Sign Up" : "Sign In"}
+                </Button>
+                 <Button
+                    onClick={toggleAuthMode}
+                    fullWidth
+                    sx={{ 
+                        mt: 1, 
+                        color: 'rgba(255, 255, 255, 0.8)', 
+                        textTransform: 'none',
+                        '&:hover': {
+                            color: 'white',
+                            backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    }}
+                >
+                    {isSignUp ? "Already have an account? Sign In" : "Don't have an account? Sign Up"}
+                </Button>
+
+            </Box>
+        </div>
+    );
+}
+
+export default Login;
+--- END OF FILE src/pages/Login.jsx ---

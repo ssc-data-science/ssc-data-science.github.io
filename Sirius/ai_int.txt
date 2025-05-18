@@ -1,0 +1,5 @@
+Make the following changes:
+
+* Split big components and pages to smaller ones by creating new files
+
+Now recreate the same project_snapshot.txt only including the files that are changed in the original format
