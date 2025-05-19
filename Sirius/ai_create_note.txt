@@ -1,0 +1,6 @@
+From the texbook reference create notes with all main topics about module one of the syllabus given
+
+* The student should be able to get a good understanding of the given syllabus
+* For math equations impliment latex using mathjax
+
+Create the content as an atractive webpage using pure html and css

@@ -5,88 +5,88 @@ import { useNavigate } from 'react-router';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../config';
 import Cookies from 'js-cookie';
-import { getClasses, getCourses } from '../api';
-
+import { getClasses, getCourses, getData } from '../api';
+import { Star } from 'lucide-react'; // Import an icon for XP, e.g., Star
 
 
 const Notes = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [selectedModule, setSelectedModule] = useState(0);
   const [coursesData, setCoursesData] = useState([])
-  
-  
-      const [userdata, setUserdata] = useState({});
-      const navigate = useNavigate();
-      const app = initializeApp(firebaseConfig);
-      const [classesList, setClasses] = useState([]);
-      const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  
-      useEffect(() => {
-          const handleResize = () => {
-              setIsMobile(window.innerWidth < 768);
-          };
-  
-          window.addEventListener('resize', handleResize);
-          return () => window.removeEventListener('resize', handleResize);
-      }, []);
-  
-      useEffect(() => {
-          let isMounted = true;
-  
-          const loadData = async () => {
-              const userCookie = Cookies.get("user");
-              if (!userCookie) {
-                  navigate('/login');
-                  return;
-              }
-  
-  
-              const parsedUserdata = JSON.parse(userCookie);
-  
-              if (isMounted) {
-                  setUserdata(parsedUserdata);
-              }
-  
-              if (parsedUserdata && parsedUserdata.uid) {
-                  try {
-                      // const d = await getUserDepartment(app, parsedUserdata);
-                      // if (isMounted) {
-                      //     setDepartment(d);
-                      // }
-  
-                      // // Load available classes
-                       const clss = await getClasses(app);
-                       const crss = await getCourses(app);
-                       if (isMounted) {
-                           setCoursesData([...coursesData,...crss.filter(c=>c.grade === parsedUserdata.class)])
-                           setClasses(clss);
+  const [courseXP, setCourseXP] = useState({}); // State to store XP for each course
 
-                           console.log(coursesData)
-                       }
-  
-                  } catch (error) {
-                      console.error("Error fetching data:", error);
-                  }
-              } else if (isMounted) {
-                  console.warn("User data or UID missing, cannot fetch department.");
-              }
-          };
-  
-          if (!Cookies.get("user")) {
-              navigate('/login');
+
+  const [userdata, setUserdata] = useState({});
+  const navigate = useNavigate();
+  const app = initializeApp(firebaseConfig);
+  const [classesList, setClasses] = useState([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadData = async () => {
+      const userCookie = Cookies.get("user");
+      if (!userCookie) {
+        navigate('/login');
+        return;
+      }
+
+
+      const parsedUserdata = JSON.parse(userCookie);
+
+      if (isMounted) {
+        setUserdata(parsedUserdata);
+      }
+
+      if (parsedUserdata && parsedUserdata.uid) {
+        try {
+          const clss = await getClasses(app);
+          const crss = await getCourses(app);
+          if (isMounted) {
+            const userCourses = crss.filter(c => c.grade === parsedUserdata.class);
+            setCoursesData(userCourses);
+            setClasses(clss);
+
+            // Fetch XP data
+            const xpDataString = await getData(app, parsedUserdata.uid, "xp", "{}");
+            const xpDataObject = JSON.parse(xpDataString);
+            setCourseXP(xpDataObject);
+            console.log(coursesData)
           }
-          loadData()
-          return () => {
-              isMounted = false;
-          };
-      }, [userdata.uid, app]);
-  
-      
-  
+
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      } else if (isMounted) {
+        console.warn("User data or UID missing, cannot fetch department.");
+      }
+    };
+
+    if (!Cookies.get("user")) {
+      navigate('/login');
+    }
+    loadData()
+    return () => {
+      isMounted = false;
+    };
+  }, [app, navigate]); // Removed userdata.uid to simplify dependencies, assuming it doesn't change often post-login
+
+
+
   const handleModuleClick = (course, moduleIndex) => {
     setSelectedCourse(course);
     setSelectedModule(moduleIndex);
-    const target = `/notes/${course.id}/${course.grade}/module${moduleIndex+1}.html`;
+    const target = `/notes/${course.id}/${course.grade}/module${moduleIndex + 1}.html`;
     navigate(target);
   };
 
@@ -102,27 +102,39 @@ const Notes = () => {
               Notes
             </div>
             <div className="overflow-y-scroll md:max-h-150 max-h-full pb-5 no-scrollbar">
-              {coursesData.map((course, index) => (
-                <div key={index} className='p-5 text-white'>
-                  <div className='flex justify-between items-center mb-3'>
-                    <h2 className="font-bold text-xl">{course.name}</h2>
-                    <div className={`${course.color} text-white px-3 py-1 rounded-full text-sm font-medium`}>
-                      {course.subjectPrefix}
+              {coursesData.map((course, index) => {
+                const courseKey = (course.id + '-' + course.grade).replace(/-/g, '_');
+                const xpForCourse = courseXP[courseKey] || 0;
+                return (
+                  <div key={index} className='p-5 text-white'>
+                    <div className='flex flex-col justify-between items-center mb-3'>
+                      <div className="flex items-center mb-3">
+                        <h2 className="font-bold text-xl">{course.name}</h2>
+                      </div>
+                      <div className="flex items-center space-x-0">
+                        <div className={`bg-[#0009] text-white px-3 py-1 rounded-full text-sm font-medium rounded-r-[0px]`}>
+
+                          {course.subjectPrefix}
+                        </div>
+                        <div className={`bg-[#0005] text-white px-3 py-1 rounded-full text-sm font-medium rounded-l-[0px]`}>
+                          {xpForCourse} XP
+                        </div>
+                      </div>
+                    </div>
+                    <div className='space-y-2'>
+                      {course.modules.map((module, moduleIndex) => (
+                        <button
+                          key={moduleIndex}
+                          onClick={() => handleModuleClick(course, moduleIndex)}
+                          className='w-full text-left p-3 rounded-lg backdrop-blur-sm bg-[#fff1] hover:bg-opacity-20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50'
+                        >
+                          <p>{module}</p>
+                        </button>
+                      ))}
                     </div>
                   </div>
-                  <div className='space-y-2'>
-                    {course.modules.map((module, moduleIndex) => (
-                      <button
-                        key={moduleIndex}
-                        onClick={() => handleModuleClick(course, moduleIndex)}
-                        className='w-full text-left p-3 rounded-lg backdrop-blur-sm bg-[#fff1] hover:bg-opacity-20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50'
-                      >
-                        <p>{module}</p>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>
