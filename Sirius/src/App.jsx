@@ -14,6 +14,9 @@ import Learn from './pages/Learn';
 import Settings from './pages/Settings';
 import NoteViewer from './pages/NoteViewer';
 import ManageAPI from './pages/ManageAPI';
+import CreateLearningMaterial from './pages/CreateLearningMaterial';
+import LearningMaterialViewer from './pages/LearningMaterialViewer';
+
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
@@ -26,6 +29,8 @@ function App() {
         <Route path='/test' element={<Test/>}/>
         <Route path='/notes' element={<Notes/>}/>
         <Route path='/learn' element={<Learn/>}/>
+        <Route path='/learn/create' element={<CreateLearningMaterial />} />
+        <Route path='/learn/view/:materialId' element={<LearningMaterialViewer />} />
         <Route path='/settings' element={<Settings/>}/>
         <Route path='/notes/*' element={<NoteViewer />} />
         <Route path='/settings/api' element={<ManageAPI/>}/>

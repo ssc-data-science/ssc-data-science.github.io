@@ -244,6 +244,22 @@ export const getData = async (app, uid, key, ifnull) => {
   }
 };
 
+export const getRealData = async (app,  key, ifnull) => {
+  const db = getDatabase(app);
+  const dataRef = ref(db, `${key}`);
+  try {
+    const snapshot = await get(dataRef);
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      return ifnull;
+    }
+  } catch (error) {
+    console.error("Error getting data:", error);
+    throw error;
+  }
+}
+
 export const setData = async (app, uid, key, value) => {
   const db = getDatabase(app);
   const dataRef = ref(db, `data/${uid}/${key}`);
@@ -265,7 +281,7 @@ Entire course data
    {
             name: "Introduction to AI",
             subjectPrefix: "CS"
-            class: "fyug-sem-3"
+            class: "fyug-sem-3" //This is grade
             id:"cs1",
             color:"bg-blue-600",
             modules: ["AI & Problem Solving"]
@@ -285,3 +301,120 @@ export const getCourses = (app)=>{
     }
   })
 }
+
+/*
+Learning Material structure in Firebase RTDB (/learn):
+[
+  {
+    id: "serialized_name_unique", // e.g., ai_introduction_quiz
+    name: "Introduction to AI Quiz",
+    author: "user@example.com", // email of who generated it
+    course: "cs1", // course id
+    grade: "fyug-sem-3", // grade id
+    tool_id: "normal_quiz", // identifier for the learning tool
+    module_index: 0 // index of the module this material relates to
+    content: { ...quiz_questions_json... } // Actual content stored here
+  }
+]
+*/
+
+export const getLearningMaterials = (app) => {
+  const db = getDatabase(app);
+  const materialsRef = ref(db, "learn");
+  return get(materialsRef).then((snapshot) => {
+    if (snapshot.exists()) {
+      const data = snapshot.val();
+      if (Array.isArray(data)) {
+        return data.filter(item => item !== null && item !== undefined); 
+      } else if (typeof data === 'object' && data !== null) {
+        // Firebase might return an object if array has numeric keys that are not contiguous
+        // or if it was saved as an object initially.
+        return Object.values(data).filter(item => item !== null && item !== undefined); 
+      }
+      return []; // Return empty array if data is null or not an array/object
+    } else {
+      return []; // No materials found
+    }
+  }).catch(error => {
+    console.error("Error fetching learning materials:", error);
+    throw error; // Re-throw to handle it in the calling component
+  });
+};
+
+export const addLearningMaterialEntry = async (app, materialDataWithContent) => {
+    const db = getDatabase(app);
+    const materialsRef = ref(db, "learn");
+    try {
+        const snapshot = await get(materialsRef);
+        let materialsArray = [];
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            // Ensure we are working with an array
+            if (Array.isArray(data)) {
+                materialsArray = data.filter(item => item !== null && item !== undefined);
+            } else if (typeof data === 'object' && data !== null) {
+                 materialsArray = Object.values(data).filter(item => item !== null && item !== undefined);
+            }
+        }
+        
+        const existingIndex = materialsArray.findIndex(m => m.id === materialDataWithContent.id && m.course === materialDataWithContent.course && m.grade === materialDataWithContent.grade);
+        
+        if (existingIndex > -1) {
+            materialsArray[existingIndex] = materialDataWithContent; // Update existing
+        } else {
+            materialsArray.push(materialDataWithContent); // Add new
+        }
+        
+        await set(materialsRef, materialsArray); 
+        console.log(`Learning material '${materialDataWithContent.name}' saved/updated successfully.`);
+        return materialDataWithContent;
+    } catch (error) {
+        console.error("Error adding/updating learning material entry:", error);
+        throw error;
+    }
+};
+
+
+export const deleteLearningMaterial = async (app, materialId, userEmail) => {
+    const db = getDatabase(app);
+    const materialsRef = ref(db, "learn");
+    try {
+        const snapshot = await get(materialsRef);
+        if (!snapshot.exists()) {
+            console.log("No learning materials found to delete from.");
+            return false;
+        }
+
+        let materialsArray = [];
+        const data = snapshot.val();
+        if (Array.isArray(data)) {
+            materialsArray = data.filter(item => item !== null && item !== undefined);
+        } else if (typeof data === 'object' && data !== null) {
+            materialsArray = Object.values(data).filter(item => item !== null && item !== undefined);
+        }
+
+
+        const materialIndex = materialsArray.findIndex(m => m.id === materialId);
+
+        if (materialIndex === -1) {
+            console.log(`Material with ID ${materialId} not found.`);
+            return false;
+        }
+
+        if (materialsArray[materialIndex].author !== userEmail) {
+            console.log(`User ${userEmail} is not authorized to delete material ${materialId}.`);
+            throw new Error("You are not authorized to delete this material.");
+        }
+
+        // Remove the material from the array
+        materialsArray.splice(materialIndex, 1);
+
+        // Update the database with the modified array
+        await set(materialsRef, materialsArray);
+        console.log(`Learning material ${materialId} deleted successfully.`);
+        return true;
+    } catch (error) {
+        console.error("Error deleting learning material:", error);
+        throw error;
+    }
+};

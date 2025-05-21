@@ -14,6 +14,10 @@ export const GENAPIS = ['AIzaSyAjyofndMStYX6AT_C8CIBj-GZZeObA0PQ','AIzaSyAu9swfN
 export const GENMODALS = [{
   name:"gemini-2.0-flash-lite",
   usagePerDay:1500 
+},
+{
+  name:"gemini-2.0-flash",
+  usagePerDay:1500 
 }]
 
-export const GENMODALNAMES = ['gemini-2.0-flash-lite']
+export const GENMODALNAMES = ['gemini-2.0-flash-lite','gemini-2.0-flash']
