@@ -9,7 +9,7 @@ export const askGen2Lite = async (message) => {
   let isdone = false;
   let c = 0;
   let responseText = null;
-  
+
 
   while (!isdone && c < GENAPIS.length) {
     const ai = new GoogleGenAI({ apiKey: GENAPIS[c] });
@@ -75,37 +75,37 @@ export const askGen2Flash = async (message) => {
 };
 
 export const askGenForTopics = async (noteContent) => {
-    let isdone = false;
-    let c = 0;
-    let responseText = null;
-    const prompt = `From the following text, extract the 5 to 7 most important main topics. List each topic on a new line. Do not add any extra formatting, numbering, or introductory/concluding remarks. Just the topics. Text:\n\n${noteContent}`;
+  let isdone = false;
+  let c = 0;
+  let responseText = null;
+  const prompt = `From the following text, extract the 5 to 7 most important main topics. List each topic on a new line. Do not add any extra formatting, numbering, or introductory/concluding remarks. Just the topics. Text:\n\n${noteContent}`;
 
-    while (!isdone && c < GENAPIS.length) {
-        const ai = new GoogleGenAI({ apiKey: GENAPIS[c] });
-        try {
-            const response = await ai.models.generateContent({
-                model: "gemini-2.0-flash", 
-                contents: prompt,
-                temperature: 0 
-            });
+  while (!isdone && c < GENAPIS.length) {
+    const ai = new GoogleGenAI({ apiKey: GENAPIS[c] });
+    try {
+      const response = await ai.models.generateContent({
+        model: "gemini-2.0-flash",
+        contents: prompt,
+        temperature: 0
+      });
 
-            if (response && response.text) {
-                isdone = true;
-                await updateStats("gemini-2.0-flash"); 
-                responseText = response.text;
-            } else {
-                console.error("Response or response.text is undefined for topic extraction:", response);
-            }
-        } catch (e) {
-            console.error("Error with API key for topic extraction", GENAPIS[c], ":", e);
-        }
-        c++;
+      if (response && response.text) {
+        isdone = true;
+        await updateStats("gemini-2.0-flash");
+        responseText = response.text;
+      } else {
+        console.error("Response or response.text is undefined for topic extraction:", response);
+      }
+    } catch (e) {
+      console.error("Error with API key for topic extraction", GENAPIS[c], ":", e);
     }
+    c++;
+  }
 
-    if (!isdone) {
-        console.error("All API keys failed for topic extraction.");
-    }
-    return responseText;
+  if (!isdone) {
+    console.error("All API keys failed for topic extraction.");
+  }
+  return responseText;
 };
 
 
@@ -120,7 +120,7 @@ export class HelperAI {
         name: 'openNote',
         info: 'the function to open a note by url, also this adds function for AI to suggest what to study based on past logs, notes are at `/notes/${course.id}/${course.grade}/module${moduleIndex}.html`, also whne user asks find time spend by using the time user starts a sesssion and opens a note',
         example: '[date 21] user says What_should_I_study_next?\n[AI] I think it\'s best for you to look into statistics, since you wasn\'t focusing much on it, would you like to open the notes for module 1\n[date] User says yes\n[ACTION] openNote /notes/cs1/fyug-sem-3/module1.html',
-        act: (arg) =>{
+        act: (arg) => {
           window.open(arg)
         },
         type: 'call'
@@ -156,10 +156,10 @@ export class HelperAI {
     [ACTION] action_name message
 
     You only have actions given below:`
-    for(let i of this.actions){
-      this.preprompt+='\n'+i.name+'\n'+i.info+'Example:\n'+i.example
-    }
-     this.preprompt += `
+      for (let i of this.actions) {
+        this.preprompt += '\n' + i.name + '\n' + i.info + 'Example:\n' + i.example
+      }
+      this.preprompt += `
     
     Example
 
@@ -194,9 +194,9 @@ export class HelperAI {
       if (this.data == null) this.data = ''
       const classInfo = await getClasses(this.app)
       const courses = await getCourses(this.app)
-      let mycourses = courses.find(c=>c.grade == this.userdata.class)
+      let mycourses = courses.find(c => c.grade == this.userdata.class)
 
-      this.preprompt += "[USERDATA\n]" + JSON.stringify(this.userdata) + "\n{USERCOURSES]\n"+JSON.stringify(mycourses)+"\n[CLASSES]\n" + JSON.stringify(classInfo) + "\n[CHAT]\n"
+      this.preprompt += "[USERDATA\n]" + JSON.stringify(this.userdata) + "\n{USERCOURSES]\n" + JSON.stringify(mycourses) + "\n[CLASSES]\n" + JSON.stringify(classInfo) + "\n[CHAT]\n"
       this.preprompt += this.data
 
       const out = await askGen2Lite(this.preprompt) // HelperAI still uses lite for its own operations
@@ -343,10 +343,10 @@ export const getStats = async (modalName) => {
       usageToday: 0,
       lastUpdateTimeStamp: new Date().toISOString()
     };
-    
+
     // Ensure name field is present
     if (!usageData.name) {
-        usageData.name = modalName;
+      usageData.name = modalName;
     }
 
     return usageData;
@@ -360,3 +360,43 @@ export const getStats = async (modalName) => {
     };
   }
 };
+
+
+/* Notes */
+
+
+
+/*  /dynotes
+{
+    id: 'cs1_fyug-sem-3'
+    notes: [
+      {
+        name: "Introduction to AI"
+        topics: [
+          {
+            name: "Introduction",
+            content: [
+              {
+                name: "AI definition",
+                text: "AI is the study of machine's ability to think all by itself",
+                mathjax: null
+              }
+            ],
+            questions:[{
+              question: "What is AI ?"
+              options: [
+                "option a",
+                "option b",
+                "option c",
+                "option d"
+              ],
+              currect: 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+}
+*/
