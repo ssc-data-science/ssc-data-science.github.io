@@ -182,9 +182,9 @@ const NormalQuiz = ({ materialData, app, userdata }) => {
         setQuizPhase('initial');
         setMistakeIndices([]);
         setInitialMistakeCount(0);
-        setStartTime(null);
+        setStartTime(null)
         setEndTime(null);
-        setScore(0);
+        setScore(0  );
         setShowCompletionDialog(false);
         setFinalStats(null);
         loadQuestions();
