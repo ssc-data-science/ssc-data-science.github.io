@@ -259,19 +259,13 @@ const NormalQuiz = ({ materialData, app, userdata }) => {
                             onClick={() => { if (!showFeedback) handleAnswer(index) }}
                             fullWidth
                             sx={buttonSxProps}
-                            startIcon={showFeedback && index === currentQuestionData.correctAnswerIndex ? <CheckCircle /> : showFeedback && index === userAnswers[actualQuestionIndex] && !isCorrect ? <XCircle /> : null}
                         >
-                            {String.fromCharCode(65 + index)}. {option}
+                            {option}
                         </Button>
                     );
                 })}
             </Box>
 
-            {showFeedback && (
-                <Typography variant="subtitle1" sx={{ mt: 2, color: isCorrect ? 'success.light' : 'error.light', textAlign: 'center', fontWeight: 'bold' }}>
-                    {isCorrect ? 'Correct!' : 'Incorrect!'}
-                </Typography>
-            )}
             <Typography variant="caption" display="block" sx={{ mt: 3, textAlign: 'center', color: 'rgba(255,255,255,0.5)' }}>
                 Practice makes perfect!
             </Typography>
