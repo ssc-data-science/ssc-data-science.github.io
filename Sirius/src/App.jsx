@@ -16,6 +16,7 @@ import NoteViewer from './pages/NoteViewer';
 import ManageAPI from './pages/ManageAPI';
 import CreateLearningMaterial from './pages/CreateLearningMaterial';
 import LearningMaterialViewer from './pages/LearningMaterialViewer';
+import DyNotesViewer from './pages/DyNotesViewer';
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
@@ -33,6 +34,7 @@ function App() {
         <Route path='/learn/view/:materialId' element={<LearningMaterialViewer />} />
         <Route path='/settings' element={<Settings/>}/>
         <Route path='/notes/*' element={<NoteViewer />} />
+        <Route path='/dynotes/*' element={<DyNotesViewer/>}/>
         <Route path='/settings/api' element={<ManageAPI/>}/>
       </Routes>
     </>

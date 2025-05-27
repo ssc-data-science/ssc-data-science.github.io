@@ -418,3 +418,42 @@ export const deleteLearningMaterial = async (app, materialId, userEmail) => {
         throw error;
     }
 };
+
+/* Notes */
+
+
+
+/*  /dynotes
+{
+    id: 'cs1_fyug-sem-3'
+    notes: [
+      {
+        name: "Introduction to AI"
+        topics: [
+          {
+            name: "Introduction",
+            content: [
+              {
+                name: "AI definition",
+                text: "AI is the study of machine's ability to think all by itself",
+                mathjax: null
+              }
+            ],
+            questions:[{
+              question: "What is AI ?"
+              options: [
+                "option a",
+                "option b",
+                "option c",
+                "option d"
+              ],
+              currect: 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+}
+*/
