@@ -4,13 +4,13 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
 const RESOURCES = {"manifest.json": "76e02c0835372eb3464b83dd1bca69c0",
-"flutter_bootstrap.js": "8603b48b44367a475c7b4238a0b819a0",
+"flutter_bootstrap.js": "29c8d7517dac804d07a913d50a79d39c",
 "favicon.png": "54a873d50c4f2e8f70e1c965d473bbe3",
 "icons/Icon-512.png": "3da55777252130c5be45e085ac3c1640",
 "icons/Icon-maskable-512.png": "3da55777252130c5be45e085ac3c1640",
 "icons/Icon-192.png": "3667b32bb5a1c148d7bc72c8ba131bdb",
 "icons/Icon-maskable-192.png": "3667b32bb5a1c148d7bc72c8ba131bdb",
-"version.json": "eeff4e69c0064206d10106c94e28d81d",
+"version.json": "6bdc52976447ac20fdef9a293a873724",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "825e75415ebd366b740bb49659d7a5c6",
 "assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf": "3759b2f7a51e83c64a58cfe07b96a8ee",
@@ -33,9 +33,9 @@ const RESOURCES = {"manifest.json": "76e02c0835372eb3464b83dd1bca69c0",
 "canvaskit/chromium/canvaskit.js": "8191e843020c832c9cf8852a4b909d4c",
 "canvaskit/chromium/canvaskit.wasm": "c054c2c892172308ca5a0bd1d7a7754b",
 "canvaskit/skwasm.js.symbols": "9fe690d47b904d72c7d020bd303adf16",
-"index.html": "0cdd52147bfc42f410438f9ab222418c",
-"/": "0cdd52147bfc42f410438f9ab222418c",
-"main.dart.js": "674812b00532f3e3f00eb845f208f4b7",
+"index.html": "dce627d672c2e28e63fa79066ef6157e",
+"/": "dce627d672c2e28e63fa79066ef6157e",
+"main.dart.js": "5122ae10b2c296750973f35c3569a707",
 "flutter.js": "83d881c1dbb6d6bcd6b42e274605b69c"};
 // The application shell files that are downloaded before a service worker can
 // start.

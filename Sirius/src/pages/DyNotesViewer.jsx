@@ -43,7 +43,7 @@ const DyNotesViewer = () => {
   const buttonPadding = 16; // 8px * 2
   const backButtonWidth = `${buttonIconSize + buttonPadding}px`;
 
-  const [currentView, setCurrentView] = useState(3)
+  const [currentView, setCurrentView] = useState(1)
 
   return (
     <div className='bg-cover h-screen flex bg-[url(/src/assets/background.jpg)]'> {/* Ensure background image path is correct */}

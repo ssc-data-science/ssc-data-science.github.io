@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import DynamicColorProgressBar from './DynamicColorProgressBar'
 import { Button } from '@mui/material'
+import Latex from 'react-latex'
 
 const LessonScreen = () => {
 
@@ -13,7 +14,9 @@ const LessonScreen = () => {
                 {"Artificial Intelligence (AI) is the study of how to make computers do things at which, at the moment, people are better. It involves developing computational models and systems that exhibit intelligent behavior, aiming to replicate human cognitive abilities."}
             </div>
             <div className='bg-[#0005] p-3 rounded-md'>
-                {"MathJAX here"}
+                <Latex displayMode={true}>
+                    $a^2 + b^2 = c^2$
+                </Latex>
             </div>
             <div className='flex-col w-full flex items-end'>
                 <Button variant='contained'>Next</Button>
