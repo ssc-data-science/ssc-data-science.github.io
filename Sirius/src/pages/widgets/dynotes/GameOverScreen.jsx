@@ -23,16 +23,13 @@ const AnimatedStat = ({ finalValue, label, unit = "", duration = 1500, isTime = 
       
       let val;
       if (isTime) {
-        // For time, animate the raw seconds
         val = Math.floor(progress * finalValue);
       } else {
-        // For XP and Accuracy, allow for smoother animation if finalValue is small
         val = progress * finalValue;
-        // If it's not time, round to integer unless it's a percentage that might need decimals (though accuracy usually isn't)
         if (unit !== '%') {
             val = Math.floor(val);
         } else {
-            val = parseFloat(val.toFixed(0)); // Keep as integer for simplicity, or use toFixed(1) for one decimal
+            val = parseFloat(val.toFixed(0)); 
         }
       }
       
@@ -41,7 +38,7 @@ const AnimatedStat = ({ finalValue, label, unit = "", duration = 1500, isTime = 
       if (progress < 1) {
         animationFrameId = requestAnimationFrame(animate);
       } else {
-        setCurrentValue(finalValue); // Ensure it ends on the exact final value
+        setCurrentValue(finalValue); 
       }
     };
 
@@ -64,10 +61,11 @@ const AnimatedStat = ({ finalValue, label, unit = "", duration = 1500, isTime = 
 
 
 const GameOverScreen = ({
-  xpEarned = 125, // Default example value
-  accuracy = 88,  // Default example value (e.g., 88%)
-  timeTakenInSeconds = 155, // Default example value (2 minutes 35 seconds)
-  onNextClick, // Function to handle "Next" button click
+  xpEarned = 0,
+  accuracy = 0,
+  timeTakenInSeconds = 0,
+  onNextClick,
+  itemName = "Topic" // New prop for item name
 }) => {
 
   const handleNext = () => {
@@ -75,7 +73,6 @@ const GameOverScreen = ({
       onNextClick();
     } else {
       console.log("Next button clicked on GameOverScreen, but no onNextClick handler provided.");
-      // Potentially navigate somewhere default or reset view
     }
   };
 
@@ -83,7 +80,7 @@ const GameOverScreen = ({
     <div className="flex flex-col items-center justify-center text-white h-full">
       <div className='flex flex-col items-center justify-center p-5'>
         <h1 className="text-3xl md:text-4xl font-bold mb-15 text-center">
-        Lesson Learned!
+        {itemName} Complete!
       </h1>
 
       <div className="flex flex-row justify-around items-center space-x-3 md:space-x-6 mb-10 md:mb-16 w-full max-w-sm">

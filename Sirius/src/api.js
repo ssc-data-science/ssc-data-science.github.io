@@ -421,39 +421,55 @@ export const deleteLearningMaterial = async (app, materialId, userEmail) => {
 
 /* Notes */
 
+// ADDED: Function to get dynamic notes for a specific course and grade
+export const getDynamicNotes = async (app, courseId, gradeId) => {
+  const db = getDatabase(app);
+  const noteKey = `${courseId}_${gradeId}`; // Construct the key e.g., "cs1_fyug-sem-3"
+  const dataRef = ref(db, `dynotes`); // Path to the specific dynamic note
+  try {
+    const snapshot = await get(dataRef);
+    if (snapshot.exists()) {
+      return snapshot.val().find((note) => note.id === noteKey ); // Returns the object for this course
+    } else {
+      console.log(`No dynamic notes found for ${noteKey}`);
+      return null; // Return null if no data exists for this key
+    }
+  } catch (error) {
+    console.error("Error getting dynamic notes:", error);
+    throw error;
+  }
+};
 
-
-/*  /dynotes
+/*
+Dynamic Notes Structure in Firebase RTDB (/dynotes/{courseId}_{gradeId}):
 {
-    id: 'cs1_fyug-sem-3'
-    notes: [
+    id: "cs1_fyug-sem-3", // Matches the key, can be useful for self-reference
+    notes: [ // This is the array of lessons
       {
-        name: "Introduction to AI"
-        topics: [
+        name: "Introduction to AI", // Lesson Name
+        topics: [ // This is an array of pages within the lesson
           {
-            name: "Introduction",
-            content: [
+            name: "Introduction", // Page Name/Title
+            content: [ // This is an array of content blocks for this page
               {
-                name: "AI definition",
+                // name: "AI definition", // Optional name for content block
                 text: "AI is the study of machine's ability to think all by itself",
-                mathjax: null
+                mathjax: null // or a mathjax string: "\\(\\frac{10}{4x} \\approx 2^{12}\\)"
               }
+              // ... more content blocks (text, mathjax)
             ],
-            questions:[{
-              question: "What is AI ?"
-              options: [
-                "option a",
-                "option b",
-                "option c",
-                "option d"
-              ],
-              currect: 0
-              }
-            ]
+            questions:[{ // Array of questions for THIS PAGE
+              question: "What is AI ?",
+              options: ["option a", "option b", "option c", "option d"],
+              correctAnswerIndex: 0 
+            }
+            // ... more questions for this page
+           ]
           }
+          // ... more pages in this lesson ...
         ]
       }
+      // ... more lessons in this course's dynamic note ...
     ]
-
 }
 */

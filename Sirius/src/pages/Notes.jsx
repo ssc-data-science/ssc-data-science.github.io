@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../config';
 import Cookies from 'js-cookie';
-import { getClasses, getCourses, getData } from '../api';
+import { getClasses, getCourses, getData, getDynamicNotes } from '../api'; // Added getDynamicNotes
 import { Star } from 'lucide-react'; // Import an icon for XP, e.g., Star
 
 
@@ -83,11 +83,26 @@ const Notes = () => {
 
 
 
-  const handleModuleClick = (course, moduleIndex) => {
-    setSelectedCourse(course);
-    setSelectedModule(moduleIndex);
-    const target = `/notes/${course.id}/${course.grade}/module${moduleIndex + 1}.html`;
-    navigate(target);
+  const handleModuleClick = async (course, moduleIndex) => {
+    try {
+      // Attempt to load dynamic notes for this course
+      const dynamicNotesData = await getDynamicNotes(app, course.id, course.grade);
+      console.log(dynamicNotesData)
+
+
+      if (dynamicNotesData && dynamicNotesData.notes && dynamicNotesData.notes.length > 0) {
+        navigate(`/dynotes/${course.id}/${course.grade}`);
+      } else {
+        // Fallback to static HTML notes
+        const target = `/notes/${course.id}/${course.grade}/module${moduleIndex + 1}.html`;
+        navigate(target);
+      }
+    } catch (error) {
+      console.error("Error checking for dynamic notes, falling back to static:", error);
+      // Fallback to static HTML notes on error as well
+      const target = `/notes/${course.id}/${course.grade}/module${moduleIndex + 1}.html`;
+      navigate(target);
+    }
   };
 
   return (

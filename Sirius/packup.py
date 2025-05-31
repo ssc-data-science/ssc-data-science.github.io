@@ -7,7 +7,7 @@ DEFAULT_OUTPUT_FILENAME = "project_snapshot.txt"
 # Common binary file extensions to skip by default (can be overridden)
 # A more robust check would be to try decoding and catch errors.
 DEFAULT_BINARY_EXTENSIONS = {
-    '.py',
+    '.py','.txt',
     '.png', '.jpg', '.jpeg', '.gif', '.bmp', '.tiff', '.ico',  # Images
     '.mp3', '.wav', '.ogg', '.flac',                           # Audio
     '.mp4', '.avi', '.mov', '.mkv', '.webm',                   # Video

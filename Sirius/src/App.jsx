@@ -34,7 +34,7 @@ function App() {
         <Route path='/learn/view/:materialId' element={<LearningMaterialViewer />} />
         <Route path='/settings' element={<Settings/>}/>
         <Route path='/notes/*' element={<NoteViewer />} />
-        <Route path='/dynotes/*' element={<DyNotesViewer/>}/>
+        <Route path='/dynotes/:courseId/:gradeId' element={<DyNotesViewer/>}/>
         <Route path='/settings/api' element={<ManageAPI/>}/>
       </Routes>
     </>

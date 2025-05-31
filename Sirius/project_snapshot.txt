@@ -1,1039 +1,373 @@
---- START OF FILE src/api-ai.js ---
-import { GoogleGenAI } from "@google/genai";
-import { firebaseConfig, GENAPIS, GENMODALNAMES, GENMODALS } from "./config";
-import { getClasses, getCourses, getData, setData } from "./api";
-import { initializeApp } from "firebase/app";
-import { get, getDatabase, ref, set } from "firebase/database";
-import { useNavigate } from "react-router";
+--- START OF FILE src/pages/DyNotesViewer.jsx ---
+import React, { useEffect, useState, useCallback } from 'react';
+import Toolbar from '../assets/components/Toolbar';
+import Navbar from '../assets/components/Navbar';
+import { useNavigate, useParams } from 'react-router';
+import { ArrowLeft } from 'lucide-react';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../config';
+import Cookies from 'js-cookie';
+import { getDynamicNotes, getData, setData, getCourses } from '../api';
+import { Button, CircularProgress, Box, Typography } from '@mui/material';
 
-export const askGen2Lite = async (message) => {
-  let isdone = false;
-  let c = 0;
-  let responseText = null;
+import LessonListScreen from './widgets/dynotes/LessonList';
+import LessonContentScreen from './widgets/dynotes/LessonScreen';
+import QuestionSessionScreen from './widgets/dynotes/QuestionScreen';
+import LessonCompleteScreen from './widgets/dynotes/GameOverScreen';
+
+const DyNotesViewer = () => {
+  const navigate = useNavigate();
+  const { courseId, gradeId } = useParams();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const app = initializeApp(firebaseConfig);
+
+  const [userdata, setUserdata] = useState(null);
+  const [dynamicNoteData, setDynamicNoteData] = useState(null);
+  const [allCourses, setAllCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  // Screen and state management
+  const [currentScreen, setCurrentScreen] = useState('lessonList');
   
+  const [activeLessonIndex, setActiveLessonIndex] = useState(null);
+  const [activeTopicIndex, setActiveTopicIndex] = useState(null);
+  const [currentContentIndex, setCurrentContentIndex] = useState(0); // Index for content block within a topic
 
-  while (!isdone && c < GENAPIS.length) {
-    const ai = new GoogleGenAI({ apiKey: GENAPIS[c] });
-    try {
-      const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash-lite",
-        contents: message,
-        temperature: 0
-      });
+  // Derived state for active lesson and topic data
+  const activeLessonData = activeLessonIndex !== null && dynamicNoteData ? dynamicNoteData.notes[activeLessonIndex] : null;
+  const activeTopicData = activeLessonData && activeTopicIndex !== null ? activeLessonData.topics[activeTopicIndex] : null;
+  const activeContentBlock = activeTopicData && activeTopicData.content ? activeTopicData.content[currentContentIndex] : null;
 
-      if (response && response.text) {
-        isdone = true;
-        await updateStats("gemini-2.0-flash-lite")
-        responseText = response.text;
-      } else {
-        console.error("Response or response.text is undefined:", response);
-      }
-    } catch (e) {
-      console.error("Error with API key", GENAPIS[c], ":", e);
-    }
-    c++;
-  }
+  const [isNextButtonActive, setIsNextButtonActive] = useState(false); // For enabling "Next Content / Start Quiz" button
 
-  if (!isdone) {
-    console.error("All API keys failed for gemini-2.0-flash-lite.");
-  }
-  return responseText;
-};
+  const [questionsForActiveTopic, setQuestionsForActiveTopic] = useState([]);
+  
+  const [topicStats, setTopicStats] = useState({ score: 0, totalQuestions: 0, timeTaken: 0, xpEarned: 0, accuracy: 0 });
+  const [topicStartTime, setTopicStartTime] = useState(null);
 
-export const askGen2Flash = async (message) => {
-  let isdone = false;
-  let c = 0;
-  let responseText = null;
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  while (!isdone && c < GENAPIS.length) {
-    // Ensure we are using the correct API key for gemini-2.0-flash if they differ
-    // For now, assuming GENAPIS can be used for both or user handles this.
-    const ai = new GoogleGenAI({ apiKey: GENAPIS[c] });
-    try {
-      const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash", // Changed model name
-        contents: message,
-        temperature: 0.1 // Slightly higher temp for creative tasks like question gen
-      });
-
-      if (response && response.text) {
-        isdone = true;
-        await updateStats("gemini-2.0-flash"); // Update stats for the correct model
-        responseText = response.text;
-      } else {
-        console.error("Response or response.text is undefined for gemini-2.0-flash:", response);
-      }
-    } catch (e) {
-      console.error("Error with API key for gemini-2.0-flash", GENAPIS[c], ":", e);
-    }
-    c++;
-  }
-
-  if (!isdone) {
-    console.error("All API keys failed for gemini-2.0-flash.");
-  }
-  return responseText;
-};
-
-export const askGenForTopics = async (noteContent) => {
-    let isdone = false;
-    let c = 0;
-    let responseText = null;
-    const prompt = `From the following text, extract the 5 to 7 most important main topics. List each topic on a new line. Do not add any extra formatting, numbering, or introductory/concluding remarks. Just the topics. Text:\n\n${noteContent}`;
-
-    while (!isdone && c < GENAPIS.length) {
-        const ai = new GoogleGenAI({ apiKey: GENAPIS[c] });
-        try {
-            const response = await ai.models.generateContent({
-                model: "gemini-2.0-flash", 
-                contents: prompt,
-                temperature: 0 
-            });
-
-            if (response && response.text) {
-                isdone = true;
-                await updateStats("gemini-2.0-flash"); 
-                responseText = response.text;
-            } else {
-                console.error("Response or response.text is undefined for topic extraction:", response);
-            }
-        } catch (e) {
-            console.error("Error with API key for topic extraction", GENAPIS[c], ":", e);
-        }
-        c++;
-    }
-
-    if (!isdone) {
-        console.error("All API keys failed for topic extraction.");
-    }
-    return responseText;
-};
-
-
-export class HelperAI {
-  constructor(app, userdata) {
-    this.userdata = userdata;
-    this.userid = userdata.uid;
-    this.app = app
-    this.data = undefined
-    this.actions = [
-      {
-        name: 'openNote',
-        info: 'the function to open a note by url, also this adds function for AI to suggest what to study based on past logs, notes are at `/notes/${course.id}/${course.grade}/module${moduleIndex}.html`, also whne user asks find time spend by using the time user starts a sesssion and opens a note',
-        example: '[date 21] user says What_should_I_study_next?\n[AI] I think it\'s best for you to look into statistics, since you wasn\'t focusing much on it, would you like to open the notes for module 1\n[date] User says yes\n[ACTION] openNote /notes/cs1/fyug-sem-3/module1.html',
-        act: (arg) =>{
-          window.open(arg)
-        },
-        type: 'call'
-      },
-    ]
-
-
-
-    this.preprompt = ''
-  }
-
-
-  async log(message) {
-    const timestamp = new Date().toISOString();
-    try {
-      if (this.data == undefined) this.data = await getData(this.app, this.userid, 'ai-helper')
-      if (this.data == null) this.data = ''
-    } catch (e) {
-      this.data = ''
-    }
-
-    this.data += this.data == '' ? `[${timestamp}] ${message}` : `\n[${timestamp}] ${message}`
-    setData(this.app, this.userid, 'ai-helper', this.data)
-  }
-
-  async update() {
-    try {
-
-      this.preprompt = `
-    For the chat and user actions log given below, you are supposed to reply or suggest an action for the user.
-    also for messages reply as per as message, also you are given userdata to refer
-    if it is an action return only 
-    [ACTION] action_name message
-
-    You only have actions given below:`
-    for(let i of this.actions){
-      this.preprompt+='\n'+i.name+'\n'+i.info+'Example:\n'+i.example
-    }
-     this.preprompt += `
-    
-    Example
-
-    Input: [7 am] Ihjas logged in
-           [7 am] Ihjas started a session
-    Output: [AI] Welcome Ihjas
-    
-    Input: [Day1 7 am] Ihjas logged in
-           [AI] Welcome Ihjas
-           [Day1 8 pm] Ihjas started a session
-           [AI] Welcome back!
-           [Day8 9 pm] Ihjas started a session
-    Output: [ACTION] setReminder You_ate_not_consistant._Would_you_like_to_set_a_reminder?
-
-    Input: [Day1 7 am] Ihjas logged in
-           [AI] Welcome Ihjas
-           [Day1 8 pm] Ihjas started a session
-           [AI] Welcome back!
-           [Day8 9 pm] Ihjas started a session
-           [ACTION] setReminder You_are_not_consistant._Would_you_like_to_set_a_reminder?
-           [date] Ihjas clicked Yes and it returned true
-    Output:[AI] Your reminder is set!
-
-    For messages give output like this give continues ouput based on previous convo, return actions when user asks about actions
-    Input: [8 AM] Ihjas says Hi_AI
-    Output: [AI] Hello Ihjas
-
-    So now give output based on the content:
-
-  `
-      if (this.data == undefined) this.data = await getData(this.app, this.userid, 'ai-helper')
-      if (this.data == null) this.data = ''
-      const classInfo = await getClasses(this.app)
-      const courses = await getCourses(this.app)
-      let mycourses = courses.find(c=>c.grade == this.userdata.class)
-
-      this.preprompt += "[USERDATA\n]" + JSON.stringify(this.userdata) + "\n{USERCOURSES]\n"+JSON.stringify(mycourses)+"\n[CLASSES]\n" + JSON.stringify(classInfo) + "\n[CHAT]\n"
-      this.preprompt += this.data
-
-      const out = await askGen2Lite(this.preprompt) // HelperAI still uses lite for its own operations
-      this.data += this.data == '' ? `${out}` : `\n${out}`
-      await setData(this.app, this.userid, 'ai-helper', this.data)
-      return this.data
-
-
-    } catch (e) {
-      return e
-    }
-  }
-
-  async parse() {
-
-    let lastMessage;
-
-    if (this.data == undefined) this.data = await getData(this.app, this.userid, 'ai-helper')
-    if (this.data == null) this.data = ''
-    let messages = this.data.split('\n');
-
-    messages = messages.filter(msg => msg && msg.trim() !== '');
-
-    if (messages.length > 0) {
-      lastMessage = messages[messages.length - 1];
-    } else {
-      return { type: 'empty', message: '' };
-    }
-
-    if (lastMessage.startsWith('[AI]')) {
-      return { type: 'text', message: lastMessage.substring(4) };
-    } else if (lastMessage.startsWith('[ACTION]')) {
-      const actionParts = lastMessage.substring(9).split(' ');
-      const actionName = actionParts[0].trim();
-      const actionMessage = actionParts.slice(1).join(' ').split('_').join(' ');
-      console.log(actionName + " " + actionMessage);
-      console.log(this.actions);
-      let amInt = -1
-      this.actions.forEach((a, i) => {
-        console.log(a.name + " " + actionName)
-        if (a.name == actionName) amInt = i
-      })
-      const action = this.actions[amInt]
-      console.log(action);
-      console.log(amInt);
-      if (action) {
-        return { type: 'action', action: action, message: actionMessage };
-      } else {
-        return { type: 'text', message: 'Unknown action: ' + lastMessage };
-      }
-    } else if (lastMessage.startsWith('[EMPTY OUT]')) {
-      return { type: 'empty', message: '' };
-    } else {
-      return { type: 'text', message: lastMessage };
-    }
-
-  }
-}
-
-/* model data structure 
-[
-  {
-    "name":"gemini-2.0-flash-lite",
-    "usageLastMinute":"get using firebase and add one to it"
-    "usageToday":"get using firebase and add one to it"
-    "lastUpdateTimeStamp":"use thos to tweak the above two"
-  },
- {
-    "name":"gemini-2.0-flash",
-    "usageLastMinute":0,
-    "usageToday":0,
-    "lastUpdateTimeStamp":"timestamp"
-  }
-]
-
-the above is stored at /apiusage/default (as an array, index corresponds to GENMODALNAMES)
-
-*/
-
-export const updateStats = async (modalName) => {
-  try {
-    const app = initializeApp(firebaseConfig); // Consider initializing app once globally
-    const db = getDatabase(app);
-    const modalIndex = GENMODALNAMES.indexOf(modalName);
-
-    if (modalIndex === -1) {
-      console.error(`Modal ${modalName} not found in GENMODALNAMES.`);
+  useEffect(() => {
+    const userCookie = Cookies.get("user");
+    if (!userCookie) {
+      navigate('/login');
       return;
     }
+    setUserdata(JSON.parse(userCookie));
 
-    const usageRef = ref(db, `apiusage/default/${modalIndex}`);
-    const snapshot = await get(usageRef);
-    let usageData = snapshot.exists() ? snapshot.val() : {
-      name: modalName,
-      usageLastMinute: 0,
-      usageToday: 0,
-      lastUpdateTimeStamp: new Date().toISOString()
+    const fetchData = async () => {
+      setLoading(true);
+      setError('');
+      try {
+        const [notesData, coursesList] = await Promise.all([
+          getDynamicNotes(app, courseId, gradeId),
+          getCourses(app)
+        ]);
+
+        if (notesData && notesData.notes && notesData.notes.length > 0) {
+          setDynamicNoteData(notesData);
+        } else {
+          setError('Dynamic notes not found or are empty for this course.');
+        }
+        setAllCourses(coursesList || []);
+      } catch (err) {
+        console.error("Error fetching dynamic notes data:", err);
+        setError('Failed to load dynamic notes. Please try again.');
+      }
+      setLoading(false);
     };
 
-    const now = new Date();
-    const lastUpdate = new Date(usageData.lastUpdateTimeStamp);
-    const timeDiff = now.getTime() - lastUpdate.getTime();
+    fetchData();
+  }, [app, courseId, gradeId, navigate]);
 
-    if (timeDiff >= 60000) { // If more than a minute has passed
-      usageData.usageLastMinute = 0;
-      if (now.getDate() !== lastUpdate.getDate() || now.getMonth() !== lastUpdate.getMonth() || now.getFullYear() !== lastUpdate.getFullYear()) {
-        usageData.usageToday = 0; // Reset daily usage if it's a new day
+  // --- Navigation and State Logic ---
+
+  const handleSelectTopic = (lessonIdx, topicIdx) => {
+    setActiveLessonIndex(lessonIdx);
+    setActiveTopicIndex(topicIdx);
+    setCurrentContentIndex(0); // Start from the first content block of the topic
+    setCurrentScreen('lessonContent');
+    setIsNextButtonActive(false); 
+    setTimeout(() => setIsNextButtonActive(true), 3000); // Reading time for the first content block
+  };
+  
+  const handleNextContentOrQuiz = () => {
+    if (!activeTopicData || !activeTopicData.content) return;
+
+    if (currentContentIndex < activeTopicData.content.length - 1) {
+      // More content blocks in the current topic
+      setCurrentContentIndex(prev => prev + 1);
+      setIsNextButtonActive(false);
+      setTimeout(() => setIsNextButtonActive(true), 3000); // Reading time for next content block
+    } else {
+      // All content blocks for the topic are viewed, proceed to quiz or completion
+      let currentTopicQuestions = [];
+      if (activeTopicData.questions && activeTopicData.questions.length > 0) {
+          currentTopicQuestions = activeTopicData.questions.map(q => ({
+              ...q, 
+              lessonName: activeLessonData?.name, 
+              topicName: activeTopicData.name 
+          }));
+      }
+
+      if (currentTopicQuestions.length > 0) {
+        setQuestionsForActiveTopic(shuffleArray(currentTopicQuestions)); 
+        setTopicStartTime(Date.now()); // Start timer for quiz
+        setCurrentScreen('questionSession');
+      } else {
+        // No questions, topic complete
+        const timeTaken = topicStartTime ? Math.floor((Date.now() - topicStartTime) / 1000) : (activeTopicData.content.length * 30); // Estimate time if no quiz
+        setTopicStats({ score: 0, totalQuestions: 0, timeTaken, xpEarned: 5 * (activeTopicData.content.length || 1), accuracy: 100 }); // XP for reading
+        setCurrentScreen('lessonComplete');
       }
     }
+  };
 
-    usageData.usageLastMinute += 1;
-    usageData.usageToday += 1;
-    usageData.lastUpdateTimeStamp = now.toISOString();
-    usageData.name = modalName; // Ensure name is correct
-
-    await set(usageRef, usageData);
-    console.log(`API usage stats updated successfully for ${modalName}.`);
-  } catch (error) {
-    console.error(`Error updating API usage stats for ${modalName}:`, error);
-  }
-};
-
-export const getStats = async (modalName) => {
-  try {
-    const app = initializeApp(firebaseConfig); // Consider initializing app once globally
-    const db = getDatabase(app);
-    const modalIndex = GENMODALNAMES.indexOf(modalName);
-
-    if (modalIndex === -1) {
-      console.error(`Modal ${modalName} not found in GENMODALNAMES. Returning default empty stats.`);
-      return {
-        name: modalName,
-        usageLastMinute: 0,
-        usageToday: 0,
-        lastUpdateTimeStamp: new Date().toISOString()
-      };
-    }
-
-    const usageRef = ref(db, `apiusage/default/${modalIndex}`);
-    const snapshot = await get(usageRef);
-    let usageData = snapshot.exists() ? snapshot.val() : {
-      name: modalName,
-      usageLastMinute: 0,
-      usageToday: 0,
-      lastUpdateTimeStamp: new Date().toISOString()
-    };
+  const handleQuizComplete = (finalScore, numQuestions) => {
+    const timeTaken = topicStartTime ? Math.floor((Date.now() - topicStartTime) / 1000) : 0;
+    const accuracy = numQuestions > 0 ? (finalScore / numQuestions) * 100 : 0;
+    let xp = (activeTopicData?.content?.length || 1) * 2; // Base XP for content read
+    xp += Math.floor(accuracy / 10); // Accuracy bonus
+    if (timeTaken < 180 && numQuestions > 0) xp += Math.max(0, 3 - Math.floor(timeTaken/60)); // Time bonus
+    if (numQuestions === 0) xp = (activeTopicData?.content?.length || 1) * 5; // XP for just reading if no questions
     
-    // Ensure name field is present
-    if (!usageData.name) {
-        usageData.name = modalName;
+    setTopicStats({ score: finalScore, totalQuestions: numQuestions, timeTaken, xpEarned: xp, accuracy: parseFloat(accuracy.toFixed(1)) });
+    setCurrentScreen('lessonComplete');
+  };
+
+  const handleTopicCompleteNext = async () => {
+    if (userdata && courseId && gradeId && topicStats.xpEarned > 0) {
+      try {
+        const courseKey = `${courseId}_${gradeId}`;
+        let currentXpData = await getData(app, userdata.uid, "xp", "{}");
+        let currentXp = JSON.parse(currentXpData);
+        currentXp[courseKey] = (currentXp[courseKey] || 0) + topicStats.xpEarned;
+        await setData(app, userdata.uid, "xp", JSON.stringify(currentXp));
+        console.log(`XP ${topicStats.xpEarned} added for ${courseKey}`);
+      } catch (e) {
+        console.error("Failed to save XP:", e);
+      }
     }
-
-    return usageData;
-  } catch (error) {
-    console.error(`Error getting API usage stats for ${modalName}:`, error);
-    return { // Return a default structure on error
-      name: modalName,
-      usageLastMinute: 0,
-      usageToday: 0,
-      lastUpdateTimeStamp: new Date().toISOString()
-    };
-  }
-};
---- END OF FILE src/api-ai.js ---
---- START OF FILE src/learn/NormalQuiz.jsx ---
-import React, { useState, useEffect, useCallback } from 'react';
-import { getData, setData } from '../api'; 
-import { Button, Typography, Box, Paper, LinearProgress, CircularProgress, Dialog, DialogTitle, DialogContent, DialogActions, alpha } from '@mui/material';
-import { CheckCircle, XCircle, Clock, Star, RotateCcw, TrendingUp } from 'lucide-react';
-import { useNavigate } from 'react-router';
-
-
-// Helper function to shuffle an array
-const shuffleArray = (array) => {
+    setCurrentScreen('lessonList'); 
+    setActiveLessonIndex(null);
+    setActiveTopicIndex(null);
+    setCurrentContentIndex(0);
+    setQuestionsForActiveTopic([]);
+    setTopicStartTime(null);
+  };
+  
+  const shuffleArray = (array) => {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
     return newArray;
-};
-
-const getProgressColor = (percentage) => {
-    if (percentage < 33) return '#f44336'; // red
-    if (percentage < 66) return '#ff9800'; // orange
-    return '#4caf50'; // green
-};
-
-const getMotivationalMessage = (stats, initialMistakesCount) => {
-    if (!stats) return "Keep practicing to improve!";
-  
-    if (stats.accuracy >= 95) {
-      return "Outstanding! You've aced this session. Your dedication is remarkable!";
-    } else if (stats.accuracy >= 80) {
-      return "Excellent work! High accuracy shows great understanding. Keep it up!";
-    } else if (initialMistakesCount === 0 && stats.accuracy < 80 ) { 
-      return "Good job completing the session! A little more focus and you'll master it all.";
-    } else if (initialMistakesCount > 0 && stats.accuracy > ((stats.totalQuestions - initialMistakesCount) / stats.totalQuestions * 100) ) {
-      const correctedMistakes = initialMistakesCount - (stats.totalQuestions - stats.score); // This logic might need refinement based on how score is updated in review
-      return `Fantastic effort reviewing! You've learned from ${correctedMistakes > 0 ? correctedMistakes : 'some'} mistake(s). Persistence is key!`;
-    } else if (initialMistakesCount > 0) {
-      return "Session complete! You took the time to review. Every attempt helps you grow stronger!";
-    }
-    return "Practice complete! Every step forward counts. Well done!";
   };
 
-const NormalQuiz = ({ materialData, app, userdata }) => {
-    const [questions, setQuestions] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
-    const navigate = useNavigate();
-
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [userAnswers, setUserAnswers] = useState({}); 
-    const [showFeedback, setShowFeedback] = useState(false);
-    const [isCorrect, setIsCorrect] = useState(null);
-
-    const [quizPhase, setQuizPhase] = useState('initial'); 
-    const [mistakeIndices, setMistakeIndices] = useState([]);
-    const [initialMistakeCount, setInitialMistakeCount] = useState(0); // To store mistakes from the first round
-
-    const [startTime, setStartTime] = useState(null);
-    const [endTime, setEndTime] = useState(null);
-    const [score, setScore] = useState(0); // Score for the initial round
-
-    const [showCompletionDialog, setShowCompletionDialog] = useState(false);
-    const [finalStats, setFinalStats] = useState(null);
-    
-    const [questionsToAsk, setQuestionsToAsk] = useState([]);
-    const [correctlyAnsweredUniqueIndices, setCorrectlyAnsweredUniqueIndices] = useState(new Set());
-
-
-    const loadQuestions = useCallback(async () => {
-        setLoading(true);
-        setError('');
-        try {
-            const parsedQuestions = materialData.content; 
-            if (!Array.isArray(parsedQuestions) || parsedQuestions.length === 0) {
-                throw new Error("Practice data is invalid or empty.");
-            }
-            const limitedQuestions = parsedQuestions.slice(0, 15); 
-            setQuestions(limitedQuestions);
-            setQuestionsToAsk(shuffleArray(limitedQuestions.map((_, index) => index))); 
-            setStartTime(Date.now());
-            setCorrectlyAnsweredUniqueIndices(new Set()); // Reset for new quiz
-        } catch (err) {
-            console.error("Error loading or parsing practice questions:", err);
-            setError("Failed to load practice questions. The data might be malformed.");
-        }
-        setLoading(false);
-    }, [materialData.content]); 
-
-    useEffect(() => {
-        if (materialData && materialData.content) {
-            loadQuestions();
+  const handleBackNavigation = () => {
+    if (currentScreen === 'lessonContent') {
+        if (currentContentIndex > 0) {
+            setCurrentContentIndex(prev => prev -1);
+            setIsNextButtonActive(true); // Assume can go next immediately when going back
         } else {
-            setError("Practice content is missing.");
-            setLoading(false);
+            setCurrentScreen('lessonList');
+            setActiveLessonIndex(null);
+            setActiveTopicIndex(null);
         }
-    }, [loadQuestions, materialData]);
-
-    const handleAnswer = (selectedOptionIndex) => {
-        if (showFeedback) return; 
-
-        const actualQuestionIndex = questionsToAsk[currentQuestionIndex];
-        const currentQuestion = questions[actualQuestionIndex];
-        
-        const correct = selectedOptionIndex === currentQuestion.correctAnswerIndex;
-        setIsCorrect(correct);
-        setShowFeedback(true);
-
-        setUserAnswers(prev => ({ ...prev, [actualQuestionIndex]: selectedOptionIndex }));
-
-        if (correct) {
-            if (quizPhase === 'initial') setScore(prev => prev + 1);
-            setCorrectlyAnsweredUniqueIndices(prev => new Set(prev).add(actualQuestionIndex));
-        } else {
-            if (quizPhase === 'initial' && !mistakeIndices.includes(actualQuestionIndex)) {
-                setMistakeIndices(prev => [...prev, actualQuestionIndex]);
-            }
-        }
-
-        setTimeout(() => {
-            setShowFeedback(false);
-            setIsCorrect(null);
-            if (currentQuestionIndex < questionsToAsk.length - 1) {
-                setCurrentQuestionIndex(prev => prev + 1);
-            } else {
-                if (quizPhase === 'initial') {
-                    setInitialMistakeCount(mistakeIndices.length); // Store initial mistakes
-                    if (mistakeIndices.length > 0) {
-                        setQuizPhase('review');
-                        setQuestionsToAsk(shuffleArray([...mistakeIndices])); 
-                        setCurrentQuestionIndex(0);
-                    } else {
-                        setQuizPhase('completed');
-                        setEndTime(Date.now());
-                    }
-                } else if (quizPhase === 'review') {
-                    setQuizPhase('completed');
-                    setEndTime(Date.now());
-                }
-            }
-        }, 1500); 
-    };
-
-    useEffect(() => {
-        if (quizPhase === 'completed' && startTime && endTime) {
-            const timeTakenSeconds = Math.floor((endTime - startTime) / 1000);
-            const accuracy = questions.length > 0 ? (score / questions.length) * 100 : 0; // Accuracy based on initial round score
-            
-            let xpEarned = Math.floor(timeTakenSeconds / 10); // Time XP (adjusted)
-            xpEarned += Math.floor(accuracy / 5); // Accuracy bonus
-            xpEarned += 10; // Base XP for completion
-
-            setFinalStats({
-                score, // Score from the initial round
-                totalQuestions: questions.length,
-                accuracy: parseFloat(accuracy.toFixed(1)),
-                timeTaken: timeTakenSeconds,
-                xpEarned,
-                initialMistakes: initialMistakeCount
-            });
-            setShowCompletionDialog(true);
-
-            const saveXP = async () => {
-                try {
-                    const courseKey = (materialData.course + '-' + materialData.grade).replace(/-/g, '_');
-                    let currentXpData = await getData(app, userdata.uid, "xp", "{}");
-                    let currentXp = JSON.parse(currentXpData);
-                    currentXp[courseKey] = (currentXp[courseKey] || 0) + xpEarned;
-                    await setData(app, userdata.uid, "xp", JSON.stringify(currentXp));
-                } catch (e) {
-                    console.error("Failed to save XP:", e);
-                }
-            };
-            saveXP();
-        }
-    }, [quizPhase, startTime, endTime, score, questions.length, materialData, app, userdata, initialMistakeCount]);
-
-
-    const restartQuiz = () => {
-        setCurrentQuestionIndex(0);
-        setUserAnswers({});
-        setShowFeedback(false);
-        setIsCorrect(null);
-        setQuizPhase('initial');
-        setMistakeIndices([]);
-        setInitialMistakeCount(0);
-        setStartTime(null);
-        setEndTime(null);
-        setScore(0);
-        setShowCompletionDialog(false);
-        setFinalStats(null);
-        loadQuestions(); 
-    };
-
-    if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}><CircularProgress /></Box>;
-    if (error) return <Typography color="error" sx={{textAlign: 'center', my: 2}}>{error}</Typography>;
-    if (questions.length === 0) return <Typography sx={{textAlign: 'center', my: 2}}>No questions available for this practice session.</Typography>;
-    
-    const actualQuestionIndex = questionsToAsk[currentQuestionIndex];
-    const currentQuestionData = questions[actualQuestionIndex];
-
-    if (!currentQuestionData) {
-         return <Typography color="error" sx={{textAlign: 'center', my: 2}}>Error: Could not load current question.</Typography>;
+    } else if (currentScreen === 'questionSession' || currentScreen === 'lessonComplete') {
+        setCurrentScreen('lessonList'); // Or back to 'lessonContent' for the last content block? For now, list.
+        setActiveLessonIndex(null);
+        setActiveTopicIndex(null);
+        setCurrentContentIndex(0);
+        setQuestionsForActiveTopic([]);
+    } else if (currentScreen === 'lessonList') {
+        navigate('/notes');
     }
+  };
 
-    const progressPercentage = questions.length > 0 ? (correctlyAnsweredUniqueIndices.size / questions.length) * 100 : 0;
-    const currentProgressColor = getProgressColor(progressPercentage);
+  // --- Rendering Logic ---
+  const renderCurrentScreen = () => {
+    if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}><CircularProgress color="inherit" /></Box>;
+    if (error) return <Typography color="error" sx={{ textAlign: 'center', my: 2, color: 'white' }}>{error}</Typography>;
+    if (!dynamicNoteData) return <Typography sx={{ textAlign: 'center', my: 2, color: 'white' }}>No dynamic notes data available.</Typography>;
 
-
-    return (
-        <Paper elevation={2} sx={{ p: {xs: 2, sm: 3}, backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
-            <Typography variant="h6" sx={{ mb: 1, textAlign: 'center', color: 'lightgray' }}>
-                {quizPhase === 'initial' ? 'Practice Session' : 'Reviewing Challenges'}
-            </Typography>
-            <Box sx={{ width: '100%', mb: 2, backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: '5px', padding: '2px', boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.4)' }}>
-                <LinearProgress 
-                    variant="determinate" 
-                    value={progressPercentage} 
-                    sx={{ 
-                        height: '10px', 
-                        borderRadius: '4px',
-                        '& .MuiLinearProgress-bar': { 
-                            backgroundColor: currentProgressColor,
-                            borderRadius: '4px',
-                            backgroundImage: `linear-gradient(45deg, ${alpha(currentProgressColor, 0.7)} 25%, transparent 25%, transparent 50%, ${alpha(currentProgressColor, 0.7)} 50%, ${alpha(currentProgressColor, 0.7)} 75%, transparent 75%, transparent)`
-                        }
-                    }} 
-                />
-            </Box>
-
-            <Box sx={{ mb: 3, p:2, backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: '4px'}}>
-                <Typography variant="h5" component="h2" sx={{ fontWeight: 'medium', color: 'white' }}>
-                    {currentQuestionData.question}
-                </Typography>
-            </Box>
-
-            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2 }}>
-                {currentQuestionData.options.map((option, index) => {
-                    let buttonSxProps = {
-                        justifyContent: 'flex-start', 
-                        py: 1.5, 
-                        textTransform: 'none',
-                        color: 'white',
-                        transition: 'background-color 0.3s ease, opacity 0.3s ease',
-                        borderRadius: '8px',
-                    };
-
-                    if (showFeedback) {
-                        if (index === currentQuestionData.correctAnswerIndex) {
-                            buttonSxProps.backgroundColor = 'success.dark';
-                            buttonSxProps['&:hover'] = { backgroundColor: 'success.main' };
-                        } else if (index === userAnswers[actualQuestionIndex] && !isCorrect) {
-                            buttonSxProps.backgroundColor = 'error.dark';
-                            buttonSxProps['&:hover'] = { backgroundColor: 'error.main' };
-                        } else {
-                            buttonSxProps.backgroundColor = 'rgba(255,255,255,0.05)';
-                            buttonSxProps.opacity = 0.6;
-                        }
-                    } else {
-                        buttonSxProps.backgroundColor = 'rgba(255,255,255,0.15)';
-                        buttonSxProps['&:hover'] = { backgroundColor: 'rgba(255,255,255,0.25)' };
-                    }
-                    return (
-                        <Button
-                            key={index}
-                            variant="contained"
-                            onClick={() => handleAnswer(index)}
-                            disabled={showFeedback}
-                            fullWidth
-                            sx={buttonSxProps}
-                            startIcon={showFeedback && index === currentQuestionData.correctAnswerIndex ? <CheckCircle /> : showFeedback && index === userAnswers[actualQuestionIndex] && !isCorrect ? <XCircle /> : null}
-                        >
-                            {String.fromCharCode(65 + index)}. {option}
-                        </Button>
-                    );
-                })}
-            </Box>
-
-            {showFeedback && (
-                <Typography variant="subtitle1" sx={{ mt: 2, color: isCorrect ? 'success.light' : 'error.light', textAlign: 'center', fontWeight: 'bold' }}>
-                    {isCorrect ? 'Correct!' : 'Incorrect!'}
-                </Typography>
-            )}
-            <Typography variant="caption" display="block" sx={{ mt:3, textAlign: 'center', color: 'rgba(255,255,255,0.5)' }}>
-                 Practice makes perfect!
-            </Typography>
-
-            <Dialog open={showCompletionDialog} onClose={() => setShowCompletionDialog(false)} PaperProps={{sx: {backgroundColor: 'rgba(20,20,30,0.9)', backdropFilter: 'blur(8px)', color: 'white', borderRadius: '16px', p:2, maxWidth: '450px'}}}>
-                <DialogTitle sx={{textAlign: 'center', fontWeight: 'bold', fontSize: '2rem', color: '#82aaff'}}>Practice Complete!</DialogTitle>
-                <DialogContent sx={{textAlign: 'center'}}>
-                    {finalStats && (
-                        <>
-                            <Typography sx={{my: 2, color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem'}}>
-                                {getMotivationalMessage(finalStats, finalStats.initialMistakes)}
-                            </Typography>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-around', width: '100%', my: 3, gap: {xs:1, sm:2} }}>
-                                <Paper sx={{p:{xs:1,sm:1.5}, textAlign:'center', bgcolor:'rgba(255,255,255,0.1)', flex: 1, borderRadius: '10px', border: '1px solid rgba(255,255,255,0.2)'}}>
-                                    <Typography variant="h5" component="div" sx={{fontWeight: 'bold', color: '#ffeb3b'}}>{finalStats.score}/{finalStats.totalQuestions}</Typography>
-                                    <Typography variant="caption" sx={{color: 'rgba(255,255,255,0.7)'}}>Score</Typography>
-                                </Paper>
-                                <Paper sx={{p:{xs:1,sm:1.5}, textAlign:'center', bgcolor:'rgba(255,255,255,0.1)', flex: 1, borderRadius: '10px', border: '1px solid rgba(255,255,255,0.2)'}}>
-                                    <Typography variant="h5" component="div" sx={{fontWeight: 'bold', color: '#81c784'}}>{finalStats.accuracy}%</Typography>
-                                    <Typography variant="caption" sx={{color: 'rgba(255,255,255,0.7)'}}>Accuracy</Typography>
-                                </Paper>
-                                <Paper sx={{p:{xs:1,sm:1.5}, textAlign:'center', bgcolor:'rgba(255,255,255,0.1)', flex: 1, borderRadius: '10px', border: '1px solid rgba(255,255,255,0.2)'}}>
-                                    <Typography variant="h5" component="div" sx={{fontWeight: 'bold', color: '#64b5f6'}}>{finalStats.timeTaken}s</Typography>
-                                    <Typography variant="caption" sx={{color: 'rgba(255,255,255,0.7)'}}>Time</Typography>
-                                </Paper>
-                            </Box>
-                             <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', my:2, color: '#ffc107', fontWeight: 'bold', fontSize: '1.3rem'}}>
-                                <Star sx={{mr:1, fontSize: '1.8rem'}} /> XP EARNED: +{finalStats.xpEarned}
-                            </Box>
-                        </>
-                    )}
-                </DialogContent>
-                <DialogActions sx={{justifyContent: 'space-around', pb:2, px:2}}>
-                    <Button onClick={restartQuiz} variant="outlined" startIcon={<RotateCcw/>} sx={{color: 'white', borderColor: 'rgba(255,255,255,0.5)', borderRadius: '8px', '&:hover': {borderColor: 'white', backgroundColor: 'rgba(255,255,255,0.1)'}}}>
-                        Retry Session
-                    </Button>
-                    <Button onClick={() => {setShowCompletionDialog(false); navigate('/learn');}} variant="contained" color="primary" endIcon={<TrendingUp />} sx={{borderRadius: '8px', backgroundColor: '#673ab7', '&:hover': {backgroundColor: '#512da8'}}}>
-                        More Practice
-                    </Button>
-                </DialogActions>
-                 <Typography variant="caption" display="block" sx={{ textAlign: 'center', color: 'rgba(255,255,255,0.5)', py:1 }}>
-                     Keep learning, keep growing!
-                </Typography>
-            </Dialog>
-        </Paper>
-    );
-};
-
-export default NormalQuiz;
---- END OF FILE src/learn/NormalQuiz.jsx ---
---- START OF FILE src/pages/CreateLearningMaterial.jsx ---
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router';
-import Cookies from 'js-cookie';
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../config';
-import { getCourses, addLearningMaterialEntry, getRealData } from '../api';
-import { askGen2Flash, askGenForTopics } from '../api-ai'; 
-import { Button, Select, MenuItem, FormControl, InputLabel, CircularProgress, Typography, Box, Paper, Stepper, Step, StepLabel, Alert, TextField } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-
-// Helper to serialize topic name for ID
-const serializeTopic = (topicName) => {
-    return topicName.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/gi, '');
-};
-
-const CreateLearningMaterial = () => {
-    const [userdata, setUserdata] = useState(null);
-    const navigate = useNavigate();
-    const app = initializeApp(firebaseConfig);
-
-    const [activeStep, setActiveStep] = useState(0);
-    const [coursesData, setCoursesData] = useState([]);
-    const [selectedCourse, setSelectedCourse] = useState(null);
-    const [selectedModuleIndex, setSelectedModuleIndex] = useState('');
-
-    const [noteContent, setNoteContent] = useState('');
-    const [topics, setTopics] = useState([]);
-    const [selectedTopic, setSelectedTopic] = useState('');
-
-    const [selectedToolId, setSelectedToolId] = useState('normal_quiz'); 
-
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState('');
-    const [showManualNoteInput, setShowManualNoteInput] = useState(false);
-    const [manualNoteContent, setManualNoteContent] = useState("");
-
-
-    const steps = ['Select Subject & Module', 'Select Topic', 'Select Tool & Generate'];
-
-    useEffect(() => {
-        const userCookie = Cookies.get("user");
-        if (!userCookie) {
-            navigate('/login');
-            return;
+    switch (currentScreen) {
+      case 'lessonList':
+        return <LessonListScreen lessons={dynamicNoteData.notes || []} onSelectTopic={handleSelectTopic} />;
+      case 'lessonContent':
+        if (!activeTopicData || !activeContentBlock) {
+          return <Typography sx={{color: 'white'}}>Error: Topic or content data not found.</Typography>;
         }
-        const parsedUserdata = JSON.parse(userCookie);
-        setUserdata(parsedUserdata);
+        return (
+          <LessonContentScreen 
+            contentBlock={activeContentBlock}
+            topicName={activeTopicData.name}
+            onNextContentOrQuiz={handleNextContentOrQuiz}
+            isNextActive={isNextButtonActive}
+            contentProgress={((currentContentIndex + 1) / (activeTopicData.content?.length || 1)) * 100}
+            isLastContent={currentContentIndex === (activeTopicData.content?.length || 0) - 1}
+            hasQuestions={activeTopicData.questions && activeTopicData.questions.length > 0}
+          />
+        );
+      case 'questionSession':
+        return (
+          <QuestionSessionScreen
+            questions={questionsForActiveTopic}
+            onQuizComplete={handleQuizComplete}
+          />
+        );
+      case 'lessonComplete':
+        return (
+          <LessonCompleteScreen
+            xpEarned={topicStats.xpEarned}
+            accuracy={topicStats.accuracy}
+            timeTakenInSeconds={topicStats.timeTaken}
+            onNextClick={handleTopicCompleteNext}
+            itemName={activeTopicData?.name || "Topic"}
+          />
+        );
+      default:
+        return <Typography sx={{color: 'white'}}>Unknown screen state.</Typography>;
+    }
+  };
 
-        const fetchCourses = async () => {
-            setIsLoading(true);
-            try {
-                const fetchedCourses = await getCourses(app);
-                const userClass = parsedUserdata?.class;
-                if (userClass) {
-                    setCoursesData(fetchedCourses.filter(c => c.grade === userClass));
-                } else {
-                    setCoursesData(fetchedCourses || []);
-                }
-            } catch (err) {
-                setError("Failed to load courses.");
-                console.error(err);
-            }
-            setIsLoading(false);
-        };
-        fetchCourses();
-    }, [app, navigate]);
+  const getHeaderTitle = () => {
+    if (!dynamicNoteData || !allCourses.length) return "Dynamic Notes";
+    const courseInfo = allCourses.find(c => c.id === courseId && c.grade === gradeId);
+    const courseName = courseInfo ? courseInfo.name : "Course";
 
-    const handleNext = async () => {
-        setError('');
-        setIsLoading(true);
-        setShowManualNoteInput(false); 
+    if (currentScreen === 'lessonList') return courseName;
+    
+    const lessonName = activeLessonData?.name || "Lesson";
+    const topicName = activeTopicData?.name || `Topic ${activeTopicIndex !== null ? activeTopicIndex + 1 : ''}`;
 
-        if (activeStep === 0) { 
-            if (!selectedCourse || selectedModuleIndex === '') {
-                setError("Please select a course and a module.");
-                setIsLoading(false);
-                return;
-            }
-            try {
-                let finalNoteContent = '';
-                if (manualNoteContent.trim() && showManualNoteInput) { 
-                    finalNoteContent = manualNoteContent;
-                } else {
-                    const noteDBPath = `notes/${selectedCourse.id}/${selectedCourse.grade}/module${selectedModuleIndex + 1}`;
-                    const contentFromDB = await getRealData(app, noteDBPath, "");
+    if (currentScreen === 'lessonContent') {
+        const contentBlockName = activeContentBlock?.name || `Content ${currentContentIndex + 1}`;
+        return `${topicName} - ${contentBlockName}`;
+    }
+    if (currentScreen === 'questionSession') {
+      return `${topicName} - Quiz`;
+    }
+    if (currentScreen === 'lessonComplete') {
+      return `${topicName} - Results`;
+    }
+    return "Dynamic Notes";
+  };
+  
+  const buttonIconSize = isMobile ? 24 : 28;
+  const backButtonWidth = `${buttonIconSize + 16}px`; 
 
-                    if (!contentFromDB) {
-                        setError(`Note content not found for this module. You can paste it manually below to proceed.`);
-                        setShowManualNoteInput(true);
-                        setIsLoading(false);
-                        return;
-                    }
-                    finalNoteContent = contentFromDB;
-                }
-                
-                setNoteContent(finalNoteContent); 
-
-                const topicsResponse = await askGenForTopics(finalNoteContent); 
-                
-                if (topicsResponse) {
-                    const extractedTopics = topicsResponse.split('\n').map(t => t.trim()).filter(t => t.length > 0);
-                    setTopics(extractedTopics);
-                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-                } else {
-                    setError("AI failed to extract topics. The note might be empty or an API issue occurred. Try pasting content manually.");
-                    setShowManualNoteInput(true);
-                }
-            } catch (err) {
-                console.error("Error in Step 1:", err);
-                setError(`Failed to process note for topics. ${err.message}. You can try pasting the note content manually.`);
-                setShowManualNoteInput(true); 
-            }
-        } else if (activeStep === 1) { 
-            if (!selectedTopic) {
-                setError("Please select a topic.");
-                setIsLoading(false);
-                return;
-            }
-            setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        } else if (activeStep === 2) { 
-            if (!selectedToolId) {
-                setError("Please select a learning tool.");
-                setIsLoading(false);
-                return;
-            }
-            if (selectedToolId === 'normal_quiz') {
-                try {
-                    // Ensure the prompt clearly states to use ONLY the provided note content and selected topic
-                    const aiPrompt = `Based *only* on the following specific notes and focusing *exclusively* on the topic "${selectedTopic}", create exactly 15 multiple-choice quiz questions with 4 distinct options (one correct for each). Format the output as a valid JSON array of objects. Each object must have 'question' (string), 'options' (array of 4 strings), and 'correctAnswerIndex' (number 0-3). Ensure the JSON is well-formed and strictly adheres to the provided content and topic. Notes:\n\n${noteContent}`; 
-                    const questionsJsonResponse = await askGen2Flash(aiPrompt);
-
-                    let questionsData;
-                    try {
-                        let cleanedResponse = questionsJsonResponse;
-                        if (cleanedResponse.startsWith("```json")) {
-                            cleanedResponse = cleanedResponse.substring(7);
-                        }
-                        if (cleanedResponse.endsWith("```")) {
-                            cleanedResponse = cleanedResponse.substring(0, cleanedResponse.length - 3);
-                        }
-                        cleanedResponse = cleanedResponse.trim();
-                        questionsData = JSON.parse(cleanedResponse);
-
-                        if (!Array.isArray(questionsData) || questionsData.length === 0 || !questionsData.every(q => q.question && Array.isArray(q.options) && q.options.length === 4 && typeof q.correctAnswerIndex === 'number')) {
-                            throw new Error("AI returned malformed JSON for quiz questions. Expected an array of questions with 4 options and a correct index.");
-                        }
-                    } catch (parseError) {
-                        console.error("Failed to parse quiz JSON from AI:", parseError, "Response was:", questionsJsonResponse);
-                        setError("AI generated invalid data for the quiz. Please try again or rephrase the topic. The AI might have hallucinated or not followed the format.");
-                        setIsLoading(false);
-                        return;
-                    }
-                    
-                    const serializedTopicId = serializeTopic(selectedTopic);
-                    const materialEntry = {
-                        id: `${selectedCourse.id}_${selectedCourse.grade}_${serializedTopicId}_q_${Date.now()}`, 
-                        name: `${selectedTopic} Quiz`,
-                        author: userdata.email,
-                        course: selectedCourse.id,
-                        grade: selectedCourse.grade,
-                        tool_id: "normal_quiz",
-                        module_index: selectedModuleIndex,
-                        content: questionsData 
-                    };
-                    await addLearningMaterialEntry(app, materialEntry);
-                    navigate(`/learn/view/${materialEntry.id}`);
-
-                } catch (err) {
-                    console.error("Error generating Normal Quiz:", err);
-                    setError(`Failed to generate learning material. ${err.message}`);
-                }
-            } else {
-                setError("Selected tool not yet implemented.");
-            }
-        }
-        setIsLoading(false);
-    };
-
-    const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-        setError('');
-        setShowManualNoteInput(false); 
-        setManualNoteContent(""); 
-    };
-
-    const renderStepContent = (step) => {
-        switch (step) {
-            case 0:
-                return (
-                    <>
-                        <FormControl fullWidth margin="normal" variant="outlined" sx={{ backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 1 }}>
-                            <InputLabel sx={{color: 'white'}}>Select Course</InputLabel>
-                            <Select
-                                value={selectedCourse?.id || ''}
-                                onChange={(e) => setSelectedCourse(coursesData.find(c => c.id === e.target.value))}
-                                label="Select Course"
-                                sx={{color: 'white', '.MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.3)' }, '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.5)' }, '.MuiSvgIcon-root': {color: 'white'} }}
-                            >
-                                <MenuItem value=""><em>None</em></MenuItem>
-                                {coursesData.map((course) => (
-                                    <MenuItem key={course.id} value={course.id}>{course.name} ({course.subjectPrefix})</MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                        {selectedCourse && (
-                            <FormControl fullWidth margin="normal" variant="outlined" sx={{ backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 1 }}>
-                                <InputLabel sx={{color: 'white'}}>Select Module</InputLabel>
-                                <Select
-                                    value={selectedModuleIndex}
-                                    onChange={(e) => setSelectedModuleIndex(e.target.value)}
-                                    label="Select Module"
-                                     sx={{color: 'white', '.MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.3)' }, '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.5)' }, '.MuiSvgIcon-root': {color: 'white'} }}
-                                >
-                                    <MenuItem value=""><em>None</em></MenuItem>
-                                    {selectedCourse.modules.map((mod, index) => (
-                                        <MenuItem key={index} value={index}>{mod}</MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        )}
-                        {showManualNoteInput && (
-                            <TextField
-                                label="Paste Note Content Here"
-                                multiline
-                                rows={6}
-                                fullWidth
-                                variant="outlined"
-                                value={manualNoteContent}
-                                onChange={(e) => setManualNoteContent(e.target.value)}
-                                margin="normal"
-                                sx={{
-                                    backgroundColor: 'rgba(255,255,255,0.1)',
-                                    borderRadius: 1,
-                                    '& .MuiInputBase-root': { color: 'white' },
-                                    '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.3)' },
-                                    '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.5)' },
-                                    '& .MuiInputLabel-root': { color: 'rgba(255,255,255,0.7)' }
-                                }}
-                                placeholder="If the note was not found automatically, or you wish to use custom content, paste it here."
-                            />
-                        )}
-                    </>
-                );
-            case 1:
-                return (
-                    <FormControl fullWidth margin="normal" variant="outlined" sx={{ backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 1 }}>
-                        <InputLabel sx={{color: 'white'}}>Select Topic</InputLabel>
-                        <Select
-                            value={selectedTopic}
-                            onChange={(e) => setSelectedTopic(e.target.value)}
-                            label="Select Topic"
-                            sx={{color: 'white', '.MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.3)' }, '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.5)' }, '.MuiSvgIcon-root': {color: 'white'} }}
-                        >
-                            <MenuItem value=""><em>None</em></MenuItem>
-                            {topics.map((topic, index) => (
-                                <MenuItem key={index} value={topic}>{topic}</MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
-                );
-            case 2:
-                return (
-                    <FormControl fullWidth margin="normal" variant="outlined" sx={{ backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 1 }}>
-                        <InputLabel sx={{color: 'white'}}>Select Learning Tool</InputLabel>
-                        <Select
-                            value={selectedToolId}
-                            onChange={(e) => setSelectedToolId(e.target.value)}
-                            label="Select Learning Tool"
-                            sx={{color: 'white', '.MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.3)' }, '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.5)' }, '.MuiSvgIcon-root': {color: 'white'} }}
-                        >
-                            <MenuItem value="normal_quiz">Interactive Quiz</MenuItem>
-                            {/* Add other tools here later */}
-                        </Select>
-                    </FormControl>
-                );
-            default:
-                return 'Unknown step';
-        }
-    };
-
-
-    return (
-        <div className='bg-cover h-screen flex items-center justify-center bg-[url(/src/assets/background.jpg)] p-4'>
-            <Paper elevation={3} sx={{
-                p: 4,
-                maxWidth: 600,
-                width: '100%',
-                backgroundColor: 'rgba(0,0,0,0.7)',
-                backdropFilter: 'blur(10px)',
-                color: 'white',
-                borderRadius: '12px'
-            }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <Button onClick={() => navigate('/learn')} startIcon={<ArrowBackIcon />} sx={{ color: 'white', mr: 'auto' }}>
-                        Back to Lab
-                    </Button>
-                    <Typography variant="h5" component="h1" sx={{ fontWeight: 'bold', textAlign: 'center', flexGrow: 1 }}>
-                        Create Learning Material
-                    </Typography>
-                </Box>
-
-
-                <Stepper activeStep={activeStep} alternativeLabel sx={{ mb: 3, '& .MuiStepLabel-label': {color: 'rgba(255,255,255,0.7)'}, '& .MuiStepLabel-label.Mui-active': {color: 'white'}, '& .MuiStepLabel-label.Mui-completed': {color: 'lightgreen'} }}>
-                    {steps.map((label) => (
-                        <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
-                        </Step>
-                    ))}
-                </Stepper>
-
-                {error && <Alert severity="error" sx={{ mb: 2, backgroundColor: 'rgba(211, 47, 47, 0.2)', color: '#ffcdd2' }}>{error}</Alert>}
-                
-                <Box sx={{ minHeight: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    {isLoading && (activeStep === 0 && !showManualNoteInput || activeStep === 2) ? <CircularProgress sx={{alignSelf: 'center', mb:2}} /> : renderStepContent(activeStep)}
-                </Box>
-
-
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
-                    <Button
-                        disabled={activeStep === 0 || isLoading}
-                        onClick={handleBack}
-                        variant="outlined"
-                        sx={{ color: 'white', borderColor: 'rgba(255,255,255,0.5)', '&:hover': {borderColor: 'white'} }}
-                    >
-                        Back
-                    </Button>
-                    <Button
-                        variant="contained"
-                        onClick={handleNext}
-                        disabled={isLoading && !showManualNoteInput} 
-                        sx={{ backgroundColor: '#4f46e5', '&:hover': { backgroundColor: '#4338ca' } }}
-                    >
-                        {isLoading && !showManualNoteInput ? <CircularProgress size={24} color="inherit" /> : (activeStep === steps.length - 1 ? 'Generate & View' : 'Next')}
-                    </Button>
-                </Box>
-            </Paper>
+  return (
+    <div className='bg-cover h-screen flex bg-[url(/src/assets/background.jpg)]'>
+      <div className='flex h-full w-full md:flex-row'>
+        {!isMobile && <Toolbar current={'notes'} />}
+        <div className='flex-grow h-full md:h-fit md:my-auto flex items-center justify-center w-full'>
+          <div className='mx-auto h-full w-full max-w-md md:rounded-xl md:backdrop-blur-md overflow-hidden shadow-lg bg-[#0005]'>
+            <div className="text-white font-semibold font-sans flex h-20 items-center justify-between px-4 w-full text-xl md:text-2xl">
+              <button
+                onClick={handleBackNavigation}
+                className="p-2 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none"
+                aria-label="Go back"
+              >
+                <ArrowLeft size={buttonIconSize} strokeWidth={2.5} />
+              </button>
+              <span className="text-center flex-grow mx-2 truncate">
+                {getHeaderTitle()}
+              </span>
+              <div style={{ width: backButtonWidth, flexShrink: 0 }}></div>
+            </div>
+            <div className="overflow-y-auto pb-5 md:max-h-150 max-h-[calc(100%-5rem)] no-scrollbar px-2 md:px-4">
+              {renderCurrentScreen()}
+            </div>
+          </div>
         </div>
-    );
+        {isMobile && <div className='md:hidden fixed bottom-0 left-0 w-full'><Navbar current={'notes'} /></div>}
+      </div>
+    </div>
+  );
 };
 
-export default CreateLearningMaterial;
---- END OF FILE src/pages/CreateLearningMaterial.jsx ---
+export default DyNotesViewer;
+--- END OF FILE src/pages/DyNotesViewer.jsx ---
+--- START OF FILE src/pages/widgets/dynotes/LessonScreen.jsx ---
+import React from 'react';
+import DynamicColorProgressBar from './DynamicColorProgressBar';
+import { Button, Typography } from '@mui/material';
+import { MathJax, MathJaxContext } from 'better-react-mathjax';
+
+const LessonScreen = ({ 
+    contentBlock,
+    topicName,
+    onNextContentOrQuiz, 
+    isNextActive, 
+    contentProgress,
+    isLastContent,
+    hasQuestions
+}) => {
+  if (!contentBlock) {
+    return <div className="text-center text-white/70 p-4">Loading content...</div>;
+  }
+
+  const mathJaxConfig = {
+    loader: { load: ["input/tex", "output/svg"] },
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+    },
+    svg: { fontCache: 'global' }
+  };
+  
+  const buttonText = isLastContent 
+    ? (hasQuestions ? "Start Quiz" : "Finish Topic")
+    : "Next Content";
+
+  return (
+    <div className='flex flex-col gap-5 p-2'>
+      <div className="mb-3">
+          <Typography variant="caption" sx={{color: 'rgba(255,255,255,0.7)', display: 'block', textAlign: 'center', mb: 0.5}}>
+              {topicName || 'Topic'} Progress
+          </Typography>
+          <DynamicColorProgressBar value={contentProgress || 0} />
+      </div>
+      
+      <div className='flex flex-col gap-3'>
+        {(topicName && contentProgress <= (1 / (contentBlock?.parentLength || 1) * 100) ) &&  // Show topic name only for the first content block
+          <h2 className="text-xl font-semibold text-white mb-1">{topicName}</h2>
+        }
+        <MathJaxContext config={mathJaxConfig}>
+          <div className='bg-[#0005] p-3 rounded-md text-white/90 text-justify'>
+            {contentBlock.name && <h3 className="text-md font-semibold mb-1">{contentBlock.name}</h3>}
+            {contentBlock.text && <p className="mb-2 whitespace-pre-wrap">{contentBlock.text}</p>}
+            {contentBlock.mathjax && <MathJax>{contentBlock.mathjax}</MathJax>}
+          </div>
+        </MathJaxContext>
+        <div className='flex-col w-full flex items-end mt-3'>
+          <Button 
+            variant='contained' 
+            onClick={onNextContentOrQuiz} 
+            disabled={!isNextActive}
+            sx={{ 
+              backgroundColor: isNextActive ? '#4caf50' : '#555', 
+              '&:hover': {
+                backgroundColor: isNextActive ? '#388e3c' : '#555',
+              },
+              color: 'white'
+            }}
+          >
+            {buttonText}
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LessonScreen;
+--- END OF FILE src/pages/widgets/dynotes/LessonScreen.jsx ---

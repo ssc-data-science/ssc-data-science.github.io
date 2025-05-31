@@ -1,101 +1,292 @@
-import React, { useEffect, useState } from 'react';
-import Toolbar from '../assets/components/Toolbar'; // Ensure this path is correct
-import Navbar from '../assets/components/Navbar';   // Ensure this path is correct
-import { useNavigate } from 'react-router';     // Using react-router-dom
-import { ArrowLeft } from 'lucide-react';           // Icon for the back button
-
-// Optional: Firebase and Cookies, uncomment if needed for auth/data later
+import React, { useEffect, useState, useCallback } from 'react';
+import Toolbar from '../assets/components/Toolbar';
+import Navbar from '../assets/components/Navbar';
+import { useNavigate, useParams } from 'react-router';
+import { ArrowLeft } from 'lucide-react';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../config';
 import Cookies from 'js-cookie';
-import LessonList from './widgets/dynotes/LessonList';
-import LessonScreen from './widgets/dynotes/LessonScreen';
-import QuestionScreen from './widgets/dynotes/QuestionScreen';
-import GameOverScreen from './widgets/dynotes/GameOverScreen';
+import { getDynamicNotes, getData, setData, getCourses } from '../api';
+import { Button, CircularProgress, Box, Typography } from '@mui/material';
+
+import LessonListScreen from './widgets/dynotes/LessonList';
+import LessonContentScreen from './widgets/dynotes/LessonScreen';
+import QuestionSessionScreen from './widgets/dynotes/QuestionScreen';
+import LessonCompleteScreen from './widgets/dynotes/GameOverScreen';
 
 const DyNotesViewer = () => {
   const navigate = useNavigate();
+  const { courseId, gradeId } = useParams();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const app = initializeApp(firebaseConfig);
+
+  const [userdata, setUserdata] = useState(null);
+  const [dynamicNoteData, setDynamicNoteData] = useState(null);
+  const [allCourses, setAllCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  // Screen and state management
+  const [currentScreen, setCurrentScreen] = useState('lessonList');
+  
+  const [activeLessonIndex, setActiveLessonIndex] = useState(null);
+  const [activeTopicIndex, setActiveTopicIndex] = useState(null);
+  const [currentContentIndex, setCurrentContentIndex] = useState(0); // Index for content block within a topic
+
+  // Derived state for active lesson and topic data
+  const activeLessonData = activeLessonIndex !== null && dynamicNoteData ? dynamicNoteData.notes[activeLessonIndex] : null;
+  const activeTopicData = activeLessonData && activeTopicIndex !== null ? activeLessonData.topics[activeTopicIndex] : null;
+  const activeContentBlock = activeTopicData && activeTopicData.content ? activeTopicData.content[currentContentIndex] : null;
+
+  const [isNextButtonActive, setIsNextButtonActive] = useState(false); // For enabling "Next Content / Start Quiz" button
+
+  const [questionsForActiveTopic, setQuestionsForActiveTopic] = useState([]);
+  
+  const [topicStats, setTopicStats] = useState({ score: 0, totalQuestions: 0, timeTaken: 0, xpEarned: 0, accuracy: 0 });
+  const [topicStartTime, setTopicStartTime] = useState(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Optional: Basic authentication check (uncomment if this page requires login)
   useEffect(() => {
-    const userCookie = Cookies.get("user"); // Replace "user" if your cookie name is different
+    const userCookie = Cookies.get("user");
     if (!userCookie) {
       navigate('/login');
+      return;
     }
-  }, [navigate]);
+    setUserdata(JSON.parse(userCookie));
 
-  const handleBackClick = () => {
-    navigate(-1); // Navigates to the previous page in the browser's history
+    const fetchData = async () => {
+      setLoading(true);
+      setError('');
+      try {
+        const [notesData, coursesList] = await Promise.all([
+          getDynamicNotes(app, courseId, gradeId),
+          getCourses(app)
+        ]);
+
+        if (notesData && notesData.notes && notesData.notes.length > 0) {
+          setDynamicNoteData(notesData);
+        } else {
+          setError('Dynamic notes not found or are empty for this course.');
+        }
+        setAllCourses(coursesList || []);
+      } catch (err) {
+        console.error("Error fetching dynamic notes data:", err);
+        setError('Failed to load dynamic notes. Please try again.');
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [app, courseId, gradeId, navigate]);
+
+  // --- Navigation and State Logic ---
+
+  const handleSelectTopic = (lessonIdx, topicIdx) => {
+    setActiveLessonIndex(lessonIdx);
+    setActiveTopicIndex(topicIdx);
+    setCurrentContentIndex(0); // Start from the first content block of the topic
+    setCurrentScreen('lessonContent');
+    setIsNextButtonActive(false); 
+    setTimeout(() => setIsNextButtonActive(true), 3000); // Reading time for the first content block
+  };
+  
+  const handleNextContentOrQuiz = () => {
+    if (!activeTopicData || !activeTopicData.content) return;
+
+    if (currentContentIndex < activeTopicData.content.length - 1) {
+      // More content blocks in the current topic
+      setCurrentContentIndex(prev => prev + 1);
+      setIsNextButtonActive(false);
+      setTimeout(() => setIsNextButtonActive(true), 3000); // Reading time for next content block
+    } else {
+      // All content blocks for the topic are viewed, proceed to quiz or completion
+      let currentTopicQuestions = [];
+      if (activeTopicData.questions && activeTopicData.questions.length > 0) {
+          currentTopicQuestions = activeTopicData.questions.map(q => ({
+              ...q, 
+              lessonName: activeLessonData?.name, 
+              topicName: activeTopicData.name 
+          }));
+      }
+
+      if (currentTopicQuestions.length > 0) {
+        setQuestionsForActiveTopic(shuffleArray(currentTopicQuestions)); 
+        setTopicStartTime(Date.now()); // Start timer for quiz
+        setCurrentScreen('questionSession');
+      } else {
+        // No questions, topic complete
+        const timeTaken = topicStartTime ? Math.floor((Date.now() - topicStartTime) / 1000) : (activeTopicData.content.length * 30); // Estimate time if no quiz
+        setTopicStats({ score: 0, totalQuestions: 0, timeTaken, xpEarned: 5 * (activeTopicData.content.length || 1), accuracy: 100 }); // XP for reading
+        setCurrentScreen('lessonComplete');
+      }
+    }
   };
 
-  // Dynamically calculate spacer width to match the back button's approximate size
-  // Button: p-2 (0.5rem = 8px each side) + icon size
-  const buttonIconSize = isMobile ? 24 : 28;
-  const buttonPadding = 16; // 8px * 2
-  const backButtonWidth = `${buttonIconSize + buttonPadding}px`;
+  const handleQuizComplete = (finalScore, numQuestions) => {
+    const timeTaken = topicStartTime ? Math.floor((Date.now() - topicStartTime) / 1000) : 0;
+    const accuracy = numQuestions > 0 ? (finalScore / numQuestions) * 100 : 0;
+    let xp = (activeTopicData?.content?.length || 1) * 2; // Base XP for content read
+    xp += Math.floor(accuracy / 10); // Accuracy bonus
+    if (timeTaken < 180 && numQuestions > 0) xp += Math.max(0, 3 - Math.floor(timeTaken/60)); // Time bonus
+    if (numQuestions === 0) xp = (activeTopicData?.content?.length || 1) * 5; // XP for just reading if no questions
+    
+    setTopicStats({ score: finalScore, totalQuestions: numQuestions, timeTaken, xpEarned: xp, accuracy: parseFloat(accuracy.toFixed(1)) });
+    setCurrentScreen('lessonComplete');
+  };
 
-  const [currentView, setCurrentView] = useState(1)
+  const handleTopicCompleteNext = async () => {
+    if (userdata && courseId && gradeId && topicStats.xpEarned > 0) {
+      try {
+        const courseKey = `${courseId}_${gradeId}`;
+        let currentXpData = await getData(app, userdata.uid, "xp", "{}");
+        let currentXp = JSON.parse(currentXpData);
+        currentXp[courseKey] = (currentXp[courseKey] || 0) + topicStats.xpEarned;
+        await setData(app, userdata.uid, "xp", JSON.stringify(currentXp));
+        console.log(`XP ${topicStats.xpEarned} added for ${courseKey}`);
+      } catch (e) {
+        console.error("Failed to save XP:", e);
+      }
+    }
+    setCurrentScreen('lessonList'); 
+    setActiveLessonIndex(null);
+    setActiveTopicIndex(null);
+    setCurrentContentIndex(0);
+    setQuestionsForActiveTopic([]);
+    setTopicStartTime(null);
+  };
+  
+  const shuffleArray = (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
+
+  const handleBackNavigation = () => {
+    if (currentScreen === 'lessonContent') {
+        if (currentContentIndex > 0) {
+            setCurrentContentIndex(prev => prev -1);
+            setIsNextButtonActive(true); // Assume can go next immediately when going back
+        } else {
+            setCurrentScreen('lessonList');
+            setActiveLessonIndex(null);
+            setActiveTopicIndex(null);
+        }
+    } else if (currentScreen === 'questionSession' || currentScreen === 'lessonComplete') {
+        setCurrentScreen('lessonList'); // Or back to 'lessonContent' for the last content block? For now, list.
+        setActiveLessonIndex(null);
+        setActiveTopicIndex(null);
+        setCurrentContentIndex(0);
+        setQuestionsForActiveTopic([]);
+    } else if (currentScreen === 'lessonList') {
+        navigate('/notes');
+    }
+  };
+
+  // --- Rendering Logic ---
+  const renderCurrentScreen = () => {
+    if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}><CircularProgress color="inherit" /></Box>;
+    if (error) return <Typography color="error" sx={{ textAlign: 'center', my: 2, color: 'white' }}>{error}</Typography>;
+    if (!dynamicNoteData) return <Typography sx={{ textAlign: 'center', my: 2, color: 'white' }}>No dynamic notes data available.</Typography>;
+
+    switch (currentScreen) {
+      case 'lessonList':
+        return <LessonListScreen lessons={dynamicNoteData.notes || []} onSelectTopic={handleSelectTopic} />;
+      case 'lessonContent':
+        if (!activeTopicData || !activeContentBlock) {
+          return <Typography sx={{color: 'white'}}>Error: Topic or content data not found.</Typography>;
+        }
+        return (
+          <LessonContentScreen 
+            contentBlock={activeContentBlock}
+            topicName={activeTopicData.name}
+            onNextContentOrQuiz={handleNextContentOrQuiz}
+            isNextActive={isNextButtonActive}
+            contentProgress={((currentContentIndex + 1) / (activeTopicData.content?.length || 1)) * 100}
+            isLastContent={currentContentIndex === (activeTopicData.content?.length || 0) - 1}
+            hasQuestions={activeTopicData.questions && activeTopicData.questions.length > 0}
+          />
+        );
+      case 'questionSession':
+        return (
+          <QuestionSessionScreen
+            questions={questionsForActiveTopic}
+            onQuizComplete={handleQuizComplete}
+          />
+        );
+      case 'lessonComplete':
+        return (
+          <LessonCompleteScreen
+            xpEarned={topicStats.xpEarned}
+            accuracy={topicStats.accuracy}
+            timeTakenInSeconds={topicStats.timeTaken}
+            onNextClick={handleTopicCompleteNext}
+            itemName={activeTopicData?.name || "Topic"}
+          />
+        );
+      default:
+        return <Typography sx={{color: 'white'}}>Unknown screen state.</Typography>;
+    }
+  };
+
+  const getHeaderTitle = () => {
+    if (!dynamicNoteData || !allCourses.length) return "Dynamic Notes";
+    const courseInfo = allCourses.find(c => c.id === courseId && c.grade === gradeId);
+    const courseName = courseInfo ? courseInfo.name : "Course";
+
+    if (currentScreen === 'lessonList') return courseName;
+    
+    const lessonName = activeLessonData?.name || "Lesson";
+    const topicName = activeTopicData?.name || `Topic ${activeTopicIndex !== null ? activeTopicIndex + 1 : ''}`;
+
+    if (currentScreen === 'lessonContent') {
+        const contentBlockName = activeContentBlock?.name || `Content ${currentContentIndex + 1}`;
+        return `${topicName} - ${contentBlockName}`;
+    }
+    if (currentScreen === 'questionSession') {
+      return `${topicName} - Quiz`;
+    }
+    if (currentScreen === 'lessonComplete') {
+      return `${topicName} - Results`;
+    }
+    return "Dynamic Notes";
+  };
+  
+  const buttonIconSize = isMobile ? 24 : 28;
+  const backButtonWidth = `${buttonIconSize + 16}px`; 
 
   return (
-    <div className='bg-cover h-screen flex bg-[url(/src/assets/background.jpg)]'> {/* Ensure background image path is correct */}
+    <div className='bg-cover h-screen flex bg-[url(/src/assets/background.jpg)]'>
       <div className='flex h-full w-full md:flex-row'>
-        {/* Desktop Toolbar */}
-        <div className='hidden h-full md:block'>
-          <Toolbar current={'notes'} /> {/* Adjust 'current' prop as needed */}
-        </div>
-
-        {/* Main Content Area */}
+        {!isMobile && <Toolbar current={'notes'} />}
         <div className='flex-grow h-full md:h-fit md:my-auto flex items-center justify-center w-full'>
           <div className='mx-auto h-full w-full max-w-md md:rounded-xl md:backdrop-blur-md overflow-hidden shadow-lg bg-[#0005]'>
-            
-            {/* Header: Back Button and Title */}
             <div className="text-white font-semibold font-sans flex h-20 items-center justify-between px-4 w-full text-xl md:text-2xl">
               <button
-                onClick={handleBackClick}
-                className="p-2 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+                onClick={handleBackNavigation}
+                className="p-2 rounded-full hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none"
                 aria-label="Go back"
               >
                 <ArrowLeft size={buttonIconSize} strokeWidth={2.5} />
               </button>
               <span className="text-center flex-grow mx-2 truncate">
-                {currentView === 0 ? "Introduction to AI" : ""}
-                {currentView === 1 ? "Introduction" : ""}
-                {currentView === 2 ? "Introduction" : ""}
-                {currentView === 4 ? "Introdcution" : ""}
+                {getHeaderTitle()}
               </span>
-              {/* Spacer div to help visually center the title when a left button is present */}
               <div style={{ width: backButtonWidth, flexShrink: 0 }}></div>
             </div>
-
-            {/* Scrollable Content Section */}
-            {/* 'md:max-h-150' is assumed to be a custom class from your tailwind.config.js (like in Notes.jsx) */}
-            {/* 'max-h-[calc(100%-5rem)]' for mobile: card's full height minus header (h-20 or 5rem) */}
-            {/* 'pb-5' provides padding at the bottom of the scrollable content, consistent with Notes.jsx */}
-            <div className="overflow-y-scroll pb-5 md:max-h-150 max-h-[calc(100%-5rem)] no-scrollbar">
-              <div className="text-white/80 py-1 px-5"> {/* Padding for the placeholder text */}
-                {currentView === 0 && <LessonList/>}
-                {currentView === 1 && <LessonScreen/>}
-                {currentView === 2 && <QuestionScreen/>}
-                {currentView === 3 && <GameOverScreen/>}
-              </div>
-              {/* Future notes content or components will be rendered here */}
+            <div className="overflow-y-auto pb-5 md:max-h-150 max-h-[calc(100%-5rem)] no-scrollbar px-2 md:px-4">
+              {renderCurrentScreen()}
             </div>
           </div>
         </div>
-
-        {/* Mobile Navbar */}
-        <div className='md:hidden fixed bottom-0 left-0 w-full'>
-          <Navbar current={'notes'} /> {/* Adjust 'current' prop as needed */}
-        </div>
+        {isMobile && <div className='md:hidden fixed bottom-0 left-0 w-full'><Navbar current={'notes'} /></div>}
       </div>
     </div>
   );
