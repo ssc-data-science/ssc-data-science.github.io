@@ -1,0 +1,527 @@
+1
+00:00:03,810 --> 00:00:06,210
+PROFESSOR: We all
+regularly drive with a car.
+
+2
+00:00:06,210 --> 00:00:09,480
+We want to get to from
+point A to point B. Usually,
+
+3
+00:00:09,480 --> 00:00:12,060
+we like to drive with
+a constant speed.
+
+4
+00:00:12,060 --> 00:00:14,060
+But what happens if
+there's a traffic light?
+
+5
+00:00:14,060 --> 00:00:16,740
+Well, we have to
+stop eventually,
+
+6
+00:00:16,740 --> 00:00:18,450
+which means we have to brake.
+
+7
+00:00:18,450 --> 00:00:21,300
+And that makes the
+car decelerate.
+
+8
+00:00:21,300 --> 00:00:24,640
+So there are different parts
+of motion when we ride a car.
+
+9
+00:00:24,640 --> 00:00:25,740
+It can be constant.
+
+10
+00:00:25,740 --> 00:00:27,370
+It can be accelerating.
+
+11
+00:00:27,370 --> 00:00:29,070
+It can be decelerating.
+
+12
+00:00:29,070 --> 00:00:33,000
+So let's consider this
+in a little graphic.
+
+13
+00:00:33,000 --> 00:00:35,170
+We have a little car here.
+
+14
+00:00:35,170 --> 00:00:38,760
+And it drives with
+constant speed
+
+15
+00:00:38,760 --> 00:00:43,080
+until someone slams
+into the brakes,
+
+16
+00:00:43,080 --> 00:00:45,065
+and the car will
+eventually stop.
+
+17
+00:00:48,250 --> 00:00:50,770
+Let's add a timeline to this.
+
+18
+00:00:50,770 --> 00:00:55,060
+Here we're going
+to put t equals 0.
+
+19
+00:00:55,060 --> 00:00:58,450
+The point in time
+where the car stops
+
+20
+00:00:58,450 --> 00:01:02,380
+driving with a
+constant speed is t1,
+
+21
+00:01:02,380 --> 00:01:10,120
+and the point where the car has
+come to a complete stop is t2.
+
+22
+00:01:10,120 --> 00:01:14,740
+And the problem now asks for
+what is the position function?
+
+23
+00:01:14,740 --> 00:01:18,160
+What is the distance at
+any kind of time here
+
+24
+00:01:18,160 --> 00:01:22,600
+as the car goes through these
+two different phases of motion?
+
+25
+00:01:22,600 --> 00:01:27,820
+So ultimately we want
+to get to x of t.
+
+26
+00:01:27,820 --> 00:01:31,280
+But we can't actually
+just write this up.
+
+27
+00:01:31,280 --> 00:01:34,390
+We need to first look
+at other information
+
+28
+00:01:34,390 --> 00:01:37,840
+that we have about
+this kind of set up.
+
+29
+00:01:37,840 --> 00:01:40,630
+And what we have is information
+on the acceleration.
+
+30
+00:01:44,600 --> 00:01:47,900
+And we have to consider
+these two phases separately.
+
+31
+00:01:47,900 --> 00:01:53,426
+So we have here phase
+one and phase two.
+
+32
+00:01:53,426 --> 00:01:58,880
+And phase one is from 0 to t1.
+
+33
+00:01:58,880 --> 00:02:04,250
+And phase two is from t1 to t2.
+
+34
+00:02:04,250 --> 00:02:08,090
+And we know when a car is
+going with a constant velocity,
+
+35
+00:02:08,090 --> 00:02:11,120
+it's acceleration
+is going to be 0.
+
+36
+00:02:11,120 --> 00:02:14,480
+So that keeps life
+easy for phase one.
+
+37
+00:02:14,480 --> 00:02:17,960
+And then, when it breaks,
+well, we know it decelerates.
+
+38
+00:02:17,960 --> 00:02:20,900
+So we're definitely going
+to have a minus sign.
+
+39
+00:02:20,900 --> 00:02:26,090
+And it breaks in
+between t and t1.
+
+40
+00:02:26,090 --> 00:02:30,950
+And we need to multiply this
+factor here with a constant.
+
+41
+00:02:30,950 --> 00:02:35,270
+So this is our
+acceleration information
+
+42
+00:02:35,270 --> 00:02:38,960
+that the problem has given us.
+
+43
+00:02:38,960 --> 00:02:41,990
+And we know, of course, that if
+we integrate the acceleration,
+
+44
+00:02:41,990 --> 00:02:44,370
+we're going to get to
+the velocity function.
+
+45
+00:02:44,370 --> 00:02:45,860
+And if we integrate
+that one again,
+
+46
+00:02:45,860 --> 00:02:48,960
+we're going to get to
+our position function.
+
+47
+00:02:48,960 --> 00:02:52,750
+So let's do that
+first for phase one.
+
+48
+00:02:56,000 --> 00:02:58,010
+And what is also
+important here is
+
+49
+00:02:58,010 --> 00:02:59,750
+that we need to
+carefully consider
+
+50
+00:02:59,750 --> 00:03:01,300
+the initial conditions.
+
+51
+00:03:01,300 --> 00:03:04,370
+Again, what
+additional information
+
+52
+00:03:04,370 --> 00:03:07,610
+is this problem giving us?
+
+53
+00:03:07,610 --> 00:03:12,660
+So initial conditions-- they
+always make life a lot easier.
+
+54
+00:03:12,660 --> 00:03:16,880
+So it's important to
+carefully look for them.
+
+55
+00:03:16,880 --> 00:03:18,980
+And what that means
+is we want to know
+
+56
+00:03:18,980 --> 00:03:23,720
+what the distance
+is at t equal 0,
+
+57
+00:03:23,720 --> 00:03:28,640
+and what the velocity
+at time 0 is.
+
+58
+00:03:28,640 --> 00:03:31,610
+And we know the
+distance here is 0.
+
+59
+00:03:31,610 --> 00:03:36,740
+And we know that the problem
+starts when the car is already
+
+60
+00:03:36,740 --> 00:03:39,090
+driving with a constant speed.
+
+61
+00:03:39,090 --> 00:03:41,930
+So that's going to be v not.
+
+62
+00:03:41,930 --> 00:03:46,010
+So let's then make
+use of this, and start
+
+63
+00:03:46,010 --> 00:03:47,766
+integrating our acceleration.
+
+64
+00:03:47,766 --> 00:03:49,140
+We want to get to
+the velocities.
+
+65
+00:03:49,140 --> 00:03:56,270
+So v of t minus of t equals 0
+is going to be that integral.
+
+66
+00:03:56,270 --> 00:04:02,360
+And here already we know that we
+have v of t equals 0 is v not.
+
+67
+00:04:02,360 --> 00:04:05,510
+So this already
+looks pretty nice.
+
+68
+00:04:05,510 --> 00:04:09,548
+And now we have our
+integral here of a.
+
+69
+00:04:09,548 --> 00:04:12,290
+And of course, now t is
+an integration variable.
+
+70
+00:04:12,290 --> 00:04:14,360
+So we have to give this a prime.
+
+71
+00:04:14,360 --> 00:04:17,980
+And we're integrating
+from t prime equals 0
+
+72
+00:04:17,980 --> 00:04:21,500
+to t prime equals t.
+
+73
+00:04:21,500 --> 00:04:25,210
+And when we plug
+this in, well, a
+
+74
+00:04:25,210 --> 00:04:27,590
+is 0 in phase one,
+which means actually,
+
+75
+00:04:27,590 --> 00:04:30,090
+our integral is going to be 0.
+
+76
+00:04:30,090 --> 00:04:31,940
+That's handy.
+
+77
+00:04:31,940 --> 00:04:39,410
+And from that, we will find
+that v of t equals simply v not.
+
+78
+00:04:39,410 --> 00:04:41,210
+All good.
+
+79
+00:04:41,210 --> 00:04:46,320
+Now we need to integrate this
+to get to our position function.
+
+80
+00:04:46,320 --> 00:04:53,450
+Same thing again-- x of t
+minus x of t equals zero.
+
+81
+00:04:53,450 --> 00:04:57,090
+Let's quickly check here what
+we know about x of t is 0.
+
+82
+00:04:57,090 --> 00:05:00,650
+Well, it's 0 from the
+initial conditions.
+
+83
+00:05:00,650 --> 00:05:06,160
+And now we have to integrate
+our velocity function here,
+
+84
+00:05:06,160 --> 00:05:11,990
+v not dt, again, prime.
+
+85
+00:05:11,990 --> 00:05:13,580
+t prime equals 0.
+
+86
+00:05:13,580 --> 00:05:15,265
+t prime equals t.
+
+87
+00:05:15,265 --> 00:05:18,890
+These are our boundaries.
+
+88
+00:05:18,890 --> 00:05:25,220
+And this is simply going to
+be v not t prime evaluated
+
+89
+00:05:25,220 --> 00:05:28,470
+from 0 to t.
+
+90
+00:05:28,470 --> 00:05:31,610
+And we can add that--
+
+91
+00:05:31,610 --> 00:05:33,120
+we can add that in there.
+
+92
+00:05:33,120 --> 00:05:35,900
+And it's just going to be vt.
+
+93
+00:05:35,900 --> 00:05:37,730
+So x of t--
+
+94
+00:05:37,730 --> 00:05:44,350
+I can just write it here
+again, x of t equals v not t.
+
+95
+00:05:44,350 --> 00:05:45,511
+OK.
+
+96
+00:05:45,511 --> 00:05:46,010
+Good.
+
+97
+00:05:46,010 --> 00:05:49,550
+So half of the question is--
+
+98
+00:05:49,550 --> 00:05:51,630
+half of the problem is solved.
+
+99
+00:05:51,630 --> 00:05:57,860
+Let's look at the same
+things for phase two.
+
+100
+00:05:57,860 --> 00:06:01,640
+So let's consider the initial
+conditions for phase two now.
+
+101
+00:06:04,850 --> 00:06:07,360
+And again, now we want to--
+
+102
+00:06:07,360 --> 00:06:10,160
+in an analogous way--
+look at the distance
+
+103
+00:06:10,160 --> 00:06:14,270
+of what we know about
+the distance at t1
+
+104
+00:06:14,270 --> 00:06:17,060
+and the velocity at t1.
+
+105
+00:06:17,060 --> 00:06:21,140
+And about the position,
+we know from over there
+
+106
+00:06:21,140 --> 00:06:23,180
+that this is v not t.
+
+107
+00:06:23,180 --> 00:06:25,310
+So our previous result
+now actually becomes
+
+108
+00:06:25,310 --> 00:06:27,770
+the initial condition
+for the next step, right?
+
+109
+00:06:27,770 --> 00:06:30,590
+Because whatever
+happens here sets
+
+110
+00:06:30,590 --> 00:06:33,170
+whatever happens afterwards.
+
+111
+00:06:33,170 --> 00:06:35,120
+So that's nice.
+
+112
+00:06:35,120 --> 00:06:39,800
+And we know that, up
+to this moment here,
+
+113
+00:06:39,800 --> 00:06:43,620
+this car goes with
+the velocity of v not.

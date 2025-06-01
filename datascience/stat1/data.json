@@ -1,0 +1,23 @@
+{
+  "course_title":"Statistics for Applications ",
+  "course_description":"This course offers an in-depth the theoretical foundations for statistical methods that are useful in many applications. The goal is to understand the role of mathematics in the research and development of efficient statistical methods.\n",
+  "course_description_html":"This course offers an in-depth the theoretical foundations for statistical methods that are useful in many applications. The goal is to understand the role of mathematics in the research and development of efficient statistical methods.",
+  "site_uid":"59d3e807-0c95-4c29-81ce-4a4a2875f27d",
+  "legacy_uid":"56d18bbf-4ea5-ace0-4788-3cafba9043da","instructors": [{
+    "first_name":"Philippe",
+    "last_name":"Rigollet",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Philippe Rigollet"}],"department_numbers":["18"],
+  "learning_resource_types":["Lecture Notes","Lecture Videos","Problem Sets"],
+  "topics":[["Mathematics","Probability and Statistics"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"18.650",
+  "extra_course_numbers":"18.6501",
+  "term":"Fall",
+  "year":"2016",
+  "level":["Undergraduate"],
+  "hide_download":null,
+  "image_src":"./static_resources/de1506da626801272f3f35bb8412e638_18-650f16.jpg",
+  "course_image_metadata":{"content_type":"resource","description":"","draft":false,"file":"/courses/18-650-statistics-for-applications-fall-2016/de1506da626801272f3f35bb8412e638_18-650f16.jpg","file_size":12485,"file_type":"image/jpeg","image_metadata":{"caption":"Nonparametric regression. (Image by Prof. Philippe Rigollet.)","credit":"Image by Prof. Philippe Rigollet.","image-alt":"2D plot for data fitting."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","resourcetype":"Image","title":"18-650f16.jpg","uid":"de1506da-6268-0127-2f3f-35bb8412e638","video_files":{"video_captions_file":"","video_thumbnail_file":"","video_transcript_file":""},"video_metadata":{"video_speakers":"","video_tags":"","youtube_id":""}}}
+

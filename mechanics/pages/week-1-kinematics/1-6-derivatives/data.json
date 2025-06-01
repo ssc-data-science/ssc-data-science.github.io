@@ -1,0 +1,6 @@
+
+{
+  "title":"1.6 Derivatives",
+  "content":"« Previous | Next »\nList of useful derivatives:\nDerivative of a polynomial function:\nIf \\(\\displaystyle x(t)=At^n \\Longrightarrow \\frac{dx}{dt}=nAt^{n-1} \\)\nwhere \\(A\\) and \\(n\\) are constants.\nDerivative of an exponential function:\nIf \\(\\displaystyle x(t)=A e^{bt} \\Longrightarrow \\frac{dx}{dt}=Ab e^{bt} \\)\nwhere \\(A\\) and \\(b\\) are constants.\nDerivative of a logarithmic function:\nIf \\(\\displaystyle x(t)=A\\ln(b+ct) \\Longrightarrow \\frac{dx}{dt}=\\frac{Ac}{b+ct} \\)\nwhere \\(A\\), \\(b\\) and \\(c\\) are constants.\nDerivative of sine:\nIf \\( \\displaystyle x(t)=A\\sin(b+ct) \\Longrightarrow \\frac{dx}{dt}=Ac \\cos(b+ct) \\)\nwhere \\(A\\), \\(b\\) and \\(c\\) are constants.\nDerivative of cosine:\nIf \\( \\displaystyle x(t)=A\\cos(b+ct) \\Longrightarrow \\frac{dx}{dt}=-Ac \\sin(b+ct) \\)\nwhere \\(A\\), \\(b\\) and \\(c\\) are constants.\nExternal References\nWorld Web Math OCW: Single Variable Calculus - Video Lecture 3 Wolfram Alpha « Previous | Next »\n"}
+
+

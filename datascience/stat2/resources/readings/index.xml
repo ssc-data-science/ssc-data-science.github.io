@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Readings on MIT OpenCourseWare</title>
+    <link>/resources/readings/</link>
+    <description>Recent content in Readings on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/readings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Readings</title>
+      <link>/pages/readings/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/readings/data.json</guid>
+      <description>&lt;p&gt;This section includes assigned readings from the three main texts used in the course.&lt;/p&gt;&#xA;&#xA;    &lt;h3 id=&#34;required-text&#34;&gt;Required Text&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;[ROS]: Ross, Sheldon M. &lt;em&gt;Probability and Statistics for Engineers and Scientists&lt;/em&gt;. 3rd ed. San Diego, CA: Academic Press, 2004. ISBN: 0125980574.&lt;/p&gt;&#xA;&#xA;    &lt;h3 id=&#34;recommended-texts&#34;&gt;Recommended Texts&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;[LM]: Larsen, Richard J., and Morris L. Marx. &lt;em&gt;An Introduction to Mathematical Statistics and its Applications&lt;/em&gt;. 3rd ed. Upper Saddle River, NJ: Prentice Hall, 2001. ISBN: 0139223037.&lt;/p&gt;&#xA;&lt;p&gt;[DS]: DeGroot, Morris H., and Mark J. Schervish. &lt;em&gt;Probability and Statistics&lt;/em&gt;. 3rd ed. Boston, MA: Addison-Wesley, 2002.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

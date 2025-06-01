@@ -1,0 +1,6 @@
+
+{
+  "title":"10.4 Review of Rotational Kinematics",
+  "content":"« Previous | Next »\nPosition: \\(\\vec{r}(t)=r\\hat{r}\\)\nAngular Velocity: \\(\\vec{\\omega}=\\omega_z \\hat{k}\\)\nComponent of the Angular Velocity along the axis of rotation: \\(\\omega_z=\\dfrac{d\\theta}{dt} \\)\nVelocity: \\(\\vec{v}=r\\dfrac{d\\theta}{dt}\\hat{\\theta} \\)\nAngular Acceleration: \\(\\vec{\\alpha} = \\alpha_{z}\\hat{k} \\)\nComponent of the Angular Acceleration: \\(\\alpha_z=\\dfrac{d\\omega_z}{dt}=\\dfrac{d^2\\theta}{dt^2}\\)\nAcceleration: \\(\\vec{a}=a_r\\hat{r}+a_{\\theta}\\hat{\\theta} \\)\n\\(a_r = -\\frac{v^2}{r} = -r(\\dfrac{d\\theta}{dt})^2, a_{\\theta} = r\\dfrac{d^2\\theta}{dt^2}= r\\alpha_z\\)\n« Previous | Next »\n"}
+
+

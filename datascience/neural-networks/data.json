@@ -1,0 +1,23 @@
+{
+  "course_title":"Introduction to Neural Networks",
+  "course_description":"This course explores the organization of synaptic connectivity as the basis of neural computation and learning. Perceptrons and dynamical theories of recurrent networks including amplifiers, attractors, and hybrid computation are covered. Additional topics include backpropagation and Hebbian learning, as well as models of perception, motor control, memory, and neural development.\n",
+  "course_description_html":"This course explores the organization of synaptic connectivity as the basis of neural computation and learning. Perceptrons and dynamical theories of recurrent networks including amplifiers, attractors, and hybrid computation are covered. Additional topics include backpropagation and Hebbian learning, as well as models of perception, motor control, memory, and neural development.",
+  "site_uid":"09de6ef5-5eb8-4539-b655-a00af73f56f7",
+  "legacy_uid":"02d47ac3-1aa2-e039-9778-f9dfe997ab4b","instructors": [{
+    "first_name":"Sebastian",
+    "last_name":"Seung",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Sebastian Seung"}],"department_numbers":["9","8"],
+  "learning_resource_types":["Lecture Notes","Problem Sets"],
+  "topics":[["Science","Cognitive Science"],["Science","Biology","Neuroscience"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"9.641J",
+  "extra_course_numbers":"8.594J",
+  "term":"Spring",
+  "year":"2005",
+  "level":["Graduate"],
+  "hide_download":null,
+  "image_src":"./static_resources/b5f5694dcec8c3bcf1eb6914dbeadd58_9-641js05.jpg",
+  "course_image_metadata":{"content_type":"resource","description":"Neurons forming a network in disassociated cell culture. (Image courtesy of Seung Laboratory, MIT Department of Brain and Cognitive Sciences.)","draft":false,"file":"/courses/9-641j-introduction-to-neural-networks-spring-2005/b5f5694dcec8c3bcf1eb6914dbeadd58_9-641js05.jpg","file_size":46043,"file_type":"image/jpeg","image_metadata":{"caption":"Neurons forming a network in disassociated cell culture. (Image courtesy of [Seung Laboratory](http://seunglab.org/), MIT Department of Brain and Cognitive Sciences.)","credit":"","image-alt":"Neurons forming a network in disassociated cell culture. "},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"9-641js05.jpg","uid":"b5f5694d-cec8-c3bc-f1eb-6914dbeadd58","video_files":{"video_thumbnail_file":null},"video_metadata":{"youtube_id":null}}}
+

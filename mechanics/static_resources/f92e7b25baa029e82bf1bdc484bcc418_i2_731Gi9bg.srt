@@ -1,0 +1,384 @@
+1
+00:00:03,690 --> 00:00:06,660
+We will now like to generalize
+the work energy theorem
+
+2
+00:00:06,660 --> 00:00:08,490
+to more than one dimension.
+
+3
+00:00:08,490 --> 00:00:11,850
+Remember that we defined
+our work as an integral
+
+4
+00:00:11,850 --> 00:00:17,130
+from a to b of a force dot ds.
+
+5
+00:00:17,130 --> 00:00:20,370
+And graphically
+let's look at that.
+
+6
+00:00:20,370 --> 00:00:24,450
+If we start at A and
+we go to a point B, ,
+
+7
+00:00:24,450 --> 00:00:29,310
+and if at some point on
+this path we have a force F,
+
+8
+00:00:29,310 --> 00:00:32,640
+and the displacement is
+always tangent to the force
+
+9
+00:00:32,640 --> 00:00:37,740
+for an object M, we would like
+to now figure out how this
+
+10
+00:00:37,740 --> 00:00:41,100
+integral is related to the
+change in kinetic energy.
+
+11
+00:00:41,100 --> 00:00:44,610
+So first off, it's
+always important
+
+12
+00:00:44,610 --> 00:00:47,430
+when analyzing a new
+result to understand where
+
+13
+00:00:47,430 --> 00:00:49,230
+Newton's second law comes in.
+
+14
+00:00:49,230 --> 00:00:51,870
+And for our point particle
+Newton's second law
+
+15
+00:00:51,870 --> 00:00:54,750
+is that the force
+is equal to ma,
+
+16
+00:00:54,750 --> 00:01:00,930
+which we can write as mass times
+the derivative of the velocity.
+
+17
+00:01:00,930 --> 00:01:05,250
+And so our first step is to
+rewrite the work integral
+
+18
+00:01:05,250 --> 00:01:10,320
+and now to incorporate Newton's
+second law into this integral.
+
+19
+00:01:10,320 --> 00:01:15,690
+So this is no longer
+simply a concept of physics
+
+20
+00:01:15,690 --> 00:01:20,110
+but it's combining the second
+law and our definition of work.
+
+21
+00:01:20,110 --> 00:01:22,530
+Now what I'd like to
+do here is to note
+
+22
+00:01:22,530 --> 00:01:26,460
+that the displacement
+of a particle
+
+23
+00:01:26,460 --> 00:01:30,160
+is always equal to
+the velocity times dt.
+
+24
+00:01:30,160 --> 00:01:40,500
+So if we put that result in
+here, AB of M dv dt dot v dt,
+
+25
+00:01:40,500 --> 00:01:45,539
+you can see that we can cancel
+dt's, which is essentially
+
+26
+00:01:45,539 --> 00:01:48,450
+taking the time out
+of this integral
+
+27
+00:01:48,450 --> 00:01:51,479
+and writing the work
+entirely in terms
+
+28
+00:01:51,479 --> 00:01:56,910
+of the small change in
+velocity, dv, scalar product
+
+29
+00:01:56,910 --> 00:01:58,500
+with the velocity.
+
+30
+00:01:58,500 --> 00:02:02,220
+And this is the quantity we
+would now like to calculate.
+
+31
+00:02:02,220 --> 00:02:06,120
+So one way, when we ever want
+to calculate these dot products,
+
+32
+00:02:06,120 --> 00:02:08,050
+we choose a coordinate system.
+
+33
+00:02:08,050 --> 00:02:10,470
+So let's choose a Cartesian
+coordinate system,
+
+34
+00:02:10,470 --> 00:02:17,320
+plus x plus y, with our unit
+vectors i-hat and j-hat.
+
+35
+00:02:17,320 --> 00:02:21,329
+Now our task is to write
+down these various vectors.
+
+36
+00:02:21,329 --> 00:02:25,410
+So for instance,
+dv can be written
+
+37
+00:02:25,410 --> 00:02:32,100
+as dv x i-hat plus dv y j-hat.
+
+38
+00:02:32,100 --> 00:02:34,470
+Now if we were to go
+into three dimensions
+
+39
+00:02:34,470 --> 00:02:36,780
+we would have dv z
+k-hat but I'm just
+
+40
+00:02:36,780 --> 00:02:39,090
+going to do this
+in two dimensions.
+
+41
+00:02:39,090 --> 00:02:46,250
+Similarly, the velocity
+is vx i-hat plus vy j-hat.
+
+42
+00:02:46,250 --> 00:02:49,050
+And now when we take
+the dot product,
+
+43
+00:02:49,050 --> 00:02:51,490
+as we've learned in
+Cartesian coordinates,
+
+44
+00:02:51,490 --> 00:02:55,710
+it's just the
+components dv x vx,
+
+45
+00:02:55,710 --> 00:02:57,750
+and I'll just do a
+little parentheses there,
+
+46
+00:02:57,750 --> 00:03:02,580
+plus dv y vy.
+
+47
+00:03:02,580 --> 00:03:10,320
+And so now, our
+work integral, AB,
+
+48
+00:03:10,320 --> 00:03:24,450
+is equal to the mass times dv x
+vx plus the mass times dv y vy.
+
+49
+00:03:24,450 --> 00:03:31,320
+Now what we have here is to
+a sum in the [? integrant. ?]
+
+50
+00:03:31,320 --> 00:03:33,750
+But by the rules
+of integration we
+
+51
+00:03:33,750 --> 00:03:38,250
+can rewrite this integral as
+two separate integrals from A
+
+52
+00:03:38,250 --> 00:03:50,370
+to B of M dv x vx and
+from A to B of M dv y vy.
+
+53
+00:03:50,370 --> 00:03:52,850
+And now we can integrate
+each of these separately.
+
+54
+00:03:52,850 --> 00:03:55,530
+And if you recall,
+in one dimension
+
+55
+00:03:55,530 --> 00:03:59,820
+we used our integral formula,
+this is just vx squared.
+
+56
+00:03:59,820 --> 00:04:03,330
+And when we integrate them
+what we have to look at
+
+57
+00:04:03,330 --> 00:04:06,300
+is the end points
+of our integral.
+
+58
+00:04:06,300 --> 00:04:08,590
+What we're integrating
+is a velocity,
+
+59
+00:04:08,590 --> 00:04:10,290
+and we're going from
+some initial value
+
+60
+00:04:10,290 --> 00:04:11,910
+to some final value.
+
+61
+00:04:11,910 --> 00:04:18,980
+So our first integral simply
+becomes M vx final squared.
+
+62
+00:04:18,980 --> 00:04:27,570
+I'll pull out the factor 2 minus
+vx initial squared, where A vx
+
+63
+00:04:27,570 --> 00:04:30,990
+initial is the initial x
+component velocity of A
+
+64
+00:04:30,990 --> 00:04:33,840
+in vx final is the
+final component of B.
+
+65
+00:04:33,840 --> 00:04:36,330
+And I have a similar
+term here, which
+
+66
+00:04:36,330 --> 00:04:42,490
+is vy final squared minus
+the vy initial squared.
+
+67
+00:04:42,490 --> 00:04:47,100
+And when I combine
+our terms, vx final
+
+68
+00:04:47,100 --> 00:04:53,960
+squared plus vy final
+squared minus one-half M
+
+69
+00:04:53,960 --> 00:05:00,280
+vx initial squared plus
+vy initial squared.
+
+70
+00:05:00,280 --> 00:05:07,016
+We've already shown that
+our kinetic energy, 1/2 M v
+
+71
+00:05:07,016 --> 00:05:13,660
+dot v is 1/2 M vx
+squared plus vy squared.
+
+72
+00:05:13,660 --> 00:05:19,110
+And so we see that this is
+just the final kinetic energy
+
+73
+00:05:19,110 --> 00:05:23,040
+minus the initial
+kinetic energy.
+
+74
+00:05:23,040 --> 00:05:27,450
+And so we can call that delta k.
+
+75
+00:05:27,450 --> 00:05:31,050
+And what we have now is
+the work energy theorem.
+
+76
+00:05:31,050 --> 00:05:33,600
+And I'll come back to
+my original statement
+
+77
+00:05:33,600 --> 00:05:40,810
+that the work is equal to
+the change in kinetic energy.
+
+78
+00:05:40,810 --> 00:05:43,590
+And this is a combination
+of our definition of work
+
+79
+00:05:43,590 --> 00:05:47,171
+and Newton's second law.

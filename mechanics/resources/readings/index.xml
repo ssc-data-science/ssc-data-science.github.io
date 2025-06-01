@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Readings on MIT OpenCourseWare</title>
+    <link>/resources/readings/</link>
+    <description>Recent content in Readings on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/readings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Readings</title>
+      <link>/pages/readings/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/readings/data.json</guid>
+      <description>&lt;p&gt;« &lt;a href=&#34;../../pages/syllabus/about-the-team/index.html&#34;&gt;Previous&lt;/a&gt; | &lt;a href=&#34;../../pages/assignments/index.html&#34;&gt;Next&lt;/a&gt; »&lt;/p&gt;&#xA;&lt;p&gt;The Readings are available in the &lt;a href=&#34;../../pages/online-textbook/index.html&#34;&gt;online textbook&lt;/a&gt; section.&lt;/p&gt;&#xA;&lt;p&gt;&lt;table&gt;&#xA;&lt;thead&gt;&#xA;&lt;tr&gt;&#xA;&lt;th&gt;&#xA;&#xA;LESSON #&#xA;&lt;/th&gt;&#xA;&lt;th&gt;&#xA;&#xA;LESSON TITLES&#xA;&lt;/th&gt;&#xA;&lt;th&gt;&#xA;&#xA;READINGS&#xA;&lt;/th&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/thead&gt;&#xA;&lt;tbody&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;&#xA;&#xA;0&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../pages/review-vectors/#Lesson_0/index.html&#34;&gt;Vectors&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Chapter 3&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td colspan=&#34;3&#34;&gt;&#xA;&#xA;&lt;strong&gt;Week 1: Kinematics&lt;/strong&gt;&#xA;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;&#xA;&#xA;1&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../pages/week-1-kinematics/#Lesson_1/index.html&#34;&gt;1D Kinematics - Position and Velocity&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Position and Displacement: Section 4.2&lt;/li&gt;&#xA;&lt;li&gt;Velocity: Section 4.3&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;&#xA;&#xA;2&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../pages/week-1-kinematics/#Lesson_2/index.html&#34;&gt;1D Kinematics - Acceleration&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Acceleration: Section 4.4&lt;/li&gt;&#xA;&lt;li&gt;Constant Acceleration: Section 4.5&lt;/li&gt;&#xA;&lt;li&gt;1D Kinematics and Integration: Section 4.6&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;&#xA;&#xA;3&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../pages/week-1-kinematics/#Lesson_3/index.html&#34;&gt;2D Kinematics - Position, Velocity, and Acceleration&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Vector Description of Motion in 2D: Section 5.1&lt;/li&gt;&#xA;&lt;li&gt;Projectile Motion: Section 5.2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td colspan=&#34;3&#34;&gt;&#xA;&#xA;&lt;strong&gt;Week 2: Newton&amp;rsquo;s Laws&lt;/strong&gt;&#xA;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;&#xA;&#xA;4&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../pages/week-2-newtons-laws/#Lesson_4/index.html&#34;&gt;Newton&amp;rsquo;s Laws of Motion&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;td&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

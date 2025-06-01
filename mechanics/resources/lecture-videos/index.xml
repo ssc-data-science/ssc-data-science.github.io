@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Videos on MIT OpenCourseWare</title>
+    <link>/resources/lecture-videos/</link>
+    <description>Recent content in Lecture Videos on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/lecture-videos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>0.1 Vectors vs. Scalars</title>
+      <link>/resources/0-1-vectors-vs/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/0-1-vectors-vs/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0.2 Vector Operators</title>
+      <link>/resources/0/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/0/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0.3 Coordinate Systems and Unit Vectors</title>
+      <link>/resources/0-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/0-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0.4 Vectors - Magnitude and Direction</title>
+      <link>/resources/0-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/0-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0.5 Vector Decomposition into Components</title>
+      <link>/resources/0-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/0-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0.6 Going Between Representations</title>
+      <link>/resources/0-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/0-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1.1 Coordinate Systems and Unit Vectors in 1D Position Vector in 1D</title>
+      <link>/resources/1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1.2 Position Vector in 1D</title>
+      <link>/resources/1-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/1-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1.3 Displacement Vector in 1D</title>
+      <link>/resources/1-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/1-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1.4 Average Velocity in 1D</title>
+      <link>/resources/1-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/1-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1.5 Instantaneous Velocity in 1D</title>
+      <link>/resources/1-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/1-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1.7 Worked Example - Derivatives in Kinematics</title>
+      <link>/resources/1-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/1-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10.1 Circular Motion – Acceleration</title>
+      <link>/resources/10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/10/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10.2 Angular Acceleration</title>
+      <link>/resources/10-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/10-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10.3 Worked Example - Angular Position from Angular Acceleration</title>
+      <link>/resources/10-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/10-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>11.1 Newton&#39;s 2nd Law and Circular Motion</title>
+      <link>/resources/11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/11/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>11.2 Worked Example - Car on a Banked Turn</title>
+      <link>/resources/11-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/11-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>11.3 Demo: Rotating Bucket</title>
+      <link>/resources/11-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/11-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Caleb Bonyun&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12.1 Pulley Problems - Part I, Set up the Equations</title>
+      <link>/resources/12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/12/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12.2 Pulley Problem - Part II, Constraint Condition</title>
+      <link>/resources/12-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/12-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12.3 Pulley Problem - Part III, Constraints and Virtual Displacement Arguments</title>
+      <link>/resources/12-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/12-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12.4 Pulley Problem - Part IV, Solving the System of Equations</title>
+      <link>/resources/12-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/12-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12.5 Worked Example - 2 Blocks and 2 Pulleys</title>
+      <link>/resources/12-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/12-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13.1 Rope Hanging Between Trees</title>
+      <link>/resources/13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/13/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13.2 Differential Analysis of a Massive Rope</title>
+      <link>/resources/13-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/13-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13.3 Differential Elements</title>
+      <link>/resources/13-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/13-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13.4 Density</title>
+      <link>/resources/13-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/13-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13.5 Demo: Wrapping Friction</title>
+      <link>/resources/13-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/13-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Caleb Bonyun&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13.6 Summary of Differential Analysis</title>
+      <link>/resources/13-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/13-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>14.1 Intro to Resistive Forces</title>
+      <link>/resources/14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/14/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>14.2 Resistive Forces - Low Speed Case</title>
+      <link>/resources/14-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/14-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>14.3 Resistive Forces - High Speed Case</title>
+      <link>/resources/14-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/14-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>15.1 Momentum and Impulse</title>
+      <link>/resources/15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/15/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>15.2 Impulse is a Vector</title>
+      <link>/resources/15-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/15-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>15.3 Worked Example - Bouncing Ball</title>
+      <link>/resources/15-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/15-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>15.4 Momentum of a System of Point Particles</title>
+      <link>/resources/15-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/15-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>15.5 Force on a System of Particles</title>
+      <link>/resources/15-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/15-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>16.1 Conservation of Momentum</title>
+      <link>/resources/16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/16/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>16.2 Momentum Diagrams</title>
+      <link>/resources/16-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/16-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>17.1 Definition of the Center of Mass</title>
+      <link>/resources/17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/17/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>17.2 Worked Example - Center of Mass of 3 Objects</title>
+      <link>/resources/17-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/17-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>17.3 Center of Mass of a Continuous System</title>
+      <link>/resources/17-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/17-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>17.5 Worked Example - Center of Mass of a Uniform Rod</title>
+      <link>/resources/17-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/17-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>17.6 Velocity and Acceleration of the Center of Mass</title>
+      <link>/resources/17-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/17-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>17.7 Reduction of a System to a Point Particle</title>
+      <link>/resources/17-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/17-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.1 Relative Velocity</title>
+      <link>/resources/18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/18/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.2 Set up a Recoil Problem</title>
+      <link>/resources/18-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/18-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.3 Solve for Velocity in the Ground Frame</title>
+      <link>/resources/18-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/18-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.4 Solve for Velocity in the Moving Frame</title>
+      <link>/resources/18-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/18-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>19.1 Rocket Problem 1 - Set up the Problem</title>
+      <link>/resources/19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/19/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>19.2 Rocket Problem 2 - Momentum Diagrams</title>
+      <link>/resources/19-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/19-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>19.3 Rocket Problem 3 - Mass Relations</title>
+      <link>/resources/19-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/19-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>19.4 Rocket Problem 4 - Solution</title>
+      <link>/resources/19-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/19-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>19.5 Rocket Problem 5 - Thrust and External Forces</title>
+      <link>/resources/19-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/19-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>19.6 Rocket Problem 6 - Solution for No External Forces</title>
+      <link>/resources/19-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/19-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>19.7 Rocket Problem 7 - Solution with External Forces</title>
+      <link>/resources/19-6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/19-6/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2.1 Introduction to Acceleration</title>
+      <link>/resources/2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2.2 Acceleration in 1D</title>
+      <link>/resources/2-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/2-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2.3 Worked Example - Acceleration from Position</title>
+      <link>/resources/2-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/2-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2.4 Integration</title>
+      <link>/resources/2-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/2-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>20.1 Kinetic Energy</title>
+      <link>/resources/20/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/20/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>20.2 Work by a Constant Force</title>
+      <link>/resources/20-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/20-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>20.3 Work by a Non-Constant Force</title>
+      <link>/resources/20-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/20-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>20.4 Integrate Acceleration with Respect to Time and Position</title>
+      <link>/resources/20-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/20-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>20.5 Work-Kinetic Energy Theorem</title>
+      <link>/resources/20-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/20-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>20.6 Power</title>
+      <link>/resources/20-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/20-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>21.1 Scalar Product Properties</title>
+      <link>/resources/21/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/21/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>21.2 Scalar Product in Cartesian Coordinates</title>
+      <link>/resources/21-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/21-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>21.3 Kinetic Energy as a Scalar Product</title>
+      <link>/resources/21-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/21-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>21.4 Work in 2D and 3D</title>
+      <link>/resources/21-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/21-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>21.5 Work-Kinetic Energy Theorem in 2D and 3D</title>
+      <link>/resources/21-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/21-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>21.6 Worked Example - Block Going Down a Ramp</title>
+      <link>/resources/21-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/21-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>22.1 Path Independence - Gravity</title>
+      <link>/resources/22/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/22/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>22.2 Path Dependence - Friction</title>
+      <link>/resources/22-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/22-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>22.3 Conservative Forces</title>
+      <link>/resources/22-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/22-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>22.4 Non-Conservative Forces</title>
+      <link>/resources/22-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/22-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>22.5 Summary of Work and Kinetic Energy</title>
+      <link>/resources/22-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/22-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>23.1 Introduction to Potential Energy</title>
+      <link>/resources/23/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/23/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>23.2 Potential Energy of Gravity near the Surface of the Earth</title>
+      <link>/resources/23-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/23-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>23.3 Potential Energy Reference State</title>
+      <link>/resources/23-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/23-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>23.4 Potential Energy of a Spring</title>
+      <link>/resources/23-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/23-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>23.5 Potential Energy of Gravitation</title>
+      <link>/resources/23-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/23-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>24.1 Mechanical Energy and Energy Conservation</title>
+      <link>/resources/24/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/24/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>24.2 Energy State Diagrams</title>
+      <link>/resources/24-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/24-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>24.3 Worked Example - Block Sliding Down Circular Slope</title>
+      <link>/resources/24-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/24-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>24.4 Newton&#39;s 2nd Law and Energy Conservation</title>
+      <link>/resources/24-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/24-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>25.1 Force is the Derivative of Potential</title>
+      <link>/resources/25/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/25/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>25.2 Stable and Unstable Equilibrium Points</title>
+      <link>/resources/25-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/25-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>25.3 Reading Potential Energy Diagrams</title>
+      <link>/resources/25-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/25-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>26.1 Momentum in Collisions</title>
+      <link>/resources/26/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/26/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>26.2 Kinetic Energy in Collisions</title>
+      <link>/resources/26-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/26-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>26.3 Totally Inelastic Collisions</title>
+      <link>/resources/26-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/26-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>27.1 Worked Example: Elastic 1D Collision</title>
+      <link>/resources/27/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/27/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>27.2 Relative Velocity in 1D</title>
+      <link>/resources/27-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/27-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>27.3 Kinetic Energy and Momentum Equation</title>
+      <link>/resources/27-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/27-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>27.4 Worked Example: Elastic 1D Collision Again</title>
+      <link>/resources/27-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/27-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>27.5 Worked Example - Gravitational Slingshot</title>
+      <link>/resources/27-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/27-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>27.6 2D Collisions</title>
+      <link>/resources/27-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/27-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>28.2 Introduction to Translation and Rotation</title>
+      <link>/resources/28-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/28-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>28.3 Review of Angular Velocity and Acceleration</title>
+      <link>/resources/28-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/28-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>29.1 Kinetic Energy of Rotation</title>
+      <link>/resources/29/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/29/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>29.2 Moment of Inertia of a Rod</title>
+      <link>/resources/29-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/29-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>29.3 Moment of Inertia of a Disc</title>
+      <link>/resources/29-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/29-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>29.4 Parallel Axis Theorem</title>
+      <link>/resources/29-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/29-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>29.5 Moment of Inertia of a Sphere</title>
+      <link>/resources/29-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/29-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>29.6 Derivation of the Parallel Axis Theorem</title>
+      <link>/resources/29-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/29-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3.1 Coordinate System and Position Vector in 2D</title>
+      <link>/resources/3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3.2 Instantaneous Velocity in 2D</title>
+      <link>/resources/3-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/3-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3.3 Instantaneous Acceleration in 2D</title>
+      <link>/resources/3-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/3-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3.4 Projectile Motion</title>
+      <link>/resources/3-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/3-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>30.1 Introduction to Torque and Rotational Dynamics</title>
+      <link>/resources/30/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/30/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>30.2 Cross Product</title>
+      <link>/resources/30-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/30-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>30.3 Cross Product in Cartesian Coordinates</title>
+      <link>/resources/30-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/30-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>30.4 Torque</title>
+      <link>/resources/30-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/30-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>30.5 Torque from Gravity</title>
+      <link>/resources/30-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/30-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>31.1 Relationship between Torque and Angular Acceleration</title>
+      <link>/resources/31/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/31/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>31.2 Internal Torques Cancel in Pairs</title>
+      <link>/resources/31-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/31-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>31.3 Worked Example - Find the Moment of Inertia of a Disc from a Falling Mass</title>
+      <link>/resources/31-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/31-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>31.4 Worked Example - Atwood Machine</title>
+      <link>/resources/31-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/31-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>31.5 Massive Pulley Problems</title>
+      <link>/resources/31-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/31-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>31.7 Worked Example - Two Blocks and a Pulley Using Energy</title>
+      <link>/resources/31-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/31-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>32.1 Angular Momentum for a Point Particle</title>
+      <link>/resources/32/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/32/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>32.2 Calculating Angular Momentum</title>
+      <link>/resources/32-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/32-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>32.3 Worked Example - Angular Momentum About Different Points</title>
+      <link>/resources/32-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/32-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>32.4 Angular Momentum of Circular Motion</title>
+      <link>/resources/32-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/32-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>33.1 Worked Example - Angular Momentum of 2 Rotating Point Particles</title>
+      <link>/resources/33/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/33/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>33.2 Angular Momentum of a Symmetric Object</title>
+      <link>/resources/33-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/33-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>33.4 If Momentum is Zero then Angular Momentum is Independent of Origin</title>
+      <link>/resources/33-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/33-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>33.5 Kinetic Energy of a Symmetric Object</title>
+      <link>/resources/33-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/33-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>34.1 Torque Causes Angular Momentum to Change - Point Particle</title>
+      <link>/resources/34/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/34/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>34.2 Torque Causes Angular Momentum to Change - System of Particles</title>
+      <link>/resources/34-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/34-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>34.3 Angular Impulse</title>
+      <link>/resources/34-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/34-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>34.4 Demo: Bicycle Wheel</title>
+      <link>/resources/34-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/34-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Caleb Bonyun&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>34.5 Worked Example - Particle Hits Pivoted Ring</title>
+      <link>/resources/34-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/34-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>35.1 Translation and Rotation of a Wheel</title>
+      <link>/resources/35/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/35/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>35.2 Rolling Wheel in the Center of Mass Frame</title>
+      <link>/resources/35-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/35-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>35.3 Rolling Wheel in the Ground Frame</title>
+      <link>/resources/35-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/35-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>35.4 Rolling Without Slipping, Slipping, and Skidding</title>
+      <link>/resources/35-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/35-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>35.5 Contact Point of a Wheel Rolling Without Slipping</title>
+      <link>/resources/35-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/35-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>36.1 Friction on a Rolling Wheel</title>
+      <link>/resources/36/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/36/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>36.2 Worked Example - Wheel Rolling Without Slipping Down Inclined Plane - Torque Method</title>
+      <link>/resources/36-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/36-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>36.3 Spool Demo</title>
+      <link>/resources/36-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/36-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Caleb Bonyun&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>36.4 Worked Example - Yoyo Pulled Along the Ground</title>
+      <link>/resources/36-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/36-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>36.5 Analyze Force and Torque in Translation and Rotation Problems</title>
+      <link>/resources/36-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/36-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>37.1 Kinetic Energy of Translation and Rotation</title>
+      <link>/resources/37/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/37/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>37.2 Worked Example - Wheel Rolling Without Slipping Down Inclined Plane</title>
+      <link>/resources/37-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/37-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>37.3 Angular Momentum of Translation and Rotation</title>
+      <link>/resources/37-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/37-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>4.1 Newton&#39;s First and Second Laws</title>
+      <link>/resources/4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>4.2 Newton&#39;s Third Law</title>
+      <link>/resources/4-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/4-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>4.3 Reference Frames</title>
+      <link>/resources/4-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/4-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>4.4 Non-inertial Reference Frames</title>
+      <link>/resources/4-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/4-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>5.1 Universal Law of Gravitation</title>
+      <link>/resources/5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>5.2 Worked Example: Gravity Superposition</title>
+      <link>/resources/5-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/5-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>5.3 Gravity at the surface of the Earth: The value of g.</title>
+      <link>/resources/5-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/5-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>6.1 Contact Forces</title>
+      <link>/resources/6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/6/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>6.2 Static Friction Lesson</title>
+      <link>/resources/6-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/6-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>7.1 Pushing Pulling and Tension</title>
+      <link>/resources/7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/7/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>7.2 Ideal Rope</title>
+      <link>/resources/7-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/7-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>7.3 Solving Pulley Systems</title>
+      <link>/resources/7-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/7-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>7.4 Hooke&#39;s Law</title>
+      <link>/resources/7-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/7-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.1 Polar Coordinates</title>
+      <link>/resources/8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/8/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.2 Circular Motion: Position and Velocity Vectors</title>
+      <link>/resources/8-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/8-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.3 Angular Velocity</title>
+      <link>/resources/8-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/8-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>9.1 Uniform Circular Motion</title>
+      <link>/resources/9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/9/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>9.2 Uniform Circular Motion - Direction of the Acceleration</title>
+      <link>/resources/9-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/9-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.1.1 Friction at the Nanoscale</title>
+      <link>/resources/dd-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Vladan Vuletic&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.2.1 Position in the CM Frame</title>
+      <link>/resources/dd-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.2.2 Relative Velocity is Independent of Reference Frame</title>
+      <link>/resources/dd-2-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-2-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.2.3 1D Elastic Collision Velocities in CM Frame</title>
+      <link>/resources/dd-2-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-2-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.2.4 Worked Example: 1D Elastic Collision in CM</title>
+      <link>/resources/dd-2-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-2-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.2.5 Kinetic Energy in Different Reference Frames</title>
+      <link>/resources/dd-2-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-2-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.2.6 Kinetic Energy in the CM Frame</title>
+      <link>/resources/dd-2-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-2-5/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.2.7 Change in the Kinetic Energy</title>
+      <link>/resources/dd-2-6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-2-6/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.3.1 Gyroscopes 1 - Free Body Diagrams, Torque, and Rotating Vectors</title>
+      <link>/resources/dd-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.3.2 Gyroscopes 2 - Precessional Angular Velocity and Titled Gyroscopes</title>
+      <link>/resources/dd-3-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-3-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DD.3.3 Gyroscopes 3 - Nutation and Total Angular Momentum</title>
+      <link>/resources/dd-3-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dd-3-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Demo: Relative Motion Gun</title>
+      <link>/resources/demo-relative-motion-gun/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/demo-relative-motion-gun/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Caleb Bonyun&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Demo: Shooting an Apple</title>
+      <link>/resources/demo-shooting-an-apple/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/demo-shooting-an-apple/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Caleb Bonyun&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Orbital Circular Motion – Period</title>
+      <link>/resources/orbital-circular-motion-2013-period/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/orbital-circular-motion-2013-period/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Orbital Circular Motion – Velocity</title>
+      <link>/resources/orbital-circular-motion-2013-velocity/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/orbital-circular-motion-2013-velocity/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.1.1 Three Questions Before Starting</title>
+      <link>/resources/ps-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Michelle Tomasik&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.1.2 Shooting the Apple</title>
+      <link>/resources/ps-1-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-1-1/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.1.3 Worked Example: Braking Car</title>
+      <link>/resources/ps-1-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-1-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.1.4 Sketch the Motion</title>
+      <link>/resources/ps-1-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-1-3/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.1.5 Worked Example: Pedestrian and Bike at Intersection</title>
+      <link>/resources/ps-1-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-1-4/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.10.1 Blocks and Massive Pulley</title>
+      <link>/resources/ps-10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-10/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.2.1 Worked Example: Sliding Block</title>
+      <link>/resources/ps-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-2/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.6.2 Snowplow Problem</title>
+      <link>/resources/ps-6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-6/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PS.7.1 Worked Example - Collision and Sliding on a Rough Surface</title>
+      <link>/resources/ps-7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps-7/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rocket Sled - Differential Equation</title>
+      <link>/resources/rocket-sled-differential-equation/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/rocket-sled-differential-equation/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rocket Sled - Integrate the Rocket Equation</title>
+      <link>/resources/rocket-sled-integrate-the-rocket-equation/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/rocket-sled-integrate-the-rocket-equation/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rocket Sled - Solve for Initial Velocity</title>
+      <link>/resources/rocket-sled-solve-for-initial-velocity/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/rocket-sled-solve-for-initial-velocity/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Window Washer Free Body Diagrams</title>
+      <link>/resources/window-washer-free-body-diagrams/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/window-washer-free-body-diagrams/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Window Washer Solution</title>
+      <link>/resources/window-washer-solution/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/window-washer-solution/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Worked Example - Orbital Circular Motion – Radius</title>
+      <link>/resources/worked-example-orbital-circular-motion-2013-radius/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/worked-example-orbital-circular-motion-2013-radius/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Anna Frebel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Worked Example - Stacked Blocks - Choosing the System of 2 Blocks Together</title>
+      <link>/resources/worked-example-stacked-blocks-choosing-the-system-of-2-blocks-together/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/worked-example-stacked-blocks-choosing-the-system-of-2-blocks-together/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Worked Example - Stacked Blocks - Free Body Diagrams and Applying Newton&#39;s 2nd Law</title>
+      <link>/resources/worked-example-stacked-blocks-free-body-diagrams-and-applying-newtons-2nd-law/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/worked-example-stacked-blocks-free-body-diagrams-and-applying-newtons-2nd-law/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Worked Example - Stacked Blocks - Solve for the Maximum Force</title>
+      <link>/resources/worked-example-stacked-blocks-solve-for-the-maximum-force/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/worked-example-stacked-blocks-solve-for-the-maximum-force/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Dr. Peter Dourmashkin&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

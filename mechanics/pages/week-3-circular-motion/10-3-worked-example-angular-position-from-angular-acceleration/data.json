@@ -1,0 +1,6 @@
+
+{
+  "title":"10.3 Worked Example - Angular Position from Angular Acceleration",
+  "content":"« Previous | Next »\nA particle is moving in a circle of radius \\(\\displaystyle r\\) with an angular acceleration given by \\(\\displaystyle \\vec{\\alpha }(t)=\\dfrac {1}{r}(A-Bt)\\hat{k}\\), or \\(\\displaystyle a_{\\theta }=(A-Bt)\\hat{\\theta }\\) where \\(\\displaystyle A\\) and \\(\\displaystyle B\\) are positive constants. At time \\(\\displaystyle t_0=0\\), the particle is at an angle \\(\\displaystyle \\theta (0)\\) measured with respect to the \\(\\displaystyle +x\\)-axis, and the tangential component of its velocity is \\(\\displaystyle v_{\\theta }(0)=v_0\\).\nFind the particle\u0026rsquo;s angular position \\(\\displaystyle \\theta (t)\\) as a function of time to obtain the arc length travelled by the particle during the time \\(\\displaystyle t\\) and defined as \\(\\displaystyle s(t)=r(\\theta (t)-\\theta (0))\\). Express your answer in terms of \\(\\displaystyle r\\), \\(\\displaystyle A\\), \\(\\displaystyle B\\), \\(\\displaystyle t\\), and \\(\\displaystyle v_0\\)\nViewing videos requires an internet connection View video page Download video Download transcript « Previous | Next »\n"}
+
+

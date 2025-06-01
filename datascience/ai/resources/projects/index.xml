@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on MIT OpenCourseWare</title>
+    <link>/resources/projects/</link>
+    <description>Recent content in Projects on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dp1.pdf</title>
+      <link>/resources/dp1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dp1/data.json</guid>
+      <description>&lt;p&gt;This assignment looks at problems drawn (but simplified) from real research or application problems. The assignment is to think very carefully about how you would solve one of these problems using the representations and algorithms covered in Chapters 2 and 3. It also covers topics such as instructions for the assignment, grading criteria, problem descriptions and sample solutions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>dp2.pdf</title>
+      <link>/resources/dp2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dp2/data.json</guid>
+      <description>&lt;p&gt;This assignment is to gain some practice in the application of machine algorithms to real data. It also provides two data sets and a framawork that will allow the students to experiment with diffrent algorithms on that data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>/pages/projects/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/projects/data.json</guid>
+      <description>&lt;p&gt;Design Project 1 (&lt;a href=&#34;../../resources/dp1/index.html&#34;&gt;PDF&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;p&gt;Design Project 2 (&lt;a href=&#34;../../resources/dp2/index.html&#34;&gt;PDF&lt;/a&gt;)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

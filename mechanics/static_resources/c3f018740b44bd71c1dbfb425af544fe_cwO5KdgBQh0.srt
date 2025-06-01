@@ -1,0 +1,421 @@
+1
+00:00:03,130 --> 00:00:05,890
+There's even a little
+bit more that we can
+
+2
+00:00:05,890 --> 00:00:09,560
+learn about our energy diagram.
+
+3
+00:00:09,560 --> 00:00:15,280
+And I'd like to just clean this
+diagram up for a little second,
+
+4
+00:00:15,280 --> 00:00:17,320
+because I want to
+work in this area.
+
+5
+00:00:17,320 --> 00:00:23,200
+Suppose our system, because
+the work non-conservative is 0,
+
+6
+00:00:23,200 --> 00:00:29,860
+tells us that the mechanical
+energy is constant.
+
+7
+00:00:29,860 --> 00:00:32,570
+Now we don't know how much
+mechanical energy our system
+
+8
+00:00:32,570 --> 00:00:33,070
+is.
+
+9
+00:00:33,070 --> 00:00:34,780
+That's a constant of the system.
+
+10
+00:00:34,780 --> 00:00:39,010
+But let's just suppose
+that our mechanical energy
+
+11
+00:00:39,010 --> 00:00:43,730
+is written like that.
+
+12
+00:00:43,730 --> 00:00:45,940
+And we'll just
+clean up a little,
+
+13
+00:00:45,940 --> 00:00:49,270
+give ourselves a little space.
+
+14
+00:00:49,270 --> 00:00:53,140
+So here is the mechanical
+energy of the system,
+
+15
+00:00:53,140 --> 00:00:55,160
+and that's a constant.
+
+16
+00:00:55,160 --> 00:01:00,510
+And now we can talk about
+two more special points.
+
+17
+00:01:00,510 --> 00:01:06,380
+A point over here,
+and at this point,
+
+18
+00:01:06,380 --> 00:01:11,560
+let's just think about what
+our mechanical energy tells us.
+
+19
+00:01:11,560 --> 00:01:14,530
+This is a special point,
+but let's begin with one
+
+20
+00:01:14,530 --> 00:01:15,510
+right here.
+
+21
+00:01:15,510 --> 00:01:18,970
+If our particle is
+at this location,
+
+22
+00:01:18,970 --> 00:01:22,690
+then this represents
+the potential energy
+
+23
+00:01:22,690 --> 00:01:27,520
+and the difference between the
+energy and the potential energy
+
+24
+00:01:27,520 --> 00:01:29,840
+is the kinetic energy.
+
+25
+00:01:29,840 --> 00:01:36,420
+So this here represents
+the kinetic energy.
+
+26
+00:01:36,420 --> 00:01:38,920
+And now we can
+ask ourselves what
+
+27
+00:01:38,920 --> 00:01:43,670
+would happen to the energies
+as our particle is moving?
+
+28
+00:01:43,670 --> 00:01:48,340
+So if we start right here,
+the kinetic energy is 0.
+
+29
+00:01:48,340 --> 00:01:50,620
+Because all the
+potential energy,
+
+30
+00:01:50,620 --> 00:01:52,750
+all the energy is potential.
+
+31
+00:01:52,750 --> 00:01:56,450
+And as a particle
+starts to move,
+
+32
+00:01:56,450 --> 00:01:59,590
+let's say it has a
+little bit of energy.
+
+33
+00:01:59,590 --> 00:02:01,760
+It starts to move
+in this direction.
+
+34
+00:02:01,760 --> 00:02:06,250
+Then the kinetic energy
+starts to increase
+
+35
+00:02:06,250 --> 00:02:11,020
+until we get to this point,
+where the kinetic energy is
+
+36
+00:02:11,020 --> 00:02:13,930
+maximum at the
+stable equilibrium
+
+37
+00:02:13,930 --> 00:02:17,060
+point where the force is 0.
+
+38
+00:02:17,060 --> 00:02:20,290
+Now the kinetic energy
+decreases because remember,
+
+39
+00:02:20,290 --> 00:02:22,650
+it's now going
+against the force.
+
+40
+00:02:22,650 --> 00:02:27,020
+The side the force was
+pointing in that direction.
+
+41
+00:02:27,020 --> 00:02:30,340
+Here it was in the
+other direction.
+
+42
+00:02:30,340 --> 00:02:33,550
+And until we finally
+get to this point
+
+43
+00:02:33,550 --> 00:02:37,660
+where, again, the
+energy of system
+
+44
+00:02:37,660 --> 00:02:40,329
+is equal to all
+potential energy,
+
+45
+00:02:40,329 --> 00:02:42,790
+and so there is
+no kinetic energy.
+
+46
+00:02:42,790 --> 00:02:46,930
+So I'll call this
+point A, and I'll
+
+47
+00:02:46,930 --> 00:02:50,440
+refer to this point
+over here, diagram
+
+48
+00:02:50,440 --> 00:02:54,550
+is getting a little
+crowded, as B.
+
+49
+00:02:54,550 --> 00:03:01,930
+And those points
+A and B are what
+
+50
+00:03:01,930 --> 00:03:03,235
+we call the turnaround points.
+
+51
+00:03:06,400 --> 00:03:11,380
+And they represent the places
+where the kinetic energy at XA
+
+52
+00:03:11,380 --> 00:03:16,750
+is equal to the kinetic
+energy at XB, which is 0.
+
+53
+00:03:16,750 --> 00:03:20,530
+Now the last thing
+that we like--
+
+54
+00:03:20,530 --> 00:03:23,110
+there's a lot of
+information, as you can see,
+
+55
+00:03:23,110 --> 00:03:26,630
+contained in these
+energy diagrams.
+
+56
+00:03:26,630 --> 00:03:30,070
+And the last bit of information
+that we'd like to ask ourselves
+
+57
+00:03:30,070 --> 00:03:34,570
+is what would happen if
+instead of having-- confining
+
+58
+00:03:34,570 --> 00:03:40,760
+our system to this area, we
+increased our mechanical energy
+
+59
+00:03:40,760 --> 00:03:42,190
+so we're up here.
+
+60
+00:03:44,770 --> 00:03:47,680
+And let's just
+follow qualitatively
+
+61
+00:03:47,680 --> 00:03:51,190
+the motion of a
+particle that begins
+
+62
+00:03:51,190 --> 00:03:56,020
+say, over here, with a
+little bit of kinetic energy
+
+63
+00:03:56,020 --> 00:03:58,310
+and potential energy.
+
+64
+00:03:58,310 --> 00:04:01,930
+And if the particle starts
+off with the velocity
+
+65
+00:04:01,930 --> 00:04:04,150
+in the positive x
+direction, then it's
+
+66
+00:04:04,150 --> 00:04:06,100
+going to move in this direction.
+
+67
+00:04:06,100 --> 00:04:10,450
+And you can see the kinetic
+energy is increasing.
+
+68
+00:04:10,450 --> 00:04:13,990
+Here we have a maximum
+amount of kinetic energy.
+
+69
+00:04:13,990 --> 00:04:17,620
+But notice that over
+here the particle still
+
+70
+00:04:17,620 --> 00:04:20,709
+has some positive
+kinetic energy,
+
+71
+00:04:20,709 --> 00:04:23,440
+and so it can get
+over this hill.
+
+72
+00:04:23,440 --> 00:04:26,260
+And when it gets
+to the other side,
+
+73
+00:04:26,260 --> 00:04:28,630
+the force was in the
+positive direction.
+
+74
+00:04:28,630 --> 00:04:31,780
+It increases its kinetic
+energy, and it goes off
+
+75
+00:04:31,780 --> 00:04:35,560
+to what we're referring
+to as infinity.
+
+76
+00:04:35,560 --> 00:04:39,820
+So one analogy that
+people like to make
+
+77
+00:04:39,820 --> 00:04:44,650
+is to understand the motion,
+think of a marble that's
+
+78
+00:04:44,650 --> 00:04:46,360
+rolling down a hill.
+
+79
+00:04:46,360 --> 00:04:50,230
+And this is just a metaphor for
+this potential energy function.
+
+80
+00:04:50,230 --> 00:04:54,850
+As the marble rolls down the
+hill, it gains kinetic energy.
+
+81
+00:04:54,850 --> 00:04:56,890
+It loses potential energy.
+
+82
+00:04:56,890 --> 00:04:59,500
+It comes maximum at
+the bottom of the hill.
+
+83
+00:04:59,500 --> 00:05:03,280
+As it goes up the hill, it
+still has enough kinetic energy
+
+84
+00:05:03,280 --> 00:05:06,970
+to get over the top of
+the hill and to start
+
+85
+00:05:06,970 --> 00:05:10,360
+to come down the other side.
+
+86
+00:05:10,360 --> 00:05:12,250
+And of course, our
+particle can never
+
+87
+00:05:12,250 --> 00:05:13,900
+get to the speed of light.
+
+88
+00:05:13,900 --> 00:05:18,476
+So our model has to
+break off at one point.

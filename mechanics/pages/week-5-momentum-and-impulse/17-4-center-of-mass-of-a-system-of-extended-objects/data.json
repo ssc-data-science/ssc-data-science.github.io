@@ -1,0 +1,6 @@
+
+{
+  "title":"17.4 Center of Mass of a System of Extended Objects",
+  "content":"« Previous | Next »\nCenter of mass of a system of extended objects.\nYou can encounter a situation where a system is constituted of more than one extended object. To find the center of mass of a system of this kind:\n1. Replace each of the extended objects by a point particle.\n2. The mass of each point particle is the mass of the corresponding extended object.\n3. The position of each point particle is the position of the center of mass of the corresponding object.\n4. Finally, compute the position of the center of mass of the system from the positions and masses of these point particles.\nThis procedure is summarized in the figure below: Calculate the center of mass (CM) of the system formed by two square boxes, the lower one with a mass 2 times the mass of the upper box.\n« Previous | Next »\n"}
+
+

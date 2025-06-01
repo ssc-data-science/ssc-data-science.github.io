@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assignments on MIT OpenCourseWare</title>
+    <link>/resources/assignments/</link>
+    <description>Recent content in Assignments on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/assignments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8.01 Classical Mechanics Pset 1</title>
+      <link>/resources/mit8_01f16_pset1_new/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset1_new/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 1.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 10</title>
+      <link>/resources/mit8_01f16_pset10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset10/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 10.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 11</title>
+      <link>/resources/mit8_01f16_pset11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset11/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 11.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 12</title>
+      <link>/resources/mit8_01f16_pset12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset12/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 12.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 2</title>
+      <link>/resources/mit8_01f16_pset2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset2/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 3</title>
+      <link>/resources/mit8_01f16_pset3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset3/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 3.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 4</title>
+      <link>/resources/mit8_01f16_pset4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset4/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 4.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 5</title>
+      <link>/resources/mit8_01f16_pset5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset5/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 5.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 6</title>
+      <link>/resources/mit8_01f16_pset6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset6/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 6.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 7</title>
+      <link>/resources/mit8_01f16_pset7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset7/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 7.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 8</title>
+      <link>/resources/mit8_01f16_pset8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset8/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 8.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8.01 Classical Mechanics Pset 9</title>
+      <link>/resources/mit8_01f16_pset9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit8_01f16_pset9/data.json</guid>
+      <description>&lt;p&gt;This file contains information regarding classical mechanics problem set 9.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Assignments</title>
+      <link>/pages/assignments/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/assignments/data.json</guid>
+      <description>&lt;p&gt;« &lt;a href=&#34;../../pages/readings/index.html&#34;&gt;Previous&lt;/a&gt; | &lt;a href=&#34;../../pages/review-vectors/index.html&#34;&gt;Next&lt;/a&gt; »&lt;/p&gt;&#xA;&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;LESSON #&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;Lesson Titles&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;PROBLEM SETS&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;related worked examples&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;0&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Vectors&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;None&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;None&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td colspan=&#34;4&#34;&gt;&#xA;&#xA;&lt;strong&gt;Week 1: Kinematics&lt;/strong&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;1&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;1D Kinematics - Position and Velocity&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td rowspan=&#34;3&#34;&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit8_01f16_pset1_new/index.html&#34;&gt;Problem Set 1 (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td rowspan=&#34;3&#34;&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../pages/week-1-kinematics/1-7-worked-example-derivatives-in-kinematics/index.html&#34;&gt;Derivatives in Kinematics&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../pages/week-1-kinematics/2-3-worked-example-acceleration-from-position/index.html&#34;&gt;Acceleration from Position&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../pages/week-1-kinematics/ps-1-2-shooting-the-apple/index.html&#34;&gt;Shooting the Apple&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../pages/week-1-kinematics/ps-1-3-worked-example-braking-car/index.html&#34;&gt;Braking Car&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../pages/week-1-kinematics/ps-1-4-sketch-the-motion/index.html&#34;&gt;Sketch the Motion&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../pages/week-1-kinematics/ps-1-5-worked-example-pedestrian-and-bike-at-intersection/index.html&#34;&gt;Pedestrian and Bike at Intersection&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/td&gt;&#xA;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;2&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;1D Kinematics - Acceleration&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;3&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;2D Kinematics - Position, Velocity, and Acceleration&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td colspan=&#34;4&#34;&gt;&#xA;&#xA;&lt;strong&gt;Week 2: Newton&amp;rsquo;s Laws&lt;/strong&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

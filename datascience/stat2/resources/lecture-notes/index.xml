@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Notes on MIT OpenCourseWare</title>
+    <link>/resources/lecture-notes/</link>
+    <description>Recent content in Lecture Notes on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/lecture-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>l1.pdf</title>
+      <link>/resources/l1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l1/data.json</guid>
+      <description>&lt;p&gt;This file contains information about set and probability theory.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l10.pdf</title>
+      <link>/resources/l10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l10/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: definitions, (Four) most common hypothesis tests Structures and hypothesis testing based on two normal samples.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l10review.pdf</title>
+      <link>/resources/l10review/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l10review/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: random sample, likelihood ratio test (LRT), one-sided test, two-sided test, generalized likelihood ratio test (GLRT).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l2.pdf</title>
+      <link>/resources/l2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l2/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: random variables, discrete model and continuous model.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l3.pdf</title>
+      <link>/resources/l3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l3/data.json</guid>
+      <description>&lt;p&gt;This file contains information about  multiple random variables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l4.pdf</title>
+      <link>/resources/l4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l4/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: expected value, variance, covariance and correlation, conditional expectation and conditional variance, moments and moment generating function and inequalities.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l5.pdf</title>
+      <link>/resources/l5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l5/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: Function of a random variable (Univariate Model)and Function of a random vector (Multivariate Model).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l6.pdf</title>
+      <link>/resources/l6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l6/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: discrete distributions and continuous distributions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l7.pdf</title>
+      <link>/resources/l7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l7/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: definitions and important properties of the sample mean distribution and the sample variance distribution.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l8.pdf</title>
+      <link>/resources/l8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l8/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: definitions, evaluating (Point) estimators and point estimation methods.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l8review.pdf</title>
+      <link>/resources/l8review/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l8review/data.json</guid>
+      <description>&lt;p&gt;This file contains an overview about point estimation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l9.pdf</title>
+      <link>/resources/l9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l9/data.json</guid>
+      <description>&lt;p&gt;This file contains topics: interval estimation, useful results and constructing confidence intervals for ?.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l9graphs.pdf</title>
+      <link>/resources/l9graphs/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l9graphs/data.json</guid>
+      <description>&lt;p&gt;This file contains graphs showing probability relationship between t- students.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture Notes</title>
+      <link>/pages/lecture-notes/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/lecture-notes/data.json</guid>
+      <description>&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;WEEK #&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;TOPICS&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;1&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Set and Probability Theory (&lt;a href=&#34;../../resources/l1/index.html&#34;&gt;PDF&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.cs.odu.edu/~toida/nerzic/content/set/basics.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Basics of Set Theory&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;2&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Random Variables, Probability Mass/Density Function, and Cumulative Distribution Function (Univariate Model) (&lt;a href=&#34;../../resources/l2/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;3&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Multiple Random Variables, Bivariate Distribution, Marginal Distribution, Conditional Distribution, Independence, Multivariate Distribution (Multivariate Model) (&lt;a href=&#34;../../resources/l3/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;4&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Expectation (Moments) (&lt;a href=&#34;../../resources/l4/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;5&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Review for Exam 1&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;6&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Random Variable and Random Vector Transformations (Univariate and Multivariate Models) (&lt;a href=&#34;../../resources/l5/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>simulations.pdf</title>
+      <link>/resources/simulations/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/simulations/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>special_dist.pdf</title>
+      <link>/resources/special_dist/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/special_dist/data.json</guid>
+      <description>&lt;p&gt;This resource contains graphs on Poisson distributions based on different variables.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

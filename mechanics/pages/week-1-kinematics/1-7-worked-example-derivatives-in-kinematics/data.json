@@ -1,0 +1,6 @@
+
+{
+  "title":"1.7 Worked Example - Derivatives in Kinematics",
+  "content":"« Previous | Next »\nA home-built model rocket is launched straight up into the air. At time \\(\\displaystyle t = 0 \\) the rocket is at rest, about to be launched. The position of the rocket as a function of time is given by:\n\\(\\displaystyle y(t) = \\frac{1}{2}(a_0-g)t^2 - \\frac{1}{30}\\frac{a_0 }{t_{0}^{4}}t^{6} \\) for \\(\\displaystyle 0 \\lt t \\lt t_0 \\)\nwhere \\(\\displaystyle a_0 \\) is a positive constant, \\(\\displaystyle g\\) is the acceleration of gravity and \\(\\displaystyle a_0 \u0026gt; g \\). The contant \\(\\displaystyle t_0\\) is the amount of time that the fuel takes to burn out. Express your answer in terms of g, t,\\(\\displaystyle a_0\\), and \\(\\displaystyle t_0\\).\nFind \\(\\displaystyle a\\), the \\(\\displaystyle y \\)-component of the acceleration as a function of time.\nViewing videos requires an internet connection View video page Download video Download transcript « Previous | Next »\n"}
+
+

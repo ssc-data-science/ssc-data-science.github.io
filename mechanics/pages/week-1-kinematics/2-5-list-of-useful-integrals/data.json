@@ -1,0 +1,6 @@
+
+{
+  "title":"2.5 List of Useful Integrals",
+  "content":"« Previous | Next »\nList of useful integrals\nIntegral of a polynomial function:\nIf \\(x(t)=At^n \\Longrightarrow \\int_{t_{i}}^{t_{f}} x(t)dt=\\frac{A}{n+1}(t_{f}^{n+1}-t_{i}^{n+1}) \\)\nwhere \\(A\\) and \\(n\\) are constants.\nIntegral of an exponential function:\nIf \\(x(t)=A e^{bt}\\Longrightarrow \\int_{t_{i}}^{t_{f}} x(t)dt=\\frac{A}{b}(e^{bt_{f}}-e^{bt_{i}}) \\)\nwhere \\(A\\) and \\(b\\) are constants.\nIntegral of \\(1/t\\):\nIf \\(x(t)=\\frac{1}{t} \\Longrightarrow \\int_{t_{i}}^{t_{f}} x(t)dt=\\ln(t_{f})-\\ln(t_{i})=\\ln(\\frac{t_{f}}{t_{i}}) \\)\nIntegral of sine:\nIf \\(x(t)=A\\sin(b+ct) \\Longrightarrow \\int x(t)dt=-\\frac{A}{c}\\cos(b+ct) + D \\)\nwhere \\(A\\), \\(b\\) and \\(c\\) are constants, and \\(D\\) is an integration constant.\nIntegral of cosine:\nIf \\(x(t)=A\\cos(b+ct) \\Longrightarrow \\int x(t)dt=\\frac{A}{c} \\sin(b+ct) + D \\)\nwhere \\(A\\), \\(b\\) and \\(c\\) are constants, and \\(D\\) is an integration constant.\nExternal References\nWolfram Alpha\n« Previous | Next »\n"}
+
+

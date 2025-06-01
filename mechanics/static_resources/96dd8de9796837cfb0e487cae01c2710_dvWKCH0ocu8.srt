@@ -1,0 +1,206 @@
+1
+00:00:03,800 --> 00:00:06,100
+Let's look at this
+rocket sled here.
+
+2
+00:00:06,100 --> 00:00:10,310
+It's gone on in the snow,
+but it wants to stop.
+
+3
+00:00:10,310 --> 00:00:12,890
+There are two little
+devices mounted on the sled,
+
+4
+00:00:12,890 --> 00:00:14,730
+and they can eject gas.
+
+5
+00:00:14,730 --> 00:00:18,380
+And so the forward one
+is used to eject gas
+
+6
+00:00:18,380 --> 00:00:21,410
+to make the sled stop.
+
+7
+00:00:21,410 --> 00:00:25,340
+We want to derive a relation
+for the differential
+
+8
+00:00:25,340 --> 00:00:29,630
+between the speed of the
+sled and the differential
+
+9
+00:00:29,630 --> 00:00:33,050
+of the mass of the rocket sled.
+
+10
+00:00:33,050 --> 00:00:35,096
+But before we do that
+with a rocket equation,
+
+11
+00:00:35,096 --> 00:00:36,470
+we need to actually
+consider what
+
+12
+00:00:36,470 --> 00:00:39,240
+else we know about this system.
+
+13
+00:00:39,240 --> 00:00:44,330
+Well, we know that the
+dry mass has a mass of m0.
+
+14
+00:00:44,330 --> 00:00:48,680
+The fuel mass is
+given also as m0.
+
+15
+00:00:48,680 --> 00:00:53,690
+And we know that, at time of t
+equals 0, the speed of the sled
+
+16
+00:00:53,690 --> 00:00:56,270
+is v0.
+
+17
+00:00:56,270 --> 00:01:00,200
+We also know that, at a
+later time, t plus delta t,
+
+18
+00:01:00,200 --> 00:01:05,870
+we have the sled here whose
+mass is now m of t plus delta t.
+
+19
+00:01:05,870 --> 00:01:10,070
+And we have this low mass
+parcel that has been ejected,
+
+20
+00:01:10,070 --> 00:01:11,620
+so the gas.
+
+21
+00:01:11,620 --> 00:01:15,605
+And that has the mass of delta
+mf, so the mass of the fuel.
+
+22
+00:01:18,690 --> 00:01:22,130
+We furthermore know that,
+relative to the sled,
+
+23
+00:01:22,130 --> 00:01:25,550
+this little gas parcel
+is moving with a speed u.
+
+24
+00:01:28,630 --> 00:01:33,910
+The rocket equation says that
+my force-- my external force--
+
+25
+00:01:33,910 --> 00:01:35,530
+has two terms.
+
+26
+00:01:35,530 --> 00:01:39,220
+We have the mass of the
+rocket times the acceleration
+
+27
+00:01:39,220 --> 00:01:46,930
+of the sled minus
+the differential here
+
+28
+00:01:46,930 --> 00:01:51,870
+of the mass times the speed u.
+
+29
+00:01:51,870 --> 00:01:54,330
+And these are
+actually all vectors.
+
+30
+00:01:54,330 --> 00:01:59,400
+And so this describes this
+little gas parcel here,
+
+31
+00:01:59,400 --> 00:02:02,920
+and this one describes
+rocket and we
+
+32
+00:02:02,920 --> 00:02:07,350
+know that v equals v i hat.
+
+33
+00:02:07,350 --> 00:02:11,080
+i hat is going in the right--
+in the direction of motion,
+
+34
+00:02:11,080 --> 00:02:14,950
+and u equals u i hat.
+
+35
+00:02:14,950 --> 00:02:19,720
+We also know that no external
+forces apply to the sled,
+
+36
+00:02:19,720 --> 00:02:23,110
+so that's actually 0.
+
+37
+00:02:23,110 --> 00:02:26,490
+We can then turn this equation.
+
+38
+00:02:26,490 --> 00:02:28,030
+We can apply all of this.
+
+39
+00:02:28,030 --> 00:02:38,270
+We will get 0 equals mr
+dvr/dt minus dmr/dtu.
+
+40
+00:02:41,230 --> 00:02:44,350
+We can bring this one
+on the other side,
+
+41
+00:02:44,350 --> 00:02:50,110
+and we end up with the
+relationship that we wanted
+
+42
+00:02:50,110 --> 00:02:55,570
+to obtain-- namely,
+an equation that
+
+43
+00:02:55,570 --> 00:03:01,985
+contains the differentials
+of the speed of the rocket,
+
+44
+00:03:01,985 --> 00:03:06,660
+that sled, and the
+differential of the mass.

@@ -1,0 +1,6 @@
+
+{
+  "title":"15.3 Worked Example - Bouncing Ball",
+  "content":"« Previous | Next »\nDefinition of Average Force:\nThe time average of a force \\(\\vec{F}(t)\\) between times \\(t_1\\) and \\(t_2\\) is defined as:\n\\[\\displaystyle \\vec{F}_{ave} = \\frac{\\int_{t_1}^{t_2}\\vec{F}(t)dt}{t_2-t_1}\\]\nA ball of mass \\(\\displaystyle m\\) is released from rest from a height \\(\\displaystyle h_ i\\) above a horizontal surface. It hits the surface and bounces off vertically to reach a maximum height \\(\\displaystyle h_ f\\). The ball is in contact with the table for a time \\(\\displaystyle T\\). Calculate \\(\\displaystyle N_{ave}\\), the magnitude of the time average normal force exerted by the table on the ball. Express your answer in terms of \\(\\displaystyle m\\), \\(\\displaystyle g\\), \\(\\displaystyle T\\), \\(\\displaystyle h_ i\\), and \\(\\displaystyle h_ f\\).\nViewing videos requires an internet connection View video page Download video Download transcript « Previous | Next »\n"}
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Readings on MIT OpenCourseWare</title>
+    <link>/resources/readings/</link>
+    <description>Recent content in Readings on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/readings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Readings</title>
+      <link>/pages/readings/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/readings/data.json</guid>
+      <description>&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;Lec #&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;Topics&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;READINGS&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;1&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;From Spikes to Rates&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Koch, Christof. &lt;em&gt;Biophysics of Computation: Information Processing in Single Neurons.&lt;/em&gt; New York, NY: Oxford University Press, 2004, section 14.2, pp. 335-341. ISBN: 9780195181999.&lt;/p&gt;&#xA;&lt;p&gt;Ermentrout, Bard. &amp;ldquo;Reduction of Conductance-Based Models with Slow Synapses to Neural Nets.&amp;rdquo; &lt;em&gt;Neural Computation&lt;/em&gt; 6, no. 4 (July 1994): 679-695.&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;2&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Perceptrons: Simple and Multilayer&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA; &#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;3&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Perceptrons as Models of Vision&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Marr, David. &lt;em&gt;Vision: A Computational Investigation into the Human Representation and Processing of Visual Information.&lt;/em&gt; New York, NY: W.H. Freeman &amp;amp; Company, 1983, section 2.2, pp. 54-79. ISBN: 9780716715672.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

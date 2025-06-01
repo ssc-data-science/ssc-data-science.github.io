@@ -1,0 +1,8 @@
+{
+  "title":"18-100af12.jpg",
+  "description": "The Intermediate Value Theorem: If f is a function which is continuous on the closed interval [a, b], and u is a real number between f(a) and f(b), then there exists c in [a, b] such that f(c) = u. Image by MIT OpenCourseWare.",
+  "file": "/courses/18-100a-introduction-to-analysis-fall-2012/98f513b4c3f97e3e7d4ad701f3e2b350_18-100af12.jpg",
+  "learning_resource_types": [],
+  "resource_type": "Image",
+  "file_type": "image/jpeg",
+  "image_metadata": {"caption":"The Intermediate Value Theorem: If f is a function which is continuous on the closed interval \\[a, b\\], and u is a real number between f(a) and f(b), then there exists c in \\[a, b\\] such that f(c) = u. (Image by MIT OpenCourseWare.)","credit":"Image by MIT OpenCourseWare.","image-alt":"Graph of the Intermediate Value Theorem."}}

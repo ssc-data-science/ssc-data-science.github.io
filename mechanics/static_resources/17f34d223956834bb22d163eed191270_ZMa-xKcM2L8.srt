@@ -1,0 +1,566 @@
+1
+00:00:03,360 --> 00:00:05,760
+Let's consider the
+motion of a wheel that's
+
+2
+00:00:05,760 --> 00:00:10,320
+rolling along the ground with
+some center of mass velocity
+
+3
+00:00:10,320 --> 00:00:11,820
+vcm.
+
+4
+00:00:11,820 --> 00:00:13,830
+And because the
+wheel is rotating
+
+5
+00:00:13,830 --> 00:00:15,970
+it has an angular velocity.
+
+6
+00:00:15,970 --> 00:00:18,960
+And you can see that
+that vector is directed
+
+7
+00:00:18,960 --> 00:00:22,770
+into the plane of the board.
+
+8
+00:00:22,770 --> 00:00:25,860
+Now, what we'd like to do is
+consider the kinetic energy
+
+9
+00:00:25,860 --> 00:00:27,660
+of this continuous body.
+
+10
+00:00:27,660 --> 00:00:33,210
+A little bit later on, that
+body has moved some distance.
+
+11
+00:00:33,210 --> 00:00:35,880
+And what we want to
+consider is the fact
+
+12
+00:00:35,880 --> 00:00:38,430
+that not only is every
+point in the body moving
+
+13
+00:00:38,430 --> 00:00:40,650
+with the center of
+mass speed, but there's
+
+14
+00:00:40,650 --> 00:00:44,820
+this additional
+rotational energy
+
+15
+00:00:44,820 --> 00:00:47,190
+that's associated with
+the fact that every point
+
+16
+00:00:47,190 --> 00:00:48,840
+in the center of
+mass reference frame
+
+17
+00:00:48,840 --> 00:00:50,650
+is undergoing circular motion.
+
+18
+00:00:50,650 --> 00:00:52,900
+So how do we describe that?
+
+19
+00:00:52,900 --> 00:00:57,190
+Well, we'll do that by choosing
+some point in the body.
+
+20
+00:00:57,190 --> 00:00:58,900
+So let's pick a point.
+
+21
+00:00:58,900 --> 00:01:03,090
+We'll call that
+mj, with mass mj.
+
+22
+00:01:03,090 --> 00:01:08,910
+And the velocity of this point,
+remember, has two components.
+
+23
+00:01:08,910 --> 00:01:10,860
+To simplify it,
+we'll give ourselves
+
+24
+00:01:10,860 --> 00:01:14,820
+a little more picture here.
+
+25
+00:01:14,820 --> 00:01:20,250
+Every single point in
+the object has the vcm.
+
+26
+00:01:20,250 --> 00:01:24,420
+But because this object is
+undergoing circular motion,
+
+27
+00:01:24,420 --> 00:01:28,020
+there is vcmj.
+
+28
+00:01:28,020 --> 00:01:32,320
+That's the rotational
+circular tangential velocity.
+
+29
+00:01:32,320 --> 00:01:34,950
+And so the vector
+sum of these two
+
+30
+00:01:34,950 --> 00:01:40,770
+is the actual velocity
+vj of the j-th object.
+
+31
+00:01:40,770 --> 00:01:45,090
+vj is equal to the
+center of mass velocity
+
+32
+00:01:45,090 --> 00:01:49,289
+plus the tangential rotational
+velocity that it has,
+
+33
+00:01:49,289 --> 00:01:53,220
+because it's undergoing
+circular motion.
+
+34
+00:01:53,220 --> 00:01:56,280
+And now what we'd like to do
+is calculate the kinetic energy
+
+35
+00:01:56,280 --> 00:01:57,479
+of this object.
+
+36
+00:01:57,479 --> 00:02:02,880
+Well, the kinetic energy
+is the sum j from 1 to n
+
+37
+00:02:02,880 --> 00:02:10,259
+of 1/2 mj times the velocity
+of this j-th particle squared,
+
+38
+00:02:10,259 --> 00:02:12,910
+which we can take
+as a dot product.
+
+39
+00:02:12,910 --> 00:02:25,353
+So we can write that as vcm
+plus vcmj dot vcm plus vcmj.
+
+40
+00:02:27,900 --> 00:02:31,870
+And that's just vj squared.
+
+41
+00:02:31,870 --> 00:02:35,430
+So when we look at these terms,
+it looks complicated at first.
+
+42
+00:02:35,430 --> 00:02:39,480
+But there's some nice-- there's
+going to be vcm dot vcm.
+
+43
+00:02:39,480 --> 00:02:41,050
+There's two cross terms.
+
+44
+00:02:41,050 --> 00:02:42,490
+They're identical.
+
+45
+00:02:42,490 --> 00:02:45,030
+And vcmj dot vcmj.
+
+46
+00:02:45,030 --> 00:02:48,690
+So let's write out
+those three terms.
+
+47
+00:02:48,690 --> 00:02:50,970
+We have 1/2 mj.
+
+48
+00:02:50,970 --> 00:02:56,070
+vcm dot vcm is vcm squared.
+
+49
+00:02:56,070 --> 00:03:00,840
+Now, every point in the
+object has the same vcm.
+
+50
+00:03:00,840 --> 00:03:05,300
+So we can pull that
+one out of the sum.
+
+51
+00:03:05,300 --> 00:03:08,520
+And now we'll take
+these cross terms.
+
+52
+00:03:08,520 --> 00:03:12,780
+So we have the sum
+over j from 1 to n.
+
+53
+00:03:12,780 --> 00:03:14,940
+There's two cross terms.
+
+54
+00:03:14,940 --> 00:03:17,100
+So the 2's are going to cancel.
+
+55
+00:03:17,100 --> 00:03:20,430
+And inside here,
+we have to remember
+
+56
+00:03:20,430 --> 00:03:22,230
+to keep our mass element.
+
+57
+00:03:22,230 --> 00:03:23,460
+That's important.
+
+58
+00:03:23,460 --> 00:03:29,579
+Now, I'm going to write
+it as mj vcmj vector.
+
+59
+00:03:29,579 --> 00:03:33,060
+Now, remember, when
+you dot with vcm,
+
+60
+00:03:33,060 --> 00:03:36,120
+every single point
+has the same vcm.
+
+61
+00:03:36,120 --> 00:03:38,520
+Every j-th element
+has the same vm,
+
+62
+00:03:38,520 --> 00:03:42,570
+so I can pull that vcm outside.
+
+63
+00:03:42,570 --> 00:03:44,650
+And finally, I
+have the last term,
+
+64
+00:03:44,650 --> 00:03:54,660
+which is the sum over j from
+1 to n of 1/2 mj vcmj squared.
+
+65
+00:03:54,660 --> 00:03:57,480
+And that's just the dot
+product of those two terms.
+
+66
+00:03:57,480 --> 00:04:00,810
+And so our kinetic energy
+looks rather complicated,
+
+67
+00:04:00,810 --> 00:04:04,380
+but let's focus on
+this term right here.
+
+68
+00:04:04,380 --> 00:04:07,800
+Because recall from our
+video on the center of mass
+
+69
+00:04:07,800 --> 00:04:13,000
+that the definition of the
+center of mass reference frame,
+
+70
+00:04:13,000 --> 00:04:17,040
+so if you're moving
+in the center of mass,
+
+71
+00:04:17,040 --> 00:04:22,960
+that in the center of mass
+reference frame, the sum of mj
+
+72
+00:04:22,960 --> 00:04:30,020
+vcmj is equal to 0.
+
+73
+00:04:30,020 --> 00:04:34,190
+So for instance, if you're
+in the center of mass frame,
+
+74
+00:04:34,190 --> 00:04:35,870
+you're moving with vcm.
+
+75
+00:04:35,870 --> 00:04:38,090
+The only velocity is this.
+
+76
+00:04:38,090 --> 00:04:42,380
+And in that frame, the
+sum of mj vcmj is 0.
+
+77
+00:04:42,380 --> 00:04:45,180
+And we did a video
+on that one before.
+
+78
+00:04:45,180 --> 00:04:47,250
+And that's exactly
+what's in this term.
+
+79
+00:04:47,250 --> 00:04:50,420
+So this term is 0.
+
+80
+00:04:50,420 --> 00:04:54,170
+So this, remember, was
+how we defined the center
+
+81
+00:04:54,170 --> 00:04:55,420
+of mass reference frame.
+
+82
+00:05:00,340 --> 00:05:04,360
+And therefore, our kinetic
+energy consists of two pieces.
+
+83
+00:05:04,360 --> 00:05:11,650
+This first piece is just 1/2 the
+total mass times vcm squared.
+
+84
+00:05:11,650 --> 00:05:16,430
+And our second piece over here,
+we'll just write it out now--
+
+85
+00:05:16,430 --> 00:05:24,350
+1/2 sum over j mj vcmj squared.
+
+86
+00:05:24,350 --> 00:05:28,070
+Now, if you are moving
+with the center of mass,
+
+87
+00:05:28,070 --> 00:05:32,690
+then this j-th object is just
+undergoing circular motion.
+
+88
+00:05:32,690 --> 00:05:36,640
+And so we have our
+result that we've
+
+89
+00:05:36,640 --> 00:05:40,630
+used many times is
+that the velocity,
+
+90
+00:05:40,630 --> 00:05:43,300
+the tangential
+rotational velocity,
+
+91
+00:05:43,300 --> 00:05:46,380
+is just equal to
+the radius rsj--
+
+92
+00:05:46,380 --> 00:05:51,570
+so let's introduce that rsj--
+
+93
+00:05:51,570 --> 00:05:55,485
+times the angular speed omega.
+
+94
+00:05:58,470 --> 00:06:00,630
+And when we put
+that into this term,
+
+95
+00:06:00,630 --> 00:06:04,450
+we see our kinetic
+energy has two pieces--
+
+96
+00:06:04,450 --> 00:06:12,870
+m total v center of mass squared
+plus 1/2 j goes from 1 to n--
+
+97
+00:06:12,870 --> 00:06:15,340
+I didn't finish that sum there--
+
+98
+00:06:15,340 --> 00:06:19,480
+mj rsj squared.
+
+99
+00:06:19,480 --> 00:06:24,900
+Now, just remember that every
+single point in the object
+
+100
+00:06:24,900 --> 00:06:30,300
+has the same angular speed,
+and so we can pull out
+
+101
+00:06:30,300 --> 00:06:35,550
+the omega squared in there.
+
+102
+00:06:35,550 --> 00:06:41,760
+And because this is a continuous
+body and we take the limit,
+
+103
+00:06:41,760 --> 00:06:45,480
+as we've done before,
+as mj goes to 0,
+
+104
+00:06:45,480 --> 00:06:48,390
+this quantity of
+mass times distance
+
+105
+00:06:48,390 --> 00:06:50,760
+squared is just the
+moment of inertia
+
+106
+00:06:50,760 --> 00:06:53,250
+about the center of
+mass of that body.
+
+107
+00:06:53,250 --> 00:06:57,909
+And in conclusion, K
+is 1/2 m total v center
+
+108
+00:06:57,909 --> 00:07:01,920
+of mass squared plus 1/2
+the moment of inertia
+
+109
+00:07:01,920 --> 00:07:09,490
+about the center of mass times
+the angular speed squared.
+
+110
+00:07:09,490 --> 00:07:12,240
+Now, this is the same
+crucial decomposition
+
+111
+00:07:12,240 --> 00:07:14,190
+that we've talked
+about many times.
+
+112
+00:07:14,190 --> 00:07:18,450
+This first piece is what we
+call the translational kinetic
+
+113
+00:07:18,450 --> 00:07:20,940
+energy, because it
+just represents how
+
+114
+00:07:20,940 --> 00:07:23,310
+the center of mass is moving.
+
+115
+00:07:23,310 --> 00:07:25,980
+And the second piece
+is what we call
+
+116
+00:07:25,980 --> 00:07:28,860
+the rotational kinetic
+energy, because it's
+
+117
+00:07:28,860 --> 00:07:33,480
+a representation of just the
+kinetic energy of rotation.
+
+118
+00:07:33,480 --> 00:07:36,090
+For example, if you were in
+the center of mass frame,
+
+119
+00:07:36,090 --> 00:07:37,830
+there would be no
+translational energy,
+
+120
+00:07:37,830 --> 00:07:41,132
+and this would be the
+only kinetic energy.

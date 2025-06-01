@@ -1,0 +1,322 @@
+1
+00:00:03,470 --> 00:00:05,960
+We'd like to consider
+a system of particles.
+
+2
+00:00:05,960 --> 00:00:08,200
+Let's say we have object one.
+
+3
+00:00:08,200 --> 00:00:12,440
+We'll call this the
+j-th object, object n.
+
+4
+00:00:12,440 --> 00:00:15,460
+And somewhere in this system of
+particles is a center of mass.
+
+5
+00:00:15,460 --> 00:00:20,240
+Now, we know that
+the external force
+
+6
+00:00:20,240 --> 00:00:24,680
+is causing the momentum
+of the system to change,
+
+7
+00:00:24,680 --> 00:00:26,510
+and what we'd now
+like to show is
+
+8
+00:00:26,510 --> 00:00:28,520
+that we can reduce
+this system to
+
+9
+00:00:28,520 --> 00:00:32,630
+an effective single particle.
+
+10
+00:00:32,630 --> 00:00:37,220
+The way we'll do that is recall
+that the momentum of the system
+
+11
+00:00:37,220 --> 00:00:40,670
+is given by the sum of
+the individual momentums.
+
+12
+00:00:40,670 --> 00:00:42,950
+We'll call that the
+j-th particle where
+
+13
+00:00:42,950 --> 00:00:45,370
+we're summing j from 1 to n.
+
+14
+00:00:45,370 --> 00:00:47,330
+And that's the sum
+of the momentums
+
+15
+00:00:47,330 --> 00:00:49,040
+of the various particles.
+
+16
+00:00:49,040 --> 00:00:52,220
+Now when you
+differentiate the momentum
+
+17
+00:00:52,220 --> 00:00:54,830
+of the system with
+respect to time,
+
+18
+00:00:54,830 --> 00:00:59,490
+we're just differentiating
+the velocity.
+
+19
+00:00:59,490 --> 00:01:01,670
+And so that becomes
+the acceleration
+
+20
+00:01:01,670 --> 00:01:03,230
+of the j-th particle.
+
+21
+00:01:03,230 --> 00:01:07,130
+Now we saw when we
+define the center of mass
+
+22
+00:01:07,130 --> 00:01:08,660
+that the acceleration
+of the center
+
+23
+00:01:08,660 --> 00:01:11,960
+of mass times the total
+mass of the system
+
+24
+00:01:11,960 --> 00:01:16,530
+was equal to the sum of mj aj.
+
+25
+00:01:16,530 --> 00:01:18,890
+j goes from 1 to n.
+
+26
+00:01:18,890 --> 00:01:22,460
+So we see that
+another way to think
+
+27
+00:01:22,460 --> 00:01:26,480
+about how the momentum of the
+system of particles is changing
+
+28
+00:01:26,480 --> 00:01:32,750
+is simply the total mass
+times the acceleration
+
+29
+00:01:32,750 --> 00:01:34,820
+of the center of mass.
+
+30
+00:01:34,820 --> 00:01:39,770
+And our combination of
+Newton's second and third law
+
+31
+00:01:39,770 --> 00:01:42,920
+now becomes that only
+the external forces
+
+32
+00:01:42,920 --> 00:01:45,590
+cause the momentum of the
+system to change so that's
+
+33
+00:01:45,590 --> 00:01:50,960
+equal to the total mass times
+the acceleration of the center
+
+34
+00:01:50,960 --> 00:01:52,039
+of mass.
+
+35
+00:01:52,039 --> 00:01:55,340
+Now what does this
+equation really mean?
+
+36
+00:01:55,340 --> 00:01:58,140
+So let's draw our
+pictures again.
+
+37
+00:01:58,140 --> 00:02:00,140
+Here's our system.
+
+38
+00:02:00,140 --> 00:02:02,810
+We have particles 1, et cetera.
+
+39
+00:02:02,810 --> 00:02:06,110
+That's the j-th
+particle, n particles.
+
+40
+00:02:06,110 --> 00:02:09,259
+And in here is the
+center of mass.
+
+41
+00:02:09,259 --> 00:02:12,680
+Now I'm going to outline
+my system like this
+
+42
+00:02:12,680 --> 00:02:14,240
+and what this
+equation is telling
+
+43
+00:02:14,240 --> 00:02:20,220
+us is that we can just focus
+by putting all of the mass
+
+44
+00:02:20,220 --> 00:02:23,750
+and total at the center of mass.
+
+45
+00:02:23,750 --> 00:02:27,770
+And that center of
+mass is going to move
+
+46
+00:02:27,770 --> 00:02:32,180
+according to some trajectory.
+
+47
+00:02:32,180 --> 00:02:35,780
+And all we have
+to think about is
+
+48
+00:02:35,780 --> 00:02:47,850
+this is a point particle
+of total mass m, m total.
+
+49
+00:02:47,850 --> 00:02:52,350
+So what we've done is we've
+done a very important reduction.
+
+50
+00:02:52,350 --> 00:02:55,050
+We've taken a complicated
+system of particles
+
+51
+00:02:55,050 --> 00:02:58,230
+and reduced it to a
+single point particle
+
+52
+00:02:58,230 --> 00:03:03,780
+of total mass m located at cm.
+
+53
+00:03:03,780 --> 00:03:06,390
+And the dynamics of
+that total particle
+
+54
+00:03:06,390 --> 00:03:11,010
+is if there is external
+force acting on this system,
+
+55
+00:03:11,010 --> 00:03:14,520
+we place this external
+force at the center of mass.
+
+56
+00:03:14,520 --> 00:03:18,030
+And now we can calculate
+the acceleration
+
+57
+00:03:18,030 --> 00:03:23,760
+of the center of mass is just
+that external force divided
+
+58
+00:03:23,760 --> 00:03:25,650
+by the total mass.
+
+59
+00:03:25,650 --> 00:03:29,520
+And that's how we can reduce
+this complicated system
+
+60
+00:03:29,520 --> 00:03:36,360
+of particles to a translational
+motion of the center of mass.
+
+61
+00:03:36,360 --> 00:03:41,489
+Now we still cannot describe
+the individual interactions
+
+62
+00:03:41,489 --> 00:03:43,780
+in the system, but we're not
+trying to do that anymore.
+
+63
+00:03:43,780 --> 00:03:46,500
+We're not trying to trace
+how each particle moves.
+
+64
+00:03:46,500 --> 00:03:49,170
+We're just looking at as our
+system is a point particle
+
+65
+00:03:49,170 --> 00:03:52,110
+and talking about how
+that point-like object is
+
+66
+00:03:52,110 --> 00:03:54,300
+translating the space.
+
+67
+00:03:54,300 --> 00:03:56,880
+And this is a powerful
+tool that we use again
+
+68
+00:03:56,880 --> 00:03:58,647
+and again and again.

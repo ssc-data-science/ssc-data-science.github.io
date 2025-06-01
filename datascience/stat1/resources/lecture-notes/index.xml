@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Notes on MIT OpenCourseWare</title>
+    <link>/resources/lecture-notes/</link>
+    <description>Recent content in Lecture Notes on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/lecture-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>18.650 (F16) Lecture  1: Introduction</title>
+      <link>/resources/mit18_650f16_introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_introduction/data.json</guid>
+      <description>&lt;p&gt;Lecture  1: Introduction to Statistics&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 10: Generalized Linear Models (GLMs)</title>
+      <link>/resources/mit18_650f16_glm/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_glm/data.json</guid>
+      <description>&lt;p&gt;Lecture 10 Generalized Linear Models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 2: Parametric Inference</title>
+      <link>/resources/mit18_650f16_parametric_inf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_parametric_inf/data.json</guid>
+      <description>&lt;p&gt;Lecture 2 Parametric Inference&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 3: Maximum Likelihood Estimation</title>
+      <link>/resources/mit18_650f16_maximum_le/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_maximum_le/data.json</guid>
+      <description>&lt;p&gt;Lecture 3 Maximum Likelihood Estimation&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 4: The Method of Moments</title>
+      <link>/resources/mit18_650f16_method_of_moments/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_method_of_moments/data.json</guid>
+      <description>&lt;p&gt;Lecture 4 The Method of Moments&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 5: Parametric hypothesis testing</title>
+      <link>/resources/mit18_650f16_parametric_ht/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_parametric_ht/data.json</guid>
+      <description>&lt;p&gt;Lecture 5 Parametric Hypothesis Testing&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 6: Testing goodness of fit</title>
+      <link>/resources/mit18_650f16_testing_gf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_testing_gf/data.json</guid>
+      <description>&lt;p&gt;Lecture 6 Testing Goodness of Fit&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 7: Regression</title>
+      <link>/resources/mit18_650f16_regression/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_regression/data.json</guid>
+      <description>&lt;p&gt;Lecture 7 Regression&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 8: Bayesian Statistics</title>
+      <link>/resources/mit18_650f16_bayesian_statistics/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_bayesian_statistics/data.json</guid>
+      <description>&lt;p&gt;Lecture 8 Bayesian Statistics&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Lecture 9: Principal Component Analysis (PCA)</title>
+      <link>/resources/mit18_650f16_pca/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pca/data.json</guid>
+      <description>&lt;p&gt;Lecture 9 Principal Component Analysis&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture Slides</title>
+      <link>/pages/lecture-slides/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/lecture-slides/data.json</guid>
+      <description>&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;SES #&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;TOPICS&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;1-2&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_introduction/index.html&#34;&gt;Introduction to Statistics (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;3&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_parametric_inf/index.html&#34;&gt;Parametric Inference (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;4-5&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_maximum_le/index.html&#34;&gt;Maximum Likelihood Estimation (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;6&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_method_of_moments/index.html&#34;&gt;The Method of Moments (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;7-10&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_parametric_ht/index.html&#34;&gt;Parametric Hypothesis Testing (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;11-12&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_testing_gf/index.html&#34;&gt;Testing Goodness of Fit (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;13-16&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_regression/index.html&#34;&gt;Regression (PDF - 1.2MB)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;17-18&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_bayesian_statistics/index.html&#34;&gt;Bayesian Statistics (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;19-20&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_pca/index.html&#34;&gt;Principal Component Analysis (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;21-24&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;&lt;a href=&#34;../../resources/mit18_650f16_glm/index.html&#34;&gt;Generalized Linear Models (PDF)&lt;/a&gt;&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;/table&gt;</description>
+    </item>
+  </channel>
+</rss>

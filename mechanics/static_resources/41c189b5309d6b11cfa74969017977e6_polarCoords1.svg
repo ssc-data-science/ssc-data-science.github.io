@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="52 -34.4 295.5 176.4" style="enable-background:new 52 -34.4 295.5 176.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E2E0E0;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st1{font-family:'TimesNewRomanPS-ItalicMT';}
+	.st2{font-size:88.8319px;}
+	.st3{fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;}
+	.st4{fill:#010101;}
+	.st5{font-family:'TimesNewRomanPSMT';}
+	.st6{font-size:18px;}
+	.st7{font-family:'TimesNewRomanPS-BoldMT';}
+	.st8{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#FA352C;stroke-width:2;stroke-miterlimit:10;}
+	.st10{fill:#FA352C;}
+	.st11{font-family:'MyriadPro-Regular';}
+	.st12{font-size:20px;}
+	.st13{fill:none;stroke:#0097D6;stroke-width:1.5;stroke-miterlimit:10;}
+	.st14{fill:#0097D6;stroke:#0097D6;stroke-miterlimit:10;}
+	.st15{fill:#0097D6;}
+	.st16{font-family:'MyriadPro-Bold';}
+</style>
+<circle class="st0" cx="174.9" cy="73" r="61.7"/>
+<text transform="matrix(1 0 0 1 167.6845 76.5848)" class="st1 st2">.</text>
+<g>
+	<g>
+		<line class="st3" x1="281.3" y1="28.7" x2="317.4" y2="28.7"/>
+		<g>
+			<path d="M314.7,28.7l-3.3-5.4l0.2-0.1l8.8,3.5c3.1,0.7,6.1,1.4,9.2,2c-3.1,0.7-6.1,1.4-9.2,2l-8.8,3.5l-0.2-0.1L314.7,28.7z"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st3" x1="282" y1="29.6" x2="282" y2="-6.4"/>
+		<g>
+			<path d="M282-3.8l-5.4,3.3l-0.1-0.2l3.5-8.8c0.7-3.1,1.4-6.1,2-9.2c0.7,3.1,1.4,6.1,2,9.2l3.5,8.8l-0.1,0.2L282-3.8z"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 314.9171 6.7857)" class="st4 st5 st6">ˆ</text>
+<text transform="matrix(1 0 0 1 315.2921 13.6607)" class="st4 st7 st6">i</text>
+<text transform="matrix(1 0 0 1 267.441 5.782)" class="st4 st5 st6">ˆ</text>
+<text transform="matrix(1 0 0 1 268.191 10.657)" class="st4 st7 st6">j</text>
+<line class="st8" x1="174" y1="72.2" x2="236.6" y2="72.2"/>
+<line class="st8" x1="174" y1="72.2" x2="126" y2="34.2"/>
+<path class="st9" d="M151,51.7c16-13.5,52-3.5,59,19.5"/>
+<text transform="matrix(1 0 0 1 190 41.2)" class="st10 st11 st12">θ</text>
+<g>
+	<g>
+		<line class="st13" x1="125.5" y1="34.4" x2="98.8" y2="10.2"/>
+		<g>
+			<path class="st14" d="M100.8,12l-1.2,6.2l-0.2-0.1l-4.2-8.5c-1.8-2.6-3.6-5.1-5.5-7.7c2.8,1.6,5.5,3.1,8.2,4.7l8.9,3.3l0.1,0.2
+				L100.8,12z"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st13" x1="125.6" y1="33.3" x2="101.4" y2="60"/>
+		<g>
+			<path class="st14" d="M103.2,58l6.2,1.2l-0.1,0.2l-8.5,4.2c-2.6,1.8-5.1,3.6-7.7,5.5c1.6-2.8,3.1-5.5,4.7-8.2l3.3-8.9l0.2-0.1
+				L103.2,58z"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 79.9171 56.7857)" class="st15 st5 st6">ˆ</text>
+<text transform="matrix(1 0 0 1 77.2921 64.6607)" class="st15 st16 st12">θ</text>
+<text transform="matrix(1 0 0 1 77.441 9.782)" class="st15 st5 st6">ˆ</text>
+<text transform="matrix(1 0 0 1 76.191 12.657)" class="st15 st7 st12">r</text>
+</svg>

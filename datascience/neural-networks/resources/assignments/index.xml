@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assignments on MIT OpenCourseWare</title>
+    <link>/resources/assignments/</link>
+    <description>Recent content in Assignments on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/assignments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assignments</title>
+      <link>/pages/assignments/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/assignments/data.json</guid>
+      <description>&lt;h3 id=&#34;late-submission-policy&#34;&gt;Late Submission Policy&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;Any homework submitted after class on the due date will be subject to a 20-point deduction per 24 hour period. Extensions should be requested at least 3 days in advance and will only be granted for exceptional reasons (e.g., conference submission).&lt;/p&gt;&#xA;&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;ASSIGNMENTS&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;SUPPORTING FILES&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 1: Integrate-and-Fire Neurons (&lt;a href=&#34;../../resources/ps1/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA; &#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 2: Perceptrons and Linear Networks (&lt;a href=&#34;../../resources/ps2/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA; &#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 3: Nonlinear Networks (&lt;a href=&#34;../../resources/ps3/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA; &#xA;&lt;/td&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>faces.mat</title>
+      <link>/resources/faces/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/faces/data.json</guid>
+      <description>&lt;p&gt;This resource includes special .mat files to suppliment the contents in problem set 8.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>kmeans.mat</title>
+      <link>/resources/kmeans/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/kmeans/data.json</guid>
+      <description>&lt;p&gt;This resource includes special .mat files to suppliment the contents in problem set 8.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mnistabridged.mat</title>
+      <link>/resources/mnistabridged/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mnistabridged/data.json</guid>
+      <description>&lt;p&gt;This resource includes special .mat files to suppliment the contents in problem set 9.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>perceptron_delta.m</title>
+      <link>/resources/perceptron_delta/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/perceptron_delta/data.json</guid>
+      <description>&lt;p&gt;This resource includes special .m files to suppliment the contents in problem set 9.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps1.pdf</title>
+      <link>/resources/ps1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps1/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on single neuron model,and  modeling synapses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps10.pdf</title>
+      <link>/resources/ps10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps10/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on backpropagation algorithm, and limit cycle learning.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps2.pdf</title>
+      <link>/resources/ps2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps2/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on linear perceptrons, lateral inhibition and the horseshoe crab retina.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps3.pdf</title>
+      <link>/resources/ps3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps3/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on amplification mode, global inhibition sets a dynamic threshold in the nonlinear network, and lateral inhibition mediates competition.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps4.pdf</title>
+      <link>/resources/ps4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps4/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on Lyapunov function for the WTA network, and 2-neurons network.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps5.pdf</title>
+      <link>/resources/ps5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps5/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on group winner-take-all, stereopsis, nearest neighbor excitation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps6.pdf</title>
+      <link>/resources/ps6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps6/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on a Gaussian filter, matrix form of convolution.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps7.pdf</title>
+      <link>/resources/ps7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps7/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on linear elastic boundary value problems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps8.pdf</title>
+      <link>/resources/ps8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps8/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on double-ring network model, principal component analysis, and clustering with K-means.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps9.pdf</title>
+      <link>/resources/ps9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps9/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on face dataset, and perceptron delta.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ps9faces.mat</title>
+      <link>/resources/ps9faces/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps9faces/data.json</guid>
+      <description>&lt;p&gt;This resource includes special .mat files to suppliment the contents in problem set 9.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>telescope.mat</title>
+      <link>/resources/telescope/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/telescope/data.json</guid>
+      <description>&lt;p&gt;This resource includes special .mat files to suppliment the contents in problem set 6.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

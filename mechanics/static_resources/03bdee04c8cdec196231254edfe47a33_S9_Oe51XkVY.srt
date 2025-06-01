@@ -1,0 +1,460 @@
+1
+00:00:03,500 --> 00:00:05,780
+When we're looking
+at polar coordinates,
+
+2
+00:00:05,780 --> 00:00:09,140
+one of the important issues is
+to understand the unit vectors.
+
+3
+00:00:09,140 --> 00:00:12,290
+Let's describe our
+coordinate system, again.
+
+4
+00:00:12,290 --> 00:00:15,860
+We have a point where
+there is an object.
+
+5
+00:00:15,860 --> 00:00:20,080
+And at this point, we have a
+pair of unit vectors, r hat
+
+6
+00:00:20,080 --> 00:00:22,240
+and theta hat.
+
+7
+00:00:22,240 --> 00:00:24,800
+Now those unit vectors
+will change, depending
+
+8
+00:00:24,800 --> 00:00:26,180
+on where you are in space.
+
+9
+00:00:26,180 --> 00:00:27,990
+We now want to
+address the question,
+
+10
+00:00:27,990 --> 00:00:30,530
+how do I compare
+polar coordinates
+
+11
+00:00:30,530 --> 00:00:32,310
+and Cartesian coordinates.
+
+12
+00:00:32,310 --> 00:00:34,760
+In Cartesian coordinates,
+at this point
+
+13
+00:00:34,760 --> 00:00:40,360
+here, we would have-- let's say
+we choose a Cartesian plus x
+
+14
+00:00:40,360 --> 00:00:45,950
+and plus y, then we would have
+a unit vector i hat and j hat.
+
+15
+00:00:45,950 --> 00:00:48,390
+And how are these
+vectors related?
+
+16
+00:00:48,390 --> 00:00:53,190
+Remember our angle theta, so
+we have the angle theta here
+
+17
+00:00:53,190 --> 00:00:54,930
+and the angle theta there.
+
+18
+00:00:54,930 --> 00:00:57,990
+And now I would like to apply
+a simple vector decomposition
+
+19
+00:00:57,990 --> 00:01:01,510
+to r hat and theta hat and
+express each of these unit
+
+20
+00:01:01,510 --> 00:01:05,432
+vectors in terms of the unit
+vectors i hat and j hat.
+
+21
+00:01:05,432 --> 00:01:07,370
+Let's begin with r hat.
+
+22
+00:01:07,370 --> 00:01:09,690
+As you can see in
+the diagram, r hat
+
+23
+00:01:09,690 --> 00:01:13,730
+has a horizontal component
+and a vertical component.
+
+24
+00:01:13,730 --> 00:01:17,330
+So what we have is r hat.
+
+25
+00:01:17,330 --> 00:01:19,370
+It's a unit vector,
+so its length is 1.
+
+26
+00:01:19,370 --> 00:01:22,340
+Its horizontal component
+is adjacent to the angle,
+
+27
+00:01:22,340 --> 00:01:28,020
+so that's cosine of theta i
+hat plus sine of theta j hat.
+
+28
+00:01:28,020 --> 00:01:30,740
+The vertical component
+is opposite the angle.
+
+29
+00:01:30,740 --> 00:01:34,520
+In a similar fashion,
+theta hat-- well, theta hat
+
+30
+00:01:34,520 --> 00:01:39,780
+has a component in the
+negative i hat direction,
+
+31
+00:01:39,780 --> 00:01:42,240
+which is opposite the angle.
+
+32
+00:01:42,240 --> 00:01:45,060
+And it has a component in
+the positive j hat direction,
+
+33
+00:01:45,060 --> 00:01:46,690
+which is adjacent to the angle.
+
+34
+00:01:46,690 --> 00:01:56,400
+So we have minus sine theta i
+hat plus cosine theta j hat.
+
+35
+00:01:56,400 --> 00:01:59,539
+And that's how we can
+decompose our unit vectors r
+
+36
+00:01:59,539 --> 00:02:03,810
+hat and theta hat in terms
+of Cartesian coordinates.
+
+37
+00:02:03,810 --> 00:02:06,590
+Now why is this significant?
+
+38
+00:02:06,590 --> 00:02:10,720
+Because if we're describing
+the motion of an object,
+
+39
+00:02:10,720 --> 00:02:13,560
+for instance, an object
+that's going around a circle,
+
+40
+00:02:13,560 --> 00:02:19,130
+then our polar coordinate
+theta is a function of time.
+
+41
+00:02:19,130 --> 00:02:23,450
+And so these unit vectors are
+actually changing in direction.
+
+42
+00:02:23,450 --> 00:02:24,480
+You saw that before.
+
+43
+00:02:24,480 --> 00:02:29,340
+Over here, r hat and theta hat
+point in different directions.
+
+44
+00:02:29,340 --> 00:02:34,950
+So what we actually have as
+functions of time is r hat of t
+
+45
+00:02:34,950 --> 00:02:38,760
+equals cosine theta of t i hat.
+
+46
+00:02:38,760 --> 00:02:40,970
+Now the unit
+vectors don't change
+
+47
+00:02:40,970 --> 00:02:42,020
+in Cartesian coordinates.
+
+48
+00:02:42,020 --> 00:02:45,820
+At every single point, you
+have the same Cartesian unit
+
+49
+00:02:45,820 --> 00:02:47,829
+vectors.
+
+50
+00:02:47,829 --> 00:02:51,992
+And so this vector
+is time dependent.
+
+51
+00:02:54,670 --> 00:02:58,440
+Now the significance of that
+is our first important vector
+
+52
+00:02:58,440 --> 00:03:02,690
+in kinematics is
+the position vector.
+
+53
+00:03:02,690 --> 00:03:04,260
+The position vector
+is a vector that
+
+54
+00:03:04,260 --> 00:03:06,940
+goes from the origin
+to where the object is.
+
+55
+00:03:06,940 --> 00:03:09,590
+We'll call that r of t.
+
+56
+00:03:09,590 --> 00:03:17,840
+So this position vector r of t
+can be expressed as a length r.
+
+57
+00:03:17,840 --> 00:03:21,120
+And its direction is
+in the r hat direction,
+
+58
+00:03:21,120 --> 00:03:23,500
+which is a function of time.
+
+59
+00:03:23,500 --> 00:03:27,980
+So we have r cosine
+theta of t i hat
+
+60
+00:03:27,980 --> 00:03:32,610
+plus r sine theta of t j hat.
+
+61
+00:03:32,610 --> 00:03:37,250
+Now we can now define the
+velocity of this object
+
+62
+00:03:37,250 --> 00:03:41,329
+where the velocity is the
+derivative of the position
+
+63
+00:03:41,329 --> 00:03:42,740
+vector.
+
+64
+00:03:42,740 --> 00:03:46,660
+When you differentiate,
+remember, r is a constant,
+
+65
+00:03:46,660 --> 00:03:48,640
+so we get r.
+
+66
+00:03:48,640 --> 00:03:50,920
+Now what is the
+derivative with respect
+
+67
+00:03:50,920 --> 00:03:53,720
+to time of cosine theta t.
+
+68
+00:03:53,720 --> 00:03:57,040
+Because the argument of
+theta is a function of t,
+
+69
+00:03:57,040 --> 00:03:58,940
+we need to use the chain rule.
+
+70
+00:03:58,940 --> 00:04:06,220
+So the derivative is minus sine
+theta of t, d theta dt i hat.
+
+71
+00:04:06,220 --> 00:04:11,260
+And the derivative of
+the sine is cosine theta
+
+72
+00:04:11,260 --> 00:04:16,670
+of t d theta dt j hat.
+
+73
+00:04:16,670 --> 00:04:22,040
+Now notice that I can pull out
+the common term d theta dt.
+
+74
+00:04:22,040 --> 00:04:25,440
+So I have r d theta dt.
+
+75
+00:04:25,440 --> 00:04:30,640
+And I have minus sine theta
+of t i hat plus cosine
+
+76
+00:04:30,640 --> 00:04:33,909
+theta of t j hat.
+
+77
+00:04:33,909 --> 00:04:38,240
+And if you'll notice, this is
+exactly the unit vector theta
+
+78
+00:04:38,240 --> 00:04:39,130
+hat.
+
+79
+00:04:39,130 --> 00:04:42,110
+So we can write
+our velocity vector
+
+80
+00:04:42,110 --> 00:04:50,030
+for this object that's moving in
+a circle as r d theta dt theta
+
+81
+00:04:50,030 --> 00:04:52,320
+hat.
+
+82
+00:04:52,320 --> 00:04:54,130
+When we write a
+vector like this,
+
+83
+00:04:54,130 --> 00:04:57,100
+it's pointing tangentially,
+the theta hat direction,
+
+84
+00:04:57,100 --> 00:04:58,430
+and this part is the component.
+
+85
+00:05:01,140 --> 00:05:05,250
+So often we can use a
+notation v theta theta
+
+86
+00:05:05,250 --> 00:05:11,340
+hat, where v theta is the
+component r d theta dt.
+
+87
+00:05:11,340 --> 00:05:15,250
+Now this component can be
+positive or negative or 0.
+
+88
+00:05:15,250 --> 00:05:21,510
+For example, if d theta dt is
+positive, what does that mean?
+
+89
+00:05:21,510 --> 00:05:23,140
+That means that
+our angle theta is
+
+90
+00:05:23,140 --> 00:05:26,810
+increasing so the object is
+moving the way I indicate
+
+91
+00:05:26,810 --> 00:05:29,090
+with my finger.
+
+92
+00:05:29,090 --> 00:05:35,240
+If d theta dt is 0, then
+the angle is not changing,
+
+93
+00:05:35,240 --> 00:05:37,460
+so the object is at rest.
+
+94
+00:05:37,460 --> 00:05:42,200
+And finally, if d
+theta dt is negative,
+
+95
+00:05:42,200 --> 00:05:44,520
+then the angle
+theta is decreasing,
+
+96
+00:05:44,520 --> 00:05:48,870
+and so the object is
+moving in this direction.
+
+97
+00:05:48,870 --> 00:05:53,720
+So this is our velocity for
+a circular motion expressed
+
+98
+00:05:53,720 --> 00:05:55,790
+in polar coordinates.

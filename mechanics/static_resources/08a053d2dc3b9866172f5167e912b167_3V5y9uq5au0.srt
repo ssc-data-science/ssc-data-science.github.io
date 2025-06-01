@@ -1,0 +1,575 @@
+1
+00:00:03,830 --> 00:00:06,110
+We want to look at
+this pulley system.
+
+2
+00:00:06,110 --> 00:00:09,170
+We want to find out
+what this force here
+
+3
+00:00:09,170 --> 00:00:12,880
+is, for example, with which
+this block is being pulled.
+
+4
+00:00:12,880 --> 00:00:17,350
+Now we have two massless pulleys
+here and two moving parts.
+
+5
+00:00:17,350 --> 00:00:20,510
+And one key component
+of this problem
+
+6
+00:00:20,510 --> 00:00:23,970
+is to derive the
+acceleration constraint.
+
+7
+00:00:23,970 --> 00:00:25,690
+How are we going to do that?
+
+8
+00:00:25,690 --> 00:00:29,730
+Well, we have to look
+at this string here.
+
+9
+00:00:29,730 --> 00:00:31,930
+First of all, it's a
+fixed string length.
+
+10
+00:00:31,930 --> 00:00:34,470
+And that will help us.
+
+11
+00:00:34,470 --> 00:00:36,990
+Ultimately, this is
+just a distance that
+
+12
+00:00:36,990 --> 00:00:39,820
+connects all of these objects.
+
+13
+00:00:39,820 --> 00:00:42,950
+And if we eventually
+differentiate that twice,
+
+14
+00:00:42,950 --> 00:00:44,810
+we get to an acceleration.
+
+15
+00:00:44,810 --> 00:00:46,480
+So the first thing
+we're going to do
+
+16
+00:00:46,480 --> 00:00:52,610
+is to figure out what the
+string length is to then derive
+
+17
+00:00:52,610 --> 00:00:54,620
+the acceleration condition.
+
+18
+00:00:54,620 --> 00:00:57,630
+Let's begin by first
+identifying the fixed
+
+19
+00:00:57,630 --> 00:00:59,430
+length in this problem.
+
+20
+00:00:59,430 --> 00:01:02,950
+So we have a little
+distance here.
+
+21
+00:01:02,950 --> 00:01:06,030
+We call it sb.
+
+22
+00:01:06,030 --> 00:01:12,920
+And we have a distance
+here that's fixed, sa.
+
+23
+00:01:12,920 --> 00:01:16,380
+And we furthermore know
+that this block here
+
+24
+00:01:16,380 --> 00:01:18,380
+is fixed to the ground.
+
+25
+00:01:18,380 --> 00:01:22,700
+And we can choose a
+coordinate system origin.
+
+26
+00:01:22,700 --> 00:01:24,750
+Let's say we do that here.
+
+27
+00:01:24,750 --> 00:01:31,720
+We know that we have
+the distance d here
+
+28
+00:01:31,720 --> 00:01:33,750
+to this little block.
+
+29
+00:01:33,750 --> 00:01:36,870
+The moving parts,
+block 1 and block 2--
+
+30
+00:01:36,870 --> 00:01:40,160
+so we have to assign
+position functions.
+
+31
+00:01:40,160 --> 00:01:46,440
+And actually this
+one here is x1.
+
+32
+00:01:46,440 --> 00:01:49,491
+It goes up to here
+because we want
+
+33
+00:01:49,491 --> 00:01:51,200
+to measure the string
+length, ultimately,
+
+34
+00:01:51,200 --> 00:01:53,180
+and we know this portion here.
+
+35
+00:01:53,180 --> 00:01:54,560
+So we can subtract it.
+
+36
+00:01:54,560 --> 00:02:04,750
+And then of course we need also
+x1, so that goes here-- x2.
+
+37
+00:02:04,750 --> 00:02:09,490
+So now we can tally
+up the length.
+
+38
+00:02:09,490 --> 00:02:12,050
+Let's start with
+this portion here.
+
+39
+00:02:12,050 --> 00:02:18,186
+That is d minus sa minus x2.
+
+40
+00:02:18,186 --> 00:02:21,795
+d minus sa minus x2.
+
+41
+00:02:24,560 --> 00:02:29,040
+And then we have a
+half circle here, pi r.
+
+42
+00:02:29,040 --> 00:02:32,130
+And we know actually that there
+is another half circle that's
+
+43
+00:02:32,130 --> 00:02:36,840
+going to come there, so we can
+just write 2 pi r immediately.
+
+44
+00:02:36,840 --> 00:02:39,329
+And then we have this part here.
+
+45
+00:02:39,329 --> 00:02:48,730
+That one is x1 minus sb,
+and then minus sa minus x2.
+
+46
+00:02:54,730 --> 00:02:57,100
+And then finally we
+have this portion,
+
+47
+00:02:57,100 --> 00:03:06,685
+and that is x1
+minus sb minus x2.
+
+48
+00:03:10,878 --> 00:03:12,930
+OK, so the next
+step is that we need
+
+49
+00:03:12,930 --> 00:03:15,540
+to simplify this a little bit.
+
+50
+00:03:15,540 --> 00:03:27,400
+So we have one x1 and another
+one here, 2x1 plus x2, x2,
+
+51
+00:03:27,400 --> 00:03:31,643
+x2-- actually 3-- minus 3x2.
+
+52
+00:03:34,320 --> 00:03:37,260
+And then we have all
+sorts of consonants.
+
+53
+00:03:37,260 --> 00:03:40,990
+We have d, we have
+sa, sb, the 2 pi r.
+
+54
+00:03:40,990 --> 00:03:44,780
+But, as you will see, if we
+differentiate this out here,
+
+55
+00:03:44,780 --> 00:03:46,260
+that will actually
+all fall away.
+
+56
+00:03:46,260 --> 00:03:48,790
+So we're going to make
+our life easy and just
+
+57
+00:03:48,790 --> 00:03:52,920
+add a constant here.
+
+58
+00:03:52,920 --> 00:03:59,160
+And so we want to now do
+the second derivative here
+
+59
+00:03:59,160 --> 00:04:02,960
+of our string length
+with respect to time,
+
+60
+00:04:02,960 --> 00:04:05,060
+because these all
+position functions.
+
+61
+00:04:05,060 --> 00:04:07,730
+So we can differentiate those.
+
+62
+00:04:07,730 --> 00:04:10,640
+What's important of course
+here is this string length
+
+63
+00:04:10,640 --> 00:04:12,570
+is not changing with time.
+
+64
+00:04:12,570 --> 00:04:16,410
+So actually we know that
+that derivative will be 0.
+
+65
+00:04:16,410 --> 00:04:18,410
+And we can just
+write this up here
+
+66
+00:04:18,410 --> 00:04:21,440
+because x differentiated
+twice is a.
+
+67
+00:04:21,440 --> 00:04:27,070
+So 2a1 minus 3a2.
+
+68
+00:04:27,070 --> 00:04:36,170
+And we immediately see from
+that that a1 equals 3/2 a2.
+
+69
+00:04:39,950 --> 00:04:42,010
+So this is our
+constraint condition
+
+70
+00:04:42,010 --> 00:04:44,820
+that we will need later.
+
+71
+00:04:44,820 --> 00:04:49,610
+For now, we need to continue
+with setting up free body
+
+72
+00:04:49,610 --> 00:04:53,820
+diagrams of all four objects.
+
+73
+00:04:53,820 --> 00:04:58,950
+Let's start that with object 1.
+
+74
+00:04:58,950 --> 00:05:01,140
+What's acting on object 1?
+
+75
+00:05:01,140 --> 00:05:04,745
+Well, we have F here.
+
+76
+00:05:04,745 --> 00:05:08,380
+Why don't we just
+write it as magnitude.
+
+77
+00:05:08,380 --> 00:05:12,740
+We have F, and then
+we have here a tension
+
+78
+00:05:12,740 --> 00:05:16,640
+that goes to the
+pulley B. That one
+
+79
+00:05:16,640 --> 00:05:18,780
+is different from the
+tension in the string.
+
+80
+00:05:18,780 --> 00:05:21,675
+So we're going to call this TB.
+
+81
+00:05:21,675 --> 00:05:25,520
+And then we have object 2.
+
+82
+00:05:25,520 --> 00:05:29,560
+Oh, and of course, i hat
+goes in this direction
+
+83
+00:05:29,560 --> 00:05:32,840
+because it follows the
+motion of the object.
+
+84
+00:05:32,840 --> 00:05:36,000
+We have here kind
+of the reverse.
+
+85
+00:05:36,000 --> 00:05:39,860
+Now we have a tension
+of this string here
+
+86
+00:05:39,860 --> 00:05:42,239
+that's attached to
+pulley A, but it's
+
+87
+00:05:42,239 --> 00:05:44,030
+different from this
+string tension-- that's
+
+88
+00:05:44,030 --> 00:05:46,340
+a specific one-- TA.
+
+89
+00:05:46,340 --> 00:05:51,510
+And we also have a T
+from the string here.
+
+90
+00:05:51,510 --> 00:05:58,480
+So we'll add a T. And then
+if we look at pulley A,
+
+91
+00:05:58,480 --> 00:06:04,360
+we have two string
+tensions, T and T.
+
+92
+00:06:04,360 --> 00:06:08,830
+And here we again have a TA.
+
+93
+00:06:08,830 --> 00:06:21,020
+And pulley B, TB,
+and two T over here.
+
+94
+00:06:21,020 --> 00:06:24,460
+So that means we can write
+down our equations of motions
+
+95
+00:06:24,460 --> 00:06:28,190
+using Newton's Second
+Law, F equals ma.
+
+96
+00:06:32,580 --> 00:06:35,800
+And since this is just going
+in the i hat direction,
+
+97
+00:06:35,800 --> 00:06:39,000
+we can just write down the four
+equations following the four
+
+98
+00:06:39,000 --> 00:06:40,870
+free body diagrams here.
+
+99
+00:06:40,870 --> 00:06:48,470
+So we have F minus
+TB equals m1 a1.
+
+100
+00:06:53,340 --> 00:07:06,820
+We have T plus TA equals m2 a2.
+
+101
+00:07:06,820 --> 00:07:14,280
+Then we have 2T
+minus TA equals 0.
+
+102
+00:07:14,280 --> 00:07:18,560
+That is 0 because we're dealing
+with two massless pulleys
+
+103
+00:07:18,560 --> 00:07:19,160
+there.
+
+104
+00:07:19,160 --> 00:07:24,510
+That means m is 0 and so
+our acceleration term is 0.
+
+105
+00:07:24,510 --> 00:07:26,880
+So the m is 0 here.
+
+106
+00:07:26,880 --> 00:07:31,518
+And finally, we
+have TB minus 2T.
+
+107
+00:07:31,518 --> 00:07:35,409
+No, not 2 pi-- 2T.
+
+108
+00:07:35,409 --> 00:07:39,760
+And that one is also 0 because
+it is a massless pulley.
+
+109
+00:07:39,760 --> 00:07:43,720
+So here we have our
+four equations of motion
+
+110
+00:07:43,720 --> 00:07:47,930
+that fully govern
+this pulley system.
+
+111
+00:07:47,930 --> 00:07:50,780
+And we can use it
+then, for example,
+
+112
+00:07:50,780 --> 00:07:53,930
+to find this pulling force here.
+
+113
+00:07:53,930 --> 00:07:58,830
+We know what TB is from the
+equation down here-- so 2T.
+
+114
+00:07:58,830 --> 00:08:00,410
+We know what TA is.
+
+115
+00:08:00,410 --> 00:08:03,090
+It's also 2T.
+
+116
+00:08:03,090 --> 00:08:06,570
+And we can then
+solve this for F.
+
+117
+00:08:06,570 --> 00:08:12,720
+The only sticky part is that
+we have this a1 and a2 in here.
+
+118
+00:08:12,720 --> 00:08:17,350
+But for that, we derived this
+constraint condition here.
+
+119
+00:08:17,350 --> 00:08:21,470
+So with that one, we
+can fully solve this.
+
+120
+00:08:21,470 --> 00:08:25,030
+Otherwise, we would have
+one too many unknowns.
+
+121
+00:08:25,030 --> 00:08:27,850
+Alternatively, if one were
+to be interested in one
+
+122
+00:08:27,850 --> 00:08:33,169
+of these accelerations,
+then this equation system
+
+123
+00:08:33,169 --> 00:08:37,419
+can also be solved for a1 or a2.

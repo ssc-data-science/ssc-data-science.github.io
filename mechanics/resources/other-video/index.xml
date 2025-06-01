@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other Video on MIT OpenCourseWare</title>
+    <link>/resources/other-video/</link>
+    <description>Recent content in Other Video on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/other-video/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Video Introduction</title>
+      <link>/resources/video-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/video-introduction/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Week 1: Introduction</title>
+      <link>/resources/week-1-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-1-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 10 Introduction</title>
+      <link>/resources/week-10-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-10-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 11 Introduction</title>
+      <link>/resources/week-11-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-11-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 12 Introduction</title>
+      <link>/resources/week-12-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-12-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 2 Introduction</title>
+      <link>/resources/week-2-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-2-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor&lt;/strong&gt;: Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 3 Introduction</title>
+      <link>/resources/week-3-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-3-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 4 Introduction</title>
+      <link>/resources/week-4-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-4-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 5 Introduction</title>
+      <link>/resources/week-5-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-5-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor&lt;/strong&gt;: Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 6 Introduction</title>
+      <link>/resources/week-6-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-6-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor&lt;/strong&gt;: Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 7 Introduction</title>
+      <link>/resources/week-7-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-7-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor&lt;/strong&gt;: Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 8 Introduction</title>
+      <link>/resources/week-8-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-8-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 9 Introduction</title>
+      <link>/resources/week-9-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/week-9-introduction/data.json</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Instructor:&lt;/strong&gt; Prof. Deepto Chakrabarty&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

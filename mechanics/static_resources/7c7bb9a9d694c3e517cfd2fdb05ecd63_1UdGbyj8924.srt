@@ -1,0 +1,383 @@
+1
+00:00:03,580 --> 00:00:06,760
+When solving physics problems,
+we have fundamental principles.
+
+2
+00:00:06,760 --> 00:00:10,030
+For instance, we have
+Newton's second law.
+
+3
+00:00:10,030 --> 00:00:12,070
+And we also have an
+energy principle,
+
+4
+00:00:12,070 --> 00:00:16,090
+work non-conservative equals
+the change in kinetic energy
+
+5
+00:00:16,090 --> 00:00:18,460
+plus the change in
+potential energy.
+
+6
+00:00:18,460 --> 00:00:20,440
+And many times
+students are challenged
+
+7
+00:00:20,440 --> 00:00:22,170
+by-- do I use this law?
+
+8
+00:00:22,170 --> 00:00:23,420
+Do I use that law?
+
+9
+00:00:23,420 --> 00:00:25,220
+Why do I use one or the other?
+
+10
+00:00:25,220 --> 00:00:26,710
+Do I use both at the same time?
+
+11
+00:00:26,710 --> 00:00:28,930
+Can I get the same
+answers, et cetera.
+
+12
+00:00:28,930 --> 00:00:32,280
+Now I want to illustrate a
+particular category of problems
+
+13
+00:00:32,280 --> 00:00:35,650
+where we have some type
+of circular motion,
+
+14
+00:00:35,650 --> 00:00:38,830
+and why we need to use
+both of these laws.
+
+15
+00:00:38,830 --> 00:00:45,250
+So let's consider, let's go
+back to our dome example at MIT.
+
+16
+00:00:45,250 --> 00:00:49,090
+And let's say we have an
+object that's on the dome.
+
+17
+00:00:49,090 --> 00:00:54,610
+And now let's write out a free
+body diagram for this object.
+
+18
+00:00:54,610 --> 00:00:58,420
+So we have our
+gravitational force.
+
+19
+00:00:58,420 --> 00:01:00,520
+We have a normal force.
+
+20
+00:01:00,520 --> 00:01:04,390
+And here, let's just assume
+that our dome is frictionless,
+
+21
+00:01:04,390 --> 00:01:07,510
+for simplicity.
+
+22
+00:01:07,510 --> 00:01:14,860
+So what you see here is that
+the object is displacing
+
+23
+00:01:14,860 --> 00:01:21,310
+in a direction-- now here if
+I choose r hat and theta hat,
+
+24
+00:01:21,310 --> 00:01:24,070
+and if I choose a
+coordinate system where
+
+25
+00:01:24,070 --> 00:01:26,650
+I take my positive
+angle theta this way,
+
+26
+00:01:26,650 --> 00:01:32,830
+that the normal force and the
+displacement are perpendicular.
+
+27
+00:01:32,830 --> 00:01:41,860
+Now what that means is that the
+work done by the normal force,
+
+28
+00:01:41,860 --> 00:01:47,380
+F normal dot ds is 0,
+because well, we're
+
+29
+00:01:47,380 --> 00:01:51,670
+calling F normal equal
+to the normal force
+
+30
+00:01:51,670 --> 00:01:58,430
+and that the normal force is
+perpendicular to displacement.
+
+31
+00:01:58,430 --> 00:02:00,850
+So what that means
+is all information
+
+32
+00:02:00,850 --> 00:02:05,980
+about the normal force is
+not included in the energy
+
+33
+00:02:05,980 --> 00:02:06,730
+principle.
+
+34
+00:02:06,730 --> 00:02:10,000
+In fact, the energy
+principle is-- the work
+
+35
+00:02:10,000 --> 00:02:14,690
+that's done is just the
+amount-- this is angle theta,
+
+36
+00:02:14,690 --> 00:02:18,520
+so this is angle theta--
+so the actual work done
+
+37
+00:02:18,520 --> 00:02:25,510
+by the gravitational force g
+is the component of g mg sine
+
+38
+00:02:25,510 --> 00:02:30,520
+theta times the displacement ds.
+
+39
+00:02:30,520 --> 00:02:35,240
+So the only work
+that's appearing here,
+
+40
+00:02:35,240 --> 00:02:36,530
+and this is conservative.
+
+41
+00:02:39,230 --> 00:02:42,010
+And so when we
+integrated this work
+
+42
+00:02:42,010 --> 00:02:45,280
+and got that the work done
+by the gravitational force
+
+43
+00:02:45,280 --> 00:02:50,780
+is minus the change in potential
+energy, that's showing up here.
+
+44
+00:02:50,780 --> 00:02:56,530
+So the part of the force that's
+in the direction of the motion
+
+45
+00:02:56,530 --> 00:03:00,280
+is giving us the
+energy condition.
+
+46
+00:03:00,280 --> 00:03:03,340
+But we're losing all
+information about the forces
+
+47
+00:03:03,340 --> 00:03:05,210
+in the radial direction.
+
+48
+00:03:05,210 --> 00:03:18,160
+So because also what we
+need is Newton's second law
+
+49
+00:03:18,160 --> 00:03:25,600
+in the direction perpendicular
+to the displacement.
+
+50
+00:03:25,600 --> 00:03:28,400
+Displacement is in the
+theta hat direction,
+
+51
+00:03:28,400 --> 00:03:32,290
+so we need Newton's second
+law in the radial direction.
+
+52
+00:03:32,290 --> 00:03:37,300
+And that we have r hat,
+is we have a normal force
+
+53
+00:03:37,300 --> 00:03:40,420
+minus mg co-sine theta.
+
+54
+00:03:40,420 --> 00:03:43,930
+And the object is
+undergoing circular motion,
+
+55
+00:03:43,930 --> 00:03:51,760
+so it's equal to minus
+mv squared over R,
+
+56
+00:03:51,760 --> 00:03:54,850
+where R is the
+radius of the dome.
+
+57
+00:03:54,850 --> 00:03:58,329
+This equation is
+not at all included
+
+58
+00:03:58,329 --> 00:03:59,829
+in the energy condition.
+
+59
+00:03:59,829 --> 00:04:05,330
+You may say, well what about the
+tangential Newton's second law,
+
+60
+00:04:05,330 --> 00:04:15,910
+which is mg sine theta equals
+mR d squared theta dt squared.
+
+61
+00:04:15,910 --> 00:04:19,390
+But it's precisely
+this equation that's
+
+62
+00:04:19,390 --> 00:04:29,450
+integrated with respect
+to the displacement
+
+63
+00:04:29,450 --> 00:04:32,534
+and that gives us
+our energy principle.
+
+64
+00:04:35,200 --> 00:04:38,250
+So in summary, the
+energy principle
+
+65
+00:04:38,250 --> 00:04:40,650
+is the integration of
+Newton's second law
+
+66
+00:04:40,650 --> 00:04:43,140
+in the direction of motion.
+
+67
+00:04:43,140 --> 00:04:47,610
+And we're completely
+missing the application
+
+68
+00:04:47,610 --> 00:04:50,355
+of Newton's second law in
+the direction perpendicular
+
+69
+00:04:50,355 --> 00:04:51,210
+to the motion.
+
+70
+00:04:51,210 --> 00:04:53,350
+Energy does not
+account for that.
+
+71
+00:04:53,350 --> 00:04:56,010
+And that's why we
+needed separately
+
+72
+00:04:56,010 --> 00:05:00,660
+to apply both of the
+principles of energy
+
+73
+00:05:00,660 --> 00:05:03,960
+and Newton's second law
+in the radial direction
+
+74
+00:05:03,960 --> 00:05:07,380
+in order to figure out
+how to solve this problem.
+
+75
+00:05:07,380 --> 00:05:11,410
+Now this idea is true in general
+when you have circular motion,
+
+76
+00:05:11,410 --> 00:05:12,870
+you need the energy
+equation, which
+
+77
+00:05:12,870 --> 00:05:15,040
+is the tangentially
+integrated Newton's second
+
+78
+00:05:15,040 --> 00:05:17,110
+on the tangential direction.
+
+79
+00:05:17,110 --> 00:05:21,060
+And you need Newton's second law
+in the direction perpendicular
+
+80
+00:05:21,060 --> 00:05:22,892
+to that circular motion.

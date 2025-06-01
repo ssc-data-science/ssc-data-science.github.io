@@ -1,0 +1,23 @@
+{
+  "course_title":"Introduction to Analysis",
+  "course_description":"Analysis I (18.100) in its various versions covers fundamentals of mathematical analysis: continuity, differentiability, some form of the Riemann integral, sequences and series of numbers and functions, uniform convergence with applications to interchange of limit operations, some point-set topology, including some work in Euclidean n-space.\n\nMIT students may choose to take one of three versions of 18.100: Option A (18.100A) chooses less abstract definitions and proofs, and gives applications where possible. Option B (18.100B) is more demanding and for students with more mathematical maturity; it places more emphasis from the beginning on point-set topology and n-space, whereas Option A is concerned primarily with analysis on the real line, saving for the last weeks work in 2-space (the plane) and its point-set topology. Option C (18.100C) is a 15-unit variant of Option B, with further instruction and practice in written and oral communication.\n",
+  "course_description_html":"<p>Analysis I (18.100) in its various versions covers fundamentals of mathematical analysis: continuity, differentiability, some form of the Riemann integral, sequences and series of numbers and functions, uniform convergence with applications to interchange of limit operations, some point-set topology, including some work in Euclidean n-space.</p>\n<p>MIT students may choose to take one of three versions of 18.100: Option A (18.100A) chooses less abstract definitions and proofs, and gives applications where possible. Option B (18.100B) is more demanding and for students with more mathematical maturity; it places more emphasis from the beginning on point-set topology and n-space, whereas Option A is concerned primarily with analysis on the real line, saving for the last weeks work in 2-space (the plane) and its point-set topology. Option C (18.100C) is a 15-unit variant of Option B, with further instruction and practice in written and oral communication.</p>\n",
+  "site_uid":"820cceb0-06fe-4de8-8c57-e57ac2a4bac7",
+  "legacy_uid":"49d9b85a-0f4b-cb5c-0521-464955599ea4","instructors": [{
+    "first_name":"Arthur",
+    "last_name":"Mattuck",
+    "middle_initial":"",
+    "salutation":"Prof. ",
+    "title":"Prof. Arthur Mattuck"}],"department_numbers":["18"],
+  "learning_resource_types":["Problem Sets"],
+  "topics":[["Mathematics","Calculus"],["Mathematics","Differential Equations"],["Mathematics","Mathematical Analysis"],["Mathematics","Mathematical Logic"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"18.100A",
+  "extra_course_numbers":"",
+  "term":"Fall",
+  "year":"2012",
+  "level":["Undergraduate"],
+  "hide_download":null,
+  "image_src":"./static_resources/98f513b4c3f97e3e7d4ad701f3e2b350_18-100af12.jpg",
+  "course_image_metadata":{"content_type":"resource","description":"The Intermediate Value Theorem: If f is a function which is continuous on the closed interval [a, b], and u is a real number between f(a) and f(b), then there exists c in [a, b] such that f(c) = u. Image by MIT OpenCourseWare.","draft":false,"file":"/courses/18-100a-introduction-to-analysis-fall-2012/98f513b4c3f97e3e7d4ad701f3e2b350_18-100af12.jpg","file_size":25846,"file_type":"image/jpeg","image_metadata":{"caption":"The Intermediate Value Theorem: If f is a function which is continuous on the closed interval \\[a, b\\], and u is a real number between f(a) and f(b), then there exists c in \\[a, b\\] such that f(c) = u. (Image by MIT OpenCourseWare.)","credit":"Image by MIT OpenCourseWare.","image-alt":"Graph of the Intermediate Value Theorem."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"18-100af12.jpg","uid":"98f513b4-c3f9-7e3e-7d4a-d701f3e2b350"}}
+

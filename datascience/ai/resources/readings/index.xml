@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Readings on MIT OpenCourseWare</title>
+    <link>/resources/readings/</link>
+    <description>Recent content in Readings on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/readings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Readings</title>
+      <link>/pages/readings/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/readings/data.json</guid>
+      <description>&lt;p&gt;Required readings come directly from the course &lt;a href=&#34;../../pages/lecture-notes/index.html&#34;&gt;lecture notes&lt;/a&gt;. Additional reading can be found in the following text:&lt;/p&gt;&#xA;&lt;p&gt;Russell, Stuart J., and Peter Norvig. &lt;em&gt;Artificial intelligence: a modern approach&lt;/em&gt;. 2nd edition. Upper Saddle River, NJ: Prentice Hall, 2003. ISBN: 0137903952. (AIMA2E).&lt;/p&gt;&#xA;&lt;p&gt;See the table for assigned and supplemental readings.&lt;/p&gt;&#xA;&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;SES #&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;TOPICS&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;READINGS&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;L1&lt;/p&gt;&#xA;&lt;p&gt;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Introduction&lt;/p&gt;&#xA;&lt;p&gt;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Assigned Readings:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Lecture Notes - Chapter 1.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Supplemental Readings:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;AIMA2E: Chapter 1.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

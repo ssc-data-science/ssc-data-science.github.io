@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="svg4573" inkscape:version="0.91 r13725" sodipodi:docname="Pulley_Practice1_Problem.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 303 347"
+	 style="enable-background:new 0 0 303 347;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E6E6E6;stroke:#000000;stroke-width:2;}
+	.st1{fill:none;stroke:#000000;}
+	.st2{fill:#ECE5F0;stroke:#000000;stroke-width:2;}
+	.st3{font-family:'ArialMT';}
+	.st4{font-size:20.7536px;}
+	.st5{fill:#0000FF;stroke:#0000FF;stroke-width:0.625;stroke-linejoin:round;}
+	.st6{fill:none;}
+	.st7{font-family:'STIXGeneral-Bold';}
+	.st8{font-size:18px;}
+	.st9{opacity:0.6;fill:url(#SVGID_1_);}
+	.st10{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st11{font-family:'STIXGeneral-BoldItalic';}
+	.st12{font-size:24px;}
+</style>
+<sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" id="base" inkscape:current-layer="layer1" inkscape:cx="21.569346" inkscape:cy="143.10909" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="801" inkscape:window-maximized="1" inkscape:window-width="1536" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:zoom="1.2606388" pagecolor="#ffffff" showgrid="false" units="px">
+	</sodipodi:namedview>
+<ellipse id="path4140" class="st0" cx="147.2" cy="157.7" rx="69.6" ry="69.7"/>
+<path id="path4161" inkscape:connector-curvature="0" class="st1" d="M77.4,155.2v109.3"/>
+<path id="path4163" inkscape:connector-curvature="0" class="st1" d="M217.4,154.1v132.8"/>
+<rect id="rect4146-6" x="60.7" y="266" class="st2" width="37.8" height="66.9"/>
+<text transform="matrix(0.9993 0 0 1 72.6592 305.9688)" class="st3 st4">1</text>
+<path id="path4201" inkscape:connector-curvature="0" class="st1" d="M146.5,156.6L79.6,146"/>
+<rect id="rect4146-6-3" x="199.1" y="287" class="st2" width="37.8" height="39.5"/>
+<text transform="matrix(0.9993 0 0 1 211.2607 314.8301)" class="st3 st4">2</text>
+<path d="M0,80"/>
+<path id="path5772-1-0-2-6" inkscape:connector-curvature="0" sodipodi:nodetypes="cc" class="st5" d="M77.4,207.1"/>
+<path class="st5" d="M0,80"/>
+<path id="path5772-1-0-2-6-7" inkscape:connector-curvature="0" sodipodi:nodetypes="cc" class="st5" d="M217.1,225.7"/>
+<line class="st6" x1="-47.5" y1="227.4" x2="-42.1" y2="221.2"/>
+<text transform="matrix(1 0 0 1 158 161)" class="st7 st8">cm</text>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="152.5" y1="38" x2="152.5" y2="12" gradientTransform="matrix(-1 0 0 -1 305 50)">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#000000"/>
+</linearGradient>
+<polygon class="st9" points="22,12 283,12 283,38 22,38 "/>
+<line class="st10" x1="22" y1="38" x2="283" y2="38"/>
+<line class="st1" x1="146.5" y1="156.6" x2="146.5" y2="37"/>
+<text transform="matrix(1 0 0 1 108 141)" class="st11 st12">R</text>
+<g>
+	<line x1="273" y1="107.2" x2="273" y2="147.2"/>
+	<g>
+		<line class="st1" x1="273" y1="107.2" x2="273" y2="139.1"/>
+		<g>
+			<path d="M273,137.3l3.6-2.2l0.1,0.1l-2.3,5.9c-0.5,2-0.9,4.1-1.4,6.1c-0.5-2-0.9-4.1-1.4-6.1l-2.3-5.9l0.1-0.1L273,137.3z"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 256 135.5)" class="st11 st12">g</text>
+</svg>

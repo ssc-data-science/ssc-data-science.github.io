@@ -1,0 +1,28 @@
+{
+  "course_title":"Artificial Intelligence",
+  "course_description":"This course introduces representations, techniques, and architectures used to build applied systems and to account for intelligence from a computational point of view. This course also explores applications of rule chaining, heuristic search, logic, constraint propagation, constrained search, and other problem-solving paradigms. In addition, it covers applications of decision trees, neural nets, SVMs and other learning paradigms.\n",
+  "course_description_html":"This course introduces representations, techniques, and architectures used to build applied systems and to account for intelligence from a computational point of view. This course also explores applications of rule chaining, heuristic search, logic, constraint propagation, constrained search, and other problem-solving paradigms. In addition, it covers applications of decision trees, neural nets, SVMs and other learning paradigms.",
+  "site_uid":"cd543167-93e0-44c1-b4fb-46d61d8ba65f",
+  "legacy_uid":"8625325f-8330-7871-2210-8338769b4934","instructors": [{
+    "first_name":"Leslie",
+    "last_name":"Kaelbling",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Leslie Kaelbling"},{
+    "first_name":"Tomás",
+    "last_name":"Lozano-Pérez",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Tomás Lozano-Pérez"}],"department_numbers":["6"],
+  "learning_resource_types":["Lecture Notes","Projects"],
+  "topics":[["Engineering","Computer Science","Artificial Intelligence"],["Engineering","Computer Science","Theory of Computation"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"6.034",
+  "extra_course_numbers":"",
+  "term":"Spring",
+  "year":"2005",
+  "level":["Undergraduate"],
+  "hide_download":null,
+  "image_src":"./static_resources/8683b76db3f615e0e8717bbbe2379002_6-034s05.jpg",
+  "course_image_metadata":{"content_type":"resource","description":"An example of a decision tree from Chapter 9 (Machine Learning I) of the readings section. (Image by Tom?s Lozano-P?rez and Leslie Kaelbling.)","draft":false,"file":"/courses/6-034-artificial-intelligence-spring-2005/8683b76db3f615e0e8717bbbe2379002_6-034s05.jpg","file_size":35658,"file_type":"image/jpeg","image_metadata":{"caption":"An example of a decision tree from chapter 4 (Learning Introduction) of the [lecture notes](/courses/6-034-artificial-intelligence-spring-2005/pages/lecture-notes) section. (Image by Prof. Tomás Lozano-Pérez and Prof. Leslie Kaelbling.)","credit":"","image-alt":"A decision tree from chapter 4 of the lecture notes."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"6-034s05.jpg","uid":"8683b76d-b3f6-15e0-e871-7bbbe2379002"}}
+

@@ -1,0 +1,23 @@
+{
+  "course_title":"Introduction to Statistical Method in Economics",
+  "course_description":"This course is a self-contained introduction to statistics with economic applications. Elements of probability theory, sampling theory, statistical estimation, regression analysis, and hypothesis testing. It uses elementary econometrics and other applications of statistical tools to economic data. It also provides a solid foundation in probability and statistics for economists and other social scientists. We will emphasize topics needed in the further study of econometrics and provide basic preparation for [_14.32 Econometrics_](https://ocw.mit.edu/courses/economics/14-32-econometrics-spring-2007/index.htm). No prior preparation in probability and statistics is required, but familiarity with basic algebra and calculus is assumed.",
+  "course_description_html":"This course is a self-contained introduction to statistics with economic applications. Elements of probability theory, sampling theory, statistical estimation, regression analysis, and hypothesis testing. It uses elementary econometrics and other applications of statistical tools to economic data. It also provides a solid foundation in probability and statistics for economists and other social scientists. We will emphasize topics needed in the further study of econometrics and provide basic preparation for <a href=\"https://ocw.mit.edu/courses/economics/14-32-econometrics-spring-2007/index.htm\" target=\"_blank\" rel=\"noopener\"><em>14.32 Econometrics</em></a>. No prior preparation in probability and statistics is required, but familiarity with basic algebra and calculus is assumed.",
+  "site_uid":"184bf8a5-eac0-4e52-8ac9-fb02e9c998ba",
+  "legacy_uid":"ca2a7b42-35f0-bd24-5387-a3c111a06d2d","instructors": [{
+    "first_name":"Herman",
+    "last_name":"Bennett",
+    "middle_initial":"",
+    "salutation":"",
+    "title":"Herman Bennett"}],"department_numbers":["14"],
+  "learning_resource_types":["Exams with Solutions","Lecture Notes","Problem Sets with Solutions"],
+  "topics":[["Mathematics","Probability and Statistics"],["Social Science","Economics","Econometrics"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"14.30",
+  "extra_course_numbers":"",
+  "term":"Spring",
+  "year":"2006",
+  "level":["Undergraduate"],
+  "hide_download":null,
+  "image_src":"./static_resources/14db030c7a7703f7242ed86c233bf6c3_14-30s06.jpg",
+  "course_image_metadata":{"content_type":"resource","description":"Diagram showing the difference between statistics and probability. (Image by MIT OCW. Based on Gilbert, Norma. Statistics. W.B. Saunders Co., 1976.)","draft":false,"file":"/courses/14-30-introduction-to-statistical-method-in-economics-spring-2006/14db030c7a7703f7242ed86c233bf6c3_14-30s06.jpg","file_size":76354,"file_type":"image/jpeg","image_metadata":{"caption":"Diagram showing the difference between statistics and probability. (Image by MIT OpenCourseWare. Based on Gilbert, Norma. _Statistics_. Philadelphia, PA: W. B. Saunders Co., 1976. ISBN: 072164127X.)","credit":"","image-alt":"The course covers elements of probability theory, sampling theory, statistical estimation, regression analysis, and hypothesis testing."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"14-30s06.jpg","uid":"14db030c-7a77-03f7-242e-d86c233bf6c3"}}
+

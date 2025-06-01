@@ -1,0 +1,118 @@
+1
+00:00:03,380 --> 00:00:05,100
+The little prince
+has really come
+
+2
+00:00:05,100 --> 00:00:08,260
+to like this little body
+that's orbiting him.
+
+3
+00:00:08,260 --> 00:00:10,530
+He knows at what
+distance it orbits
+
+4
+00:00:10,530 --> 00:00:12,710
+and knows how fast it goes.
+
+5
+00:00:12,710 --> 00:00:15,250
+And I think the little
+prince fell in love
+
+6
+00:00:15,250 --> 00:00:17,250
+with that little body.
+
+7
+00:00:17,250 --> 00:00:20,420
+And now he wants to
+see it all the time
+
+8
+00:00:20,420 --> 00:00:23,690
+as it goes around the asteroid.
+
+9
+00:00:23,690 --> 00:00:26,210
+But the little prince just
+wants to keep sitting there.
+
+10
+00:00:26,210 --> 00:00:27,460
+He doesn't want to move.
+
+11
+00:00:27,460 --> 00:00:33,340
+So how fast does
+the asteroid need
+
+12
+00:00:33,340 --> 00:00:37,320
+to rotate so that the little
+prince will always see the body
+
+13
+00:00:37,320 --> 00:00:40,190
+as it rotates around him?
+
+14
+00:00:40,190 --> 00:00:43,950
+Well, for that, we
+need to simply consider
+
+15
+00:00:43,950 --> 00:00:49,950
+that the period of the little
+body going around the asteroid
+
+16
+00:00:49,950 --> 00:00:54,720
+needs to be the same as the
+asteroid rotation period.
+
+17
+00:00:54,720 --> 00:00:59,060
+So we're going to call
+that Ta for asteroid.
+
+18
+00:00:59,060 --> 00:01:03,960
+And well, if we want to know at
+what distance that works out,
+
+19
+00:01:03,960 --> 00:01:07,200
+then we're going to use
+Kepler's laws here again.
+
+20
+00:01:07,200 --> 00:01:12,570
+And we're going to
+have that the radius
+
+21
+00:01:12,570 --> 00:01:15,370
+between the body
+and the asteroid
+
+22
+00:01:15,370 --> 00:01:21,900
+will be Gm1 over 4 pi squared.
+
+23
+00:01:21,900 --> 00:01:28,570
+And now we have Ta squared in
+here and the third of that.
+
+24
+00:01:28,570 --> 00:01:31,690
+So all of these
+wonderful quantities
+
+25
+00:01:31,690 --> 00:01:34,670
+make the little
+prince really happy.

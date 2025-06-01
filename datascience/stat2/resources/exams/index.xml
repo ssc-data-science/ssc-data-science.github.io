@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exams on MIT OpenCourseWare</title>
+    <link>/resources/exams/</link>
+    <description>Recent content in Exams on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/exams/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>chi_square.pdf</title>
+      <link>/resources/chi_square/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/chi_square/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ex1_f03.pdf</title>
+      <link>/resources/ex1_f03/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex1_f03/data.json</guid>
+      <description>&lt;p&gt;This resource contains questions of exam 1 for the semester, fall 2003.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex1_f04.pdf</title>
+      <link>/resources/ex1_f04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex1_f04/data.json</guid>
+      <description>&lt;p&gt;This resource contains questions of exam 1 for the semester, fall 2004.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex1.pdf</title>
+      <link>/resources/ex1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ex1sol_f03.pdf</title>
+      <link>/resources/ex1sol_f03/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex1sol_f03/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions of the statistics exam 1 for the semester, fall 2003.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex1sol_f04.pdf</title>
+      <link>/resources/ex1sol_f04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex1sol_f04/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions of exam 1 for the semester, fall 2004.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex1sol.pdf</title>
+      <link>/resources/ex1sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex1sol/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ex2_f03.pdf</title>
+      <link>/resources/ex2_f03/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex2_f03/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions of exam 2 for the semester, fall 2003.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex2_f04.pdf</title>
+      <link>/resources/ex2_f04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex2_f04/data.json</guid>
+      <description>&lt;p&gt;This resource contains questions of exam 2 for the semester, fall 2004.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex2.pdf</title>
+      <link>/resources/ex2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex2/data.json</guid>
+      <description>&lt;p&gt;This file includes instructions and questions for exam 1.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex2sol_f03.pdf</title>
+      <link>/resources/ex2sol_f03/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex2sol_f03/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions of exam 2 for the semester, fall 2003.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex2sol_f04.pdf</title>
+      <link>/resources/ex2sol_f04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex2sol_f04/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions of exam 2 for the semester, fall 2004.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex2sol.pdf</title>
+      <link>/resources/ex2sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex2sol/data.json</guid>
+      <description>&lt;p&gt;This file includes answers for the questions of exam 1.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex3_f03.pdf</title>
+      <link>/resources/ex3_f03/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex3_f03/data.json</guid>
+      <description>&lt;p&gt;This resource contains questions of exam 3 for the semester, fall 2003.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex3_f04.pdf</title>
+      <link>/resources/ex3_f04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex3_f04/data.json</guid>
+      <description>&lt;p&gt;This resource contains questions of exam 3 for the semester, fall 2004.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex3.pdf</title>
+      <link>/resources/ex3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex3/data.json</guid>
+      <description>&lt;p&gt;This file includes instructions and  questions for exam 3 of the course.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex3sol_f03.pdf</title>
+      <link>/resources/ex3sol_f03/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex3sol_f03/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions of the statistics exam for the semester, fall 2003.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex3sol_f04.pdf</title>
+      <link>/resources/ex3sol_f04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex3sol_f04/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions of the statistics exam for the semester, fall 2004.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ex3sol.pdf</title>
+      <link>/resources/ex3sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ex3sol/data.json</guid>
+      <description>&lt;p&gt;This file includes answers for the questions of exam 3.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exams</title>
+      <link>/pages/exams/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/exams/data.json</guid>
+      <description>&lt;p&gt;This section features exams from three different semesters. For the Fall 2006 exams, formula sheets were distributed for each test and are provided below.&lt;/p&gt;&#xA;&lt;p&gt;All solution files are courtesy of the person named and are used with permission.&lt;/p&gt;&#xA;&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;SEMESTERS&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;EXAMS&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;SOLUTIONS&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Spring 2006&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Exam 1 (&lt;a href=&#34;../../resources/ex1/index.html&#34;&gt;PDF&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;p&gt;Exam 1 Formula Sheet (&lt;a href=&#34;../../resources/formulas_exam1/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;(&lt;a href=&#34;../../resources/ex1sol/index.html&#34;&gt;PDF&lt;/a&gt;) (Tonja Bowen Bishop)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Spring 2006&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Exam 2 (&lt;a href=&#34;../../resources/ex2/index.html&#34;&gt;PDF&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;p&gt;Exam 2 Formula Sheet (&lt;a href=&#34;../../resources/formulas_exam2/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;(&lt;a href=&#34;../../resources/ex2sol/index.html&#34;&gt;PDF&lt;/a&gt;) (Tonja Bowen Bishop)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>formulas_exam1.pdf</title>
+      <link>/resources/formulas_exam1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/formulas_exam1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>formulas_exam2.pdf</title>
+      <link>/resources/formulas_exam2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/formulas_exam2/data.json</guid>
+      <description>&lt;p&gt;This file includes formula sheet for exam 2, probabilities for the standard normal distribution and chi square distribution table.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>formulas_exam3.pdf</title>
+      <link>/resources/formulas_exam3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/formulas_exam3/data.json</guid>
+      <description>&lt;p&gt;This file includes formula sheet for exam 3 and the distribution tables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>l1.pdf</title>
+      <link>/resources/l1-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l1-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l10.pdf</title>
+      <link>/resources/l10-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l10-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l10review.pdf</title>
+      <link>/resources/l10review-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l10review-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l2.pdf</title>
+      <link>/resources/l2-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l2-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l3.pdf</title>
+      <link>/resources/l3-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l3-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l4.pdf</title>
+      <link>/resources/l4-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l4-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l5.pdf</title>
+      <link>/resources/l5-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l5-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l6.pdf</title>
+      <link>/resources/l6-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l6-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l7.pdf</title>
+      <link>/resources/l7-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l7-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l8.pdf</title>
+      <link>/resources/l8-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l8-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l8review.pdf</title>
+      <link>/resources/l8review-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l8review-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l9.pdf</title>
+      <link>/resources/l9-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l9-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>l9graphs.pdf</title>
+      <link>/resources/l9graphs-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/l9graphs-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps1.pdf</title>
+      <link>/resources/ps1-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps1-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps1sol.pdf</title>
+      <link>/resources/ps1sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps1sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps2.pdf</title>
+      <link>/resources/ps2-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps2-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps2sol.pdf</title>
+      <link>/resources/ps2sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps2sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps2solfig.pdf</title>
+      <link>/resources/ps2solfig-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps2solfig-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps3.pdf</title>
+      <link>/resources/ps3-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps3-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps3sol.pdf</title>
+      <link>/resources/ps3sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps3sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps4.pdf</title>
+      <link>/resources/ps4-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps4-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps4sol.pdf</title>
+      <link>/resources/ps4sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps4sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps5.pdf</title>
+      <link>/resources/ps5-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps5-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps5sol.pdf</title>
+      <link>/resources/ps5sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps5sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps6.pdf</title>
+      <link>/resources/ps6-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps6-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps6sol.pdf</title>
+      <link>/resources/ps6sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps6sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps7.pdf</title>
+      <link>/resources/ps7-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps7-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps7sol.pdf</title>
+      <link>/resources/ps7sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps7sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps8.pdf</title>
+      <link>/resources/ps8-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps8-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps8sol.pdf</title>
+      <link>/resources/ps8sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps8sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps9.pdf</title>
+      <link>/resources/ps9-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps9-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ps9sol.pdf</title>
+      <link>/resources/ps9sol-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/ps9sol-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>t_table.pdf</title>
+      <link>/resources/t_table/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/t_table/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>z_table.pdf</title>
+      <link>/resources/z_table/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/z_table/data.json</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

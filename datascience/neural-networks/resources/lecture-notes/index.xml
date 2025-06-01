@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Notes on MIT OpenCourseWare</title>
+    <link>/resources/lecture-notes/</link>
+    <description>Recent content in Lecture Notes on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/lecture-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>lec1_appendix_e.pdf</title>
+      <link>/resources/lec1_appendix_e/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec1_appendix_e/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on neural voltage are measured with intacellular electrodes, neurons respond passively into small inputs, and a neuron is leaky integrator with a threshold.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec12_hamilton.pdf</title>
+      <link>/resources/lec12_hamilton/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec12_hamilton/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on harmonic oscillator, dissipation, symmetric network, hamiltonian form, energy dissipation, and antisymmetric networks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec13_antisym.pdf</title>
+      <link>/resources/lec13_antisym/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec13_antisym/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on idealization of interaction between&#xA;excitatory and inhibitory neuron, dendrodendritic connections between and granule (inhibitory) cells, and linear antisymmetric network.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec14_excinh.pdf</title>
+      <link>/resources/lec14_excinh/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec14_excinh/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on two neural populations, minimax, multiple goals, synaptic interactions, matrix-vector notation, saddle function, and pseudo gradient.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec18_pca.pdf</title>
+      <link>/resources/lec18_pca/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec18_pca/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on hebbiansynaptic plasticity enables perceptronsto perform principal component analysis, variance and covariance, principal components, maximizing parallel variance, minimizing perpendicular variance, and neural implementation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec18_vq.pdf</title>
+      <link>/resources/lec18_vq/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec18_vq/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on hypothesis: Hebbiansynaptic plasticity enables a perceptronto compute the mean of its preferred stimuli, sequence of data vectors, learn something about their structure, multivariate statistics, and neural network algorithms.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec19_delta.pdf</title>
+      <link>/resources/lec19_delta/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec19_delta/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on supervised learning problem, delta rule, delta rule as gradient descent, and Hebb rule.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec20_backprop.pdf</title>
+      <link>/resources/lec20_backprop/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec20_backprop/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on simple vs. multilayer perceptron, hidden layer problem, generalized delta rule, derivation as a gradient algoritihm, and sensitivity lemma.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec20_pavlov.pdf</title>
+      <link>/resources/lec20_pavlov/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec20_pavlov/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on pavlov?s experiment, terminology, Hebb model, and multiple stimuli.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec21_backprop2.pdf</title>
+      <link>/resources/lec21_backprop2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec21_backprop2/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on steady state, recurrent backpropagation, sensitivity lemma, input as a function of output, and Jacobian matrix.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec6_decisions.pdf</title>
+      <link>/resources/lec6_decisions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec6_decisions/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on decision making, all-to-all inhibition, unconditional winner-take-all, differential modes are unstable, and one possible winner.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec6_integrator.pdf</title>
+      <link>/resources/lec6_integrator/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec6_integrator/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on maximum operation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lec6_selectivity.pdf</title>
+      <link>/resources/lec6_selectivity/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lec6_selectivity/data.json</guid>
+      <description>&lt;p&gt;This resource includes information on lateral inhibition amplifies differences relative to commonalities, lateral inhibition regulates response selectivity by setting a dynamic threshold, and rectification vs. thresholding.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture Notes</title>
+      <link>/pages/lecture-notes/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/lecture-notes/data.json</guid>
+      <description>&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;Lec #&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;Topics&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;1&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;From Spikes to Rates (&lt;a href=&#34;../../resources/lec1_appendix_e/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;2&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Perceptrons: Simple and Multilayer&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;3&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Perceptrons as Models of Vision&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;4&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Linear Networks&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;5&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Retina&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;6&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Lateral Inhibition and Feature Selectivity (&lt;a href=&#34;../../resources/lec6_selectivity/index.html&#34;&gt;PDF 1&lt;/a&gt;) (&lt;a href=&#34;../../resources/lec6_decisions/index.html&#34;&gt;PDF 2&lt;/a&gt;) (&lt;a href=&#34;../../resources/lec6_integrator/index.html&#34;&gt;PDF 3&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;7&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Objectives and Optimization&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;8&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Hybrid Analog-Digital Computation&lt;/p&gt;&#xA;&lt;p&gt;Ring Network&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;9&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Constraint Satisfaction&lt;/p&gt;&#xA;&lt;p&gt;Stereopsis&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;10&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Bidirectional Perception&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;11&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Signal Reconstruction&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;12&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Hamiltonian Dynamics (&lt;a href=&#34;../../resources/lec12_hamilton/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>strmgtfr.pdf</title>
+      <link>/resources/strmgtfr/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/strmgtfr/data.json</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

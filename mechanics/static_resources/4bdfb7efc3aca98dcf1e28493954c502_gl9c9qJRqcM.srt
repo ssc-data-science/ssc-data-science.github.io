@@ -1,0 +1,356 @@
+1
+00:00:03,300 --> 00:00:06,420
+Let's consider the universal
+gravitational law a little bit
+
+2
+00:00:06,420 --> 00:00:08,950
+more.
+
+3
+00:00:08,950 --> 00:00:11,340
+Let's consider two
+objects in space.
+
+4
+00:00:11,340 --> 00:00:15,120
+Let's say this is the sun,
+and we have the earth here
+
+5
+00:00:15,120 --> 00:00:17,430
+or the earth and the moon.
+
+6
+00:00:17,430 --> 00:00:19,590
+And of course, they're
+orbiting each other.
+
+7
+00:00:19,590 --> 00:00:23,430
+So we can pick a coordinate
+system that goes radially.
+
+8
+00:00:23,430 --> 00:00:26,485
+And so we're going to have
+an r hat direction here,
+
+9
+00:00:26,485 --> 00:00:30,400
+and we're going to call this the
+r hat direction between objects
+
+10
+00:00:30,400 --> 00:00:33,570
+1 and 2.
+
+11
+00:00:33,570 --> 00:00:36,370
+What forces are acting
+on this little moon here?
+
+12
+00:00:36,370 --> 00:00:40,520
+Well, it's the gravitational
+force going inward.
+
+13
+00:00:40,520 --> 00:00:44,750
+It's force of 1, 2,
+F1 2, on object 2,
+
+14
+00:00:44,750 --> 00:00:48,590
+due to the interaction
+between bodies 1 and 2.
+
+15
+00:00:48,590 --> 00:00:52,620
+For that, we can write down the
+universal gravitational law,
+
+16
+00:00:52,620 --> 00:01:01,060
+F1 2 equals minus G, the
+gravitational constant, m1,
+
+17
+00:01:01,060 --> 00:01:05,280
+m2 of r1 2 squared.
+
+18
+00:01:05,280 --> 00:01:12,190
+That one is the distance between
+the two objects times r1 2 hat.
+
+19
+00:01:12,190 --> 00:01:14,660
+And the minus goes, actually,
+with the unit vector
+
+20
+00:01:14,660 --> 00:01:17,440
+here, because the force goes
+in the opposite direction
+
+21
+00:01:17,440 --> 00:01:20,270
+from our r hat.
+
+22
+00:01:20,270 --> 00:01:23,789
+Let's now consider here
+is the earth again.
+
+23
+00:01:23,789 --> 00:01:28,200
+And we're going to move the
+moon or a little moon rock right
+
+24
+00:01:28,200 --> 00:01:29,780
+to the surface of the earth.
+
+25
+00:01:29,780 --> 00:01:33,800
+And we want to now calculate
+and consider what kind of force
+
+26
+00:01:33,800 --> 00:01:36,259
+this act on this
+moon rock, and what
+
+27
+00:01:36,259 --> 00:01:38,820
+is the gravitational
+acceleration that this moon
+
+28
+00:01:38,820 --> 00:01:41,850
+rock on the surface of
+the earth is experiencing?
+
+29
+00:01:41,850 --> 00:01:44,110
+So we have the earth.
+
+30
+00:01:44,110 --> 00:01:48,680
+Earth has one earth radius,
+and it has an earth mass.
+
+31
+00:01:48,680 --> 00:01:53,880
+And our moon rock
+has the mass m.
+
+32
+00:01:53,880 --> 00:01:58,090
+And we know, from this exercise
+here already, that, of course,
+
+33
+00:01:58,090 --> 00:02:01,620
+this gravitational force
+is acting on our moon rock
+
+34
+00:02:01,620 --> 00:02:02,990
+as well.
+
+35
+00:02:02,990 --> 00:02:04,510
+That hasn't changed.
+
+36
+00:02:04,510 --> 00:02:06,610
+What we are now
+considering in addition
+
+37
+00:02:06,610 --> 00:02:09,038
+is that this moon rock
+is also experiencing
+
+38
+00:02:09,038 --> 00:02:12,300
+a gravitational acceleration
+due to this force,
+
+39
+00:02:12,300 --> 00:02:13,960
+and that goes inward as well.
+
+40
+00:02:13,960 --> 00:02:18,090
+So it is experiencing an mg.
+
+41
+00:02:18,090 --> 00:02:23,360
+And we know that that is
+the same as the magnitude
+
+42
+00:02:23,360 --> 00:02:25,520
+of this force here.
+
+43
+00:02:25,520 --> 00:02:31,920
+So we can equate that with G,
+and then we have the earth mass
+
+44
+00:02:31,920 --> 00:02:36,440
+and the mass of the moon rock
+times the distance squared,
+
+45
+00:02:36,440 --> 00:02:40,220
+so an earth radius squared.
+
+46
+00:02:40,220 --> 00:02:43,840
+And from that, we
+already see that a, we
+
+47
+00:02:43,840 --> 00:02:47,500
+can cancel out the small
+m, so the moon rock,
+
+48
+00:02:47,500 --> 00:02:49,170
+and we get to g here.
+
+49
+00:02:49,170 --> 00:02:53,360
+So we can calculate the
+gravitational acceleration,
+
+50
+00:02:53,360 --> 00:03:00,820
+which is capital G earth mass
+over earth radius squared.
+
+51
+00:03:00,820 --> 00:03:03,150
+So if we have this
+kind of information,
+
+52
+00:03:03,150 --> 00:03:05,840
+we can determine the
+gravitational acceleration.
+
+53
+00:03:05,840 --> 00:03:08,690
+And of course, it will
+change, depending on which
+
+54
+00:03:08,690 --> 00:03:10,800
+object we are considering.
+
+55
+00:03:10,800 --> 00:03:14,120
+It would be different if
+we plug in the solar mass
+
+56
+00:03:14,120 --> 00:03:17,350
+and the solar radius or the
+moon mass and the moon radius,
+
+57
+00:03:17,350 --> 00:03:20,760
+if we consider an
+astronaut standing here
+
+58
+00:03:20,760 --> 00:03:23,980
+on the moon's surface.
+
+59
+00:03:23,980 --> 00:03:28,079
+Now let's put some numbers
+into this equation.
+
+60
+00:03:28,079 --> 00:03:33,470
+So we have g is
+capital G. That's
+
+61
+00:03:33,470 --> 00:03:34,860
+the gravitational constant.
+
+62
+00:03:34,860 --> 00:03:43,210
+We have 6.67, 10 to 11, and
+then we have Newton and 1
+
+63
+00:03:43,210 --> 00:03:49,980
+over kilogram squared
+and mass squared times
+
+64
+00:03:49,980 --> 00:03:57,650
+the earth mass, 5.97
+10 to 24 kilograms.
+
+65
+00:03:57,650 --> 00:04:01,150
+And then we have
+to divide this over
+
+66
+00:04:01,150 --> 00:04:07,730
+through the earth
+radius, 6.37 10 to the 6.
+
+67
+00:04:07,730 --> 00:04:12,311
+And we have to square that, and
+we have to square the meters.
+
+68
+00:04:14,960 --> 00:04:21,959
+If we calculate this, we get to
+9.81 meter per second squared.
+
+69
+00:04:21,959 --> 00:04:25,580
+And surely you have
+seen this number before.
+
+70
+00:04:25,580 --> 00:04:27,180
+This number can
+either be calculated,
+
+71
+00:04:27,180 --> 00:04:30,490
+if you know capital G, the
+gravitational constant,
+
+72
+00:04:30,490 --> 00:04:33,930
+or you can determine that
+gravitational acceleration
+
+73
+00:04:33,930 --> 00:04:35,670
+through an experiment.
+
+74
+00:04:35,670 --> 00:04:38,710
+And together with the earth
+mass and the earth radius,
+
+75
+00:04:38,710 --> 00:04:43,380
+you can actually calculate the
+gravitational constant there.

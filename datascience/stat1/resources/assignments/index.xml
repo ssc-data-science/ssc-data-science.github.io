@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assignments on MIT OpenCourseWare</title>
+    <link>/resources/assignments/</link>
+    <description>Recent content in Assignments on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/assignments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>18.650 (F16) Problem Set 1</title>
+      <link>/resources/mit18_650f16_pset1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset1/data.json</guid>
+      <description>&lt;p&gt;Problem Set 1&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 10</title>
+      <link>/resources/mit18_650f16_pset10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset10/data.json</guid>
+      <description>&lt;p&gt;Problem Set 10&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 11</title>
+      <link>/resources/mit18_650f16_pset11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset11/data.json</guid>
+      <description>&lt;p&gt;Problem Set 11&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 2</title>
+      <link>/resources/mit18_650f16_pset2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset2/data.json</guid>
+      <description>&lt;p&gt;Problem Set 2&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 3</title>
+      <link>/resources/mit18_650f16_pset3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset3/data.json</guid>
+      <description>&lt;p&gt;Problem Set 3&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 4</title>
+      <link>/resources/mit18_650f16_pset4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset4/data.json</guid>
+      <description>&lt;p&gt;Problem Set 4&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 5</title>
+      <link>/resources/mit18_650f16_pset5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset5/data.json</guid>
+      <description>&lt;p&gt;Problem Set 5&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 6</title>
+      <link>/resources/mit18_650f16_pset6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset6/data.json</guid>
+      <description>&lt;p&gt;Problem Set 6&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 7</title>
+      <link>/resources/mit18_650f16_pset7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset7/data.json</guid>
+      <description>&lt;p&gt;Problem Set 7&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 8</title>
+      <link>/resources/mit18_650f16_pset8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset8/data.json</guid>
+      <description>&lt;p&gt;Problem Set 8&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>18.650 (F16) Problem Set 9</title>
+      <link>/resources/mit18_650f16_pset9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_650f16_pset9/data.json</guid>
+      <description>&lt;p&gt;Problem Set 9&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Assignments</title>
+      <link>/pages/assignments/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/assignments/data.json</guid>
+      <description>&lt;p&gt;There are 11 problem sets. No solutions are available.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset1/index.html&#34;&gt;Problem Set 1 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset2/index.html&#34;&gt;Problem Set 2 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset3/index.html&#34;&gt;Problem Set 3 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset4/index.html&#34;&gt;Problem Set 4 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset5/index.html&#34;&gt;Problem Set 5 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset6/index.html&#34;&gt;Problem Set 6 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset7/index.html&#34;&gt;Problem Set 7 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset8/index.html&#34;&gt;Problem Set 8 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset9/index.html&#34;&gt;Problem Set 9 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset10/index.html&#34;&gt;Problem Set 10 (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../resources/mit18_650f16_pset11/index.html&#34;&gt;Problem Set 11 (PDF)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
