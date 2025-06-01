@@ -1,0 +1,930 @@
+WEBVTT
+
+00:00:07.210 --> 00:00:08.606
+CHRISTINE BREINER: Welcome
+back to recitation.
+
+00:00:08.606 --> 00:00:12.210
+In this video I'd like us to
+work on the following problem.
+
+00:00:12.210 --> 00:00:15.890
+We're going to let capital D
+denote the portion of the
+
+00:00:15.890 --> 00:00:19.850
+solid sphere of radius 1 that's
+centered at 0, 0, 1,
+
+00:00:19.850 --> 00:00:23.110
+which also lies about
+the plane z equal 1.
+
+00:00:23.110 --> 00:00:26.385
+And then I'd like us to first
+supply the limits for D in
+
+00:00:26.385 --> 00:00:27.610
+spherical coordinates.
+
+00:00:27.610 --> 00:00:30.960
+In other words, I want you to
+determine the values for rho,
+
+00:00:30.960 --> 00:00:35.380
+theta, and phi that will give us
+all of D. And then, I would
+
+00:00:35.380 --> 00:00:37.790
+like us to just set up the
+integral for the average
+
+00:00:37.790 --> 00:00:40.540
+distance of a point in
+D from the origin.
+
+00:00:40.540 --> 00:00:42.360
+So there are two parts
+to this problem.
+
+00:00:42.360 --> 00:00:46.100
+The first is to determine what
+values of rho, theta, and phi
+
+00:00:46.100 --> 00:00:52.810
+describe this solid region D.
+And then second is just set up
+
+00:00:52.810 --> 00:00:55.350
+the integral for the average
+distance of a point in that
+
+00:00:55.350 --> 00:00:57.590
+region from the origin.
+
+00:00:57.590 --> 00:00:59.940
+So why don't you pause the
+video, work on those, and then
+
+00:00:59.940 --> 00:01:01.880
+when you're ready to see my
+solutions, you can bring the
+
+00:01:01.880 --> 00:01:03.130
+video back up.
+
+00:01:12.000 --> 00:01:13.230
+OK, welcome back.
+
+00:01:13.230 --> 00:01:16.870
+Well, I would say from looking
+at this problem, actually part
+
+00:01:16.870 --> 00:01:20.330
+a is potentially a little bit
+more hazardous for some of us
+
+00:01:20.330 --> 00:01:21.380
+then part b.
+
+00:01:21.380 --> 00:01:26.560
+Once we know the bounds that
+describe D, it's not too hard
+
+00:01:26.560 --> 00:01:27.950
+to set up this integral.
+
+00:01:27.950 --> 00:01:30.940
+So the hard part of this problem
+is understanding how
+
+00:01:30.940 --> 00:01:35.460
+to write this solid region D
+in spherical coordinates.
+
+00:01:35.460 --> 00:01:37.705
+But it's actually really not
+that hard either, so I'm going
+
+00:01:37.705 --> 00:01:40.430
+to try and take us through
+it in a reasonable way.
+
+00:01:40.430 --> 00:01:43.700
+So the first thing: I'm going
+to draw a very rough picture
+
+00:01:43.700 --> 00:01:45.940
+of the region so we understand
+what it looks like.
+
+00:01:45.940 --> 00:01:47.490
+So in order to do part a.
+
+00:01:47.490 --> 00:01:49.970
+And if you did not do this, I
+would highly recommend that
+
+00:01:49.970 --> 00:01:52.970
+next time you encounter such a
+problem, you begin by drawing
+
+00:01:52.970 --> 00:01:54.100
+yourself a picture.
+
+00:01:54.100 --> 00:01:56.370
+Even if it's not a great
+picture, it will give you some
+
+00:01:56.370 --> 00:01:59.010
+intuition about what's
+happening.
+
+00:01:59.010 --> 00:02:03.728
+So let me first draw the axes.
+
+00:02:03.728 --> 00:02:05.410
+And ultimately what I have--
+
+00:02:05.410 --> 00:02:08.010
+say here, is the point
+(0, 0, 1)--
+
+00:02:08.010 --> 00:02:16.390
+I have a sphere that's looking
+in the z-y plane.
+
+00:02:16.390 --> 00:02:18.970
+It looks something like this.
+
+00:02:18.970 --> 00:02:23.120
+And so it has this depth here.
+
+00:02:23.120 --> 00:02:25.660
+And that's the solid sphere
+I want to be considering.
+
+00:02:25.660 --> 00:02:27.870
+And then I'm going to be
+removing the bottom half.
+
+00:02:27.870 --> 00:02:31.170
+I'm only going to be looking at
+the part that is above the
+
+00:02:31.170 --> 00:02:32.540
+z equals 1 plane.
+
+00:02:32.540 --> 00:02:38.120
+So actually it's going to be
+all of the circular slices
+
+00:02:38.120 --> 00:02:41.270
+that are in the top
+half in the upper
+
+00:02:41.270 --> 00:02:42.500
+hemisphere of this sphere.
+
+00:02:42.500 --> 00:02:44.810
+And so it's this solid
+region there.
+
+00:02:44.810 --> 00:02:46.240
+That's D.
+
+00:02:46.240 --> 00:02:50.280
+And what I want to do
+is to determine rho
+
+00:02:50.280 --> 00:02:51.480
+and theta and phi.
+
+00:02:51.480 --> 00:02:53.800
+Actually, the theta is
+the easy one, right?
+
+00:02:53.800 --> 00:02:58.900
+Because theta at each value
+here, I go all the way around
+
+00:02:58.900 --> 00:03:00.150
+in the theta direction.
+
+00:03:02.860 --> 00:03:06.240
+At any given height or radius,
+I want to go all the way
+
+00:03:06.240 --> 00:03:09.120
+around in the theta direction
+from 0 to 2 pi.
+
+00:03:09.120 --> 00:03:12.670
+So my theta bounds are
+the easy ones.
+
+00:03:12.670 --> 00:03:16.200
+I'm covering 0 to
+2 pi in theta.
+
+00:03:16.200 --> 00:03:24.090
+Because if I cut off the back
+half of the sphere, I want to
+
+00:03:24.090 --> 00:03:26.240
+only have a restricted
+value of theta.
+
+00:03:26.240 --> 00:03:29.600
+But because I'm covering all
+the way around and my
+
+00:03:29.600 --> 00:03:32.740
+restriction is only in the
+bottom half, my theta values
+
+00:03:32.740 --> 00:03:33.540
+haven't changed.
+
+00:03:33.540 --> 00:03:38.870
+So theta is easy: 0 and 2 pi.
+
+00:03:38.870 --> 00:03:43.030
+Now the harder ones are going
+to be rho and phi.
+
+00:03:43.030 --> 00:03:46.730
+But in fact, actually, phi
+is not that hard either.
+
+00:03:46.730 --> 00:03:52.320
+I notice phi is the angle that
+I make from the z-axis to any
+
+00:03:52.320 --> 00:03:52.960
+given point.
+
+00:03:52.960 --> 00:03:55.170
+So I notice that I certainly am
+including the point where
+
+00:03:55.170 --> 00:03:58.680
+phi is 0, and then I'm going
+all the way down to a point
+
+00:03:58.680 --> 00:04:02.380
+out here, which is a 45 degree
+angle with the z-axis.
+
+00:04:02.380 --> 00:04:03.930
+So phi is also easy.
+
+00:04:03.930 --> 00:04:06.850
+It's actually just between
+0 and pi over 4.
+
+00:04:13.780 --> 00:04:16.180
+And the rho will be the
+slightly harder part.
+
+00:04:16.180 --> 00:04:18.460
+So that's really the only really
+tricky part in this
+
+00:04:18.460 --> 00:04:21.070
+problem is determining
+the rho value.
+
+00:04:21.070 --> 00:04:24.970
+Now, the rho value, to get the
+outer boundary, we'll look at
+
+00:04:24.970 --> 00:04:27.430
+that part first.
+
+00:04:27.430 --> 00:04:31.750
+Well, the boundary of this
+sphere here has a certain
+
+00:04:31.750 --> 00:04:34.540
+equation in x, y, and z
+that we know, right?
+
+00:04:34.540 --> 00:04:38.710
+It's x squared plus y squared
+plus the quantity z minus 1
+
+00:04:38.710 --> 00:04:41.360
+squared equals 1.
+
+00:04:41.360 --> 00:04:43.780
+I mean, that's just the equation
+for a sphere of
+
+00:04:43.780 --> 00:04:46.170
+radius 1 centered
+at (0, 0, 1).
+
+00:04:46.170 --> 00:04:48.060
+So I'm going to write that here,
+and we're going to show
+
+00:04:48.060 --> 00:04:49.360
+how we can manipulate that.
+
+00:04:55.430 --> 00:04:56.310
+Right?
+
+00:04:56.310 --> 00:04:58.730
+x squared plus y squared
+is r squared.
+
+00:04:58.730 --> 00:05:02.290
+r squared is rho squared
+sine squared phi.
+
+00:05:02.290 --> 00:05:07.180
+So I can replace this by rho
+squared sine squared phi.
+
+00:05:07.180 --> 00:05:09.220
+If you didn't know that
+immediately, you could make
+
+00:05:09.220 --> 00:05:12.140
+the substitution for x and y in
+spherical coordinates, and
+
+00:05:12.140 --> 00:05:13.990
+it simplifies to this.
+
+00:05:13.990 --> 00:05:17.660
+So either way, if you didn't
+know r squared was this, you
+
+00:05:17.660 --> 00:05:20.050
+can get it from just doing
+the substitution.
+
+00:05:20.050 --> 00:05:24.020
+And then z is going to
+be rho cosine phi.
+
+00:05:24.020 --> 00:05:28.430
+So here, I'm going to have
+a rho cosine phi minus 1
+
+00:05:28.430 --> 00:05:30.650
+quantity squared equals 1.
+
+00:05:30.650 --> 00:05:34.400
+This in the spherical
+coordinates is describing the
+
+00:05:34.400 --> 00:05:38.490
+boundary of this entire
+sphere, right?
+
+00:05:38.490 --> 00:05:40.780
+And so I can actually
+simplify this.
+
+00:05:40.780 --> 00:05:41.980
+It's not too hard.
+
+00:05:41.980 --> 00:05:45.690
+If I square this, I get
+a little cancellation.
+
+00:05:45.690 --> 00:05:48.380
+And then because I want
+my rho to be--
+
+00:05:48.380 --> 00:05:51.070
+I'm assuming in this region,
+rho is greater than 0--
+
+00:05:51.070 --> 00:05:52.450
+I can do a little
+simplification.
+
+00:05:52.450 --> 00:05:58.112
+I come up with the fact that rho
+is equal to 2 cosine phi.
+
+00:05:58.112 --> 00:06:00.070
+And let's describe exactly
+where that is.
+
+00:06:00.070 --> 00:06:04.890
+That's the entire boundary
+of this entire sphere is
+
+00:06:04.890 --> 00:06:08.470
+described by rho is equal
+to 2 cosine phi.
+
+00:06:08.470 --> 00:06:10.810
+And so I want to think about
+what my bounds are for rho.
+
+00:06:10.810 --> 00:06:14.620
+Actually, I'm going to grab
+a piece of colored chalk.
+
+00:06:14.620 --> 00:06:17.410
+If I start at the origin, I
+think about what is rho?
+
+00:06:17.410 --> 00:06:20.450
+So say this is a point on the
+boundary of the sphere.
+
+00:06:20.450 --> 00:06:23.690
+I am going to start my rho
+value-- whatever it is when it
+
+00:06:23.690 --> 00:06:25.930
+hits the plane z equals 1--
+
+00:06:25.930 --> 00:06:27.580
+and I'm going to stop
+it when it hits the
+
+00:06:27.580 --> 00:06:29.380
+boundary of this sphere.
+
+00:06:29.380 --> 00:06:33.430
+So my outer boundary for rho
+is going to be this value.
+
+00:06:33.430 --> 00:06:36.830
+It's going to be determined
+by phi, right?
+
+00:06:36.830 --> 00:06:40.600
+And now I have to determine
+my inner boundary, right?
+
+00:06:40.600 --> 00:06:42.540
+And my inner boundary is
+actually quite simple.
+
+00:06:42.540 --> 00:06:44.630
+It's a very simple
+geometric thing.
+
+00:06:44.630 --> 00:06:47.700
+And so my inner boundary deals
+with the fact that if this is
+
+00:06:47.700 --> 00:06:52.070
+my plane z equals 1, and I look
+at this triangle I make
+
+00:06:52.070 --> 00:06:54.300
+right here.
+
+00:06:54.300 --> 00:06:57.310
+This angle down here, the bottom
+angle is phi, and this
+
+00:06:57.310 --> 00:07:00.520
+is a right angle, and the rho
+value I'm interested in is
+
+00:07:00.520 --> 00:07:02.430
+this hypotenuse, right?
+
+00:07:02.430 --> 00:07:06.090
+I need to figure out what the
+length of this is right here.
+
+00:07:06.090 --> 00:07:12.480
+And you can see it right away
+from just the fact that phi is
+
+00:07:12.480 --> 00:07:18.360
+this angle here, you get
+rho is secant phi.
+
+00:07:18.360 --> 00:07:22.600
+So the bottom boundary comes
+from just simple geometry.
+
+00:07:22.600 --> 00:07:25.290
+You get this length is 1 here.
+
+00:07:25.290 --> 00:07:28.190
+So you get rho is equal
+to secant phi, right?
+
+00:07:28.190 --> 00:07:31.040
+This length here is 1, this is
+the rho I'm interested in--
+
+00:07:31.040 --> 00:07:33.850
+the blue part here-- and so rho
+is equal to secant phi is
+
+00:07:33.850 --> 00:07:34.830
+the lower bound.
+
+00:07:34.830 --> 00:07:39.080
+And it's equal to 2 cosine phi
+at the upper bound, OK?
+
+00:07:39.080 --> 00:07:42.270
+And the thing I want to be
+careful of is I'm not supposed
+
+00:07:42.270 --> 00:07:43.300
+to include--
+
+00:07:43.300 --> 00:07:44.340
+it won't matter for
+the integral--
+
+00:07:44.340 --> 00:07:47.680
+but I'm not supposed to
+include the plane.
+
+00:07:47.680 --> 00:07:49.440
+Let me write this,
+and make sure.
+
+00:07:49.440 --> 00:07:54.220
+Rho is going to be greater than
+secant phi and it's going
+
+00:07:54.220 --> 00:08:03.230
+to be less than or equal
+to 2 cosine phi, right?
+
+00:08:03.230 --> 00:08:03.490
+Right?
+
+00:08:03.490 --> 00:08:05.170
+So let me double-check and
+make sure I didn't make a
+
+00:08:05.170 --> 00:08:07.650
+geometry mistake here,
+just to be sure.
+
+00:08:07.650 --> 00:08:10.890
+This picture tells me
+that cosine phi is
+
+00:08:10.890 --> 00:08:12.740
+equal to 1 over rho.
+
+00:08:12.740 --> 00:08:13.250
+That's good.
+
+00:08:13.250 --> 00:08:15.160
+So rho is equal to 1
+over cosine phi.
+
+00:08:15.160 --> 00:08:17.000
+So I get secant phi there.
+
+00:08:17.000 --> 00:08:22.550
+So my rho values start at the
+secant phi length and they go
+
+00:08:22.550 --> 00:08:23.960
+to the 2 cosine phi length.
+
+00:08:23.960 --> 00:08:26.310
+I know maybe I'm beating a dead
+horse here, but I want to
+
+00:08:26.310 --> 00:08:27.670
+make sure we understand
+where the rho
+
+00:08:27.670 --> 00:08:29.070
+values are coming from.
+
+00:08:29.070 --> 00:08:30.810
+So actually, I have all
+the bounds I need now.
+
+00:08:30.810 --> 00:08:34.380
+I have the theta bounds, and I
+have the phi bounds, and the
+
+00:08:34.380 --> 00:08:35.590
+rho bounds.
+
+00:08:35.590 --> 00:08:40.020
+Now you notice that theta and
+phi don't depend on the other
+
+00:08:40.020 --> 00:08:42.680
+variables, but rho
+depends on phi.
+
+00:08:42.680 --> 00:08:46.430
+So we're going to have to
+integrate that first. So now
+
+00:08:46.430 --> 00:08:48.900
+we can deal with part b.
+
+00:08:48.900 --> 00:08:50.630
+Part b-- let's come back
+over and remind
+
+00:08:50.630 --> 00:08:52.340
+ourselves what it said--
+
+00:08:52.340 --> 00:08:54.890
+said set up the integral for
+the average distance of a
+
+00:08:54.890 --> 00:08:57.600
+point in D from the origin.
+
+00:08:57.600 --> 00:09:00.080
+So I'm taking the average
+value of a function.
+
+00:09:00.080 --> 00:09:02.190
+What is that function
+I'm averaging?
+
+00:09:02.190 --> 00:09:04.810
+How do I find the distance
+from the origin?
+
+00:09:04.810 --> 00:09:06.753
+Well, the distance from the
+origin is a great function to
+
+00:09:06.753 --> 00:09:09.540
+have in spherical coordinates,
+because it's just rho.
+
+00:09:09.540 --> 00:09:12.560
+So the function I'm supposed
+to average over is the
+
+00:09:12.560 --> 00:09:13.880
+function rho.
+
+00:09:13.880 --> 00:09:15.880
+In spherical coordinates,
+that's the function.
+
+00:09:15.880 --> 00:09:18.010
+So let me write down what we're
+going to have here.
+
+00:09:18.010 --> 00:09:30.490
+So in part b, the average
+distance is going to equal 1
+
+00:09:30.490 --> 00:09:35.900
+divided by the volume of D times
+the triple integral over
+
+00:09:35.900 --> 00:09:44.000
+D of the function rho dV, OK?
+
+00:09:44.000 --> 00:09:47.740
+So now I have to write dV in the
+spherical coordinates, and
+
+00:09:47.740 --> 00:09:50.870
+I have to write D in the
+spherical coordinates bounds.
+
+00:09:50.870 --> 00:09:53.120
+And then I know I have to figure
+out the volume of D. So
+
+00:09:53.120 --> 00:09:54.910
+we're going to figure out each
+of these things, and then
+
+00:09:54.910 --> 00:09:56.012
+we'll be done.
+
+00:09:56.012 --> 00:09:56.600
+All right.
+
+00:09:56.600 --> 00:09:58.650
+So first, what is
+the volume of D?
+
+00:09:58.650 --> 00:10:01.080
+Well, the volume of D, let's
+think about what it is.
+
+00:10:01.080 --> 00:10:06.180
+It's a sphere of radius 1.
+
+00:10:06.180 --> 00:10:13.400
+And so the volume of a sphere of
+radius 1 is 4/3 pi r cubed.
+
+00:10:13.400 --> 00:10:14.740
+And I want half of that.
+
+00:10:14.740 --> 00:10:16.260
+So I want 2/3.
+
+00:10:16.260 --> 00:10:19.700
+Since my radius is 1, I just
+have to do 2/3 pi.
+
+00:10:19.700 --> 00:10:24.980
+So the first part is 1
+divided by 2/3 pi.
+
+00:10:24.980 --> 00:10:28.790
+That's the volume of a
+half-sphere of radius 1.
+
+00:10:28.790 --> 00:10:30.040
+And now let's integrate.
+
+00:10:33.220 --> 00:10:37.110
+I'll leave a little space
+to write my bounds.
+
+00:10:37.110 --> 00:10:39.080
+I'm going to write the bounds
+last, after I have everything
+
+00:10:39.080 --> 00:10:43.390
+in order over here. dV is
+rho squared sine phi d
+
+00:10:43.390 --> 00:10:45.490
+rho d theta d phi.
+
+00:10:45.490 --> 00:10:51.680
+So I'm going to end up with a
+rho cubed sine phi d rho d
+
+00:10:51.680 --> 00:10:55.750
+theta d phi, right?
+
+00:10:55.750 --> 00:11:01.030
+The dV gave me an extra rho
+squared and a sine phi.
+
+00:11:01.030 --> 00:11:05.350
+That whole part is dV. And then
+I keep one rho from the
+
+00:11:05.350 --> 00:11:08.100
+fact that the distance
+function is rho.
+
+00:11:08.100 --> 00:11:10.380
+And so I get a rho
+cubed there.
+
+00:11:10.380 --> 00:11:11.430
+So hopefully that makes sense.
+
+00:11:11.430 --> 00:11:16.980
+Now for d rho, I know the bounds
+are secant phi to 2
+
+00:11:16.980 --> 00:11:19.025
+cosine phi.
+
+00:11:19.025 --> 00:11:22.820
+For d theta, my bounds
+are 0 to 2 pi.
+
+00:11:22.820 --> 00:11:25.930
+And for d phi, my bounds
+were 0 to pi over 4.
+
+00:11:28.660 --> 00:11:32.180
+I didn't make you evaluate it,
+I'm just making you set it up.
+
+00:11:32.180 --> 00:11:35.510
+That actually is the solution
+we wanted for part b.
+
+00:11:35.510 --> 00:11:38.340
+I wanted to average the distance
+from any point in D
+
+00:11:38.340 --> 00:11:39.520
+to the origin.
+
+00:11:39.520 --> 00:11:42.890
+So I just took the average value
+of the function rho over
+
+00:11:42.890 --> 00:11:46.460
+that region D. And so that's
+how you finish that up.
+
+00:11:46.460 --> 00:11:49.790
+And so in this problem,
+basically we want you to get
+
+00:11:49.790 --> 00:11:54.080
+really familiar with how to do
+some things in these spherical
+
+00:11:54.080 --> 00:11:56.860
+coordinates, which are sometimes
+a little hard to do.
+
+00:11:56.860 --> 00:11:59.260
+But if you noticed, what we were
+doing in trying to figure
+
+00:11:59.260 --> 00:12:00.860
+out the bounds-- in
+particular, trying
+
+00:12:00.860 --> 00:12:02.150
+to figure out rho--
+
+00:12:02.150 --> 00:12:05.970
+we took what we knew in the x-,
+y-, z-coordinates about
+
+00:12:05.970 --> 00:12:09.360
+certain relationships, and then
+we replaced the x-, y-,
+
+00:12:09.360 --> 00:12:14.150
+z-values by the values in terms
+of rho and theta and
+
+00:12:14.150 --> 00:12:17.420
+phi, and you can simplify to
+figure out the relationships
+
+00:12:17.420 --> 00:12:20.510
+you have between rho and
+theta and phi for
+
+00:12:20.510 --> 00:12:21.410
+the boundary value.
+
+00:12:21.410 --> 00:12:22.900
+So that was one of
+the techniques
+
+00:12:22.900 --> 00:12:24.390
+we were using there.
+
+00:12:24.390 --> 00:12:28.430
+And hopefully, the geometric
+understanding of why these
+
+00:12:28.430 --> 00:12:32.130
+angles go from 0 to 2 pi and
+0 to pi over 4 is clear.
+
+00:12:32.130 --> 00:12:35.580
+And actually, the fact that this
+is rho equals 2 cosine
+
+00:12:35.580 --> 00:12:38.020
+phi should remind you of the
+two-dimensional case where you
+
+00:12:38.020 --> 00:12:41.510
+had some problem like r
+equals 2 cosine theta.
+
+00:12:41.510 --> 00:12:46.140
+And that drew a circle
+off-center from the origin.
+
+00:12:46.140 --> 00:12:50.240
+It's the analogous thing
+happening here.
+
+00:12:50.240 --> 00:12:52.490
+Maybe I should stop there before
+I say too many things.
+
+00:12:52.490 --> 00:12:54.600
+But again, the object of this
+was just to get really
+
+00:12:54.600 --> 00:12:56.640
+comfortable with spherical
+coordinates, and I hope it's
+
+00:12:56.640 --> 00:12:57.100
+helped you.
+
+00:12:57.100 --> 00:12:58.700
+I'll stop there.

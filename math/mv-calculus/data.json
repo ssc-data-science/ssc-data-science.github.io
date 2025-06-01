@@ -1,0 +1,23 @@
+{
+  "course_title":"Multivariable Calculus",
+  "course_description":"This course covers differential, integral and vector calculus for functions of more than one variable. These mathematical tools and methods are used extensively in the physical sciences, engineering, economics and computer graphics.\n\nThe materials have been organized to support independent study. The website includes all of the materials you will need to understand the concepts covered in this subject. The materials in this course include:\n\n- **Lecture Videos** recorded on the MIT campus\n- **Recitation Videos** with problem-solving tips\n- **Examples** of solutions to sample problems\n- **Problems** for you to solve, with solutions\n- **Exams** with solutions\n- **Interactive Java Applets** (\"Mathlets\") to reinforce key concepts\n\nContent Development\n\nDenis Auroux   \nArthur Mattuck   \nJeremy Orloff   \nJohn Lewis\n\nHeidi Burgiel   \nChristine Breiner   \nDavid Jordan   \nJoel Lewis",
+  "course_description_html":"<p>This course covers differential, integral and vector calculus for functions of more than one variable. These mathematical tools and methods are used extensively in the physical sciences, engineering, economics and computer graphics.</p>\n<p>The materials have been organized to support independent study. The website includes all of the materials you will need to understand the concepts covered in this subject. The materials in this course include:</p>\n<ul>\n<li><strong>Lecture Videos</strong> recorded on the MIT campus</li>\n<li><strong>Recitation Videos</strong> with problem-solving tips</li>\n<li><strong>Examples</strong> of solutions to sample problems</li>\n<li><strong>Problems</strong> for you to solve, with solutions</li>\n<li><strong>Exams</strong> with solutions</li>\n<li><strong>Interactive Java Applets</strong> (&ldquo;Mathlets&rdquo;) to reinforce key concepts</li>\n</ul>\n<p>Content Development</p>\n<p>Denis Auroux <br>\nArthur Mattuck <br>\nJeremy Orloff <br>\nJohn Lewis</p>\n<p>Heidi Burgiel <br>\nChristine Breiner <br>\nDavid Jordan <br>\nJoel Lewis</p>\n",
+  "site_uid":"b063d98e-a777-4e9d-943f-b150d3c3a7eb",
+  "legacy_uid":"90deb412-4e37-9efd-2f36-bab248d3ce4e","instructors": [{
+    "first_name":"Denis",
+    "last_name":"Auroux",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Denis Auroux"}],"department_numbers":["18"],
+  "learning_resource_types":["Simulations","Exams with Solutions","Problem Sets with Solutions","Lecture Videos","Lecture Notes"],
+  "topics":[["Mathematics","Calculus"],["Mathematics","Linear Algebra"],["Mathematics","Differential Equations"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"18.02SC",
+  "extra_course_numbers":"",
+  "term":"Fall",
+  "year":"2010",
+  "level":["Undergraduate"],
+  "hide_download":null,
+  "image_src":"./static_resources/98f7f76b373d20b5c3f849016d8ff5a1_18-02scf10.jpg",
+  "course_image_metadata":{"content_type":"resource","description":"","draft":false,"file":"/courses/18-02sc-multivariable-calculus-fall-2010/98f7f76b373d20b5c3f849016d8ff5a1_18-02scf10.jpg","file_size":14792,"file_type":"image/jpeg","image_metadata":{"caption":"Directional derivatives for functions of two variables. (Image courtesy of John B. Lewis.)","credit":"","image-alt":"Graph of an eighth of a sphere."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"18-02scf10.jpg","uid":"98f7f76b-373d-20b5-c3f8-49016d8ff5a1","video_metadata":{"youtube_id":null}}}
+

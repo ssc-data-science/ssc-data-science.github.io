@@ -1,0 +1,4099 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image Gallery on MIT OpenCourseWare</title>
+    <link>/resources/image-gallery/</link>
+    <description>Recent content in Image Gallery on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/image-gallery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Session 1: Vectors 1</title>
+      <link>/resources/mit18_02sc_l1brds_1-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_1-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 1: Vectors 2</title>
+      <link>/resources/mit18_02sc_l1brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 1: Vectors 3</title>
+      <link>/resources/mit18_02sc_l1brds_3-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_3-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 1: Vectors 4</title>
+      <link>/resources/mit18_02sc_l1brds_4-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_4-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 10: Meaning of Matrix Multiplication 1</title>
+      <link>/resources/mit18_02sc_l3brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 10: Meaning of Matrix Multiplication 2</title>
+      <link>/resources/mit18_02sc_l3brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 10: Meaning of Matrix Multiplication 3</title>
+      <link>/resources/mit18_02sc_l3brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 100: Unit 2 Review 1</title>
+      <link>/resources/mit18_02sc_l34brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 100: Unit 2 Review 2</title>
+      <link>/resources/mit18_02sc_l34brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 100: Unit 2 Review 3</title>
+      <link>/resources/mit18_02sc_l34brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 100: Unit 2 Review 4</title>
+      <link>/resources/mit18_02sc_l34brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 100: Unit 2 Review 5</title>
+      <link>/resources/mit18_02sc_l34brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 100: Unit 2 Review 6</title>
+      <link>/resources/mit18_02sc_l34brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 100: Unit 2 Review 7</title>
+      <link>/resources/mit18_02sc_l34brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 101: Unit 3 Review 1</title>
+      <link>/resources/mit18_02sc_l35brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 101: Unit 3 Review 1</title>
+      <link>/resources/mit18_02sc_l35brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 101: Unit 3 Review 2</title>
+      <link>/resources/mit18_02sc_l35brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 101: Unit 3 Review 3</title>
+      <link>/resources/mit18_02sc_l35brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 101: Unit 3 Review 4</title>
+      <link>/resources/mit18_02sc_l35brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 101: Unit 3 Review 6</title>
+      <link>/resources/mit18_02sc_l35brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 1</title>
+      <link>/resources/mit18_02sc_l35brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 10</title>
+      <link>/resources/mit18_02sc_l35brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 11</title>
+      <link>/resources/mit18_02sc_l35brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 2</title>
+      <link>/resources/mit18_02sc_l35brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 3</title>
+      <link>/resources/mit18_02sc_l35brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 4</title>
+      <link>/resources/mit18_02sc_l35brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 5</title>
+      <link>/resources/mit18_02sc_l35brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 5</title>
+      <link>/resources/mit18_02sc_l35brds_11a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_11a/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 6</title>
+      <link>/resources/mit18_02sc_l35brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 7</title>
+      <link>/resources/mit18_02sc_l35brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 8</title>
+      <link>/resources/mit18_02sc_l35brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 102: Unit 4 Review 9</title>
+      <link>/resources/mit18_02sc_l35brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l35brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 11: Matrix Inverses 1</title>
+      <link>/resources/mit18_02sc_l3brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 11: Matrix Inverses 2</title>
+      <link>/resources/mit18_02sc_l3brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 11: Matrix Inverses 3</title>
+      <link>/resources/mit18_02sc_l3brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 11: Matrix Inverses 4</title>
+      <link>/resources/mit18_02sc_l3brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 12: Equations of Planes II - 1</title>
+      <link>/resources/mit18_02sc_l4brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 12: Equations of Planes II - 2</title>
+      <link>/resources/mit18_02sc_l4brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 12: Equations of Planes II - 3</title>
+      <link>/resources/mit18_02sc_l4brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 12: Equations of Planes II - 4</title>
+      <link>/resources/mit18_02sc_l4brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 12: Equations of Planes II - 5</title>
+      <link>/resources/mit18_02sc_l4brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 13: Linear Systems and Planes - 1</title>
+      <link>/resources/mit18_02sc_l4brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 13: Linear Systems and Planes - 2</title>
+      <link>/resources/mit18_02sc_l4brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 14: Solutions to Square Systems 1</title>
+      <link>/resources/mit18_02sc_l4brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 14: Solutions to Square Systems 2</title>
+      <link>/resources/mit18_02sc_l4brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 14: Solutions to Square Systems 3</title>
+      <link>/resources/mit18_02sc_l4brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 14: Solutions to Square Systems 4</title>
+      <link>/resources/mit18_02sc_l4brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l4brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 15: Equations of Lines 1</title>
+      <link>/resources/mit18_02sc_l5brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 15: Equations of Lines 2</title>
+      <link>/resources/mit18_02sc_l5brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 15: Equations of Lines 3</title>
+      <link>/resources/mit18_02sc_l5brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 15: Equations of Lines 4</title>
+      <link>/resources/mit18_02sc_l5brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 16: Intersection of a Line and a Plane 1</title>
+      <link>/resources/mit18_02sc_l5brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 16: Intersection of a Line and a Plane 2</title>
+      <link>/resources/mit18_02sc_l5brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 16: Intersection of a Line and a Plane 3</title>
+      <link>/resources/mit18_02sc_l5brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 16: Intersection of a Line and a Plane 4</title>
+      <link>/resources/mit18_02sc_l5brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 17: General Parametric Equations; the Cycloid 1</title>
+      <link>/resources/mit18_02sc_l5brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 17: General Parametric Equations; the Cycloid 2</title>
+      <link>/resources/mit18_02sc_l5brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 17: General Parametric Equations; the Cycloid 3</title>
+      <link>/resources/mit18_02sc_l5brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 17: General Parametric Equations; the Cycloid 4</title>
+      <link>/resources/mit18_02sc_l5brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 17: General Parametric Equations; the Cycloid 5</title>
+      <link>/resources/mit18_02sc_l5brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 17: General Parametric Equations; the Cycloid 6</title>
+      <link>/resources/mit18_02sc_l5brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 18: Point (Cusp) on Cycloid 1</title>
+      <link>/resources/mit18_02sc_l5brds_14-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_14-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 18: Point (Cusp) on Cycloid 2</title>
+      <link>/resources/mit18_02sc_l5brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 18: Point (Cusp) on Cycloid 3</title>
+      <link>/resources/mit18_02sc_l5brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 18: Point (Cusp) on Cycloid 4</title>
+      <link>/resources/mit18_02sc_l5brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l5brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 19: Velocity and Acceleration 1</title>
+      <link>/resources/mit18_02sc_l6brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 19: Velocity and Acceleration 2</title>
+      <link>/resources/mit18_02sc_l6brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 19: Velocity and Acceleration 3</title>
+      <link>/resources/mit18_02sc_l6brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 19: Velocity and Acceleration 4</title>
+      <link>/resources/mit18_02sc_l6brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 2: Dot Products 1</title>
+      <link>/resources/mit18_02sc_l1brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 2: Dot Products 1</title>
+      <link>/resources/mit18_02sc_l1brds_5a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_5a/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 2: Dot Products 2</title>
+      <link>/resources/mit18_02sc_l1brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 2: Dot Products 2</title>
+      <link>/resources/mit18_02sc_l1brds_6a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_6a/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 2: Dot Products 3</title>
+      <link>/resources/mit18_02sc_l1brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 2: Dot Products 3</title>
+      <link>/resources/mit18_02sc_l1brds_7a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_7a/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 20: Velocity and Arc Length 1</title>
+      <link>/resources/mit18_02sc_l6brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 20: Velocity and Arc Length 2</title>
+      <link>/resources/mit18_02sc_l6brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 20: Velocity and Arc Length 3</title>
+      <link>/resources/mit18_02sc_l6brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 20: Velocity and Arc Length 4</title>
+      <link>/resources/mit18_02sc_l6brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 21: Kepler&#39;s Second Law 1</title>
+      <link>/resources/mit18_02sc_l6brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 21: Kepler&#39;s Second Law 2</title>
+      <link>/resources/mit18_02sc_l6brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 21: Kepler&#39;s Second Law 3</title>
+      <link>/resources/mit18_02sc_l6brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 21: Kepler&#39;s Second Law 4</title>
+      <link>/resources/mit18_02sc_l6brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 21: Kepler&#39;s Second Law 5</title>
+      <link>/resources/mit18_02sc_l6brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 21: Kepler&#39;s Second Law 6</title>
+      <link>/resources/mit18_02sc_l6brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l6brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 22: Review of Topics 1</title>
+      <link>/resources/mit18_02sc_l7brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 22: Review of Topics 2</title>
+      <link>/resources/mit18_02sc_l7brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 22: Review of Topics 3</title>
+      <link>/resources/mit18_02sc_l7brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 22: Review of Topics 4</title>
+      <link>/resources/mit18_02sc_l7brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 1</title>
+      <link>/resources/mit18_02sc_l7brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 10</title>
+      <link>/resources/mit18_02sc_l7brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 2</title>
+      <link>/resources/mit18_02sc_l7brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 3</title>
+      <link>/resources/mit18_02sc_l7brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 4</title>
+      <link>/resources/mit18_02sc_l7brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 5</title>
+      <link>/resources/mit18_02sc_l7brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 6</title>
+      <link>/resources/mit18_02sc_l7brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 7</title>
+      <link>/resources/mit18_02sc_l7brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 8</title>
+      <link>/resources/mit18_02sc_l7brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 23: Review of Problems 9</title>
+      <link>/resources/mit18_02sc_l7brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l7brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 24: Functions of Two Variables: Graphs 1</title>
+      <link>/resources/mit18_02sc_l8brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 24: Functions of Two Variables: Graphs 2</title>
+      <link>/resources/mit18_02sc_l8brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 24: Functions of Two Variables: Graphs 3</title>
+      <link>/resources/mit18_02sc_l8brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 24: Functions of Two Variables: Graphs 4</title>
+      <link>/resources/mit18_02sc_l8brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 24: Functions of Two Variables: Graphs 5</title>
+      <link>/resources/mit18_02sc_l8brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 24: Functions of Two Variables: Graphs 6</title>
+      <link>/resources/mit18_02sc_l8brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 25: Level Curves and Contour Plots 1</title>
+      <link>/resources/mit18_02sc_l8brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 25: Level Curves and Contour Plots 2</title>
+      <link>/resources/mit18_02sc_l8brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 25: Level Curves and Contour Plots 3</title>
+      <link>/resources/mit18_02sc_l8brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 25: Level Curves and Contour Plots 4</title>
+      <link>/resources/mit18_02sc_l8brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 26: Partial Derivatives 1</title>
+      <link>/resources/mit18_02sc_l8brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 26: Partial Derivatives 2</title>
+      <link>/resources/mit18_02sc_l8brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 26: Partial Derivatives 3</title>
+      <link>/resources/mit18_02sc_l8brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 26: Partial Derivatives 4</title>
+      <link>/resources/mit18_02sc_l8brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 26: Partial Derivatives 5</title>
+      <link>/resources/mit18_02sc_l8brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l8brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 27: Approximation Formula 1</title>
+      <link>/resources/mit18_02sc_l9brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 27: Approximation Formula 2</title>
+      <link>/resources/mit18_02sc_l9brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 27: Approximation Formula 3</title>
+      <link>/resources/mit18_02sc_l9brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 27: Approximation Formula 4</title>
+      <link>/resources/mit18_02sc_l9brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 27: Approximation Formula 5</title>
+      <link>/resources/mit18_02sc_l9brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 28: Optimization Problems 1</title>
+      <link>/resources/mit18_02sc_l9brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 28: Optimization Problems 2</title>
+      <link>/resources/mit18_02sc_l9brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 28: Optimization Problems 3</title>
+      <link>/resources/mit18_02sc_l9brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 28: Optimization Problems 4</title>
+      <link>/resources/mit18_02sc_l9brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_9/data.json</guid>
+      <description>&lt;p&gt;New image Upload&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 28: Optimization Problems 5</title>
+      <link>/resources/mit18_02sc_l9brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 28: Optimization Problems 6</title>
+      <link>/resources/mit18_02sc_l9brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares 1</title>
+      <link>/resources/mit18_02sc_l9brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares 2</title>
+      <link>/resources/mit18_02sc_l9brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares 3</title>
+      <link>/resources/mit18_02sc_l9brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares 4</title>
+      <link>/resources/mit18_02sc_l9brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares 5</title>
+      <link>/resources/mit18_02sc_l9brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares 6</title>
+      <link>/resources/mit18_02sc_l9brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares 7</title>
+      <link>/resources/mit18_02sc_l9brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l9brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 3: Lengths and Angles 1</title>
+      <link>/resources/mit18_02sc_l1brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 3: Lengths and Angles 2</title>
+      <link>/resources/mit18_02sc_l1brds_9a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_9a/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 3: Lengths and Angles 3</title>
+      <link>/resources/mit18_02sc_l1brds_10a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_10a/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 3: Lengths and Angles 4</title>
+      <link>/resources/mit18_02sc_l1brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 3: Uses of the Dot Product: Lengths and Angles 2</title>
+      <link>/resources/mit18_02sc_l1brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 3: Uses of the Dot Product: Lengths and Angles 3</title>
+      <link>/resources/mit18_02sc_l1brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 3: Uses of the Dot Product: Lengths and Angles 5</title>
+      <link>/resources/mit18_02sc_l1brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l1brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 1</title>
+      <link>/resources/mit18_02sc_l10brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 10</title>
+      <link>/resources/mit18_02sc_l10brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 11</title>
+      <link>/resources/mit18_02sc_l10brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 12</title>
+      <link>/resources/mit18_02sc_l10brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 13</title>
+      <link>/resources/mit18_02sc_l10brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 14</title>
+      <link>/resources/mit18_02sc_l10brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 15</title>
+      <link>/resources/mit18_02sc_l10brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 2</title>
+      <link>/resources/mit18_02sc_l10brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 3</title>
+      <link>/resources/mit18_02sc_l10brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 4</title>
+      <link>/resources/mit18_02sc_l10brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 5</title>
+      <link>/resources/mit18_02sc_l10brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 6</title>
+      <link>/resources/mit18_02sc_l10brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 7</title>
+      <link>/resources/mit18_02sc_l10brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 8</title>
+      <link>/resources/mit18_02sc_l10brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test 9</title>
+      <link>/resources/mit18_02sc_l10brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 31: Example 1</title>
+      <link>/resources/mit18_02sc_l10brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 31: Example 2</title>
+      <link>/resources/mit18_02sc_l10brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 31: Example 3</title>
+      <link>/resources/mit18_02sc_l10brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l10brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 32: Total Differentials and the Chain Rule 1</title>
+      <link>/resources/mit18_02sc_l11brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 32: Total Differentials and the Chain Rule 2</title>
+      <link>/resources/mit18_02sc_l11brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 32: Total Differentials and the Chain Rule 3</title>
+      <link>/resources/mit18_02sc_l11brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 32: Total Differentials and the Chain Rule 4</title>
+      <link>/resources/mit18_02sc_l11brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 32: Total Differentials and the Chain Rule 5</title>
+      <link>/resources/mit18_02sc_l11brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 32: Total Differentials and the Chain Rule 6</title>
+      <link>/resources/mit18_02sc_l11brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 32: Total Differentials and the Chain Rule 7</title>
+      <link>/resources/mit18_02sc_l11brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 32: Total Differentials and the Chain Rule 8</title>
+      <link>/resources/mit18_02sc_l11brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 33: Examples 1</title>
+      <link>/resources/mit18_02sc_l11brds_8-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_8-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 33: Examples 2</title>
+      <link>/resources/mit18_02sc_l11brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 33: Examples 3</title>
+      <link>/resources/mit18_02sc_l11brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 33: Examples 4</title>
+      <link>/resources/mit18_02sc_l11brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_11/data.json</guid>
+      <description>&lt;p&gt;New image Upload&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 33: Examples 4</title>
+      <link>/resources/mit18_02sc_l11brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 34: The Chain Rule with More Variables 1</title>
+      <link>/resources/mit18_02sc_l11brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 34: The Chain Rule with More Variables 2</title>
+      <link>/resources/mit18_02sc_l11brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 34: The Chain Rule with More Variables 3</title>
+      <link>/resources/mit18_02sc_l11brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 34: The Chain Rule with More Variables 4</title>
+      <link>/resources/mit18_02sc_l11brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l11brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 35: Gradient: Definition, Perpendicular to Level Curves 1</title>
+      <link>/resources/mit18_02sc_l12brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 35: Gradient: Definition, Perpendicular to Level Curves 2</title>
+      <link>/resources/mit18_02sc_l12brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 35: Gradient: Definition, Perpendicular to Level Curves 3</title>
+      <link>/resources/mit18_02sc_l12brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 35: Gradient: Definition, Perpendicular to Level Curves 4</title>
+      <link>/resources/mit18_02sc_l12brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 35: Gradient: Definition, Perpendicular to Level Curves 5</title>
+      <link>/resources/mit18_02sc_l12brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 36: Proof 1</title>
+      <link>/resources/mit18_02sc_l12brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 36: Proof 2</title>
+      <link>/resources/mit18_02sc_l12brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 36: Proof 3</title>
+      <link>/resources/mit18_02sc_l12brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 36: Proof 4</title>
+      <link>/resources/mit18_02sc_l12brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 37: Example 1</title>
+      <link>/resources/mit18_02sc_l12brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 37: Example 2</title>
+      <link>/resources/mit18_02sc_l12brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 37: Example 3</title>
+      <link>/resources/mit18_02sc_l12brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 37: Example 4</title>
+      <link>/resources/mit18_02sc_l12brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Directional Derivatives 1</title>
+      <link>/resources/mit18_02sc_l12brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Directional Derivatives 2</title>
+      <link>/resources/mit18_02sc_l12brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Directional Derivatives 3</title>
+      <link>/resources/mit18_02sc_l12brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Directional Derivatives 4</title>
+      <link>/resources/mit18_02sc_l12brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Directional Derivatives 5</title>
+      <link>/resources/mit18_02sc_l12brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Directional Derivatives 6</title>
+      <link>/resources/mit18_02sc_l12brds_19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_19/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Directional Derivatives 7</title>
+      <link>/resources/mit18_02sc_l12brds_20/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_20/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Directional Derivatives 8</title>
+      <link>/resources/mit18_02sc_l12brds_21/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l12brds_21/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example 1</title>
+      <link>/resources/mit18_02sc_l13brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example 2</title>
+      <link>/resources/mit18_02sc_l13brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example 3</title>
+      <link>/resources/mit18_02sc_l13brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example 4</title>
+      <link>/resources/mit18_02sc_l13brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example 5</title>
+      <link>/resources/mit18_02sc_l13brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example 6</title>
+      <link>/resources/mit18_02sc_l13brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example 7</title>
+      <link>/resources/mit18_02sc_l13brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example 8</title>
+      <link>/resources/mit18_02sc_l13brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 4: Vector Components 1</title>
+      <link>/resources/mit18_02sc_l2brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 4: Vector Components 2</title>
+      <link>/resources/mit18_02sc_l2brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 4: Vector Components 3</title>
+      <link>/resources/mit18_02sc_l2brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 40: Proof of Lagrange Multipliers 1</title>
+      <link>/resources/mit18_02sc_l13brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 40: Proof of Lagrange Multipliers 2</title>
+      <link>/resources/mit18_02sc_l13brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 40: Proof of Lagrange Multipliers 3</title>
+      <link>/resources/mit18_02sc_l13brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 40: Proof of Lagrange Multipliers 4</title>
+      <link>/resources/mit18_02sc_l13brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 40: Proof of Lagrange Multipliers 5</title>
+      <link>/resources/mit18_02sc_l13brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 41: Advanced Example 1</title>
+      <link>/resources/mit18_02sc_l13brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 41: Advanced Example 2</title>
+      <link>/resources/mit18_02sc_l13brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 41: Advanced Example 3</title>
+      <link>/resources/mit18_02sc_l13brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 41: Advanced Example 4</title>
+      <link>/resources/mit18_02sc_l13brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 41: Advanced Example 5</title>
+      <link>/resources/mit18_02sc_l13brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l13brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 42: Constrained Differentials 1</title>
+      <link>/resources/mit18_02sc_l14brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 42: Constrained Differentials 2</title>
+      <link>/resources/mit18_02sc_l14brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 42: Constrained Differentials 3</title>
+      <link>/resources/mit18_02sc_l14brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 42: Constrained Differentials 4</title>
+      <link>/resources/mit18_02sc_l14brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 42: Constrained Differentials 5</title>
+      <link>/resources/mit18_02sc_l14brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 43: Clearer Notation 1</title>
+      <link>/resources/mit18_02sc_l14brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 43: Clearer Notation 2</title>
+      <link>/resources/mit18_02sc_l14brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 43: Clearer Notation 3</title>
+      <link>/resources/mit18_02sc_l14brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 1</title>
+      <link>/resources/mit18_02sc_l14brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 10</title>
+      <link>/resources/mit18_02sc_l14brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 2</title>
+      <link>/resources/mit18_02sc_l14brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 3</title>
+      <link>/resources/mit18_02sc_l14brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 4</title>
+      <link>/resources/mit18_02sc_l14brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 5</title>
+      <link>/resources/mit18_02sc_l14brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 6</title>
+      <link>/resources/mit18_02sc_l14brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 7</title>
+      <link>/resources/mit18_02sc_l14brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 8</title>
+      <link>/resources/mit18_02sc_l14brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Example 9</title>
+      <link>/resources/mit18_02sc_l14brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l14brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 1</title>
+      <link>/resources/mit18_02sc_l15brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 10</title>
+      <link>/resources/mit18_02sc_l15brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 11</title>
+      <link>/resources/mit18_02sc_l15brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 12</title>
+      <link>/resources/mit18_02sc_l15brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 13</title>
+      <link>/resources/mit18_02sc_l15brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 14</title>
+      <link>/resources/mit18_02sc_l15brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 2</title>
+      <link>/resources/mit18_02sc_l15brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 3</title>
+      <link>/resources/mit18_02sc_l15brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 4</title>
+      <link>/resources/mit18_02sc_l15brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 5</title>
+      <link>/resources/mit18_02sc_l15brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 6</title>
+      <link>/resources/mit18_02sc_l15brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 7</title>
+      <link>/resources/mit18_02sc_l15brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 8</title>
+      <link>/resources/mit18_02sc_l15brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 45: Review of Topics 9</title>
+      <link>/resources/mit18_02sc_l15brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 46: Review of Problems</title>
+      <link>/resources/mit18_02sc_l15brds_14-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l15brds_14-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 47: Definition of Double Integration 1</title>
+      <link>/resources/mit18_02sc_l16brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 47: Definition of Double Integration 2</title>
+      <link>/resources/mit18_02sc_l16brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 47: Definition of Double Integration 3</title>
+      <link>/resources/mit18_02sc_l16brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 47: Definition of Double Integration 4</title>
+      <link>/resources/mit18_02sc_l16brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 47: Definition of Double Integration 5</title>
+      <link>/resources/mit18_02sc_l16brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 48: Examples of Double Integration 1</title>
+      <link>/resources/mit18_02sc_l16brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 48: Examples of Double Integration 2</title>
+      <link>/resources/mit18_02sc_l16brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 48: Examples of Double Integration 3</title>
+      <link>/resources/mit18_02sc_l16brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 48: Examples of Double Integration 4</title>
+      <link>/resources/mit18_02sc_l16brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 48: Examples of Double Integration 5</title>
+      <link>/resources/mit18_02sc_l16brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 48: Examples of Double Integration 6</title>
+      <link>/resources/mit18_02sc_l16brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 48: Examples of Double Integration 7</title>
+      <link>/resources/mit18_02sc_l16brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 49: Exchanging the Order of Integration 1</title>
+      <link>/resources/mit18_02sc_l16brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 49: Exchanging the Order of Integration 2</title>
+      <link>/resources/mit18_02sc_l16brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 49: Exchanging the Order of Integration 3</title>
+      <link>/resources/mit18_02sc_l16brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l16brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 5: Area and Determinants in 2D 1</title>
+      <link>/resources/mit18_02sc_l2brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 5: Area and Determinants in 2D 2</title>
+      <link>/resources/mit18_02sc_l2brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 5: Area and Determinants in 2D 3</title>
+      <link>/resources/mit18_02sc_l2brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 5: Area and Determinants in 2D 4</title>
+      <link>/resources/mit18_02sc_l2brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 50: Double Integrals in Polar Coordinates 1</title>
+      <link>/resources/mit18_02sc_l17brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 50: Double Integrals in Polar Coordinates 2</title>
+      <link>/resources/mit18_02sc_l17brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 50: Double Integrals in Polar Coordinates 3</title>
+      <link>/resources/mit18_02sc_l17brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 50: Double Integrals in Polar Coordinates 4</title>
+      <link>/resources/mit18_02sc_l17brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 50: Double Integrals in Polar Coordinates 5</title>
+      <link>/resources/mit18_02sc_l17brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 51: Applications: Mass and Average Value 1</title>
+      <link>/resources/mit18_02sc_l17brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 51: Applications: Mass and Average Value 2</title>
+      <link>/resources/mit18_02sc_l17brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 51: Applications: Mass and Average Value 3</title>
+      <link>/resources/mit18_02sc_l17brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 51: Applications: Mass and Average Value 4</title>
+      <link>/resources/mit18_02sc_l17brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia 1</title>
+      <link>/resources/mit18_02sc_l17brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia 2</title>
+      <link>/resources/mit18_02sc_l17brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia 3</title>
+      <link>/resources/mit18_02sc_l17brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia 4</title>
+      <link>/resources/mit18_02sc_l17brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia 5</title>
+      <link>/resources/mit18_02sc_l17brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia 6</title>
+      <link>/resources/mit18_02sc_l17brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia 7</title>
+      <link>/resources/mit18_02sc_l17brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia 8</title>
+      <link>/resources/mit18_02sc_l17brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l17brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 1</title>
+      <link>/resources/mit18_02sc_l18brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 10</title>
+      <link>/resources/mit18_02sc_l18brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 2</title>
+      <link>/resources/mit18_02sc_l18brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 3</title>
+      <link>/resources/mit18_02sc_l18brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 4</title>
+      <link>/resources/mit18_02sc_l18brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 5</title>
+      <link>/resources/mit18_02sc_l18brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 6</title>
+      <link>/resources/mit18_02sc_l18brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 7</title>
+      <link>/resources/mit18_02sc_l18brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 8</title>
+      <link>/resources/mit18_02sc_l18brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables 9</title>
+      <link>/resources/mit18_02sc_l18brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 54: Example: Polar Coordinates 1</title>
+      <link>/resources/mit18_02sc_l18brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 54: Example: Polar Coordinates 2</title>
+      <link>/resources/mit18_02sc_l18brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 54: Example: Polar Coordinates 3</title>
+      <link>/resources/mit18_02sc_l18brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 55: Example 1</title>
+      <link>/resources/mit18_02sc_l18brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 55: Example 2</title>
+      <link>/resources/mit18_02sc_l18brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 55: Example 3</title>
+      <link>/resources/mit18_02sc_l18brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 55: Example 4</title>
+      <link>/resources/mit18_02sc_l18brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l18brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 56: Vector Fields 1</title>
+      <link>/resources/mit18_02sc_l19brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 56: Vector Fields 2</title>
+      <link>/resources/mit18_02sc_l19brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 56: Vector Fields 3</title>
+      <link>/resources/mit18_02sc_l19brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 56: Vector Fields 4</title>
+      <link>/resources/mit18_02sc_l19brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57: Work and Line Integrals 1</title>
+      <link>/resources/mit18_02sc_l19brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57: Work and Line Integrals 2</title>
+      <link>/resources/mit18_02sc_l19brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57: Work and Line Integrals 3</title>
+      <link>/resources/mit18_02sc_l19brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57: Work and Line Integrals 4</title>
+      <link>/resources/mit18_02sc_l19brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57: Work and Line Integrals 5</title>
+      <link>/resources/mit18_02sc_l19brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57: Work and Line Integrals 6</title>
+      <link>/resources/mit18_02sc_l19brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57: Work and Line Integrals 7</title>
+      <link>/resources/mit18_02sc_l19brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57: Work and Line Integrals 8</title>
+      <link>/resources/mit18_02sc_l19brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 58: Geometric Approach 2</title>
+      <link>/resources/mit18_02sc_l19brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 58: Geometric Approach 3</title>
+      <link>/resources/mit18_02sc_l19brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 58: Geometric Approach 4</title>
+      <link>/resources/mit18_02sc_l19brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 58: Session 58: Geometric Approach 1</title>
+      <link>/resources/mit18_02sc_l19brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l19brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 59: Example: Line Integrals for Work 1</title>
+      <link>/resources/mit18_02sc_l20brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 59: Example: Line Integrals for Work 2</title>
+      <link>/resources/mit18_02sc_l20brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 59: Example: Line Integrals for Work 3</title>
+      <link>/resources/mit18_02sc_l20brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 59: Example: Line Integrals for Work 4</title>
+      <link>/resources/mit18_02sc_l20brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 59: Example: Line Integrals for Work 5</title>
+      <link>/resources/mit18_02sc_l20brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 59: Example: Line Integrals for Work 6</title>
+      <link>/resources/mit18_02sc_l20brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 59: Example: Line Integrals for Work 7</title>
+      <link>/resources/mit18_02sc_l20brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 59: Example: Line Integrals for Work 8</title>
+      <link>/resources/mit18_02sc_l20brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 6: Volumes and Determinants in Space 1</title>
+      <link>/resources/mit18_02sc_l2brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 6: Volumes and Determinants in Space 2</title>
+      <link>/resources/mit18_02sc_l2brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 1</title>
+      <link>/resources/mit18_02sc_l20brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 2</title>
+      <link>/resources/mit18_02sc_l20brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 3</title>
+      <link>/resources/mit18_02sc_l20brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 4</title>
+      <link>/resources/mit18_02sc_l20brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 5</title>
+      <link>/resources/mit18_02sc_l20brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 6</title>
+      <link>/resources/mit18_02sc_l20brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 7</title>
+      <link>/resources/mit18_02sc_l20brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 8</title>
+      <link>/resources/mit18_02sc_l20brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem for Line Integrals 9</title>
+      <link>/resources/mit18_02sc_l20brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 61: Conservative Fields, Path Independence, Exact Differentials 1</title>
+      <link>/resources/mit18_02sc_l20brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 61: Conservative Fields, Path Independence, Exact Differentials 2</title>
+      <link>/resources/mit18_02sc_l20brds_19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_19/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 61: Conservative Fields, Path Independence, Exact Differentials 3</title>
+      <link>/resources/mit18_02sc_l20brds_20/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_20/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 61: Conservative Fields, Path Independence, Exact Differentials 4</title>
+      <link>/resources/mit18_02sc_l20brds_21/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l20brds_21/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 62: Gradient Fields 1</title>
+      <link>/resources/mit18_02sc_l21brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 62: Gradient Fields 2</title>
+      <link>/resources/mit18_02sc_l21brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 62: Gradient Fields 3</title>
+      <link>/resources/mit18_02sc_l21brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 62: Gradient Fields 4</title>
+      <link>/resources/mit18_02sc_l21brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 62: Gradient Fields 5</title>
+      <link>/resources/mit18_02sc_l21brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 62: Gradient Fields 6</title>
+      <link>/resources/mit18_02sc_l21brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 62: Gradient Fields 7</title>
+      <link>/resources/mit18_02sc_l21brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 1</title>
+      <link>/resources/mit18_02sc_l21brds_7-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_7-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 10</title>
+      <link>/resources/mit18_02sc_l21brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 2</title>
+      <link>/resources/mit18_02sc_l21brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 3</title>
+      <link>/resources/mit18_02sc_l21brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 4</title>
+      <link>/resources/mit18_02sc_l21brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 5</title>
+      <link>/resources/mit18_02sc_l21brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 6</title>
+      <link>/resources/mit18_02sc_l21brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 7</title>
+      <link>/resources/mit18_02sc_l21brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 8</title>
+      <link>/resources/mit18_02sc_l21brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potential Functions 9</title>
+      <link>/resources/mit18_02sc_l21brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 64: Curl 1</title>
+      <link>/resources/mit18_02sc_l21brds_16-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_16-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 64: Curl 2</title>
+      <link>/resources/mit18_02sc_l21brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 64: Curl 3</title>
+      <link>/resources/mit18_02sc_l21brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 64: Curl 4</title>
+      <link>/resources/mit18_02sc_l21brds_19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_19/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 64: Curl 5</title>
+      <link>/resources/mit18_02sc_l21brds_20/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_20/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 64: Curl 6</title>
+      <link>/resources/mit18_02sc_l21brds_21/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l21brds_21/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem 1</title>
+      <link>/resources/mit18_02sc_l22brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem 2</title>
+      <link>/resources/mit18_02sc_l22brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem 3</title>
+      <link>/resources/mit18_02sc_l22brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem 4</title>
+      <link>/resources/mit18_02sc_l22brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem 5</title>
+      <link>/resources/mit18_02sc_l22brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem 6</title>
+      <link>/resources/mit18_02sc_l22brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem 7</title>
+      <link>/resources/mit18_02sc_l22brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 66: Curl(F) = 0 Implies Conservative 1</title>
+      <link>/resources/mit18_02sc_l22brds_7-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_7-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 66: Curl(F) = 0 Implies Conservative 2</title>
+      <link>/resources/mit18_02sc_l22brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 66: Curl(F) = 0 Implies Conservative 3</title>
+      <link>/resources/mit18_02sc_l22brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 66: Curl(F) = 0 Implies Conservative 4</title>
+      <link>/resources/mit18_02sc_l22brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 67: Proof of Green&#39;s Theorem 1</title>
+      <link>/resources/mit18_02sc_l22brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 67: Proof of Green&#39;s Theorem 2</title>
+      <link>/resources/mit18_02sc_l22brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 67: Proof of Green&#39;s Theorem 3</title>
+      <link>/resources/mit18_02sc_l22brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 67: Proof of Green&#39;s Theorem 4</title>
+      <link>/resources/mit18_02sc_l22brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 67: Proof of Green&#39;s Theorem 5</title>
+      <link>/resources/mit18_02sc_l22brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 67: Proof of Green&#39;s Theorem 6</title>
+      <link>/resources/mit18_02sc_l22brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 67: Proof of Green&#39;s Theorem 7</title>
+      <link>/resources/mit18_02sc_l22brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 67: Proof of Green&#39;s Theorem 8</title>
+      <link>/resources/mit18_02sc_l22brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 68: Planimeter: Green&#39;s Theorem and Area 1</title>
+      <link>/resources/mit18_02sc_l22brds_19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l22brds_19/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 1</title>
+      <link>/resources/mit18_02sc_l23brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 10</title>
+      <link>/resources/mit18_02sc_l23brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 11</title>
+      <link>/resources/mit18_02sc_l23brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 12</title>
+      <link>/resources/mit18_02sc_l23brds_12-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_12-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 12</title>
+      <link>/resources/mit18_02sc_l23brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 2</title>
+      <link>/resources/mit18_02sc_l23brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 3</title>
+      <link>/resources/mit18_02sc_l23brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 4</title>
+      <link>/resources/mit18_02sc_l23brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 5</title>
+      <link>/resources/mit18_02sc_l23brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 6</title>
+      <link>/resources/mit18_02sc_l23brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 7</title>
+      <link>/resources/mit18_02sc_l23brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 8</title>
+      <link>/resources/mit18_02sc_l23brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux in 2D 9</title>
+      <link>/resources/mit18_02sc_l23brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 7: Cross Products 1</title>
+      <link>/resources/mit18_02sc_l2brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 7: Cross Products 2</title>
+      <link>/resources/mit18_02sc_l2brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 7: Cross Products 3</title>
+      <link>/resources/mit18_02sc_l2brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 7: Cross Products 4</title>
+      <link>/resources/mit18_02sc_l2brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 7: Cross Products 5</title>
+      <link>/resources/mit18_02sc_l2brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l2brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 7: Cross Products 6</title>
+      <link>/resources/mit18_02sc_l3brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 7: Cross Products 7</title>
+      <link>/resources/mit18_02sc_l3brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 70: Normal Form of Green&#39;s Theorem 2</title>
+      <link>/resources/mit18_02sc_l23brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 70: Normal Form of Green&#39;s Theorem 3</title>
+      <link>/resources/mit18_02sc_l23brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 70: Normal Form of Green&#39;s Theorem 4</title>
+      <link>/resources/mit18_02sc_l23brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 70: Normal Form of Green&#39;s Theorem 5</title>
+      <link>/resources/mit18_02sc_l23brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 70: Normal Form of Green&#39;s Theorem 6</title>
+      <link>/resources/mit18_02sc_l23brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 70: Normal Form of Green&#39;s Theorem 7</title>
+      <link>/resources/mit18_02sc_l23brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l23brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 71: Extended Green&#39;s Theorem: Boundaries with Multiple Pieces 1</title>
+      <link>/resources/mit18_02sc_l24brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 71: Extended Green&#39;s Theorem: Boundaries with Multiple Pieces 2</title>
+      <link>/resources/mit18_02sc_l24brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 71: Extended Green&#39;s Theorem: Boundaries with Multiple Pieces 3</title>
+      <link>/resources/mit18_02sc_l24brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 71: Extended Green&#39;s Theorem: Boundaries with Multiple Pieces 4</title>
+      <link>/resources/mit18_02sc_l24brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 72: Simply Connected Regions and Conservative Fields 1</title>
+      <link>/resources/mit18_02sc_l24brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 72: Simply Connected Regions and Conservative Fields 2</title>
+      <link>/resources/mit18_02sc_l24brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 72: Simply Connected Regions and Conservative Fields 3</title>
+      <link>/resources/mit18_02sc_l24brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 1</title>
+      <link>/resources/mit18_02sc_l24brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 10</title>
+      <link>/resources/mit18_02sc_l24brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 11</title>
+      <link>/resources/mit18_02sc_l24brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 12</title>
+      <link>/resources/mit18_02sc_l24brds_19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_19/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 2</title>
+      <link>/resources/mit18_02sc_l24brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 3</title>
+      <link>/resources/mit18_02sc_l24brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 4</title>
+      <link>/resources/mit18_02sc_l24brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 5</title>
+      <link>/resources/mit18_02sc_l24brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 6</title>
+      <link>/resources/mit18_02sc_l24brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 7</title>
+      <link>/resources/mit18_02sc_l24brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 8</title>
+      <link>/resources/mit18_02sc_l24brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 73: Exam Review 9</title>
+      <link>/resources/mit18_02sc_l24brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l24brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates 1</title>
+      <link>/resources/mit18_02sc_l25brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates 2</title>
+      <link>/resources/mit18_02sc_l25brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates 3</title>
+      <link>/resources/mit18_02sc_l25brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates 4</title>
+      <link>/resources/mit18_02sc_l25brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates 5</title>
+      <link>/resources/mit18_02sc_l25brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates 6</title>
+      <link>/resources/mit18_02sc_l25brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates 7</title>
+      <link>/resources/mit18_02sc_l25brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates 8</title>
+      <link>/resources/mit18_02sc_l25brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_8/data.json</guid>
+      <description>&lt;p&gt;New image Upload&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 1</title>
+      <link>/resources/mit18_02sc_l25brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 2</title>
+      <link>/resources/mit18_02sc_l25brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 3</title>
+      <link>/resources/mit18_02sc_l25brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 4</title>
+      <link>/resources/mit18_02sc_l25brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 5</title>
+      <link>/resources/mit18_02sc_l25brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 6</title>
+      <link>/resources/mit18_02sc_l25brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 7</title>
+      <link>/resources/mit18_02sc_l25brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 8</title>
+      <link>/resources/mit18_02sc_l25brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Applications and Examples 9</title>
+      <link>/resources/mit18_02sc_l25brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l25brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 76: Spherical Coordinates 1</title>
+      <link>/resources/mit18_02sc_l26brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 76: Spherical Coordinates 2</title>
+      <link>/resources/mit18_02sc_l26brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 76: Spherical Coordinates 3</title>
+      <link>/resources/mit18_02sc_l26brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 76: Spherical Coordinates 4</title>
+      <link>/resources/mit18_02sc_l26brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 76: Spherical Coordinates 5</title>
+      <link>/resources/mit18_02sc_l26brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 77: Triple Integrals in Spherical Coordinates 1</title>
+      <link>/resources/mit18_02sc_l26brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 77: Triple Integrals in Spherical Coordinates 2</title>
+      <link>/resources/mit18_02sc_l26brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 77: Triple Integrals in Spherical Coordinates 3</title>
+      <link>/resources/mit18_02sc_l26brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 77: Triple Integrals in Spherical Coordinates 4</title>
+      <link>/resources/mit18_02sc_l26brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 77: Triple Integrals in Spherical Coordinates 5</title>
+      <link>/resources/mit18_02sc_l26brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 77: Triple Integrals in Spherical Coordinates 6</title>
+      <link>/resources/mit18_02sc_l26brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 77: Triple Integrals in Spherical Coordinates 7</title>
+      <link>/resources/mit18_02sc_l26brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 78: Applications: Gravitational Attraction 1</title>
+      <link>/resources/mit18_02sc_l26brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 78: Applications: Gravitational Attraction 2</title>
+      <link>/resources/mit18_02sc_l26brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 78: Applications: Gravitational Attraction 3</title>
+      <link>/resources/mit18_02sc_l26brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 78: Applications: Gravitational Attraction 4</title>
+      <link>/resources/mit18_02sc_l26brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 78: Applications: Gravitational Attraction 5</title>
+      <link>/resources/mit18_02sc_l26brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 78: Applications: Gravitational Attraction 6</title>
+      <link>/resources/mit18_02sc_l26brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l26brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 79: Vector Fields in Space 1</title>
+      <link>/resources/mit18_02sc_l27brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 79: Vector Fields in Space 2</title>
+      <link>/resources/mit18_02sc_l27brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 79: Vector Fields in Space 3</title>
+      <link>/resources/mit18_02sc_l27brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 79: Vector Fields in Space 4</title>
+      <link>/resources/mit18_02sc_l27brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 8: Equations of Planes 1</title>
+      <link>/resources/mit18_02sc_l3brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 8: Equations of Planes 2</title>
+      <link>/resources/mit18_02sc_l3brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 80: Calculating Flux; Finding ndS 5</title>
+      <link>/resources/mit18_02sc_l27brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 80: Flux and the Divergence Theorem 1</title>
+      <link>/resources/mit18_02sc_l27brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 80: Flux and the Divergence Theorem 2</title>
+      <link>/resources/mit18_02sc_l27brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 80: Flux and the Divergence Theorem 3</title>
+      <link>/resources/mit18_02sc_l27brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 80: Flux and the Divergence Theorem 4</title>
+      <link>/resources/mit18_02sc_l27brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Calculating Flux; Finding ndS 1</title>
+      <link>/resources/mit18_02sc_l27brds_9-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_9-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Calculating Flux; Finding ndS 2</title>
+      <link>/resources/mit18_02sc_l27brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Calculating Flux; Finding ndS 3</title>
+      <link>/resources/mit18_02sc_l27brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Calculating Flux; Finding ndS 4</title>
+      <link>/resources/mit18_02sc_l27brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Calculating Flux; Finding ndS 5</title>
+      <link>/resources/mit18_02sc_l27brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Calculating Flux; Finding ndS 6</title>
+      <link>/resources/mit18_02sc_l27brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Calculating Flux; Finding ndS 7</title>
+      <link>/resources/mit18_02sc_l27brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l27brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 82: ndS for a Surface z = f(x, y) 1</title>
+      <link>/resources/mit18_02sc_l28brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 82: ndS for a Surface z = f(x, y) 2</title>
+      <link>/resources/mit18_02sc_l28brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 82: ndS for a Surface z = f(x, y) 3</title>
+      <link>/resources/mit18_02sc_l28brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 82: ndS for a Surface z = f(x, y) 4</title>
+      <link>/resources/mit18_02sc_l28brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 82: ndS for a Surface z = f(x, y) 5</title>
+      <link>/resources/mit18_02sc_l28brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 82: ndS for a Surface z = f(x, y) 6</title>
+      <link>/resources/mit18_02sc_l28brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 83: Other Ways to Find ndS 1</title>
+      <link>/resources/mit18_02sc_l28brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 83: Other Ways to Find ndS 2</title>
+      <link>/resources/mit18_02sc_l28brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 83: Other Ways to Find ndS 3</title>
+      <link>/resources/mit18_02sc_l28brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 83: Other Ways to Find ndS 4</title>
+      <link>/resources/mit18_02sc_l28brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 83: Other Ways to Find ndS 5</title>
+      <link>/resources/mit18_02sc_l28brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 83: Other Ways to Find ndS 6</title>
+      <link>/resources/mit18_02sc_l28brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 84: Divergence Theorem 1</title>
+      <link>/resources/mit18_02sc_l28brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 84: Divergence Theorem 2</title>
+      <link>/resources/mit18_02sc_l28brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 84: Divergence Theorem 3</title>
+      <link>/resources/mit18_02sc_l28brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l28brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 85: Physical Meaning of Flux; Del Notation 1</title>
+      <link>/resources/mit18_02sc_l29brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 85: Physical Meaning of Flux; Del Notation 2</title>
+      <link>/resources/mit18_02sc_l29brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 85: Physical Meaning of Flux; Del Notation 3</title>
+      <link>/resources/mit18_02sc_l29brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 85: Physical Meaning of Flux; Del Notation 4</title>
+      <link>/resources/mit18_02sc_l29brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 86: Proof of the Divergence Theorem 1</title>
+      <link>/resources/mit18_02sc_l29brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 86: Proof of the Divergence Theorem 2</title>
+      <link>/resources/mit18_02sc_l29brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 86: Proof of the Divergence Theorem 3</title>
+      <link>/resources/mit18_02sc_l29brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 86: Proof of the Divergence Theorem 4</title>
+      <link>/resources/mit18_02sc_l29brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 86: Proof of the Divergence Theorem 5</title>
+      <link>/resources/mit18_02sc_l29brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 86: Proof of the Divergence Theorem 6</title>
+      <link>/resources/mit18_02sc_l29brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 87: Diffusion Equation 1</title>
+      <link>/resources/mit18_02sc_l29brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 87: Diffusion Equation 2</title>
+      <link>/resources/mit18_02sc_l29brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 87: Diffusion Equation 3</title>
+      <link>/resources/mit18_02sc_l29brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 87: Diffusion Equation 4</title>
+      <link>/resources/mit18_02sc_l29brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 87: Diffusion Equation 5</title>
+      <link>/resources/mit18_02sc_l29brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 87: Diffusion Equation 6</title>
+      <link>/resources/mit18_02sc_l29brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l29brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space 1</title>
+      <link>/resources/mit18_02sc_l30brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space 2</title>
+      <link>/resources/mit18_02sc_l30brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space 3</title>
+      <link>/resources/mit18_02sc_l30brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space 4</title>
+      <link>/resources/mit18_02sc_l30brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space 5</title>
+      <link>/resources/mit18_02sc_l30brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space 6</title>
+      <link>/resources/mit18_02sc_l30brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space 7</title>
+      <link>/resources/mit18_02sc_l30brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space 8</title>
+      <link>/resources/mit18_02sc_l30brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions 1</title>
+      <link>/resources/mit18_02sc_l30brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions 2</title>
+      <link>/resources/mit18_02sc_l30brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions 3</title>
+      <link>/resources/mit18_02sc_l30brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions 4</title>
+      <link>/resources/mit18_02sc_l30brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions 5</title>
+      <link>/resources/mit18_02sc_l30brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions 6</title>
+      <link>/resources/mit18_02sc_l30brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions 7</title>
+      <link>/resources/mit18_02sc_l30brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions 8</title>
+      <link>/resources/mit18_02sc_l30brds_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_17/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 9: Matrix Multiplication 1</title>
+      <link>/resources/mit18_02sc_l3brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 9: Matrix Multiplication 2</title>
+      <link>/resources/mit18_02sc_l3brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 9: Matrix Multiplication 3</title>
+      <link>/resources/mit18_02sc_l3brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 9: Matrix Multiplication 4</title>
+      <link>/resources/mit18_02sc_l3brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l3brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 90: Curl in 3D 1</title>
+      <link>/resources/mit18_02sc_l30brds_17-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_17-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 90: Curl in 3D 2</title>
+      <link>/resources/mit18_02sc_l30brds_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_18/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 90: Curl in 3D 3</title>
+      <link>/resources/mit18_02sc_l30brds_19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_19/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 90: Curl in 3D 4</title>
+      <link>/resources/mit18_02sc_l30brds_20/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_20/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 90: Curl in 3D 5</title>
+      <link>/resources/mit18_02sc_l30brds_21/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l30brds_21/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem 1</title>
+      <link>/resources/mit18_02sc_l31brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem 2</title>
+      <link>/resources/mit18_02sc_l31brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem 3</title>
+      <link>/resources/mit18_02sc_l31brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem 4</title>
+      <link>/resources/mit18_02sc_l31brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem 5</title>
+      <link>/resources/mit18_02sc_l31brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem 6</title>
+      <link>/resources/mit18_02sc_l31brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem 7</title>
+      <link>/resources/mit18_02sc_l31brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem 8</title>
+      <link>/resources/mit18_02sc_l31brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 92: Proof of Stokes&#39; Theorem 1</title>
+      <link>/resources/mit18_02sc_l31brds_8-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_8-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 92: Proof of Stokes&#39; Theorem 2</title>
+      <link>/resources/mit18_02sc_l31brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 93: Example 1</title>
+      <link>/resources/mit18_02sc_l31brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 93: Example 2</title>
+      <link>/resources/mit18_02sc_l31brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 93: Example 3</title>
+      <link>/resources/mit18_02sc_l31brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l31brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions; Topology 1</title>
+      <link>/resources/mit18_02sc_l32brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions; Topology 2</title>
+      <link>/resources/mit18_02sc_l32brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions; Topology 3</title>
+      <link>/resources/mit18_02sc_l32brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions; Topology 4</title>
+      <link>/resources/mit18_02sc_l32brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions; Topology 5</title>
+      <link>/resources/mit18_02sc_l32brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions; Topology 6</title>
+      <link>/resources/mit18_02sc_l32brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 95: Stokes&#39; Theorem and Surface Independence 1</title>
+      <link>/resources/mit18_02sc_l32brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 95: Stokes&#39; Theorem and Surface Independence 2</title>
+      <link>/resources/mit18_02sc_l32brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 95: Stokes&#39; Theorem and Surface Independence 3</title>
+      <link>/resources/mit18_02sc_l32brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 95: Stokes&#39; Theorem and Surface Independence 4</title>
+      <link>/resources/mit18_02sc_l32brds_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_10/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 96: Summary of Multiple Integration 1</title>
+      <link>/resources/mit18_02sc_l32brds_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_11/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 96: Summary of Multiple Integration 2</title>
+      <link>/resources/mit18_02sc_l32brds_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_12/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 96: Summary of Multiple Integration 3</title>
+      <link>/resources/mit18_02sc_l32brds_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_13/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 96: Summary of Multiple Integration 4</title>
+      <link>/resources/mit18_02sc_l32brds_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_14/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 96: Summary of Multiple Integration 5</title>
+      <link>/resources/mit18_02sc_l32brds_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_15/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 96: Summary of Multiple Integration 6</title>
+      <link>/resources/mit18_02sc_l32brds_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l32brds_16/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 97: Curl and Physics 1</title>
+      <link>/resources/mit18_02sc_l33brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 97: Curl and Physics 2</title>
+      <link>/resources/mit18_02sc_l33brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 97: Curl and Physics 3</title>
+      <link>/resources/mit18_02sc_l33brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 97: Curl and Physics 4</title>
+      <link>/resources/mit18_02sc_l33brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 97: Curl and Physics 5</title>
+      <link>/resources/mit18_02sc_l33brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 98: Maxwell&#39;s Equations 1</title>
+      <link>/resources/mit18_02sc_l33brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 98: Maxwell&#39;s Equations 2</title>
+      <link>/resources/mit18_02sc_l33brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 98: Maxwell&#39;s Equations 3</title>
+      <link>/resources/mit18_02sc_l33brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_8/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 98: Maxwell&#39;s Equations 4</title>
+      <link>/resources/mit18_02sc_l33brds_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l33brds_9/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 99: Unit 1 Review</title>
+      <link>/resources/mit18_02sc_l34brds_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 99: Unit 1 Review 2</title>
+      <link>/resources/mit18_02sc_l34brds_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_2/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 99: Unit 1 Review 3</title>
+      <link>/resources/mit18_02sc_l34brds_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 99: Unit 1 Review 4</title>
+      <link>/resources/mit18_02sc_l34brds_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 99: Unit 1 Review 5</title>
+      <link>/resources/mit18_02sc_l34brds_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_5/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 99: Unit 1 Review 6</title>
+      <link>/resources/mit18_02sc_l34brds_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_6/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 99: Unit 1 Review 7</title>
+      <link>/resources/mit18_02sc_l34brds_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_7/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 99: Unit 1 Review 8</title>
+      <link>/resources/mit18_02sc_l34brds_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_l34brds_8/data.json</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

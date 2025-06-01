@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Wheel</title>
+    <link href="css/wheel.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/vendor/require.js"></script>
+    <script type="text/javascript">
+      requirejs.config({
+        baseUrl: 'js'
+      });
+      // Load common code then load the application
+      require(['lib/common'], function () {
+        require(['app/wheel']);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="daimp-tool-header">
+      <div class="daimp-title">WHEEL</div>
+      <div class="daimp-help-link">
+        <a id="help-link" href="#">+ help</a>
+      </div>
+      <div id="help-text" class="daimp-help-text">
+        <p>
+          The graphing window displays a circle of radius a in green, its center
+          in purple, a radial line segment of length b in cyan, and a point
+          (a &quot;light&quot;) at the end of that radial line segment in
+          yellow.
+        </p>
+        <p>
+          Set the wheel radius a and the radial setting b of the light using
+          sliders at the bottom.
+        </p>
+        <p>
+          Animate the rolling wheel using the [&gt;&gt;] key, or control its
+          position by grabbing the &theta; slider, or by dragging the cursor
+          over the graphing window with the mouse button depressed. During the
+          animation the key changes to [||], and selecting it will stop the
+          animation. At the end of the animation the key changes to [&lt;&lt;],
+          which resets &theta; to &theta; = 0 . The value of &theta;, the angle
+          of rotation, ranges from 0 to 6&pi; if a &lt; 1 and from 0 to the
+          value of &theta; at which the center has x coordinate 6&pi; if
+          a &gt; 1.
+        </p>
+        <p>
+          Select the toggle [trace] to cause the light to leave a yellow trace
+          and of the center of the wheel to leave a purple trace.
+        </p>
+        <p>
+          Select the toggle [velocity vector] to display the velocity vector in
+          red.
+        </p>
+        <p>
+          Roll the cursor over the graphing window to create crosshairs and a
+          readout of the cursor position.
+        </p>
+        <p>
+          &copy; 2001 H. Hohn and H. Miller
+        </p>
+      </div>
+    </div>
+    <div id="daimp-tool-container"></div>
+  </body>
+</html>

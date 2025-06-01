@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Problem Sets With Solutions on MIT OpenCourseWare</title>
+    <link>/resources/problem-sets-with-solutions/</link>
+    <description>Recent content in Problem Sets With Solutions on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/problem-sets-with-solutions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Section 1 Part A: Problem Set 1 Solutions</title>
+      <link>/resources/mit18_02sc_pset1sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset1sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to tetrahedron.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 1 Part A: Supplemental Problem Set 1 Solutions</title>
+      <link>/resources/mit18_02sc_supprobsol1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_supprobsol1/data.json</guid>
+      <description>&lt;p&gt;This resource contains the solutions for the problem statements related to vectors and matrices.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 1 Part B: Problem Set 2 Solutions</title>
+      <link>/resources/mit18_02sc_pset2sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset2sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to method of cofactors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 1 Part C: Problem Set 3 Solutions</title>
+      <link>/resources/mit18_02sc_pset3sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset3sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to vector-parametric equation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 2 Part A: Problem Set 4 Solutions</title>
+      <link>/resources/mit18_02sc_pset4sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset4sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to sinusoidal shape.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 2 Part B: Problem Set 5 Solutions</title>
+      <link>/resources/mit18_02sc_pset5sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset5sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to velocity vectors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 2 Part C: Problem Set 6 Solutions</title>
+      <link>/resources/mit18_02sc_pset6sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset6sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to lagrange multipliers and voltage.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 3 Part A: Problem Set 7 Solutions</title>
+      <link>/resources/mit18_02sc_pset7sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset7sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to inner integral and shell method.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 3 Part A: Problem Set 7 Supplemental Solutions</title>
+      <link>/resources/mit18_02sc_supprobsol3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_supprobsol3/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions for the problem statements related to double integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 3 Part B: Problem Set 8 Solutions</title>
+      <link>/resources/mit18_02sc_pset8sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset8sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to potential function.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 3 Part B: Supplemental Problem Set 8 Solutions</title>
+      <link>/resources/mit18_02sc_supprobsol4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_supprobsol4/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions for the problem statements related to vector fields and line integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 3 Part C: Problem Set 9 Solutions</title>
+      <link>/resources/mit18_02sc_pset9sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset9sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to divergence and gradients of the density.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 4 Part A: Problem Set 10 Solutions</title>
+      <link>/resources/mit18_02sc_pset10sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset10sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to cylindrical coords.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 4 Part A: Supplemental Problem Set 10 Solutions</title>
+      <link>/resources/mit18_02sc_supprobsol5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_supprobsol5/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions for the problem statements related to triple integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 4 Part B: Problem Set 11 Solutions</title>
+      <link>/resources/mit18_02sc_pset11sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset11sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to law of cosines.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 4 Part B: Supplemental Problem Set 11</title>
+      <link>/resources/mit18_02sc_supprob6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_supprob6/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements related to flux and the divergence theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 4 Part B: Supplemental Problem Set 11 Solutions</title>
+      <link>/resources/mit18_02sc_supprobsol6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_supprobsol6/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions for the problem statements related to flux and the divergence theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Section 4 Part C: Problem Set 12 Solutions</title>
+      <link>/resources/mit18_02sc_pset12sol/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pset12sol/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to stokes’ theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 1 Example: Force is a Vector</title>
+      <link>/resources/mit18_02sc_we_3_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_3_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to force as a vector.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 1 Example: Proofs Using Vectors</title>
+      <link>/resources/mit18_02sc_we_4_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_4_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to proofs using vectors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 1 Example: Vector Addition</title>
+      <link>/resources/mit18_02sc_we_1_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_1_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to vector addition.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 1 Example: Vector Lengths</title>
+      <link>/resources/mit18_02sc_we_2_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_2_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to vector lengths.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 1 Solutions: Vectors</title>
+      <link>/resources/mit18_02sc_pb_1_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_1_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to vectors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 10 Example: Meaning of Matrix Multiplication</title>
+      <link>/resources/mit18_02sc_notes_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_4/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to matrix multiplication.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 10 Solutions: Meaning of Matrix Multiplication</title>
+      <link>/resources/mit18_02sc_pb_11_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_11_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to meaning of matrix multiplication.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 11 Example: Matrix Inverses</title>
+      <link>/resources/mit18_02sc_mnotes_m2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_m2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to inverse matrices.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 11 Solutions: Matrix Inverses</title>
+      <link>/resources/mit18_02sc_pb_12_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_12_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to matrix inverses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 12 Example 1: Equations of Planes II</title>
+      <link>/resources/mit18_02sc_notes_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_5/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to equations of planes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 12 Example 2: Equations of Planes II</title>
+      <link>/resources/mit18_02sc_notes_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_6/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to distances to planes and lines.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 12 Solutions: Equations of Planes II</title>
+      <link>/resources/mit18_02sc_pb_13_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_13_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to equations of planes II.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 12 Solutions: Equations of Planes II</title>
+      <link>/resources/mit18_02sc_pb_14_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_14_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to equations of planes II.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 13 Solutions: Linear Systems and Planes</title>
+      <link>/resources/mit18_02sc_pb_15_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_15_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to linear systems and planes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 14 Example: Solutions to Square Systems</title>
+      <link>/resources/mit18_02sc_we_8_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_8_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to solutions to linear systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 14 Solutions: Solutions to Square Systems</title>
+      <link>/resources/mit18_02sc_pb_16_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_16_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to solutions of square systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 15 Solutions: Equations of Lines</title>
+      <link>/resources/mit18_02sc_pb_17_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_17_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to equations of lines.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 15: Equations of Lines</title>
+      <link>/resources/mit18_02sc_notes_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_8/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to parametric equations of curves.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 16 Example: Intersection of a Line and a Plane</title>
+      <link>/resources/mit18_02sc_we_9_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_9_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to intersection of a line and a plane.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 16 Solutions: Intersection of a Line and a Plane</title>
+      <link>/resources/mit18_02sc_pb_18_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_18_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to intersections of a line and a plane.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 17 Example: General Parametric Equations; the Cycloid</title>
+      <link>/resources/mit18_02sc_notes_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_9/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to parametric curves.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 17 Solutions: General Parametric Equations; the Cycloid</title>
+      <link>/resources/mit18_02sc_pb_19_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_19_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to general parametric equations and the cycloid.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 19 Example: Velocity and Acceleration</title>
+      <link>/resources/mit18_02sc_notes_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_11/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to velocity and acceleration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 19 Example: Velocity and Acceleration.pdf</title>
+      <link>/resources/mit18_02sc_we_10_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_10_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to product rule for vector derivatives.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 19 Solutions: Velocity and Acceleration</title>
+      <link>/resources/mit18_02sc_pb_20_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_20_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to velocity and acceleration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 2 Part A: Supplemental Problem Solutions</title>
+      <link>/resources/mit18_02sc_supprobsol2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_supprobsol2/data.json</guid>
+      <description>&lt;p&gt;This resource contains solutions for the problem statements related to partial differentiation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 2 Solutions: Dot Products</title>
+      <link>/resources/mit18_02sc_pb_2_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_2_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to dot products.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 2: Dot Product</title>
+      <link>/resources/mit18_02sc_notes_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to dot product.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 20 Example : Velocity and Arc Length</title>
+      <link>/resources/mit18_02sc_we_11_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_11_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to speed and arc length.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 20 Solutions: Velocity and Arc Length</title>
+      <link>/resources/mit18_02sc_pb_21_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_21_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to velocity and arc length.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 21 Solutions: Kepler&#39;s Second Law</title>
+      <link>/resources/mit18_02sc_pb_22_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_22_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to Kepler&amp;rsquo;s second law.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 24 Solutions: Functions of Two Variables: Graphs</title>
+      <link>/resources/mit18_02sc_pb_23_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_23_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to functions of two variables: graphs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 25 Example: Level Curves and Contour Plots</title>
+      <link>/resources/mit18_02sc_notes_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_15/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to level curves and contour plots.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 25 Solutions: Level Curves and Contour Plots</title>
+      <link>/resources/mit18_02sc_pb_24_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_24_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to level curves and contour plots.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 26 Solutions: Partial Derivatives</title>
+      <link>/resources/mit18_02sc_pb_25_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_25_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to partial derivatives.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 27 Example: Approximation Formula</title>
+      <link>/resources/mit18_02sc_mnotes_ta2_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_ta2_3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to tangent approximation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 27 Example: Approximation Formula</title>
+      <link>/resources/mit18_02sc_mnotes_ta4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_ta4/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to smoothness hypothesis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 27 Example: Approximation Formula</title>
+      <link>/resources/mit18_02sc_we_12_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_12_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to tangent approximation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 27 Solutions: Approximation Formula</title>
+      <link>/resources/mit18_02sc_pb_26_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_26_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to approximation formula.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 28 Example: Optimization Problems</title>
+      <link>/resources/mit18_02sc_notes_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_16/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to critical points.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 28 Solutions: Optimization Problems</title>
+      <link>/resources/mit18_02sc_pb_27_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_27_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to optimization problems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 29 Example: Least Squares</title>
+      <link>/resources/mit18_02sc_we_13_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_13_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to least squares interpolation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 29 Solutions: Least Squares</title>
+      <link>/resources/mit18_02sc_pb_28_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_28_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to least squares.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 3 Example: Lengths and Angles</title>
+      <link>/resources/mit18_02sc_we_5_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_5_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to uses of dot product.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 3 Solutions: Lengths and Angles</title>
+      <link>/resources/mit18_02sc_pb_3_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_3_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to uses of the dot product.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 30 Example: Second Derivative Test</title>
+      <link>/resources/mit18_02sc_we_14_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_14_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to second derivative test.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 30 Solutions: Second Derivative Test</title>
+      <link>/resources/mit18_02sc_pb_29_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_29_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to second derivatives.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 32 Example: Total Differentials and the Chain Rule</title>
+      <link>/resources/mit18_02sc_we_15_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_15_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to chain rule and total differentials.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 32 Solutions: Total Differentials and the Chain Rule</title>
+      <link>/resources/mit18_02sc_pb_30_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_30_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to total differentials and the chain rule.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 33 Solutions: Examples</title>
+      <link>/resources/mit18_02sc_pb_31_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_31_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to chain rule and directional derivatives.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 34 Example: The Chain Rule with More Variables</title>
+      <link>/resources/mit18_02sc_notes_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_17/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to chain rule.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 34 Example: The Chain Rule with More Variables</title>
+      <link>/resources/mit18_02sc_we_16_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_16_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to chain rule with more variables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 34 Solutions: Chain Rule Practice</title>
+      <link>/resources/mit18_02sc_pb_40_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_40_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding chain rule practice.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 35 Example: Gradient: Definition, Perpendicular to Level Curves</title>
+      <link>/resources/mit18_02sc_notes_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_18/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to gradient: definition and properties.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 35 Solutions: Elliptic Paraboloid</title>
+      <link>/resources/mit18_02sc_pb_41_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_41_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding elliptic paraboloid.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 36 Solutions: Proof</title>
+      <link>/resources/mit18_02sc_pb_32_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_32_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to proof of perpendicular to level curves.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 37 Solutions: Equation of a Tangent Plane</title>
+      <link>/resources/mit18_02sc_pb_44_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_44_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding equation of a tangent plane.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 37: Example</title>
+      <link>/resources/mit18_02sc_we_17_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_17_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to tangent plane to a level surface.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 38 Example: Directional Derivatives</title>
+      <link>/resources/mit18_02sc_notes_20/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_20/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to directional derivatives.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 38 Solutions: Directional Derivatives</title>
+      <link>/resources/mit18_02sc_pb_45_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_45_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding directional derivatives.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 39 Solutions: Lagrange Multipliers</title>
+      <link>/resources/mit18_02sc_pb_46_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_46_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding lagrange multipliers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 39: Statement of Lagrange Multipliers and Example</title>
+      <link>/resources/mit18_02sc_notes_21/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_21/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to Lagrange multipliers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 4 Example: Vector Components</title>
+      <link>/resources/mit18_02sc_notes_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to components and projection.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 4 Solutions: Vector Components</title>
+      <link>/resources/mit18_02sc_pb_4_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_4_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to vector components.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 41 Solutions: Advanced Example for Lagrange&#39;s Multipliers</title>
+      <link>/resources/mit18_02sc_pb_33_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_33_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to advanced examples for Lagrange&amp;rsquo;s multipliers and constrained differentials.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 42 Example: Constrained Differentials</title>
+      <link>/resources/mit18_02sc_we_18_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_18_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to non-independent variables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 42 Solutions: Non-independent Variables</title>
+      <link>/resources/mit18_02sc_pb_42_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_42_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding non-independent variables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 43 Example: Clearer Notation</title>
+      <link>/resources/mit18_02sc_mnotes_n3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_n3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to abstract partial differentiation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 43 Solutions: The Chain Rule with Constraints</title>
+      <link>/resources/mit18_02sc_pb_43_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_43_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding the chain rule with constraints.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 43: Clearer Notation</title>
+      <link>/resources/mit18_02sc_mnotes_n1_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_n1_2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to partial differentiation and non-independent variables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 44 Solutions: Example</title>
+      <link>/resources/mit18_02sc_pb_34_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_34_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to example for Lagrange&amp;rsquo;s multipliers and constrained differentials.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 47 Example: Definition of Double Integration</title>
+      <link>/resources/mit18_02sc_notes_23/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_23/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to double integration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 47 Solutions: Definition of Double Integration</title>
+      <link>/resources/mit18_02sc_pb_35_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_35_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains the solutions to the problem related to double integration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 48 Examples: Limits for Double Integrals</title>
+      <link>/resources/mit18_02sc_we_19_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_19_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problems and solutions of limits for double integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 48 Solutions: Regions of Integration</title>
+      <link>/resources/mit18_02sc_pb_48_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_48_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding regions of integration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 49 Example: Exchanging the Order of Integration</title>
+      <link>/resources/mit18_02sc_we_20_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_20_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problems and solutions related to changing the order of integration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 49 Solutions: Exchanging the Order of Integration</title>
+      <link>/resources/mit18_02sc_pb_49_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_49_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding exchanging the order of integration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 5 Example: Area and Determinants in 2D</title>
+      <link>/resources/mit18_02sc_we_6_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_6_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to areas and determinants.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 5 Solutions: Area and Determinants in 2D</title>
+      <link>/resources/mit18_02sc_pb_5_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_5_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to area and determinants.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 50 Example: Double Integrals in Polar Coordinates</title>
+      <link>/resources/mit18_02sc_notes_24/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_24/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to integration in polar coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 50 Solutions: Double Integrals in Polar Coordinates</title>
+      <link>/resources/mit18_02sc_pb_36_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_36_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problems and solutions for double integration in polar coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 51 Example: Applications: Mass and Average Value</title>
+      <link>/resources/mit18_02sc_notes_25/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_25/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to mass and average value.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 51 Solutions: Mass and Average Value</title>
+      <link>/resources/mit18_02sc_pb_51_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_51_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding mass and average value.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 52 Solutions: Applications: Moment of Inertia</title>
+      <link>/resources/mit18_02sc_pb_37_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_37_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problems and solutions related to moment of inertia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 52: Applications: Moment of Inertia</title>
+      <link>/resources/mit18_02sc_notes_26/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_26/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to moment of inertia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 53 Example: Change of Variables</title>
+      <link>/resources/mit18_02sc_mnotes_cv1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_cv1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to changing variables in multiple integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 53 Solutions: Change of Variables</title>
+      <link>/resources/mit18_02sc_pb_53_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_53_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding change of variables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 54 Solutions: Polar Coordinates and the Jacobian</title>
+      <link>/resources/mit18_02sc_pb_54_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_54_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding polar coordinates and the jacobian.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 55 Solutions: Change of Variables Example</title>
+      <link>/resources/mit18_02sc_pb_55_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_55_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding change of variables example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 55: Example</title>
+      <link>/resources/mit18_02sc_mnotes_cv3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_cv3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to changing variables in multiple integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 56 Example: Vector Fields</title>
+      <link>/resources/mit18_02sc_mnotes_v1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to vector fields in the plane and gradient fields.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 56 Solutions: Vector Fields</title>
+      <link>/resources/mit18_02sc_pb_56_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_56_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding vector fields.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 57 Example: Work and Line Integrals</title>
+      <link>/resources/mit18_02sc_notes_27/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_27/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to work and line integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 57 Solutions: Work and Line Integrals</title>
+      <link>/resources/mit18_02sc_pb_57_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_57_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding work and line integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 58 Solutions: Geometric Approach to Line Integrals</title>
+      <link>/resources/mit18_02sc_pb_58_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_58_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding geometric approach to line integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 59 Solutions: Line Integrals for Work</title>
+      <link>/resources/mit18_02sc_pb_38_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_38_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problems and solutions related to work integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 6 Example: Volumes and Determinants in Space</title>
+      <link>/resources/mit18_02sc_mnotes_d1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_d1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to determinant.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 6 Solutions: 3x3 Determinants</title>
+      <link>/resources/mit18_02sc_pb_6_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_6_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to volumes and determinants in space.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 6 Solutions: Volumes and Determinants in Space</title>
+      <link>/resources/mit18_02sc_pb_7_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_7_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to volumes and determinants.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 60 Solutions: Fundamental Theorem for Line Integrals</title>
+      <link>/resources/mit18_02sc_pb_39_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_39_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding fundamental theorem for line integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 60 Solutions: Line Integrals of Vector Fields</title>
+      <link>/resources/mit18_02sc_pb_60_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_60_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding line integrals of vector fields.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 62 Example: Gradient Fields</title>
+      <link>/resources/mit18_02sc_mnotes_v2-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v2-1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to gradient fields.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 62 Solutions: Identifying Gradient Fields and Exact Differentials</title>
+      <link>/resources/mit18_02sc_pb_62_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_62_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding identifying gradient fields and exact differentials.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 63 Example: Potential Functions</title>
+      <link>/resources/mit18_02sc_mnotes_v2-2to3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v2-2to3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to potential function.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 63 Solutions: Identifying Potential Functions</title>
+      <link>/resources/mit18_02sc_pb_63_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_63_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding identifying potential functions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 64 Solutions:  Two Dimensional Curl</title>
+      <link>/resources/mit18_02sc_pb_64_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_64_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding two dimensional curl.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 65 Example: Green&#39;s Theorem</title>
+      <link>/resources/mit18_02sc_we_65_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_65_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding green&amp;rsquo;s theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 65 Solutions: Using Green&#39;s Theorem</title>
+      <link>/resources/mit18_02sc_pb_65_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_65_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding green&amp;rsquo;s theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 66 Solutions: Identifying Gradient Fields and Exact Differentials</title>
+      <link>/resources/mit18_02sc_pb_66_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_66_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding identifying gradient fields and exact differentials.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 68 Solutions: Green&#39;s Theorem and Area</title>
+      <link>/resources/mit18_02sc_pb_68_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_68_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding green&amp;rsquo;s theorem and area.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 69 Example: Flux in 2D</title>
+      <link>/resources/mit18_02sc_mnotes_v3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to two-dimensional flux.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 69 Solutions: Flux Across Curves</title>
+      <link>/resources/mit18_02sc_pb_69_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_69_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding flux across curves.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 7 Example: Cross Products</title>
+      <link>/resources/mit18_02sc_notes_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to cross product.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 7 Solutions: Cross Products</title>
+      <link>/resources/mit18_02sc_pb_8_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_8_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains the solutions to the problems related to the cross product.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 70 Example: Verify Green&#39;s Theorem in Normal Form</title>
+      <link>/resources/mit18_02sc_we_70_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_70_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding verify green&amp;rsquo;s theorem in normal form.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 70 Solutions: Normal Form of Green&#39;s Theorem</title>
+      <link>/resources/mit18_02sc_pb_70_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_70_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding normal form of green&amp;rsquo;s theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 71 Example: Extended Green&#39;s Theorem</title>
+      <link>/resources/mit18_02sc_we_71_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_71_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding extended green&amp;rsquo;s theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 71 Solutions: Extended Green&#39;s Theorem</title>
+      <link>/resources/mit18_02sc_pb_71_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_71_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding extended green&amp;rsquo;s theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 72 Solutions: Simply Connected Regions</title>
+      <link>/resources/mit18_02sc_pb_72_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_72_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding simply connected regions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 74 Example: Triple Integrals: Rectangular and Cylindrical Coordinates</title>
+      <link>/resources/mit18_02sc_we_74_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_74_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding triple integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 74 Solutions: Triple Integrals</title>
+      <link>/resources/mit18_02sc_pb_74_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_74_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding triple integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 75 Solutions: Practice with Triple Integrals</title>
+      <link>/resources/mit18_02sc_pb_75_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_75_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding practice with triple integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 76 Solutions: Limits in Spherical Coordinates</title>
+      <link>/resources/mit18_02sc_pb_76_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_76_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding limits in spherical coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 77 Example: Integrals in Spherical Coordinates</title>
+      <link>/resources/mit18_02sc_we_77_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_77_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding integrals in spherical coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 77 Solutions: Jacobian for Spherical Coordinates</title>
+      <link>/resources/mit18_02sc_pb_77_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_77_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding jacobian for spherical coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 77 Solutions: Spherical Coordinates</title>
+      <link>/resources/mit18_02sc_pb_47_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_47_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding spherical coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 78 Example: Applications: Gravitational Attraction</title>
+      <link>/resources/mit18_02sc_mnotes_g/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_g/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to gravitational attraction.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 78 Solutions: Applications of Spherical Coordinates</title>
+      <link>/resources/mit18_02sc_pb_78_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_78_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding applications of spherical coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 79 Example: Vector Fields in Space</title>
+      <link>/resources/mit18_02sc_mnotes_v8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v8/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to vector fields in the plane.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 79 Solutions: Vector Fields in Space</title>
+      <link>/resources/mit18_02sc_pb_79_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_79_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding vector fields in space.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 8 Example: Equations of Planes</title>
+      <link>/resources/mit18_02sc_we_7_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_7_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to equation of a plane.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 8 Solutions: Equations of Planes</title>
+      <link>/resources/mit18_02sc_pb_9_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_9_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to equations of plane.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 80 Solutions: Calculating Flux</title>
+      <link>/resources/mit18_02sc_pb_80_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_80_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding calculating flux.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 81 Example: Calculating Flux; Finding ndS</title>
+      <link>/resources/mit18_02sc_mnotes_v9-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v9-2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to flux through a cylinder and sphere.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 81 Solutions: Flux Through Surfaces</title>
+      <link>/resources/mit18_02sc_pb_81_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_81_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding flux through surfaces.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 82 Solutions: Flux Through General Surfaces</title>
+      <link>/resources/mit18_02sc_pb_82_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_82_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding flux through general surfaces.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 82: ndS for a Surface z = f(x, y)</title>
+      <link>/resources/mit18_02sc_mnotes_v9-3to4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v9-3to4/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to flux through general surfaces.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 83 Example: General Formula for ndS</title>
+      <link>/resources/mit18_02sc_we_83_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_83_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding general formula for ndS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 83 Solutions: Flux Through a Paraboloid</title>
+      <link>/resources/mit18_02sc_pb_83_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_83_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding flux through a paraboloid.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 84 Example: Divergence Theorem</title>
+      <link>/resources/mit18_02sc_mnotes_v10-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v10-1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to divergence theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 84 Solutions: Divergence Theorem</title>
+      <link>/resources/mit18_02sc_pb_84_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_84_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding divergence theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 85 Solutions: Problems: Del Notation; Flux</title>
+      <link>/resources/mit18_02sc_pb_85_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_85_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding del notation; flux.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 87 Solutions: Harmonic Functions and Averages</title>
+      <link>/resources/mit18_02sc_pb_87_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_87_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding harmonic functions and averages.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 88 Solutions: Work Along a Space Curve</title>
+      <link>/resources/mit18_02sc_pb_88_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_88_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding work along a space curve.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 88: Line Integrals in Space</title>
+      <link>/resources/mit18_02sc_mnotes_v11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v11/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to curves in space.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 89 Solutions: Gradient Fields and Potential Functions</title>
+      <link>/resources/mit18_02sc_pb_89_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_89_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding gradient fields and potential functions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 89: Gradient Fields and Potential Functions</title>
+      <link>/resources/mit18_02sc_mnotes_v12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v12/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to gradient fields in space.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 9 Example: Matrix Multiplication</title>
+      <link>/resources/mit18_02sc_mnotes_m1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_m1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to matrix algebra.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 9 Solutions: Matrix Multiplication</title>
+      <link>/resources/mit18_02sc_pb_10_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_10_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains problem statements and solutions related to matrix multiplication.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 90 Example: Testing for a Conservative Field</title>
+      <link>/resources/mit18_02sc_we_90_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_90_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding testing for a conservative field.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 90 Solutions: Curl in 3D</title>
+      <link>/resources/mit18_02sc_pb_90_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_90_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding curl in 3D.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 90: Curl in 3D</title>
+      <link>/resources/mit18_02sc_mnotes_v4-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v4-3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to green’s theorem in normal form.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 91 Solutions: Stokes&#39; Theorem</title>
+      <link>/resources/mit18_02sc_pb_91_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_91_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding stokes&amp;rsquo; theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem</title>
+      <link>/resources/mit18_02sc_mnotes_v13-1to2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v13-1to2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to stokes’ theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 93 Examples: Extended Stokes&#39; Theorem</title>
+      <link>/resources/mit18_02sc_we_93_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_we_93_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding extended stokes&amp;rsquo; theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 93 Solutions: Extended Stokes&#39; Theorem</title>
+      <link>/resources/mit18_02sc_pb_93_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_93_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding extended stokes&amp;rsquo; theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions; Topology</title>
+      <link>/resources/mit18_02sc_pb_94_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_94_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding simply connected regions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 95 Solutions: Surface Independence</title>
+      <link>/resources/mit18_02sc_pb_95_comb/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pb_95_comb/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding surface independence.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,666 @@
+WEBVTT
+
+00:00:07.140 --> 00:00:08.760
+Welcome back to recitation.
+
+00:00:08.760 --> 00:00:11.390
+In this video what I'd like
+you to do is use Green's
+
+00:00:11.390 --> 00:00:14.740
+theorem to find the area
+between one arch of the
+
+00:00:14.740 --> 00:00:19.080
+cycloid that is described by x
+equals a times the quantity
+
+00:00:19.080 --> 00:00:22.450
+theta minus sine theta, y equals
+a times the quantity 1
+
+00:00:22.450 --> 00:00:25.450
+minus cosine theta,
+and the x-axis.
+
+00:00:25.450 --> 00:00:27.910
+So probably it's helpful for you
+to draw a picture of this
+
+00:00:27.910 --> 00:00:32.280
+first. So you have one arch of
+the cycloid defined in terms
+
+00:00:32.280 --> 00:00:36.060
+of theta, the x of theta and y
+of theta are here, and then
+
+00:00:36.060 --> 00:00:38.060
+the x-axis will be
+the other bound.
+
+00:00:38.060 --> 00:00:40.780
+And the big thing I want you to
+notice is you're going to
+
+00:00:40.780 --> 00:00:43.100
+use Green's theorem
+to find the area.
+
+00:00:43.100 --> 00:00:45.920
+So why don't you pause the
+video, work on the problem,
+
+00:00:45.920 --> 00:00:47.950
+when you're ready to see my
+solution you can bring the
+
+00:00:47.950 --> 00:00:49.200
+video back up.
+
+00:00:58.880 --> 00:00:59.990
+OK, welcome back.
+
+00:00:59.990 --> 00:01:02.570
+So again, what we want to do
+is we want to use Green's
+
+00:01:02.570 --> 00:01:04.870
+theorem to find an area.
+
+00:01:04.870 --> 00:01:06.970
+OK, and what I'm going to do
+first is I'm going to try and
+
+00:01:06.970 --> 00:01:09.740
+figure out what the picture
+looks like and then I'm going
+
+00:01:09.740 --> 00:01:10.860
+to figure out how
+to use Green's
+
+00:01:10.860 --> 00:01:13.450
+theorem in this region.
+
+00:01:13.450 --> 00:01:17.060
+So lets first draw a sketch
+of the picture of
+
+00:01:17.060 --> 00:01:18.020
+what's going on.
+
+00:01:18.020 --> 00:01:20.070
+And because I want the area
+between one arch of the
+
+00:01:20.070 --> 00:01:22.960
+cycloid and the x-axis, what I
+really want to do first is
+
+00:01:22.960 --> 00:01:28.400
+figure out what theta values
+will make y positive, or
+
+00:01:28.400 --> 00:01:30.580
+greater than or equal to
+0, and go from there.
+
+00:01:30.580 --> 00:01:35.380
+So if I want y to be greater
+than or equal to 0, then what
+
+00:01:35.380 --> 00:01:38.560
+I need is 1 minus cosine
+theta to be greater
+
+00:01:38.560 --> 00:01:40.390
+than or equal to 0.
+
+00:01:40.390 --> 00:01:44.790
+And that's going to happen for
+every theta from 0 to 2 pi,
+
+00:01:44.790 --> 00:01:47.200
+and at 0 and 2 pi I get 0.
+
+00:01:47.200 --> 00:01:52.890
+So we know we want theta to
+go between 0 and 2 pi.
+
+00:01:52.890 --> 00:01:55.510
+Those are good parameters to
+have for theta because this
+
+00:01:55.510 --> 00:01:59.240
+statement is always true, but
+I get 0 when theta is 0 and
+
+00:01:59.240 --> 00:02:00.500
+when theta is 2 pi.
+
+00:02:00.500 --> 00:02:01.905
+So I'm going to let theta
+run between 0
+
+00:02:01.905 --> 00:02:04.490
+and 2 pi, as I mentioned.
+
+00:02:04.490 --> 00:02:05.870
+So now let's think about
+what the picture is.
+
+00:02:05.870 --> 00:02:11.685
+When theta is 0, if I come
+over to what x is, x is a
+
+00:02:11.685 --> 00:02:12.380
+times 0 minus 0.
+
+00:02:12.380 --> 00:02:15.600
+So x is 0 and y we said was 0.
+
+00:02:18.380 --> 00:02:22.560
+I know that I'll achieve a
+maximum height at theta equal
+
+00:02:22.560 --> 00:02:27.110
+pi because that's where cosine
+theta is minus 1.
+
+00:02:27.110 --> 00:02:30.440
+So the 1 minus cosine
+theta is 2.
+
+00:02:30.440 --> 00:02:34.230
+And so if you look at what the
+y value will be, the y value
+
+00:02:34.230 --> 00:02:37.000
+when theta is pi is 2a.
+
+00:02:37.000 --> 00:02:42.850
+And the value is going to be
+a times pi minus sine pi.
+
+00:02:42.850 --> 00:02:45.000
+Well, sine of pi is 0.
+
+00:02:45.000 --> 00:02:47.270
+So I just get a pi.
+
+00:02:47.270 --> 00:02:49.790
+So I should go over a pi.
+
+00:02:49.790 --> 00:02:52.670
+And I know there's a point
+at a pi, comma, I
+
+00:02:52.670 --> 00:02:53.920
+think I said 2a.
+
+00:02:56.550 --> 00:02:59.590
+And then it's actually going
+to come back down the same
+
+00:02:59.590 --> 00:03:01.330
+way, so let me draw
+the first part.
+
+00:03:01.330 --> 00:03:03.870
+This is not a perfect
+drawing of this.
+
+00:03:03.870 --> 00:03:05.000
+I don't have lots of points.
+
+00:03:05.000 --> 00:03:07.030
+I'm having the smallest amount
+of points possible to figure
+
+00:03:07.030 --> 00:03:09.190
+out what's happening.
+
+00:03:09.190 --> 00:03:15.360
+So then when theta is 2 pi,
+1 minus cosine theta is 0.
+
+00:03:15.360 --> 00:03:17.770
+So I get y equals 0.
+
+00:03:17.770 --> 00:03:21.020
+And then here I get 2 pi
+minus sine of 2 pi.
+
+00:03:21.020 --> 00:03:23.640
+Sine of 2 pi is 0,
+so I get 2 pi a.
+
+00:03:23.640 --> 00:03:26.290
+So I come all the way over
+here and I get 2 pi a.
+
+00:03:29.110 --> 00:03:31.160
+Yeah, that's not maybe the most
+beautiful picture, but
+
+00:03:31.160 --> 00:03:33.480
+it's a good start.
+
+00:03:33.480 --> 00:03:37.490
+So I'm interested in finding
+the area of this region.
+
+00:03:37.490 --> 00:03:40.790
+What I want to do then is, to
+find the area of that region
+
+00:03:40.790 --> 00:03:42.650
+I'm going to use Green's
+theorem.
+
+00:03:42.650 --> 00:03:44.260
+That's what we asked
+you to do.
+
+00:03:44.260 --> 00:03:47.220
+So what I want to do is I want
+to pick a curve that's going
+
+00:03:47.220 --> 00:03:48.110
+to have 2 components.
+
+00:03:48.110 --> 00:03:50.630
+It's going to have C1, will be
+this bottom part, and C2 will
+
+00:03:50.630 --> 00:03:51.670
+be this top part.
+
+00:03:51.670 --> 00:03:54.240
+And we need to keep it oriented
+so when I'm walking
+
+00:03:54.240 --> 00:03:57.800
+along the curve the region
+is on the left.
+
+00:03:57.800 --> 00:04:00.200
+And then I have to figure out
+how to use Green's theorem.
+
+00:04:00.200 --> 00:04:04.250
+So to find the area of this
+region, all I actually need is
+
+00:04:04.250 --> 00:04:07.610
+the integral over the
+region of dA.
+
+00:04:07.610 --> 00:04:09.270
+That would give me the area.
+
+00:04:09.270 --> 00:04:10.520
+And so what quantities--
+
+00:04:14.260 --> 00:04:15.300
+what functions would be good?
+
+00:04:15.300 --> 00:04:15.940
+Sorry.
+
+00:04:15.940 --> 00:04:17.330
+In order to find this.
+
+00:04:17.330 --> 00:04:19.930
+Well, I believe you actually
+saw in class that
+
+00:04:19.930 --> 00:04:21.670
+you have two options.
+
+00:04:21.670 --> 00:04:28.990
+You have minus y dx over the
+closed curve, or you have x dy
+
+00:04:28.990 --> 00:04:30.680
+over the closed curve.
+
+00:04:30.680 --> 00:04:33.320
+You have one of those
+two options.
+
+00:04:33.320 --> 00:04:36.050
+Now which one of those is
+better in this case?
+
+00:04:36.050 --> 00:04:38.950
+We have a choice so let's
+make the best choice.
+
+00:04:38.950 --> 00:04:40.470
+Which one of those is better?
+
+00:04:40.470 --> 00:04:45.040
+Well, if you notice that on
+these two curves x is changing
+
+00:04:45.040 --> 00:04:48.180
+on both of them but y is
+fixed on this one.
+
+00:04:48.180 --> 00:04:53.090
+So it'd be nicer for us if we
+could just integrate on the
+
+00:04:53.090 --> 00:04:56.340
+curve on this part, which we
+would be able to do if we were
+
+00:04:56.340 --> 00:04:59.510
+choosing this one.
+
+00:04:59.510 --> 00:05:04.790
+Because y is constant and it
+is equal to 0 along here.
+
+00:05:04.790 --> 00:05:07.810
+So what you need to do to solve
+this problem is really
+
+00:05:07.810 --> 00:05:14.410
+you only need to integrate
+on C2 minus y dx.
+
+00:05:14.410 --> 00:05:18.010
+That's going to give you
+the entire area.
+
+00:05:18.010 --> 00:05:21.390
+And so now we have to figure out
+how to put everything in.
+
+00:05:21.390 --> 00:05:22.430
+Well, C2--
+
+00:05:22.430 --> 00:05:25.940
+I'm parameterized in theta--
+
+00:05:25.940 --> 00:05:29.580
+and C2 parameterized in
+theta, if I start here
+
+00:05:29.580 --> 00:05:32.340
+I'm at 2 pi for theta.
+
+00:05:32.340 --> 00:05:35.390
+And if I go this direction
+I'm at 0 for theta.
+
+00:05:35.390 --> 00:05:37.620
+So what I'm going to do is I'm
+going to do something that
+
+00:05:37.620 --> 00:05:39.930
+might seem tricky, but
+it's quite natural.
+
+00:05:39.930 --> 00:05:42.030
+I'm going to replace this
+minus by a plus and then
+
+00:05:42.030 --> 00:05:44.590
+integrate from 0 to 2 pi.
+
+00:05:44.590 --> 00:05:47.570
+Because I was going to be
+integrating from 2 pi to 0 and
+
+00:05:47.570 --> 00:05:50.430
+so I just flipped the order
+and made that sign a plus.
+
+00:05:50.430 --> 00:05:51.690
+So that should be fine.
+
+00:05:51.690 --> 00:05:53.450
+And then y, I already
+know what it is.
+
+00:05:53.450 --> 00:05:56.990
+It's a times 1 minus
+cosine theta.
+
+00:05:56.990 --> 00:06:00.250
+And now I just have to figure
+out what is dx.
+
+00:06:00.250 --> 00:06:02.370
+So we have to come back over,
+for one second we're going to
+
+00:06:02.370 --> 00:06:05.980
+come over here and we're
+going to look at dx.
+
+00:06:05.980 --> 00:06:10.370
+If x is equal to a times theta
+minus sine theta, then dx is
+
+00:06:10.370 --> 00:06:13.590
+just a times 1 minus
+cosine theta.
+
+00:06:13.590 --> 00:06:16.240
+So that's nice because that's
+actually what we already have.
+
+00:06:16.240 --> 00:06:18.510
+So we come back over here--
+
+00:06:18.510 --> 00:06:20.790
+oh, I should say also
+with a d theta--
+
+00:06:20.790 --> 00:06:24.210
+come back over here, dx gives
+you a squared a, it gives you
+
+00:06:24.210 --> 00:06:27.560
+a squared this, and it
+gives you a d theta.
+
+00:06:27.560 --> 00:06:29.640
+So that actually gives you
+everything you need.
+
+00:06:29.640 --> 00:06:33.560
+Now I am not going to actually
+write out all the steps in
+
+00:06:33.560 --> 00:06:34.810
+order to do this.
+
+00:06:34.810 --> 00:06:37.030
+But the way you could easily do
+this, you can pull out the
+
+00:06:37.030 --> 00:06:39.140
+a squared and you're
+left with a 1 minus
+
+00:06:39.140 --> 00:06:40.980
+cosine theta squared.
+
+00:06:40.980 --> 00:06:43.540
+You might think about squaring
+all the terms and then you
+
+00:06:43.540 --> 00:06:45.990
+have 1 cosine squared
+theta to deal with.
+
+00:06:45.990 --> 00:06:48.340
+But ultimately, when you
+get your answer--
+
+00:06:48.340 --> 00:06:50.290
+I'm just going to write
+down what it is--
+
+00:06:50.290 --> 00:06:53.180
+you get 3 pi a squared.
+
+00:06:53.180 --> 00:06:56.840
+And you'll see you get a little
+bit of cancellation and
+
+00:06:56.840 --> 00:06:58.460
+it's not too hard to solve
+at this point.
+
+00:06:58.460 --> 00:07:00.290
+Since it's single variable
+I'm going to assume I
+
+00:07:00.290 --> 00:07:01.500
+don't need to do it.
+
+00:07:01.500 --> 00:07:02.980
+But you can check your
+final answer.
+
+00:07:02.980 --> 00:07:04.020
+You should get--
+
+00:07:04.020 --> 00:07:04.720
+I think, yes.
+
+00:07:04.720 --> 00:07:06.740
+I got 3 pi a squared.
+
+00:07:06.740 --> 00:07:11.725
+So what we did was we took a
+problem, again, where we had a
+
+00:07:11.725 --> 00:07:16.040
+curve defined in
+terms of theta.
+
+00:07:16.040 --> 00:07:19.270
+We had a curve, and x and y, it
+was parameterized in theta.
+
+00:07:19.270 --> 00:07:21.340
+And we wanted to find
+an area between that
+
+00:07:21.340 --> 00:07:24.000
+curve and the x-axis.
+
+00:07:24.000 --> 00:07:27.360
+And the reason we could use
+Green's theorem so easily is
+
+00:07:27.360 --> 00:07:30.350
+because area of a region--
+
+00:07:30.350 --> 00:07:34.050
+of this connected region
+here-- is equal to the
+
+00:07:34.050 --> 00:07:37.930
+integral over the closed loop
+surrounding it of minus y dx,
+
+00:07:37.930 --> 00:07:41.060
+or alternatively you could
+have done x dy.
+
+00:07:41.060 --> 00:07:44.200
+And because I got to choose,
+I picked the easier one.
+
+00:07:44.200 --> 00:07:46.300
+And I picked the easier one in
+this case because y is equal
+
+00:07:46.300 --> 00:07:48.270
+to 0 on one part of the curve.
+
+00:07:48.270 --> 00:07:52.140
+So I just ignored the C1 because
+that's where y is 0,
+
+00:07:52.140 --> 00:07:54.150
+and I looked along C2.
+
+00:07:54.150 --> 00:07:57.520
+I noticed C2 is parameterized
+in this direction from theta
+
+00:07:57.520 --> 00:08:00.080
+equals 2 pi to theta equals 0.
+
+00:08:00.080 --> 00:08:03.320
+So that's why I dropped the
+minus sign and changed
+
+00:08:03.320 --> 00:08:04.700
+it from 0 to 2 pi.
+
+00:08:04.700 --> 00:08:06.150
+That's where that came from.
+
+00:08:06.150 --> 00:08:09.270
+And then you end up having to
+just determine what y is and
+
+00:08:09.270 --> 00:08:11.140
+what dx are, in terms
+of theta.
+
+00:08:11.140 --> 00:08:13.660
+Which we had them already in
+terms of theta, so we could
+
+00:08:13.660 --> 00:08:16.840
+just explicitly determine
+everything, do all the
+
+00:08:16.840 --> 00:08:19.270
+substitution and then evaluate
+the integral.
+
+00:08:19.270 --> 00:08:21.750
+So then, that's all there
+is to this problem.
+
+00:08:21.750 --> 00:08:23.140
+So hopefully that taught
+you a little more
+
+00:08:23.140 --> 00:08:23.700
+about Green's theorem.
+
+00:08:23.700 --> 00:08:27.110
+And actually, now you've done
+problems going from the left
+
+00:08:27.110 --> 00:08:28.750
+to the right and from the
+right to the left.
+
+00:08:28.750 --> 00:08:30.200
+So you've done a little
+bit of both.
+
+00:08:30.200 --> 00:08:33.200
+So hopefully this revealed a
+little bit more to you than
+
+00:08:33.200 --> 00:08:33.980
+you knew before.
+
+00:08:33.980 --> 00:08:35.620
+That's where I'll stop.

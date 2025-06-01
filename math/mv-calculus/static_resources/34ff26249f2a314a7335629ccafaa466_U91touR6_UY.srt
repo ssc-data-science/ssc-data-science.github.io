@@ -1,0 +1,1173 @@
+1
+00:00:06,974 --> 00:00:09,140
+DAVID JORDAN: Hello, and
+welcome back to recitation.
+
+2
+00:00:09,140 --> 00:00:11,098
+So today, the problem
+I'd like to work with you
+
+3
+00:00:11,098 --> 00:00:13,620
+is about taking
+partial derivatives
+
+4
+00:00:13,620 --> 00:00:15,120
+in the presence of constraints.
+
+5
+00:00:15,120 --> 00:00:20,160
+So this is a pretty
+subtle business.
+
+6
+00:00:20,160 --> 00:00:23,440
+So take your time when
+you work these problems.
+
+7
+00:00:23,440 --> 00:00:25,860
+So what we have is we
+have this function w,
+
+8
+00:00:25,860 --> 00:00:30,990
+and it's a function of four
+variables: x, y, z, and t.
+
+9
+00:00:30,990 --> 00:00:31,490
+OK?
+
+10
+00:00:31,490 --> 00:00:34,230
+But it's not really a function
+of these four variables
+
+11
+00:00:34,230 --> 00:00:36,890
+because we have a constraint.
+
+12
+00:00:36,890 --> 00:00:41,630
+So we want to
+study how w changes
+
+13
+00:00:41,630 --> 00:00:46,190
+as we vary the parameters,
+except that we have imposed
+
+14
+00:00:46,190 --> 00:00:47,260
+this constraint here.
+
+15
+00:00:47,260 --> 00:00:50,820
+So that really we kind of
+only have three variables,
+
+16
+00:00:50,820 --> 00:00:53,960
+because we have four
+variables and one constraint.
+
+17
+00:00:53,960 --> 00:00:58,630
+So that's what partial
+derivatives with constraints
+
+18
+00:00:58,630 --> 00:01:00,240
+help us do.
+
+19
+00:01:00,240 --> 00:01:02,260
+So let's explain
+first the notation.
+
+20
+00:01:02,260 --> 00:01:02,810
+OK?
+
+21
+00:01:02,810 --> 00:01:07,260
+So it says partial w
+partial z, and then we
+
+22
+00:01:07,260 --> 00:01:08,790
+have the subscripts x and y.
+
+23
+00:01:08,790 --> 00:01:10,520
+So what's important
+about this notation
+
+24
+00:01:10,520 --> 00:01:13,480
+is not what you see as
+much as what you don't see.
+
+25
+00:01:13,480 --> 00:01:15,950
+What you don't see
+is the variable t.
+
+26
+00:01:15,950 --> 00:01:16,660
+OK?
+
+27
+00:01:16,660 --> 00:01:19,260
+So what this notation
+means is, as always,
+
+28
+00:01:19,260 --> 00:01:22,990
+the denominator in our
+derivative expression--
+
+29
+00:01:22,990 --> 00:01:27,045
+partial z here-- that means
+that we want to vary z.
+
+30
+00:01:27,045 --> 00:01:30,620
+And we want to see how
+w changes as we vary z.
+
+31
+00:01:30,620 --> 00:01:35,810
+And the x and y here mean that
+we want to keep x and y fixed.
+
+32
+00:01:35,810 --> 00:01:38,690
+So if we didn't
+have a constraint,
+
+33
+00:01:38,690 --> 00:01:40,754
+this x and y here
+would be superfluous.
+
+34
+00:01:40,754 --> 00:01:42,420
+Because by partial
+derivative, we always
+
+35
+00:01:42,420 --> 00:01:47,510
+mean to keep the other
+unlisted variables unchanged.
+
+36
+00:01:47,510 --> 00:01:50,065
+However, the fact that
+t is missing here,
+
+37
+00:01:50,065 --> 00:01:54,660
+it means that-- so if you
+think about it-- if we vary z,
+
+38
+00:01:54,660 --> 00:01:58,570
+and we keep x and y fixed,
+then t also is varying.
+
+39
+00:01:58,570 --> 00:01:59,070
+Right?
+
+40
+00:01:59,070 --> 00:02:00,690
+Because we have this
+constraint here.
+
+41
+00:02:00,690 --> 00:02:04,190
+And so it wouldn't
+make sense for me
+
+42
+00:02:04,190 --> 00:02:06,920
+to ask you to compute the
+partial derivative of w
+
+43
+00:02:06,920 --> 00:02:10,789
+in z varying x, y, and t
+because-- excuse me-- keeping
+
+44
+00:02:10,789 --> 00:02:12,330
+x, y, and t fixed,
+because then there
+
+45
+00:02:12,330 --> 00:02:13,880
+would be no room for z to vary.
+
+46
+00:02:13,880 --> 00:02:14,380
+OK?
+
+47
+00:02:14,380 --> 00:02:19,200
+So this notation means that z
+is going to be allowed to vary,
+
+48
+00:02:19,200 --> 00:02:21,170
+but it's going to vary
+in a way that we're just
+
+49
+00:02:21,170 --> 00:02:21,840
+going to ignore.
+
+50
+00:02:21,840 --> 00:02:23,780
+So you will see how this
+works out in the problem.
+
+51
+00:02:23,780 --> 00:02:25,196
+So what we're
+really interested in
+
+52
+00:02:25,196 --> 00:02:30,810
+is making sure that x and y
+stay fixed and that z varies.
+
+53
+00:02:30,810 --> 00:02:33,540
+And then we're going to need
+to-- when we do some algebra,
+
+54
+00:02:33,540 --> 00:02:35,414
+we're going to need to
+get rid of any mention
+
+55
+00:02:35,414 --> 00:02:37,250
+of the variable t.
+
+56
+00:02:37,250 --> 00:02:38,930
+OK.
+
+57
+00:02:38,930 --> 00:02:41,300
+So the first way that we're
+going to work this out
+
+58
+00:02:41,300 --> 00:02:42,930
+is using total differentials.
+
+59
+00:02:42,930 --> 00:02:44,680
+And I like to use
+total differentials
+
+60
+00:02:44,680 --> 00:02:49,220
+when I'm on new ground
+because-- they're not
+
+61
+00:02:49,220 --> 00:02:51,320
+the most computationally
+effective,
+
+62
+00:02:51,320 --> 00:02:53,900
+because they involve computing
+all the derivatives that we
+
+63
+00:02:53,900 --> 00:02:55,900
+might possibly need in sight.
+
+64
+00:02:55,900 --> 00:02:58,750
+So they're not the most
+efficient computationally.
+
+65
+00:02:58,750 --> 00:03:04,200
+But if you go ahead and compute
+the total differentials,
+
+66
+00:03:04,200 --> 00:03:06,800
+then all the other
+computations that you have
+
+67
+00:03:06,800 --> 00:03:08,260
+to do are just substitution.
+
+68
+00:03:08,260 --> 00:03:10,020
+So it really just
+becomes linear algebra,
+
+69
+00:03:10,020 --> 00:03:12,100
+and that's what I like about it.
+
+70
+00:03:12,100 --> 00:03:16,760
+In part b, we'll see a shortcut
+using implicit differentiation
+
+71
+00:03:16,760 --> 00:03:18,340
+and the chain rule.
+
+72
+00:03:18,340 --> 00:03:20,810
+And this is going to
+be a little bit tricky.
+
+73
+00:03:20,810 --> 00:03:23,540
+So we have these
+two equations, we
+
+74
+00:03:23,540 --> 00:03:27,480
+need to turn them both into
+differential equations.
+
+75
+00:03:27,480 --> 00:03:29,430
+And so we'll do that
+using a combination
+
+76
+00:03:29,430 --> 00:03:32,300
+of implicit differentiation
+and the chain rule.
+
+77
+00:03:32,300 --> 00:03:35,830
+So I'll let you pause
+the video and get
+
+78
+00:03:35,830 --> 00:03:37,130
+started on these problems.
+
+79
+00:03:37,130 --> 00:03:39,630
+And you can check back and
+we'll work it out together.
+
+80
+00:03:46,640 --> 00:03:47,990
+OK, welcome back.
+
+81
+00:03:47,990 --> 00:03:53,260
+So let's start by doing a,
+let's start with problem a.
+
+82
+00:03:56,590 --> 00:04:00,666
+So we have total differentials
+is the suggested way
+
+83
+00:04:00,666 --> 00:04:01,290
+to attack this.
+
+84
+00:04:01,290 --> 00:04:02,880
+So why don't we
+just start computing
+
+85
+00:04:02,880 --> 00:04:04,630
+the total differentials
+that we know.
+
+86
+00:04:04,630 --> 00:04:06,590
+So we have two equations.
+
+87
+00:04:06,590 --> 00:04:10,150
+w in relation to the other
+variables and the constraint
+
+88
+00:04:10,150 --> 00:04:10,830
+equation.
+
+89
+00:04:10,830 --> 00:04:12,110
+And what we first
+want to do is just
+
+90
+00:04:12,110 --> 00:04:14,360
+take the total differential
+of both of those equations
+
+91
+00:04:14,360 --> 00:04:15,080
+to get started.
+
+92
+00:04:15,080 --> 00:04:22,270
+So we can take the first one
+and it tells us that dw is equal
+
+93
+00:04:22,270 --> 00:04:37,410
+to-- OK, so we have 3 x
+squared y dx, plus x cubed dy,
+
+94
+00:04:37,410 --> 00:04:51,820
+minus 2z*t dz,
+minus z squared dt.
+
+95
+00:04:51,820 --> 00:04:52,790
+OK.
+
+96
+00:04:52,790 --> 00:04:56,280
+Now right away, we can
+simplify this equation.
+
+97
+00:04:56,280 --> 00:04:57,830
+So this is the
+total differential,
+
+98
+00:04:57,830 --> 00:05:00,500
+but we have to remember
+that in the setting we're
+
+99
+00:05:00,500 --> 00:05:03,280
+interested in, x and
+y are held fixed.
+
+100
+00:05:03,280 --> 00:05:07,970
+And so holding x and y fixed
+means that the differentials dx
+
+101
+00:05:07,970 --> 00:05:11,070
+and dy are both set to 0.
+
+102
+00:05:11,070 --> 00:05:15,760
+So that lets us rewrite this
+first differential equation is
+
+103
+00:05:15,760 --> 00:05:29,342
+just dw equals minus 2z*t
+dz minus z squared dt.
+
+104
+00:05:29,342 --> 00:05:31,050
+So that's our first
+equation that we get.
+
+105
+00:05:31,050 --> 00:05:32,925
+Let me just check with
+my notes to make sure.
+
+106
+00:05:39,640 --> 00:05:41,510
+That's right.
+
+107
+00:05:41,510 --> 00:05:42,330
+OK.
+
+108
+00:05:42,330 --> 00:05:45,599
+And so now, we have
+the constraint equation
+
+109
+00:05:45,599 --> 00:05:47,390
+from the original
+statement of the problem.
+
+110
+00:05:47,390 --> 00:05:48,931
+And we need to take
+its differential.
+
+111
+00:05:52,110 --> 00:05:58,530
+So on the one hand,
+we get x dy plus y dx.
+
+112
+00:05:58,530 --> 00:06:01,940
+That's the total differential
+of the left-hand side.
+
+113
+00:06:01,940 --> 00:06:11,110
+And then on the right-hand
+side, we have t dz plus z dt.
+
+114
+00:06:11,110 --> 00:06:11,750
+OK?
+
+115
+00:06:11,750 --> 00:06:15,510
+And now we notice that now the
+left-hand side of this equation
+
+116
+00:06:15,510 --> 00:06:18,910
+is just 0 for the same reason.
+
+117
+00:06:18,910 --> 00:06:22,100
+dy and dx are being held fixed.
+
+118
+00:06:22,100 --> 00:06:24,570
+So the relation that
+we end up getting
+
+119
+00:06:24,570 --> 00:06:37,370
+is we get that dt is equal
+to minus t over z dz by just
+
+120
+00:06:37,370 --> 00:06:40,830
+doing straightforward algebra.
+
+121
+00:06:40,830 --> 00:06:42,710
+OK.
+
+122
+00:06:42,710 --> 00:06:47,639
+So, with that in
+hand now, we can-- so
+
+123
+00:06:47,639 --> 00:06:49,180
+remember I mentioned
+in the beginning
+
+124
+00:06:49,180 --> 00:06:52,450
+that our goal was-- so
+from the very beginning,
+
+125
+00:06:52,450 --> 00:06:55,330
+we knew that if we varied z,
+because of our constraint,
+
+126
+00:06:55,330 --> 00:06:57,950
+we're going to be
+forced to be varying t.
+
+127
+00:06:57,950 --> 00:07:00,557
+And that's exactly what this
+equation says, doesn't it?
+
+128
+00:07:00,557 --> 00:07:03,140
+We got this by just taking the
+differential of the constraint.
+
+129
+00:07:03,140 --> 00:07:05,720
+And it says if you
+vary z, you have
+
+130
+00:07:05,720 --> 00:07:08,970
+to vary t in an
+appropriate way, and that's
+
+131
+00:07:08,970 --> 00:07:11,340
+what this coefficient tells us.
+
+132
+00:07:11,340 --> 00:07:13,760
+So what we're
+really interested in
+
+133
+00:07:13,760 --> 00:07:18,460
+is how does w vary
+in terms of z here.
+
+134
+00:07:18,460 --> 00:07:21,010
+And so we want to get
+rid of this dt here.
+
+135
+00:07:21,010 --> 00:07:25,060
+And in fact, we can by
+using the constraint.
+
+136
+00:07:25,060 --> 00:07:32,350
+So combining this equation
+with this equation,
+
+137
+00:07:32,350 --> 00:07:42,370
+we get that dw here
+is equal to-- OK,
+
+138
+00:07:42,370 --> 00:07:48,085
+so we have minus 2z*t dz.
+
+139
+00:07:50,750 --> 00:07:55,850
+And then we have minus-- OK--
+z squared times another minus
+
+140
+00:07:55,850 --> 00:08:04,000
+times t over z, so this
+all becomes a plus z*t dz.
+
+141
+00:08:04,000 --> 00:08:08,250
+So all I did is I plugged in
+for dt using our formula here.
+
+142
+00:08:08,250 --> 00:08:18,840
+And so this altogether is
+equal to just minus z*t dz.
+
+143
+00:08:18,840 --> 00:08:22,920
+And that tells us that the
+partial derivative that we're
+
+144
+00:08:22,920 --> 00:08:31,520
+after is just this
+coefficient, right?
+
+145
+00:08:31,520 --> 00:08:34,030
+The partial derivative
+is just defined
+
+146
+00:08:34,030 --> 00:08:35,920
+to be the coefficient
+of the differential
+
+147
+00:08:35,920 --> 00:08:37,220
+once you work everything out.
+
+148
+00:08:37,220 --> 00:08:39,300
+And so this is minus z*t.
+
+149
+00:08:45,250 --> 00:08:47,350
+OK, so that's a.
+
+150
+00:08:47,350 --> 00:08:52,825
+So now let's see if we can
+use some tricks to make
+
+151
+00:08:52,825 --> 00:08:54,075
+the computation a bit shorter.
+
+152
+00:08:54,075 --> 00:08:55,616
+So the tricks that
+we're going to use
+
+153
+00:08:55,616 --> 00:08:58,880
+are implicit differentiation
+and the chain rule.
+
+154
+00:09:09,067 --> 00:09:10,650
+So at the end of the
+day-- excuse me--
+
+155
+00:09:10,650 --> 00:09:13,330
+we're interested in
+partial w partial z.
+
+156
+00:09:16,240 --> 00:09:18,529
+And what we're going to
+do is use the chain rule
+
+157
+00:09:18,529 --> 00:09:20,570
+to just take a straightforward
+partial derivative
+
+158
+00:09:20,570 --> 00:09:22,590
+of our original expression.
+
+159
+00:09:22,590 --> 00:09:27,450
+So remember, w was x
+cubed y minus z t squared.
+
+160
+00:09:27,450 --> 00:09:29,800
+And so let's just take
+a partial derivative
+
+161
+00:09:29,800 --> 00:09:31,015
+of that in the z-direction.
+
+162
+00:09:33,890 --> 00:09:37,870
+So the partial derivative in
+the z-direction of x cubed y
+
+163
+00:09:37,870 --> 00:09:38,450
+is just 0.
+
+164
+00:09:38,450 --> 00:09:39,830
+So that will go away.
+
+165
+00:09:39,830 --> 00:09:48,210
+And so we only have minus--
+we have a 2z*t component.
+
+166
+00:09:48,210 --> 00:09:52,820
+That's just because the partial
+derivative of z squared is 2z.
+
+167
+00:09:52,820 --> 00:09:57,880
+And then we have another term
+which is minus z squared,
+
+168
+00:09:57,880 --> 00:10:00,829
+and now we need to take
+the partial derivative of t
+
+169
+00:10:00,829 --> 00:10:01,620
+in the z-direction.
+
+170
+00:10:07,782 --> 00:10:14,420
+So, you know, often times when
+we take partial derivatives
+
+171
+00:10:14,420 --> 00:10:26,350
+of one variable in
+terms of the other,
+
+172
+00:10:26,350 --> 00:10:28,922
+it's common to think that
+the partial derivative of one
+
+173
+00:10:28,922 --> 00:10:30,630
+variable in terms of
+the other is just 0.
+
+174
+00:10:30,630 --> 00:10:32,604
+Because usually our
+variables are independent.
+
+175
+00:10:32,604 --> 00:10:34,270
+They don't vary in
+terms of one another.
+
+176
+00:10:34,270 --> 00:10:35,950
+But this is exactly
+a situation where
+
+177
+00:10:35,950 --> 00:10:39,800
+t does vary depending on z,
+and so we had to include that
+
+178
+00:10:39,800 --> 00:10:41,450
+into our notation.
+
+179
+00:10:41,450 --> 00:10:43,460
+OK.
+
+180
+00:10:43,460 --> 00:10:45,460
+So now this is
+almost what we want,
+
+181
+00:10:45,460 --> 00:10:47,252
+except we have this
+mystery component here.
+
+182
+00:10:47,252 --> 00:10:48,709
+And of course,
+there's only one way
+
+183
+00:10:48,709 --> 00:10:51,370
+we can solve this mystery, which
+is the same way we solved it
+
+184
+00:10:51,370 --> 00:10:52,100
+in part a.
+
+185
+00:10:52,100 --> 00:10:53,349
+We have to use the constraint.
+
+186
+00:10:58,250 --> 00:11:04,220
+So let's take partial z of
+our constraint equation.
+
+187
+00:11:04,220 --> 00:11:08,672
+And remember, our constraint
+equation was x*y equals z*t.
+
+188
+00:11:11,860 --> 00:11:13,880
+OK.
+
+189
+00:11:13,880 --> 00:11:18,780
+So if we take the partial
+derivative of this equation--
+
+190
+00:11:18,780 --> 00:11:21,740
+so if I take the partial
+derivative of x and y
+
+191
+00:11:21,740 --> 00:11:27,750
+in terms of z, then I do
+get 0, because x and y are
+
+192
+00:11:27,750 --> 00:11:31,790
+genuinely independent from z.
+
+193
+00:11:31,790 --> 00:11:34,230
+It's only t that depends on z.
+
+194
+00:11:34,230 --> 00:11:37,080
+So on this side we get 0.
+
+195
+00:11:37,080 --> 00:11:40,370
+Now, on the other side I just
+need to use the product rule.
+
+196
+00:11:40,370 --> 00:11:55,590
+So I get t, plus z
+partial t partial z.
+
+197
+00:11:59,180 --> 00:12:00,730
+OK?
+
+198
+00:12:00,730 --> 00:12:09,590
+So we can rewrite this as saying
+that partial t partial z is
+
+199
+00:12:09,590 --> 00:12:11,790
+minus t over z.
+
+200
+00:12:15,090 --> 00:12:15,670
+OK?
+
+201
+00:12:15,670 --> 00:12:18,640
+Now, you might notice that,
+you know, this is formally
+
+202
+00:12:18,640 --> 00:12:21,600
+very similar to what we did
+in part a, and of course,
+
+203
+00:12:21,600 --> 00:12:23,290
+that's no surprise.
+
+204
+00:12:23,290 --> 00:12:27,740
+When we are manipulating
+using implicit differentiation
+
+205
+00:12:27,740 --> 00:12:30,365
+and the chain rule,
+it's just a compact way
+
+206
+00:12:30,365 --> 00:12:32,740
+of doing what we were doing
+with the total differentials.
+
+207
+00:12:32,740 --> 00:12:37,620
+I mean, to me, the chain
+rule is a computation
+
+208
+00:12:37,620 --> 00:12:41,130
+which you could prove by
+doing the corresponding thing
+
+209
+00:12:41,130 --> 00:12:43,720
+with total differentials.
+
+210
+00:12:43,720 --> 00:12:46,920
+And so we get this same
+coefficient negative t over z,
+
+211
+00:12:46,920 --> 00:12:50,880
+which you recall that
+we got in part a.
+
+212
+00:12:50,880 --> 00:12:51,390
+OK.
+
+213
+00:12:51,390 --> 00:12:59,790
+So now we have, once again
+we have this, two equations,
+
+214
+00:12:59,790 --> 00:13:01,880
+and we just can do substitution.
+
+215
+00:13:01,880 --> 00:13:15,592
+So we get that partial w partial
+z is equal to minus 2z*t.
+
+216
+00:13:15,592 --> 00:13:20,670
+And now again, we get
+minus another minus,
+
+217
+00:13:20,670 --> 00:13:26,490
+and z here cancels the z
+squared, so we get plus z*t.
+
+218
+00:13:26,490 --> 00:13:29,400
+And so we get minus z*t.
+
+219
+00:13:32,540 --> 00:13:36,380
+OK, and finally, if we
+remember our assumptions,
+
+220
+00:13:36,380 --> 00:13:40,390
+our assumptions were that x
+and y were independent of z.
+
+221
+00:13:40,390 --> 00:13:41,810
+That was our notation.
+
+222
+00:13:41,810 --> 00:13:45,070
+And we use that assumption
+at this step right here.
+
+223
+00:13:45,070 --> 00:13:47,870
+So in fact, we don't just have
+the partial derivative of w
+
+224
+00:13:47,870 --> 00:13:49,780
+with respect to z.
+
+225
+00:13:49,780 --> 00:13:54,140
+We need to specify that
+we held x and y fixed.
+
+226
+00:13:54,140 --> 00:13:56,150
+OK.
+
+227
+00:13:56,150 --> 00:13:59,480
+So just to review
+again, if we look now
+
+228
+00:13:59,480 --> 00:14:06,180
+at what we did in part b, you
+know, the meat of the argument
+
+229
+00:14:06,180 --> 00:14:08,880
+was the exact same as
+what we did in part a.
+
+230
+00:14:08,880 --> 00:14:11,300
+The meat of the
+argument was right here.
+
+231
+00:14:11,300 --> 00:14:15,420
+We took some derivative and
+then this was an unknown.
+
+232
+00:14:15,420 --> 00:14:17,550
+The definition of
+w doesn't know how
+
+233
+00:14:17,550 --> 00:14:18,800
+t and z depend on one another.
+
+234
+00:14:18,800 --> 00:14:21,230
+That you can only find by
+looking at the constraint.
+
+235
+00:14:21,230 --> 00:14:24,980
+And so we just went
+through the problem
+
+236
+00:14:24,980 --> 00:14:29,010
+and we took derivatives
+of the constraint,
+
+237
+00:14:29,010 --> 00:14:31,520
+and that gave us an equation
+that we were looking for.
+
+238
+00:14:35,270 --> 00:14:39,140
+Now if we go back now
+to part a over here.
+
+239
+00:14:46,540 --> 00:14:49,462
+So as you can see, there's a lot
+more work involved in part a.
+
+240
+00:14:49,462 --> 00:14:51,670
+On the other hand, to me it
+was more straightforward.
+
+241
+00:14:51,670 --> 00:14:54,980
+We just had to compute
+the total differentials
+
+242
+00:14:54,980 --> 00:14:58,630
+and then do some linear
+algebra with cancellations.
+
+243
+00:14:58,630 --> 00:15:00,557
+And somehow, when you
+do total differentials,
+
+244
+00:15:00,557 --> 00:15:02,890
+you just compute everything
+that could possibly come up,
+
+245
+00:15:02,890 --> 00:15:04,860
+and then you just
+substitute it in.
+
+246
+00:15:04,860 --> 00:15:07,560
+And indeed, we got
+the same answer:
+
+247
+00:15:07,560 --> 00:15:12,690
+partial w partial z
+as being minus z*t.
+
+248
+00:15:12,690 --> 00:15:14,615
+OK, and I think I'll stop there.

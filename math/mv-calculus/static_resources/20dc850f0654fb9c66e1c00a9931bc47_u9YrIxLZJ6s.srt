@@ -1,0 +1,785 @@
+1
+00:00:00,000 --> 00:00:09,400
+CHRISTINE BREINER: Welcome
+back to recitation.
+
+2
+00:00:09,400 --> 00:00:11,960
+In this video, I'd like
+us to do the following two
+
+3
+00:00:11,960 --> 00:00:16,660
+problems, both related to
+the same position vector.
+
+4
+00:00:16,660 --> 00:00:19,950
+So we're starting off with
+a position vector defined
+
+5
+00:00:19,950 --> 00:00:24,750
+as r of t is equal to 1 minus
+2 t squared i plus t squared
+
+6
+00:00:24,750 --> 00:00:28,870
+j plus negative 2
+plus 2 t squared k.
+
+7
+00:00:28,870 --> 00:00:30,660
+So that's our position
+vector, and I'd
+
+8
+00:00:30,660 --> 00:00:32,760
+like us to do the
+following two things.
+
+9
+00:00:32,760 --> 00:00:35,360
+And you'll notice this
+problem is pretty much
+
+10
+00:00:35,360 --> 00:00:36,830
+just a computational problem.
+
+11
+00:00:36,830 --> 00:00:38,400
+We're going to make
+sure that we know
+
+12
+00:00:38,400 --> 00:00:41,980
+what these things I'm
+about to talk about are,
+
+13
+00:00:41,980 --> 00:00:44,710
+how you define them, and how
+you get from the position vector
+
+14
+00:00:44,710 --> 00:00:45,830
+to each of these things.
+
+15
+00:00:45,830 --> 00:00:50,050
+So we want to compute
+the velocity, the speed,
+
+16
+00:00:50,050 --> 00:00:55,250
+the acceleration, and find the
+unit tangent vector for r of t.
+
+17
+00:00:55,250 --> 00:00:56,886
+And then, the
+second part, we want
+
+18
+00:00:56,886 --> 00:01:00,750
+to compute the arc length of the
+trajectory from t equals 0 to t
+
+19
+00:01:00,750 --> 00:01:02,155
+equals 2.
+
+20
+00:01:02,155 --> 00:01:04,030
+So I'll give you a moment
+to do that problem.
+
+21
+00:01:04,030 --> 00:01:06,154
+Why don't you pause the
+video, work on the problem.
+
+22
+00:01:06,154 --> 00:01:08,850
+When you're ready to check your
+work, bring the video back up
+
+23
+00:01:08,850 --> 00:01:10,100
+and I'll show you how I do it.
+
+24
+00:01:18,930 --> 00:01:20,120
+OK, welcome back.
+
+25
+00:01:20,120 --> 00:01:22,700
+Well, hopefully, you felt
+comfortable with answering
+
+26
+00:01:22,700 --> 00:01:23,850
+these questions.
+
+27
+00:01:23,850 --> 00:01:26,650
+So now I will answer them and
+you can compare your answers
+
+28
+00:01:26,650 --> 00:01:27,200
+with mine.
+
+29
+00:01:27,200 --> 00:01:31,180
+So let me start off with part a.
+
+30
+00:01:31,180 --> 00:01:34,010
+Part a, the first
+thing we're going to do
+
+31
+00:01:34,010 --> 00:01:35,850
+is find the velocity.
+
+32
+00:01:35,850 --> 00:01:39,560
+So velocity is
+really-- all we need
+
+33
+00:01:39,560 --> 00:01:42,770
+to do is take the derivative
+of the position vector
+
+34
+00:01:42,770 --> 00:01:43,640
+with respect to t.
+
+35
+00:01:43,640 --> 00:01:46,260
+So I'm just going to
+take r prime of t.
+
+36
+00:01:46,260 --> 00:01:49,770
+And now I'm going to write
+it in the shorthand notation
+
+37
+00:01:49,770 --> 00:01:53,770
+that you've seen, with the
+brackets to denote that it's
+
+38
+00:01:53,770 --> 00:01:56,750
+not a point, but it's a vector.
+
+39
+00:01:56,750 --> 00:01:59,780
+So this is what
+you've seen to denote
+
+40
+00:01:59,780 --> 00:02:01,380
+a vector rather than a point.
+
+41
+00:02:01,380 --> 00:02:04,030
+So the derivative with respect
+to t of the first component
+
+42
+00:02:04,030 --> 00:02:07,100
+is just negative 4t.
+
+43
+00:02:07,100 --> 00:02:09,550
+The derivative with respect
+to t of the second component
+
+44
+00:02:09,550 --> 00:02:12,950
+is just 2t, because
+we had t squared,
+
+45
+00:02:12,950 --> 00:02:15,450
+so when we take its
+derivative, we just get 2t.
+
+46
+00:02:15,450 --> 00:02:19,490
+And the third component was
+negative 2 plus 2 t squared,
+
+47
+00:02:19,490 --> 00:02:22,560
+so when I take its
+derivative, I get a 4t,
+
+48
+00:02:22,560 --> 00:02:24,882
+so that is actually v of t, OK?
+
+49
+00:02:24,882 --> 00:02:26,340
+And then the next
+thing I asked you
+
+50
+00:02:26,340 --> 00:02:29,710
+to do is determine the speed,
+and the speed, of course,
+
+51
+00:02:29,710 --> 00:02:33,540
+is just the length of the
+velocity vector, right?
+
+52
+00:02:33,540 --> 00:02:39,434
+So we just need to find the
+length of v. Now, to do that,
+
+53
+00:02:39,434 --> 00:02:41,100
+to remind ourselves
+what we do for that,
+
+54
+00:02:41,100 --> 00:02:42,724
+we actually take the
+inner product of v
+
+55
+00:02:42,724 --> 00:02:45,640
+with itself, the dot
+product of v with itself,
+
+56
+00:02:45,640 --> 00:02:49,900
+and then we take the
+square root of that.
+
+57
+00:02:49,900 --> 00:02:52,070
+So let's look at what
+the dot product will be.
+
+58
+00:02:52,070 --> 00:02:54,610
+Let me find the
+squared thing first,
+
+59
+00:02:54,610 --> 00:02:57,830
+and then I will take
+the square root.
+
+60
+00:02:57,830 --> 00:03:00,780
+So v dotted with v,
+the first component
+
+61
+00:03:00,780 --> 00:03:03,440
+I'm going to have negative
+4t quantity squared,
+
+62
+00:03:03,440 --> 00:03:06,760
+so that's going to
+be 16 t squared.
+
+63
+00:03:06,760 --> 00:03:08,370
+And then the second
+component is going
+
+64
+00:03:08,370 --> 00:03:10,960
+to be 2t quantity
+squared, so I'm
+
+65
+00:03:10,960 --> 00:03:13,737
+going to have plus 4 t squared.
+
+66
+00:03:13,737 --> 00:03:15,320
+And the third component
+is going to be
+
+67
+00:03:15,320 --> 00:03:17,910
+another-- it's going to
+be 4t quantity squared,
+
+68
+00:03:17,910 --> 00:03:21,720
+so I get another 16 t squared.
+
+69
+00:03:21,720 --> 00:03:27,980
+So when I add those up, I
+believe I get 36 t squared?
+
+70
+00:03:27,980 --> 00:03:28,960
+Yes, good.
+
+71
+00:03:31,500 --> 00:03:34,310
+And so then, I just have to take
+the square root of both sides
+
+72
+00:03:34,310 --> 00:03:37,570
+to get what the speed
+actually is instead
+
+73
+00:03:37,570 --> 00:03:39,130
+of the square of the speed.
+
+74
+00:03:41,730 --> 00:03:46,090
+So I get 6t, OK?
+
+75
+00:03:46,090 --> 00:03:50,080
+So that's the velocity;
+that's the speed.
+
+76
+00:03:50,080 --> 00:03:51,580
+Now I need to find
+the acceleration
+
+77
+00:03:51,580 --> 00:03:54,100
+and I need to find the
+unit tangent vector.
+
+78
+00:03:54,100 --> 00:03:55,250
+OK, so let me see.
+
+79
+00:03:55,250 --> 00:03:58,040
+I will come over here.
+
+80
+00:03:58,040 --> 00:04:00,760
+Let me step off here and I
+will find the acceleration
+
+81
+00:04:00,760 --> 00:04:02,200
+and the unit tangent vector.
+
+82
+00:04:02,200 --> 00:04:04,110
+So the acceleration,
+if you remember,
+
+83
+00:04:04,110 --> 00:04:06,110
+the acceleration is
+actually just the derivative
+
+84
+00:04:06,110 --> 00:04:08,380
+of the velocity
+with respect to t.
+
+85
+00:04:08,380 --> 00:04:11,290
+So the acceleration
+is going to be
+
+86
+00:04:11,290 --> 00:04:14,250
+the derivative of negative
+4t is just negative 4.
+
+87
+00:04:14,250 --> 00:04:18,330
+The derivative of 2t is just
+2, and the derivative of 4t
+
+88
+00:04:18,330 --> 00:04:20,660
+is just 4, all
+with respect to t.
+
+89
+00:04:20,660 --> 00:04:21,750
+OK.
+
+90
+00:04:21,750 --> 00:04:26,420
+So the acceleration vector is
+equal to negative 4 comma 2
+
+91
+00:04:26,420 --> 00:04:27,860
+comma 4, so you
+see this actually
+
+92
+00:04:27,860 --> 00:04:30,040
+has constant acceleration.
+
+93
+00:04:30,040 --> 00:04:31,540
+So at any point,
+your acceleration
+
+94
+00:04:31,540 --> 00:04:33,940
+is always this value,
+so it's not surprising
+
+95
+00:04:33,940 --> 00:04:36,984
+that our velocity is
+increasing, and actually, it's
+
+96
+00:04:36,984 --> 00:04:39,150
+increasing-- you'll notice,
+each of these components
+
+97
+00:04:39,150 --> 00:04:40,230
+is constant.
+
+98
+00:04:40,230 --> 00:04:42,800
+The velocity, each of
+the components is linear,
+
+99
+00:04:42,800 --> 00:04:45,900
+and if we went back, we
+look at the position vector,
+
+100
+00:04:45,900 --> 00:04:47,950
+each of those
+components is quadratic.
+
+101
+00:04:47,950 --> 00:04:49,780
+And this is exactly
+what you expect
+
+102
+00:04:49,780 --> 00:04:52,730
+from just your
+understanding of derivatives
+
+103
+00:04:52,730 --> 00:04:54,810
+in single-variable calculus.
+
+104
+00:04:54,810 --> 00:04:57,669
+If you start off with a constant
+and you find an antiderivative,
+
+105
+00:04:57,669 --> 00:05:00,210
+it's going to be linear, and
+you find another antiderivative,
+
+106
+00:05:00,210 --> 00:05:02,520
+you're going to
+have a quadratic,
+
+107
+00:05:02,520 --> 00:05:04,680
+so we shouldn't be
+surprised by any of that.
+
+108
+00:05:04,680 --> 00:05:06,937
+Now we have one more
+thing to do with Part a,
+
+109
+00:05:06,937 --> 00:05:08,770
+and that is to find the
+unit tangent vector.
+
+110
+00:05:08,770 --> 00:05:11,180
+And that's fairly easy,
+because all we have to do
+
+111
+00:05:11,180 --> 00:05:15,350
+is-- if you notice, we
+have the velocity vector
+
+112
+00:05:15,350 --> 00:05:17,686
+and we have its length.
+
+113
+00:05:17,686 --> 00:05:19,310
+And so to find the
+unit tangent vector,
+
+114
+00:05:19,310 --> 00:05:21,100
+all we have to do
+is take the velocity
+
+115
+00:05:21,100 --> 00:05:24,110
+and divide it by its length,
+and that will normalize it.
+
+116
+00:05:24,110 --> 00:05:28,140
+That means that its length
+will be one at that point,
+
+117
+00:05:28,140 --> 00:05:30,710
+because you're taking a
+vector, dividing by its length,
+
+118
+00:05:30,710 --> 00:05:33,760
+so the length of the new vector
+will have to be length one.
+
+119
+00:05:33,760 --> 00:05:36,670
+So let me write that down.
+
+120
+00:05:36,670 --> 00:05:38,940
+And actually, I guess the
+point to remember here
+
+121
+00:05:38,940 --> 00:05:43,710
+is that the velocity vector
+is tangent to the path you're
+
+122
+00:05:43,710 --> 00:05:45,395
+carving out, to the trajectory.
+
+123
+00:05:50,020 --> 00:05:52,440
+OK, so this is a vector.
+
+124
+00:05:52,440 --> 00:05:54,220
+This is a scalar.
+
+125
+00:05:54,220 --> 00:05:58,440
+So I'm going to take
+1 over 6t, and I'm
+
+126
+00:05:58,440 --> 00:06:06,940
+going to multiply it
+by negative 4t, 2t, 4t,
+
+127
+00:06:06,940 --> 00:06:09,360
+and this gives me,
+when I do my division,
+
+128
+00:06:09,360 --> 00:06:18,490
+looks like it gives me a
+negative 2/3, right, 1/3, 2/3.
+
+129
+00:06:21,880 --> 00:06:28,370
+So that is the unit
+tangent vector, OK?
+
+130
+00:06:28,370 --> 00:06:31,330
+OK, and now, we have one
+more point we want to make,
+
+131
+00:06:31,330 --> 00:06:34,449
+and that is having
+to do with the arc
+
+132
+00:06:34,449 --> 00:06:35,490
+length of the trajectory.
+
+133
+00:06:35,490 --> 00:06:37,198
+That was the second
+part of this problem,
+
+134
+00:06:37,198 --> 00:06:39,370
+was to find the arc length
+of the trajectory from t
+
+135
+00:06:39,370 --> 00:06:41,320
+equals 0 to t equals 2.
+
+136
+00:06:41,320 --> 00:06:44,770
+So let me just draw
+another line here.
+
+137
+00:06:44,770 --> 00:06:47,330
+And what we want to do
+there then is-- really
+
+138
+00:06:47,330 --> 00:06:56,610
+what we want to do is we want
+to integrate the speed, right?
+
+139
+00:06:56,610 --> 00:06:59,040
+We want to integrate
+the speed from 0 to 2.
+
+140
+00:06:59,040 --> 00:07:03,440
+So this-- let me come over
+here-- this absolute v,
+
+141
+00:07:03,440 --> 00:07:11,060
+you might have also seen
+it written as ds/dt, right?
+
+142
+00:07:11,060 --> 00:07:15,060
+And so we want to
+integrate this in dt--
+
+143
+00:07:15,060 --> 00:07:18,220
+in t, sorry-- from 0 to 2.
+
+144
+00:07:18,220 --> 00:07:21,180
+And so we come over here.
+
+145
+00:07:21,180 --> 00:07:27,200
+We want to integrate
+from 0 to 2, 6t dt.
+
+146
+00:07:27,200 --> 00:07:28,140
+That's fairly easy.
+
+147
+00:07:28,140 --> 00:07:33,890
+That's going to be 6 t squared
+over 2, evaluated from 0 to 2.
+
+148
+00:07:33,890 --> 00:07:36,170
+And so when I write
+that down, I'm
+
+149
+00:07:36,170 --> 00:07:39,950
+going to get 6 times 4
+divided by 2, 24 divided by 2,
+
+150
+00:07:39,950 --> 00:07:42,020
+I just get 12, and
+the other term is 0.
+
+151
+00:07:42,020 --> 00:07:45,700
+So the arc length
+is-- of the trajectory
+
+152
+00:07:45,700 --> 00:07:50,310
+from 0 to 2 is just 12 units.
+
+153
+00:07:50,310 --> 00:07:52,760
+So this really was a purely
+computational type of problem.
+
+154
+00:07:52,760 --> 00:07:54,910
+All we were doing, if
+you come back over here
+
+155
+00:07:54,910 --> 00:07:57,030
+and you recall what
+we were trying to do,
+
+156
+00:07:57,030 --> 00:08:00,050
+is we started off with
+a position vector.
+
+157
+00:08:00,050 --> 00:08:02,251
+We just did a lot
+of computation.
+
+158
+00:08:02,251 --> 00:08:04,376
+We found the velocity, the
+speed, the acceleration,
+
+159
+00:08:04,376 --> 00:08:06,507
+the unit tangent
+vector, and then
+
+160
+00:08:06,507 --> 00:08:08,840
+we just wanted to find the
+arc length of the trajectory.
+
+161
+00:08:08,840 --> 00:08:11,110
+So this is all
+very computational,
+
+162
+00:08:11,110 --> 00:08:12,760
+but just to make
+sure we understood
+
+163
+00:08:12,760 --> 00:08:14,850
+what all the terms
+meant and how they
+
+164
+00:08:14,850 --> 00:08:17,190
+were related to one another.
+
+165
+00:08:17,190 --> 00:08:18,950
+So I'll stop there.

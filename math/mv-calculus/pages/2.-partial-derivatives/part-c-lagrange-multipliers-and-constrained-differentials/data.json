@@ -1,0 +1,6 @@
+
+{
+  "title":"Part C: Lagrange Multipliers and Constrained Differentials",
+  "content":"« Previous | Next »\nIn this part we will study a new type of optimization problem: that of finding the maximum (or minimum) value of a function w = f(x, y, z) when we are only allowed to consider points (x, y, z) which are constrained to lie on a surface. The technique we will use to solve these problems is called Lagrange multipliers.\n» Session 39: Statement of Lagrange Multipliers and Example\n» Session 40: Proof of Lagrange Multipliers\n» Session 41: Advanced Example\n» Session 42: Constrained Differentials\n» Session 43: Clearer Notation\n» Session 44: Example\n» Problem Set 6\n« Previous | Next »\n"}
+
+

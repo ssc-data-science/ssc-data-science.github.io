@@ -1,0 +1,797 @@
+WEBVTT
+
+00:00:07.360 --> 00:00:07.790
+JOEL LEWIS: Hi.
+
+00:00:07.790 --> 00:00:09.700
+Welcome back to recitation.
+
+00:00:09.700 --> 00:00:11.720
+You've been learning in lecture
+about matrices and
+
+00:00:11.720 --> 00:00:14.680
+their various applications, and
+one of them is to solving
+
+00:00:14.680 --> 00:00:16.490
+systems of linear equations.
+
+00:00:16.490 --> 00:00:18.370
+So I have here a system
+of three linear
+
+00:00:18.370 --> 00:00:19.690
+equations for you.
+
+00:00:19.690 --> 00:00:26.490
+2x plus cz equals 4, x minus y
+plus 2z equals pi, and x minus
+
+00:00:26.490 --> 00:00:29.730
+2y plus 2z equals minus 12.
+
+00:00:29.730 --> 00:00:31.790
+So what I'd like you to
+do is the following.
+
+00:00:31.790 --> 00:00:35.080
+Find the value of c--
+or all values of c--
+
+00:00:35.080 --> 00:00:38.240
+for which, first of all, there's
+a unique solution to
+
+00:00:38.240 --> 00:00:40.010
+this system.
+
+00:00:40.010 --> 00:00:43.140
+Second of all, for which the
+corresponding homogeneous
+
+00:00:43.140 --> 00:00:44.790
+system has a unique solution.
+
+00:00:44.790 --> 00:00:47.250
+So remember that the
+corresponding homogeneous
+
+00:00:47.250 --> 00:00:50.330
+system is the system where you
+just replace these constants
+
+00:00:50.330 --> 00:00:51.620
+on the right by 0.
+
+00:00:51.620 --> 00:00:53.310
+So it's a very similar-looking
+system.
+
+00:00:53.310 --> 00:00:55.910
+The left-hand sides are all the
+same, but the right-hand
+
+00:00:55.910 --> 00:00:58.170
+sides are replaced with 0.
+
+00:00:58.170 --> 00:01:00.275
+So you want to find the value of
+c for which this system has
+
+00:01:00.275 --> 00:01:02.450
+a unique solution, the value
+of c for which the
+
+00:01:02.450 --> 00:01:05.510
+corresponding homogeneous system
+has a unique solution,
+
+00:01:05.510 --> 00:01:12.020
+and also the values of c for
+which the corresponding
+
+00:01:12.020 --> 00:01:15.310
+homogeneous system has
+infinitely many solutions.
+
+00:01:15.310 --> 00:01:17.960
+Note that I'm not asking you
+to solve this system of
+
+00:01:17.960 --> 00:01:21.790
+equations, although you're
+welcome to do so if you like.
+
+00:01:21.790 --> 00:01:24.430
+Although, of course, whether you
+can or not might depend on
+
+00:01:24.430 --> 00:01:25.850
+the value of c.
+
+00:01:25.850 --> 00:01:30.590
+So why don't you pause the
+video, take a little while to
+
+00:01:30.590 --> 00:01:33.490
+work out the solutions to these
+three questions, come
+
+00:01:33.490 --> 00:01:34.970
+back, and we can work
+it out together.
+
+00:01:43.530 --> 00:01:45.580
+So hopefully you have some
+luck working out these
+
+00:01:45.580 --> 00:01:48.860
+problems. Let's start working
+through them together.
+
+00:01:48.860 --> 00:01:52.590
+So I'm actually going to
+take parts a and b
+
+00:01:52.590 --> 00:01:54.040
+together at the same time.
+
+00:01:54.040 --> 00:01:57.550
+And the reason that I'm going
+to do that is that one thing
+
+00:01:57.550 --> 00:01:58.768
+you've learned is that a system
+has a unique solution
+
+00:01:58.768 --> 00:02:00.018
+for, on the right-hand
+side-- sorry--
+
+00:02:09.730 --> 00:02:10.260
+a system has a unique solution,
+like this, a square
+
+00:02:10.260 --> 00:02:13.670
+system of linear equations has
+a unique solution if and only
+
+00:02:13.670 --> 00:02:15.900
+if it has a unique solution
+regardless of what the
+
+00:02:15.900 --> 00:02:17.070
+right-hand side is.
+
+00:02:17.070 --> 00:02:20.470
+So in particular, the answer to
+a and the answer to b are
+
+00:02:20.470 --> 00:02:21.870
+exactly the same.
+
+00:02:21.870 --> 00:02:25.760
+So values of c for which this
+system has a unique solution
+
+00:02:25.760 --> 00:02:29.480
+are exactly the same as values
+of c for which the homogeneous
+
+00:02:29.480 --> 00:02:30.940
+system has a unique solution.
+
+00:02:30.940 --> 00:02:33.750
+Now the solutions will be
+different, of course.
+
+00:02:33.750 --> 00:02:38.850
+But the value of c--
+or the value of c--
+
+00:02:38.850 --> 00:02:41.410
+that make it solvable uniquely,
+make it solvable
+
+00:02:41.410 --> 00:02:43.660
+uniquely for all right-hand
+sides.
+
+00:02:43.660 --> 00:02:46.210
+And so which values
+of c are those?
+
+00:02:46.210 --> 00:02:49.340
+Well, those are the values of
+c for which the coefficient
+
+00:02:49.340 --> 00:02:52.070
+matrix on the left-hand
+side is invertible.
+
+00:02:52.070 --> 00:02:54.140
+So if the coefficient matrix
+on the left-hand side is
+
+00:02:54.140 --> 00:02:56.970
+invertible, then we can solve
+this system and we get a
+
+00:02:56.970 --> 00:02:58.040
+unique solution.
+
+00:02:58.040 --> 00:03:01.820
+If it's not invertible, then
+either we can't solve this
+
+00:03:01.820 --> 00:03:04.170
+system-- like there
+are no solutions--
+
+00:03:04.170 --> 00:03:06.170
+or we can solve this system,
+but there are
+
+00:03:06.170 --> 00:03:07.780
+infinitely many solutions.
+
+00:03:07.780 --> 00:03:11.890
+So in both questions a and b,
+we're asking for the value of
+
+00:03:11.890 --> 00:03:15.450
+c for which the coefficient
+matrix of the left-hand side
+
+00:03:15.450 --> 00:03:17.960
+is invertible, and that
+will be when we
+
+00:03:17.960 --> 00:03:19.270
+have a unique solution.
+
+00:03:19.270 --> 00:03:22.780
+So how do we know when a
+matrix is invertible?
+
+00:03:22.780 --> 00:03:25.620
+Well, let's write down what the
+matrix is first of all.
+
+00:03:25.620 --> 00:03:28.840
+So this matrix M that we're
+after is equal to the
+
+00:03:28.840 --> 00:03:33.460
+matrix 2, 0, c.
+
+00:03:33.460 --> 00:03:37.940
+1, minus 1, 2.
+
+00:03:37.940 --> 00:03:43.290
+1, minus 2, 2.
+
+00:03:43.290 --> 00:03:47.050
+So this is the coefficient
+matrix M of that system, and
+
+00:03:47.050 --> 00:03:49.650
+we want to know for which values
+of c is it invertible.
+
+00:03:49.650 --> 00:03:52.640
+Well, when is a matrix
+invertible?
+
+00:03:52.640 --> 00:03:54.780
+A matrix is invertible-- square
+matrix is invertible--
+
+00:03:54.780 --> 00:03:58.310
+precisely when it has non-zero
+determinant.
+
+00:03:58.310 --> 00:04:01.610
+So we just need to look at the
+determinant of this matrix.
+
+00:04:01.610 --> 00:04:04.490
+So you've learned how to
+compute determinants of
+
+00:04:04.490 --> 00:04:05.740
+matrices, I think.
+
+00:04:05.740 --> 00:04:11.650
+So let's, in this case, we have
+the det M. So it's a sum
+
+00:04:11.650 --> 00:04:14.490
+or difference of six different
+terms, and you could get it,
+
+00:04:14.490 --> 00:04:17.810
+for example, by the Laplace
+expansion if you wanted to.
+
+00:04:17.810 --> 00:04:20.030
+So I'm just going to write out
+what the six terms are.
+
+00:04:20.030 --> 00:04:28.900
+So it's 2 times minus 1 times
+2, plus 0 times 2 times 1,
+
+00:04:28.900 --> 00:04:40.590
+plus c times 1 times minus 2,
+minus c times minus 1 times 1,
+
+00:04:40.590 --> 00:04:50.900
+minus 2 times minus 2 times 2,
+minus 0 times 1 times 2.
+
+00:04:50.900 --> 00:04:53.530
+So this is the determinant
+of this matrix.
+
+00:04:53.530 --> 00:04:57.380
+You can get it either just by
+remembering which terms are
+
+00:04:57.380 --> 00:04:59.220
+which and which get a plus sign
+and which get a minus
+
+00:04:59.220 --> 00:05:03.250
+sign, or by doing the Laplace
+expansion, or by whatever
+
+00:05:03.250 --> 00:05:05.600
+other tricks you might
+happen to know.
+
+00:05:05.600 --> 00:05:09.100
+So now we need to know whether
+or not this determinant is 0.
+
+00:05:09.100 --> 00:05:12.190
+So let's work out
+what this is.
+
+00:05:12.190 --> 00:05:13.330
+So this is-- let me start
+simplifying it.
+
+00:05:13.330 --> 00:05:19.060
+So this is minus 4
+plus 0 minus 2c--
+
+00:05:19.060 --> 00:05:20.775
+this is minus minus c--
+
+00:05:20.775 --> 00:05:22.560
+so plus c--
+
+00:05:22.560 --> 00:05:25.270
+this is minus minus 8--
+
+00:05:25.270 --> 00:05:29.168
+so plus 8, which is equal
+to 4 minus c.
+
+00:05:29.168 --> 00:05:32.910
+So the determinant-- right, two
+of those terms are 0, and
+
+00:05:32.910 --> 00:05:35.810
+so I just get to
+leave them out.
+
+00:05:35.810 --> 00:05:39.900
+So the determinant of this
+matrix is 4 minus c.
+
+00:05:39.900 --> 00:05:41.940
+And what we're interested
+in is when this
+
+00:05:41.940 --> 00:05:44.820
+determinant is non-zero.
+
+00:05:44.820 --> 00:05:57.510
+So in particular, for c not
+equal to 0-- sorry, for c not
+
+00:05:57.510 --> 00:06:00.560
+equal to 4, when c is not 4--
+
+00:06:00.560 --> 00:06:04.510
+the determinant of M is not 0.
+
+00:06:04.510 --> 00:06:13.120
+So when c is not 4, determinant
+of M is not 0, so
+
+00:06:13.120 --> 00:06:19.050
+both systems-- both the original
+system and the
+
+00:06:19.050 --> 00:06:21.210
+corresponding homogeneous
+system--
+
+00:06:21.210 --> 00:06:33.170
+have a unique solution.
+
+00:06:33.170 --> 00:06:36.110
+So when c is not 4--
+
+00:06:36.110 --> 00:06:38.090
+so for most values of c--
+
+00:06:38.090 --> 00:06:41.140
+the determinant is not
+0, and the system
+
+00:06:41.140 --> 00:06:42.530
+has a unique solution.
+
+00:06:42.530 --> 00:06:45.150
+So when c is equal to
+4, what happens?
+
+00:06:45.150 --> 00:06:48.900
+Well, when c is equal to 4,
+we're in the bottom case.
+
+00:06:48.900 --> 00:06:51.980
+We're in the case where the
+homogeneous system has
+
+00:06:51.980 --> 00:06:53.960
+infinitely many solutions.
+
+00:06:53.960 --> 00:06:54.470
+OK?
+
+00:06:54.470 --> 00:06:58.640
+So let me write that
+over here.
+
+00:06:58.640 --> 00:07:02.670
+When c equals 4--
+
+00:07:02.670 --> 00:07:06.280
+I'm going to abbreviate
+again--
+
+00:07:06.280 --> 00:07:12.810
+the homogeneous system has--
+
+00:07:12.810 --> 00:07:15.140
+I'm going to use this symbol--
+
+00:07:15.140 --> 00:07:18.470
+this sort of sideways eight
+symbol means infinity, so I'm
+
+00:07:18.470 --> 00:07:26.660
+going to use it for infinitely
+many solutions.
+
+00:07:26.660 --> 00:07:29.230
+So when c is 4, the homogeneous
+system has
+
+00:07:29.230 --> 00:07:32.420
+infinitely many solutions.
+
+00:07:32.420 --> 00:07:34.640
+And you might be curious-- well,
+so let me say one more
+
+00:07:34.640 --> 00:07:35.240
+thing about that.
+
+00:07:35.240 --> 00:07:39.820
+We know when the coefficient
+matrix isn't invertible that
+
+00:07:39.820 --> 00:07:42.960
+the system either has 0 or
+infinitely many solutions.
+
+00:07:42.960 --> 00:07:45.160
+But the homogeneous system
+always has a solution.
+
+00:07:45.160 --> 00:07:47.860
+It always has the solution where
+everything is all 0.
+
+00:07:47.860 --> 00:07:48.180
+Right?
+
+00:07:48.180 --> 00:07:51.060
+So that's why we know that it's
+infinitely many here.
+
+00:07:51.060 --> 00:07:54.100
+And one thing you might ask is
+can you find any others?
+
+00:07:54.100 --> 00:08:00.280
+Can you find any solutions
+that aren't just 0, 0, 0?
+
+00:08:00.280 --> 00:08:01.690
+And the answer is yes.
+
+00:08:01.690 --> 00:08:04.680
+So this is now going beyond when
+I asked you to do, but I
+
+00:08:04.680 --> 00:08:06.645
+think it's, you know, an
+interesting thing to see.
+
+00:08:12.670 --> 00:08:15.570
+So if you wanted
+to find another
+
+00:08:15.570 --> 00:08:17.740
+solution, what do you know?
+
+00:08:17.740 --> 00:08:21.840
+Well, let's go back to the
+equations that we had.
+
+00:08:21.840 --> 00:08:24.570
+So when we're dealing with
+a homogeneous system, the
+
+00:08:24.570 --> 00:08:25.850
+right-hand sides are 0.
+
+00:08:25.850 --> 00:08:27.850
+So I'm just going to cross out
+these right-hand sides and
+
+00:08:27.850 --> 00:08:30.280
+replace them with 0 so we
+don't get confused.
+
+00:08:30.280 --> 00:08:34.950
+So this is 0, 0, and 0.
+
+00:08:34.950 --> 00:08:39.600
+So we're dealing with this
+system: 2x plus cz equals 0, x
+
+00:08:39.600 --> 00:08:45.140
+minus y plus 2z equals 0, and
+x minus 2y plus 2z equals 0.
+
+00:08:45.140 --> 00:08:46.460
+OK, so if you want
+a solution--
+
+00:08:46.460 --> 00:08:48.550
+x, y, z--
+
+00:08:48.550 --> 00:08:50.380
+to this system, what
+do you know?
+
+00:08:50.380 --> 00:08:53.300
+Well, from the second equation,
+you know that the
+
+00:08:53.300 --> 00:08:59.650
+vector xyz is orthogonal to
+the vector 1, minus 1, 2.
+
+00:08:59.650 --> 00:09:00.540
+How do you know that?
+
+00:09:00.540 --> 00:09:04.960
+Because this left-hand side, x
+minus y plus 2z, is equal to
+
+00:09:04.960 --> 00:09:10.350
+xyz dot 1, minus 1, 2.
+
+00:09:10.350 --> 00:09:12.960
+And similarly from the third
+equation, you know that the
+
+00:09:12.960 --> 00:09:18.310
+vector xyz is orthogonal to
+the vector 1, minus 2, 2,
+
+00:09:18.310 --> 00:09:21.940
+because this left-hand
+side is equal to xyz
+
+00:09:21.940 --> 00:09:25.160
+dot 1, minus 2, 2.
+
+00:09:25.160 --> 00:09:26.040
+Yeah?
+
+00:09:26.040 --> 00:09:27.700
+And that's equal to 0.
+
+00:09:27.700 --> 00:09:30.680
+So from the second and third
+equations, you know that
+
+00:09:30.680 --> 00:09:35.720
+you're looking for a vector
+that's orthogonal to both x--
+
+00:09:35.720 --> 00:09:40.070
+or sorry-- both 1, minus 1,
+2, and 1, minus 2, 2.
+
+00:09:40.070 --> 00:09:41.580
+How do you get a vector
+perpendicular
+
+00:09:41.580 --> 00:09:42.840
+to two known vectors?
+
+00:09:42.840 --> 00:09:44.510
+Well, you just take their
+cross product.
+
+00:09:44.510 --> 00:09:46.110
+So let's go back over here.
+
+00:09:46.110 --> 00:10:05.910
+So to find one, you take a cross
+product of two rows of
+
+00:10:05.910 --> 00:10:07.380
+the coefficient matrix.
+
+00:10:07.380 --> 00:10:10.310
+So in this case, for example,
+we can take these rows 1,
+
+00:10:10.310 --> 00:10:13.210
+minus 1, 2, and 1, minus 2, 2.
+
+00:10:13.210 --> 00:10:18.135
+So, for example, the vector
+1, minus 1, 2--
+
+00:10:18.135 --> 00:10:18.750
+OK--
+
+00:10:18.750 --> 00:10:24.750
+cross the vector
+1, minus 2, 2.
+
+00:10:24.750 --> 00:10:26.715
+Now I've kind of run out of
+board space, so I'm not going
+
+00:10:26.715 --> 00:10:29.260
+to work out precisely what
+this vector is for you.
+
+00:10:29.260 --> 00:10:32.090
+But if you like, you can
+certainly check.
+
+00:10:32.090 --> 00:10:34.480
+You can compute this cross
+product out with our nice
+
+00:10:34.480 --> 00:10:35.850
+formula for the cross product.
+
+00:10:35.850 --> 00:10:38.670
+It will give you some vector,
+and then you can check that
+
+00:10:38.670 --> 00:10:41.230
+that vector is indeed
+a solution of
+
+00:10:41.230 --> 00:10:42.640
+the homogeneous system.
+
+00:10:42.640 --> 00:10:45.330
+So that will give us a
+second solution of
+
+00:10:45.330 --> 00:10:46.200
+the homogeneous system.
+
+00:10:46.200 --> 00:10:50.140
+Nontrivial we say, because it's
+not just the 0 solution.
+
+00:10:50.140 --> 00:10:54.090
+So to quickly recap, we had a
+system of linear equations.
+
+00:10:54.090 --> 00:10:57.380
+I've now crossed out what the
+original right-hand side was.
+
+00:10:57.380 --> 00:10:59.870
+We had a system of linear
+equations, and we were looking
+
+00:10:59.870 --> 00:11:03.910
+for a choice of c for which
+that system had a unique
+
+00:11:03.910 --> 00:11:06.700
+solution and for which the
+corresponding homogeneous
+
+00:11:06.700 --> 00:11:08.340
+system had a unique solution.
+
+00:11:08.340 --> 00:11:11.600
+And the values of c that make
+that work are precisely the
+
+00:11:11.600 --> 00:11:15.660
+values of c such that the
+coefficient matrix has a
+
+00:11:15.660 --> 00:11:17.030
+non-zero determinant.
+
+00:11:17.030 --> 00:11:18.975
+So that's true for both
+parts a and b.
+
+00:11:18.975 --> 00:11:22.920
+And for part c, when we were
+looking for what values of c
+
+00:11:22.920 --> 00:11:27.700
+give the homogeneous system
+infinitely many solutions, the
+
+00:11:27.700 --> 00:11:30.150
+answer is any other
+value of c.
+
+00:11:30.150 --> 00:11:35.110
+Any value of c for which the
+coefficient matrix does have 0
+
+00:11:35.110 --> 00:11:37.772
+determinant will give you
+infinitely many solutions in
+
+00:11:37.772 --> 00:11:40.660
+the homogeneous case, and in
+non-homogeneous cases will
+
+00:11:40.660 --> 00:11:44.630
+either give you 0 solutions or
+infinitely many solutions.
+
+00:11:44.630 --> 00:11:47.760
+And then we also at the end, we
+briefly discussed one way
+
+00:11:47.760 --> 00:11:55.440
+to find nontrivial solutions in
+the homogeneous case when
+
+00:11:55.440 --> 00:11:57.180
+there are infinitely
+many solutions.
+
+00:11:57.180 --> 00:11:58.990
+So I'll end there.

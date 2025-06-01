@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Notes on MIT OpenCourseWare</title>
+    <link>/resources/lecture-notes/</link>
+    <description>Recent content in Lecture Notes on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/lecture-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Session 1: Vectors</title>
+      <link>/resources/mit18_02sc_notes_0/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_0/data.json</guid>
+      <description>&lt;p&gt;Lecture notes on the geometric and algebraic view of vectors, notation and terminology, vector algebra using coordinates, vectors in three dimensions, and unit vectors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 13: Linear Systems and Planes</title>
+      <link>/resources/mit18_02sc_notes_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_7/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to geometry of linear systems of equations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 14: Solutions to Square Systems</title>
+      <link>/resources/mit18_02sc_mnotes_m3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_m3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to homogeneous and inhomogeneous systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 18: Point (Cusp) on Cycloid</title>
+      <link>/resources/mit18_02sc_notes_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_10/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to cusp on the cycloid.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 20: Velocity and Arc Length</title>
+      <link>/resources/mit18_02sc_notes_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_12/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to velocity, speed and arc length.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 21: Kepler&#39;s Second Law</title>
+      <link>/resources/mit18_02sc_mnotes_k/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_k/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to kepler’s second law.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 24: Functions of Two Variables: Graphs</title>
+      <link>/resources/mit18_02sc_notes_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_13/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to functions of two variables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 24: Functions of Two Variables: Graphs</title>
+      <link>/resources/mit18_02sc_notes_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_14/data.json</guid>
+      <description>&lt;p&gt;This resource contains a gallery of graphs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 26: Partial Derivatives</title>
+      <link>/resources/mit18_02sc_mnotes_ta1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_ta1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to partial derivatives.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares</title>
+      <link>/resources/mit18_02sc_mnotes_ls/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_ls/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to least-squares interpolation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test</title>
+      <link>/resources/mit18_02sc_mnotes_sd/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_sd/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to second derivative test.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 36: Proof</title>
+      <link>/resources/mit18_02sc_notes_19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_19/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to gradient: proof that it is perpendicular to level curves and surfaces.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 40: Proof of Lagrange Multipliers</title>
+      <link>/resources/mit18_02sc_notes_22/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_22/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to proof of Lagrange&amp;rsquo;s multipliers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 48: Limits in Rectangular Coordinates</title>
+      <link>/resources/mit18_02sc_mnotes_i1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_i1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to rectangular coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 54: Example: Polar Coordinates</title>
+      <link>/resources/mit18_02sc_mnotes_cv2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_cv2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to changing variables in multiple integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 58: Geometric Approach</title>
+      <link>/resources/mit18_02sc_notes_28/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_28/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to line integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 6: Volumes and Determinants in Space</title>
+      <link>/resources/mit18_02sc_mnotes_d2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_d2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to area and volume.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 60 Example: Fundamental Theorem for Line Integrals</title>
+      <link>/resources/mit18_02sc_notes_29/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_29/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to fundamental theorem for line integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 64: Curl</title>
+      <link>/resources/mit18_02sc_notes_33/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_33/data.json</guid>
+      <description>&lt;p&gt;This resource contains the notes related to two dimensional curl.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem</title>
+      <link>/resources/mit18_02sc_notes_30/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_30/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to green&amp;rsquo;s theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 66: Curl(F) = 0 Implies Conservative</title>
+      <link>/resources/mit18_02sc_notes_31/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_31/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to green&amp;rsquo;s theorem and conversation fields.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 67: Green&#39;s Theorem: Sketch of Proof</title>
+      <link>/resources/mit18_02sc_notes_67/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_67/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding sketch of proof.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 70 Example: Normal Form of Green&#39;s Theorem</title>
+      <link>/resources/mit18_02sc_mnotes_v4-1to2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v4-1to2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to green’s theorem for flux.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 72: Simply Connected Regions and Conservative Fields</title>
+      <link>/resources/mit18_02sc_mnotes_v5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v5/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to extended green’s theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 74: Triple Integrals: Rectangular and Cylindrical Coordinates</title>
+      <link>/resources/mit18_02sc_mnotes_i3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_i3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to Triple integrals in rectangular and cylindrical coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 76: Spherical Coordinates</title>
+      <link>/resources/mit18_02sc_notes_32/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_notes_32/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to limits in spherical coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 77: Triple Integrals in Spherical Coordinates</title>
+      <link>/resources/mit18_02sc_mnotes_cv4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_cv4/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to changing coordinates in triple integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 80: Flux Through a Surface</title>
+      <link>/resources/mit18_02sc_mnotes_v9-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v9-1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to surface integrals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 86: Proof of the Divergence Theorem</title>
+      <link>/resources/mit18_02sc_mnotes_v10-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v10-2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to proof of the divergence theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 87: Diffusion Equation</title>
+      <link>/resources/mit18_02sc_mnotes_p-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_p-1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to partial differential equations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 90: Curl in 3D</title>
+      <link>/resources/mit18_02sc_mnotes_v15-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v15-1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to del operator.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 92: Proof of Stokes&#39; Theorem</title>
+      <link>/resources/mit18_02sc_mnotes_v13-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v13-3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to proof of stokes’ theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions; Topology</title>
+      <link>/resources/mit18_02sc_mnotes_v14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v14/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to criterion for a gradient field.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Session 98: Maxwell&#39;s Equations</title>
+      <link>/resources/mit18_02sc_mnotes_v15-2to3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_mnotes_v15-2to3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to relation to physics.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

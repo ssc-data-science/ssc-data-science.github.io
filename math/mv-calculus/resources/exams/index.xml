@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exams on MIT OpenCourseWare</title>
+    <link>/resources/exams/</link>
+    <description>Recent content in Exams on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/exams/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exam 1</title>
+      <link>/resources/mit18_02sc_exam1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_exam1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to volkswagen bug.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exam 1 Practice</title>
+      <link>/resources/mit18_02sc_prac1a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_prac1a/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to parametric equations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exam 2</title>
+      <link>/resources/mit18_02sc_exam2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_exam2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to contour plot.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exam 2A Practice</title>
+      <link>/resources/mit18_02sc_prac2a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_prac2a/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to topographical map.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exam 3</title>
+      <link>/resources/mit18_02sc_exam3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_exam3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to integration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exam 3 Practice</title>
+      <link>/resources/mit18_02sc_prac3a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_prac3a/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to limits of integration, 18.02 Practice Exam 3A&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exam 4</title>
+      <link>/resources/mit18_02sc_exam4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_exam4/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to spherical coordinates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exam 4 Practice</title>
+      <link>/resources/mit18_02sc_prac4a/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_prac4a/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to vector field.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Final Exam</title>
+      <link>/resources/mit18_02sc_finalexam/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_finalexam/data.json</guid>
+      <description>&lt;p&gt;Final exam on multivariable calculus.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Final Exam Practice</title>
+      <link>/resources/mit18_02sc_pracfinal/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_02sc_pracfinal/data.json</guid>
+      <description>&lt;p&gt;This resource contains information related to vectore methods.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

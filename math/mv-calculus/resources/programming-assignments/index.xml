@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming Assignments on MIT OpenCourseWare</title>
+    <link>/resources/programming-assignments/</link>
+    <description>Recent content in Programming Assignments on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/programming-assignments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>functionsTwoVariables.jar</title>
+      <link>/resources/functionstwovariables-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/functionstwovariables-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>go.jar</title>
+      <link>/resources/go-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/go-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>goText.jar</title>
+      <link>/resources/gotext-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/gotext-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>jcbwt363.jar</title>
+      <link>/resources/jcbwt363-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/jcbwt363-3/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>lagrangeMultipliersTwoVariables.jar</title>
+      <link>/resources/lagrangemultiplierstwovariables/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lagrangemultiplierstwovariables/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>mk_lib.jar</title>
+      <link>/resources/mk_lib-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mk_lib-4/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>parser_math.jar</title>
+      <link>/resources/parser_math-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/parser_math-1/data.json</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

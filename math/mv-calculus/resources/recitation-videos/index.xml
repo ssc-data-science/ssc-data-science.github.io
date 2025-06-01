@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recitation Videos on MIT OpenCourseWare</title>
+    <link>/resources/recitation-videos/</link>
+    <description>Recent content in Recitation Videos on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/recitation-videos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recitation Introduction</title>
+      <link>/resources/recitation-introduction/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/recitation-introduction/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 1: Coordinate Free Proofs: Centroid of a Triangle</title>
+      <link>/resources/coordinate-free-proofs-centroid-of-a-triangle/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/coordinate-free-proofs-centroid-of-a-triangle/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 11: Solve a Linear System Using Matrices</title>
+      <link>/resources/solve-a-linear-system-using-matrices/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/solve-a-linear-system-using-matrices/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 12: Distance of a Point to a Plane</title>
+      <link>/resources/distance-of-a-point-to-a-plane/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/distance-of-a-point-to-a-plane/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 12: Equations of Planes</title>
+      <link>/resources/equations-of-planes/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/equations-of-planes/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 14: Systems of Linear Equations</title>
+      <link>/resources/systems-of-linear-equations/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/systems-of-linear-equations/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 15: Parametrized Lines and Intersections</title>
+      <link>/resources/parametrized-lines-and-intersections/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/parametrized-lines-and-intersections/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 16: Parametric Line Intersecting a Plane</title>
+      <link>/resources/parametric-line-intersecting-a-plane/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/parametric-line-intersecting-a-plane/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 19: Differentiating a Vector Valued Function</title>
+      <link>/resources/differentiating-a-vector-valued-function/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/differentiating-a-vector-valued-function/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 20: Parametric Curves: Velocity, Acceleration, Length</title>
+      <link>/resources/parametric-curves-velocity-acceleration-length/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/parametric-curves-velocity-acceleration-length/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 24: Graphing Surfaces</title>
+      <link>/resources/graphing-surfaces/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/graphing-surfaces/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 25: Level Curves</title>
+      <link>/resources/level-curves/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/level-curves/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 25: Level Curves and Critical Points</title>
+      <link>/resources/level-curves-and-critical-points/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/level-curves-and-critical-points/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 26: Partial Derivatives</title>
+      <link>/resources/partial-derivatives/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/partial-derivatives/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 27: Tangent Plane Approximation</title>
+      <link>/resources/tangent-plane-approximation/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/tangent-plane-approximation/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 29: Least Squares</title>
+      <link>/resources/least-squares/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/least-squares/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 3: Dot Products and Angles</title>
+      <link>/resources/dot-products-and-angles/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/dot-products-and-angles/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 30: Second Derivative Test</title>
+      <link>/resources/second-derivative-test/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/second-derivative-test/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 31: Max/Min</title>
+      <link>/resources/max-min/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/max-min/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 34: Total Differentials and the Chain Rule</title>
+      <link>/resources/total-differentials-and-the-chain-rule/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/total-differentials-and-the-chain-rule/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 37: Tangent Planes</title>
+      <link>/resources/tangent-planes/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/tangent-planes/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 38: Gradient and Directional Derivative</title>
+      <link>/resources/gradient-and-directional-derivative/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/gradient-and-directional-derivative/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 39: Lagrange Multipliers</title>
+      <link>/resources/lagrange-multipliers/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lagrange-multipliers/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 4: Components of a Vector</title>
+      <link>/resources/components-of-a-vector/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/components-of-a-vector/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 41: Lagrange Multipliers (3 Variables)</title>
+      <link>/resources/lagrange-multipliers-3-variables/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/lagrange-multipliers-3-variables/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 43: The Chain Rule with Constraints</title>
+      <link>/resources/the-chain-rule-with-constraints/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/the-chain-rule-with-constraints/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 44: Gradients - Composition</title>
+      <link>/resources/gradients-composition/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/gradients-composition/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 48: Regions of Integration</title>
+      <link>/resources/regions-of-integration/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/regions-of-integration/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 49: Changing the Order of Integration</title>
+      <link>/resources/changing-the-order-of-integration/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/changing-the-order-of-integration/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 5: Area of a Parallelogram</title>
+      <link>/resources/area-of-a-parallelogram/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/area-of-a-parallelogram/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 50: Integration in Polar Coordinates</title>
+      <link>/resources/integration-in-polar-coordinates/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/integration-in-polar-coordinates/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 52: Integrals with Density</title>
+      <link>/resources/integrals-with-density/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/integrals-with-density/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 53: Change of Variables</title>
+      <link>/resources/change-of-variables/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/change-of-variables/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 54: Integral of exp(-x&lt;sup&gt;2&lt;/sup&gt;)</title>
+      <link>/resources/integral-of-exp-x-sup-2-sup/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/integral-of-exp-x-sup-2-sup/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 55: Change of Variables</title>
+      <link>/resources/change-of-variables-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/change-of-variables-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 57 Line Integrals: Parametrization Independence</title>
+      <link>/resources/line-integrals-parametrization-independence/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/line-integrals-parametrization-independence/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 58 Line Integrals: Path Dependence</title>
+      <link>/resources/line-integrals-path-dependence/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/line-integrals-path-dependence/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 58: Line Integrals by Geometric Reasoning</title>
+      <link>/resources/line-integrals-by-geometric-reasoning/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/line-integrals-by-geometric-reasoning/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 6: Determinants</title>
+      <link>/resources/determinants/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/determinants/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 6: Volume of a Parallelepiped</title>
+      <link>/resources/volume-of-a-parallelepiped/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/volume-of-a-parallelepiped/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 60: Fundamental Theorem of Line Integrals</title>
+      <link>/resources/fundamental-theorem-of-line-integrals/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/fundamental-theorem-of-line-integrals/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 63: Potentials of Gradient Fields</title>
+      <link>/resources/potentials-of-gradient-fields/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/potentials-of-gradient-fields/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 65: Green&#39;s Theorem: An Off Center Circle</title>
+      <link>/resources/greens-theorem-an-off-center-circle/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/greens-theorem-an-off-center-circle/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 68 Green&#39;s Theorem: Area Under an Arch</title>
+      <link>/resources/greens-theorem-area-under-an-arch/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/greens-theorem-area-under-an-arch/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 68: Application of Green&#39;s Theorem</title>
+      <link>/resources/application-of-greens-theorem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/application-of-greens-theorem/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 69: Flux Across a Curve</title>
+      <link>/resources/flux-across-a-curve/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/flux-across-a-curve/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 7: Area Using Cross Product</title>
+      <link>/resources/area-using-cross-product/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/area-using-cross-product/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 70: Green&#39;s Theorem in Normal Form</title>
+      <link>/resources/greens-theorem-in-normal-form/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/greens-theorem-in-normal-form/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 71: Extended Green&#39;s Theorem</title>
+      <link>/resources/extended-greens-theorem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/extended-greens-theorem/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 72: Domains of Vector Fields</title>
+      <link>/resources/domains-of-vector-fields/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/domains-of-vector-fields/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 74: Volume in Cylindrical Coordinates</title>
+      <link>/resources/volume-in-cylindrical-coordinates/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/volume-in-cylindrical-coordinates/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Average Height</title>
+      <link>/resources/average-height/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/average-height/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 75: Moment of Inertia of a Cylinder</title>
+      <link>/resources/moment-of-inertia-of-a-cylinder/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/moment-of-inertia-of-a-cylinder/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 77: Average Distance on a Sphere</title>
+      <link>/resources/average-distance-on-a-sphere/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/average-distance-on-a-sphere/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 78: Gravity and a Half-Sphere</title>
+      <link>/resources/gravity-and-a-half-sphere/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/gravity-and-a-half-sphere/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 80: Flux Through Easy Surfaces</title>
+      <link>/resources/flux-through-easy-surfaces/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/flux-through-easy-surfaces/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Flux Through a Square</title>
+      <link>/resources/flux-through-a-square-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/flux-through-a-square-1/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 81: Flux Through Surfaces</title>
+      <link>/resources/flux-through-a-square/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/flux-through-a-square/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 84: Extended Gauss&#39; Theorem</title>
+      <link>/resources/extended-gauss-theorem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/extended-gauss-theorem/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 84: Flux</title>
+      <link>/resources/flux/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/flux/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 84: Flux and the Divergence Theorem</title>
+      <link>/resources/flux-and-the-divergence-theorem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/flux-and-the-divergence-theorem/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 85: Del and the Product Rule</title>
+      <link>/resources/del-and-the-product-rule/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/del-and-the-product-rule/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 88: Line Integral on a Helix</title>
+      <link>/resources/line-integral-on-a-helix/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/line-integral-on-a-helix/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 9: Matrix Multiplication Practice</title>
+      <link>/resources/matrix-multiplication-practice/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/matrix-multiplication-practice/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 90: Conservative Fields and Exact Differentials</title>
+      <link>/resources/conservative-fields-and-exact-differentials/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/conservative-fields-and-exact-differentials/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 91: Stokes&#39; Theorem</title>
+      <link>/resources/stokes-theorem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/stokes-theorem/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 93: Extended Stokes&#39; Theorem</title>
+      <link>/resources/extended-stokes-theorem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/extended-stokes-theorem/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 94: More Stokes&#39; Theorem</title>
+      <link>/resources/more-stokes-theorem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/more-stokes-theorem/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 94: Simply Connected Regions</title>
+      <link>/resources/simply-connected-regions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/simply-connected-regions/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session 95: Consequences of Stokes&#39; Theorem</title>
+      <link>/resources/consequences-of-stokes-theorem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/consequences-of-stokes-theorem/data.json</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

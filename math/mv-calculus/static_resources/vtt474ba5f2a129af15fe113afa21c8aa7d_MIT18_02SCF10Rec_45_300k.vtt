@@ -1,0 +1,555 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:09.230
+CHRISTINE BREINER: Welcome
+back to recitation.
+
+00:00:09.230 --> 00:00:12.350
+In this video I would like us
+to use Green's theorem to
+
+00:00:12.350 --> 00:00:16.060
+compute the following integral
+where it's the integral over
+
+00:00:16.060 --> 00:00:19.140
+the curve c, where c is
+the circle drawn here.
+
+00:00:19.140 --> 00:00:24.020
+So the circle is oriented so
+the interior is on the left
+
+00:00:24.020 --> 00:00:28.320
+and it's centered at the point
+where x equals a, y equals 0.
+
+00:00:28.320 --> 00:00:29.680
+So the integral--
+
+00:00:29.680 --> 00:00:32.220
+you can read it but I will read
+it also for you-- it's
+
+00:00:32.220 --> 00:00:35.800
+the integral of 3x squared y
+squared dx plus 2x squared
+
+00:00:35.800 --> 00:00:38.350
+times the quantity
+1 plus xy dy.
+
+00:00:38.350 --> 00:00:39.730
+So you are supposed
+to use Green's
+
+00:00:39.730 --> 00:00:41.180
+theorem to compute that.
+
+00:00:41.180 --> 00:00:43.830
+And why don't you pause the
+video, give it a shot, and
+
+00:00:43.830 --> 00:00:45.940
+then when you're ready to see my
+solution you can bring the
+
+00:00:45.940 --> 00:00:47.190
+video back up.
+
+00:00:56.000 --> 00:00:57.040
+OK, welcome back.
+
+00:00:57.040 --> 00:01:00.140
+Well, what we're going to do,
+obviously to use Green's
+
+00:01:00.140 --> 00:01:03.150
+theorem to compute this--
+because I gave you a big hint
+
+00:01:03.150 --> 00:01:05.160
+that you're supposed to use
+Green's theorem because we
+
+00:01:05.160 --> 00:01:07.990
+have an integral over
+a closed curve.
+
+00:01:07.990 --> 00:01:10.940
+And what we're going to do is
+now take the integral of
+
+00:01:10.940 --> 00:01:13.850
+another certain integrand--
+
+00:01:13.850 --> 00:01:15.800
+obviously related in
+some way to this--
+
+00:01:15.800 --> 00:01:19.000
+over the region that
+I will shade here.
+
+00:01:19.000 --> 00:01:21.400
+So we're interested in this
+shaded region now.
+
+00:01:21.400 --> 00:01:24.260
+So let me write down what
+Green's theorem is and then
+
+00:01:24.260 --> 00:01:25.450
+we'll put in the important
+parts.
+
+00:01:25.450 --> 00:01:29.050
+OK, so just to remind you, I'm
+not going to write down all
+
+00:01:29.050 --> 00:01:31.770
+the hypotheses of Green's
+theorem that we need, but the
+
+00:01:31.770 --> 00:01:34.500
+point that I want to make is
+that if we start the integral
+
+00:01:34.500 --> 00:01:42.980
+over this closed curve c of
+mdx plus ndy we can also
+
+00:01:42.980 --> 00:01:48.770
+integrate over the region that
+C encloses of N sub x minus M
+
+00:01:48.770 --> 00:01:51.660
+sub y dy dx.
+
+00:01:55.530 --> 00:01:58.500
+So that is ultimately what
+we're going to do.
+
+00:01:58.500 --> 00:02:02.500
+And so in this case again, as
+always, m is going to be the
+
+00:02:02.500 --> 00:02:04.470
+function associated with
+the dx portion.
+
+00:02:04.470 --> 00:02:08.270
+It's the ice component
+of the vector field.
+
+00:02:08.270 --> 00:02:10.830
+And n is going to be the
+function associated
+
+00:02:10.830 --> 00:02:12.880
+here with the dy.
+
+00:02:12.880 --> 00:02:14.830
+That's standard obviously.
+
+00:02:14.830 --> 00:02:17.390
+So now what we want to do is
+transform what we have there
+
+00:02:17.390 --> 00:02:18.500
+into something that
+looks like this.
+
+00:02:18.500 --> 00:02:19.600
+So the region--
+
+00:02:19.600 --> 00:02:22.030
+I'm just going to keep calling
+it R for the moment--
+
+00:02:22.030 --> 00:02:24.850
+but the region R you'll notice
+is the thing that I shaded in
+
+00:02:24.850 --> 00:02:25.790
+the drawing.
+
+00:02:25.790 --> 00:02:27.930
+And so now let's compute
+what this is--
+
+00:02:27.930 --> 00:02:30.110
+well you have the capacity
+to do that.
+
+00:02:30.110 --> 00:02:33.090
+That's just some straight
+taking derivative.
+
+00:02:33.090 --> 00:02:38.620
+So I'm just going to write down
+what it is and not show
+
+00:02:38.620 --> 00:02:39.760
+you all the individual pieces.
+
+00:02:39.760 --> 00:02:42.100
+So I'll just write down what
+you get and then the
+
+00:02:42.100 --> 00:02:43.060
+simplified version.
+
+00:02:43.060 --> 00:02:48.120
+So you get 6x squared y
+plus 4x is N sub x.
+
+00:02:48.120 --> 00:02:52.080
+And then M sub y is negative
+6x squared y.
+
+00:02:54.790 --> 00:02:57.160
+And I'm going to call dy dx, I'm
+just going to refer to it
+
+00:02:57.160 --> 00:02:59.510
+now as dA, because that makes
+it a lot easier to write.
+
+00:02:59.510 --> 00:03:01.210
+Oh, I guess I should
+call this--
+
+00:03:01.210 --> 00:03:02.735
+well, dA, this is the area.
+
+00:03:05.370 --> 00:03:06.460
+The volume form there.
+
+00:03:06.460 --> 00:03:13.650
+So this simplifies and I just
+get the integral of 4x over
+
+00:03:13.650 --> 00:03:15.590
+this region dA.
+
+00:03:18.100 --> 00:03:20.660
+Now this-- you saw an example
+of this in lecture of how to
+
+00:03:20.660 --> 00:03:23.110
+deal with these types of
+problems. At this point, if I
+
+00:03:23.110 --> 00:03:27.630
+really wanted to I could figure
+out what the bounds are
+
+00:03:27.630 --> 00:03:32.000
+in that region in terms of x and
+y, and I could do a lot of
+
+00:03:32.000 --> 00:03:34.020
+work and integrate it
+all, or I could
+
+00:03:34.020 --> 00:03:36.380
+remember one simple fact.
+
+00:03:36.380 --> 00:03:39.450
+Which is that if I have--
+
+00:03:39.450 --> 00:03:44.140
+I think you see it in class as
+x bar-- the center of mass
+
+00:03:44.140 --> 00:03:52.720
+should be equal to 1 over the
+volume of the region times the
+
+00:03:52.720 --> 00:03:58.100
+integral of x dA over
+the region.
+
+00:03:58.100 --> 00:03:58.720
+That's what we know.
+
+00:03:58.720 --> 00:04:01.350
+This should be-- this maybe
+doesn't look like a v. But so
+
+00:04:01.350 --> 00:04:03.330
+in this case volume
+is area, isn't it?
+
+00:04:03.330 --> 00:04:05.720
+Maybe I should write area, that
+might make you nervous.
+
+00:04:05.720 --> 00:04:08.330
+So if I take the area--
+
+00:04:08.330 --> 00:04:11.310
+I could just say A of R-- if
+I take the area, 1 over the
+
+00:04:11.310 --> 00:04:16.200
+area, and then I multiply by the
+integral of x over R with
+
+00:04:16.200 --> 00:04:21.040
+dy dx with respect to dA, then
+I get the center of mass.
+
+00:04:21.040 --> 00:04:23.400
+Well, let's look at what in
+this picture-- what is the
+
+00:04:23.400 --> 00:04:25.380
+center of mass here?
+
+00:04:25.380 --> 00:04:29.950
+If I want to balance this thing
+on a pencil tip, if I
+
+00:04:29.950 --> 00:04:32.390
+want to balance this disc--
+assuming the density is
+
+00:04:32.390 --> 00:04:34.110
+everywhere the same on a pencil
+tip-- where am I going
+
+00:04:34.110 --> 00:04:34.660
+to put the pencil?
+
+00:04:34.660 --> 00:04:36.520
+I'm going to put it right
+at the center.
+
+00:04:36.520 --> 00:04:39.330
+The x value there is a, the
+y value there is 0.
+
+00:04:39.330 --> 00:04:41.970
+So if I had the y center of
+mass, I would want 0.
+
+00:04:41.970 --> 00:04:45.750
+But I want the x center
+of mass, so I want a.
+
+00:04:45.750 --> 00:04:48.110
+This x bar is actually
+equal to, from the
+
+00:04:48.110 --> 00:04:50.720
+picture, is equal to a.
+
+00:04:50.720 --> 00:04:52.380
+And now let's notice
+what I've done.
+
+00:04:52.380 --> 00:04:54.060
+I have taken--
+
+00:04:54.060 --> 00:04:57.290
+I had this quantity here--
+
+00:04:57.290 --> 00:04:59.780
+I've taken this quantity except
+for the 4 and I have a
+
+00:04:59.780 --> 00:05:02.850
+way of writing explicitly what
+this quantity is without
+
+00:05:02.850 --> 00:05:05.240
+actually doing any of
+the integration.
+
+00:05:05.240 --> 00:05:08.300
+I haven't done any sophisticated
+things at this
+
+00:05:08.300 --> 00:05:11.030
+point except know what the
+center of mass is.
+
+00:05:11.030 --> 00:05:14.310
+So also what is the area
+of the region?
+
+00:05:14.310 --> 00:05:16.320
+I'm going to need that.
+
+00:05:16.320 --> 00:05:20.730
+The area of the region-- it's
+a circle of radius a.
+
+00:05:20.730 --> 00:05:24.840
+So the area is pi a squared.
+
+00:05:24.840 --> 00:05:27.810
+So this quantity is
+pi a squared.
+
+00:05:27.810 --> 00:05:32.870
+And all this together tells me
+that the integral of x over R
+
+00:05:32.870 --> 00:05:38.690
+dA, if I solve for this part,
+I get a times pi a squared.
+
+00:05:38.690 --> 00:05:41.650
+So I get pi a cubed.
+
+00:05:41.650 --> 00:05:45.000
+And that only differs from
+our answer by one thing.
+
+00:05:45.000 --> 00:05:46.750
+There's a scalar--
+
+00:05:46.750 --> 00:05:49.270
+you multiply by 4 and that
+gives us what we want.
+
+00:05:49.270 --> 00:05:50.350
+I said differs from
+our answer.
+
+00:05:50.350 --> 00:05:52.510
+Differs from what we
+want by one thing.
+
+00:05:52.510 --> 00:05:55.710
+We just multiplied by 4 there,
+so we multiply by 4 here.
+
+00:05:55.710 --> 00:05:57.720
+So in fact--
+
+00:05:57.720 --> 00:05:59.680
+maybe there looks like there
+was a little magic here, so
+
+00:05:59.680 --> 00:06:03.740
+let me point out some of the
+key points at the end.
+
+00:06:03.740 --> 00:06:07.450
+I started off knowing I was
+trying to integrate 4x over
+
+00:06:07.450 --> 00:06:12.710
+the region R. And R in this case
+was a circle centered at
+
+00:06:12.710 --> 00:06:15.520
+(a, 0) and of radius a.
+
+00:06:15.520 --> 00:06:18.640
+And then I said, well,
+I don't want to do a
+
+00:06:18.640 --> 00:06:19.460
+lot of work for this.
+
+00:06:19.460 --> 00:06:22.170
+So I'm going to not cheat, but
+I'm going to use my knowledge
+
+00:06:22.170 --> 00:06:24.940
+of the center of mass
+to make this easier.
+
+00:06:24.940 --> 00:06:27.420
+So the center of mass is equal
+to 1 divided by the area of
+
+00:06:27.420 --> 00:06:32.140
+the region times the integral
+of x over the region.
+
+00:06:32.140 --> 00:06:35.190
+So I want to find the integral
+of x over the region, I just
+
+00:06:35.190 --> 00:06:37.550
+solve for the integral
+of x over the region.
+
+00:06:37.550 --> 00:06:39.450
+I just solve for that part.
+
+00:06:39.450 --> 00:06:42.220
+The center of mass-- from just
+looking at the picture and
+
+00:06:42.220 --> 00:06:43.920
+understanding what the center of
+mass means-- the center of
+
+00:06:43.920 --> 00:06:46.480
+mass in the x component is a.
+
+00:06:46.480 --> 00:06:49.100
+The area is pi a squared.
+
+00:06:49.100 --> 00:06:52.740
+So I end up with a pi a
+cubed when I solve for
+
+00:06:52.740 --> 00:06:54.860
+the integral of x.
+
+00:06:54.860 --> 00:06:58.260
+And then because I wanted the
+integral of 4x, I just
+
+00:06:58.260 --> 00:06:59.930
+multiply by 4.
+
+00:06:59.930 --> 00:07:05.000
+And so the final answer is
+actually 4 pi a cubed.
+
+00:07:05.000 --> 00:07:08.790
+So what I was trying to find,
+if you remember, was I was
+
+00:07:08.790 --> 00:07:13.710
+trying to find the value when
+I integrated over this curve
+
+00:07:13.710 --> 00:07:15.980
+of a certain vector field.
+
+00:07:15.980 --> 00:07:18.710
+And that one was going
+to be a little messy
+
+00:07:18.710 --> 00:07:19.750
+to do it that way.
+
+00:07:19.750 --> 00:07:22.270
+But Green's theorem, actually
+there's a lot of cancellation
+
+00:07:22.270 --> 00:07:24.370
+which makes it much easier, and
+then the center of mass is
+
+00:07:24.370 --> 00:07:26.580
+a nice little trick
+to use at the end.
+
+00:07:26.580 --> 00:07:29.070
+And then the calculation
+is quite simple.
+
+00:07:29.070 --> 00:07:31.430
+So I think that's
+where I'll stop.

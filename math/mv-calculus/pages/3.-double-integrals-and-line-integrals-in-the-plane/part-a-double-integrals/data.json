@@ -1,0 +1,6 @@
+
+{
+  "title":"Part A: Double Integrals",
+  "content":"« Previous | Next »\nIn part A, we will learn about double integration over regions in the plane. Conceptually an integral is a sum. We will apply this idea to computing the mass, center of mass and moment of inertia of a two dimensional body and the volume of a region bounded by surfaces.\nIn order to compute double integrals we will have to describe regions in the plane in terms of the equations describing their boundary curves. After that, the computation just becomes two single variable integrations done iteratively.\n» Session 47: Definition of Double Integration\n» Session 48: Examples of Double Integration\n» Session 49: Exchanging the Order of Integration\n» Session 50: Double Integrals in Polar Coordinates\n» Session 51: Applications: Mass and Average Value\n» Session 52: Applications: Moment of Inertia\n» Session 53: Change of Variables\n» Session 54: Example: Polar Coordinates\n» Session 55: Example\n» Problem Set 7\n« Previous | Next »\n"}
+
+

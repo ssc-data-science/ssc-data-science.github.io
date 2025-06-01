@@ -1,0 +1,6 @@
+
+{
+  "title":"Part C: Green's Theorem",
+  "content":"« Previous | Next »\nIn this part we will learn Green\u0026rsquo;s theorem, which relates line integrals over a closed path to a double integral over the region enclosed. The line integral involves a vector field and the double integral involves derivatives (either div or curl, we will learn both) of the vector field.\nFirst we will give Green\u0026rsquo;s theorem in work form. The line integral in question is the work done by the vector field. The double integral uses the curl of the vector field. Then we will study the line integral for flux of a field across a curve. Finally we will give Green\u0026rsquo;s theorem in flux form. This relates the line integral for flux with the divergence of the vector field.\n» Session 65: Green\u0026rsquo;s Theorem\n» Session 66: Curl(F) = 0 Implies Conservative\n» Session 67: Proof of Green\u0026rsquo;s Theorem\n» Session 68: Planimeter: Green\u0026rsquo;s Theorem and Area\n» Session 69: Flux in 2D\n» Session 70: Normal Form of Green\u0026rsquo;s Theorem\n» Session 71: Extended Green\u0026rsquo;s Theorem: Boundaries with Multiple Pieces\n» Session 72: Simply Connected Regions and Conservative\n» Problem Set 9\n« Previous | Next »\n"}
+
+
