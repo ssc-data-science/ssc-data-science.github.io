@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assignments on MIT OpenCourseWare</title>
+    <link>/resources/assignments/</link>
+    <description>Recent content in Assignments on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/assignments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assignments</title>
+      <link>/pages/assignments/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/pages/assignments/data.json</guid>
+      <description>&lt;p&gt;Some of the problems are assigned in the required textbook:&lt;/p&gt;&#xA;&lt;p&gt;Salsa, Sandro. &lt;em&gt;Partial Differential Equations in Action: From Modelling to Theory&lt;/em&gt;. Springer, 2010. ISBN: 9788847007512. [Preview with &lt;a href=&#34;http://books.google.com/books?id=ZO4y7wl4pngC&amp;amp;pg=PAfrontcover#v=onepage&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Books&lt;/a&gt;]&lt;/p&gt;&#xA;&lt;p&gt;&lt;table&gt;&#xA;&#xA;&lt;thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;DUE IN&#xA;&lt;/th&gt;&#xA;&#xA;&lt;th&gt;&#xA;&#xA;PROBLEMS&#xA;&lt;/th&gt;&#xA;&lt;/p&gt;&#xA;&lt;/tr&gt;&#xA;&#xA;&lt;p&gt;&lt;/thead&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Lec #3&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 1 (&lt;a href=&#34;../../resources/mit18_152f11_problemset_1/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Lec #5&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 2 (&lt;a href=&#34;../../resources/mit18_152f11_problemset_2/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Lec #7&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 3 (&lt;a href=&#34;../../resources/mit18_152f11_problemset_3/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Lec #9&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 4 (&lt;a href=&#34;../../resources/mit18_152f11_problemset_4/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Lec #10&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 5 (&lt;a href=&#34;../../resources/mit18_152f11_problemset_5/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;/tr&gt;&#xA;&#xA;&lt;tr&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Lec #12&#xA;&lt;/td&gt;&#xA;&#xA;&lt;td&gt;&#xA;&#xA;Problem Set 6 (&lt;a href=&#34;../../resources/mit18_152f11_problemset_6/index.html&#34;&gt;PDF&lt;/a&gt;)&#xA;&lt;/td&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_BonusProblem.pdf</title>
+      <link>/resources/mit18_152f11_bonusproblem/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_bonusproblem/data.json</guid>
+      <description>&lt;p&gt;This resource contains bonus problems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_1.pdf</title>
+      <link>/resources/mit18_152f11_problemset_1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_1/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_10.pdf</title>
+      <link>/resources/mit18_152f11_problemset_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_10/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_11.pdf</title>
+      <link>/resources/mit18_152f11_problemset_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_11/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_2.pdf</title>
+      <link>/resources/mit18_152f11_problemset_2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_2/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_3.pdf</title>
+      <link>/resources/mit18_152f11_problemset_3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_3/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_4.pdf</title>
+      <link>/resources/mit18_152f11_problemset_4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_4/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_5.pdf</title>
+      <link>/resources/mit18_152f11_problemset_5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_5/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_6.pdf</title>
+      <link>/resources/mit18_152f11_problemset_6/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_6/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_7.pdf</title>
+      <link>/resources/mit18_152f11_problemset_7/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_7/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_8.pdf</title>
+      <link>/resources/mit18_152f11_problemset_8/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_8/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MIT18_152F11_ProblemSet_9.pdf</title>
+      <link>/resources/mit18_152f11_problemset_9/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit18_152f11_problemset_9/data.json</guid>
+      <description>&lt;p&gt;This resource contains information regarding assignments.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

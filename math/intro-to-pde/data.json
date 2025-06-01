@@ -1,0 +1,23 @@
+{
+  "course_title":"Introduction to Partial Differential Equations",
+  "course_description":"This course introduces three main types of partial differential equations: diffusion, elliptic, and hyperbolic. It includes mathematical tools, real-world examples and applications.\n",
+  "course_description_html":"This course introduces three main types of partial differential equations: diffusion, elliptic, and hyperbolic. It includes mathematical tools, real-world examples and applications.",
+  "site_uid":"7c3a6a72-0ed7-42cc-ac02-b7d66f54dbff",
+  "legacy_uid":"b0b17855-7860-d27d-6f3b-72a9f30d8e24","instructors": [{
+    "first_name":"Jared ",
+    "last_name":"Speck",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Jared  Speck"}],"department_numbers":["18"],
+  "learning_resource_types":["Problem Sets","Exams with Solutions","Lecture Notes"],
+  "topics":[["Mathematics","Differential Equations"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"18.152",
+  "extra_course_numbers":"",
+  "term":"Fall",
+  "year":"2011",
+  "level":["Undergraduate"],
+  "hide_download":null,
+  "image_src":"./static_resources/061672384c0328dd48342ee80c3828fa_18-152f11.gif",
+  "course_image_metadata":{"content_type":"resource","description":"Spherical waves coming from a point source. The solution of the initial-value problem for the wave equation in three space dimensions can be obtained from the solution for a spherical wave. Image by Oleg Alexandrov on Wikimedia, including MATLAB source code.","draft":false,"file":"/courses/18-152-introduction-to-partial-differential-equations-fall-2011/061672384c0328dd48342ee80c3828fa_18-152f11.gif","file_size":377344,"file_type":"image/gif","image_metadata":{"caption":"Spherical waves coming from a point source. The solution of the initial-value problem for the wave equation in three space dimensions can be obtained from the solution for a spherical wave. (Image by Oleg Alexandrov on [Wikimedia](http://commons.wikimedia.org/wiki/File:Spherical_wave2.gif), including MATLAB source code.)","credit":"Image by Oleg Alexandrov on Wikimedia, including MATLAB source code.","image-alt":"Animated image of spherical waves coming from a point source."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"18-152f11.gif","uid":"06167238-4c03-28dd-4834-2ee80c3828fa"}}
+
