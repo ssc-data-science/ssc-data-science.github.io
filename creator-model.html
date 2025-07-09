@@ -158,12 +158,6 @@
             border-color: var(--theme-accent-primary);
         }
 
-        /* Theming classes */
-        .theme-entertainment { --card-theme-primary: var(--theme-entertainment-primary); --card-theme-secondary: rgba(56, 189, 248, 0.1); }
-        .theme-creative { --card-theme-primary: var(--theme-creative-primary); --card-theme-secondary: rgba(74, 222, 128, 0.1); }
-        .theme-technical { --card-theme-primary: var(--theme-technical-primary); --card-theme-secondary: rgba(248, 113, 113, 0.1); }
-        .theme-default { --card-theme-primary: var(--theme-accent-primary); --card-theme-secondary: var(--theme-accent-secondary); }
-
         /* Main Content & Fallbacks */
         #loading-indicator, #no-results { margin-top: 5rem; text-align: center; }
         .main-content { padding: 2rem; }
@@ -173,6 +167,8 @@
         .modal-body h4 { color: var(--theme-accent-primary); }
         .modal-body strong { color: #ccd6f6; }
         .modal-body p { color: #a8b2d1; }
+        .modal-body a { color: var(--theme-accent-primary); text-decoration: none; }
+        .modal-body a:hover { text-decoration: underline; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .creator-card-wrapper { animation: fadeIn 0.5s ease-out forwards; }
@@ -229,12 +225,12 @@
         </div>
     </div>
 
-    <!-- User Detail Modal (Dossier View) -->
+    <!-- User Detail Modal (Info View) -->
     <div class="modal fade" id="userDetailModal" tabindex="-1" aria-labelledby="userDetailModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modal-title">User Details</h5>
+            <h5 class="modal-title" id="modal-title">Operator Info</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body" id="modal-body-content">
@@ -293,7 +289,7 @@
         // =========================================================================
         document.addEventListener('DOMContentLoaded', () => {
             if (API_KEY === 'YOUR_GOOGLE_API_KEY_HERE' || !API_KEY) {
-                showError("API Key is missing. Please edit the HTML file (line 415) and add your Google API Key.");
+                showError("API Key is missing. Please edit the HTML file (line 421) and add your Google API Key.");
                 return;
             }
             userDetailModal = new bootstrap.Modal(document.getElementById('userDetailModal'));
@@ -368,10 +364,12 @@
                     let options = {};
                     allUsers.forEach(user => {
                         try{
-                            const values = config.separator ? user[key].split(config.separator) : [user[key]];
+const values = config.separator ? user[key].split(config.separator) : [user[key]];
                         values.forEach(val => { const trimmedVal = val.trim(); if (trimmedVal) { options[trimmedVal] = (options[trimmedVal] || 0) + 1; } });
                     
-                        }    catch(e){}
+                        }   catch(e){
+                            console.log(e)
+                        } 
                     });
                     const sortedOptions = Object.entries(options).sort((a, b) => b[1] - a[1]);
                     if (sortedOptions.length === 0) return;
@@ -455,7 +453,6 @@
                             </div>
                             
                             
-                            
                             <div class="card-stats">
                                 <div class="stat-bar">
                                     <div class="stat-label"><span>Reach</span> <span>${followers.toLocaleString()}</span></div>
@@ -469,7 +466,7 @@
 
                             <div class="card-footer d-grid">
                                 <button type="button" class="btn view-profile-btn" data-user-index="${user.originalIndex}">
-                                    View Full Info <i class="bi bi-arrow-right-short"></i>
+                                    View Full Details <i class="bi bi-arrow-right-short"></i>
                                 </button>
                             </div>
                         </div>
@@ -490,11 +487,16 @@
         });
 
         function populateModal(user) {
-            document.getElementById('modal-title').textContent = `${user['Full Name']}`;
+            document.getElementById('modal-title').textContent = `Info: ${user['Full Name']}`;
             const modalBody = document.getElementById('modal-body-content');
             
             const createInfoItem = (label, value) => value ? `<p class="mb-2"><strong>${label}:</strong> ${value}</p>` : '';
-            const createLinkItem = (label, url, icon) => url ? `<p class="mb-2"><strong>${label}:</strong> <a href="${url}" target="_blank">${url.split('//')[1]} <i class="${icon}"></i></a></p>` : '';
+            const createLinkItem = (label, url, icon) => {
+                if (!url || !(url.startsWith('http://') || url.startsWith('https://'))) return '';
+                // Sanitize the display URL to prevent overly long text
+                let displayUrl = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0];
+                return `<p class="mb-2"><strong>${label}:</strong> <a href="${url}" target="_blank" rel="noopener noreferrer">${displayUrl} <i class="${icon}"></i></a></p>`
+            };
 
             modalBody.innerHTML = `
                 <h4><i class="bi bi-person-vcard"></i> Basic Info</h4>
@@ -508,13 +510,17 @@
                 ${createInfoItem('Primary Skill', user['Registering As'])}
                 ${createInfoItem('Years of Experience', user['Years of experience'])}
                 ${createInfoItem('Spoken Languages', user['Preferred Languages'])}
-                <p><strong>Bio:</strong> ${user['Your Bio (Max 250 words)'] || 'No bio provided.'}</p>
                 <hr>
                 <h4><i class="bi bi-diagram-3"></i> Online Presence</h4>
                 ${createLinkItem('Portfolio', user['Portfolio Link'], 'bi bi-box-arrow-up-right')}
-                ${createLinkItem('Instagram', user['Instagram Profile Link'], 'bi bi-instagram')}
+                ${createLinkItem('Instagram', user['Social Media Profiles (past URLs)'], 'bi bi-instagram')}
+                ${createLinkItem('TikTok', user['Tiktok Profile Link'], 'bi bi-tiktok')}
+                ${createLinkItem('YouTube', user['YouTube Channel Link'], 'bi bi-youtube')}
+                ${createInfoItem('Whatsapp', user['WhatsApp Number'])}
+                ${createLinkItem('X (Twitter)', user['Twitter Profile Link'], 'bi bi-twitter-x')}
+                ${createLinkItem('LinkedIn', user['Linkedin Profile Link'], 'bi bi-linkedin')}
                 <hr>
-                <h4><i class="bi bi-cash-coin"></i> Rates</h4>
+                
                 ${createInfoItem('Rate (Per Post/Reel)', user['Cost Per Post / Reel (Specify Currency)'])}
                 ${createInfoItem('Rate (Per Day Shoot)', user['Cost Per Day Shoot (Specify Currency)'])}
             `;
@@ -554,7 +560,7 @@
                         if (userAge < min || userAge > max) return false;
 
                     } else {
-                        const userValues = FILTER_CONFIG[key].separator ? user[key].split(FILTER_CONFIG[key].separator).map(v => v.trim()) : [user[key].trim()];
+                        const userValues = FILTER_CONFIG[key].separator ? user[key].split(config.separator).map(v => v.trim()) : [user[key].trim()];
                         if (!selectedOptions.some(option => userValues.includes(option))) return false;
                     }
                 }
