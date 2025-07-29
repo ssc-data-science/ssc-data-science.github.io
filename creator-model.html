@@ -17,41 +17,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- FUTURISTIC UI REVAMP (Inspired by Invisible, Inc.) --- */
+        /* --- UI REVAMP (Inspired by Smart Home Dashboard) --- */
         :root {
             --font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             --font-family-heading: 'Exo 2', var(--font-family-sans-serif);
             
-            --bs-dark-1: #0A192F;  /* Deep Navy */
-            --bs-dark-2: #112240;  /* Lighter Navy */
-            --bs-dark-3: #233554;  /* Accent Navy */
-            --bs-border-color: #303a52;
-            --bs-body-color: #CCD6F6; /* Light Blue-Gray Text */
-            --bs-body-bg: var(--bs-dark-1);
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-tertiary: #2C2C2E;
+            --border-color: #38383A;
+            --text-primary: #F5F5F7;
+            --text-secondary: #8A8A8E;
             
-            /* Theme Colors */
-            --theme-accent-primary: #64FFDA; /* Bright Cyan */
-            --theme-accent-secondary: rgba(100, 255, 218, 0.1);
-            --theme-entertainment-primary: #38bdf8; /* sky-400 */
-            --theme-creative-primary: #4ade80; /* green-400 */
-            --theme-technical-primary: #f87171; /* red-400 */
+            --accent-primary: #0A84FF; /* iOS Blue */
+            --accent-secondary: rgba(10, 132, 255, 0.15);
+
+            --bs-body-bg: var(--bg-primary);
+            --bs-body-color: var(--text-primary);
+            --bs-border-color: var(--border-color);
         }
 
         body { font-family: var(--font-family-sans-serif); }
-        h1, h2, h3, h4, h5, h6, .navbar-brand, .modal-title, .filter-header h5, .accordion-button { 
+        h1, h2, h3, h4, h5, h6, .navbar-brand, .modal-title, .filter-header h5 { 
             font-family: var(--font-family-heading); 
             text-transform: uppercase; 
-            letter-spacing: 0.1em;
-            color: #E6F1FF; /* Lighter color for headings */
+            letter-spacing: 0.08em;
+            color: var(--text-primary);
         }
 
-        .navbar { border-bottom: 1px solid var(--bs-border-color); background-color: var(--bs-dark-1); }
-        .navbar-brand .bi { font-size: 1.5rem; color: var(--theme-accent-primary); }
+        .navbar { background-color: var(--bg-primary); }
+        .navbar-brand .bi { font-size: 1.5rem; color: var(--accent-primary); }
 
-        /* --- ADVANCED FILTER SIDEBAR --- */
+        /* --- FILTER SIDEBAR --- */
         #filter-sidebar {
-            background-color: var(--bs-dark-2);
-            border-right: 1px solid var(--bs-border-color);
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
             padding: 1.5rem 1rem;
             height: calc(100vh - 57px);
             position: sticky;
@@ -61,119 +61,125 @@
 
         .filter-header { 
             padding-bottom: 1rem; 
-            border-bottom: 1px solid var(--bs-border-color);
+            border-bottom: 1px solid var(--border-color);
             margin-bottom: 1rem;
         }
 
         .accordion-item { border: none !important; }
-        .accordion-header, .accordion-button { background-color: transparent !important; box-shadow: none !important; color: var(--bs-body-color); }
-        .accordion-button { padding: 0.8rem 0; border-bottom: 1px solid var(--bs-border-color); }
-        .accordion-button:not(.collapsed) { color: var(--theme-accent-primary); }
-        .accordion-button::after { filter: invert(80%) sepia(50%) saturate(500%) hue-rotate(120deg); }
+        .accordion-header, .accordion-button { background-color: transparent !important; box-shadow: none !important; color: var(--text-primary); }
+        .accordion-button { padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); }
+        .accordion-button:not(.collapsed) { color: var(--accent-primary); }
+        .accordion-button::after { filter: invert(1) brightness(2); }
         .accordion-body { padding: 0.75rem 0.25rem; }
 
         .form-check-label { font-size: 0.9rem; }
-        .filter-count { color: #8892B0; font-size: 0.8rem; }
+        .filter-count { color: var(--text-secondary); font-size: 0.8rem; }
         .form-check-input {
-            background-color: var(--bs-dark-2);
-            border-color: var(--bs-border-color);
+            background-color: var(--bg-tertiary);
+            border-color: var(--border-color);
         }
-        .form-check-input:checked { background-color: var(--theme-accent-primary); border-color: var(--theme-accent-primary); }
-        .form-check-input[type=radio]:checked { box-shadow: 0 0 5px var(--theme-accent-primary); }
+        .form-check-input:checked { background-color: var(--accent-primary); border-color: var(--accent-primary); }
+        .form-check-input[type=checkbox]:checked { box-shadow: 0 0 5px var(--accent-primary); }
         #search-input {
-            background-color: var(--bs-dark-3);
-            border: 1px solid var(--bs-border-color);
-            color: white;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 0.5rem;
         }
-        #search-input::placeholder { color: #8892B0; }
-        #search-input:focus { border-color: var(--theme-accent-primary); box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, 0.25); }
+        #search-input::placeholder { color: var(--text-secondary); }
+        #search-input:focus { border-color: var(--accent-primary); box-shadow: 0 0 0 0.2rem var(--accent-secondary); }
+        #clear-filters-btn { color: var(--text-secondary); border-color: var(--border-color); }
+        #clear-filters-btn:hover { background-color: var(--bg-tertiary); color: var(--text-primary); }
         
-        /* --- SCI-FI CREATOR CARDS --- */
+        /* --- CREATOR CARDS --- */
         .creator-card {
-            background-color: var(--bs-dark-2);
-            border: 1px solid var(--bs-border-color);
-            border-radius: 4px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem; /* More rounded corners */
             padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease-in-out;
-            border-top: 3px solid var(--card-theme-primary, var(--theme-accent-primary));
+            transition: all 0.25s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .creator-card:hover {
             transform: translateY(-5px);
-            border-color: var(--bs-border-color);
-            border-top-color: var(--card-theme-primary, var(--theme-accent-primary));
-            box-shadow: 0 0 20px rgba(100, 255, 218, 0.15);
+            border-color: var(--text-secondary);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
         }
 
-        .card-header-content { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; }
-        .avatar-container { position: relative; flex-shrink: 0; }
-        .avatar-bg {
-            width: 90px; height: 90px;
-            background-color: var(--card-theme-secondary);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
+        .card-header-content { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
         .user-avatar {
-            width: 100px; height: 100px; object-fit: cover; position: absolute;
-            border-radius: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background-color: var(--bs-dark-3);
+            width: 72px; height: 72px; object-fit: cover;
+            border-radius: 50%;
+            background-color: var(--bg-tertiary);
+            border: 3px solid var(--border-color);
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .user-avatar:hover {
+            transform: scale(1.1);
+            border-color: var(--accent-primary);
         }
         .user-avatar-placeholder {
-            width: 80px; height: 80px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 72px; height: 72px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 2.5rem; color: var(--card-theme-primary);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            font-size: 2.5rem; color: var(--text-secondary);
+            border-radius: 50%;
+            background-color: var(--bg-tertiary);
         }
 
-        .card-title { margin-bottom: 0; font-weight: 700; color: #E6F1FF; }
-        .card-subtitle { color: var(--card-theme-primary, var(--theme-accent-primary)); font-family: var(--font-family-sans-serif); text-transform: none; letter-spacing: 0; font-size: 0.9rem; font-weight: 500; }
-        .card-location { font-size: 0.8rem; color: #8892B0; text-transform: uppercase; letter-spacing: 0.05em; }
-
-        .card-bio {
-            font-family: var(--font-family-sans-serif);
-            color: #a8b2d1;
-            font-size: 0.9rem;
-            border-left: 3px solid var(--bs-border-color);
-            padding-left: 1rem;
+        .card-title { margin-bottom: 0.125rem; font-weight: 700; color: var(--text-primary); letter-spacing: 0.02em; }
+        .card-subtitle { color: var(--accent-primary); font-family: var(--font-family-sans-serif); text-transform: none; letter-spacing: 0; font-size: 0.9rem; font-weight: 500; }
+        .card-location { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .card-body-content { flex-grow: 1; }
+        .card-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             margin: 1.25rem 0;
-            height: 60px; /* Fixed height for 3 lines */
-            overflow: hidden;
         }
+        .stat-item .stat-icon { font-size: 1.5rem; color: var(--accent-primary); margin-bottom: 0.25rem; }
+        .stat-item .stat-value { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+        .stat-item .stat-label { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;}
 
-        .stat-bar { margin-bottom: 0.75rem; }
-        .stat-label { display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.25rem; color: #8892B0; text-transform: uppercase; letter-spacing: 0.08em; }
-        .progress { height: 6px; background-color: var(--bs-dark-3); border-radius: 0; }
-        .progress-bar { background-color: var(--card-theme-primary, var(--theme-accent-primary)); border-radius: 0; }
 
-        .card-footer { border-top: 1px solid var(--bs-border-color); padding-top: 1rem; margin-top: 1.5rem; }
+        .card-footer { border-top: none; padding: 0; margin-top: auto; }
         .view-profile-btn { 
-            color: var(--theme-accent-primary); 
-            border-color: var(--theme-accent-primary);
-            background-color: transparent;
+            width: 100%;
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary); 
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease-in-out;
         }
         .view-profile-btn:hover {
-            background-color: var(--theme-accent-secondary);
-            color: var(--theme-accent-primary);
-            border-color: var(--theme-accent-primary);
+            background-color: var(--accent-primary);
+            color: #fff;
+            border-color: var(--accent-primary);
         }
 
-        /* Main Content & Fallbacks */
-        #loading-indicator, #no-results { margin-top: 5rem; text-align: center; }
+        /* --- Main Content & Fallbacks --- */
+        #loading-indicator, #no-results { margin-top: 5rem; text-align: center; color: var(--text-secondary); }
         .main-content { padding: 2rem; }
-        .modal-content { background-color: var(--bs-dark-2); border: 1px solid var(--theme-accent-primary); }
-        .modal-header, .modal-footer { border-color: var(--bs-border-color); }
-        .modal-body hr { border-color: var(--bs-border-color); opacity: 0.5; }
-        .modal-body h4 { color: var(--theme-accent-primary); }
-        .modal-body strong { color: #ccd6f6; }
-        .modal-body p { color: #a8b2d1; }
-        .modal-body a { color: var(--theme-accent-primary); text-decoration: none; }
+        .modal-content { background-color: var(--bg-secondary); border: 1px solid var(--border-color); }
+        .modal-header, .modal-footer { border-color: var(--border-color); }
+        .modal-body hr { border-color: var(--border-color); opacity: 0.5; }
+        .modal-body h4 { color: var(--accent-primary); }
+        .modal-body strong { color: var(--text-primary); }
+        .modal-body p { color: #c7c7cc; }
+        .modal-body a { color: var(--accent-primary); text-decoration: none; }
         .modal-body a:hover { text-decoration: underline; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .creator-card-wrapper { animation: fadeIn 0.5s ease-out forwards; }
         
-        @media (max-width: 991.98px) { #filter-sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--bs-border-color); } }
+        @media (max-width: 991.98px) { #filter-sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); } }
     </style>
 </head>
 <body>
@@ -182,9 +188,9 @@
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="#">
                 <i class="bi bi-people-fill"></i>
-                Operator Directory
+                Creator Directory
             </a>
-            <div id="results-count" class="text-muted small"></div>
+            <div id="results-count" class="text-secondary small"></div>
         </div>
     </nav>
 
@@ -194,7 +200,7 @@
             <aside class="col-lg-3" id="filter-sidebar">
                 <div class="filter-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">FILTERS</h5>
-                    <button id="clear-filters-btn" class="btn btn-sm btn-outline-secondary">Clear All</button>
+                    <button id="clear-filters-btn" class="btn btn-sm">Clear</button>
                 </div>
                 <div class="mb-3">
                      <input type="text" id="search-input" class="form-control" placeholder="Search by name, skill, etc...">
@@ -207,15 +213,15 @@
             <!-- Main Content Area -->
             <main class="col-lg-9 main-content">
                 <div id="loading-indicator">
-                    <div class="spinner-border" style="color: var(--theme-accent-primary);" role="status">
+                    <div class="spinner-border text-primary" style="color: var(--accent-primary) !important;" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
-                    <p class="mt-2 text-muted">Awaiting Data Stream from Central...</p>
+                    <p class="mt-2">Awaiting Data Stream...</p>
                 </div>
 
                 <div id="no-results" class="d-none">
-                    <h3><i class="bi bi-x-circle"></i> No Operators Found</h3>
-                    <p class="text-muted">Adjust filter parameters or clear search query.</p>
+                    <h3><i class="bi bi-x-circle"></i> No Creators Found</h3>
+                    <p>Adjust filter parameters or clear search query.</p>
                 </div>
 
                 <div id="user-cards-container" class="row g-4">
@@ -225,12 +231,12 @@
         </div>
     </div>
 
-    <!-- User Detail Modal (Info View) -->
+    <!-- User Detail Modal -->
     <div class="modal fade" id="userDetailModal" tabindex="-1" aria-labelledby="userDetailModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modal-title">Operator Info</h5>
+            <h5 class="modal-title" id="modal-title">Creator Info</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body" id="modal-body-content">
@@ -240,8 +246,19 @@
       </div>
     </div>
     
-    <footer class="text-center py-4 mt-4 border-top" style="border-color: var(--bs-border-color) !important;">
-        <p class="mb-0 text-muted small">© 2024 Operator Directory. Data sourced from Central Database.</p>
+    <!-- Image Viewer Modal -->
+    <div class="modal fade" id="imageViewerModal" tabindex="-1" aria-labelledby="imageViewerModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+           <div class="modal-body p-0 text-center">
+             <img id="fullSizeImage" src="" class="img-fluid rounded-3" style="max-height: 90vh; cursor: pointer;" alt="Full-size profile picture" data-bs-dismiss="modal">
+           </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="text-center py-4 mt-4 border-top">
+        <p class="mb-0 small" style="color: var(--text-secondary);">© 2024 Creator Directory. Data Sourced Internally.</p>
     </footer>
 
     <!-- Google API Client Library -->
@@ -253,35 +270,34 @@
         // =========================================================================
         // CONFIGURATION
         // =========================================================================
-        // IMPORTANT: Replace with your own Google API Key. 
-        // Go to https://console.cloud.google.com/apis/credentials to create one.
-        // Ensure it's restricted to your website's domain for security.
         const API_KEY = 'AIzaSyCPjGBvLKyrbbrwujFOmZT2I2uQj05IAAs'; // <-- IMPORTANT: PASTE YOUR KEY HERE
         const SPREADSHEET_ID = '1o8ZtqqXw7xWU1851YMLjok7a3ynXA419_ODbWt8OZeU';
         const RANGE = 'Master Sheet!A:AE'; 
+        const ITEMS = [
+          "Email Address", "Social Media Profiles (past URLs)", "Looking for", "Preferred Work Type",
+          "Preferred  Languages", "Available on weekends if required?", "Next availability dates", "Link to your best works",
+          "Cost Per Video / Reel (Specify Currency)", "Average Views Per Video", "Average Engagement Rate",
+          "Screenshot of Professional Dashboard (last month) (instagram/youtube) for analysing reach and engagements.",
+          "Primary Social Media Platforms", "YouTube Subscriber Count", "Cost Per / Reel (Specify Currency)",
+          "Cost Per Collab Reel  (Specify Currency)", "Cost Per Story (Specify Currency)",
+        ];
 
-        // Define which columns to use for filtering and their display names
         const FILTER_CONFIG = {
             'Registering As': { name: 'Primary Skill', multiSelect: false },
-            'Age': { name: 'Age Range', type: 'age' }, // Added age filter
+            'Age': { name: 'Age Range', type: 'age' },
             'Current City & Country': { name: 'Location', multiSelect: true },
             'Preferred Languages': { name: 'Languages', multiSelect: true, separator: ',' },
             'Gender': { name: 'Gender', multiSelect: true },
             'Looking For': { name: 'Project Type', multiSelect: true },
         };
         
-        const THEME_MAPPING = {
-            'entertainment': ['Model', 'Actor', 'Influencer', 'Content Creator'],
-            'creative': ['Photographer', 'Videographer', 'Voice Over Artist', 'Content Writer'],
-            'technical': ['Editor']
-        };
-
         // =========================================================================
         // GLOBAL VARIABLES
         // =========================================================================
         let allUsers = [];
         let headers = [];
         let userDetailModal;
+        let imageViewerModal;
         let activeFilters = {};
 
         // =========================================================================
@@ -289,13 +305,19 @@
         // =========================================================================
         document.addEventListener('DOMContentLoaded', () => {
             if (API_KEY === 'YOUR_GOOGLE_API_KEY_HERE' || !API_KEY) {
-                showError("API Key is missing. Please edit the HTML file (line 421) and add your Google API Key.");
+                showError("API Key is missing. Please edit the HTML file and add your Google API Key.");
                 return;
             }
             userDetailModal = new bootstrap.Modal(document.getElementById('userDetailModal'));
+            imageViewerModal = new bootstrap.Modal(document.getElementById('imageViewerModal'));
+            
             document.getElementById('search-input').addEventListener('input', debounce(applyFiltersAndRender, 300));
             document.getElementById('filter-accordion').addEventListener('change', applyFiltersAndRender);
             document.getElementById('clear-filters-btn').addEventListener('click', clearAllFilters);
+            
+            // Combined event listener for cards
+            document.getElementById('user-cards-container').addEventListener('click', handleCardClick);
+            
             gapi.load('client', initClient);
         });
 
@@ -328,7 +350,7 @@
                             user[header.trim()] = row[i] || '';
                         });
                         return user;
-                    }).filter(user => user['Full Name']); // Only include users with a name
+                    }).filter(user => user['Full Name']);
 
                     populateFilterSidebar();
                     applyFiltersAndRender();
@@ -349,12 +371,11 @@
             
             Object.keys(FILTER_CONFIG).forEach(key => {
                 const config = FILTER_CONFIG[key];
-                const accordionItemId = `filter-${key.replace(/\s+/g, '-')}`;
+                const accordionItemId = `filter-${key.replace(/[^a-zA-Z0-9]/g, '-')}`;
                 let filterHtml;
 
                 if (config.type === 'age') {
                     const ageBrackets = { '18-24': 0, '25-34': 0, '35-44': 0, '45+': 0 };
-                    // You could dynamically count users in brackets here if needed
                     filterHtml = Object.keys(ageBrackets).map(bracket => `
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="age-filter" value="${bracket}" id="age-${bracket}" data-filter-key="Age">
@@ -362,15 +383,14 @@
                         </div>`).join('');
                 } else {
                     let options = {};
-                    allUsers.forEach(user => {
-                        try{
-const values = config.separator ? user[key].split(config.separator) : [user[key]];
+                    try{
+                        allUsers.forEach(user => {
+                        const values = config.separator ? user[key].split(config.separator) : [user[key]];
                         values.forEach(val => { const trimmedVal = val.trim(); if (trimmedVal) { options[trimmedVal] = (options[trimmedVal] || 0) + 1; } });
-                    
-                        }   catch(e){
-                            console.log(e)
-                        } 
                     });
+                    }catch(e){
+                        
+                    }
                     const sortedOptions = Object.entries(options).sort((a, b) => b[1] - a[1]);
                     if (sortedOptions.length === 0) return;
 
@@ -408,42 +428,27 @@ const values = config.separator ? user[key].split(config.separator) : [user[key]
             return (match && match[1]) ? `https://lh3.googleusercontent.com/d/${match[1]}` : gdriveUrl;
         }
 
-        function getThemeClass(user) {
-            const skill = user['Registering As'];
-            for (const theme in THEME_MAPPING) { if (THEME_MAPPING[theme].includes(skill)) return `theme-${theme}`; }
-            return 'theme-default';
-        }
-
-        function truncateText(text, length = 100) {
-            if (!text || text.length <= length) return text;
-            return text.substring(0, text.lastIndexOf(' ', length)) + '...';
-        }
-
         function renderCards(users) {
             const container = document.getElementById('user-cards-container');
             container.innerHTML = '';
             document.getElementById('no-results').classList.toggle('d-none', users.length > 0);
-            document.getElementById('results-count').textContent = `Showing ${users.length} of ${allUsers.length} operators`;
+            document.getElementById('results-count').textContent = `Showing ${users.length} of ${allUsers.length} creators`;
 
             users.forEach(user => {
                 const profilePicUrl = gdriveUrlToDirectLink(user['Upload 2 Headshot/photo']);
-                const themeClass = getThemeClass(user);
                 
-                const followers = parseInt(user['Total Followers (in numbers - 10000 - format )'], 10) || 0;
-                const followersPercent = Math.min((followers / 100000) * 100, 100);
+                let followers = parseInt(user['Total Followers (in numbers - 10000 - format )'], 10) || parseInt(user['Total Followers'], 10) || 0;
                 const experience = parseInt(user['Years of experience'], 10) || 0;
-                const experiencePercent = Math.min((experience / 10) * 100, 100);
-
-                const bio = user['Your Bio (Max 250 words)'] || user['Special Talents/Hobbies'] || 'A passionate creator ready for new challenges.';
 
                 const cardHtml = `
                     <div class="col-xl-4 col-md-6 creator-card-wrapper">
-                        <div class="creator-card ${themeClass}">
+                        <div class="creator-card">
                             <div class="card-header-content">
                                 <div class="avatar-container">
-                                    <div class="avatar-bg"></div>
-                                    <img src="${profilePicUrl}" class="user-avatar" alt="Profile of ${user['Full Name']}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                    <div class="user-avatar-placeholder" style="${profilePicUrl ? 'display:none;' : 'display:flex;'}"><i class="bi bi-person"></i></div>
+                                    <img src="${profilePicUrl}" class="user-avatar" alt="Profile of ${user['Full Name']}" 
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                         data-user-index="${user.originalIndex}">
+                                    <div class="user-avatar-placeholder" style="display:none;"><i class="bi bi-person"></i></div>
                                 </div>
                                 <div class="info-group">
                                     <h4 class="card-title">${user['Full Name']}</h4>
@@ -452,21 +457,24 @@ const values = config.separator ? user[key].split(config.separator) : [user[key]
                                 </div>
                             </div>
                             
-                            
-                            <div class="card-stats">
-                                <div class="stat-bar">
-                                    <div class="stat-label"><span>Reach</span> <span>${followers.toLocaleString()}</span></div>
-                                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: ${followersPercent}%"></div></div>
-                                </div>
-                                <div class="stat-bar">
-                                    <div class="stat-label"><span>Experience</span> <span>${experience} Years</span></div>
-                                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: ${experiencePercent}%"></div></div>
+                            <div class="card-body-content">
+                                <div class="card-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-icon"><i class="bi bi-people"></i></div>
+                                        <div class="stat-value">${followers.toLocaleString()}</div>
+                                        <div class="stat-label">Followers</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-icon"><i class="bi bi-trophy"></i></div>
+                                        <div class="stat-value">${experience} yr${experience !== 1 ? 's' : ''}</div>
+                                        <div class="stat-label">Experience</div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="card-footer d-grid">
-                                <button type="button" class="btn view-profile-btn" data-user-index="${user.originalIndex}">
-                                    View Full Details <i class="bi bi-arrow-right-short"></i>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-lg view-profile-btn" data-user-index="${user.originalIndex}">
+                                    View Full Profile
                                 </button>
                             </div>
                         </div>
@@ -478,35 +486,45 @@ const values = config.separator ? user[key].split(config.separator) : [user[key]
         // =========================================================================
         // MODAL & EVENT HANDLING
         // =========================================================================
-        document.getElementById('user-cards-container').addEventListener('click', function(event) {
-            const button = event.target.closest('.view-profile-btn');
-            if (button) {
-                const user = allUsers[button.dataset.userIndex];
-                if (user) { populateModal(user); userDetailModal.show(); }
+        function handleCardClick(event) {
+            const viewBtn = event.target.closest('.view-profile-btn');
+            if (viewBtn) {
+                const user = allUsers[viewBtn.dataset.userIndex];
+                if (user) {
+                    populateModal(user);
+                    userDetailModal.show();
+                }
+                return;
             }
-        });
+
+            const avatar = event.target.closest('.user-avatar');
+            if (avatar && avatar.src) {
+                document.getElementById('fullSizeImage').src = avatar.src;
+                imageViewerModal.show();
+            }
+        }
 
         function populateModal(user) {
-            document.getElementById('modal-title').textContent = `Info: ${user['Full Name']}`;
+            document.getElementById('modal-title').textContent = `Profile: ${user['Full Name']}`;
             const modalBody = document.getElementById('modal-body-content');
             
             const createInfoItem = (label, value) => value ? `<p class="mb-2"><strong>${label}:</strong> ${value}</p>` : '';
             const createLinkItem = (label, url, icon) => {
                 if (!url || !(url.startsWith('http://') || url.startsWith('https://'))) return '';
-                // Sanitize the display URL to prevent overly long text
                 let displayUrl = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0];
                 return `<p class="mb-2"><strong>${label}:</strong> <a href="${url}" target="_blank" rel="noopener noreferrer">${displayUrl} <i class="${icon}"></i></a></p>`
             };
 
             modalBody.innerHTML = `
                 <h4><i class="bi bi-person-vcard"></i> Basic Info</h4>
-                ${createInfoItem('Status', 'Active')}
                 ${createInfoItem('Nationality', user.Nationality)}
                 ${createInfoItem('Current Location', user['Current City & Country'])}
                 ${createInfoItem('Age', user.Age)}
                 ${createInfoItem('Gender', user.Gender)}
+                ${createInfoItem('Phone', user['Phone Number'])}
                 <hr>
                 <h4><i class="bi bi-briefcase"></i> Professional Profile</h4>
+                ${createInfoItem('Status', user["Available for Work"])}
                 ${createInfoItem('Primary Skill', user['Registering As'])}
                 ${createInfoItem('Years of Experience', user['Years of experience'])}
                 ${createInfoItem('Spoken Languages', user['Preferred Languages'])}
@@ -514,16 +532,21 @@ const values = config.separator ? user[key].split(config.separator) : [user[key]
                 <h4><i class="bi bi-diagram-3"></i> Online Presence</h4>
                 ${createLinkItem('Portfolio', user['Portfolio Link'], 'bi bi-box-arrow-up-right')}
                 ${createLinkItem('Instagram', user['Social Media Profiles (past URLs)'], 'bi bi-instagram')}
-                ${createLinkItem('TikTok', user['Tiktok Profile Link'], 'bi bi-tiktok')}
-                ${createLinkItem('YouTube', user['YouTube Channel Link'], 'bi bi-youtube')}
                 ${createInfoItem('Whatsapp', user['WhatsApp Number'])}
-                ${createLinkItem('X (Twitter)', user['Twitter Profile Link'], 'bi bi-twitter-x')}
-                ${createLinkItem('LinkedIn', user['Linkedin Profile Link'], 'bi bi-linkedin')}
                 <hr>
-                
+                <h4><i class="bi bi-cash-coin"></i> Rates & Other Info</h4>
                 ${createInfoItem('Rate (Per Post/Reel)', user['Cost Per Post / Reel (Specify Currency)'])}
-                ${createInfoItem('Rate (Per Day Shoot)', user['Cost Per Day Shoot (Specify Currency)'])}
             `;
+
+            ITEMS.forEach(item => {
+                if(user[item]){
+                    if(item.toLowerCase().includes("link") || item.toLowerCase().includes("url")){
+                        modalBody.innerHTML += createLinkItem(item, user[item], 'bi bi-box-arrow-up-right');
+                    } else {
+                        modalBody.innerHTML += createInfoItem(item, user[item]);
+                    }
+                }
+            });
         }
 
         function clearAllFilters() {
@@ -552,15 +575,16 @@ const values = config.separator ? user[key].split(config.separator) : [user[key]
                     const selectedOptions = activeFilters[key];
                     if (selectedOptions.length === 0) continue;
 
-                    if (FILTER_CONFIG[key].type === 'age') {
+                    if (FILTER_CONFIG[key]?.type === 'age') {
                         const userAge = parseInt(user.Age, 10);
                         if (isNaN(userAge)) return false;
                         
                         const [min, max] = selectedOptions[0].replace('+', '-999').split('-').map(Number);
                         if (userAge < min || userAge > max) return false;
 
-                    } else {
-                        const userValues = FILTER_CONFIG[key].separator ? user[key].split(config.separator).map(v => v.trim()) : [user[key].trim()];
+                    } else if (FILTER_CONFIG[key]) {
+                        const userValue = user[key] || '';
+                        const userValues = FILTER_CONFIG[key].separator ? userValue.split(FILTER_CONFIG[key].separator).map(v => v.trim()) : [userValue.trim()];
                         if (!selectedOptions.some(option => userValues.includes(option))) return false;
                     }
                 }
@@ -582,7 +606,7 @@ const values = config.separator ? user[key].split(config.separator) : [user[key]
              document.getElementById('loading-indicator').classList.add('d-none');
              document.querySelector('.main-content').innerHTML = `
                 <div class="col-12 mt-5 text-center">
-                    <div class="alert alert-danger" style="background-color: rgba(248, 113, 113, 0.1); border-color: #f87171; color: #f87171;">
+                    <div class="alert alert-danger" style="background-color: rgba(220, 53, 69, 0.1); border-color: #dc3545; color: #f8d7da;">
                         <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> System Error</h4>
                         <p>${message}</p>
                     </div>
