@@ -38,7 +38,7 @@
         }
 
         body { font-family: var(--font-family-sans-serif); }
-        h1, h2, h3, h4, h5, h6, .navbar-brand, .modal-title, .filter-header h5 { 
+        h1, h2, h3, h4, h5, h6, .navbar-brand, .modal-title, .filter-header h5, .bulk-actions-header { 
             font-family: var(--font-family-heading); 
             text-transform: uppercase; 
             letter-spacing: 0.08em;
@@ -72,22 +72,22 @@
         .accordion-button::after { filter: invert(1) brightness(2); }
         .accordion-body { padding: 0.75rem 0.25rem; }
 
-        .form-check-label { font-size: 0.9rem; }
+        .form-check-label, .form-label { font-size: 0.9rem; }
         .filter-count { color: var(--text-secondary); font-size: 0.8rem; }
-        .form-check-input {
+        .form-check-input, .form-control {
             background-color: var(--bg-tertiary);
             border-color: var(--border-color);
         }
         .form-check-input:checked { background-color: var(--accent-primary); border-color: var(--accent-primary); }
         .form-check-input[type=checkbox]:checked { box-shadow: 0 0 5px var(--accent-primary); }
-        #search-input {
+        #search-input, #email-subject, #email-body {
             background-color: var(--bg-tertiary);
             border: 1px solid var(--border-color);
             color: var(--text-primary);
             border-radius: 0.5rem;
         }
-        #search-input::placeholder { color: var(--text-secondary); }
-        #search-input:focus { border-color: var(--accent-primary); box-shadow: 0 0 0 0.2rem var(--accent-secondary); }
+        #search-input::placeholder, #email-subject::placeholder, #email-body::placeholder { color: var(--text-secondary); }
+        #search-input:focus, #email-subject:focus, #email-body:focus { border-color: var(--accent-primary); box-shadow: 0 0 0 0.2rem var(--accent-secondary); }
         #clear-filters-btn { color: var(--text-secondary); border-color: var(--border-color); }
         #clear-filters-btn:hover { background-color: var(--bg-tertiary); color: var(--text-primary); }
         
@@ -163,6 +163,13 @@
             color: #fff;
             border-color: var(--accent-primary);
         }
+        .view-profile-btn:disabled {
+            background-color: var(--bg-tertiary);
+            border-color: var(--border-color);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            opacity: 0.65;
+        }
 
         /* --- Main Content & Fallbacks --- */
         #loading-indicator, #no-results { margin-top: 5rem; text-align: center; color: var(--text-secondary); }
@@ -208,6 +215,25 @@
                 <div class="accordion accordion-flush" id="filter-accordion">
                     <!-- Filter categories will be dynamically inserted here -->
                 </div>
+
+                <!-- Bulk Email Section -->
+                <div class="mt-4 pt-3 border-top" style="border-color: var(--border-color) !important;">
+                    <h5 class="mb-3 bulk-actions-header">BULK ACTIONS</h5>
+                    <div class="mb-3">
+                        <label for="email-subject" class="form-label small text-secondary">Email Subject</label>
+                        <input type="text" id="email-subject" class="form-control" placeholder="Project Collaboration Inquiry">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email-body" class="form-label small text-secondary">Email Body</label>
+                        <textarea id="email-body" class="form-control" rows="4" placeholder="Hi there,
+
+We came across your profile and are interested in a potential collaboration..."></textarea>
+                    </div>
+                    <button id="email-filtered-btn" class="btn view-profile-btn w-100" disabled>
+                        <i class="bi bi-envelope"></i> Email Filtered Creators
+                    </button>
+                </div>
+
             </aside>
 
             <!-- Main Content Area -->
@@ -299,6 +325,7 @@
         let userDetailModal;
         let imageViewerModal;
         let activeFilters = {};
+        let currentFilteredUsers = [];
 
         // =========================================================================
         // INITIALIZATION
@@ -314,10 +341,16 @@
             document.getElementById('search-input').addEventListener('input', debounce(applyFiltersAndRender, 300));
             document.getElementById('filter-accordion').addEventListener('change', applyFiltersAndRender);
             document.getElementById('clear-filters-btn').addEventListener('click', clearAllFilters);
-            
+            document.getElementById('email-filtered-btn').addEventListener('click', handleBulkEmail);
+
             // Combined event listener for cards
             document.getElementById('user-cards-container').addEventListener('click', handleCardClick);
             
+            // Event listener for when the modal is closed to clear the URL hash
+            document.getElementById('userDetailModal').addEventListener('hidden.bs.modal', () => {
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            });
+
             gapi.load('client', initClient);
         });
 
@@ -354,6 +387,7 @@
 
                     populateFilterSidebar();
                     applyFiltersAndRender();
+                    handleInitialLoadAction(); // Check for deep link after data is ready
                 } else {
                     showError("No data found. Ensure the sheet has a header row and at least one data row.");
                 }
@@ -383,14 +417,12 @@
                         </div>`).join('');
                 } else {
                     let options = {};
-                    try{
-                        allUsers.forEach(user => {
-                        const values = config.separator ? user[key].split(config.separator) : [user[key]];
+                    allUsers.forEach(user => {
+                        const valueStr = user[key] || ''; // Safe access: ensure value is a string
+                        const values = config.separator ? valueStr.split(config.separator) : [valueStr];
                         values.forEach(val => { const trimmedVal = val.trim(); if (trimmedVal) { options[trimmedVal] = (options[trimmedVal] || 0) + 1; } });
                     });
-                    }catch(e){
-                        
-                    }
+                    
                     const sortedOptions = Object.entries(options).sort((a, b) => b[1] - a[1]);
                     if (sortedOptions.length === 0) return;
 
@@ -503,8 +535,23 @@
                 imageViewerModal.show();
             }
         }
+        
+        function handleInitialLoadAction() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#user=')) {
+                const userId = parseInt(hash.substring(6), 10);
+                if (!isNaN(userId) && allUsers[userId]) {
+                    const user = allUsers[userId];
+                    populateModal(user);
+                    userDetailModal.show();
+                }
+            }
+        }
 
         function populateModal(user) {
+            // Update URL hash for deep linking
+            location.hash = `#user=${user.originalIndex}`;
+            
             document.getElementById('modal-title').textContent = `Profile: ${user['Full Name']}`;
             const modalBody = document.getElementById('modal-body-content');
             
@@ -583,7 +630,7 @@
                         if (userAge < min || userAge > max) return false;
 
                     } else if (FILTER_CONFIG[key]) {
-                        const userValue = user[key] || '';
+                        const userValue = user[key] || ''; // Safe access
                         const userValues = FILTER_CONFIG[key].separator ? userValue.split(FILTER_CONFIG[key].separator).map(v => v.trim()) : [userValue.trim()];
                         if (!selectedOptions.some(option => userValues.includes(option))) return false;
                     }
@@ -591,12 +638,69 @@
                 return true;
             });
             
+            currentFilteredUsers = filteredUsers; // Store for bulk actions
+            updateBulkEmailButton();
             renderCards(filteredUsers);
         }
 
         // =========================================================================
-        // UTILITY FUNCTIONS
+        // UTILITY & ACTION FUNCTIONS
         // =========================================================================
+        function handleBulkEmail() {
+            const subject = document.getElementById('email-subject').value;
+            const body = document.getElementById('email-body').value;
+
+            if (currentFilteredUsers.length === 0) {
+                alert("No creators match the current filters.");
+                return;
+            }
+
+            if (!body) {
+                alert("Please write a message in the email body.");
+                document.getElementById('email-body').focus();
+                return;
+            }
+            
+            // Get all unique, valid email addresses
+            const emailSet = new Set();
+            currentFilteredUsers.forEach(user => {
+                const email = user['Email Address']?.trim();
+                if (email) { // Basic validation for non-empty string
+                    emailSet.add(email);
+                }
+            });
+
+            const bccEmails = [...emailSet];
+
+            if (bccEmails.length === 0) {
+                alert("None of the filtered creators have a public email address.");
+                return;
+            }
+
+            const bccString = bccEmails.join(',');
+            
+            // Using BCC is crucial for privacy.
+            let mailtoLink = `mailto:?bcc=${encodeURIComponent(bccString)}`;
+            mailtoLink += `&subject=${encodeURIComponent(subject)}`;
+            mailtoLink += `&body=${encodeURIComponent(body)}`;
+            
+            // Warn the user if the link is excessively long, as it might fail in some email clients.
+            if (mailtoLink.length > 2000) {
+                alert(`Warning: You are trying to email ${bccEmails.length} people. Your default email client might not support this many recipients in a single link.`);
+            }
+
+            window.location.href = mailtoLink;
+        }
+
+        function updateBulkEmailButton() {
+            const mailBtn = document.getElementById('email-filtered-btn');
+            const count = currentFilteredUsers.length;
+            if (mailBtn) {
+                 mailBtn.innerHTML = `<i class="bi bi-envelope"></i> Email ${count} Creator${count !== 1 ? 's' : ''}`;
+                 mailBtn.disabled = count === 0;
+            }
+        }
+        
         function debounce(func, delay) {
             let timeout;
             return function(...args) { clearTimeout(timeout); timeout = setTimeout(() => func.apply(this, args), delay); };
