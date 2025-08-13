@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Math Progress Tracker</title>
+<!-- Google Material Symbols -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" />
+<style>
+  :root {
+    --bg: #f4f6f8; --card: #ffffff; --muted: #6c757d;
+    --primary: #007bff; --accent: #28a745; --danger: #dc3545;
+    --border-color: #e9ecef; --text-color: #212529;
+  }
+  html { font-size: 16px; }
+  body { 
+    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg); color: var(--text-color); padding: 12px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+  h1 { margin: 0; font-size: 1.5rem; color: var(--primary); }
+  .small { font-size: 0.875rem; color: var(--muted); }
+  .controls { display: flex; gap: 8px; align-items: center; }
+  .grid { display: grid; grid-template-columns: 320px 1fr; gap: 16px; }
+  .left-col { display: flex; flex-direction: column; gap: 16px; }
+  .card { background: var(--card); border-radius: 16px; padding: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
+  .topic-list { display: flex; flex-direction: column; gap: 12px; }
+  .topic-card { display: flex; flex-direction: column; gap: 12px; }
+  .topic-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .topic-title { font-weight: 600; font-size: 1.05rem; }
+  .topic-actions { display: flex; gap: 4px; }
+  .icon-btn { background: transparent; border: none; cursor: pointer; padding: 6px; border-radius: 50%; display: grid; place-items: center; color: var(--muted); }
+  .icon-btn:hover { background-color: #f1f3f5; }
+  .icon-btn .material-symbols-outlined { font-size: 22px; }
+  .pill { display: inline-block; background: #e9ecef; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 500; }
+  .progress-wheel { width: 80px; height: 80px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--primary) 0%, #e9ecef 0%); }
+  .progress-inner { width: 68px; height: 68px; border-radius: 50%; background: var(--card); display: grid; place-items: center; }
+  #daily-plan-container .material-symbols-outlined { font-size: 16px; vertical-align: middle; margin-left: 4px; }
+  #daily-plan-text { cursor: pointer; }
+  #daily-plan-input { font: inherit; border: 1px solid var(--primary); border-radius: 4px; padding: 4px 6px; width: 90%; }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 6px; background: #e9ecef; border-radius: 3px; outline: none; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: var(--primary); border-radius: 50%; cursor: pointer; border: 3px solid var(--card); box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+  input[type=range]::-moz-range-thumb { width: 20px; height: 20px; background: var(--primary); border-radius: 50%; cursor: pointer; }
+  
+  @media (max-width: 900px) {
+    html { font-size: 15px; }
+    .grid { grid-template-columns: 1fr; }
+    header { flex-direction: column; align-items: flex-start; }
+    .topic-list { max-height: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div>
+      <h1>Stats Inference Tracker</h1>
+      <div class="small">Master Estimation & Hypothesis Testing</div>
+    </div>
+    <div class="controls">
+      <button class="icon-btn" id="exportBtn" title="Export Progress"><span class="material-symbols-outlined">download</span></button>
+      <button class="icon-btn" id="clearBtn" title="Reset All Data"><span class="material-symbols-outlined" style="color:var(--danger)">delete_forever</span></button>
+      <div class="small" id="clock" style="color: var(--muted); margin-left: 8px;"></div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap: 16px;">
+          <div class="progress-wheel" id="progressWheel">
+            <div class="progress-inner">
+              <div id="overallPct" style="text-align:center">
+                <div style="font-weight:700;font-size:1.25rem;">0%</div>
+                <div class="small" style="font-size:0.7rem; margin-top:-2px;">ready</div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1;">
+            <div class="small">Daily Plan (click to edit)</div>
+            <div id="daily-plan-container" style="font-weight:600;">
+              <span id="daily-plan-text"></span>
+              <input type="text" id="daily-plan-input" class="hidden"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div style="font-weight:600; margin-bottom:8px;">Deep Focus (Pomodoro)</div>
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+          <div id="timerDisplay" style="font-size:1.75rem; font-weight:700; color:var(--primary);">25:00</div>
+          <button id="startPom" class="icon-btn"><span class="material-symbols-outlined">play_arrow</span></button>
+          <button id="pausePom" class="icon-btn"><span class="material-symbols-outlined">pause</span></button>
+          <button id="resetPom" class="icon-btn"><span class="material-symbols-outlined">replay</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
+        <div style="font-weight:700; font-size: 1.1rem;">Syllabus Topics</div>
+        <div>
+          <button id="prioritizeBtn" class="icon-btn" title="Show Priority Topics"><span class="material-symbols-outlined">filter_list</span></button>
+          <button id="allBtn" class="icon-btn" title="Show All Topics"><span class="material-symbols-outlined">select_all</span></button>
+        </div>
+      </div>
+      <div class="card topic-list" id="topicList">
+        <!-- topic cards are inserted here by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="small" style="text-align:center; margin-top: 24px;">Your progress is saved in your browser. Good luck with your studies!</p>
+  </footer>
+</div>
+
+<script>
+/* ========= DATA & MODEL ========= */
+const STORAGE_KEY = 'studymind_stats_inference_v2';
+let store = {};
+
+const nowISOString = () => new Date().toISOString();
+const uid = () => 't' + Math.random().toString(36).slice(2, 9);
+
+function getDefaultStore_MatrixAlgebra() {
+    // Helper functions to generate placeholder data
+    const uid = () => `id_${Math.random().toString(36).substr(2, 9)}`;
+    const nowISOString = () => new Date().toISOString();
+    const nextReviewDate = (confidence) => {
+        const now = new Date();
+        const daysToAdd = Math.pow(2, confidence / 2);
+        now.setDate(now.getDate() + daysToAdd);
+        return now.toISOString();
+    };
+
+    return {
+        dailyPlan: "Review 3 low-confidence topics.",
+        points: 0,
+        topics: [
+            // Module I
+            { "title": "M1: Systems of Linear Equations & Matrix Notation", "note": "Representing a linear system with a coefficient matrix, vector of variables, and augmented matrix. Ref: Sec 1.1" },
+            { "title": "M1: Elementary Row Operations", "note": "The three operations: replacement, interchange, and scaling. Understanding row equivalence. Ref: Sec 1.1" },
+            { "title": "M1: Existence & Uniqueness of Solutions", "note": "Determining if a system is consistent/inconsistent and if a solution is unique. Ref: Sec 1.1" },
+            { "title": "M1: Echelon Form & Reduced Echelon Form", "note": "Definitions and properties of echelon form (EF) and reduced row echelon form (RREF). Ref: Sec 1.2" },
+            { "title": "M1: Pivot Positions & Pivot Columns", "note": "Identifying pivot positions in a matrix. A pivot is the first non-zero entry in a row of an EF matrix. Ref: Sec 1.2" },
+            { "title": "M1: The Row Reduction Algorithm", "note": "The systematic process (Gaussian elimination) to transform any matrix into RREF. Ref: Sec 1.2" },
+            { "title": "M1: Parametric Description of Solution Sets", "note": "Expressing solution sets in terms of free variables. Ref: Sec 1.2" },
+            { "title": "M1: Vectors in Rⁿ", "note": "Definition of vectors, vector addition, and scalar multiplication. Ref: Sec 1.3" },
+            { "title": "M1: Linear Combinations & Span", "note": "Defining a linear combination; Span{v₁,...,vₚ} is the set of all possible linear combinations. Ref: Sec 1.3" },
+            { "title": "M1: Geometric Interpretation of Span", "note": "Visualizing Span in R² and R³ as a point, line, or plane passing through the origin. Ref: Sec 1.3" },
+            { "title": "M1: The Matrix Equation Ax = b", "note": "Interpreting the matrix-vector product Ax as a linear combination of the columns of A. Ref: Sec 1.4" },
+            { "title": "M1: Existence of Solutions for Ax = b", "note": "Understanding that Ax = b has a solution iff b is in the span of the columns of A. Ref: Sec 1.4" },
+
+            // Module II
+            { "title": "M2: Homogeneous Linear Systems", "note": "Systems of the form Ax = 0. Always have the trivial solution x = 0. Ref: Sec 1.5" },
+            { "title": "M2: Nontrivial Solutions of Homogeneous Systems", "note": "A nontrivial solution exists if and only if there is at least one free variable. Ref: Sec 1.5" },
+            { "title": "M2: Parametric Vector Form of Solutions", "note": "Writing the solution set of Ax=0 as a span, e.g., t*v or s*u + t*v. Ref: Sec 1.5" },
+            { "title": "M2: Solutions of Non-homogeneous Systems", "note": "Writing the solution of Ax=b as x = p + v_h, where p is a particular solution and v_h is the general solution to Ax=0. Ref: Sec 1.5" },
+            { "title": "M2: Definition of Linear Independence", "note": "A set of vectors {v₁,...,vₚ} is linearly independent if the vector equation c₁v₁+...+cₚvₚ=0 has only the trivial solution. Ref: Sec 1.7" },
+            { "title": "M2: Linear Dependence", "note": "A set is linearly dependent if there are non-zero weights that satisfy the homogeneous vector equation. Ref: Sec 1.7" },
+            { "title": "M2: Characterization of Linearly Dependent Sets", "note": "A set is linearly dependent iff at least one vector is a linear combination of the others. Ref: Sec 1.7" },
+            { "title": "M2: Transformations (Mappings)", "note": "Defining a transformation T from a domain Rⁿ to a codomain Rᵐ. Range of T. Ref: Sec 1.8" },
+            { "title": "M2: Definition of a Linear Transformation", "note": "A transformation T is linear if T(u+v)=T(u)+T(v) and T(cu)=cT(u). Ref: Sec 1.8" },
+            { "title": "M2: The Standard Matrix of a Linear Transformation", "note": "Every linear transformation T:Rⁿ→Rᵐ has a unique matrix A such that T(x)=Ax for all x in Rⁿ. Ref: Sec 1.9" },
+            { "title": "M2: Finding the Standard Matrix A", "note": "The columns of A are the images of the standard basis vectors: A = [ T(e₁) T(e₂) ... T(eₙ) ]. Ref: Sec 1.9" },
+            { "title": "M2: Geometric Linear Transformations of R²", "note": "Finding the standard matrices for reflections, projections, shears, and rotations. Ref: Sec 1.9" },
+            { "title": "M2: One-to-one and Onto Transformations", "note": "Defining one-to-one (T(x)=T(y) implies x=y) and onto (Range=Codomain) transformations. Ref: Sec 1.9" }
+        ].map(t => ({
+            id: uid(), title: t.title, note: t.note, confidence: 5,
+            history: [{ date: nowISOString(), confidence: 5 }],
+            lastReviewed: null, nextReview: nextReviewDate(5),
+            streak: 0, points: 0
+        }))
+    };
+}
+
+
+function saveStore() { localStorage.setItem(STORAGE_KEY, JSON.stringify(store)); renderAll(); }
+
+function loadStore() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    store = raw ? JSON.parse(raw) : getDefaultStore();
+    // Ensure new properties exist on old data
+    if (!store.dailyPlan) store.dailyPlan = "Review 3 low-confidence topics.";
+    if (!store.topics || store.topics.length === 0) store.topics = getDefaultStore().topics;
+    saveStore();
+}
+
+/* ========== Spaced Repetition & Priority ========== */
+function nextReviewDate(confidence) {
+    const d = new Date();
+    if (confidence <= 2) d.setDate(d.getDate() + 1);
+    else if (confidence <= 5) d.setDate(d.getDate() + 3);
+    else if (confidence <= 8) d.setDate(d.getDate() + 7);
+    else d.setDate(d.getDate() + 21);
+    return d.toISOString();
+}
+
+function getPriorityTopics() {
+    return store.topics.slice().sort((a, b) => {
+        if (a.confidence !== b.confidence) return a.confidence - b.confidence;
+        return new Date(a.nextReview).getTime() - new Date(b.nextReview).getTime();
+    });
+}
+
+/* ========= Rendering ========= */
+const topicListEl = document.getElementById('topicList');
+const overallPctEl = document.getElementById('overallPct');
+const progressWheelEl = document.getElementById('progressWheel');
+
+function renderAll() {
+    const topics = store.topics;
+    const overall = topics.length ? Math.round(topics.reduce((s, t) => s + (t.confidence || 0), 0) / topics.length * 10) : 0;
+    overallPctEl.querySelector('div').textContent = `${overall}%`;
+    progressWheelEl.style.background = `conic-gradient(var(--primary) ${overall}%, #e9ecef ${overall}%)`;
+    renderDailyPlan();
+    renderTopics();
+}
+
+function emojiForConfidence(v) {
+    if (v <= 2) return '😟'; if (v <= 5) return '😐'; if (v <= 8) return '🙂'; return '😎';
+}
+
+function renderTopics(filter = 'all') {
+    topicListEl.innerHTML = '';
+    let topics = (filter === 'priority') ? getPriorityTopics() : store.topics.slice();
+
+    topics.forEach(t => {
+        const el = document.createElement('div');
+        el.className = 'topic-card';
+        el.innerHTML = `
+            <div class="topic-header">
+                <div style="flex:1;">
+                    <div class="topic-title">${escapeHtml(t.title)}</div>
+                    <div class="small">${escapeHtml(t.note)}</div>
+                </div>
+                <div class="topic-actions">
+                    <button class="icon-btn" data-action="review" data-id="${t.id}" title="Mark Reviewed"><span class="material-symbols-outlined">task_alt</span></button>
+                    <button class="icon-btn" data-action="edit" data-id="${t.id}" title="Edit"><span class="material-symbols-outlined">edit</span></button>
+                    <button class="icon-btn" data-action="delete" data-id="${t.id}" title="Delete"><span class="material-symbols-outlined">delete</span></button>
+                </div>
+            </div>
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div class="pill">Confidence: <b id="confVal-${t.id}">${t.confidence}</b>/10</div>
+                    <div style="font-size:1.5rem;">${emojiForConfidence(t.confidence)}</div>
+                </div>
+                <input type="range" min="0" max="10" value="${t.confidence}" data-id="${t.id}" class="confRange">
+                <div class="small" style="text-align:right;">Next Review: ${new Date(t.nextReview).toLocaleDateString()}</div>
+            </div>
+        `;
+        topicListEl.appendChild(el);
+    });
+
+    document.querySelectorAll('.confRange').forEach(r => {
+        r.oninput = (e) => { document.getElementById('confVal-' + e.target.dataset.id).textContent = e.target.value; };
+        r.onchange = (e) => {
+            const id = e.target.dataset.id;
+            const val = parseInt(e.target.value, 10);
+            const topic = store.topics.find(x => x.id === id);
+            if (!topic) return;
+            topic.confidence = val;
+            topic.history.push({ date: nowISOString(), confidence: val });
+            topic.nextReview = nextReviewDate(val);
+            saveStore();
+        };
+    });
+
+    document.querySelectorAll('button[data-action]').forEach(b => {
+        b.onclick = (ev) => {
+            const button = ev.currentTarget;
+            const action = button.dataset.action;
+            const id = button.dataset.id;
+            if (action === 'review') markReviewed(id);
+            else if (action === 'edit') openEditor(id);
+            else if (action === 'delete') {
+                if (confirm('Delete this topic?')) {
+                    store.topics = store.topics.filter(x => x.id !== id);
+                    saveStore();
+                }
+            }
+        };
+    });
+}
+
+/* ========== Interactive Components Logic ========== */
+
+function renderDailyPlan() {
+    const planTextEl = document.getElementById('daily-plan-text');
+    const planInputEl = document.getElementById('daily-plan-input');
+    planTextEl.innerHTML = `${escapeHtml(store.dailyPlan)} <span class="material-symbols-outlined">edit</span>`;
+    planInputEl.value = store.dailyPlan;
+    planTextEl.classList.remove('hidden');
+    planInputEl.classList.add('hidden');
+}
+
+function openEditor(id) {
+    const t = store.topics.find(x => x.id === id); if (!t) return;
+    const title = prompt('Edit title', t.title); if (title === null) return;
+    const note = prompt('Edit note/description', t.note); if (note === null) return;
+    Object.assign(t, { title: title.trim(), note: note.trim() });
+    saveStore();
+}
+
+function markReviewed(id) {
+    const t = store.topics.find(x => x.id === id); if (!t) return;
+    t.lastReviewed = nowISOString();
+    t.nextReview = nextReviewDate(t.confidence);
+    t.streak = (t.streak || 0) + 1;
+    saveStore();
+}
+
+let timer = { seconds: 25 * 60, running: false, interval: null };
+const timerDisplay = document.getElementById('timerDisplay');
+function formatMs(s) { const m = Math.floor(s / 60); const ss = s % 60; return String(m).padStart(2, '0') + ':' + String(ss).padStart(2, '0'); }
+document.getElementById('startPom').onclick = () => { if (timer.running) return; timer.running = true; timer.interval = setInterval(() => { timer.seconds--; if (timer.seconds < 0) { clearInterval(timer.interval); timer.running = false; timer.seconds = 5 * 60; alert('Pomodoro finished! Time for a short break.'); } timerDisplay.textContent = formatMs(timer.seconds); }, 1000); };
+document.getElementById('pausePom').onclick = () => { timer.running = false; clearInterval(timer.interval); };
+document.getElementById('resetPom').onclick = () => { timer.running = false; clearInterval(timer.interval); timer.seconds = 25 * 60; timerDisplay.textContent = formatMs(timer.seconds); };
+
+/* ========== Event Listeners ========== */
+document.getElementById('daily-plan-text').onclick = () => {
+    document.getElementById('daily-plan-text').classList.add('hidden');
+    const inputEl = document.getElementById('daily-plan-input');
+    inputEl.classList.remove('hidden');
+    inputEl.focus();
+    inputEl.select();
+};
+
+document.getElementById('daily-plan-input').addEventListener('blur', (e) => {
+    store.dailyPlan = e.target.value.trim() || "Review topics.";
+    saveStore();
+});
+document.getElementById('daily-plan-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') e.target.blur();
+});
+
+document.getElementById('prioritizeBtn').onclick = () => renderTopics('priority');
+document.getElementById('allBtn').onclick = () => renderTopics('all');
+document.getElementById('exportBtn').onclick = () => {
+    const dataStr = JSON.stringify(store, null, 2);
+    const blob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'stats_progress.json'; a.click(); URL.revokeObjectURL(url);
+};
+document.getElementById('clearBtn').onclick = () => { if (confirm('Clear ALL study data? This cannot be undone.')) { localStorage.removeItem(STORAGE_KEY); loadStore(); }};
+
+function tickClock() { document.getElementById('clock').textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}); }
+setInterval(tickClock, 1000);
+
+/* ========== Utils & Initial Load ========== */
+function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+loadStore();
+tickClock();
+</script>
+</body>
+</html>
