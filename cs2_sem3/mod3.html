@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module III: Python Packages for AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* --- Base Styles --- */
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+            color: #34495e;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 5px solid #3498db;
+        }
+        h1, h2, h3 {
+            font-family: 'Roboto Slab', serif;
+            color: #2c3e50;
+        }
+        h1 {
+            font-size: 2.8em;
+            text-align: center;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 2.2em;
+            margin-top: 50px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.6em;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        p, li {
+            text-align: justify;
+            font-size: 1.05em;
+        }
+        code {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #ecf0f1;
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #c0392b;
+        }
+        pre {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.95em;
+            line-height: 1.5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        .code-comment { color: #b2bec3; font-style: italic; }
+        .code-keyword { color: #ff7675; }
+        .code-string { color: #55efc4; }
+        .code-function { color: #74b9ff; }
+        .code-number { color: #fdcb6e; }
+        .note {
+            background-color: #eaf5ff;
+            border-left: 6px solid #3498db;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .note strong {
+            color: #2980b9;
+            font-family: 'Roboto Slab', serif;
+        }
+        .workflow {
+            background-color: #fef9e7;
+            border-left: 6px solid #f1c40f;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .workflow strong {
+            color: #d35400;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        /* --- NEW: Mobile Responsive Styles --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px 20px;
+                border-radius: 8px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            p, li {
+                font-size: 1em;
+            }
+        }
+
+        /* --- NEW: Print Optimization Styles --- */
+        @media print {
+            body {
+                font-family: 'Georgia', serif;
+                font-size: 12pt;
+                color: #000000;
+                background-color: #ffffff;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                border-top: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            h1, h2, h3 {
+                color: #000000;
+                page-break-after: avoid;
+            }
+            h1 {
+                font-size: 24pt;
+                border-bottom: 2px solid #000;
+            }
+            h2 {
+                font-size: 20pt;
+                border-bottom: 2px solid #333;
+            }
+            h3 {
+                font-size: 16pt;
+                border-bottom: 1px solid #666;
+            }
+            .note, .workflow {
+                background-color: #f5f5f5;
+                border: 1px solid #ccc;
+                border-left: 4px solid #000;
+                color: #000000;
+                page-break-inside: avoid;
+                border-radius: 0;
+            }
+            .note strong, .workflow strong {
+                color: #000000;
+            }
+            pre {
+                background-color: #f8f8f8 !important;
+                color: #000000 !important;
+                border: 1px solid #ddd;
+                box-shadow: none;
+                page-break-inside: avoid;
+                white-space: pre-wrap; /* Allow code to wrap */
+                word-wrap: break-word;
+            }
+            pre code, code {
+                color: #000 !important;
+                background: none !important;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 10pt;
+            }
+            /* Simplify syntax highlighting for print */
+            .code-comment, .code-keyword, .code-string, .code-function, .code-number {
+                color: #000 !important;
+                font-weight: normal;
+                font-style: normal;
+            }
+            .code-comment {
+                color: #555 !important;
+                font-style: italic;
+            }
+            .code-keyword {
+                font-weight: bold;
+            }
+            .code-string {
+                color: #333 !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Module III: Python Packages for AI</h1>
+        <p class="note">
+            <strong>Introduction:</strong> This module serves as a practical guide to the essential Python libraries that form the backbone of modern AI and Machine Learning development. While theory provides the "what" and "why," these tools provide the "how." We will explore how to manage data with <strong>Pandas</strong>, visualize it with <strong>Matplotlib</strong>, build powerful neural networks with <strong>Keras</strong>, and implement a wide range of classical ML algorithms with <strong>Scikit-learn</strong>. Mastering these libraries is the first step toward building intelligent systems.
+        </p>
+
+        <!-- Unit 10: Pandas -->
+        <h2>Unit 10: Pandas - Data Analysis and Manipulation</h2>
+        <p>Pandas is the cornerstone of any data-driven project in Python. It provides fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. Before any AI model can be trained, data must be loaded, cleaned, transformed, and understood—this is the domain of Pandas.</p>
+        
+        <h3>Core Data Structures: Series and DataFrame</h3>
+        <p>Pandas introduces two primary data structures:</p>
+        <ul>
+            <li><strong>Series:</strong> A one-dimensional labeled array, like a single column in a spreadsheet. Each element has an index.</li>
+            <li><strong>DataFrame:</strong> A two-dimensional table of data with rows and columns. It is the most important and widely used Pandas object. Think of it as a spreadsheet, a SQL table, or a dictionary of Series objects.</li>
+        </ul>
+
+        <h3>Data Loading and Inspection</h3>
+        <p>In a typical ML project, your first step is loading data from a file (e.g., CSV) into a DataFrame. Once loaded, you must inspect it to understand its structure, content, and potential issues.</p>
+        <pre><code><span class="code-comment"># Import necessary libraries</span>
+<span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd
+<span class="code-keyword">import</span> numpy <span class="code-keyword">as</span> np
+
+<span class="code-comment"># Create a sample CSV file in memory for this example</span>
+<span class="code-keyword">from</span> io <span class="code-keyword">import</span> StringIO
+
+csv_data = StringIO(<span class="code-string">"""
+feature1,feature2,feature3,label
+1.2,2.3,5.1,0
+0.8,1.9,,0
+3.1,4.5,6.2,1
+,3.3,5.8,1
+2.5,3.9,6.0,0
+"""</span>)
+
+df = pd.<span class="code-function">read_csv</span>(csv_data)
+
+<span class="code-function">print</span>(<span class="code-string">"--- Initial DataFrame ---"</span>)
+<span class="code-function">print</span>(df)
+
+<span class="code-function">print</span>(<span class="code-string">"\n--- DataFrame Info ---"</span>)
+df.<span class="code-function">info</span>() <span class="code-comment"># Check data types and non-null values</span>
+
+<span class="code-function">print</span>(<span class="code-string">"\n--- Descriptive Statistics ---"</span>)
+<span class="code-function">print</span>(df.<span class="code-function">describe</span>()) <span class="code-comment"># Get statistical summary</span>
+</code></pre>
+
+        <h3>Data Cleaning: Handling Missing Values</h3>
+        <p>Real-world data is messy. It often contains missing values (represented as <code>NaN</code> - Not a Number). These must be handled before feeding the data into a machine learning model.</p>
+        <pre><code><span class="code-comment"># Find missing values</span>
+<span class="code-function">print</span>(<span class="code-string">"\n--- Missing Values ---"</span>)
+<span class="code-function">print</span>(df.<span class="code-function">isnull</span>().<span class="code-function">sum</span>())
+
+<span class="code-comment"># Strategy 1: Drop rows with any missing values</span>
+df_dropped = df.<span class="code-function">dropna</span>()
+<span class="code-function">print</span>(<span class="code-string">"\nDataFrame after dropping NaN rows:"</span>)
+<span class="code-function">print</span>(df_dropped)
+
+<span class="code-comment"># Strategy 2: Fill missing values (Imputation)</span>
+<span class="code-comment"># For feature1, fill with the mean. For feature3, fill with the median.</span>
+mean_f1 = df[<span class="code-string">'feature1'</span>].<span class="code-function">mean</span>()
+median_f3 = df[<span class="code-string">'feature3'</span>].<span class="code-function">median</span>()
+
+df_filled = df.<span class="code-function">copy</span>() <span class="code-comment"># Create a copy to avoid changing the original df</span>
+df_filled[<span class="code-string">'feature1'</span>].<span class="code-function">fillna</span>(value=mean_f1, inplace=<span class="code-keyword">True</span>)
+df_filled[<span class="code-string">'feature3'</span>].<span class="code-function">fillna</span>(value=median_f3, inplace=<span class="code-keyword">True</span>)
+<span class="code-function">print</span>(<span class="code-string">"\nDataFrame after filling NaN values:"</span>)
+<span class="code-function">print</span>(df_filled)
+</code></pre>
+
+        <h3>Feature Engineering</h3>
+        <p>Often, the raw features in your data are not optimal. You can create new features from existing ones to help your model learn better. This is a critical and creative part of machine learning.</p>
+        <pre><code><span class="code-comment"># Example: Create a new feature 'feature4' which is the product of feature1 and feature2</span>
+df_filled[<span class="code-string">'feature4'</span>] = df_filled[<span class="code-string">'feature1'</span>] * df_filled[<span class="code-string">'feature2'</span>]
+<span class="code-function">print</span>(<span class="code-string">"\nDataFrame with a new engineered feature:"</span>)
+<span class="code-function">print</span>(df_filled)
+</code></pre>
+
+        <!-- Unit 11: Matplotlib -->
+        <h2>Unit 11: Matplotlib - Data Visualization</h2>
+        <p>A picture is worth a thousand data points. Matplotlib allows you to create high-quality visualizations to explore your data, understand relationships between variables, identify outliers, and communicate results.</p>
+        
+        <h3>Essential Plots for Data Analysis</h3>
+        <p>Different plots answer different questions about your data:</p>
+        <ul>
+            <li><strong>Histogram:</strong> Understand the distribution of a single variable. Is it skewed? Is it normal?</li>
+            <li><strong>Scatter Plot:</strong> Investigate the relationship between two variables. Is there a correlation?</li>
+            <li><strong>Box Plot:</strong> Identify outliers and see the spread of the data.</li>
+        </ul>
+        <pre><code><span class="code-keyword">import</span> matplotlib.pyplot <span class="code-keyword">as</span> plt
+
+<span class="code-comment"># Use the filled dataframe from the Pandas section</span>
+<span class="code-comment"># Create a 2x2 grid of plots</span>
+fig, axes = plt.<span class="code-function">subplots</span>(nrows=<span class="code-number">2</span>, ncols=<span class="code-number">2</span>, figsize=(<span class="code-number">12</span>, <span class="code-number">10</span>))
+fig.<span class="code-function">suptitle</span>(<span class="code-string">'Data Visualization with Matplotlib'</span>, fontsize=<span class="code-number">16</span>)
+
+<span class="code-comment"># Plot 1: Histogram of feature1</span>
+axes[<span class="code-number">0</span>, <span class="code-number">0</span>].<span class="code-function">hist</span>(df_filled[<span class="code-string">'feature1'</span>], bins=<span class="code-number">15</span>, color=<span class="code-string">'skyblue'</span>, edgecolor=<span class="code-string">'black'</span>)
+axes[<span class="code-number">0</span>, <span class="code-number">0</span>].<span class="code-function">set_title</span>(<span class="code-string">'Distribution of Feature 1'</span>)
+axes[<span class="code-number">0</span>, <span class="code-number">0</span>].<span class="code-function">set_xlabel</span>(<span class="code-string">'Value'</span>)
+axes[<span class="code-number">0</span>, <span class="code-number">0</span>].<span class="code-function">set_ylabel</span>(<span class="code-string">'Frequency'</span>)
+
+<span class="code-comment"># Plot 2: Scatter plot of feature1 vs feature2</span>
+<span class="code-comment"># Color points by their label</span>
+scatter = axes[<span class="code-number">0</span>, <span class="code-number">1</span>].<span class="code-function">scatter</span>(df_filled[<span class="code-string">'feature1'</span>], df_filled[<span class="code-string">'feature2'</span>], c=df_filled[<span class="code-string">'label'</span>], cmap=<span class="code-string">'viridis'</span>)
+axes[<span class="code-number">0</span>, <span class="code-number">1</span>].<span class="code-function">set_title</span>(<span class="code-string">'Feature 1 vs. Feature 2'</span>)
+axes[<span class="code-number">0</span>, <span class="code-number">1</span>].<span class="code-function">set_xlabel</span>(<span class="code-string">'Feature 1'</span>)
+axes[<span class="code-number">0</span>, <span class="code-number">1</span>].<span class="code-function">set_ylabel</span>(<span class="code-string">'Feature 2'</span>)
+axes[<span class="code-number">0</span>, <span class="code-number">1</span>].<span class="code-function">legend</span>(handles=scatter.<span class="code-function">legend_elements</span>()[<span class="code-number">0</span>], labels=[<span class="code-string">'Class 0'</span>, <span class="code-string">'Class 1'</span>])
+
+<span class="code-comment"># Plot 3: Box plot for feature3</span>
+axes[<span class="code-number">1</span>, <span class="code-number">0</span>].<span class="code-function">boxplot</span>(df_filled[<span class="code-string">'feature3'</span>])
+axes[<span class="code-number">1</span>, <span class="code-number">0</span>].<span class="code-function">set_title</span>(<span class="code-string">'Box Plot of Feature 3'</span>)
+axes[<span class="code-number">1</span>, <span class="code-number">0</span>].<span class="code-function">set_ylabel</span>(<span class="code-string">'Value'</span>)
+
+<span class="code-comment"># Plot 4: Bar chart of label counts</span>
+label_counts = df_filled[<span class="code-string">'label'</span>].<span class="code-function">value_counts</span>()
+axes[<span class="code-number">1</span>, <span class="code-number">1</span>].<span class="code-function">bar</span>(label_counts.index, label_counts.values, color=[<span class="code-string">'#e74c3c'</span>, <span class="code-string">'#2ecc71'</span>])
+axes[<span class="code-number">1</span>, <span class="code-number">1</span>].<span class="code-function">set_title</span>(<span class="code-string">'Class Distribution'</span>)
+axes[<span class="code-number">1</span>, <span class="code-number">1</span>].<span class="code-function">set_xlabel</span>(<span class="code-string">'Label'</span>)
+axes[<span class="code-number">1</span>, <span class="code-number">1</span>].<span class="code-function">set_ylabel</span>(<span class="code-string">'Count'</span>)
+axes[<span class="code-number">1</span>, <span class="code-number">1</span>].<span class="code-function">set_xticks</span>([<span class="code-number">0</span>, <span class="code-number">1</span>])
+
+
+plt.<span class="code-function">tight_layout</span>(rect=[<span class="code-number">0</span>, <span class="code-number">0</span>, <span class="code-number">1</span>, <span class="code-number">0.96</span>])
+plt.<span class="code-function">show</span>()
+</code></pre>
+
+        <!-- Unit 12: Keras -->
+        <h2>Unit 12: Keras - High-Level Neural Networks</h2>
+        <p>Keras acts as a user-friendly interface to powerful deep learning frameworks like TensorFlow. It allows you to rapidly build and train sophisticated neural networks, like the Multi-Layer Perceptrons (MLPs) discussed in theory, without getting bogged down in low-level details.</p>
+        
+        <h3>Building, Compiling, and Training a Model</h3>
+        <p>The Keras workflow follows three main steps:</p>
+        <ol>
+            <li><strong>Define the Model:</strong> You stack layers sequentially. The <code>Dense</code> layer is the standard, fully connected layer. The first layer needs to know the <code>input_shape</code>.</li>
+            <li><strong>Compile the Model:</strong> This step configures the learning process. You specify:
+                <ul>
+                    <li>An <strong>optimizer</strong> (e.g., <code>'adam'</code>), which is the algorithm used to update the network weights (a practical implementation of gradient descent).</li>
+                    <li>A <strong>loss function</strong> (e.g., <code>'binary_crossentropy'</code>), which measures how inaccurate the model is during training. The optimizer's goal is to minimize this function.</li>
+                    <li><strong>Metrics</strong> (e.g., <code>'accuracy'</code>) to monitor during training and testing.</li>
+                </ul>
+            </li>
+            <li><strong>Train the Model:</strong> The <code>fit()</code> method trains the model by iterating over the dataset in batches for a specified number of <code>epochs</code>.</li>
+        </ol>
+        <pre><code><span class="code-keyword">from</span> tensorflow <span class="code-keyword">import</span> keras
+<span class="code-keyword">from</span> tensorflow.keras <span class="code-keyword">import</span> layers
+<span class="code-keyword">from</span> sklearn.datasets <span class="code-keyword">import</span> make_classification
+<span class="code-keyword">from</span> sklearn.model_selection <span class="code-keyword">import</span> train_test_split
+
+<span class="code-comment"># Generate some synthetic data for a binary classification problem</span>
+X, y = <span class="code-function">make_classification</span>(n_samples=<span class="code-number">1000</span>, n_features=<span class="code-number">20</span>, n_informative=<span class="code-number">10</span>, n_redundant=<span class="code-number">5</span>, random_state=<span class="code-number">42</span>)
+X_train, X_test, y_train, y_test = <span class="code-function">train_test_split</span>(X, y, test_size=<span class="code-number">0.2</span>, random_state=<span class="code-number">42</span>)
+
+<span class="code-comment"># 1. Define the model</span>
+model = keras.<span class="code-function">Sequential</span>([
+    layers.<span class="code-function">Dense</span>(<span class="code-number">32</span>, activation=<span class="code-string">'relu'</span>, input_shape=(X_train.shape[<span class="code-number">1</span>],)),
+    layers.<span class="code-function">Dense</span>(<span class="code-number">16</span>, activation=<span class="code-string">'relu'</span>),
+    layers.<span class="code-function">Dense</span>(<span class="code-number">1</span>, activation=<span class="code-string">'sigmoid'</span>)
+])
+
+<span class="code-comment"># 2. Compile the model</span>
+model.<span class="code-function">compile</span>(optimizer=<span class="code-string">'adam'</span>, loss=<span class="code-string">'binary_crossentropy'</span>, metrics=[<span class="code-string">'accuracy'</span>])
+model.<span class="code-function">summary</span>()
+
+<span class="code-comment"># 3. Train the model</span>
+<span class="code-function">print</span>(<span class="code-string">"\nTraining the Keras model..."</span>)
+history = model.<span class="code-function">fit</span>(X_train, y_train, epochs=<span class="code-number">10</span>, batch_size=<span class="code-number">32</span>, validation_split=<span class="code-number">0.1</span>, verbose=<span class="code-number">0</span>)
+<span class="code-function">print</span>(<span class="code-string">"Training complete."</span>)
+
+<span class="code-comment"># 4. Evaluate the model on unseen test data</span>
+loss, accuracy = model.<span class="code-function">evaluate</span>(X_test, y_test, verbose=<span class="code-number">0</span>)
+<span class="code-function">print</span>(f<span class="code-string">"\nTest Accuracy: {accuracy:.4f}"</span>)
+</code></pre>
+
+        <!-- Unit 13: Scikit-learn -->
+        <h2>Unit 13: Scikit-learn - Foundational Machine Learning</h2>
+        <p>Scikit-learn is the essential library for classical machine learning in Python. It provides a comprehensive suite of supervised and unsupervised learning algorithms, as well as tools for model evaluation, selection, and data preprocessing, all with a consistent, easy-to-use interface.</p>
+
+        <div class="workflow">
+            <strong>The Scikit-learn Workflow:</strong> Scikit-learn's API is elegant and uniform. It follows a simple pattern:
+            <ol>
+                <li>Choose a model by importing its class (e.g., <code>LinearRegression</code>).</li>
+                <li>Instantiate the class with desired parameters (e.g., <code>model = LinearRegression()</code>).</li>
+                <li>Prepare data (features <code>X</code> and target <code>y</code>).</li>
+                <li>Train the model on your data: <code>model.fit(X, y)</code>.</li>
+                <li>Apply the trained model to new data: <code>model.predict(X_new)</code>.</li>
+            </ol>
+            This <code>fit/predict</code> pattern is the core of supervised learning in the library.
+        </div>
+
+        <h3>Supervised Learning: Regression and Classification</h3>
+        <p>Scikit-learn excels at standard supervised tasks. Here we show a <strong>Linear Regression</strong> model and a <strong>Decision Tree Classifier</strong>.</p>
+        <pre><code><span class="code-keyword">from</span> sklearn.linear_model <span class="code-keyword">import</span> LinearRegression
+<span class="code-keyword">from</span> sklearn.tree <span class="code-keyword">import</span> DecisionTreeClassifier
+<span class="code-keyword">from</span> sklearn.datasets <span class="code-keyword">import</span> load_iris, make_regression
+<span class="code-keyword">from</span> sklearn.model_selection <span class="code-keyword">import</span> train_test_split
+<span class="code-keyword">from</span> sklearn.metrics <span class="code-keyword">import</span> accuracy_score, mean_squared_error
+
+<span class="code-comment"># --- Classification Example ---</span>
+iris = <span class="code-function">load_iris</span>()
+X_iris, y_iris = iris.data, iris.target
+X_train_i, X_test_i, y_train_i, y_test_i = <span class="code-function">train_test_split</span>(X_iris, y_iris, test_size=<span class="code-number">0.3</span>, random_state=<span class="code-number">1</span>)
+dtree = <span class="code-function">DecisionTreeClassifier</span>(max_depth=<span class="code-number">3</span>)
+dtree.<span class="code-function">fit</span>(X_train_i, y_train_i)
+y_pred_i = dtree.<span class="code-function">predict</span>(X_test_i)
+<span class="code-function">print</span>(f<span class="code-string">"Decision Tree Classifier Accuracy: {accuracy_score(y_test_i, y_pred_i):.3f}"</span>)
+
+<span class="code-comment"># --- Regression Example ---</span>
+X_reg, y_reg = <span class="code-function">make_regression</span>(n_samples=<span class="code-number">100</span>, n_features=<span class="code-number">1</span>, noise=<span class="code-number">10</span>, random_state=<span class="code-number">1</span>)
+X_train_r, X_test_r, y_train_r, y_test_r = <span class="code-function">train_test_split</span>(X_reg, y_reg, test_size=<span class="code-number">0.3</span>, random_state=<span class="code-number">1</span>)
+lin_reg = <span class="code-function">LinearRegression</span>()
+lin_reg.<span class="code-function">fit</span>(X_train_r, y_train_r)
+y_pred_r = lin_reg.<span class="code-function">predict</span>(X_test_r)
+mse = <span class="code-function">mean_squared_error</span>(y_test_r, y_pred_r)
+<span class="code-function">print</span>(f<span class="code-string">"Linear Regression Mean Squared Error: {mse:.2f}"</span>)
+</code></pre>
+        
+        <h3>Unsupervised Learning and Preprocessing</h3>
+        <p>Scikit-learn is also powerful for tasks where you don't have labeled data (unsupervised learning) and for preparing data for modeling (preprocessing).</p>
+        <ul>
+            <li><strong>Clustering:</strong> Algorithms like <code>KMeans</code> group data into clusters based on similarity.</li>
+            <li><strong>Dimensionality Reduction:</strong> Techniques like <code>PCA</code> (Principal Component Analysis) reduce the number of features while retaining most of the information.</li>
+            <li><strong>Feature Scaling:</strong> Algorithms like <code>StandardScaler</code> transform features to have zero mean and unit variance, which is crucial for many models.</li>
+        </ul>
+        <pre><code><span class="code-keyword">from</span> sklearn.cluster <span class="code-keyword">import</span> KMeans
+<span class="code-keyword">from</span> sklearn.preprocessing <span class="code-keyword">import</span> StandardScaler
+<span class="code-keyword">from</span> sklearn.decomposition <span class="code-keyword">import</span> PCA
+
+<span class="code-comment"># --- Preprocessing: Scaling the data ---</span>
+<span class="code-function">print</span>(<span class="code-string">"\n--- Preprocessing with StandardScaler ---"</span>)
+scaler = <span class="code-function">StandardScaler</span>()
+X_scaled = scaler.<span class="code-function">fit_transform</span>(X_iris)
+<span class="code-function">print</span>(f<span class="code-string">"Original mean: {X_iris.mean():.2f}, Scaled mean: {X_scaled.mean():.2f}"</span>)
+<span class="code-function">print</span>(f<span class="code-string">"Original std: {X_iris.std():.2f}, Scaled std: {X_scaled.std():.2f}"</span>)
+
+<span class="code-comment"># --- Dimensionality Reduction: PCA ---</span>
+<span class="code-function">print</span>(<span class="code-string">"\n--- Dimensionality Reduction with PCA ---"</span>)
+pca = <span class="code-function">PCA</span>(n_components=<span class="code-number">2</span>) <span class="code-comment"># Reduce from 4 to 2 features</span>
+X_pca = pca.<span class="code-function">fit_transform</span>(X_scaled)
+<span class="code-function">print</span>(f<span class="code-string">"Original shape: {X_scaled.shape}, PCA shape: {X_pca.shape}"</span>)
+
+<span class="code-comment"># --- Unsupervised: K-Means on PCA-transformed data ---</span>
+kmeans = <span class="code-function">KMeans</span>(n_clusters=<span class="code-number">3</span>, random_state=<span class="code-number">42</span>, n_init=10)
+clusters = kmeans.<span class="code-function">fit_predict</span>(X_pca) <span class="code-comment"># fit_predict is a shortcut for fit then predict</span>
+<span class="code-function">print</span>(f<span class="code-string">"K-Means cluster assignments for first 10 samples: {clusters[:10]}"</span>)
+</code></pre>
+    </div>
+</body>
+</html>
